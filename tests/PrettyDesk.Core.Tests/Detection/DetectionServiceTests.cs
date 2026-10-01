@@ -45,6 +45,17 @@ public class DetectionServiceTests
     }
 
     [Fact]
+    public async Task Disposing_twice_is_harmless_because_the_container_may_dispose_a_service_once_per_alias()
+    {
+        var service = Create();
+        service.Start();
+
+        await service.DisposeAsync();
+
+        await Should.NotThrowAsync(async () => await service.DisposeAsync());
+    }
+
+    [Fact]
     public async Task Disabled_detection_clears_everything_and_does_not_snapshot()
     {
         await using var service = Create(enabled: false);

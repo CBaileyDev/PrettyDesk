@@ -34,6 +34,7 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
     private ITimer? _pollTimer;
     private ITimer? _deadlineTimer;
     private Task? _loop;
+    private int _disposed;
 
     public DetectionService(
         IProcessSource processes,
@@ -118,6 +119,12 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
 
     public async ValueTask DisposeAsync()
     {
+        // Idempotent: a service registered under several DI aliases is disposed once per alias.
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         await _cts.CancelAsync();
         if (_foreground is not null)
         {

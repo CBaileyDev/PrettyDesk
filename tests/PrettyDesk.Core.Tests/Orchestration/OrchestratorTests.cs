@@ -54,6 +54,15 @@ public sealed class OrchestratorTests : IAsyncDisposable
     // ---- Default / Game transitions (§5.4) -------------------------------------------------------------------
 
     [Fact]
+    public async Task Disposing_twice_is_harmless()
+    {
+        _orchestrator.Start();
+        await _orchestrator.DisposeAsync();
+
+        await Should.NotThrowAsync(async () => await _orchestrator.DisposeAsync());
+    }
+
+    [Fact]
     public async Task Applies_a_default_wallpaper_at_start()
     {
         await Reconcile();

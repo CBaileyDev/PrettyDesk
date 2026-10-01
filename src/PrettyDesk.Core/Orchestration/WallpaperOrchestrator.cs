@@ -46,6 +46,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
     private volatile ActiveGame? _activeGame;
     private volatile bool _advanceRequested;
     private volatile bool _forceReapply;
+    private int _disposed;
     private (string WallpaperId, DateTimeOffset Until)? _preview;
     private string? _lastGameContext;
     private OrchestratorMode? _lastMode;
@@ -596,6 +597,12 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
 
     public async ValueTask DisposeAsync()
     {
+        // Idempotent: the DI container and AppRuntime.DisposeAsync may both dispose it.
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         await _cts.CancelAsync();
         if (_started)
         {

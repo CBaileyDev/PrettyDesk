@@ -19,6 +19,7 @@ public sealed class SteamRunningAppWatcher : ISteamRunningAppSource, IDisposable
     private readonly ManualResetEvent _stop = new(false);
     private Thread? _thread;
     private int _current;
+    private int _disposed;
 
     public uint CurrentAppId => (uint)Volatile.Read(ref _current);
 
@@ -37,6 +38,11 @@ public sealed class SteamRunningAppWatcher : ISteamRunningAppSource, IDisposable
 
     public void Dispose()
     {
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         _stop.Set();
         _thread?.Join(TimeSpan.FromSeconds(2));
         _thread = null;

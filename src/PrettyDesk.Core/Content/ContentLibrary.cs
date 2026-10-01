@@ -45,6 +45,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
     private readonly ConcurrentDictionary<string, DateTimeOffset> _touched = new();
     private readonly ConcurrentDictionary<string, bool> _bundledHashMatches = new();
     private readonly CancellationTokenSource _cts = new();
+    private int _disposed;
     private readonly object _indexLock = new();
     private Dictionary<string, (PackEntry Pack, WallpaperEntry Wallpaper)>? _index;
 
@@ -234,6 +235,11 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
 
     public void Dispose()
     {
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         _catalog.Changed -= InvalidateIndex;
         _cts.Cancel();
         _cts.Dispose();

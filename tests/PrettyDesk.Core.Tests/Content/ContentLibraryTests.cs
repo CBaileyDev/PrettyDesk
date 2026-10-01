@@ -92,6 +92,15 @@ public sealed class ContentLibraryTests : IDisposable
         Directory.Exists(_packs.VersionDirectory("game.cs2", version)) ? Directory.GetFiles(_packs.VersionDirectory("game.cs2", version)).Select(f => Path.GetFileName(f)).OrderBy(n => n, StringComparer.Ordinal).ToArray() : [];
 
     [Fact]
+    public void Disposing_twice_is_harmless()
+    {
+        var library = Create();
+        library.Dispose();
+
+        Should.NotThrow(() => library.Dispose());
+    }
+
+    [Fact]
     public void Nothing_is_available_before_download()
     {
         var library = Create();
