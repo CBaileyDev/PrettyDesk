@@ -34,6 +34,7 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
     private readonly ISettingsProvider _settings;
     private readonly RotationScheduler _scheduler;
     private readonly AppStateService? _state;
+    private readonly IWallpaperBackup? _backup;
     private readonly TimeProvider _time;
     private readonly ILogger _logger;
 
@@ -50,6 +51,7 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
     private OrchestratorMode? _lastMode;
     private string? _lastGameId;
     private int _failures;
+    private bool _backupEnsured;
     private ITimer? _wakeTimer;
     private ITimer? _monitorTimer;
     private Task? _loop;
@@ -66,8 +68,10 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
         RotationScheduler scheduler,
         AppStateService? state,
         TimeProvider time,
-        ILogger<WallpaperOrchestrator> logger)
+        ILogger<WallpaperOrchestrator> logger,
+        IWallpaperBackup? backup = null)
     {
+        _backup = backup;
         _monitors = monitors;
         _setter = setter;
         _renderer = renderer;
@@ -147,6 +151,9 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
         _preview = null;
         Invalidate(immediate: true);
     }
+
+    /// <summary>Re-evaluates soon without forcing a re-apply (e.g. after resume from sleep).</summary>
+    public void Poke() => Invalidate(immediate: false);
 
     public void NotifyUnlock()
     {
@@ -281,6 +288,26 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
                     PoolSize = defaultPlan.Pool.Count,
                     PoolIndex = Math.Max(0, defaultPlan.Pool.ToList().IndexOf(assignments.FirstOrDefault().WallpaperId ?? string.Empty)),
                 };
+            }
+        }
+
+        if (!_backupEnsured && _backup is not null && assignments.Count > 0)
+        {
+            // FR-RESTORE-1: the original wallpaper is snapshotted before the very first apply, and a failure here must
+            // stop us from overwriting it.
+            try
+            {
+                await _backup.EnsureBackupAsync(cancellationToken);
+                _backupEnsured = true;
+            }
+#pragma warning disable CA1031 // NFR-13: reported as a failed apply and retried with backoff.
+            catch (Exception ex) when (ex is not OperationCanceledException)
+#pragma warning restore CA1031
+            {
+                LogBackupFailed(ex);
+                _failures++;
+                Publish((status ?? new OrchestratorStatus()) with { ApplyFailed = true, WallpaperByMonitor = CurrentIds(monitors) }, now + FailureBackoff(_failures));
+                return;
             }
         }
 
@@ -608,6 +635,9 @@ public sealed partial class WallpaperOrchestrator : IAsyncDisposable
 
     [LoggerMessage(Level = LogLevel.Warning, Message = "Applying wallpaper {WallpaperId} failed; will retry with backoff")]
     private partial void LogApplyFailed(string wallpaperId, Exception ex);
+
+    [LoggerMessage(Level = LogLevel.Warning, Message = "Could not back up the original wallpaper; not applying until it can be saved")]
+    private partial void LogBackupFailed(Exception ex);
 
     [LoggerMessage(Level = LogLevel.Error, Message = "Reconcile pass failed; retrying shortly")]
     private partial void LogReconcileFailed(Exception ex);

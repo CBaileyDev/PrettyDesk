@@ -676,3 +676,80 @@ public sealed class OrchestratorTests : IAsyncDisposable
         _setter.Calls.Last().Path.ShouldStartWith("/cache/cs2-");
     }
 }
+
+public sealed class OrchestratorBackupTests : IAsyncDisposable
+{
+    private readonly FakeTimeProvider _time = new(new DateTimeOffset(2026, 10, 1, 9, 0, 0, TimeSpan.Zero));
+    private readonly FakeSetter _setter = new();
+    private readonly RecordingBackup _backup;
+    private readonly WallpaperOrchestrator _orchestrator;
+
+    public OrchestratorBackupTests()
+    {
+        _backup = new RecordingBackup(() => _setter.Calls.Count);
+        var content = new FakeContent();
+        content.AddPack("default.matte-black", Tones.Dark, true, "mb-01", "mb-02");
+        var catalog = new FakeCatalog(new CatalogDocument
+        {
+            Collections = [new CollectionEntry { Id = "default.matte-black", PackId = "default.matte-black", Title = "Matte Black" }],
+        });
+        _orchestrator = new WallpaperOrchestrator(
+            new FakeMonitors(), _setter, new FakeRenderer(), content, new FakeSystem(), catalog, new FakeSettings(),
+            new RotationScheduler(new Dictionary<string, ContextRotationState>(), _time, new Random(1)), null, _time,
+            NullLogger<WallpaperOrchestrator>.Instance, _backup);
+    }
+
+    public ValueTask DisposeAsync() => _orchestrator.DisposeAsync();
+
+    [Fact]
+    public async Task Original_wallpaper_is_backed_up_before_the_very_first_apply()
+    {
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _backup.Calls.ShouldBe(1);
+        _backup.AppliedCountAtBackup.ShouldBe(0);
+        _setter.Calls.Count.ShouldBe(1);
+    }
+
+    [Fact]
+    public async Task Backup_is_requested_only_until_it_succeeds()
+    {
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+        _time.Advance(TimeSpan.FromSeconds(5));
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _backup.Calls.ShouldBe(1);
+    }
+
+    [Fact]
+    public async Task A_failed_backup_prevents_overwriting_the_users_wallpaper_and_retries()
+    {
+        _backup.Fail = true;
+
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _setter.Calls.ShouldBeEmpty();
+        _orchestrator.Status.ApplyFailed.ShouldBeTrue();
+
+        _backup.Fail = false;
+        _time.Advance(TimeSpan.FromSeconds(5));
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _setter.Calls.Count.ShouldBe(1);
+        _backup.Calls.ShouldBe(2);
+    }
+
+    private sealed class RecordingBackup(Func<int> appliedCount) : IWallpaperBackup
+    {
+        public int Calls { get; private set; }
+        public int AppliedCountAtBackup { get; private set; } = -1;
+        public bool Fail { get; set; }
+
+        public Task EnsureBackupAsync(CancellationToken cancellationToken = default)
+        {
+            Calls++;
+            AppliedCountAtBackup = appliedCount();
+            return Fail ? throw new IOException("disk full") : Task.CompletedTask;
+        }
+    }
+}

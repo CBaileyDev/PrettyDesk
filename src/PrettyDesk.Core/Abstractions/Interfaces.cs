@@ -109,3 +109,10 @@ public interface ICatalogProvider
 
     event Action? Changed;
 }
+
+/// <summary>Snapshots the user's original wallpaper before the very first apply (FR-RESTORE-1).</summary>
+public interface IWallpaperBackup
+{
+    /// <summary>Idempotent: does nothing when a backup already exists.</summary>
+    Task EnsureBackupAsync(CancellationToken cancellationToken = default);
+}
