@@ -91,7 +91,11 @@ public sealed partial class RenderCache
                 return;
             }
 
-            var protectedPaths = _appliedPaths();
+            // Normalise so "dir/a.png" and "dir\\a.png" (and, on Windows, differing case) name the same file.
+            var protectedPaths = _appliedPaths()
+                .Where(p => !string.IsNullOrWhiteSpace(p))
+                .Select(System.IO.Path.GetFullPath)
+                .ToHashSet(OperatingSystem.IsWindows() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal);
             foreach (var file in files.OrderBy(f => f.LastWriteTimeUtc))
             {
                 if (total <= _maxBytes)

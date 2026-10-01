@@ -35,9 +35,9 @@ public sealed class AppSmokeTests : IDisposable
     }
 
     [Fact]
-    public void The_dependency_graph_builds_and_every_root_service_resolves()
+    public async Task The_dependency_graph_builds_and_every_root_service_resolves()
     {
-        using var provider = BuildProvider();
+        await using var provider = BuildProvider();
 
         foreach (var type in new[]
         {
@@ -50,9 +50,9 @@ public sealed class AppSmokeTests : IDisposable
     }
 
     [Fact]
-    public void Orchestrator_and_content_library_are_shared_singletons()
+    public async Task Orchestrator_and_content_library_are_shared_singletons()
     {
-        using var provider = BuildProvider();
+        await using var provider = BuildProvider();
 
         provider.GetRequiredService<IWallpaperController>().ShouldBeSameAs(provider.GetRequiredService<IWallpaperController>());
         provider.GetRequiredService<IContentBrowser>().ShouldBeSameAs(provider.GetRequiredService<IContentLibrary>());
@@ -96,7 +96,21 @@ public sealed class AppSmokeTests : IDisposable
         app.Resources.MergedDictionaries.Add(new Wpf.Ui.Markup.ControlsDictionary());
         app.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/PrettyDesk;component/Resources/Styles.xaml") });
 
-        using var provider = BuildProvider();
+        var provider = BuildProvider();
+        try
+        {
+            ShowEveryPage(provider);
+        }
+        finally
+        {
+            provider.DisposeAsync().AsTask().GetAwaiter().GetResult();
+        }
+
+        _ = errors;
+    }
+
+    private static void ShowEveryPage(ServiceProvider provider)
+    {
         var pages = new (string Name, Func<UserControl> Create)[]
         {
             ("Home", () => new PrettyDesk.App.Views.HomePage { DataContext = provider.GetRequiredService<HomeViewModel>() }),
@@ -121,7 +135,6 @@ public sealed class AppSmokeTests : IDisposable
         onboarding.Show();
         Pump();
         onboarding.Close();
-        _ = errors;
     }
 
     private static void Pump() =>

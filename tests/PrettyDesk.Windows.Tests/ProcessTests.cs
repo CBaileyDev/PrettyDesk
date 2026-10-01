@@ -24,14 +24,24 @@ public class ProcessTests
     {
         WindowsOnly.Require();
         var source = new ProcessSource();
+        for (var i = 0; i < 20; i++)
+        {
+            source.Snapshot(); // warm-up: JIT, thread pool and COM state allocate a few handles once
+        }
+
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
         var before = System.Diagnostics.Process.GetCurrentProcess().HandleCount;
 
-        for (var i = 0; i < 200; i++)
+        // A leak of one handle per snapshot would add 400; allow generous noise from the runtime itself.
+        for (var i = 0; i < 400; i++)
         {
             source.Snapshot();
         }
 
-        System.Diagnostics.Process.GetCurrentProcess().HandleCount.ShouldBeLessThan(before + 50);
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        System.Diagnostics.Process.GetCurrentProcess().HandleCount.ShouldBeLessThan(before + 100);
     }
 
     [Fact]

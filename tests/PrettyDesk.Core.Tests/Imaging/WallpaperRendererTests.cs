@@ -224,6 +224,19 @@ public sealed class RenderCacheTests : IDisposable
     }
 
     [Fact]
+    public void Applied_paths_are_matched_after_normalisation()
+    {
+        var applied = Make("applied.png", 400, DateTime.UtcNow.AddDays(-30));
+        Make("other.png", 400, DateTime.UtcNow.AddDays(-1));
+        var unnormalised = _dir.File("c/../c/./applied.png");
+        var cache = new RenderCache(_dir.File("c"), () => new HashSet<string> { unnormalised, "" }, maxBytes: 500 * 1024);
+
+        cache.Evict();
+
+        File.Exists(applied).ShouldBeTrue();
+    }
+
+    [Fact]
     public void Does_nothing_below_the_cap()
     {
         var a = Make("a.png", 100, DateTime.UtcNow.AddDays(-9));
