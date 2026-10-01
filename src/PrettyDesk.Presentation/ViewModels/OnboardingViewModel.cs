@@ -19,7 +19,24 @@ public enum OnboardingStep
     Done,
 }
 
-public sealed record StyleOption(SetupStyle Style, string Title, string Help);
+public sealed partial class StyleOption : ObservableObject
+{
+    [ObservableProperty]
+    private bool _isSelected;
+
+    public StyleOption(SetupStyle style, string title, string help)
+    {
+        Style = style;
+        Title = title;
+        Help = help;
+    }
+
+    public SetupStyle Style { get; }
+
+    public string Title { get; }
+
+    public string Help { get; }
+}
 
 public sealed partial class OnboardingGameViewModel : ObservableObject
 {
@@ -103,6 +120,7 @@ public sealed partial class OnboardingViewModel : ViewModelBase
             new(SetupStyle.SurpriseMe, Strings.Onboard_StyleSurprise, Strings.Onboard_StyleSurpriseHelp),
         ];
         ShowSpotlightNote = conflicts.Detect().HasFlag(EnvironmentConflict.SpotlightOrSlideshow);
+        MarkSelectedStyle();
     }
 
     /// <summary>Raised when the user finishes; the window closes and the app minimises to the tray with a one-time tip.</summary>
@@ -182,6 +200,16 @@ public sealed partial class OnboardingViewModel : ViewModelBase
     partial void OnStepChanged(OnboardingStep value)
     {
         BackCommand.NotifyCanExecuteChanged();
+    }
+
+    partial void OnSelectedStyleChanged(SetupStyle value) => MarkSelectedStyle();
+
+    private void MarkSelectedStyle()
+    {
+        foreach (var option in StyleOptions)
+        {
+            option.IsSelected = option.Style == SelectedStyle;
+        }
     }
 
     protected override void OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs e)

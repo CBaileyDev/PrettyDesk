@@ -1,0 +1,65 @@
+<UserControl x:Class="PrettyDesk.App.Views.WallpaperPickerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:WallpaperPickerViewModel}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Row="0" Margin="0,0,0,8">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <ui:TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static res:Strings.Picker_Search}"
+               AutomationProperties.Name="{x:Static res:Strings.Picker_Search}" />
+      <Button Grid.Column="1" Margin="8,0,0,0" Content="{x:Static res:Strings.Defaults_AddImages}" Command="{Binding ImportImagesCommand}"
+              AutomationProperties.Name="{x:Static res:Strings.Defaults_AddImages}" />
+    </Grid>
+
+    <TextBlock Grid.Row="1" Style="{StaticResource MutedStyle}" Margin="0,0,0,8" Text="{Binding Notice}" Visibility="{Binding Notice, Converter={StaticResource NullToCollapsed}}" />
+
+    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+        <ItemsControl ItemsSource="{Binding Items}" Focusable="False">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="{x:Type vm:PickerItemViewModel}">
+              <Border Width="176" Margin="0,0,12,12" Style="{StaticResource CardStyle}" Padding="8">
+                <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" HorizontalContentAlignment="Stretch" AutomationProperties.Name="{Binding Title}">
+                  <StackPanel Width="150">
+                    <Grid Height="84">
+                      <Border Style="{StaticResource PlaceholderTileStyle}" />
+                      <Border CornerRadius="6" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
+                        <Border.Background>
+                          <ImageBrush ImageSource="{Binding PreviewPath, Converter={StaticResource PathToImage}, ConverterParameter=300}" Stretch="UniformToFill" />
+                        </Border.Background>
+                      </Border>
+                    </Grid>
+                    <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStyle}" TextTrimming="CharacterEllipsis" Margin="0,6,0,0" />
+                    <TextBlock Text="{Binding Group}" Style="{StaticResource MutedStyle}" FontSize="12" TextTrimming="CharacterEllipsis" />
+                  </StackPanel>
+                </CheckBox>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Style="{StaticResource MutedStyle}" HorizontalAlignment="Center" Margin="0,32,0,0" Text="{x:Static res:Strings.Picker_Empty}"
+                   Visibility="{Binding IsEmpty, Converter={StaticResource BoolToVisibility}}" />
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
+</UserControl>

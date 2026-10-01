@@ -85,6 +85,9 @@ public partial class XamlBindingTests
         problems.ShouldBeEmpty($"{fileName}:\n" + string.Join("\n", problems));
     }
 
+    private static Type? ServiceType(string name) =>
+        typeof(PrettyDesk.Presentation.Services.RunningApp).Assembly.GetTypes().FirstOrDefault(t => t.Name == name && t.IsPublic);
+
     private static Type? ResolveDesignType(string design)
     {
         var match = Regex.Match(design, @"(?:Type=)?(?:\w+:)?(?<name>\w+ViewModel|\w+State)\b");
@@ -105,7 +108,7 @@ public partial class XamlBindingTests
             }
             else if (TypeExpression().Match(dataType) is { Success: true } m)
             {
-                context = ViewModelType(m.Groups["type"].Value) ?? ClrTypeOrNull(m.Groups["type"].Value);
+                context = ViewModelType(m.Groups["type"].Value) ?? ClrTypeOrNull(m.Groups["type"].Value) ?? ServiceType(m.Groups["type"].Value);
                 if (context is null)
                 {
                     problems.Add($"DataTemplate DataType '{dataType}' is not a known type");
@@ -288,7 +291,7 @@ public partial class XamlBindingTests
     }
 
     private static Type? ClrTypeOrNull(string name) =>
-        typeof(ViewModelBase).Assembly.GetTypes().FirstOrDefault(t => t.Name == name);
+        name == "String" ? typeof(string) : typeof(ViewModelBase).Assembly.GetTypes().FirstOrDefault(t => t.Name == name);
 
     [Fact]
     public void Every_xaml_view_declares_its_design_time_view_model_when_it_binds()

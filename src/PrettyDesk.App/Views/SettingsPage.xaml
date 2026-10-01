@@ -1,5 +1,146 @@
 <UserControl x:Class="PrettyDesk.App.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Grid />
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel}">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+    <StackPanel MaxWidth="720" HorizontalAlignment="Left">
+      <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Settings_Title}" />
+
+      <!-- General -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_General}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <ui:ToggleSwitch IsChecked="{Binding General.StartWithWindows, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_StartWithWindows}" AutomationProperties.Name="{x:Static res:Strings.Settings_StartWithWindows}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_StartWithWindowsHelp}" />
+          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.RestoreOnExit, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_RestoreOnExit}" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOnExit}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOnExitHelp}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding General.ErrorMessage}" Visibility="{Binding General.HasError, Converter={StaticResource BoolToVisibility}}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Detection -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Detection}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <ui:ToggleSwitch IsChecked="{Binding Detection.Enabled, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_DetectGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectGames}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectGamesHelp}" />
+
+          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,16,0,0"><Run Text="{x:Static res:Strings.Settings_PollSeconds}" /> <Run Text="{Binding Detection.PollSecondsText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
+          <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.PollSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_PollSeconds}" />
+
+          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,0"><Run Text="{x:Static res:Strings.Settings_DetectDelay}" /> <Run Text="{Binding Detection.DetectDelayText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
+          <Slider Minimum="1" Maximum="30" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.DetectDelaySeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectDelay}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectDelayHelp}" />
+
+          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,0"><Run Text="{x:Static res:Strings.Settings_ExitGrace}" /> <Run Text="{Binding Detection.ExitGraceText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
+          <Slider Minimum="0" Maximum="120" TickFrequency="5" IsSnapToTickEnabled="True" Value="{Binding Detection.ExitGraceSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_ExitGrace}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_ExitGraceHelp}" />
+
+          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Detection.UnknownGameHints, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_UnknownGameHints}" AutomationProperties.Name="{x:Static res:Strings.Settings_UnknownGameHints}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_UnknownGameHintsHelp}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Monitors -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Monitors}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Settings_MonitorMode}" />
+          <RadioButton GroupName="MonitorMode" Margin="0,8,0,0" Content="{x:Static res:Strings.Settings_MonitorSame}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                       AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorSame}" />
+          <RadioButton GroupName="MonitorMode" Content="{x:Static res:Strings.Settings_MonitorDifferent}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay}"
+                       AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorDifferent}" />
+          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Monitors.GameOnSecondaryOnly, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" AutomationProperties.Name="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_GameOnSecondaryOnlyHelp}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Storage -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Storage}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding Storage.UsageText}" />
+          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,4"><Run Text="{x:Static res:Strings.Settings_StorageCap}" /> <Run Text="{Binding Storage.CapText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
+          <ComboBox ItemsSource="{x:Static vm:StorageSettingsViewModel.CapChoicesGb}" SelectedItem="{Binding Storage.MaxCacheGb, Mode=TwoWay}" MinWidth="120" HorizontalAlignment="Left"
+                    AutomationProperties.Name="{x:Static res:Strings.Settings_StorageCap}" />
+          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Storage.PrefetchInstalledGames, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_PrefetchGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_PrefetchGames}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_PrefetchGamesHelp}" />
+          <Button Margin="0,16,0,0" Content="{x:Static res:Strings.Settings_ClearDownloads}" Command="{Binding Storage.ClearCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_ClearDownloads}" />
+          <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="{Binding Storage.IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Settings_Working}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Storage.ResultMessage}" Visibility="{Binding Storage.ResultMessage, Converter={StaticResource NullToCollapsed}}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding Storage.ErrorMessage}" Visibility="{Binding Storage.HasError, Converter={StaticResource BoolToVisibility}}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Notifications -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Notifications}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <ui:ToggleSwitch IsChecked="{Binding Notifications.DownloadErrors, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyDownloadErrors}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyDownloadErrors}" />
+          <ui:ToggleSwitch Margin="0,12,0,0" IsChecked="{Binding Notifications.Updates, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyUpdates}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUpdates}" />
+          <ui:ToggleSwitch Margin="0,12,0,0" IsChecked="{Binding Notifications.UnknownGames, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyUnknownGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUnknownGames}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{x:Static res:Strings.Settings_NotifyHelp}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Advanced -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Advanced}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Settings_DetectionLog}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectionLogHelp}" />
+          <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
+            <ToggleButton Content="{x:Static res:Strings.Settings_DetectionLogPause}" IsChecked="{Binding Advanced.LogPaused, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLogPause}" />
+            <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Settings_DetectionLogClear}" Command="{Binding Advanced.ClearLogCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLogClear}" />
+          </StackPanel>
+          <Border Background="{DynamicResource ControlFillColorDefaultBrush}" CornerRadius="6" Padding="8" MinHeight="96">
+            <Grid>
+              <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectionLogEmpty}" Visibility="{Binding Advanced.HasLog, Converter={StaticResource InverseBoolToVisibility}}" />
+              <ListBox ItemsSource="{Binding Advanced.Log}" MaxHeight="180" Background="Transparent" BorderThickness="0" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLog}"
+                       Visibility="{Binding Advanced.HasLog, Converter={StaticResource BoolToVisibility}}">
+                <ListBox.ItemTemplate>
+                  <DataTemplate DataType="{x:Type vm:DetectionLogEntry}">
+                    <TextBlock Text="{Binding Text}" FontFamily="Cascadia Mono, Consolas" FontSize="12" Style="{StaticResource BodyStyle}" />
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+          </Border>
+
+          <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+            <Button Content="{x:Static res:Strings.Settings_OpenLogs}" Command="{Binding Advanced.OpenLogsCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_OpenLogs}" />
+            <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Settings_ExportDiagnostics}" Command="{Binding Advanced.ExportCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_ExportDiagnostics}" />
+            <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Settings_ShowInFolder}" Command="{Binding Advanced.ShowExportCommand}" Visibility="{Binding Advanced.ExportedPath, Converter={StaticResource NullToCollapsed}}"
+                    AutomationProperties.Name="{x:Static res:Strings.Settings_ShowInFolder}" />
+          </StackPanel>
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{x:Static res:Strings.Settings_ExportDiagnosticsHelp}" />
+          <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="{Binding Advanced.IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Settings_Working}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Advanced.ResultMessage}" Visibility="{Binding Advanced.ResultMessage, Converter={StaticResource NullToCollapsed}}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding Advanced.ErrorMessage}" Visibility="{Binding Advanced.HasError, Converter={StaticResource BoolToVisibility}}" />
+
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Margin="0,24,0,0" Text="{x:Static res:Strings.Settings_ResetApp}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_ResetAppHelp}" />
+          <Button Margin="0,8,0,0" Content="{x:Static res:Strings.Settings_ResetApp}" Command="{Binding Advanced.ResetCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_ResetApp}" />
+        </StackPanel>
+      </Border>
+
+      <!-- Restore original wallpaper -->
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Restore}" />
+      <Border Style="{StaticResource CardStyle}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOriginalHelp}" />
+          <Button Margin="0,12,0,0" Content="{x:Static res:Strings.Settings_RestoreOriginal}" Command="{Binding Restore.RestoreCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOriginal}" />
+          <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="{Binding Restore.IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Settings_Restoring}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Restore.ResultMessage}" Visibility="{Binding Restore.ResultMessage, Converter={StaticResource NullToCollapsed}}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding Restore.ErrorMessage}" Visibility="{Binding Restore.HasError, Converter={StaticResource BoolToVisibility}}" />
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>

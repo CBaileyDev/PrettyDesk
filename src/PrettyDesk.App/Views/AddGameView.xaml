@@ -1,0 +1,86 @@
+<UserControl x:Class="PrettyDesk.App.Views.AddGameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:svc="clr-namespace:PrettyDesk.Presentation.Services;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             xmlns:views="clr-namespace:PrettyDesk.App.Views"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:AddGameViewModel}"
+             Loaded="OnLoaded">
+  <UserControl.Resources>
+    <DataTemplate DataType="{x:Type vm:PickerState}">
+      <views:WallpaperPickerView DataContext="{Binding Content}" />
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+      <StackPanel MaxWidth="640" HorizontalAlignment="Left">
+        <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Add_Title}" />
+        <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Add_Intro}" />
+
+        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Add_Running}" />
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ui:TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static res:Strings.Add_Search}" AutomationProperties.Name="{x:Static res:Strings.Add_Search}" />
+          <Button Grid.Column="1" Margin="8,0,0,0" Content="{x:Static res:Strings.Add_Refresh}" Command="{Binding RefreshCommand}" AutomationProperties.Name="{x:Static res:Strings.Add_Refresh}" />
+        </Grid>
+        <ListBox ItemsSource="{Binding RunningApps}" SelectedItem="{Binding SelectedApp, Mode=TwoWay}" MaxHeight="220" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Add_Running}">
+          <ListBox.ItemTemplate>
+            <DataTemplate DataType="{x:Type svc:RunningApp}">
+              <StackPanel Margin="4,4" AutomationProperties.Name="{Binding Title}">
+                <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStyle}" TextTrimming="CharacterEllipsis" />
+                <TextBlock Text="{Binding ExeName}" Style="{StaticResource MutedStyle}" FontSize="12" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{x:Static res:Strings.Add_RunningEmpty}" Visibility="{Binding HasRunningApps, Converter={StaticResource InverseBoolToVisibility}}" />
+        <Button Margin="0,8,0,0" Content="{x:Static res:Strings.Add_BrowseExe}" Command="{Binding BrowseExeCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Add_BrowseExe}" />
+
+        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Add_DisplayName}" />
+        <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{x:Static res:Strings.Add_DisplayName}" />
+        <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Visibility="{Binding ExeName, Converter={StaticResource NullToCollapsed}}">
+          <Run Text="{x:Static res:Strings.Add_Exe}" /> <Run Text="{Binding ExeName, Mode=OneWay}" FontWeight="SemiBold" />
+        </TextBlock>
+
+        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Add_Wallpapers}" />
+        <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Add_WallpapersHelp}" />
+        <Button Margin="0,8,0,0" Content="{x:Static res:Strings.Add_PickFromCollections}" Command="{Binding OpenPickerCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Add_PickFromCollections}" />
+        <TextBlock Style="{StaticResource BodyStyle}" Margin="0,8,0,0" Visibility="{Binding HasWallpapers, Converter={StaticResource BoolToVisibility}}">
+          <Run Text="{Binding Wallpapers.Count, Mode=OneWay}" /> <Run Text="{x:Static res:Strings.Common_On}" />
+        </TextBlock>
+
+        <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,16,0,0" Text="{Binding ValidationMessage}" Visibility="{Binding ValidationMessage, Converter={StaticResource NullToCollapsed}}" />
+
+        <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
+          <Button Content="{x:Static res:Strings.Add_Save}" Command="{Binding SaveCommand}" AutomationProperties.Name="{x:Static res:Strings.Add_Save}" />
+          <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
+        </StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+
+    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource ApplicationBackgroundBrush}">
+      <Grid Margin="24">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Picker_Title}" />
+        <ContentControl Grid.Row="1" Content="{Binding Picker}" Focusable="False" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+          <Button Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
+          <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -96,13 +96,15 @@ public class OnboardingViewModelTests
     }
 
     [Fact]
-    public void Choosing_a_style_selects_it()
+    public void Choosing_a_style_selects_it_and_highlights_exactly_that_option()
     {
         var vm = Vm();
+        vm.StyleOptions.Single(o => o.IsSelected).Style.ShouldBe(SetupStyle.SurpriseMe);
 
         vm.ChooseStyleCommand.Execute(vm.StyleOptions.First(o => o.Style == SetupStyle.MatteBlack));
 
         vm.SelectedStyle.ShouldBe(SetupStyle.MatteBlack);
+        vm.StyleOptions.Single(o => o.IsSelected).Style.ShouldBe(SetupStyle.MatteBlack);
     }
 
     [Fact]

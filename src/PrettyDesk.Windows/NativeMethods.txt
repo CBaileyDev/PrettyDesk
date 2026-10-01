@@ -41,3 +41,6 @@ DefWindowProcW
 DestroyWindow
 RegNotifyChangeKeyValue
 GetModuleHandleW
+GetDpiForSystem
+GetSystemMetricsForDpi
+SYSTEM_METRICS_INDEX
