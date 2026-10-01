@@ -1,0 +1,170 @@
+using PrettyDesk.Core.Catalog;
+
+namespace PrettyDesk.Core.Abstractions;
+
+/// <summary>Enumerates processes without opening them (Toolhelp snapshot on Windows).</summary>
+public interface IProcessSource
+{
+    IReadOnlyList<ProcessInfo> Snapshot();
+}
+
+/// <summary>
+/// Lazily fetches expensive facts about a candidate process. Implementations must never request more than
+/// PROCESS_QUERY_LIMITED_INFORMATION and must return null (not throw) when access is denied (FR-DET-3).
+/// </summary>
+public interface IProcessDetailsSource
+{
+    string? TryGetImagePath(int pid);
+
+    string? TryGetMainWindowTitle(int pid);
+}
+
+public interface IForegroundSource
+{
+    ForegroundInfo? Current { get; }
+
+    event Action? Changed;
+}
+
+/// <summary>Steam's <c>RunningAppID</c> value (0 when nothing runs).</summary>
+public interface ISteamRunningAppSource
+{
+    uint CurrentAppId { get; }
+
+    event Action? Changed;
+}
+
+public interface IMonitorProvider
+{
+    IReadOnlyList<MonitorInfo> GetMonitors();
+
+    /// <summary>Raised (already debounced by the implementation or consumer) on any display change (FR-MON-4).</summary>
+    event Action? Changed;
+}
+
+public interface IWallpaperSetter
+{
+    /// <summary>Sets <paramref name="path"/> on a monitor with Fill positioning (FR-APPLY-1).</summary>
+    Task SetAsync(string monitorId, string path, CancellationToken cancellationToken = default);
+
+    Task<string?> GetAsync(string monitorId, CancellationToken cancellationToken = default);
+}
+
+/// <summary>Facts about the Windows environment that influence applying (FR-WP-8/9, FR-APPLY-7).</summary>
+public interface ISystemState
+{
+    bool IsLightTheme { get; }
+
+    bool IsBatterySaverOn { get; }
+
+    /// <summary>True when policy forbids changing the wallpaper (FR-APPLY-7).</summary>
+    bool IsWallpaperPolicyLocked { get; }
+
+    event Action? Changed;
+}
+
+public sealed record InstalledGame(string Source, string InstallPath, string? ExeHint, uint? SteamAppId, string DisplayName);
+
+/// <summary>Local, read-only discovery of installed games (FR-DET-9).</summary>
+public interface IInstalledGameScanner
+{
+    IReadOnlyList<InstalledGame> Scan();
+}
+
+/// <summary>Gives the orchestrator access to what is on disk and lets it ask for more (FR-CON-4).</summary>
+public interface IContentLibrary
+{
+    /// <summary>All wallpaper ids that belong to a pack according to the catalog (downloaded or not).</summary>
+    IReadOnlyList<string> GetWallpaperIds(string packId);
+
+    /// <summary>Returns the asset when at least one variant is on disk, otherwise null.</summary>
+    WallpaperAsset? TryGetAsset(string wallpaperId);
+
+    /// <summary>Starts a background download of the pack variants needed by the monitors, if not already running.</summary>
+    void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors);
+
+    event Action<string>? PackChanged;
+}
+
+public interface IWallpaperRenderer
+{
+    /// <summary>Renders (or fetches from cache) an exact-pixel PNG for the monitor and returns its path (FR-APPLY-2/3).</summary>
+    Task<string> RenderAsync(WallpaperAsset asset, MonitorInfo monitor, CancellationToken cancellationToken = default);
+}
+
+/// <summary>Immutable-by-convention settings snapshots; mutate only through <see cref="Update"/> (SPEC §5.5: no locks).</summary>
+public interface ISettingsProvider
+{
+    Settings.AppSettings Current { get; }
+
+    event Action? Changed;
+
+    /// <summary>Clones the current settings, applies the change, swaps the snapshot, persists, and raises <see cref="Changed"/>.</summary>
+    void Update(Action<Settings.AppSettings> mutate);
+}
+
+public interface ICatalogProvider
+{
+    CatalogDocument Current { get; }
+
+    event Action? Changed;
+}
+
+/// <summary>Snapshots the user's original wallpaper before the very first apply (FR-RESTORE-1).</summary>
+public interface IWallpaperBackup
+{
+    /// <summary>Idempotent: does nothing when a backup already exists.</summary>
+    Task EnsureBackupAsync(CancellationToken cancellationToken = default);
+}
+
+/// <summary>What the UI needs from the orchestrator: observe status and issue the manual controls (FR-WP-7, FR-WP-10).</summary>
+public interface IWallpaperController
+{
+    Orchestration.OrchestratorStatus Status { get; }
+
+    event Action<Orchestration.OrchestratorStatus>? StatusChanged;
+
+    void NextWallpaper();
+
+    void Pause(TimeSpan? duration);
+
+    void Resume();
+
+    void Preview(string wallpaperId, TimeSpan? duration = null);
+
+    void CancelPreview();
+}
+
+/// <summary>What the UI needs from the content library: thumbnails, pack status, user images, storage (FR-CON-6/7).</summary>
+public interface IContentBrowser
+{
+    Content.PackProgress GetPackState(string packId);
+
+    /// <summary>A small image for the wallpaper (thumbnail, else the smallest local variant), or null when nothing is on disk.</summary>
+    string? GetPreviewImagePath(string wallpaperId);
+
+    IReadOnlyList<Content.UserImage> ListUserImages();
+
+    Content.ImportResult ImportUserImage(string sourcePath);
+
+    bool RemoveUserImage(string id);
+
+    long StorageUsageBytes();
+
+    /// <summary>Deletes downloaded packs (keeping the given ones) and returns the bytes freed.</summary>
+    long ClearDownloaded(IReadOnlySet<string>? keepPackIds = null);
+
+    void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors);
+
+    event Action<Content.PackProgress>? ProgressChanged;
+
+    event Action<string>? PackChanged;
+
+    event Action<string, Exception>? DownloadFailed;
+}
+
+/// <summary>Live detection feed for Settings → Advanced. Displayed only, never persisted (SPEC §7).</summary>
+public interface IDetectionFeed
+{
+    event Action<Detection.DetectionObservation>? Observed;
+}

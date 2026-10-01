@@ -1,0 +1,42 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+
+[*.{json,yml,yaml,xml,csproj,props,targets,xaml,resx}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.cs]
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_using_directive_placement = outside_namespace:warning
+dotnet_sort_system_directives_first = true
+csharp_style_var_for_built_in_types = true:suggestion
+dotnet_style_qualification_for_field = false:warning
+dotnet_naming_rule.private_static_fields_pascal.symbols = private_static_fields
+dotnet_naming_rule.private_static_fields_pascal.style = pascal_case
+dotnet_naming_rule.private_static_fields_pascal.severity = warning
+dotnet_naming_symbols.private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_fields.required_modifiers = static
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+dotnet_naming_rule.private_fields_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_underscore.style = underscore_camel
+dotnet_naming_rule.private_fields_underscore.severity = warning
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_style.underscore_camel.required_prefix = _
+dotnet_naming_style.underscore_camel.capitalization = camel_case
+# Library code uses ConfigureAwait semantics at the call sites that need it; the app has a dispatcher.
+dotnet_diagnostic.CA2007.severity = none
+# Localization is handled through resources in the App project (NFR-11); Core logs/exceptions are developer-facing.
+dotnet_diagnostic.CA1303.severity = none
+# The app is C#-only: VB reserved words (e.g. Resume) are not a concern for member names.
+dotnet_diagnostic.CA1716.severity = none

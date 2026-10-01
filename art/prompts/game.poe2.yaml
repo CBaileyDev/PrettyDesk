@@ -1,0 +1,184 @@
+pack: game.poe2
+kind: game
+title: "Path of Exile 2"
+inspiration:
+  genre: "grim dark fantasy"
+  setting: "ruined ancient temples, cursed swamps, a blood-red moon, torchlit stone"
+  palette: ["#8A1C1C", "#C2A878", "#2F3A33", "#0B0A09"]
+  motifs: [a blood moon over ruins, a torchlit stair into the dark, a drowned temple]
+  avoid: [game title, characters, the logo, text, UI or HUD elements, logos]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a grim dark-fantasy world, with no
+  people. Think ruined ancient temples, cursed swamps with dead trees, a blood-red moon and stone stairs
+  descending into torchlit darkness. The palette is blood red (#8A1C1C), weathered bone (#C2A878), swamp
+  green-black (#2F3A33) and near-black (#0B0A09). The look is gritty painterly concept art with heavy shadow,
+  rich texture and a single warm light source. No creatures, no figures, no emblems, no text. Keep the left edge
+  and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: poe2.hero-01
+    title: "Blood Moon over the Ruins"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [moon, ruins, swamp]
+    accent: "#8A1C1C"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A huge blood-red moon rises behind the broken columns and collapsed
+        arches of an ancient temple on a swamp island. The red light paints the stone in deep crimson and picks
+        out dead trees reflected in black water. Thin mist coils between the ruins, and a few torch-like embers
+        glow faintly on the temple steps.
+        Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+        Palette: #8A1C1C, #C2A878, #2F3A33 with an accent #0B0A09. Mood: ominous, grim, majestic.
+        Composition: the blood moon framed by the broken columns sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark swamp water and reeds in deep green-black shadow. New area on the right: more broken columns recede
+        into misty dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
+        black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: poe2.minimal-01
+    title: "Single Red Moon"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, moon, swamp]
+    accent: "#8A1C1C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single large dim blood-red moon hangs in a vast, smooth sky that
+        fades from deep red-black at the horizon to pure black at the top, over a flat, dark, still swamp. Its
+        soft red reflection lies in the black water, broken by one small, dead tree silhouette at the right.
+        Nothing else is in the frame.
+        Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+        Palette: #0B0A09, #2A1010, #8A1C1C with a bone #C2A878. Mood: ominous, quiet, stark.
+        Composition: the moon and its reflection sits about 58–74% across and 35–65% down; more than 70% of the
+        image is empty dark sky and water. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty red-black sky, completely smooth and clean. New area on the right: the swamp continues into
+        dark mist with a faint far dead tree. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moon hangs at about 38% of the height in the upper center, with its reflection in the
+        black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: poe2.mood-01
+    title: "Torchlit Stair into the Dark"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [stair, torch, dark]
+    accent: "#8A1C1C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide stone stair of worn steps descends into pitch black beneath a
+        carved archway, lit only by two flickering torches on the walls. Warm orange light glows on the nearest
+        steps and fades quickly into deep shadow. The stone is cracked and mossy, and a thin mist curls at the
+        bottom.
+        Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+        Palette: #0B0A09, #2F3A33, #8A5A28 with a flame #E0883A. Mood: tense, quiet, ancient.
+        Composition: the nearest steps and the torchlight on them sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark cracked stone wall with faint moss, low detail. New area on the right: the stair's wall continues
+        into pitch dark with a faint far torch. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The stair runs down through the center, with the torchlight at about 55% of the height and
+        darkness below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: poe2.alt-01
+    title: "Drowned Temple at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [temple, swamp, dawn]
+    accent: "#8A1C1C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A half-drowned ancient temple in a calm, misty swamp at dawn, its
+        stone arches and steps rising from pale green-grey water. Soft cream light filters through the mist, and
+        gentle ripples spread around the pillars. Twisted pale trees line the far edge, and the sky is a muted
+        rose and bone color.
+        Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+        Palette: #EEE6D4, #C2A878, #8A9A8A with a rose #B58A82. Mood: quiet, eerie, serene.
+        Composition: the arched temple front and its reflection sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth pale green-grey water and mist, low detail. New area on the right: the swamp continues with a
+        faint far pillar in mist. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The temple front rises at about 48% of the height in the center, with its reflection in the
+        water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

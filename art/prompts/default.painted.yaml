@@ -1,0 +1,363 @@
+pack: default.painted
+kind: default
+title: "Painted Landscapes"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Painted Landscapes. Every image is an
+  original oil painting with visible, confident brushwork and palette-knife impasto: thick ridges of paint
+  catching light, soft glazes in the skies, and a harmonious, slightly muted palette of ochre, sage, dusty blue,
+  cream and clay. The paintings are calm and uncluttered, with generous areas of softly worked color that read
+  as art rather than photographs. Skies and large areas are smooth and banding-free at a distance. No text, no
+  signatures, no frames or borders, and no people. Keep the left edge and bottom edge quiet and low-detail for
+  desktop icons and the taskbar.
+wallpapers:
+  - id: pa-01
+    title: "Impasto Clouds"
+    role: default
+    tone: mid
+    setupMatch: [wood, pastel]
+    tags: [clouds, sky, impasto]
+    starter: true
+    accent: "#D9B98A"
+    focal: { x: 0.64, y: 0.40 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Towering cumulus clouds are built from thick, buttery strokes of
+        cream, pale gold and soft blue-grey over a deep cerulean sky. A low band of sage-green meadow runs along
+        the bottom of the canvas in broad horizontal strokes. Light falls from the upper right, so the sunlit
+        edges of the clouds stand in high relief of raised paint.
+        Style: original oil painting with visible brushwork and palette-knife impasto, soft glazes,
+        gallery-quality canvas texture.
+        Palette: #EFE4CB, #D9B98A, #6E8EA8 with a deep sky blue #3F6389. Mood: airy, bold, uplifting.
+        Composition: the brightest cloud mass and its raised paint ridges sits about 54–74% across and 28–52%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm sweep of blue sky glazed in thin, soft strokes with only a hint of cloud. New area on the right:
+        the clouds drift apart into thinner streaks of cream over the blue, above the faint green meadow. Same
+        lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored objects,
+        no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The clouds tower vertically with the brightest mass at about 38% of the height, above a
+        narrow green meadow at the bottom. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-02
+    title: "Palette-Knife Sea"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb, wood]
+    tags: [sea, waves, knife]
+    starter: false
+    accent: "#4E7A8E"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A heavy swell of deep teal and navy sea, laid down in thick
+        palette-knife strokes, rolls toward the viewer. White and pale green foam is dragged across the wave
+        crests in raised ridges of paint, and a gap in storm-grey clouds above lets a band of cool silver light
+        fall on the water. The horizon is a thin, soft line near the upper third.
+        Style: original oil painting, thick palette-knife impasto, expressive and weighty.
+        Palette: #1B3340, #35677A, #7FA6B3 with a foam white #E8EFEE. Mood: powerful, moody, rhythmic.
+        Composition: the lit crest of the central wave and its foam ridges sits about 55–75% across and 40–60%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, softly glazed water with only subtle swell shapes, low in detail. New area on the right: the swell
+        rolls on beneath a thinner break of silver light in the clouds. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sea rolls up from the bottom with the lit crest at about 55% of the height and storm
+        clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-03
+    title: "Wheat Field Afternoon"
+    role: default
+    tone: light
+    setupMatch: [wood, pastel]
+    tags: [wheat, field, impressionist]
+    starter: false
+    accent: "#D8B450"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide field of ripe wheat is rendered in short, quick, broken dabs
+        of gold, ochre and warm green, swaying in a light breeze toward a line of soft blue trees on the
+        horizon. A pale cream-blue sky with a few loose clouds spreads above. A faint dirt track curves gently
+        through the wheat toward the distance.
+        Style: impressionist-inspired original oil painting, broken color, quick visible strokes, sunlit warmth.
+        Palette: #F1E3B4, #D8B450, #8AA060 with a soft sky blue #AFC6D8. Mood: warm, breezy, sunlit.
+        Composition: the golden wheat heads in the middle distance and the curve of the track sits about 56–76%
+        across and 40–64% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft, loose strokes of golden wheat fading into warm haze, low in detail. New area on the right: the
+        wheat field continues to a faint line of blue trees under a broad pale sky. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The wheat fills the lower 60% with the track curving up to about 55% of the height under a
+        pale sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-04
+    title: "Mountains at Dusk"
+    role: default
+    tone: dark
+    setupMatch: [black, wood]
+    tags: [mountains, dusk, glaze]
+    starter: false
+    accent: "#C48A6A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Large simplified mountain forms in layered blue, violet and deep
+        plum are painted in broad flat strokes, each ridge a slightly lighter value than the last. The sky glows
+        in thin, smooth glazes of apricot, rose and pale gold behind them, with a few soft strokes of cloud. A
+        calm dark foreground band suggests a quiet valley.
+        Style: original oil painting with visible brushwork and palette-knife impasto, soft glazes,
+        gallery-quality canvas texture.
+        Palette: #2B2A4A, #5B5A8C, #C48A6A with a pale gold #EBC98D. Mood: calm, dreamy, contemplative.
+        Composition: the glowing sky band behind the farthest ridge sits about 54–74% across and 37–59% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark violet foothills in soft, thin strokes, low in contrast. New area on the right: the ridges continue
+        with one tall peak glowing at its edge, under fading apricot sky. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The mountain ridges stack in the lower half with the glow at about 50% of the height and a
+        gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-05
+    title: "Poppy Meadow Wash"
+    role: default
+    tone: mid
+    setupMatch: [pastel, wood]
+    tags: [meadow, flowers, soft]
+    starter: false
+    accent: "#D9806A"
+    focal: { x: 0.50, y: 0.54 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A loose, soft meadow in sage and olive, dotted with quick dabs of
+        coral poppy red and cream, leads to a gentle line of pale blue hills. The foreground strokes are thick
+        and tall, while the distance dissolves into thin, light washes. A creamy sky with a faint peach glow
+        sits above.
+        Style: impressionist-inspired original oil painting, loose dabs of color, soft and fresh.
+        Palette: #E9E3C6, #A3B27E, #D9806A with a pale hill blue #A9BFCF. Mood: gentle, fresh, cheerful.
+        Composition: the densest cluster of poppy dabs, a centered and symmetrical composition, sits about
+        40–60% across and 42–66% down; the flowers spread evenly to both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft sage grass in thin strokes with only a few faint flower dabs. New area on the right: soft sage
+        grass in thin strokes, with scattered poppy dabs trailing off toward the hills. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The meadow fills the lower 65% with the poppy cluster at about 60% of the height and pale
+        hills and sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-06
+    title: "Harbor in Morning Haze"
+    role: default
+    tone: light
+    setupMatch: [white, wood, pastel]
+    tags: [harbor, haze, boats]
+    starter: false
+    accent: "#A8B8C4"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet harbor at first light, painted in soft, wet-into-wet strokes
+        of pearl grey, pale blue and cream. The silhouettes of a few small boats and mooring posts float on
+        still water, their reflections smeared in vertical strokes. A thick morning haze hides the shore, with
+        only a faint pink glow where the sun will rise.
+        Style: original oil painting with visible brushwork and palette-knife impasto, soft glazes,
+        gallery-quality canvas texture.
+        Palette: #F0EBE6, #C7D2D8, #A8B8C4 with a soft rose glow #E3B9AB. Mood: calm, misty, quiet.
+        Composition: the cluster of small boats and their smeared reflections sits about 55–75% across and
+        38–62% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people, readable boat names.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pearl-grey haze over still water, low in detail and contrast. New area on the right: the harbor
+        fades into pale haze with a very faint line of distant masts. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The boats float in the lower center at about 58% of the height, over still water with pale
+        haze rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-07
+    title: "Birch Grove in Autumn"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [birch, autumn, forest]
+    starter: false
+    accent: "#D49A4A"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A grove of slim white birch trunks stands in warm autumn light,
+        painted with long vertical strokes of cream and grey, with quick dark notches. Behind them hang masses
+        of gold, rust and olive foliage in thick dabs, with a patch of pale blue sky glowing between the leaves.
+        The ground is a carpet of broken ochre strokes.
+        Style: original oil painting with visible brushwork and palette-knife impasto, soft glazes,
+        gallery-quality canvas texture.
+        Palette: #F0E2C4, #D49A4A, #8A7A3E with a rust accent #B5623A. Mood: warm, golden, restful.
+        Composition: the brightest trunk cluster against the golden foliage sits about 55–77% across and 36–60%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft ochre foliage dissolving into loose, low-contrast strokes. New area on the right: the grove
+        continues, with a few thin trunks and a bright patch of pale sky. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The trunks rise vertically through the whole frame, with the golden foliage band at about 38%
+        of the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pa-08
+    title: "Lake Reflections at Sunset"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb, wood]
+    tags: [lake, sunset, reflection]
+    starter: false
+    accent: "#D98A5A"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm lake at sunset, painted in smooth horizontal strokes, mirrors
+        a sky of layered amber, coral and deep violet clouds. A dark line of distant pines marks the far shore
+        at the center. The reflected colors in the water are slightly softer and broken by thin, ragged strokes
+        that suggest tiny ripples.
+        Style: original oil painting with visible brushwork and palette-knife impasto, soft glazes,
+        gallery-quality canvas texture.
+        Palette: #2D2547, #8E4E6A, #D98A5A with a pale gold #F0C98A. Mood: peaceful, glowing, meditative.
+        Composition: the glowing center of the sky where it meets the dark pines, a centered and symmetrical
+        composition, sits about 40–60% across and 38–62% down; the sky and reflection are balanced on both sides
+        so the image holds with hidden icons. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, expressive brushstroke and paint-ridge detail on the
+        focal area; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, signatures,
+        canvas edges, frames, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        violet-and-coral cloud strokes fading into dusk, low in detail. New area on the right: violet-and-coral
+        cloud strokes fading into dusk, with a faint glow near the shore. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pine line sits at about 50% of the height, with the colorful sky above and its broken
+        reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

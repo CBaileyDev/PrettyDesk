@@ -1,0 +1,184 @@
+pack: game.osu
+kind: game
+title: "osu!"
+inspiration:
+  genre: "abstract rhythm-game art"
+  setting: "glowing concentric circles, pink gradients, beat pulses"
+  palette: ["#FF66AA", "#FFFFFF", "#2A2A3A", "#111118"]
+  motifs: [concentric light rings, pulse waves in the dark, a soft pink aura]
+  avoid: [game title, the logo composition, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by abstract rhythm-game visuals.
+  Think glowing concentric circles, thin ripples of light expanding in the dark, soft pink gradients and gentle
+  beat pulses, like sound made visible. The palette is bright pink (#FF66AA), white (#FFFFFF), charcoal
+  (#2A2A3A) and near-black (#111118). The look is clean abstract digital art with glowing edges, soft bloom and
+  smooth gradients. No objects, no figures, no letters or numbers, no emblems, no text. Keep the left edge and
+  the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: osu.hero-01
+    title: "Pulse Rings in the Dark"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rings, pulse, abstract]
+    accent: "#FF66AA"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A set of thin, glowing pink and white concentric rings ripples
+        outward from a bright center in a deep charcoal-black space, each ring slightly fainter and wider than
+        the one before. Soft bloom surrounds the brightest rings, and a gentle pink aura fills the center. Tiny
+        sparkles of light drift along the ripples.
+        Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+        Palette: #FF66AA, #FFFFFF, #2A2A3A with an accent #111118. Mood: rhythmic, glowing, hypnotic.
+        Composition: the bright center and the first few rings sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp thin glowing lines; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark charcoal space with a faint outer ring and no detail. New area on the right: the rings fade into
+        dark with a trace of pink aura. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rings radiate from the center at about 45% of the height, widening to fill the frame.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: osu.minimal-01
+    title: "Single Glowing Circle"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, ring, dark]
+    accent: "#FF66AA"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single thin ring of soft pink light hangs in the middle of a vast,
+        smooth, near-black charcoal gradient, with a gentle bloom and a very faint second ring beyond it. The
+        inside of the ring is a slightly lighter dark with a hint of pink haze. Everything else is clean, empty
+        darkness.
+        Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+        Palette: #111118, #2A2A3A, #FF66AA with a white #FFFFFF. Mood: quiet, focused, minimal.
+        Composition: the ring and its bloom sits about 58–74% across and 35–65% down; more than 70% of the image
+        is empty dark space. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+        go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; smooth glowing gradients; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty near-black charcoal gradient, completely smooth, kept calm and low in detail. New area on the
+        right: a faint, wide, barely visible outer ring. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ring hangs at about 45% of the height in the center, with empty dark space around it.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: osu.mood-01
+    title: "Soft Pink Aura"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [aura, ripples, soft]
+    accent: "#FF66AA"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A soft aura of pink light rises from the bottom of a deep
+        charcoal-violet gradient, with a few faint concentric ripples spreading through it like slow beats. The
+        edges of the aura are feathered and blurred, with a very fine glow and tiny drifting light motes. The
+        top of the frame fades into near-black.
+        Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+        Palette: #111118, #2A2A3A, #7A3A68 with a pink #FF66AA. Mood: calm, dreamy, soft.
+        Composition: the center of the aura and the faint ripples sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth glowing gradients; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark charcoal-violet space with a hint of aura. New area on the right: the aura fades to dark with a few
+        faint ripples. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The aura rises from the bottom to about 55% of the height in the center, with ripples
+        spreading above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: osu.alt-01
+    title: "Light Ripples"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [ripples, light, abstract]
+    accent: "#FF66AA"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pale white-pink background with large, soft concentric ripples
+        spreading from a luminous center, each ring a thin line of rose and pale lilac. A gentle shadow gives
+        them a cool, quiet depth, and tiny pink light motes float across the surface. The mood is airy and
+        fresh.
+        Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+        Palette: #FFF5FA, #FFD0E4, #FF66AA with a lilac #D9C8F0. Mood: airy, soft, fresh.
+        Composition: the luminous center and its nearest ripples sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp thin lines on a smooth gradient; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a soft pale pink-white surface, almost empty, kept calm and low in detail. New area on the right: the
+        ripples fade out into a pale lilac haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ripples spread from the center at about 45% of the height, widening to fill the frame.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

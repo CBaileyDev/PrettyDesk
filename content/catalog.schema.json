@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CBaileyDev/PrettyDesk/content/catalog.schema.json",
+  "title": "PrettyDesk catalog (schemaVersion 1)",
+  "description": "Structure of catalog.src.json / catalog.json (SPEC 6.2). Semantic rules (unique ids, pack references, safe paths) are enforced again by PrettyDesk.Core.Catalog.CatalogValidator when the catalog is signed.",
+  "type": "object",
+  "required": ["schemaVersion", "catalogVersion", "minAppVersion", "contentBaseUrl", "excludeExeNames", "games", "packs", "collections", "disclaimer"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "catalogVersion": { "type": "string", "pattern": "^\\d{4}\\.\\d{2}\\.\\d{2}\\.\\d+$" },
+    "minAppVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(\\.\\d+)?$" },
+    "contentBaseUrl": { "type": "string", "pattern": "^(https://.+/)?$", "description": "Empty until the content host exists; must be https and end in a slash when set." },
+    "excludeExeNames": { "type": "array", "items": { "type": "string", "pattern": "^[^\\\\/:*?\"<>|]+\\.exe$" }, "uniqueItems": true },
+    "disclaimer": { "type": "string", "minLength": 20 },
+    "games": { "type": "array", "items": { "$ref": "#/$defs/game" } },
+    "packs": { "type": "array", "items": { "$ref": "#/$defs/pack" } },
+    "collections": { "type": "array", "items": { "$ref": "#/$defs/collection" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "tone": { "enum": ["dark", "light", "mid"] },
+    "setupMatch": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["black", "white", "wood", "pastel", "rgb"] } },
+    "exeName": { "type": "string", "pattern": "^[^\\\\/:*?\"<>|]+\\.exe$" },
+    "fileRef": {
+      "type": "object",
+      "required": ["path", "w", "h", "bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "pattern": "^(?!.*\\.\\.)[A-Za-z0-9][A-Za-z0-9._/!-]*$" },
+        "w": { "type": "integer", "minimum": 1 },
+        "h": { "type": "integer", "minimum": 1 },
+        "bytes": { "type": "integer", "minimum": 1, "maximum": 8388608 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "game": {
+      "type": "object",
+      "required": ["id", "displayName", "detection", "packId", "addedIn"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "displayName": { "type": "string", "minLength": 1 },
+        "packId": { "type": "string", "pattern": "^game\\.[a-z0-9][a-z0-9._-]*$" },
+        "addedIn": { "type": "string" },
+        "verified": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "ISO date the owner confirmed the rules in the detection log." },
+        "detection": {
+          "type": "object",
+          "required": ["exeNames", "steamAppIds", "pathContains", "windowTitleContains", "excludeExeNames"],
+          "additionalProperties": false,
+          "properties": {
+            "exeNames": { "type": "array", "items": { "$ref": "#/$defs/exeName" }, "uniqueItems": true },
+            "steamAppIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+            "pathContains": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+            "windowTitleContains": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+            "excludeExeNames": { "type": "array", "items": { "$ref": "#/$defs/exeName" } }
+          },
+          "anyOf": [
+            { "properties": { "exeNames": { "minItems": 1 } } },
+            { "properties": { "steamAppIds": { "minItems": 1 } } }
+          ]
+        }
+      }
+    },
+    "wallpaper": {
+      "type": "object",
+      "required": ["id", "title", "tone", "tags", "setupMatch", "focal", "variants"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string", "minLength": 1 },
+        "role": { "enum": ["default", "hero", "minimal", "mood", "alt"] },
+        "tone": { "$ref": "#/$defs/tone" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "setupMatch": { "$ref": "#/$defs/setupMatch" },
+        "accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "starter": { "type": "boolean" },
+        "focal": {
+          "type": "object",
+          "required": ["x", "y"],
+          "additionalProperties": false,
+          "properties": { "x": { "type": "number", "minimum": 0, "maximum": 1 }, "y": { "type": "number", "minimum": 0, "maximum": 1 } }
+        },
+        "thumb": { "$ref": "#/$defs/fileRef" },
+        "variants": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "enum": ["16x9", "16x10", "3x2", "21x9", "32x9", "9x16"] },
+          "additionalProperties": { "$ref": "#/$defs/fileRef" }
+        }
+      }
+    },
+    "pack": {
+      "type": "object",
+      "required": ["id", "kind", "version", "title", "wallpapers"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["game", "default"] },
+        "version": { "type": "integer", "minimum": 0 },
+        "title": { "type": "string", "minLength": 1 },
+        "wallpapers": { "type": "array", "items": { "$ref": "#/$defs/wallpaper" } }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "required": ["id", "packId", "title", "setupMatch", "tone", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "packId": { "$ref": "#/$defs/id" },
+        "title": { "type": "string", "minLength": 1 },
+        "setupMatch": { "$ref": "#/$defs/setupMatch" },
+        "tone": { "$ref": "#/$defs/tone" },
+        "order": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

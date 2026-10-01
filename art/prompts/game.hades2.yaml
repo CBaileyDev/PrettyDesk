@@ -1,0 +1,181 @@
+pack: game.hades2
+kind: game
+title: "Hades II"
+inspiration:
+  genre: "bold painterly Greek-myth underworld"
+  setting: "a moonlit crossroads, starlit temples, a purple-green mystic glow"
+  palette: ["#7B5EA7", "#3FB27F", "#E0B354", "#0E0B16"]
+  motifs: [a moon over a ruined temple, a glowing crossroads, a starfield over a dark sea]
+  avoid: [game title, characters, the logo, text, UI or HUD elements, logos]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a bold, painterly myth-and-moon
+  world, with no people. Think a ruined columned temple under a huge moon, a glowing crossroads in the dark,
+  starlit marble stairs and a dark sea under a starfield, in a flat, stylized illustration with strong shapes,
+  rich hand-painted textures and a purple-green mystic glow. The palette is violet (#7B5EA7), jade green
+  (#3FB27F), antique gold (#E0B354) and night black (#0E0B16). No figures, no creatures, no emblems, no text.
+  Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: hades2.hero-01
+    title: "Moon over the Ruined Temple"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [moon, temple, myth]
+    accent: "#7B5EA7"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A huge pale moon rises behind a ruined temple of tall fluted marble
+        columns and broken steps, its light spilling a violet glow over the stones. Jade-green flames flicker in
+        two bowls on the steps, and glowing motes drift up like spirits. The sky is a deep violet-black with a
+        scatter of golden stars, and the ground is dark, polished stone.
+        Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+        Palette: #7B5EA7, #3FB27F, #E0B354 with an accent #0E0B16. Mood: mythic, mysterious, glowing.
+        Composition: the moon framed by the columns and the green flames sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark marble steps in violet shadow, low in detail. New area on the right: more broken columns recede
+        into the dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
+        steps below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hades2.minimal-01
+    title: "Glowing Crossroads"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, crossroads, void]
+    accent: "#7B5EA7"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single circular stone platform where four plain paths meet glows
+        with a soft jade-green light at its center, in the middle of a vast, smooth, dark violet-black void.
+        Thin golden motes float above it. Nothing else is in the frame, and the paths fade into darkness.
+        Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+        Palette: #0E0B16, #241A3A, #7B5EA7 with a glow #3FB27F. Mood: quiet, mystic, calm.
+        Composition: the glowing center of the crossroads sits about 58–74% across and 36–64% down; more than
+        70% of the image is empty dark void. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty dark violet-black void, completely smooth, kept calm and low in detail. New area on the right:
+        the paths fade into black with a faint distant glow. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The crossroads glows at about 62% of the height in the lower center, with the dark void
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hades2.mood-01
+    title: "Starlit Dark Sea"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [sea, stars, night]
+    accent: "#7B5EA7"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm, black-violet sea stretches under a vast starfield, with a
+        few golden stars and a faint band of violet and jade nebula haze. A tiny ruined column stands on a rocky
+        islet in the distance, lit by a thin silver moonlight. Soft ripples mirror the stars.
+        Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+        Palette: #0E0B16, #2B2250, #7B5EA7 with a star gold #E0B354. Mood: hushed, vast, mystic.
+        Composition: the islet with the column and its reflection sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark violet water with faint star reflections, low detail. New area on the right: the sea continues into
+        a starry haze with a faint far islet. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The islet sits at about 58% of the height in the center, with the starry sky above and
+        reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hades2.alt-01
+    title: "Marble Temple at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [temple, dawn, marble]
+    accent: "#7B5EA7"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A white marble temple with fluted columns stands on a green hill at
+        dawn, with soft gold and violet light on its stones and a pale sky behind. Thin mist drifts around the
+        steps, and a few olive trees line the path. The scene is bright, calm and mythic.
+        Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+        Palette: #F7F1E2, #E0B354, #9BB58A with a violet #7B5EA7. Mood: serene, bright, mythic.
+        Composition: the temple front and the dawn light on its columns sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green hillside and pale mist, low in detail. New area on the right: the hills continue to a faint
+        far temple in haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The temple stands at about 45% of the height in the center, with the path leading up from
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,184 @@
+pack: game.gta5
+kind: game
+title: "Grand Theft Auto V"
+inspiration:
+  genre: "sun-soaked West-Coast metropolis"
+  setting: "palm boulevards, hills, coastline and neon nights"
+  palette: ["#F7B733", "#FC4A1A", "#2E86AB", "#1B1B2F"]
+  motifs: [palm silhouettes at sunset, a freeway interchange at dusk, pier lights, a desert highway]
+  avoid: [game title, characters, the loading-screen comic style, sign text, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a sun-soaked West-Coast
+  metropolis. Think palm-lined boulevards, golden hills, a long coastline, freeway interchanges at dusk and
+  neon-lit nights, all in a warm, hazy, cinematic photographic look. The palette is golden yellow (#F7B733), hot
+  orange-red (#FC4A1A), ocean blue (#2E86AB) and deep indigo (#1B1B2F). The mood is warm, nostalgic and relaxed.
+  No people, no vehicles in focus, no readable signs, no logos. Keep the left edge and the bottom edge calm for
+  desktop icons and the taskbar.
+wallpapers:
+  - id: gta5.hero-01
+    title: "Palm Boulevard at Sunset"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [palms, sunset, boulevard]
+    accent: "#F7B733"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long boulevard lined with tall, slim palm trees runs toward a huge
+        sun sinking into a hazy coastal skyline. The palm silhouettes are dark against a sky that blazes from
+        golden yellow to orange and soft pink, and the road shines with warm reflected light. Distant low
+        buildings and hills form a layered, blue-hazed horizon.
+        Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+        Palette: #F7B733, #FC4A1A, #2E86AB with an accent #1B1B2F. Mood: warm, nostalgic, glowing.
+        Composition: the sun and the palm line leading toward it sits about 54–74% across and 36–56% down; the
+        road leads toward the sun. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, characters, logos, readable signs, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden haze and a pale sky, low detail. New area on the right: the road curves away toward more
+        hazy hills in rose light. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sun sits at about 45% of the height in the center, with palm silhouettes rising on both
+        sides and the road below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: gta5.minimal-01
+    title: "Lone Palm at Dusk"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, palm, sunset]
+    accent: "#F7B733"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single slim palm tree stands in silhouette against a smooth, clean
+        sunset sky that fades from deep indigo at the top through magenta and orange to a pale gold band at the
+        horizon. A thin dark horizon of low hills runs along the bottom. There is nothing else in the frame,
+        just the palm, the sky and a small, faint sun glow.
+        Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+        Palette: #1B1B2F, #7A2E6B, #FC4A1A with a pale gold #F7B733. Mood: quiet, nostalgic, warm.
+        Composition: the palm silhouette sits about 61–71% across and 28–72% down; more than 70% of the image is
+        clean sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, characters, logos, readable signs, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty gradient sky from indigo to orange, completely clean. New area on the right: a low dark hill
+        line and a faint thin cloud at the horizon. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The palm stands in the lower center from 30% to 80% of the height, against the clean sunset
+        gradient. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: gta5.mood-01
+    title: "Freeway Interchange at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [freeway, dusk, city]
+    accent: "#F7B733"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A looping freeway interchange seen from a high hill at dusk, its
+        curved concrete ramps tracing long ribbons of soft orange and red light across the dusk. Below, a hazy
+        city grid fades into a deep indigo sky with a thin band of pink at the horizon. The scene is calm and
+        wide.
+        Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+        Palette: #14122A, #3A2F5E, #FC4A1A with a blue #2E86AB. Mood: moody, vast, warm.
+        Composition: the glowing ramp loops of the interchange sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, characters, logos, readable signs, text, UI or HUD elements, visible vehicles.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark, softly lit hillside and haze, low detail. New area on the right: the freeway continues toward a
+        faint skyline and pale pink horizon. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The interchange loops across the lower center at about 62% of the height, with the indigo
+        dusk sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: gta5.alt-01
+    title: "Boardwalk at Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [boardwalk, morning, coast]
+    accent: "#F7B733"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide, empty seaside boardwalk in soft morning light, lined with
+        slim palm trees whose long shadows cross pale planks. A calm turquoise ocean glitters to the right under
+        a hazy peach-and-blue sky, and a low hill line with tiny white houses sits on the far coast. A simple
+        wooden pier reaches into the water.
+        Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+        Palette: #FBE8C8, #2E86AB, #F7B733 with a peach #F4A58A. Mood: calm, sunny, relaxed.
+        Composition: the pier and the glittering water beside it sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, characters, logos, readable signs, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain pale boardwalk planks in soft morning light, low detail. New area on the right: the coast
+        continues to more hills and a faint haze over the water. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The boardwalk runs up the center with the pier at about 50% of the height, and ocean and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

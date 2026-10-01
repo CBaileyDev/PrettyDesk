@@ -1,0 +1,183 @@
+pack: game.tarkov
+kind: game
+title: "Escape from Tarkov"
+inspiration:
+  genre: "gritty realism"
+  setting: "snowy North-European urban decay, foggy forests, an abandoned shoreline resort"
+  palette: ["#5B6057", "#9A8F7A", "#2E3437", "#0F1112"]
+  motifs: [fog over an abandoned resort, a snowy checkpoint, a dead forest at dusk]
+  avoid: [game title, soldiers, gear, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by gritty realism and North-European
+  urban decay, with no people. Think foggy pine forests, an abandoned shoreline resort in mist, snowy empty
+  checkpoints and gray apartment blocks at dusk. The palette is faded green-grey (#5B6057), dirty beige
+  (#9A8F7A), slate (#2E3437) and near-black (#0F1112). The look is documentary photography with muted,
+  desaturated color, heavy fog and cold light. No people, no weapons, no vehicles in focus, no signs, no text.
+  Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: tarkov.hero-01
+    title: "Fog over the Abandoned Resort"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [resort, fog, abandoned]
+    accent: "#5B6057"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A large abandoned lakeside resort building with a long flat roof and
+        rows of dark windows stands in thick morning fog beside a still, grey water. A line of bare, dead birch
+        trees fades into the mist along the shore, and a cracked concrete promenade runs toward the building.
+        The sky is a flat pale grey.
+        Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+        Palette: #5B6057, #9A8F7A, #2E3437 with an accent #0F1112. Mood: bleak, quiet, haunting.
+        Composition: the resort building and its reflection in the grey water sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark dead trees and fog along the shore, low detail. New area on the right: the shoreline continues with
+        another faint building in the mist. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The resort building stretches at about 48% of the height in the center, with its reflection
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: tarkov.minimal-01
+    title: "Snowy Checkpoint Barrier"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, snow, barrier]
+    accent: "#5B6057"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single plain striped barrier arm rests across an empty,
+        snow-covered road, with a small bare booth beside it, under a huge pale grey-white overcast sky. Soft
+        snow fills the ground and the horizon dissolves into white mist. Nothing else is in the frame.
+        Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+        Palette: #F0F1F1, #C9CDD0, #9A8F7A with a barrier in #5B6057. Mood: empty, cold, still.
+        Composition: the barrier arm and the booth sits about 60–72% across and 36–64% down; more than 70% of
+        the image is empty snow and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale grey-white sky and snow, completely smooth. New area on the right: the road disappears
+        into white mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The barrier sits at about 58% of the height in the lower center, with empty pale sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: tarkov.mood-01
+    title: "Dead Forest at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [forest, dusk, fog]
+    accent: "#5B6057"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dense forest of tall, bare pines and leafless birches at dusk,
+        with cold blue fog lying low among the trunks. A thin band of dull orange light glows at the horizon
+        between the trees. The ground is covered in thin old snow and dry bracken, and the colors are muted and
+        dark.
+        Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+        Palette: #0F1112, #2E3437, #5B6057 with a dusk glow #C48A4F. Mood: cold, hushed, ominous.
+        Composition: the glowing horizon band between the trunks sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark tree trunks in blue-grey fog, low in detail. New area on the right: more trunks fade into dusk fog.
+        Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The orange band glows at about 50% of the height at the center, with trunks rising through
+        the frame. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: tarkov.alt-01
+    title: "Apartment Blocks in Morning Snow"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [apartments, snow, morning]
+    accent: "#5B6057"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A row of plain grey concrete apartment blocks stands in fresh
+        morning snow under a pale, bright sky. Their windows are dark, a bare tree line stands beside them, and
+        a thin layer of mist lies on the ground. The light is soft and cool, and the colors are pale grey, white
+        and faded beige.
+        Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+        Palette: #F1F2F2, #CFD3D4, #9A8F7A with a slate #5B6057. Mood: cool, quiet, still.
+        Composition: the nearest apartment block and its snowy ground sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft white snow and pale sky, low detail. New area on the right: the blocks continue into pale morning
+        mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The blocks stand at about 50% of the height in the center, with snow below and pale sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

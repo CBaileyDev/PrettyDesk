@@ -1,0 +1,184 @@
+pack: game.lol
+kind: game
+title: "League of Legends"
+inspiration:
+  genre: "painterly high fantasy of rival realms"
+  setting: "a mystic river valley through ancient jungle, crystal light, rune-carved ruins"
+  palette: ["#C89B3C", "#0A1428", "#0AC8B9", "#1E2328"]
+  motifs: [a glowing turquoise river, gold-trimmed stone ruins, floating spirit lights, a twilight canopy]
+  avoid: [game title, champions, exact map layout, crests, logos, text, UI or HUD elements, characters]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a painterly high-fantasy world.
+  Think a mystic river valley winding through ancient jungle, carved stone ruins trimmed in old gold, floating
+  spirit lights and glowing turquoise water at twilight. The palette is deep midnight navy (#0A1428), charcoal
+  (#1E2328), antique gold (#C89B3C) and luminous turquoise (#0AC8B9). The look is matte digital painting with
+  soft brushwork, rich atmosphere and a sense of ancient calm. No people, no creatures, no emblems, no text.
+  Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: lol.hero-01
+    title: "River of Light"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [fantasy, river, ruins]
+    accent: "#C89B3C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broad turquoise river glows through an ancient jungle valley at
+        twilight. On its banks, moss-covered stone ruins with gold-trimmed carved edges rise between giant roots
+        and ferns, and soft spirit lights drift above the water like fireflies. A distant stone arch crosses the
+        river in the haze. The sky above is deep navy with a faint teal glow behind the canopy.
+        Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+        Palette: #C89B3C, #0A1428, #0AC8B9 with an accent #1E2328. Mood: mystical, ancient, serene.
+        Composition: the glowing river bend and the stone arch beyond it sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark jungle foliage in deep teal shadow, low in detail. New area on the right: the river continues into
+        a misty valley with distant glowing ruins. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The river winds up the center of the frame to the stone arch at about 40% of the height,
+        under a navy twilight canopy. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lol.minimal-01
+    title: "Lone Ruin Above the Mist"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, tower, mist]
+    accent: "#C89B3C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single weathered stone tower with a thin gold-trimmed ledge stands
+        on a tiny island of rock in a vast, smooth sea of deep navy mist. A soft turquoise glow rises from a
+        doorway-shaped opening at its base, lighting the mist in a gentle halo. The sky is an empty, seamless
+        gradient from midnight navy at the top to a faint teal haze at the horizon.
+        Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+        Palette: #C89B3C, #0A1428, #0AC8B9 with an accent #1E2328. Mood: quiet, solitary, mystical.
+        Composition: the tower and its glowing base sits about 60–72% across and 32–68% down; more than 70% of
+        the image is empty mist and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crests, text, people, creatures, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty navy-to-teal mist and sky, completely clean and without detail. New area on the right: the mist
+        rolls on, with a very faint second island silhouette far away. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower rises from the lower center to about 40% of the height, with empty gradient sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lol.mood-01
+    title: "Jungle Canopy Glow"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [jungle, glow, spores]
+    accent: "#C89B3C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A close view of the underside of an ancient jungle canopy at night:
+        huge dark leaves and hanging vines are edged with a soft turquoise glow from luminous spores floating in
+        the air. A few gold-lit carved stones peek between roots at the bottom. Depth fades from crisp leaf
+        detail into a deep teal-black haze.
+        Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+        Palette: #0A1428, #12373A, #0AC8B9 with a soft gold #C89B3C. Mood: hushed, damp, magical.
+        Composition: the glowing leaves and spores sits about 52–72% across and 45–65% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        deep teal-black leaf shadow and a few hanging vines, low in detail. New area on the right: more hanging
+        vines fading into dark teal haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. Hanging vines and glowing leaves fill the center from 30% to 65% of the height, with the
+        carved stones at the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lol.alt-01
+    title: "Golden Valley Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [fantasy, morning, golden]
+    accent: "#C89B3C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The same ancient river valley at morning, now bathed in soft golden
+        light and pale mist. The turquoise river sparkles gently, the stone ruins show their weathered gold
+        trim, and long shafts of sunlight fall through the jungle canopy. The sky is a pale warm cream fading to
+        soft turquoise high above.
+        Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+        Palette: #F3E8C8, #C89B3C, #7FD3C8 with a deep green #2E5D52. Mood: warm, peaceful, luminous.
+        Composition: the sunlit ruin and the river's glittering bend sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a soft sunlit jungle bank in warm green and cream, low detail. New area on the right: the valley fades
+        into golden mist with a faint distant arch. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The river curves through the center with the sunlit ruin at about 45% of the height and pale
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

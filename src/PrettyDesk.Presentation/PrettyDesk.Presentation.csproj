@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>PrettyDesk.Presentation</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrettyDesk.Core\PrettyDesk.Core.csproj" />
+    <InternalsVisibleTo Include="PrettyDesk.Presentation.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <LogicalName>PrettyDesk.Presentation.Resources.Strings.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

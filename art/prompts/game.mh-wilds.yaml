@@ -1,0 +1,183 @@
+pack: game.mh-wilds
+kind: game
+title: "Monster Hunter Wilds"
+inspiration:
+  genre: "hunting adventure in wild ecosystems"
+  setting: "windswept desert plains, lightning storms, oases"
+  palette: ["#D6A35C", "#7E9F5B", "#4F6D8F", "#22201C"]
+  motifs: [a storm over plains, a distant unidentifiable giant silhouette, an oasis at dawn]
+  avoid: [game title, official monsters, hunters, weapons, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a wild ecosystem adventure, with
+  no people or identifiable creatures. Think windswept golden desert plains, towering lightning storms, a lush
+  oasis at dawn and rugged rock formations under enormous skies. The palette is sandy gold (#D6A35C), sage green
+  (#7E9F5B), storm blue (#4F6D8F) and dark umber (#22201C). The look is cinematic nature photography with huge
+  skies, dramatic weather and rich natural color. A distant, unidentifiable giant silhouette is allowed only as
+  a faint shape in haze. No people, no weapons, no text. Keep the left edge and the bottom edge calm for desktop
+  icons and the taskbar.
+wallpapers:
+  - id: mh-wilds.hero-01
+    title: "Storm over the Plains"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [storm, plains, lightning]
+    accent: "#D6A35C"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast golden desert plain beneath an enormous storm: towering dark
+        cumulonimbus clouds lit from within by branching lightning, with veils of rain trailing beneath. A shaft
+        of warm sun breaks through on the far plain, lighting a ridge of red rock in gold. The foreground is
+        rippled sand and sparse grass bending in the wind.
+        Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+        Palette: #D6A35C, #7E9F5B, #4F6D8F with an accent #22201C. Mood: wild, dramatic, vast.
+        Composition: the lightning bolt and the sunlit ridge beneath it sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        rippled sand and sparse windblown grass in shadow, low detail. New area on the right: the storm front
+        continues across the plain into rain haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lightning and sunlit ridge sit at the center at about 45% of the height, with the storm
+        cloud above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mh-wilds.minimal-01
+    title: "Giant Silhouette in the Haze"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, haze, desert]
+    accent: "#D6A35C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, smooth desert plain in pale gold stretches to a faint
+        horizon under a huge, empty sky of cream and soft blue. Far in the haze, a barely visible, enormous
+        shape rises like a distant mountain with an unclear outline. A thin trail of dust drifts across the
+        plain. Everything else is clean empty space.
+        Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+        Palette: #F3E5C6, #D6A35C, #9DB4C6 with a shape #8D8576. Mood: mysterious, quiet, vast.
+        Composition: the faint giant shape in the haze sits about 59–73% across and 36–64% down; more than 70%
+        of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale cream sky over a smooth plain. New area on the right: the plain continues with a faint
+        ridge in the golden haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The faint shape rises at about 50% of the height in the center, with empty cream sky above
+        and plain below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mh-wilds.mood-01
+    title: "Oasis at Dawn"
+    role: mood
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [oasis, dawn, desert]
+    accent: "#D6A35C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small oasis pool at dawn, ringed by tall green reeds and a few
+        palm-like trees, with warm sand dunes rising beyond. The water is a still mirror of pink and gold sky,
+        and a thin mist hangs above it. Soft light rakes across the dune crests, and the sand is untouched.
+        Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+        Palette: #2A2C26, #7E9F5B, #D6A35C with a pink #D9928A. Mood: calm, fresh, hushed.
+        Composition: the pool and its sky reflection sits about 52–72% across and 45–65% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft sand dunes in warm shadow, low detail. New area on the right: the dunes continue into pale pink
+        haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pool sits at about 62% of the height in the lower center, with dunes and the dawn sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mh-wilds.alt-01
+    title: "Red Rock Mesa at Noon"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [mesa, valley, daylight]
+    accent: "#D6A35C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A towering red-and-ochre rock mesa rises above a sunlit sage-green
+        valley at midday, with soft white clouds in a deep blue sky. A thin river winds across the valley floor,
+        and long layered rock strata glow in warm light. The scene is crisp, open and bright.
+        Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+        Palette: #F7E9D0, #D6A35C, #7E9F5B with a sky #6F9CC8. Mood: bright, open, grand.
+        Composition: the mesa face and the winding river below it sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft sage valley and warm sand, low detail. New area on the right: the valley continues to more distant
+        mesas in haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The mesa rises at about 40% of the height in the center, with the valley below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

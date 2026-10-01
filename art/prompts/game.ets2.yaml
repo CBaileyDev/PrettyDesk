@@ -1,0 +1,182 @@
+pack: game.ets2
+kind: game
+title: "Euro Truck Simulator 2"
+inspiration:
+  genre: "European road trip"
+  setting: "an empty highway through an alpine valley at dawn, a coastal road, autumn countryside"
+  palette: ["#F2A541", "#4E8098", "#8BA888", "#1B1F22"]
+  motifs: [a road into mountains at dawn, rain on a highway at dusk, a sunflower field road]
+  avoid: [game title, branded trucks, road-sign text, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a relaxed European road trip, with
+  no vehicles and no people. Think an empty highway winding through an alpine valley at dawn, a coastal road
+  above a calm sea, rain on a highway at dusk and a quiet country road through golden sunflower fields. The
+  palette is warm amber (#F2A541), slate blue (#4E8098), sage green (#8BA888) and asphalt (#1B1F22). The look is
+  calm cinematic landscape photography with soft light and gentle haze. No vehicles, no people, no signs, no
+  text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: ets2.hero-01
+    title: "Alpine Highway at Dawn"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [alpine, road, dawn]
+    accent: "#F2A541"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth empty highway curves through a green alpine valley at dawn,
+        leading toward snow-capped peaks that glow pink and gold in the first sun. Mist lies in the valley, and
+        dark pines line the road. A small village with a church spire sits tiny on a far hillside, and the sky
+        is a clear gradient from peach to pale blue.
+        Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+        Palette: #F2A541, #4E8098, #8BA888 with an accent #1B1F22. Mood: calm, hopeful, scenic.
+        Composition: the road curving toward the glowing peaks sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, road signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green valley and pine shadow, low in detail. New area on the right: the valley opens to more peaks
+        and a faint hillside village. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road curves up the center to the glowing peaks at about 40% of the height, with the dawn
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ets2.minimal-01
+    title: "Straight Road into Mountains"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, road, mountains]
+    accent: "#F2A541"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single straight road with a thin white center line runs to a
+        vanishing point at the foot of a faint blue mountain range, under a vast, smooth, pale gradient sky of
+        cream and soft blue. A few tiny roadside trees line the edges. Everything else is clean, empty space.
+        Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+        Palette: #FBF3E2, #F2A541, #9DBBCB with a mountain #6F8FA8. Mood: calm, simple, spacious.
+        Composition: the vanishing point and the faint mountains sits about 60–72% across and 36–64% down; more
+        than 70% of the image is empty sky and field. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, road signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty cream-to-blue sky, completely smooth, kept calm and low in detail. New area on the right: the
+        road and fields continue into pale haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road converges to the vanishing point at about 55% of the height in the center, with the
+        mountains behind and empty sky above. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ets2.mood-01
+    title: "Rain on the Highway at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rain, highway, dusk]
+    accent: "#F2A541"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wet empty highway at dusk, with thin rain falling and the asphalt
+        reflecting a warm amber glow from the sky at the horizon. Dark pine forests line both sides, and a low
+        mist hangs over the road. Soft rain-blurred lights glow far ahead as small warm points. The mood is
+        quiet and a little lonely.
+        Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+        Palette: #1B1F22, #2F4452, #4E8098 with an amber #F2A541. Mood: quiet, wet, lonely.
+        Composition: the amber horizon glow reflected in the wet road sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, road signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark pine forest and rain in soft shadow, low detail. New area on the right: the road continues into
+        dusk mist with faint far lights. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road runs up the center to the amber glow at about 48% of the height, with reflections
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ets2.alt-01
+    title: "Sunflower Field Road"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [sunflowers, road, summer]
+    accent: "#F2A541"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet country road crosses a wide field of golden sunflowers in
+        the afternoon, with a few cypress trees along the edge and soft blue hills in the distance. Warm light
+        falls from the left, and a few white clouds drift in a deep blue sky. The road is empty and warm.
+        Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+        Palette: #FBF1CC, #F2A541, #8BA888 with a sky #6F9CC8. Mood: warm, sunny, peaceful.
+        Composition: the road and the golden sunflower rows beside it sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, road signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden flower rows in warm light, low in detail. New area on the right: the field continues to blue
+        hills in haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road runs up the center to about 52% of the height, with sunflowers on both sides and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,5 @@
+[*.cs]
+# Descriptive snake_case test names are intentional in test projects.
+dotnet_diagnostic.CA1707.severity = none
+# Tests allocate small constant arrays inline for readability.
+dotnet_diagnostic.CA1861.severity = none

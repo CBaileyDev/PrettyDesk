@@ -1,0 +1,105 @@
+<UserControl x:Class="PrettyDesk.App.Views.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+    <StackPanel>
+      <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Home_Title}" />
+
+      <!-- Environment conflicts (FR-APPLY-7): detected and explained, never silently fixed. -->
+      <ItemsControl ItemsSource="{Binding Banners}" Margin="0,8,0,0" Focusable="False">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate DataType="{x:Type vm:BannerViewModel}">
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" BorderBrush="{Binding Severity, Converter={StaticResource SeverityToBrush}}" BorderThickness="3,1,1,1"
+                    AutomationProperties.Name="{Binding Title}">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                  <TextBlock FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Title}" />
+                  <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{Binding Message}" />
+                </StackPanel>
+                <Button Grid.Column="1" Content="{x:Static res:Strings.Banner_Dismiss}" VerticalAlignment="Top" Margin="12,0,0,0"
+                        Command="{Binding DataContext.DismissBannerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        CommandParameter="{Binding}"
+                        AutomationProperties.Name="{x:Static res:Strings.Banner_Dismiss}" />
+              </Grid>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <!-- To-scale preview of every display with its current wallpaper. -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,8,0,0">
+        <StackPanel>
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Home_PreviewLabel}" Margin="0,0,0,8" />
+          <Viewbox Stretch="Uniform" MaxHeight="300" Visibility="{Binding HasMonitors, Converter={StaticResource BoolToVisibility}}">
+            <ItemsControl ItemsSource="{Binding Monitors}" Width="{x:Static vm:HomeViewModel.CanvasWidth}" Height="{Binding CanvasHeight}" Focusable="False">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <Canvas />
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter" d:DataType="{x:Type vm:MonitorPreviewViewModel}">
+                  <Setter Property="Canvas.Left" Value="{Binding X}" />
+                  <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                </Style>
+              </ItemsControl.ItemContainerStyle>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:MonitorPreviewViewModel}">
+                  <Grid Width="{Binding Width}" Height="{Binding Height}" AutomationProperties.Name="{Binding Label}">
+                    <Border Style="{StaticResource PlaceholderTileStyle}" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="3" CornerRadius="6" />
+                    <Border CornerRadius="6" BorderThickness="3" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" Visibility="{Binding HasThumbnail, Converter={StaticResource BoolToVisibility}}">
+                      <Border.Background>
+                        <ImageBrush ImageSource="{Binding ThumbnailPath, Converter={StaticResource PathToImage}, ConverterParameter=960}" Stretch="UniformToFill" />
+                      </Border.Background>
+                    </Border>
+                    <TextBlock Text="{Binding Label}" Foreground="White" FontSize="22" Margin="14,0,0,10" VerticalAlignment="Bottom" />
+                  </Grid>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </Viewbox>
+
+          <StackPanel Visibility="{Binding HasMonitors, Converter={StaticResource InverseBoolToVisibility}}" Margin="0,24" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" HorizontalAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitors}" />
+            <TextBlock Style="{StaticResource MutedStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitorsDetail}" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <!-- Status card with the primary actions. -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,12,0,0">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <StackPanel VerticalAlignment="Center" AutomationProperties.Name="{Binding Headline}">
+            <TextBlock FontSize="20" FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Headline}" />
+            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{Binding Detail}" Visibility="{Binding Detail, Converter={StaticResource NullToCollapsed}}" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Content="{x:Static res:Strings.Home_NextWallpaper}" Command="{Binding NextCommand}" Margin="0,0,8,0" MinWidth="140"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_NextWallpaper}" />
+            <Button Content="{x:Static res:Strings.Home_PauseOneHour}" Command="{Binding PauseForOneHourCommand}" Margin="0,0,8,0"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseOneHour}" />
+            <Button Content="{x:Static res:Strings.Home_PauseUntilResumed}" Command="{Binding PauseUntilResumedCommand}" Margin="0,0,8,0"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseUntilResumed}" />
+            <Button Content="{x:Static res:Strings.Home_Resume}" Command="{Binding ResumeCommand}"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_Resume}" />
+          </StackPanel>
+        </Grid>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

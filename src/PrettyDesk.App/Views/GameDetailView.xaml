@@ -1,0 +1,143 @@
+<UserControl x:Class="PrettyDesk.App.Views.GameDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             xmlns:views="clr-namespace:PrettyDesk.App.Views"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:GameDetailViewModel}">
+  <UserControl.Resources>
+    <DataTemplate DataType="{x:Type vm:PickerState}">
+      <views:WallpaperPickerView DataContext="{Binding Content}" />
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+      <StackPanel>
+        <Button Content="{x:Static res:Strings.Game_Back}" Command="{Binding BackCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Game_Back}" />
+        <TextBlock Style="{StaticResource PageTitleStyle}" Margin="0,16,0,0" Text="{Binding Name}" />
+
+        <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0">
+          <StackPanel>
+            <ui:ToggleSwitch IsChecked="{Binding Enabled, Mode=TwoWay}" Content="{x:Static res:Strings.Game_Enabled}" AutomationProperties.Name="{x:Static res:Strings.Game_Enabled}" />
+            <StackPanel Margin="0,16,0,0" Orientation="Horizontal">
+              <RadioButton GroupName="GameMode" Content="{x:Static res:Strings.Game_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_ModeRotate}" />
+              <RadioButton GroupName="GameMode" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                           AutomationProperties.Name="{x:Static res:Strings.Game_ModeFixed}" />
+            </StackPanel>
+            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Notice}" Visibility="{Binding Notice, Converter={StaticResource NullToCollapsed}}" />
+          </StackPanel>
+        </Border>
+
+        <!-- Pack download state (catalog games) -->
+        <StackPanel Orientation="Horizontal" Margin="0,12,0,0" Visibility="{Binding PackStatusText, Converter={StaticResource NullToCollapsed}}">
+          <Border Style="{StaticResource ChipStyle}"><TextBlock Text="{Binding PackStatusText}" FontSize="12" Style="{StaticResource BodyStyle}" /></Border>
+          <Button Margin="12,0,0,0" Content="{x:Static res:Strings.Game_Download}" Command="{Binding DownloadCommand}" Visibility="{Binding CanDownload, Converter={StaticResource BoolToVisibility}}"
+                  AutomationProperties.Name="{x:Static res:Strings.Game_Download}" />
+        </StackPanel>
+
+        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Game_WallpapersTitle}" />
+        <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_NoWallpapers}" Visibility="{Binding HasWallpapers, Converter={StaticResource InverseBoolToVisibility}}" />
+
+        <ItemsControl ItemsSource="{Binding Wallpapers}" Focusable="False">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="{x:Type vm:WallpaperItemViewModel}">
+              <Border Width="232" Margin="0,0,12,12" Style="{StaticResource CardStyle}" Padding="8">
+                <StackPanel>
+                  <Grid Height="120">
+                    <Border Style="{StaticResource PlaceholderTileStyle}" />
+                    <Border CornerRadius="6" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
+                      <Border.Background>
+                        <ImageBrush ImageSource="{Binding PreviewPath, Converter={StaticResource PathToImage}, ConverterParameter=464}" Stretch="UniformToFill" />
+                      </Border.Background>
+                    </Border>
+                  </Grid>
+                  <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStyle}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Margin="0,8,0,0" />
+                  <TextBlock Text="{x:Static res:Strings.Game_NotDownloaded}" Style="{StaticResource MutedStyle}" FontSize="12" Visibility="{Binding IsAvailable, Converter={StaticResource InverseBoolToVisibility}}" />
+                  <Grid Margin="0,8,0,0">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*" />
+                      <ColumnDefinition Width="Auto" />
+                      <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox IsChecked="{Binding IsIncluded, Mode=TwoWay}" Content="{x:Static res:Strings.Common_On}" AutomationProperties.Name="{Binding IncludeLabel}" />
+                    <ToggleButton Grid.Column="1" Content="&#x2606;" FontSize="16" IsChecked="{Binding IsFavorite, Mode=TwoWay}" Margin="0,0,6,0" AutomationProperties.Name="{Binding FavoriteLabel}" />
+                    <Button Grid.Column="2" Content="{x:Static res:Strings.Game_Preview}"
+                            Command="{Binding DataContext.PreviewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"
+                            IsEnabled="{Binding IsAvailable}" AutomationProperties.Name="{x:Static res:Strings.Game_Preview}" />
+                  </Grid>
+                </StackPanel>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <StackPanel Visibility="{Binding IsCustom, Converter={StaticResource BoolToVisibility}}">
+          <Button Content="{x:Static res:Strings.Game_AddWallpapers}" Command="{Binding OpenPickerCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Game_AddWallpapers}" />
+        </StackPanel>
+
+        <!-- Rotation (only meaningful with several wallpapers) -->
+        <StackPanel Visibility="{Binding ShowRotationOptions, Converter={StaticResource BoolToVisibility}}">
+          <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Game_Rotation}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_RotationHelp}" Margin="0,0,0,8" />
+          <ComboBox ItemsSource="{Binding IntervalChoices}" SelectedItem="{Binding SelectedInterval, Mode=TwoWay}" DisplayMemberPath="Label" MinWidth="220" HorizontalAlignment="Left"
+                    AutomationProperties.Name="{x:Static res:Strings.Game_Rotation}" />
+          <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+            <RadioButton GroupName="GameOrder" Content="{x:Static res:Strings.Game_OrderShuffle}" IsChecked="{Binding IsShuffle, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_OrderShuffle}" />
+            <RadioButton GroupName="GameOrder" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_OrderSequential}" IsChecked="{Binding IsShuffle, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                         AutomationProperties.Name="{x:Static res:Strings.Game_OrderSequential}" />
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Detection (read-only for catalog games, editable for custom ones) -->
+        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Game_DetectionTitle}" />
+        <ItemsControl ItemsSource="{Binding DetectionLines}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="{x:Type sys:String}" xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+              <TextBlock Text="{Binding}" Style="{StaticResource BodyStyle}" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{x:Static res:Strings.Game_DetectionHelp}" />
+
+        <StackPanel Visibility="{Binding IsCustom, Converter={StaticResource BoolToVisibility}}" Margin="0,16,0,0">
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Game_EditExe}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_EditExeHelp}" Margin="0,0,0,6" />
+          <TextBox Text="{Binding ExeNamesText, UpdateSourceTrigger=LostFocus}" AcceptsReturn="True" MinHeight="64" MaxWidth="420" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Game_EditExe}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Text="{Binding ExeError}" Visibility="{Binding ExeError, Converter={StaticResource NullToCollapsed}}" Margin="0,4,0,0" />
+          <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+            <Button Content="{x:Static res:Strings.Game_Suggest}" Command="{Binding SuggestCommand}" AutomationProperties.Name="{x:Static res:Strings.Game_Suggest}" />
+            <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Game_RemoveGame}" Command="{Binding RemoveCommand}" AutomationProperties.Name="{x:Static res:Strings.Game_RemoveGame}" />
+          </StackPanel>
+          <TextBlock Style="{StaticResource MutedStyle}" FontSize="12" Margin="0,4,0,0" Text="{x:Static res:Strings.Game_SuggestHelp}" />
+        </StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+
+    <!-- Wallpaper picker overlay for custom games -->
+    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource ApplicationBackgroundBrush}">
+      <Grid Margin="24">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Picker_Title}" />
+        <ContentControl Grid.Row="1" Content="{Binding Picker}" Focusable="False" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+          <Button Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
+          <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>

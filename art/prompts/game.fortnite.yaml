@@ -1,0 +1,184 @@
+pack: game.fortnite
+kind: game
+title: "Fortnite"
+inspiration:
+  genre: "bright cartoon adventure island"
+  setting: "playful stylized nature with rolling hills, chunky trees and a purple storm wall on the horizon"
+  palette: ["#4CC9F0", "#9B5DE5", "#FEE440", "#00BB77"]
+  motifs: [rolling candy-green hills, chunky stylized trees, a distant storm, a floating island at sunset]
+  avoid: [game title, skins, the bus, llama, emotes, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a bright, playful cartoon island.
+  Think rolling candy-green hills, chunky stylized trees, clean blue water and floating islands, with a distant
+  purple storm wall on the horizon. The palette is sky blue (#4CC9F0), violet (#9B5DE5), sunshine yellow
+  (#FEE440) and grass green (#00BB77). The look is a polished, soft stylized 3D render with rounded shapes,
+  clean gradients and cheerful light, never childish or cluttered. No characters, no vehicles, no emblems, no
+  text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: fortnite.hero-01
+    title: "Island Hills at Golden Hour"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [island, hills, sunset]
+    accent: "#4CC9F0"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sweeping island landscape at golden hour. Rolling candy-green
+        hills with chunky round trees roll toward a calm blue bay, and a small floating rock island hovers in
+        the pale sunset sky. On the far horizon a soft violet storm wall glows with faint, steady light. A
+        winding sandy path curls through the hills.
+        Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+        Palette: #4CC9F0, #9B5DE5, #FEE440 with an accent #00BB77. Mood: cheerful, bright, adventurous.
+        Composition: the floating island above the sunlit hills sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth sunlit green hills with a few round trees, low detail. New area on the right: a calm blue bay and
+        a faint violet horizon glow. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The floating island hovers at about 32% of the height over hills that fill the lower half.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: fortnite.minimal-01
+    title: "Lone Tree on the Hill"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, tree, sky]
+    accent: "#4CC9F0"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single chunky, round-topped green tree stands on a smooth, rounded
+        candy-green hill under a vast, soft sky gradient that moves from sky blue at the top to pale yellow at
+        the horizon. A tiny floating rock island hovers far off, and a faint band of violet sits at the very
+        edge of the world. Everything else is clean, empty color.
+        Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+        Palette: #4CC9F0, #9B5DE5, #FEE440 with an accent #00BB77. Mood: simple, bright, calm.
+        Composition: the tree and its soft shadow sits about 59–73% across and 35–65% down; more than 70% of the
+        image is empty sky and hill. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, vehicles, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty, smooth sky gradient with a hint of cloud. New area on the right: the hill slopes away to a
+        faint violet horizon and a tiny distant floating rock. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: fortnite.mood-01
+    title: "Storm Wall at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [storm, dusk, bay]
+    accent: "#4CC9F0"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm purple dusk over a quiet island bay, with a towering wall of
+        violet storm cloud glowing from within on the horizon. The water is still and reflects the cloud's soft
+        magenta light, while a few chunky silhouetted trees line the near shore. Tiny fireflies glow yellow
+        among them.
+        Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+        Palette: #1B1240, #5B3FA0, #9B5DE5 with a firefly yellow #FEE440. Mood: dramatic, calm, magical.
+        Composition: the glowing storm wall and its reflection sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark teal-violet water and shoreline silhouettes, low detail. New area on the right: the storm wall
+        stretches along the horizon, flickering faintly. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The storm wall rises across the center at about 40% of the height, with its glow reflected in
+        the water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: fortnite.alt-01
+    title: "Sunny Shoreline"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [beach, sunny, bay]
+    accent: "#4CC9F0"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bright sunny shoreline with soft turquoise water lapping a pale
+        sand beach. Chunky palm-shaped trees and round green bushes line the dunes, and a chain of small rocky
+        islets sits in the bay under a cloud-dotted blue sky. The light is clean and cheerful with soft cream
+        highlights.
+        Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+        Palette: #E8F7FB, #4CC9F0, #F6E7A8 with a green #00BB77. Mood: sunny, fresh, relaxed.
+        Composition: the sand curve and the nearest islet sits about 54–74% across and 38–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm turquoise water and pale sand, low detail. New area on the right: the beach curves away to more
+        islets in blue haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shoreline curves through the lower center, with an islet at about 50% of the height under
+        a bright sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

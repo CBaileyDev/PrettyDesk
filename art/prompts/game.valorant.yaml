@@ -1,0 +1,188 @@
+pack: game.valorant
+kind: game
+title: "VALORANT"
+inspiration:
+  genre: "stylized near-future tactical shooter"
+  setting: "clean sunlit plazas mixing Venetian, Moroccan and Japanese architecture with sleek tech, soft painterly 3D"
+  palette: ["#FF4655", "#0F1923", "#ECE8E1", "#BDBCB7"]
+  motifs: [crisp geometric shadows, a canal city at dusk, a rooftop over a neon-lit bay, a single minimal red accent line]
+  avoid: [game title, agents, ability effects, the V emblem, logos, text, weapons, UI or HUD elements, characters]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a stylized near-future tactical
+  world. Think clean, sunlit plazas where Venetian canals, Moroccan arches and Japanese rooflines meet sleek
+  white tech, rendered in a soft painterly 3D look with crisp geometric shadows. The palette is deep navy
+  (#0F1923), warm off-white (#ECE8E1) and cool grey (#BDBCB7), with a single vivid coral-red accent line
+  (#FF4655) per image. The mood is calm, precise and modern. No people, no weapons, no emblems, no text. Keep
+  the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: valorant.hero-01
+    title: "Canal Plaza at Dusk"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [architectural, canal, dusk]
+    accent: "#FF4655"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A near-future canal city at dusk. White arched walkways and a slim
+        curved bridge cross a still waterway, their clean edges catching the last warm light while deep navy
+        shadow fills the arches. A single thin coral-red light line runs along one bridge railing. Soft glowing
+        windows reflect in the water, and a pale lavender sky fades into navy above.
+        Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+        clean and modern.
+        Palette: #FF4655, #0F1923, #ECE8E1 with an accent #BDBCB7. Mood: calm, precise, elegant.
+        Composition: the curved bridge and its red light line sits about 54–74% across and 36–56% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm navy water and a quiet white wall in soft shadow. New area on the right: more arched walkways and a
+        distant lit tower fading into dusk haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bridge arcs across the center at about 50% of the height, with its reflection in the
+        canal below and dusk sky above. Same lighting, palette, materials and rendering style. Keep the bottom
+        10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: valorant.minimal-01
+    title: "Single Red Line"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, geometric, light]
+    accent: "#FF4655"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, smooth warm off-white wall fills the frame, with soft, crisp
+        geometric shadows of unseen arches falling across it. Right of center, a single thin coral-red line runs
+        vertically from the middle of the wall to the floor, like a thread of light. The floor is pale grey
+        stone with a faint reflection. Everything else is clean empty space.
+        Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+        clean and modern.
+        Palette: #ECE8E1, #BDBCB7, #8D8F94 with the line in #FF4655. Mood: minimal, calm, modern.
+        Composition: the red line and the edge of the arch shadow sits about 60–72% across and 30–70% down; more
+        than 70% of the image is plain wall and floor. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, emblems, text, weapons, people, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain off-white wall with soft, faint shadows. New area on the right: the wall continues and the arch
+        shadows gently soften. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The red line runs vertically through the center from 30% to 70% of the height, with a soft
+        arch shadow beside it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: valorant.mood-01
+    title: "Rooftop over the Bay"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rooftop, bay, night]
+    accent: "#FF4655"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet rooftop terrace at night above a harbor bay. White parapet
+        walls and a low bench catch the glow of soft neon signage that is only abstract colored light, in deep
+        navy and coral. Far below, boats and bridges are small points of warm light on dark water, and a pale
+        haze lifts from the surface.
+        Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+        clean and modern.
+        Palette: #0F1923, #1D3042, #BDBCB7 with a glow #FF4655. Mood: cool, still, moody.
+        Composition: the parapet corner and the glowing bay beyond sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, readable signs, text, weapons, people, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark, softly lit wall and parapet, low in detail. New area on the right: the bay widens into a haze of
+        distant lights and a faint dark horizon. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The parapet corner sits at about 60% of the height with the glowing bay stretching away above
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: valorant.alt-01
+    title: "Sunlit Arcade"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [architectural, daylight, arches]
+    accent: "#FF4655"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long, sunlit arcade of white pointed arches in a sleek near-future
+        plaza, shot in bright morning light. Each arch frames a slice of pale blue sky, and crisp shadows fall
+        diagonally across smooth stone tiles. A single narrow strip of coral-red tile marks the center of the
+        floor, running toward the distance.
+        Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+        clean and modern.
+        Palette: #F1EEE8, #D3D2CE, #9DB4C8 with an accent #FF4655. Mood: bright, orderly, fresh.
+        Composition: the nearest arch and the red tile strip sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain sunlit white wall with soft shadow, low detail. New area on the right: more arches recede into
+        pale haze with a hint of a canal. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arcade recedes through the center, the nearest arch spanning 25% to 75% of the height.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

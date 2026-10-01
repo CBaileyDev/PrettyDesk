@@ -1,0 +1,47 @@
+<UserControl x:Class="PrettyDesk.App.Views.AboutPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:AboutViewModel}">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+    <StackPanel MaxWidth="720" HorizontalAlignment="Left">
+      <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.About_Title}" />
+      <TextBlock Style="{StaticResource MutedStyle}" Text="{Binding VersionText}" />
+
+      <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0">
+        <StackPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" Text="{Binding UpdateText}" AutomationProperties.Name="{Binding UpdateText}" />
+          <ProgressBar Margin="0,8,0,0" Minimum="0" Maximum="100" Value="{Binding UpdatePercent, Mode=OneWay}" Visibility="{Binding ShowProgress, Converter={StaticResource BoolToVisibility}}" />
+          <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+            <Button Content="{x:Static res:Strings.About_CheckUpdates}" Command="{Binding CheckCommand}" AutomationProperties.Name="{x:Static res:Strings.About_CheckUpdates}" />
+            <Button Margin="8,0,0,0" Content="{x:Static res:Strings.About_UpdateRestart}" Command="{Binding RestartToUpdateCommand}" Visibility="{Binding CanRestart, Converter={StaticResource BoolToVisibility}}"
+                    AutomationProperties.Name="{x:Static res:Strings.About_UpdateRestart}" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.About_PrivacyTitle}" />
+      <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.About_PrivacyBody}" />
+
+      <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+        <Button Content="{x:Static res:Strings.About_ProjectPage}" Command="{Binding OpenProjectPageCommand}" AutomationProperties.Name="{x:Static res:Strings.About_ProjectPage}" />
+        <Button Margin="8,0,0,0" Content="{x:Static res:Strings.About_ReportIssue}" Command="{Binding OpenIssuesCommand}" AutomationProperties.Name="{x:Static res:Strings.About_ReportIssue}" />
+        <Button Margin="8,0,0,0" Content="{x:Static res:Strings.About_PrivacyLink}" Command="{Binding OpenPrivacyCommand}" AutomationProperties.Name="{x:Static res:Strings.About_PrivacyLink}" />
+      </StackPanel>
+
+      <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.About_Licenses}" />
+      <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.About_LicensesHelp}" />
+      <Button Margin="0,8,0,0" Content="{x:Static res:Strings.About_Licenses}" Command="{Binding ToggleLicensesCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.About_Licenses}" />
+      <Border Style="{StaticResource CardStyle}" Margin="0,8,0,0" Visibility="{Binding ShowLicenses, Converter={StaticResource BoolToVisibility}}">
+        <TextBox Text="{Binding Licenses, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" MaxHeight="260" VerticalScrollBarVisibility="Auto" BorderThickness="0" Background="Transparent"
+                 AutomationProperties.Name="{x:Static res:Strings.About_Licenses}" />
+      </Border>
+
+      <TextBlock Style="{StaticResource MutedStyle}" FontSize="12" Margin="0,24,0,0" Text="{Binding Disclaimer}" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

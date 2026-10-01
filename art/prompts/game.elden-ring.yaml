@@ -1,0 +1,184 @@
+pack: game.elden-ring
+kind: game
+title: "Elden Ring"
+inspiration:
+  genre: "dark-fantasy ruined kingdom"
+  setting: "a colossal glowing golden tree on the horizon, misty fields, ruined castles"
+  palette: ["#D4AF37", "#6B6B47", "#2C2A26", "#0E0D0C"]
+  motifs: [a golden tree over fog, a lone ruined bridge, a graveyard of giant swords in mist]
+  avoid: [game title, knights, bosses, exact castle designs, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a dark-fantasy ruined kingdom.
+  Think a colossal, softly glowing golden tree on the far horizon, misty fields of dead grass, crumbling stone
+  bridges and half-collapsed castles in fog, painted in muted olive and ash tones with a single source of warm
+  gold. The palette is gold (#D4AF37), olive grey (#6B6B47), charcoal (#2C2A26) and near-black (#0E0D0C). The
+  look is a painterly, matte fantasy landscape with vast scale, heavy fog and melancholy beauty. No people, no
+  creatures, no armor, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and
+  the taskbar.
+wallpapers:
+  - id: elden-ring.hero-01
+    title: "Golden Tree over the Fog"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [tree, fog, ruins]
+    accent: "#D4AF37"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A colossal golden tree glows on the far horizon, its enormous canopy
+        spreading across the sky and lighting a sea of drifting grey fog. In the middle distance, a ruined
+        castle with broken towers and a lone, half-collapsed stone bridge stand in the mist. The foreground
+        fields of dead olive grass fade into darkness under a heavy ash-grey sky.
+        Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+        Palette: #D4AF37, #6B6B47, #2C2A26 with an accent #0E0D0C. Mood: majestic, melancholy, vast.
+        Composition: the golden tree and the glowing fog beneath it sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark olive fields and mist in low contrast, low detail. New area on the right: the fog continues with a
+        faint second ruined tower silhouette. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tree glows at the center at about 35% of the height, with the ruined bridge in the fog
+        below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: elden-ring.minimal-01
+    title: "Lone Bridge in the Mist"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, bridge, mist]
+    accent: "#D4AF37"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single weathered stone bridge arc spans a gap in a vast, smooth
+        sea of grey mist, its far end vanishing. A faint warm gold glow lights the mist from the horizon behind
+        it. The sky is an empty gradient of ash grey and olive, and there is nothing else in the frame.
+        Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+        Palette: #0E0D0C, #2C2A26, #6B6B47 with a gold #D4AF37. Mood: quiet, lonely, melancholy.
+        Composition: the bridge arc and the gold glow behind it sits about 58–74% across and 35–65% down; more
+        than 70% of the image is empty mist and sky. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty ash-grey mist and sky, completely smooth and clean. New area on the right: a very faint far ridge
+        in pale mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bridge arcs through the lower center at about 55% of the height, with empty misty sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: elden-ring.mood-01
+    title: "Graveyard of Giant Swords"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [blades, fog, field]
+    accent: "#D4AF37"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A silent field where huge, plain blades of rusted iron stand planted
+        in the ground at leaning angles, half-wrapped in thick fog. Their pale, worn edges catch a thin gold
+        light from a hidden sun, and the ground is damp black earth with sparse dead grass. The sky is a flat
+        grey-olive haze.
+        Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+        Palette: #0E0D0C, #2C2A26, #6B6B47 with a gold #D4AF37. Mood: silent, ancient, ominous.
+        Composition: the nearest leaning blades and the gold edge light sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, armor, skeletons, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark earth and fog with a few blades fading out, low detail. New area on the right: more blades recede
+        into thick fog. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The blades lean through the center from 35% to 70% of the height, with fog filling the
+        bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: elden-ring.alt-01
+    title: "Golden Fields at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [dawn, fields, golden]
+    accent: "#D4AF37"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide field of tall golden grass at dawn, with a pale mist lifting
+        from the ground and a colossal glowing tree faint and golden on the horizon. A few ancient broken stone
+        pillars stand in the grass. The sky is soft cream with olive-grey clouds, and the light is warm and
+        gentle.
+        Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+        Palette: #F1E7C3, #D4AF37, #A9A778 with a grey #6B6B47. Mood: gentle, golden, quiet.
+        Composition: the distant golden tree and the nearest stone pillars sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden grass and pale mist, low detail. New area on the right: the field stretches to a faint
+        ruined tower in the mist. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The golden tree sits at about 36% of the height, with grass filling the lower half and
+        pillars at the center. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

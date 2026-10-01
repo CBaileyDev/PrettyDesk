@@ -1,0 +1,187 @@
+pack: game.diablo4
+kind: game
+title: "Diablo IV"
+inspiration:
+  genre: "gothic horror fantasy"
+  setting: "a snowy mountain monastery, cathedral ruins, crimson skies, bleak moors"
+  palette: ["#8B0000", "#C8B79A", "#3D3B3A", "#0A0807"]
+  motifs: [a cathedral silhouette in a blizzard, a lone lantern on a moor]
+  avoid: [game title, demons, the logo, named villains, text, characters, UI or HUD elements, logos]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by gothic horror fantasy, with no
+  creatures or people. Think a snowy mountain monastery, the black silhouette of a ruined cathedral in a
+  blizzard, crimson skies over bleak moors and a lone lantern glowing in the dark. The palette is deep crimson
+  (#8B0000), weathered parchment (#C8B79A), stone grey (#3D3B3A) and near-black (#0A0807). The look is somber
+  painterly concept art with heavy atmosphere, cold air and a single warm or red light. No figures, no
+  creatures, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: diablo4.hero-01
+    title: "Cathedral in the Blizzard"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cathedral, snow, crimson]
+    accent: "#8B0000"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The black silhouette of a vast ruined gothic cathedral rises from a
+        snowbound mountainside, its broken spires and a hollow rose window barely visible through a driving
+        blizzard. A thin band of crimson light glows low on the horizon behind it, staining the swirling snow
+        dull red. The foreground is a field of deep snowdrifts and a few bare, black trees.
+        Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+        source.
+        Palette: #8B0000, #C8B79A, #3D3B3A with an accent #0A0807. Mood: somber, cold, ominous.
+        Composition: the cathedral silhouette and the crimson horizon behind it sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark snowdrifts and swirling snow in low contrast. New area on the right: the mountain slope continues
+        with a faint far monastery light. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cathedral rises through the center from 20% to 65% of the height, with the crimson glow
+        behind its spires. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: diablo4.minimal-01
+    title: "Lone Lantern on the Moor"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, lantern, moor]
+    accent: "#8B0000"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small lantern glows warm amber on a bare wooden post on a
+        vast, flat, dark moor under a smooth sky that fades from near-black at the top to a faint dull-crimson
+        band at the horizon. Thin drifting snowflakes catch the lantern's light. Nothing else is in the frame.
+        Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+        source.
+        Palette: #0A0807, #2A1514, #8B0000 with a lantern #E0A15A. Mood: lonely, quiet, bleak.
+        Composition: the lantern and its glow on the snow sits about 61–71% across and 36–64% down; more than
+        70% of the image is empty dark sky and moor. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty near-black to dull-crimson sky, completely smooth. New area on the right: the moor continues to
+        a faint far ridge under crimson haze. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lantern glows at about 62% of the height in the lower center, with the empty dark sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: diablo4.mood-01
+    title: "Monastery Bell Tower in Snow"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [tower, snow, fog]
+    accent: "#8B0000"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A narrow stone bell tower with a pointed roof stands on a cliff edge
+        above a snowy valley, half-hidden by fog. The bell hangs in a dark arched opening, and a faint warm
+        window glows beneath it. Snow falls steadily in the grey-blue air, and the valley below fades into pale
+        mist.
+        Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+        source.
+        Palette: #0A0807, #3D3B3A, #8A97A6 with a window #E0A15A. Mood: cold, hushed, solemn.
+        Composition: the bell tower's arched opening and the warm window sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark stone cliff and snow in soft grey shadow. New area on the right: more cliff and mist drop away into
+        the valley. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower rises at about 45% of the height in the center, with the foggy valley below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: diablo4.alt-01
+    title: "Frozen Moor at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [moor, frost, dawn]
+    accent: "#8B0000"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide frozen moor at dawn, with pale frost on the grass and thin
+        ice across still pools. The low sun is a dull pink-gold disc behind thin clouds, and a ruined stone arch
+        stands alone in the middle distance. A few bare trees reach out of the mist, and everything is quiet and
+        cold.
+        Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+        source.
+        Palette: #EFE8DC, #C8B79A, #A0A5AC with a rose #B8756E. Mood: cold, still, gentle.
+        Composition: the lone stone arch in the pink-gold light sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pale frosted grass and mist, low in detail. New area on the right: the moor continues to a faint far
+        ridge in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arch stands at about 48% of the height in the center, with the pale sky above and frosted
+        grass below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

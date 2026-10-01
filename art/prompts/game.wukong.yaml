@@ -1,0 +1,187 @@
+pack: game.wukong
+kind: game
+title: "Black Myth: Wukong"
+inspiration:
+  genre: "Chinese mythology action"
+  setting: "misty karst mountains, ancient temples, autumn maples, golden clouds"
+  palette: ["#C79A3A", "#8E2C1F", "#5A6B4E", "#121212"]
+  motifs: [a temple on a karst peak, a maple valley in mist, a golden cloud sea]
+  avoid: [game title, the monkey-king figure, the staff, characters, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by Chinese mythology landscapes, with
+  no people or creatures. Think misty karst mountains with tiny temples on their peaks, autumn maple valleys,
+  golden sunlit cloud seas and ancient stone stairs. The palette is gold (#C79A3A), lacquer red (#8E2C1F), pine
+  green (#5A6B4E) and ink black (#121212). The look is a cinematic blend of ink-wash mountain painting and rich
+  photographic realism, with layered mist and warm golden light. No figures, no weapons, no emblems, no text.
+  Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: wukong.hero-01
+    title: "Temple on a Karst Peak"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [temple, mountains, mist]
+    accent: "#C79A3A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A tall karst peak of dark grey rock rises from a sea of white mist,
+        crowned with a small tiered temple with red pillars and curved golden-tiled roofs. Twisted pines cling
+        to its cliffs, and a thin stone stair climbs the side. Behind, more peaks fade in layers of ink-wash
+        grey and gold, and warm sunlight lights the mist from the right.
+        Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+        golden light.
+        Palette: #C79A3A, #8E2C1F, #5A6B4E with an accent #121212. Mood: serene, mythic, majestic.
+        Composition: the temple on the peak and the stair beneath it sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft layered mist and pale peaks, low in detail. New area on the right: more karst peaks rise from the
+        mist into golden haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The peak and temple rise at the center from 20% to 65% of the height, with mist below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wukong.minimal-01
+    title: "Golden Cloud Sea"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, clouds, golden]
+    accent: "#C79A3A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth sea of white and golden cloud stretches to a faint horizon
+        under a vast, empty, pale gold and cream sky. A single tiny dark pine-topped rock pokes through the
+        cloud at the right, like an island. A soft sun glow lies low at the horizon. Everything else is clean,
+        empty color.
+        Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+        golden light.
+        Palette: #FBF1D6, #E8C96A, #C79A3A with a rock #3A3A38. Mood: serene, spacious, bright.
+        Composition: the small rock island in the cloud sea sits about 60–72% across and 36–64% down; more than
+        70% of the image is empty cloud sea and sky. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale gold sky and soft cloud, completely smooth. New area on the right: a second tiny peak far
+        away in the haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rock stands at about 62% of the height in the lower center, with empty golden sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wukong.mood-01
+    title: "Maple Valley in Mist"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [maples, valley, autumn]
+    accent: "#C79A3A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A deep mountain valley full of autumn maples in deep red and amber,
+        wrapped in drifting mist, with a narrow stream and an old stone bridge with a red rail. A faint warm sun
+        glows through the fog above the ridge. The colors are rich but muted, and the air is calm.
+        Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+        golden light.
+        Palette: #1A1512, #5A6B4E, #8E2C1F with a gold #C79A3A. Mood: quiet, rich, hazy.
+        Composition: the stone bridge and the red maples beside it sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark pine slopes in soft mist, low in detail. New area on the right: more maples and mist recede into
+        the valley. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bridge sits at about 58% of the height in the center, with the misty valley rising above
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wukong.alt-01
+    title: "Ancient Stair at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [stair, dawn, mountains]
+    accent: "#C79A3A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long ancient stone stair climbs a green mountainside toward a
+        distant pavilion, with pale gold dawn light across the steps and thin mist drifting between old pines. A
+        calm cloud sea fills the valley below, and soft pink light touches the peaks beyond. The air is clear
+        and bright.
+        Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+        golden light.
+        Palette: #F7EBD0, #C79A3A, #8DA37A with a rose #C98B7A. Mood: peaceful, luminous, ancient.
+        Composition: the stair and the pavilion at its top sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green slope and pale mist, low in detail. New area on the right: the mountains continue into
+        pink-gold haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The stair climbs the center toward the pavilion at about 40% of the height, with cloud sea
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,24 @@
+<Application x:Class="PrettyDesk.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
+             xmlns:views="clr-namespace:PrettyDesk.App.Views"
+             ShutdownMode="OnExplicitShutdown">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ui:ThemesDictionary Theme="Dark" />
+        <ui:ControlsDictionary />
+        <ResourceDictionary Source="pack://application:,,,/PrettyDesk;component/Resources/Styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- View model → view mapping for the main window's page host. -->
+      <DataTemplate DataType="{x:Type vm:HomeViewModel}"><views:HomePage /></DataTemplate>
+      <DataTemplate DataType="{x:Type vm:LibraryViewModel}"><views:LibraryPage /></DataTemplate>
+      <DataTemplate DataType="{x:Type vm:DefaultsViewModel}"><views:DefaultsPage /></DataTemplate>
+      <DataTemplate DataType="{x:Type vm:SettingsViewModel}"><views:SettingsPage /></DataTemplate>
+      <DataTemplate DataType="{x:Type vm:AboutViewModel}"><views:AboutPage /></DataTemplate>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

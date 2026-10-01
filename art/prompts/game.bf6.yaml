@@ -1,0 +1,188 @@
+pack: game.bf6
+kind: game
+title: "Battlefield 6"
+inspiration:
+  genre: "modern large-scale war"
+  setting: "a collapsing skyline, dust storms, dramatic weather"
+  palette: ["#E6C34A", "#6F7A80", "#2B2F33", "#0C0D0F"]
+  motifs: [a storm over a damaged skyline, a smoke-lit sunset]
+  avoid: [game title, soldiers, vehicles, weapons, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by modern large-scale conflict, using
+  only empty landscapes. Think a damaged city skyline under dramatic storm clouds, a rolling dust storm over
+  open ground, smoke-lit sunsets and quiet empty ruins. The palette is dusty gold (#E6C34A), cool grey
+  (#6F7A80), gunmetal (#2B2F33) and near-black (#0C0D0F). The look is cinematic documentary photography with
+  heavy atmosphere, dust and dramatic weather. No people, no weapons, no vehicles, no insignia, no text. Keep
+  the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: bf6.hero-01
+    title: "Storm over a Damaged Skyline"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [skyline, storm, ruins]
+    accent: "#E6C34A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A city skyline of broken towers stands under a heavy dark storm
+        front, with a narrow break of low golden sunlight lighting the damaged tops and trailing curtains of
+        rain. Thin columns of smoke rise from the lower streets, and the river in the foreground reflects the
+        stormlight. The sky is layered in charcoal, steel grey and dusty gold.
+        Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+        restrained.
+        Palette: #E6C34A, #6F7A80, #2B2F33 with an accent #0C0D0F. Mood: somber, dramatic, vast.
+        Composition: the golden break in the storm and the broken tower tops sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark river water and ruined bank in soft shadow. New area on the right: the skyline continues into rain
+        haze with a faint far tower. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The broken towers rise through the center from 20% to 60% of the height, with the golden
+        break behind them. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bf6.minimal-01
+    title: "Dust Wall on the Horizon"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, dust, plain]
+    accent: "#E6C34A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single great wall of pale golden dust rises along the far horizon
+        of a vast, flat, empty plain, softened by distance and haze, under a huge, smooth, pale sky of cream and
+        grey. The plain is plain tan. A thin distant line of ruined shapes sits at the base of the dust. Nothing
+        else is in the frame.
+        Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+        restrained.
+        Palette: #F1E8D0, #E6C34A, #A8ADA9 with a ruin #6F7A80. Mood: quiet, tense, vast.
+        Composition: the dust wall and the faint ruined line at its base sits about 59–73% across and 36–64%
+        down; more than 70% of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and
+        low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+        the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale cream-grey sky and tan plain. New area on the right: the plain continues into dusty haze.
+        Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dust wall rises at about 52% of the height in the lower center, with empty pale sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bf6.mood-01
+    title: "Smoke-Lit Sunset"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [sunset, smoke, ruins]
+    accent: "#E6C34A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sunset seen through drifting smoke over an empty ruined district,
+        with a dull red-gold sun disc glowing through the haze and silhouettes of broken walls and a leaning
+        crane in front. The sky is layered in charcoal, rust and smoky gold, and the ground is rubble with thin
+        dust in the air.
+        Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+        restrained.
+        Palette: #0C0D0F, #3A3028, #6F7A80 with a sun #E6C34A. Mood: somber, hazy, quiet.
+        Composition: the sun disc behind the smoke and the broken walls sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark rubble and drifting smoke, low in detail. New area on the right: the ruins continue into smoke with
+        a faint far glow. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sun disc glows at about 48% of the height in the center, with silhouettes in the lower
+        half. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bf6.alt-01
+    title: "Quiet Ruins at Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [ruins, morning, street]
+    accent: "#E6C34A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet empty street of damaged pale buildings in soft morning
+        light, with cracked walls, dust motes in the sun and a few green weeds growing through the asphalt. A
+        thin pink-gold haze lies over the far end of the street, and the sky above is a pale clear blue. The air
+        is calm and still.
+        Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+        restrained.
+        Palette: #F1E9D8, #E6C34A, #A7B2B8 with a shadow #6F7A80. Mood: calm, still, hazy.
+        Composition: the sunlit end of the street in golden haze sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain pale cracked wall in soft light, low detail. New area on the right: the street continues into pale
+        haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The street runs up the center to a vanishing point at about 48% of the height, with pale sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

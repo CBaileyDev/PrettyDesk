@@ -1,0 +1,181 @@
+pack: game.sea-of-thieves
+kind: game
+title: "Sea of Thieves"
+inspiration:
+  genre: "stylized pirate adventure"
+  setting: "turquoise seas, painterly islands, galleon silhouettes at sunset"
+  palette: ["#1FB5AD", "#F2C14E", "#4B3F72", "#0E1B2C"]
+  motifs: [a lone ship at golden hour, a lantern-lit island at night, a storm at sea]
+  avoid: [game title, characters, the skull cloud, emblems, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a stylized swashbuckling sea
+  adventure, with no people. Think turquoise seas, painterly tropical islands, tall-sailed galleon silhouettes
+  at golden hour, lantern-lit coves at night and dramatic storms. The palette is turquoise (#1FB5AD), golden
+  yellow (#F2C14E), twilight purple (#4B3F72) and deep navy (#0E1B2C). The look is a painterly, stylized 3D
+  concept art with rich color, soft clouds and glowing water. No figures, no flags with emblems, no skulls, no
+  text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: sea-of-thieves.hero-01
+    title: "Galleon at Golden Hour"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [ship, sunset, sea]
+    accent: "#1FB5AD"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A tall wooden galleon with full cream sails sails across a
+        glittering turquoise sea at golden hour, its silhouette backlit by a huge low sun. Towering painterly
+        clouds in gold, peach and purple fill the sky, and a small palm-covered island glows on the horizon. The
+        water is full of sparkling reflections and soft foam.
+        Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+        Palette: #1FB5AD, #F2C14E, #4B3F72 with an accent #0E1B2C. Mood: adventurous, warm, glowing.
+        Composition: the ship's sails against the golden sun sits about 54–74% across and 36–56% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        glittering turquoise water with soft foam, low detail. New area on the right: the sea continues to a few
+        distant islands in golden haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ship sails at about 48% of the height in the center, with the sun behind it and water
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sea-of-thieves.minimal-01
+    title: "Lone Sail at Sea"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, sail, sea]
+    accent: "#1FB5AD"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tiny ship with cream sails floats far out on a vast, smooth
+        turquoise sea under a huge, empty sky that fades from pale turquoise at the horizon to soft blue above.
+        A thin line of foam trails behind it. Everything else is clean, empty color.
+        Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+        Palette: #EAF9F7, #1FB5AD, #7CD3CD with a sail #FBF1D2. Mood: calm, free, spacious.
+        Composition: the ship and the line of foam behind it sits about 60–72% across and 36–64% down; more than
+        70% of the image is empty sea and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty soft turquoise-to-blue sky, completely smooth, kept calm and low in detail. New area on the
+        right: the sea continues to a faint far island. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ship floats at about 62% of the height in the lower center, with empty sky above. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sea-of-thieves.mood-01
+    title: "Lantern Island at Night"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [island, night, lanterns]
+    accent: "#1FB5AD"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small tropical island at night, with warm yellow lanterns glowing
+        along a wooden dock and in the palms, reflected in a calm dark sea. A deep purple and navy sky is
+        scattered with stars, and a thin crescent moon hangs above. A few silent boats rest by the shore.
+        Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+        Palette: #0E1B2C, #2A2D5A, #4B3F72 with a lantern #F2C14E. Mood: peaceful, warm, magical.
+        Composition: the glowing lanterns on the dock and their reflections sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark navy sea with soft reflections, low in detail. New area on the right: the sea continues to another
+        small island glow far away. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dock lanterns glow at about 60% of the height in the lower center, with the starry sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sea-of-thieves.alt-01
+    title: "Storm Clearing"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [storm, clearing, sea]
+    accent: "#1FB5AD"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm turquoise sea beneath a clearing storm, with dark grey-purple
+        clouds breaking apart and shafts of bright sun striking the water in glittering pools. A pale blue sky
+        opens above, and a lone rocky island glows green in the light. The mood is relieved and bright.
+        Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+        Palette: #E8F7F6, #1FB5AD, #F2C14E with a cloud #7A6AA8. Mood: relieved, bright, fresh.
+        Composition: the sunlit island and the shafts of light on the water sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft turquoise water and thinning cloud, low in detail. New area on the right: the clouds drift away to
+        a bright blue horizon. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The island sits at about 50% of the height in the center, with sun shafts falling on the
+        water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

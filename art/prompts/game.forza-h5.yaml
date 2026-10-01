@@ -1,0 +1,185 @@
+pack: game.forza-h5
+kind: game
+title: "Forza Horizon 5"
+inspiration:
+  genre: "open-world road festival in Mexico"
+  setting: "a volcano at golden hour, jungle roads, desert highways"
+  palette: ["#F25F5C", "#FFE066", "#247BA0", "#1C1C1C"]
+  motifs: [an empty road to a volcano, festival lights at dusk, a coastal highway]
+  avoid: [game title, branded cars, logos, sign text, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a sunlit open-world road festival
+  in a warm, southern landscape, with no vehicles and no people. Think empty winding roads leading to a volcano
+  at golden hour, jungle roads in dappled light, a desert highway under vast skies, a coastal road above a
+  turquoise sea and colorful festival lights at dusk. The palette is coral red (#F25F5C), sun yellow (#FFE066),
+  ocean blue (#247BA0) and asphalt black (#1C1C1C). The look is vivid cinematic photography with warm light,
+  rich color and long-lens depth. No vehicles, no people, no signs, no text. Keep the left edge and the bottom
+  edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: forza-h5.hero-01
+    title: "Road to the Volcano"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [road, volcano, golden-hour]
+    accent: "#F25F5C"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty winding road crosses a green plain toward a huge, smoking
+        volcano glowing in golden hour light, its slopes striped in warm orange and deep green. Tall cactus and
+        agave plants line the road, and long warm shadows fall across the asphalt. The sky is a vivid gradient
+        of coral, gold and blue with soft clouds around the volcano peak.
+        Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+        Palette: #F25F5C, #FFE066, #247BA0 with an accent #1C1C1C. Mood: warm, free, adventurous.
+        Composition: the volcano peak and the road leading toward it sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden grass and roadside plants, low in detail. New area on the right: the plain continues to a
+        distant lake and hazy hills. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road winds up the center to the volcano at about 40% of the height, with the vivid sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: forza-h5.minimal-01
+    title: "Empty Desert Highway"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, highway, desert]
+    accent: "#F25F5C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single straight desert highway runs to a vanishing point on a flat
+        horizon under a vast, smooth sky that fades from pale coral at the horizon to soft blue above. The
+        asphalt has a thin dashed yellow center line, and the sand beside it is pale gold. Nothing else is in
+        the frame.
+        Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+        Palette: #FFF1D8, #F6B189, #7FB7CF with a line #FFE066. Mood: calm, free, spacious.
+        Composition: the vanishing point of the highway sits about 60–72% across and 36–64% down; more than 70%
+        of the image is empty sky and sand. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale coral-to-blue sky, completely smooth, kept calm and low in detail. New area on the right:
+        the highway continues into a faint heat haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road converges in the center to a vanishing point at about 55% of the height, with empty
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: forza-h5.mood-01
+    title: "Festival Lights at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [festival, dusk, lanterns]
+    accent: "#F25F5C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet town square at dusk, with strings of warm coral, yellow and
+        blue lanterns crossing above empty cobbled streets and low, colorful adobe-style walls. A volcano is a
+        soft dark silhouette against a violet-orange sky, and the lanterns reflect gently in a small puddle on
+        the stones. The scene is warm and still.
+        Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+        Palette: #1C1C1C, #4A2B4F, #F25F5C with a blue #247BA0. Mood: warm, festive, calm.
+        Composition: the strings of lanterns and the volcano silhouette behind them sits about 52–72% across and
+        45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark adobe walls in soft color, low in detail. New area on the right: more lantern strings recede into
+        the dusk haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lanterns glow at about 40% of the height across the center, with the volcano behind them.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: forza-h5.alt-01
+    title: "Coastal Highway Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [coast, morning, highway]
+    accent: "#F25F5C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth coastal highway curves along a cliff above a bright
+        turquoise sea in the morning, with white surf at the rocks below and palm trees along the edge. A pale
+        blue sky with a few thin clouds sits above, and a soft haze lies over a distant headland. The road is
+        empty and warm.
+        Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+        Palette: #EFFAFB, #247BA0, #FFE066 with a coral #F25F5C. Mood: fresh, free, bright.
+        Composition: the curve of the road above the turquoise sea sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, vehicles, people, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft turquoise water and pale cliffs, low in detail. New area on the right: the coast continues to a
+        faint far headland in haze. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road curves through the lower center to about 52% of the height, with the sea and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

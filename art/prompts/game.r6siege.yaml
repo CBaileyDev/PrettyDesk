@@ -1,0 +1,183 @@
+pack: game.r6siege
+kind: game
+title: "Rainbow Six Siege X"
+inspiration:
+  genre: "tactical close quarters"
+  setting: "a suburban house at night with dramatic light, barricades, dust in light shafts"
+  palette: ["#F7B500", "#2F3640", "#8C99A6", "#0D0F12"]
+  motifs: [light shafts through a broken wall, rain on a dark house, a drone's-eye floor glow]
+  avoid: [game title, operators, gadgets, logos, text, weapons, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by tactical close-quarters tension,
+  using only empty spaces. Think an empty suburban house at night with dramatic hard light, shafts of
+  dust-filled light through holes in walls, plank barricades and rain on dark windows. The palette is amber
+  (#F7B500), slate (#2F3640), cool grey (#8C99A6) and near-black (#0D0F12). The look is cinematic photography
+  with strong contrast, volumetric dust and rich shadow. No people, no weapons, no gadgets, no insignia, no
+  text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: r6siege.hero-01
+    title: "Light Through the Broken Wall"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [interior, light-shaft, night]
+    accent: "#F7B500"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The inside of an empty suburban house at night. A rough hole in a
+        plaster wall lets in broad shafts of warm amber light from a streetlamp outside, filled with floating
+        dust and lighting a floor of scattered wood splinters. Plain wooden planks barricade a window to the
+        left. The rest of the room falls into slate and black shadow.
+        Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+        Palette: #F7B500, #2F3640, #8C99A6 with an accent #0D0F12. Mood: tense, quiet, dramatic.
+        Composition: the amber light shafts and the hole in the wall sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark slate wall with faint texture and a plank edge. New area on the right: a doorway to a darker room
+        with a faint cold glow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light shafts fall from the upper right to the floor, the hole at about 40% of the height.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: r6siege.minimal-01
+    title: "Single Light Slit"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, light, wall]
+    accent: "#F7B500"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, plain dark wall of slate-grey plaster fills the frame, with
+        one thin vertical slit of warm amber light glowing in it, as if a door were ajar in another room. A soft
+        wedge of light falls across a bare dark floor. The wall has a faint texture and nothing else.
+        Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+        Palette: #0D0F12, #2F3640, #8C99A6 with the slit in #F7B500. Mood: quiet, tense, minimal.
+        Composition: the slit of light and its wedge on the floor sits about 61–71% across and 30–70% down; more
+        than 70% of the image is plain dark wall. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain slate wall with faint plaster texture, low detail. New area on the right: the wall continues
+        into deeper shadow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light slit rises through the center from 30% to 65% of the height, with its wedge on the
+        floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: r6siege.mood-01
+    title: "Rain on a Dark House"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rain, house, night]
+    accent: "#F7B500"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The exterior of a dark suburban house in heavy rain at night, seen
+        from across a wet lawn. A single upstairs window glows faint amber behind blinds, and rain streaks the
+        air in the light of a distant streetlamp. The roofline and a bare tree are black silhouettes against a
+        deep slate sky.
+        Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+        Palette: #0D0F12, #232B35, #8C99A6 with a window glow #F7B500. Mood: moody, wet, quiet.
+        Composition: the glowing upstairs window and the wet lawn sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark wet lawn and fence in deep shadow, low in detail. New area on the right: a hedge and a distant
+        dim streetlamp in the rain. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The house stands at the center, with the window glowing at about 45% of the height and the
+        wet lawn below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: r6siege.alt-01
+    title: "Sunlit Empty Room"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [interior, morning, empty]
+    accent: "#F7B500"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty suburban living room in soft morning light, with pale
+        walls, bare wooden floors and tall windows letting in broad bars of sun filled with floating dust. A few
+        moving boxes with no markings sit against one wall. The light is gentle and warm, with calm grey
+        shadows.
+        Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+        Palette: #F4EEE2, #D9C79A, #8C99A6 with a warm #F7B500. Mood: calm, bright, quiet.
+        Composition: the sunbars on the floor and the dust in them sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain pale wall in soft light, low detail. New area on the right: an open doorway leading to a brighter
+        hallway. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sunbars fall across the center at about 55% of the height, over a bare wooden floor. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

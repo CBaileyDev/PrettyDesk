@@ -1,0 +1,3 @@
+[*.cs]
+# View-model tests await commands and NSubstitute stubs whose CancellationToken parameters are irrelevant to the behaviour under test.
+dotnet_diagnostic.xUnit1051.severity = none

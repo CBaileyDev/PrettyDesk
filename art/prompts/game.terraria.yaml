@@ -1,0 +1,188 @@
+pack: game.terraria
+kind: game
+title: "Terraria"
+inspiration:
+  genre: "2D pixel adventure"
+  setting: "a layered biome cross-section, glowing caverns, a night sky"
+  palette: ["#6AB04C", "#3B3B98", "#F0932B", "#130F40"]
+  motifs: [a surface-to-underworld cross-section, a mushroom-glow cave, a starry surface]
+  avoid: [game title, bosses, characters, exact sprites, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a 2D pixel-art adventure world,
+  with no people or creatures. Think a side-on cross-section of the land from sunlit surface down through
+  glowing caverns to a fiery underworld, mushroom-lit caves and a starry night over a grassy surface. All in
+  crisp original pixel art with a limited palette and soft dithering. The palette is grass green (#6AB04C),
+  indigo (#3B3B98), ember orange (#F0932B) and deep navy (#130F40). Use clean consistent pixel sizes with no
+  blur. No characters, no creatures, no emblems, no text. Keep the left edge and the bottom edge calm for
+  desktop icons and the taskbar.
+wallpapers:
+  - id: terraria.hero-01
+    title: "Surface to Underworld"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [biomes, cross-section, pixel-art]
+    accent: "#6AB04C"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A side-on pixel-art cross-section of the land. At the top, a grassy
+        surface with round trees under a twilight sky. Below, layers of brown dirt, grey stone and a glowing
+        cavern with teal crystals and a pond. At the very bottom, a dark underworld of purple rock with rivers
+        of orange lava. Thin vertical shafts connect the layers.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+        rich depth.
+        Palette: #6AB04C, #3B3B98, #F0932B with an accent #130F40. Mood: adventurous, layered, rich.
+        Composition: the glowing cavern in the middle layers sits about 54–74% across and 36–56% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pixel-art dark soil and stone layers, low in detail. New area on the right: the layers continue with
+        another cave glow far away. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cross-section stacks vertically with the glowing cavern at about 52% of the height. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: terraria.minimal-01
+    title: "Starry Surface"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, tree, stars]
+    accent: "#6AB04C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth strip of pixel-art grass with one small round tree runs
+        along the bottom of a vast, simple, dithered night sky of deep navy and indigo, scattered with a few
+        tiny stars and a single crescent moon. The sky fades softly to a faint indigo glow at the horizon.
+        Everything else is clean empty pixel color.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+        rich depth.
+        Palette: #130F40, #2A2780, #6AB04C with a moon #F5F0C8. Mood: quiet, calm, nostalgic.
+        Composition: the tree and the crescent moon sits about 60–72% across and 36–64% down; more than 70% of
+        the image is empty night sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty dithered deep navy sky with a few stars. New area on the right: the grass strip continues to a
+        faint line of far hills. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tree sits at about 70% of the height in the lower center, with the moon at about 25% and
+        empty night sky between. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: terraria.mood-01
+    title: "Mushroom Glow Cave"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cave, mushrooms, pixel-art]
+    accent: "#6AB04C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pixel-art underground cave filled with giant glowing mushrooms in
+        blue, teal and violet, their caps casting soft light on mossy stone and a still pool. Hanging vines and
+        tiny drifting spores catch the glow, and the cave walls fade into deep navy darkness at the edges.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+        rich depth.
+        Palette: #0E0B33, #3B3B98, #4AC2D8 with a violet #9B7BFF. Mood: magical, hushed, glowing.
+        Composition: the tallest mushroom cluster and its reflection in the pool sits about 52–72% across and
+        45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark pixel-art cave wall and vines, low detail. New area on the right: more small mushrooms glow faintly
+        in the dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The mushroom cluster glows at the center at about 52% of the height, with the pool below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: terraria.alt-01
+    title: "Sunny Meadow Surface"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [meadow, sunny, pixel-art]
+    accent: "#6AB04C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bright pixel-art surface landscape on a sunny day, with rolling
+        green hills, round leafy trees, a small pond and a few wooden fence posts. A pale blue dithered sky
+        holds a few blocky clouds and a round yellow sun. Soft pixel shadows fall to the right, and everything
+        is cheerful and clean.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+        rich depth.
+        Palette: #E8F4FB, #6AB04C, #F9D56E with a sky #7EC8E3. Mood: sunny, cheerful, simple.
+        Composition: the pond and the nearest round tree sits about 54–74% across and 38–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pixel-art hills and sky, low in detail. New area on the right: the hills continue to a faint far
+        mountain. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pond sits at about 62% of the height in the center, with the sunny sky above. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

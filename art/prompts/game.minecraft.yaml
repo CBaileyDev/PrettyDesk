@@ -1,0 +1,184 @@
+pack: game.minecraft
+kind: game
+title: "Minecraft"
+inspiration:
+  genre: "voxel sandbox world"
+  setting: "cube-shaped terrain and trees, square sun and moon, blocky waterfalls and caves"
+  palette: ["#7CB342", "#8D6E63", "#4FC3F7", "#2E2E2E"]
+  motifs: [a blocky cliff waterfall, a voxel village at dusk, cube clouds, a lantern-lit cave glow]
+  avoid: [game title, mobs, block-face creatures, player figures, exact official textures, logos, text, UI or HUD elements, characters]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a voxel sandbox world. Terrain,
+  trees, clouds, water and even the sun are made of clean, cube-shaped blocks, rendered as a polished, soft-lit
+  3D scene with gentle depth of field. The palette is grass green (#7CB342), warm earth brown (#8D6E63), sky
+  blue (#4FC3F7) and charcoal stone (#2E2E2E). The mood is calm, peaceful and a little nostalgic. Use original
+  block shapes and original colors, never official textures. No creatures, no figures, no text, no logos, no
+  interface. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: minecraft.hero-01
+    title: "Blocky Cliff Waterfall"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [voxel, waterfall, landscape]
+    accent: "#7CB342"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A grand voxel landscape: stepped, cube-built cliffs of grass and
+        brown earth rise on the right, with a pale blue waterfall pouring down their blocky edge into a clear
+        square-edged lake. Cube-shaped trees dot the slopes, and cloud blocks drift across a bright sky behind a
+        square sun. Soft golden light falls from the upper left.
+        Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+        Palette: #7CB342, #8D6E63, #4FC3F7 with an accent #2E2E2E. Mood: peaceful, bright, adventurous.
+        Composition: the waterfall and the lake it feeds sits about 54–74% across and 36–56% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth stretch of blocky grass hills with a few cube trees, low detail. New area on the right: more
+        blocky hills and a faint distant mountain block silhouette in haze. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The waterfall drops through the center from 25% to 65% of the height, with the lake below and
+        block clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: minecraft.minimal-01
+    title: "Single Block Tree"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, tree, sky]
+    accent: "#7CB342"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. One cube-built tree with a dark brown square trunk and a rounded
+        cluster of leafy green blocks stands alone on a flat, grassy block plain under a vast pale blue gradient
+        sky. A single square white cloud floats high up, and a soft square sun glows near the horizon.
+        Everything else is clean empty color.
+        Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+        Palette: #7CB342, #8D6E63, #4FC3F7 with an accent #2E2E2E. Mood: calm, simple, nostalgic.
+        Composition: the tree and its soft block shadow sits about 60–72% across and 35–65% down; more than 70%
+        of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, mobs, figures, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale blue sky with soft gradient and no clouds. New area on the right: the grass plain
+        continues to a faint line of distant block hills. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: minecraft.mood-01
+    title: "Lantern Cave Glow"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cave, lantern, underground]
+    accent: "#7CB342"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The inside of a vast blocky cave, with square-cut stone walls in
+        charcoal and warm brown, lit by a few lanterns whose warm orange glow pools on a stepped stone floor. A
+        small underground lake of dark blue blocks reflects the light, and a faint teal glow shines from a
+        distant tunnel mouth. Dust specks hang in the lantern light.
+        Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+        Palette: #1B1B1F, #3A3633, #8D6E63 with a lantern glow #F4A64A. Mood: hushed, warm, mysterious.
+        Composition: the lantern glow on the stepped stone floor sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark charcoal stone blocks in deep shadow, low detail. New area on the right: the cave tunnel continues
+        into a distant teal glow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lantern pool sits at about 62% of the height, with cave walls rising on both sides above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: minecraft.alt-01
+    title: "Village at Dusk"
+    role: alt
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [village, dusk, cozy]
+    accent: "#7CB342"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A cozy cube-built village on a gentle slope at dusk, with small
+        blocky houses of wood and stone lit by warm yellow windows. A square moon rises in a gradient sky of
+        orange, rose and deep blue, and cube clouds glow pink at the edges. A winding path of lighter blocks
+        leads between fields to the village.
+        Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+        Palette: #F9B26B, #D9738B, #3B4A8C with a grass green #7CB342. Mood: cozy, peaceful, warm.
+        Composition: the lit village and its path sits about 54–74% across and 38–58% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark blue hillside blocks fading into dusk, low detail. New area on the right: more distant lit houses
+        and a faint blocky mountain in the haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The village sits on the slope at about 55% of the height, with the glowing dusk sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

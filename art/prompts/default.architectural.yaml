@@ -1,0 +1,357 @@
+pack: default.architectural
+kind: default
+title: "Architecture & Light"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Architecture and Light. Every image is
+  a study in concrete, plaster, glass and stone with strong light and shadow: brutalist forms, curved stairs,
+  light shafts, minimal pools and arches in sun. Palettes are restrained greys and warm whites (#F0EEEA,
+  #BFBDB8, #7A7873, #2A2927) with at most one soft accent such as a sliver of sky blue. The look is contemporary
+  architectural photography with clean geometry, rich tonal range and large areas of calm surface. Gradients are
+  smooth and banding-free. No text, no signs, no people, no frames or borders. Keep the left edge and the bottom
+  edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: ar-01
+    title: "Concrete Light Shaft"
+    role: default
+    tone: mid
+    setupMatch: [white, black]
+    tags: [concrete, brutalist, light]
+    starter: true
+    accent: "#C9C4BA"
+    focal: { x: 0.66, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A tall concrete chamber with smooth board-marked walls is cut by a
+        single sharp shaft of sunlight falling from a narrow opening high above. The beam lands as a bright
+        diagonal blade across the opposite wall and floor, its edges crisp, with soft grey bounce light filling
+        the shadow. The concrete shows fine, even texture and subtle tonal variation.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #EDEAE4, #BFBDB8, #7A7873 with a deep shadow #2A2927. Mood: monumental, quiet, focused.
+        Composition: the bright blade of light on the wall sits about 56–76% across and 34–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, windows
+        with detail, furniture, plants, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm grey concrete wall in even soft shadow, low in detail. New area on the right: the wall continues
+        with a second, thinner shaft of light far away, fading. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light blade runs diagonally from the upper right to about 55% of the height at the lower
+        left, over plain concrete. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-02
+    title: "Curved Staircase"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [staircase, curve, plaster]
+    starter: false
+    accent: "#D2CCC1"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A white plaster spiral staircase seen from directly below curves
+        upward in a smooth, hypnotic spiral, its sweeping edge lit by soft daylight from a skylight at the
+        center. Each step edge draws a fine thin line of brightness, and the inner wall glows in gentle
+        gradients of warm white and pale grey.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #F4F1EC, #DDD8CF, #B6B0A5 with a soft shadow #8F897E. Mood: elegant, calm, hypnotic.
+        Composition: the center of the spiral beneath the skylight, a centered and symmetrical composition, sits
+        about 40–60% across and 36–64% down; the spiral is balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, railings with
+        detail, people, plants, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        the curved plaster wall in gentle even light, low in detail. New area on the right: the curved plaster
+        wall continues in gentle even light, with the spiral edge fading. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The spiral spans the center of the frame with the skylight at about 45% of the height. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-03
+    title: "Arches in Afternoon Sun"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [arches, sun, stone]
+    starter: false
+    accent: "#D8CDB8"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A repeating colonnade of simple round arches in pale limestone runs
+        along a sunlit wall, each arch casting a deep, clean-edged shadow on the floor in crisp curved shapes.
+        Warm afternoon sun comes from the left, lighting one side of every pier. A strip of pale sky shows
+        through the far arches.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #F3EDE1, #DCD0BA, #B8AA92 with a deep shadow #6E6556. Mood: warm, rhythmic, timeless.
+        Composition: the nearest arch and its curved shadow sits about 54–74% across and 38–62% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, doors, plants,
+        railings, people, signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain sunlit limestone wall with soft vertical tonal variation. New area on the right: two more arches
+        continue into a pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arches recede in perspective with the nearest arch at about 50% of the height and its
+        shadow below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-04
+    title: "Minimal Pool"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [pool, water, minimal]
+    starter: false
+    accent: "#8FB8C8"
+    focal: { x: 0.64, y: 0.54 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A perfectly rectangular pool of clear turquoise water sits within a
+        smooth white concrete terrace, its edge cutting a long, sharp diagonal across the frame. Soft sunlight
+        creates shimmering caustic patterns on the pale pool floor and a thin bright line along the edge. A
+        plain white wall rises behind it, with a blue sky strip above.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #F2F0EB, #D8D6D0, #8FB8C8 with a soft shadow grey #A8A6A0. Mood: fresh, clean, sunlit.
+        Composition: the pool edge and the shimmering water beside it sits about 54–74% across and 42–66% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, ladders,
+        people, loungers, plants, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain white concrete terrace and wall in even light, low in detail. New area on the right: the pool edge
+        continues into a pale wall and a sliver of blue sky. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pool diagonal crosses the lower half through about 58% of the height, with a plain wall
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-05
+    title: "Glass and Concrete Corner"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [glass, corner, dusk]
+    starter: false
+    accent: "#8C98A8"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The sharp corner of a modern concrete building with a
+        floor-to-ceiling glass wall, seen at dusk. The glass reflects the last cool blue light of the sky and a
+        soft warm glow from deep inside. Clean vertical mullions divide the pane into calm panels, and the
+        concrete edge catches a thin highlight against a deep blue-grey sky.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #101418, #38424C, #8C98A8 with a warm glow #D9B98A. Mood: calm, sleek, contemporary.
+        Composition: the building corner with its sky reflection sits about 56–76% across and 34–66% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        furniture, readable signs, plants.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark concrete wall with delicate texture, low in detail. New area on the right: more glass panels recede
+        into deep blue reflection and dusk sky. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The corner rises through the center from 25% to 75% of the height, against a deep blue-grey
+        sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-06
+    title: "Plaster Shadows Geometry"
+    role: default
+    tone: light
+    setupMatch: [white]
+    tags: [plaster, shadow, geometric]
+    starter: false
+    accent: "#C4BEB2"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A white plaster wall holds a few clean, geometric shadows cast by
+        unseen architectural forms: a sharp triangle, a long diagonal band and a soft-edged rectangle. Warm
+        late-afternoon light falls from the upper left and shows the wall's faint trowel texture. Between the
+        shadows the plaster glows in creamy, even tones.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #F5F2EC, #E3DED4, #C4BEB2 with a deep shadow grey #8F8A80. Mood: serene, graphic, sunlit.
+        Composition: the intersection of the triangle and the diagonal shadow sits about 56–76% across and
+        36–60% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, the objects
+        casting the shadows, people, plants, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain, evenly lit plaster with delicate texture, low in detail. New area on the right: the diagonal
+        shadow continues and fades into soft cream light. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shadows cross through the center at about 48% of the height over plain cream plaster.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-07
+    title: "Skylight Tunnel"
+    role: default
+    tone: mid
+    setupMatch: [black, white]
+    tags: [tunnel, skylight, concrete]
+    starter: false
+    accent: "#B5B2AA"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long, plain concrete corridor recedes toward a single point, its
+        ceiling cut with a row of narrow skylights that drop soft bars of daylight onto the floor and walls. The
+        walls are smooth grey, and the floor is polished and reflects the light in gentle streaks. The scene is
+        perfectly symmetrical.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #E9E7E1, #B5B2AA, #6C6A65 with a deep shadow #2A2927. Mood: calm, hypnotic, precise.
+        Composition: the vanishing point and the nearest light bars, a centered and symmetrical composition,
+        sits about 40–60% across and 34–58% down; the corridor is symmetrical so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, doors, people,
+        signs, furniture, plants.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        the grey concrete wall in even soft light, low in detail. New area on the right: the grey concrete wall
+        in even soft light, with a faint reflection on the floor. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The corridor runs up the center to a vanishing point at about 42% of the height, with light
+        bars on the floor. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ar-08
+    title: "Terrace Edge at Noon"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [terrace, sky, minimal]
+    starter: false
+    accent: "#B8C6D0"
+    focal: { x: 0.65, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The clean edge of a white concrete terrace meets an empty pale blue
+        sky and a calm, hazy sea far below, at high noon. The terrace edge is a single sharp horizontal line
+        with a thin black shadow beneath it. Light is bright and even, and the surface shows a fine concrete
+        texture. Nothing else is in the frame.
+        Style: contemporary architectural photography, strong natural light, clean geometry, precise and quiet.
+        Palette: #F4F3EF, #DCDAD4, #B8C6D0 with a deep shadow #6F6D68. Mood: bright, open, calm.
+        Composition: the terrace edge and the thin shadow beneath it sits about 55–75% across and 40–64% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges and fine material texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, railings,
+        furniture, boats, people, plants.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain bright concrete surface with soft texture, low in detail. New area on the right: the terrace edge
+        continues into a hazy sea and a pale sky. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The terrace edge crosses the frame at about 55% of the height, with pale sky above and a hazy
+        sea below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

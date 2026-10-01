@@ -1,0 +1,182 @@
+pack: game.helldivers2
+kind: game
+title: "Helldivers 2"
+inspiration:
+  genre: "satirical militaristic sci-fi"
+  setting: "hostile alien planets, orbital strike light beams, burning skies"
+  palette: ["#FFE710", "#F2F2F2", "#2B2B2B", "#C1272D"]
+  motifs: [an orbital beam on the horizon, a bug-hive wasteland, drop-pod trails at dusk]
+  avoid: [game title, soldiers, propaganda text, emblems, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a satirical militaristic sci-fi
+  world, with no people. Think hostile alien planets under burning skies, towering orbital light beams striking
+  the horizon, hive-like mounds on dusty wastelands and long fiery trails from falling pods. The palette is
+  warning yellow (#FFE710), off-white (#F2F2F2), charcoal (#2B2B2B) and blood red (#C1272D). The look is gritty
+  cinematic concept art with smoke, embers and bold graphic contrast. No soldiers, no creatures in focus, no
+  emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: helldivers2.hero-01
+    title: "Orbital Beam on the Horizon"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [wasteland, beam, burning-sky]
+    accent: "#FFE710"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A hostile alien wasteland at dusk, with a single colossal column of
+        white-yellow light striking down from the sky onto the far horizon and throwing a huge shockwave ring
+        across the dust. Burning red clouds boil above, and hive-like earth mounds and jagged rock stand dark in
+        the foreground. Long fiery trails of falling pods streak the sky.
+        Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+        Palette: #FFE710, #F2F2F2, #2B2B2B with an accent #C1272D. Mood: intense, dramatic, vast.
+        Composition: the light column and the shockwave ring at its base sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark charcoal rocks and drifting smoke, low detail. New area on the right: the wasteland continues to
+        more distant burning clouds. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light column rises through the center from 20% to 62% of the height, with the shockwave
+        ring at its base. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: helldivers2.minimal-01
+    title: "One Falling Pod"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, pod, sky]
+    accent: "#FFE710"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single thin line of fire arcs across a vast, smooth sky that fades
+        from charcoal at the top to a deep red glow at the horizon, ending in a tiny bright pod about to land on
+        a dark, flat plain. A small plume of dust rises at the landing point. The rest of the frame is clean,
+        empty smoky sky.
+        Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+        Palette: #2B2B2B, #5A1C1E, #C1272D with a yellow #FFE710. Mood: tense, stark, graphic.
+        Composition: the fire trail and the landing point sits about 59–73% across and 35–65% down; more than
+        70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty charcoal-to-red smoky sky, completely smooth, kept calm and low in detail. New area on the
+        right: the plain continues to a distant faint orange glow. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fire trail arcs down the center to the landing point at about 62% of the height, with
+        empty sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: helldivers2.mood-01
+    title: "Hive Mounds in Ash"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [hive, ash, wasteland]
+    accent: "#FFE710"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A field of tall, ribbed earth mounds with dark tunnel openings rises
+        from grey ash ground under a low smoky sky. Thin red embers drift upward, and a pale yellow sun disc
+        glows through the haze behind the nearest mound. The scene is bleak, quiet and textured with fine ash.
+        Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+        Palette: #1B1B1B, #4A4543, #C1272D with a sun #FFE710. Mood: bleak, quiet, ominous.
+        Composition: the nearest mound and the sun disc behind it sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark ash ground and drifting smoke, low detail. New area on the right: more mounds recede into smoke and
+        ember haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The nearest mound rises at the center to about 45% of the height, with the sun glow behind
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: helldivers2.alt-01
+    title: "Dusty Plain at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [plain, dawn, alien]
+    accent: "#FFE710"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide alien plain at dawn, with soft pale dust haze and a low
+        yellow sun. Rounded white rocks and pale spiky plants cast long shadows, and a single thin orbital beam
+        is just visible in the far distance as a pale line. The sky is a bright pale yellow and warm grey.
+        Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+        Palette: #F7F0D4, #FFE710, #B8B2A0 with a red #C1272D. Mood: calm, stark, spacious.
+        Composition: the rocks and their long shadows sits about 54–74% across and 38–58% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pale dust haze over a plain, low detail. New area on the right: the plain continues to a thin beam
+        in the distance. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rocks sit at about 58% of the height in the center, with the pale sky and the thin beam
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

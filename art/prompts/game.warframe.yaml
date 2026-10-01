@@ -1,0 +1,184 @@
+pack: game.warframe
+kind: game
+title: "Warframe"
+inspiration:
+  genre: "space-ninja sci-fi"
+  setting: "organic-tech orbiters, gas-giant vistas, ancient gold-white palatial architecture"
+  palette: ["#E0C589", "#2E6F95", "#C1C7CF", "#0A0C10"]
+  motifs: [a gas giant seen from an orbiter window, golden ruins in the void]
+  avoid: [game title, frames, characters, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by an elegant space-ninja
+  science-fiction world, with no people or armor. Think a quiet organic-tech ship interior with a huge window
+  onto a gas giant, ancient gold-and-white palatial architecture floating in the void, and calm cosmic vistas.
+  The palette is warm gold (#E0C589), deep blue (#2E6F95), silver (#C1C7CF) and space black (#0A0C10). The look
+  is polished cinematic concept art with sleek curves, soft rim light and a calm, refined mood. No figures, no
+  armor, no weapons, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+  taskbar.
+wallpapers:
+  - id: warframe.hero-01
+    title: "Gas Giant from the Window"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [ship, planet, interior]
+    accent: "#E0C589"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The quiet interior of an organic-tech ship, with smooth curved ribs
+        in silver and gold, looking out through a huge arched window at a banded blue-and-cream gas giant
+        filling the sky. Soft light from the planet washes across the floor and the curved walls, and a thin
+        ring of golden light traces the window's edge. The room is empty and still.
+        Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+        Palette: #E0C589, #2E6F95, #C1C7CF with an accent #0A0C10. Mood: calm, vast, elegant.
+        Composition: the gas giant framed by the arched window sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark curved silver-gold wall ribs in soft shadow. New area on the right: more curved ribs and a faint
+        second window glow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The window arch rises through the center from 15% to 70% of the height, with the gas giant
+        glowing inside it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: warframe.minimal-01
+    title: "Golden Ruin in the Void"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, arch, void]
+    accent: "#E0C589"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small, ancient gold-and-white palatial arch floats in the
+        middle of a vast, smooth, black void, lit by a thin warm rim light from one side and a faint blue glow
+        from the other. A few tiny stars scatter across the darkness. Nothing else is in the frame.
+        Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+        Palette: #0A0C10, #1A2333, #E0C589 with a blue #2E6F95. Mood: quiet, solemn, elegant.
+        Composition: the floating arch and its rim light sits about 59–73% across and 35–65% down; more than 70%
+        of the image is empty black space. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty deep black space with a few tiny stars. New area on the right: a faint distant second fragment
+        of gold in the dark. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arch floats at about 48% of the height in the center, with empty black space around it.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: warframe.mood-01
+    title: "Palace Hall in the Void"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [hall, columns, space]
+    accent: "#E0C589"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, empty palatial hall of white and gold columns drifting in
+        deep space, its long floor reflecting a faint blue light from a distant planet. Dust and tiny golden
+        motes float through the shafts of cold light, and the far end of the hall dissolves into black. The
+        architecture is smooth, ancient and ornate.
+        Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+        Palette: #0A0C10, #2A3040, #E0C589 with a blue #2E6F95. Mood: hushed, ancient, vast.
+        Composition: the long hall floor and its reflection of the blue light sits about 52–72% across and
+        45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark gold-white columns fading into black, kept calm and low in detail. New area on the right: the hall
+        continues into black with a faint far arch. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The hall runs up the center to a vanishing point at about 45% of the height, with the
+        reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: warframe.alt-01
+    title: "Orbiter Dawn Over the Planet"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [planet, dawn, window]
+    accent: "#E0C589"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bright view from a ship's curved window of a gas giant at dawn,
+        with banded pale blue, cream and rose clouds and a thin line of golden sunrise across its limb. The
+        window frame is smooth white and gold, and a soft glow fills the room. Everything is calm, clean and
+        luminous.
+        Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+        Palette: #F6F1E4, #E0C589, #9CC0D8 with a rose #D9A9A0. Mood: bright, calm, luminous.
+        Composition: the sunrise line across the planet limb sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a soft white-gold curved wall in even light, low detail. New area on the right: the window frame
+        continues with a pale reflection. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The planet limb crosses the center at about 50% of the height, with the window frame around
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <RootNamespace>PrettyDesk.Windows</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.335" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.12" />
+    <InternalsVisibleTo Include="PrettyDesk.Windows.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrettyDesk.Core\PrettyDesk.Core.csproj" />
+  </ItemGroup>
+</Project>

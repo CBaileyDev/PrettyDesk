@@ -1,0 +1,186 @@
+pack: game.hsr
+kind: game
+title: "Honkai: Star Rail"
+inspiration:
+  genre: "anime space fantasy"
+  setting: "a train through starry space, retro-futuristic stations, a snowy steampunk city"
+  palette: ["#F4D06F", "#6C5CE7", "#A0E7E5", "#121225"]
+  motifs: [a train window opening to a galaxy, a snowy brass city, a starlit platform]
+  avoid: [game title, characters, the exact train design, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by an anime-style space fantasy.
+  Think a warm retro-futuristic rail car interior with a big window onto a galaxy, quiet starlit platforms, and
+  a snowy steampunk city of brass and glass under a violet sky. The palette is warm gold (#F4D06F), violet
+  (#6C5CE7), aqua (#A0E7E5) and midnight indigo (#121225). The look is clean anime-style painting with luminous
+  glows, soft gradients and a dreamy calm. No people, no creatures, no emblems, no text. Keep the left edge and
+  the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: hsr.hero-01
+    title: "Window to the Galaxy"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [train, galaxy, interior]
+    accent: "#F4D06F"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The inside of a cozy retro-futuristic rail car at night, with warm
+        brass fittings, plush seats and soft lamps. A huge arched window frames a swirling galaxy of violet,
+        aqua and gold stars. Gentle reflections of the lamps float on the glass, and a small potted plant sits
+        by the window. The car is empty and tidy.
+        Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+        art.
+        Palette: #F4D06F, #6C5CE7, #A0E7E5 with an accent #121225. Mood: dreamy, warm, wondrous.
+        Composition: the galaxy seen through the arched window sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        warm brass-lit wall and dark seat shapes, low in detail. New area on the right: the car's interior
+        continues with another glowing lamp and a window edge. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arched window rises in the center from 20% to 70% of the height, with the galaxy filling
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hsr.minimal-01
+    title: "Lone Train Under the Stars"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, train, stars]
+    accent: "#F4D06F"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small, plain locomotive silhouette with one warm glowing
+        window crosses a thin, curved bridge of light through a vast, smooth night sky of deep indigo, violet
+        and aqua. A few tiny stars scatter across the gradient. Everything else in the frame is empty, softly
+        glowing space.
+        Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+        art.
+        Palette: #121225, #2A2860, #6C5CE7 with a gold #F4D06F. Mood: quiet, dreamy, serene.
+        Composition: the train and its glowing window sits about 58–74% across and 35–65% down; more than 70% of
+        the image is empty starry sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty indigo-to-violet sky, completely smooth, kept calm and low in detail. New area on the right: a
+        faint thin curved bridge of light continues far off. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The train crosses the center at about 55% of the height on its thin bridge of light, with
+        empty gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hsr.mood-01
+    title: "Snowy Brass City"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [city, snow, brass]
+    accent: "#F4D06F"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A snowy steampunk city at dusk, with brass domes, copper pipes and
+        tall chimneys softened by falling snow. Warm gold windows glow across the snow-covered rooftops, and a
+        violet-blue sky fades into a pale aqua horizon. A thin wisp of steam rises from a chimney.
+        Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+        art.
+        Palette: #16162E, #3B3A7A, #F4D06F with an aqua #A0E7E5. Mood: cozy, cold, magical.
+        Composition: the domed rooftops and the warm windows sits about 52–72% across and 45–65% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark snowy rooftops in soft violet shadow, low detail. New area on the right: the city continues into
+        snowy haze with a faint far clock tower. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The domes sit at about 55% of the height at the center, with the violet sky above. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: hsr.alt-01
+    title: "Starlit Platform Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [platform, dawn, clouds]
+    accent: "#F4D06F"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet open-air railway platform at dawn, with a pale stone floor,
+        a wrought-iron bench and a tall lamp glowing softly. Beyond the platform edge, a sea of pastel clouds in
+        lavender, aqua and gold stretches to a faint rising sun. The air is bright and calm.
+        Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+        art.
+        Palette: #F6EEFA, #CFC8F5, #A0E7E5 with a gold #F4D06F. Mood: serene, bright, hopeful.
+        Composition: the bench and the glowing clouds beyond the platform edge sits about 54–74% across and
+        38–58% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm pale stone floor and a soft sky, low detail. New area on the right: the platform continues with a
+        distant iron arch in pastel haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bench sits at about 58% of the height in the center, with the pastel cloud sea above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

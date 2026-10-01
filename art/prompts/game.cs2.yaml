@@ -1,0 +1,187 @@
+pack: game.cs2
+kind: game
+title: "Counter-Strike 2"
+inspiration:
+  genre: "grounded modern tactical shooter"
+  setting: "sun-bleached desert towns, Mediterranean and North-African sandstone architecture, industrial yards"
+  palette: ["#D9A441", "#C8B08A", "#3E5C76", "#1B1F24"]
+  motifs: [arched doorways, long dawn shadows, dust in the air, wooden crates, tiled rooftops]
+  avoid: [game title, map names, soldiers, weapons, logos, crosshairs, graffiti text, team insignia, text, characters]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a grounded tactical world of
+  sun-bleached desert towns. Think warm sandstone courtyards, arched doorways, tiled rooftops and dusty
+  industrial yards in early-morning or late-afternoon light. The palette is sand and ochre (#D9A441, #C8B08A)
+  with dusty steel-blue (#3E5C76) accents and charcoal shadows (#1B1F24). The look is refined architectural
+  photography with gentle contrast, long raking shadows and floating dust, calm and anticipatory. No people, no
+  weapons, no text, no signs, no graffiti. Keep the left edge and the bottom edge calm for desktop icons and the
+  taskbar.
+wallpapers:
+  - id: cs2.hero-01
+    title: "Desert Courtyard at Dawn"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [warm, architectural, courtyard]
+    accent: "#D9A441"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sun-bleached sandstone courtyard at first light. A tall arched
+        passage on the right leads through a thick wall into deep blue shade, while the left walls glow gold
+        where the low sun rakes across them. Clay-tiled rooftops step up behind, a few wooden crates stand
+        against a wall, and fine dust drifts through the long beams of light.
+        Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+        Palette: #D9A441, #C8B08A, #3E5C76 with an accent #1B1F24. Mood: quiet, warm, anticipatory.
+        Composition: the arched passage and the golden wall beside it sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain, sunlit sandstone wall with soft stone texture, low detail. New area on the right: a low rooftop
+        line of clay tiles and a pale hazy sky, gently fading. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arched passage rises through the center from 30% to 75% of the height, with gold light on
+        the wall at the left and tiled roofs above. Same lighting, palette, materials and rendering style. Keep
+        the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cs2.minimal-01
+    title: "Lone Doorway"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [warm, minimal, architectural]
+    accent: "#D9A441"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, sun-bleached sandstone wall fills the frame, almost
+        featureless. Set into it, right of center, is a single tall arched wooden double door painted a faded
+        dusty blue, slightly ajar, with a thin warm line of light inside. Early-morning sun rakes across the
+        wall from the left, revealing fine stone texture, and a long soft shadow of the arch falls across the
+        sand-colored ground.
+        Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+        Palette: #E9D9BC, #D9A441, #C8B08A with the door in #5E7C93 and shadows in #8A7356. Mood: quiet,
+        anticipatory, sunlit.
+        Composition: the doorway sits about 58–70% across and 28–68% down; more than 70% of the image is plain
+        wall and ground. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, graffiti, signage, weapons, soldiers, people, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        more plain sunlit sandstone wall with soft texture, low detail. New area on the right: the wall
+        continues and turns gently into shadow, with a small barred window high up. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arched blue doorway is centered horizontally and spans roughly 30–75% of the height, with
+        its long shadow falling toward the lower left. Same lighting, palette, materials and rendering style.
+        Keep the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cs2.mood-01
+    title: "Dust in the Light Shaft"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [interior, dust, moody]
+    accent: "#D9A441"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The inside of an empty stone storehouse in the afternoon, seen from
+        the dark end. A single high window sends a thick beam of gold light across the room, filled with
+        slow-drifting dust, and lights a stack of wooden crates and a patch of worn tile floor. The rest of the
+        room falls into soft umber and charcoal shadow.
+        Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+        Palette: #D9A441, #C8B08A, #3E5C76 with an accent #1B1F24. Mood: still, warm, hushed.
+        Composition: the beam of light and the crates it touches sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        deep umber shadow on a plain stone wall with faint texture. New area on the right: the room's far wall
+        fading into shadow, with a faint second window glow. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light beam falls diagonally from the upper right to a crate stack at about 60% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cs2.alt-01
+    title: "Rooftops at Noon"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [warm, rooftops, daylight]
+    accent: "#D9A441"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Sunny noon over a quiet desert town, seen from a high roof terrace.
+        A jumble of flat sandstone rooftops, arched windows and small wooden awnings spreads below in warm cream
+        and ochre, with deep blue shadows in the alleys. A pale, cloudless sky arches above, and a faint haze
+        softens the far edge of town.
+        Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+        Palette: #F0E4CB, #D9A441, #C8B08A with a shadow blue #3E5C76. Mood: bright, calm, spacious.
+        Composition: the cluster of rooftops and the blue alley shadows sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain terrace wall in warm cream light, low detail. New area on the right: the rooftops thin into
+        dusty haze and a faint, low horizon. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rooftops stack down the middle of the frame, the brightest cluster at about 50% of the
+        height under a pale sky. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

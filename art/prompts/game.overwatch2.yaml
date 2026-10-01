@@ -1,0 +1,184 @@
+pack: game.overwatch2
+kind: game
+title: "Overwatch 2"
+inspiration:
+  genre: "optimistic near-future hero world"
+  setting: "bright global cities - Mediterranean, East-Asian, Nordic - with sleek tech"
+  palette: ["#F99E1A", "#218FFE", "#FFFFFF", "#43484C"]
+  motifs: [a sunny futuristic plaza, cherry blossoms with clean tech, a coastal city with a hover-rail]
+  avoid: [game title, heroes, payloads, the circle emblem, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by an optimistic near-future world.
+  Think bright, sunlit cities with Mediterranean terraces, East-Asian cherry-blossom lanes and Nordic harbors,
+  all lightly touched by sleek, clean technology such as hover-rails and curved glass. The palette is warm
+  orange (#F99E1A), clear blue (#218FFE), white (#FFFFFF) and slate (#43484C). The look is polished stylized 3D
+  concept art with cheerful light and clean shapes. No people, no robots, no emblems, no text. Keep the left
+  edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: overwatch2.hero-01
+    title: "Coastal City Hover-Rail"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [city, coastal, futuristic]
+    accent: "#F99E1A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sunlit Mediterranean-style coastal city with white terraced
+        buildings stepping down a hill to a bright blue bay. A sleek elevated hover-rail curves through the city
+        on slender pillars, its white shell catching the sun. Warm orange awnings and potted greenery add color,
+        and a few fluffy clouds float in a clear blue sky.
+        Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+        Palette: #F99E1A, #218FFE, #FFFFFF with an accent #43484C. Mood: optimistic, bright, futuristic.
+        Composition: the curving hover-rail above the white terraces sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain white terrace walls in warm sunlight, low detail. New area on the right: the coast curves away
+        into blue haze with a few more white towers. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The hover-rail curves through the center at about 42% of the height, with terraces below and
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: overwatch2.minimal-01
+    title: "Cherry Blossom Lane"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, blossom, lane]
+    accent: "#F99E1A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet, empty lane of pale stone leads under a single branch of
+        cherry blossom from the upper right. A smooth, curved white wall with a thin orange line runs along one
+        side. Soft pink petals drift in a gentle light, and the sky is a calm, pale blue gradient. The scene is
+        mostly clean empty space.
+        Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+        Palette: #FFFFFF, #F4C9D4, #218FFE with a line in #F99E1A. Mood: calm, gentle, bright.
+        Composition: the blossom branch and the curve of the white wall sits about 58–74% across and 32–68%
+        down; more than 70% of the image is calm wall, lane and sky. The left 15% and the bottom 8% stay calm
+        and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80%
+        of the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, people, robots, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a clean pale stone lane and soft blue sky. New area on the right: the lane curves away between more pale
+        wall into soft haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The blossom branch hangs from the upper right at about 30% of the height, with the lane
+        curving below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: overwatch2.mood-01
+    title: "Nordic Harbor Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [harbor, dusk, nordic]
+    accent: "#F99E1A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm Nordic harbor at dusk, with simple wooden quay houses in
+        slate and pale orange lit by warm windows. A sleek curved glass pavilion glows soft blue at the water's
+        edge, and a clean white footbridge crosses the harbor. The sky fades from deep blue to a thin band of
+        apricot.
+        Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+        Palette: #14202C, #43484C, #218FFE with a warm window #F99E1A. Mood: calm, cool, welcoming.
+        Composition: the glowing glass pavilion and the harbor reflection sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, still harbor water with a faint reflection. New area on the right: the harbor opens into a quiet
+        bay with a distant lit headland. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pavilion glows at about 58% of the height with the harbor reflection below and dusk sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: overwatch2.alt-01
+    title: "Sunny Plaza"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [plaza, daylight, city]
+    accent: "#F99E1A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide, sunlit plaza in a clean near-future city, with smooth white
+        paving, a round fountain with a soft arc of water and curved glass buildings reflecting a bright sky.
+        Long soft shadows fall to the right, and a few small trees add green. A distant skyline of slim towers
+        fades into a pale blue haze.
+        Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+        Palette: #FFFFFF, #CFE6FA, #218FFE with a warm accent #F99E1A. Mood: sunny, clean, cheerful.
+        Composition: the fountain and the curved glass beyond it sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain sunlit white paving with soft shadows, low detail. New area on the right: the plaza continues
+        toward slim towers in pale haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fountain sits in the lower center at about 55% of the height with curved glass and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

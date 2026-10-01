@@ -1,0 +1,66 @@
+name: content
+
+# Manual: validate content/catalog.src.json, sign it, and publish catalog.json + catalog.json.sig to the content host.
+# Wallpaper variants are uploaded earlier by `assetpipe publish` (they must exist before a catalog references them).
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Validate and sign only; do not upload"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - uses: actions/setup-dotnet@v4
+        with: { global-json-file: global.json, dotnet-version: 10.0.x }
+
+      - name: Validate against the JSON schema
+        run: |
+          pip install jsonschema
+          python tools/validate_catalog.py content/catalog.src.json
+
+      - name: The catalog must point at a content host
+        run: |
+          python - <<'PY'
+          import json, sys
+          url = json.load(open("content/catalog.src.json", encoding="utf-8"))["contentBaseUrl"]
+          if not url.startswith("https://"):
+              sys.exit("contentBaseUrl is empty or not https; set it in content/catalog.src.json first (docs/RELEASING.md).")
+          PY
+
+      - name: Sign (ECDSA P-256 over the exact catalog bytes; semantic validation runs first)
+        env:
+          PRETTYDESK_CATALOG_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
+        run: |
+          mkdir -p out
+          cp content/catalog.src.json out/catalog.json
+          dotnet run --project tools/catalog-sign -c Release -- sign out/catalog.json --key-env PRETTYDESK_CATALOG_KEY
+
+      - name: Verify the signature with the public key compiled into the app
+        env:
+          CATALOG_PUBLIC_KEY: ${{ vars.CATALOG_PUBLIC_KEY }}
+        run: dotnet run --project tools/catalog-sign -c Release -- verify out/catalog.json --pub "$CATALOG_PUBLIC_KEY"
+
+      - name: Upload catalog.json and its signature (S3-compatible, for example Cloudflare R2)
+        if: ${{ !inputs.dry_run }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CONTENT_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CONTENT_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          CONTENT_ENDPOINT: ${{ vars.CONTENT_S3_ENDPOINT }}
+          CONTENT_BUCKET: ${{ vars.CONTENT_BUCKET }}
+        run: |
+          # The signature goes first: a client that sees the new catalog must already be able to verify it.
+          aws s3 cp out/catalog.json.sig "s3://$CONTENT_BUCKET/v1/catalog.json.sig" --endpoint-url "$CONTENT_ENDPOINT" --cache-control "no-cache"
+          aws s3 cp out/catalog.json "s3://$CONTENT_BUCKET/v1/catalog.json" --endpoint-url "$CONTENT_ENDPOINT" --content-type application/json --cache-control "no-cache"

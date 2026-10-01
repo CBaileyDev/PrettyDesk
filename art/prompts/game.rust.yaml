@@ -1,0 +1,182 @@
+pack: game.rust
+kind: game
+title: "Rust"
+inspiration:
+  genre: "brutal survival"
+  setting: "an overgrown abandoned industrial island, a rusted radar dish, a cold coast"
+  palette: ["#B7410E", "#6B705C", "#A5A58D", "#1E1E1E"]
+  motifs: [a rusted dish in fog, a campfire on a cold beach, an overgrown monument]
+  avoid: [game title, players, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a brutal survival world, with no
+  people. Think an overgrown abandoned industrial island with a huge rusted radar dish, concrete ruins reclaimed
+  by grass, a cold grey coast and a small campfire on a beach. The palette is oxidized orange (#B7410E), olive
+  grey (#6B705C), stone (#A5A58D) and charcoal (#1E1E1E). The look is gritty documentary photography with
+  overcast light, fog and rich texture of corroded metal and moss. No people, no weapons, no vehicles in focus,
+  no signs, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: rust.hero-01
+    title: "Rusted Dish in the Fog"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [dish, fog, industrial]
+    accent: "#B7410E"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A colossal rusted radar dish stands on a grassy hill above a cold
+        grey bay, its orange-brown surface streaked and peeling. Fog rolls around its base, and the overgrown
+        concrete bunkers beside it are softened by moss and wild grass. The sky is a heavy pale grey with a thin
+        gap of cool light on the horizon.
+        Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+        Palette: #B7410E, #6B705C, #A5A58D with an accent #1E1E1E. Mood: bleak, vast, haunting.
+        Composition: the rusted dish and the pale gap of light beside it sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, players, weapons, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark grassy hillside and fog, low in detail. New area on the right: the coast continues with another
+        distant rusted tower in fog. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dish rises at the center from 25% to 65% of the height, with fog at its base and a grey
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rust.minimal-01
+    title: "Lone Campfire on a Cold Beach"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, campfire, beach]
+    accent: "#B7410E"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small campfire glows warm orange on a long, empty beach of dark
+        grey pebbles, with a few pieces of driftwood around it. Beyond, the sea is a flat steel-grey plane under
+        a vast, smooth, overcast sky. A thin wisp of smoke rises. Everything else is clean empty grey space.
+        Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+        Palette: #1E1E1E, #6B705C, #A5A58D with a fire #E07A2B. Mood: lonely, cold, quiet.
+        Composition: the campfire and its warm glow on the stones sits about 60–72% across and 36–64% down; more
+        than 70% of the image is empty grey sea and sky. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, players, weapons, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty smooth overcast grey sky, completely clean. New area on the right: the beach continues to a
+        faint far headland in mist. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fire glows at about 65% of the height in the lower center, with the empty grey sea and
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rust.mood-01
+    title: "Overgrown Monument"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [ruins, moss, concrete]
+    accent: "#B7410E"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The cracked concrete base of a large abandoned monument, thickly
+        covered with ivy, moss and wild grass, stands in thin drifting fog. Rusted steel beams stick out of the
+        stone, and a small pool of rainwater reflects the grey sky. The air is cold and damp, and the colors are
+        olive and oxide orange.
+        Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+        Palette: #1E1E1E, #4A5240, #B7410E with a stone #A5A58D. Mood: damp, quiet, reclaimed.
+        Composition: the ivy-covered concrete corner and the rainwater pool sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, players, weapons, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark moss and corroded-metal texture on the nearby wall, low detail. New area on the right: more
+        concrete and grass fade into fog. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The concrete corner rises at about 45% of the height in the center, with the pool below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rust.alt-01
+    title: "Coast at Midday"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [coast, daylight, pier]
+    accent: "#B7410E"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide cold coast at midday under a bright, thin overcast sky, with
+        pale grass-topped cliffs, a calm silver sea and a long rusted pier reaching into the water. The cliffs
+        hold a few old concrete shelters covered with moss. The light is soft, even and bright.
+        Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+        Palette: #E9E7DF, #A5A58D, #6B705C with an oxide #B7410E. Mood: calm, open, cool.
+        Composition: the rusted pier and the pale sea beside it sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, players, weapons, signs, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pale grass and cliffs in even light, low detail. New area on the right: the coast continues to a
+        faint far headland. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pier runs through the lower center to about 52% of the height, with the sea and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

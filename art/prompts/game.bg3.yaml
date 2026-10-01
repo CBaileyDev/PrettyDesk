@@ -1,0 +1,184 @@
+pack: game.bg3
+kind: game
+title: "Baldur's Gate 3"
+inspiration:
+  genre: "high-fantasy role-playing world"
+  setting: "gothic city spires, moonlit forests, a campfire under stars, arcane purple glow"
+  palette: ["#6B4C9A", "#C9A15A", "#2B3A2E", "#120E14"]
+  motifs: [a campfire beneath a starfield, arcane-lit ruins, a city of spires at dusk]
+  avoid: [game title, characters, tentacled creatures, the logo, text, UI or HUD elements, logos]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a high-fantasy role-playing world.
+  Think moonlit forests, a small campfire beneath a deep starfield, gothic city spires at dusk and ruins faintly
+  lit by an arcane purple glow. The palette is arcane violet (#6B4C9A), firelight gold (#C9A15A), forest
+  green-black (#2B3A2E) and near-black plum (#120E14). The look is rich painterly fantasy concept art with warm
+  firelight against cool moonlight. No people, no creatures, no emblems, no text. Keep the left edge and the
+  bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: bg3.hero-01
+    title: "City of Spires at Dusk"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [city, spires, dusk]
+    accent: "#6B4C9A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast gothic city of tall stone spires and bridges at dusk, with a
+        river winding beneath and warm golden windows glowing in the lower towers. A deep violet and amber sky
+        arches above, and thin arcane purple light drifts up from a distant plaza. Pale mist fills the streets
+        and softens the far skyline.
+        Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+        Palette: #6B4C9A, #C9A15A, #2B3A2E with an accent #120E14. Mood: grand, mysterious, warm.
+        Composition: the tallest spire cluster and the glowing river below sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark stone towers in deep violet shadow, low detail. New area on the right: the city continues into
+        violet mist with a few distant lit windows. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The spire cluster rises through the center from 20% to 60% of the height, with the river
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bg3.minimal-01
+    title: "Campfire Under the Stars"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, campfire, stars]
+    accent: "#6B4C9A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small campfire glows warm gold on a dark grassy rise, with a few
+        simple logs around it and a thin plume of sparks drifting upward. Above is a vast, smooth starfield in
+        deep violet and blue-black, with a gentle band of galaxy haze. The ground is a plain dark silhouette,
+        and nothing else is in the frame.
+        Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+        Palette: #120E14, #241A3A, #6B4C9A with a fire #C9A15A. Mood: quiet, warm, contemplative.
+        Composition: the campfire and its sparks sits about 60–72% across and 36–64% down; more than 70% of the
+        image is starfield. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+        go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty violet-black starfield with only a few stars. New area on the right: a faint distant tree line
+        silhouette under the stars. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The campfire glows at about 70% of the height in the lower center, with the starfield filling
+        the sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bg3.mood-01
+    title: "Arcane Ruins in Moonlight"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [ruins, moonlight, forest]
+    accent: "#6B4C9A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Broken stone arches of an ancient ruin stand in a moonlit forest
+        clearing, softly lit by a faint purple arcane glow that seeps from cracks in the floor. Pale moonlight
+        comes from the upper left, and silver mist curls around fallen columns. Tall pines surround the clearing
+        in deep green-black shadow.
+        Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+        Palette: #120E14, #1F2A24, #6B4C9A with a moon #D5D9E8. Mood: mysterious, hushed, magical.
+        Composition: the broken arches and the glowing floor cracks sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark pine forest in green-black shadow, low detail. New area on the right: more fallen columns fade into
+        silver mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arches rise at the center from 30% to 65% of the height, with the glowing cracks below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: bg3.alt-01
+    title: "Forest Glade at Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [forest, morning, glade]
+    accent: "#6B4C9A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sunlit forest glade in the morning, with huge old trees, mossy
+        standing stones and long golden shafts of light falling through pale mist. A small clear pool in the
+        foreground mirrors the canopy, and soft violet wildflowers dot the grass. The air is warm and bright
+        with floating pollen.
+        Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+        Palette: #F1E7C8, #C9A15A, #7FA06A with a violet #6B4C9A. Mood: warm, peaceful, bright.
+        Composition: the standing stones and the light shafts sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden mist between trunks, low detail, kept calm and low in detail. New area on the right: the
+        glade continues into pale gold haze with a faint arch. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light shafts fall through the center with the standing stones at about 52% of the height.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

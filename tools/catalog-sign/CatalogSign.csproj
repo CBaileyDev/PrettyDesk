@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>catalog-sign</AssemblyName>
+    <RootNamespace>PrettyDesk.Tools.CatalogSign</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PrettyDesk.Core\PrettyDesk.Core.csproj" />
+  </ItemGroup>
+</Project>

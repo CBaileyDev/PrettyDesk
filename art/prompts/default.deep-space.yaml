@@ -1,0 +1,361 @@
+pack: default.deep-space
+kind: default
+title: "Deep Space"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Deep Space. Every image is a quiet
+  piece of astronomy art on true black (#000000 to #07080C) with subtle nebula hues in indigo, teal and dusty
+  rose and only one bright subject: a planet limb, an eclipse corona, a lunar horizon or a ringed planet edge.
+  The look is clean astrophotography with a refined, photographic realism, sparse stars, soft atmospheric glows
+  and plenty of true black. Gradients are smooth and banding-free. No text, no spacecraft, no people, no frames
+  or borders. Keep the left edge and the bottom edge calm and dark for desktop icons and the taskbar.
+wallpapers:
+  - id: ds-01
+    title: "Planet Limb at Dawn"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [planet, atmosphere, limb]
+    starter: true
+    accent: "#6FA8D8"
+    focal: { x: 0.64, y: 0.58 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The curved edge of a large planet crosses the lower part of the
+        frame like a glowing arc, with a thin, brilliant layer of blue atmosphere on its rim and a pinpoint
+        flare of sunrise light where the arc meets the dark. Below the arc the planet is a deep night-side
+        blue-black with the faintest hint of cloud texture. Above it stretches clean, true-black space with a
+        handful of tiny stars.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #06101E, #1D4E7A with an atmosphere glow #6FA8D8. Mood: vast, calm, awe-inspiring.
+        Composition: the glowing atmospheric rim and the sunrise flare sits about 54–74% across and 46–70% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, spacecraft,
+        satellites, city lights, people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pure black space with a few distant stars and the faintest hint of the planet's curve. New area on the
+        right: the arc continues curving gently away, with the atmosphere thinning out to a pale blue line. Same
+        lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored objects,
+        no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The planet arc sweeps across the lower third, with the sunrise flare at about 62% of the
+        height and black space above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-02
+    title: "Eclipse Corona"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [eclipse, corona, symmetrical]
+    starter: false
+    accent: "#E8DCC8"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A perfect black disc sits in the middle of a deep black sky,
+        surrounded by a delicate white-gold corona whose fine, feathery streamers curve out in a symmetrical
+        halo and fade softly into the dark. Faint indigo glows tint the edges of the corona, and no ground or
+        horizon is visible.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #080A12, #1B2140 with a pale corona #E8DCC8. Mood: solemn, hypnotic, serene.
+        Composition: the disc and the inner ring of the corona, a centered and symmetrical composition, sits
+        about 40–60% across and 34–58% down; the corona is balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, stars, ground,
+        people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pure black sky with a single faint streamer reaching out and a trace of indigo. New area on the right:
+        pure black sky with a single faint streamer reaching out and a trace of dusty rose. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The eclipse disc sits centered at about 40% of the height, with the corona fanning out evenly
+        into black space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-03
+    title: "Lunar Horizon"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [moon, horizon, earthrise]
+    starter: false
+    accent: "#B8BCC4"
+    focal: { x: 0.66, y: 0.60 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bare grey lunar horizon curves across the lower third in crisp low
+        sunlight, with long soft shadows behind small rocks and shallow craters. Above it hangs a thin
+        blue-and-white crescent of a distant planet in a perfectly black sky. The regolith texture is fine and
+        powdery, and the horizon line is slightly curved.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #14161B, #5F636B with a pale regolith #B8BCC4. Mood: silent, lonely, majestic.
+        Composition: the crescent planet above the curved horizon sits about 56–76% across and 48–72% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        flags, vehicles, people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark, softly lit stretch of fine regolith with long shadows and no features. New area on the right:
+        the horizon curves away with a low rise and a few small craters fading to black. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The horizon curves across the bottom third, with the crescent planet at about 38% of the
+        height in black sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-04
+    title: "Ringed Planet Edge"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [ringed-planet, rings, gas-giant]
+    starter: false
+    accent: "#D9B98A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The sunlit edge of a large banded gas giant, in pale cream and dusty
+        rose, curves across the right of the frame, with a thin, razor-clean ring system crossing in front of
+        it. The rings cast a sharp narrow shadow on the planet's cloud bands, and the rest of the frame is black
+        space with a few tiny stars.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #12100F, #7A6A5C with a pale cream band #D9B98A. Mood: majestic, still, elegant.
+        Composition: the planet's bright limb where the rings cross it sits about 56–76% across and 38–62% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, moons with
+        faces, spacecraft, people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        black space with a few tiny stars and the faintest hint of the ring plane. New area on the right: the
+        rings continue thin and sharp into the distance, fading to black. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The planet edge rises from the lower right, with the ring crossing at about 52% of the height
+        in black space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-05
+    title: "Faint Nebula Veil"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [nebula, stars, teal]
+    starter: false
+    accent: "#4FA8B0"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A soft nebula veil of dusty teal and indigo drifts diagonally across
+        black space, its edges feathered and its core a gentle glow of pale cyan. Thin dark dust lanes cut
+        through it, and a few bright stars sparkle with tiny diffraction points. Most of the frame remains true
+        black.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #081A24, #1E5560 with a pale cyan core #4FA8B0. Mood: dreamy, quiet, expansive.
+        Composition: the nebula's glowing core and the dust lanes sits about 54–74% across and 34–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, spacecraft,
+        planets, people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        mostly black space with a few tiny stars and a trace of teal haze. New area on the right: the nebula
+        thins into faint indigo wisps drifting off to the right. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The nebula crosses diagonally from the lower left to the upper right, its core at about 45%
+        of the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-06
+    title: "Single Star Rise"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [star, horizon, minimal]
+    starter: false
+    accent: "#F0DDB8"
+    focal: { x: 0.50, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bright star-like sun rises over the thin curved edge of a dark
+        planet, its light spreading into a fine horizontal lens flare and a soft warm glow along the horizon.
+        Tiny, delicate rays reach into black space above. Everything else is dark and clean, with only a few
+        faint stars.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #0B0D14, #2B3550 with a warm glow #F0DDB8. Mood: minimal, hopeful, awe-inspiring.
+        Composition: the rising star and its horizontal glow, a centered and symmetrical composition, sits about
+        40–60% across and 40–64% down; the glow spreads evenly to both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, spacecraft,
+        people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        black space with a faint horizontal glow stretching in from the star. New area on the right: black space
+        with a faint horizontal glow stretching out from the star. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The star sits centered at about 55% of the height on the planet's edge, with black space
+        above and a dark planet below. Same lighting, palette, materials and rendering style. Keep the bottom
+        10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-07
+    title: "Moonless Starfield"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [stars, galaxy, night-sky]
+    starter: false
+    accent: "#C5D1E8"
+    focal: { x: 0.68, y: 0.42 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sparse, elegant starfield of tiny white and pale-blue stars
+        scatters across true black, with a thin diagonal band of the Milky Way glowing faintly in dusty indigo
+        and rose from the lower left to the upper right. A few brighter stars show soft glows. There are no
+        clouds, no ground and no horizon.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #070A14, #1E2748 with a star white #C5D1E8. Mood: vast, quiet, contemplative.
+        Composition: the brightest part of the Milky Way band sits about 58–78% across and 30–54% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, tiny, sharp stars; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, ground, trees,
+        people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        mostly black sky with only a few faint stars. New area on the right: the Milky Way band thins out into
+        sparse stars and fades to black. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The Milky Way band rises diagonally through the center at about 45% of the height over black
+        sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: ds-08
+    title: "Crescent Earthrise"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [crescent, planet, glow]
+    starter: false
+    accent: "#8AB8E8"
+    focal: { x: 0.66, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A thin crescent of a blue planet hangs in black space, its edge
+        glowing with a bright arc of white-blue atmosphere and a soft halo of light. The night side of the
+        planet is barely visible as a deep blue-black disc with a faint rim, and a small number of distant stars
+        dot the dark.
+        Style: refined astrophotography with photographic realism, deep black, restrained and cinematic.
+        Palette: #000000, #061225, #2B66A8 with an atmosphere glow #8AB8E8. Mood: serene, delicate,
+        awe-inspiring.
+        Composition: the bright crescent arc and its halo sits about 56–76% across and 34–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the bright edge of the subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, spacecraft,
+        satellites, city lights, people, visible text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pure black space with a few faint stars. New area on the right: pure black space with a few faint stars
+        and a trace of indigo haze near the edge. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The crescent hangs at about 42% of the height, slightly right of center, in black space. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
