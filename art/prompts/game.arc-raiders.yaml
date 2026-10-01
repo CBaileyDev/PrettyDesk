@@ -1,0 +1,183 @@
+pack: game.arc-raiders
+kind: game
+title: "ARC Raiders"
+inspiration:
+  genre: "retro-futurist post-apocalyptic surface"
+  setting: "lush overgrown ruins, colossal machines far off, 1970s sci-fi"
+  palette: ["#F4A259", "#5B8E7D", "#BC4B51", "#1F2421"]
+  motifs: [overgrown ruins with a distant giant machine silhouette, a 1970s-poster sky]
+  avoid: [game title, the official machine designs, characters, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a retro-futurist post-apocalyptic
+  surface, with no people. Think lush green ruins reclaimed by nature, colossal machines standing far away as
+  hazy silhouettes, and warm 1970s sci-fi poster skies in orange, coral and teal. The palette is warm orange
+  (#F4A259), teal green (#5B8E7D), muted red (#BC4B51) and dark green-black (#1F2421). The look is polished
+  painterly concept art with a slightly retro color grade, soft haze and strong atmosphere. No figures, no
+  weapons, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: arc-raiders.hero-01
+    title: "Overgrown Ruins and a Distant Machine"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [ruins, machine, retro]
+    accent: "#F4A259"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Lush green vines and trees reclaim the broken concrete terraces of a
+        ruined retro-futuristic city, with rounded 1970s-style towers half-collapsed and covered in moss. Far in
+        the haze, a colossal many-legged machine stands as a faint silhouette against a warm orange-and-coral
+        sky. A shallow pool in the foreground mirrors the sky.
+        Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+        Palette: #F4A259, #5B8E7D, #BC4B51 with an accent #1F2421. Mood: wistful, vast, retro-futuristic.
+        Composition: the distant machine silhouette and the glowing sky behind it sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green foliage and a pool reflection, low in detail. New area on the right: more mossy ruined towers
+        fade into orange haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The machine silhouette stands at about 38% of the height in the center, with ruins below and
+        the glowing sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: arc-raiders.minimal-01
+    title: "Lone Machine in the Haze"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, machine, haze]
+    accent: "#F4A259"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single huge, faint machine silhouette with spindly legs stands far
+        away on a flat, green, overgrown plain, softened by a thick orange-coral haze, beneath a huge, smooth,
+        retro poster-style gradient sky of cream, orange and soft teal. Nothing else is in the frame.
+        Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+        Palette: #FBEBD2, #F4A259, #8DBBAA with a machine #5A5F58. Mood: quiet, distant, wistful.
+        Composition: the machine silhouette sits about 59–73% across and 36–64% down; more than 70% of the image
+        is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty cream-orange-teal gradient sky, completely smooth, kept calm and low in detail. New area on the
+        right: the plain continues into peach haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The machine stands at about 52% of the height in the lower center, with the empty gradient
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: arc-raiders.mood-01
+    title: "Overgrown Highway at Dusk"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [highway, dusk, overgrown]
+    accent: "#F4A259"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broken elevated highway curves through a green overgrown city at
+        dusk, with moss and small trees growing on the cracked concrete and a few old round lamp posts leaning.
+        The sky is a rich teal and coral gradient, and thin mist hangs in the streets below. A distant machine
+        silhouette stands faint on the horizon.
+        Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+        Palette: #1F2421, #2F4F4A, #5B8E7D with a coral #E8795B. Mood: quiet, wistful, moody.
+        Composition: the curve of the broken highway and the dusk glow sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark green foliage in teal shadow, low detail. New area on the right: the highway breaks off in mist
+        with a faint far machine. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The highway curves through the center at about 55% of the height, with the glowing sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: arc-raiders.alt-01
+    title: "Poster Sky over Green Ruins"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [poster, sky, ruins]
+    accent: "#F4A259"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A bold 1970s poster-style sky of layered orange, cream and teal
+        bands above a calm green landscape of low mossy ruins and a still lake. The sun is a pale cream disc,
+        and thin streaks of cloud echo the bands. A distant machine silhouette stands as a faint, tiny shape at
+        the far shore.
+        Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+        Palette: #FBEFD8, #F4A259, #7FB5A5 with a muted red #BC4B51. Mood: bright, retro, calm.
+        Composition: the sun disc and the banded sky above the ruins sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green ruins and lake in warm light, low in detail. New area on the right: the lake continues to a
+        faint far shore. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sun disc sits at about 36% of the height in the center, with the ruins and lake below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

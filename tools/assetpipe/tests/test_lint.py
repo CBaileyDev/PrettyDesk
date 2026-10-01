@@ -150,3 +150,23 @@ def test_ordinary_words_that_overlap_game_titles_are_allowed():
     # "steam rising", "rust", "rusted" and "horizon" are ordinary English and must not trip the proper-noun check
     terms = lint.forbidden_terms.__globals__["PROPER_NOUNS"]
     assert "steam" not in lint.STUDIO_NAMES and "rust" not in terms and "horizon" not in terms
+
+
+def test_style_bible_is_checked_for_proper_nouns_too(tmp_path):
+    doc = _default_pack_doc()
+    doc["styleBible"] += " In the spirit of Elden Ring and its fog."
+    assert any("styleBible contains the proper noun 'elden ring'" in m for m in errors(lint.lint_pack(_pack(tmp_path, doc))))
+
+
+def test_weather_words_that_double_as_studio_names_are_allowed(tmp_path):
+    doc = _default_pack_doc()
+    doc["wallpapers"][0]["prompts"]["landscape"] = LANDSCAPE.replace("sand dune", "sand dune in a blizzard")
+    assert not any("blizzard" in m for m in errors(lint.lint_pack(_pack(tmp_path, doc))))
+
+
+def test_game_title_words_that_are_ordinary_english_are_allowed(tmp_path):
+    wps = [wallpaper("zz.hero-01", role="hero"), wallpaper("zz.minimal-01", role="minimal"), wallpaper("zz.mood-01", role="mood")]
+    wps[0]["prompts"]["landscape"] = LANDSCAPE.replace("sand dune", "sand valley with a world of ripples")
+    doc = pack_doc("game.zz", "game", wps, title="Quiet Valley World",
+                   inspiration={"genre": "g", "setting": "s", "palette": ["#111111"], "motifs": ["m"], "avoid": ["logo", "text", "character"]})
+    assert not any("valley" in m or "world" in m for m in errors(lint.lint_pack(_pack(tmp_path, doc))))

@@ -26,7 +26,7 @@
 
 If a check fails, regenerate and note it under `reviewNotes`. If it passes, set `approved: true` and adjust `focal` if the subject landed elsewhere.
 
-**13 packs · 106 wallpapers** (13 default collections, 0 game packs)
+**58 packs · 286 wallpapers** (13 default collections, 45 game packs)
 
 ## Contents
 
@@ -45,6 +45,54 @@ If a check fails, regenerate and note it under `reviewNotes`. If it passes, set 
 - `default.soft-gradients`: Aura Gradients (10)
 - `default.steel-blue-night`: Steel Blue Night (8)
 - `default.warm-minimal`: Warm Minimal (8)
+
+**Game packs**
+
+- `game.apex`: Apex Legends (4)
+- `game.arc-raiders`: ARC Raiders (4)
+- `game.bf6`: Battlefield 6 (4)
+- `game.bg3`: Baldur's Gate 3 (4)
+- `game.cod`: Call of Duty (4)
+- `game.cs2`: Counter-Strike 2 (4)
+- `game.cyberpunk`: Cyberpunk 2077 (4)
+- `game.deadlock`: Deadlock (4)
+- `game.destiny2`: Destiny 2 (4)
+- `game.diablo4`: Diablo IV (4)
+- `game.dota2`: Dota 2 (4)
+- `game.elden-ring`: Elden Ring (4)
+- `game.ets2`: Euro Truck Simulator 2 (4)
+- `game.fortnite`: Fortnite (4)
+- `game.forza-h5`: Forza Horizon 5 (4)
+- `game.genshin`: Genshin Impact (4)
+- `game.gta5`: Grand Theft Auto V (4)
+- `game.hades2`: Hades II (4)
+- `game.helldivers2`: Helldivers 2 (4)
+- `game.hsr`: Honkai: Star Rail (4)
+- `game.lethal-company`: Lethal Company (4)
+- `game.lol`: League of Legends (4)
+- `game.marvel-rivals`: Marvel Rivals (4)
+- `game.mh-wilds`: Monster Hunter Wilds (4)
+- `game.minecraft`: Minecraft (4)
+- `game.osu`: osu! (4)
+- `game.overwatch2`: Overwatch 2 (4)
+- `game.palworld`: Palworld (4)
+- `game.poe2`: Path of Exile 2 (4)
+- `game.pubg`: PUBG: Battlegrounds (4)
+- `game.r6siege`: Rainbow Six Siege X (4)
+- `game.rdr2`: Red Dead Redemption 2 (4)
+- `game.roblox`: Roblox (4)
+- `game.rocket-league`: Rocket League (4)
+- `game.rust`: Rust (4)
+- `game.sea-of-thieves`: Sea of Thieves (4)
+- `game.silksong`: Hollow Knight: Silksong (4)
+- `game.stardew`: Stardew Valley (4)
+- `game.tarkov`: Escape from Tarkov (4)
+- `game.terraria`: Terraria (4)
+- `game.the-finals`: THE FINALS (4)
+- `game.valorant`: VALORANT (4)
+- `game.warframe`: Warframe (4)
+- `game.wow`: World of Warcraft (4)
+- `game.wukong`: Black Myth: Wukong (4)
 
 ## Default collections
 
@@ -4732,4 +4780,8448 @@ Using the attached image as the style and content reference, recompose the same 
 wallpaper. The dappled shadow sits centered at about 45% of the height, with plain stucco above and pale
 ground below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
 no text, letters, logos, watermarks or UI.
+```
+
+## Game packs
+
+### Apex Legends (`game.apex`)
+
+- **Genre:** sci-fi frontier battle royale
+- **Setting:** arid canyons with colossal derelict industrial machinery, alien flora, crashed ships
+- **Palette:** #DA292A, #F2C14E, #3B4A54, #121417
+- **Motifs:** a lone zipline tower at sunset, a canyon with giant machinery, a desert outpost in storm light
+- **Avoid:** game title, legends, weapons, drop-ship branding, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a sci-fi frontier world. Think
+arid red-orange canyons, colossal rusted industrial machinery half-buried in the sand, strange alien plants,
+crashed ship hulls and a lone tower against a huge sky. The palette is rust red (#DA292A), amber (#F2C14E),
+steel grey-blue (#3B4A54) and near-black (#121417). The look is cinematic concept art with dramatic low sun,
+haze and a sense of scale. No people, no weapons, no emblems, no text. Keep the left edge and the bottom edge
+calm for desktop icons and the taskbar.
+```
+
+#### Canyon of Machines (`apex.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.apex/apex.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast red canyon at sunset, with colossal rusted machinery
+half-buried in its walls: a giant gear wheel, a leaning derelict crane and the broken hull of a crashed
+ship. Low amber sun backlights the haze, and long shadows stretch across the sand. A few spiky alien
+plants glow faintly in the shade at the foot of the cliffs.
+Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+Palette: #DA292A, #F2C14E, #3B4A54 with an accent #121417. Mood: epic, rugged, atmospheric.
+Composition: the giant gear wheel and the crane silhouette against the sun sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.apex/apex.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain red rock wall in warm shadow, low detail. New area on the right: the canyon winds on into amber
+haze with a distant leaning tower. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.apex/apex.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The giant gear rises through the center from 25% to 65% of the height, with the sun glow
+behind it and sand below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Zipline Tower (`apex.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.apex/apex.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single slender lattice tower stands alone on a smooth desert plain
+under a huge, warm sky gradient that moves from pale cream at the horizon to soft apricot above. A thin
+cable stretches from its top into the distance. The tower's long, soft shadow lies across the sand, and
+a few tiny rocks dot the ground.
+Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+Palette: #F7E3BE, #F2C14E, #DA292A with the tower in #3B4A54. Mood: quiet, solitary, spacious.
+Composition: the tower and its long shadow sits about 61–71% across and 28–72% down; more than 70% of
+the image is empty sky and sand. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, weapons, characters, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.apex/apex.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty warm cream-to-apricot sky and plain sand, low detail. New area on the right: the plain continues
+toward a faint, hazy mesa far away. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.apex/apex.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower stands in the lower center from 25% to 70% of the height, with empty sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Outpost in Storm Light (`apex.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.apex/apex.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small cluster of low, windswept desert shelters and one tall
+antenna sits under a heavy orange-grey storm sky. Wind-blown sand streaks the air, and a thin gap in the
+clouds lets a band of amber light fall across the roofs. The shelters are plain and rust-colored, with
+no markings.
+Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+Palette: #2A1E1A, #6B3B2A, #F2C14E with a rust #DA292A. Mood: tense, quiet, windswept.
+Composition: the outpost roofs lit by the band of light sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.apex/apex.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark, dusty orange-grey sky and sand, low detail. New area on the right: the sand plain continues with
+distant dust devils in haze. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.apex/apex.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The outpost sits at about 62% of the height with the storm sky above and the band of light
+across it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Canyon at Midday (`apex.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.apex/apex.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide desert canyon in bright midday light. Sun-bleached red rock
+walls glow in warm cream and rose, and a few giant, pale-rusted pipes and gear forms emerge from the
+sand like bones. The sky is a clear pale blue and a faint warm haze lies along the canyon floor.
+Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+Palette: #F7E8D0, #E3A67B, #B05A3C with a sky #A9C4D6. Mood: bright, vast, dry.
+Composition: the half-buried pipes and gear forms sits about 54–74% across and 38–58% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.apex/apex.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain sunlit red rock wall with soft texture, low detail. New area on the right: the canyon floor
+continues into pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.apex/apex.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The half-buried forms sit in the lower center at about 55% of the height, below a pale blue
+sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### ARC Raiders (`game.arc-raiders`)
+
+- **Genre:** retro-futurist post-apocalyptic surface
+- **Setting:** lush overgrown ruins, colossal machines far off, 1970s sci-fi
+- **Palette:** #F4A259, #5B8E7D, #BC4B51, #1F2421
+- **Motifs:** overgrown ruins with a distant giant machine silhouette, a 1970s-poster sky
+- **Avoid:** game title, the official machine designs, characters, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a retro-futurist post-apocalyptic
+surface, with no people. Think lush green ruins reclaimed by nature, colossal machines standing far away as
+hazy silhouettes, and warm 1970s sci-fi poster skies in orange, coral and teal. The palette is warm orange
+(#F4A259), teal green (#5B8E7D), muted red (#BC4B51) and dark green-black (#1F2421). The look is polished
+painterly concept art with a slightly retro color grade, soft haze and strong atmosphere. No figures, no
+weapons, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Overgrown Ruins and a Distant Machine (`arc-raiders.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.arc-raiders/arc-raiders.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Lush green vines and trees reclaim the broken concrete terraces of a
+ruined retro-futuristic city, with rounded 1970s-style towers half-collapsed and covered in moss. Far in
+the haze, a colossal many-legged machine stands as a faint silhouette against a warm orange-and-coral
+sky. A shallow pool in the foreground mirrors the sky.
+Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+Palette: #F4A259, #5B8E7D, #BC4B51 with an accent #1F2421. Mood: wistful, vast, retro-futuristic.
+Composition: the distant machine silhouette and the glowing sky behind it sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.arc-raiders/arc-raiders.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green foliage and a pool reflection, low in detail. New area on the right: more mossy ruined towers
+fade into orange haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.arc-raiders/arc-raiders.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The machine silhouette stands at about 38% of the height in the center, with ruins below and
+the glowing sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Machine in the Haze (`arc-raiders.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.arc-raiders/arc-raiders.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single huge, faint machine silhouette with spindly legs stands far
+away on a flat, green, overgrown plain, softened by a thick orange-coral haze, beneath a huge, smooth,
+retro poster-style gradient sky of cream, orange and soft teal. Nothing else is in the frame.
+Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+Palette: #FBEBD2, #F4A259, #8DBBAA with a machine #5A5F58. Mood: quiet, distant, wistful.
+Composition: the machine silhouette sits about 59–73% across and 36–64% down; more than 70% of the image
+is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.arc-raiders/arc-raiders.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty cream-orange-teal gradient sky, completely smooth, kept calm and low in detail. New area on the
+right: the plain continues into peach haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.arc-raiders/arc-raiders.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The machine stands at about 52% of the height in the lower center, with the empty gradient
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Overgrown Highway at Dusk (`arc-raiders.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.arc-raiders/arc-raiders.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A broken elevated highway curves through a green overgrown city at
+dusk, with moss and small trees growing on the cracked concrete and a few old round lamp posts leaning.
+The sky is a rich teal and coral gradient, and thin mist hangs in the streets below. A distant machine
+silhouette stands faint on the horizon.
+Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+Palette: #1F2421, #2F4F4A, #5B8E7D with a coral #E8795B. Mood: quiet, wistful, moody.
+Composition: the curve of the broken highway and the dusk glow sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.arc-raiders/arc-raiders.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark green foliage in teal shadow, low detail. New area on the right: the highway breaks off in mist
+with a faint far machine. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.arc-raiders/arc-raiders.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The highway curves through the center at about 55% of the height, with the glowing sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Poster Sky over Green Ruins (`arc-raiders.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.arc-raiders/arc-raiders.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A bold 1970s poster-style sky of layered orange, cream and teal
+bands above a calm green landscape of low mossy ruins and a still lake. The sun is a pale cream disc,
+and thin streaks of cloud echo the bands. A distant machine silhouette stands as a faint, tiny shape at
+the far shore.
+Style: polished painterly retro-futurist concept art, 1970s color grade, soft haze, strong atmosphere.
+Palette: #FBEFD8, #F4A259, #7FB5A5 with a muted red #BC4B51. Mood: bright, retro, calm.
+Composition: the sun disc and the banded sky above the ruins sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.arc-raiders/arc-raiders.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green ruins and lake in warm light, low in detail. New area on the right: the lake continues to a
+faint far shore. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.arc-raiders/arc-raiders.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The sun disc sits at about 36% of the height in the center, with the ruins and lake below.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Battlefield 6 (`game.bf6`)
+
+- **Genre:** modern large-scale war
+- **Setting:** a collapsing skyline, dust storms, dramatic weather
+- **Palette:** #E6C34A, #6F7A80, #2B2F33, #0C0D0F
+- **Motifs:** a storm over a damaged skyline, a smoke-lit sunset
+- **Avoid:** game title, soldiers, vehicles, weapons, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by modern large-scale conflict, using
+only empty landscapes. Think a damaged city skyline under dramatic storm clouds, a rolling dust storm over
+open ground, smoke-lit sunsets and quiet empty ruins. The palette is dusty gold (#E6C34A), cool grey
+(#6F7A80), gunmetal (#2B2F33) and near-black (#0C0D0F). The look is cinematic documentary photography with
+heavy atmosphere, dust and dramatic weather. No people, no weapons, no vehicles, no insignia, no text. Keep
+the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Storm over a Damaged Skyline (`bf6.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bf6/bf6.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A city skyline of broken towers stands under a heavy dark storm
+front, with a narrow break of low golden sunlight lighting the damaged tops and trailing curtains of
+rain. Thin columns of smoke rise from the lower streets, and the river in the foreground reflects the
+stormlight. The sky is layered in charcoal, steel grey and dusty gold.
+Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+restrained.
+Palette: #E6C34A, #6F7A80, #2B2F33 with an accent #0C0D0F. Mood: somber, dramatic, vast.
+Composition: the golden break in the storm and the broken tower tops sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bf6/bf6.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark river water and ruined bank in soft shadow. New area on the right: the skyline continues into rain
+haze with a faint far tower. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bf6/bf6.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The broken towers rise through the center from 20% to 60% of the height, with the golden
+break behind them. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Dust Wall on the Horizon (`bf6.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bf6/bf6.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single great wall of pale golden dust rises along the far horizon
+of a vast, flat, empty plain, softened by distance and haze, under a huge, smooth, pale sky of cream and
+grey. The plain is plain tan. A thin distant line of ruined shapes sits at the base of the dust. Nothing
+else is in the frame.
+Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+restrained.
+Palette: #F1E8D0, #E6C34A, #A8ADA9 with a ruin #6F7A80. Mood: quiet, tense, vast.
+Composition: the dust wall and the faint ruined line at its base sits about 59–73% across and 36–64%
+down; more than 70% of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and
+low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bf6/bf6.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale cream-grey sky and tan plain. New area on the right: the plain continues into dusty haze.
+Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bf6/bf6.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The dust wall rises at about 52% of the height in the lower center, with empty pale sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Smoke-Lit Sunset (`bf6.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bf6/bf6.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sunset seen through drifting smoke over an empty ruined district,
+with a dull red-gold sun disc glowing through the haze and silhouettes of broken walls and a leaning
+crane in front. The sky is layered in charcoal, rust and smoky gold, and the ground is rubble with thin
+dust in the air.
+Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+restrained.
+Palette: #0C0D0F, #3A3028, #6F7A80 with a sun #E6C34A. Mood: somber, hazy, quiet.
+Composition: the sun disc behind the smoke and the broken walls sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bf6/bf6.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark rubble and drifting smoke, low in detail. New area on the right: the ruins continue into smoke with
+a faint far glow. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bf6/bf6.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The sun disc glows at about 48% of the height in the center, with silhouettes in the lower
+half. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Quiet Ruins at Morning (`bf6.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bf6/bf6.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet empty street of damaged pale buildings in soft morning
+light, with cracked walls, dust motes in the sun and a few green weeds growing through the asphalt. A
+thin pink-gold haze lies over the far end of the street, and the sky above is a pale clear blue. The air
+is calm and still.
+Style: cinematic documentary photography, heavy atmosphere, dust, dramatic weather, somber and
+restrained.
+Palette: #F1E9D8, #E6C34A, #A7B2B8 with a shadow #6F7A80. Mood: calm, still, hazy.
+Composition: the sunlit end of the street in golden haze sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, vehicles, weapons, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bf6/bf6.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain pale cracked wall in soft light, low detail. New area on the right: the street continues into pale
+haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bf6/bf6.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The street runs up the center to a vanishing point at about 48% of the height, with pale sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Baldur's Gate 3 (`game.bg3`)
+
+- **Genre:** high-fantasy role-playing world
+- **Setting:** gothic city spires, moonlit forests, a campfire under stars, arcane purple glow
+- **Palette:** #6B4C9A, #C9A15A, #2B3A2E, #120E14
+- **Motifs:** a campfire beneath a starfield, arcane-lit ruins, a city of spires at dusk
+- **Avoid:** game title, characters, tentacled creatures, the logo, text, UI or HUD elements, logos
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a high-fantasy role-playing world.
+Think moonlit forests, a small campfire beneath a deep starfield, gothic city spires at dusk and ruins faintly
+lit by an arcane purple glow. The palette is arcane violet (#6B4C9A), firelight gold (#C9A15A), forest
+green-black (#2B3A2E) and near-black plum (#120E14). The look is rich painterly fantasy concept art with warm
+firelight against cool moonlight. No people, no creatures, no emblems, no text. Keep the left edge and the
+bottom edge calm for desktop icons and the taskbar.
+```
+
+#### City of Spires at Dusk (`bg3.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bg3/bg3.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast gothic city of tall stone spires and bridges at dusk, with a
+river winding beneath and warm golden windows glowing in the lower towers. A deep violet and amber sky
+arches above, and thin arcane purple light drifts up from a distant plaza. Pale mist fills the streets
+and softens the far skyline.
+Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+Palette: #6B4C9A, #C9A15A, #2B3A2E with an accent #120E14. Mood: grand, mysterious, warm.
+Composition: the tallest spire cluster and the glowing river below sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bg3/bg3.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark stone towers in deep violet shadow, low detail. New area on the right: the city continues into
+violet mist with a few distant lit windows. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bg3/bg3.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The spire cluster rises through the center from 20% to 60% of the height, with the river
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Campfire Under the Stars (`bg3.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bg3/bg3.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small campfire glows warm gold on a dark grassy rise, with a few
+simple logs around it and a thin plume of sparks drifting upward. Above is a vast, smooth starfield in
+deep violet and blue-black, with a gentle band of galaxy haze. The ground is a plain dark silhouette,
+and nothing else is in the frame.
+Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+Palette: #120E14, #241A3A, #6B4C9A with a fire #C9A15A. Mood: quiet, warm, contemplative.
+Composition: the campfire and its sparks sits about 60–72% across and 36–64% down; more than 70% of the
+image is starfield. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bg3/bg3.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty violet-black starfield with only a few stars. New area on the right: a faint distant tree line
+silhouette under the stars. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bg3/bg3.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The campfire glows at about 70% of the height in the lower center, with the starfield filling
+the sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Arcane Ruins in Moonlight (`bg3.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bg3/bg3.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Broken stone arches of an ancient ruin stand in a moonlit forest
+clearing, softly lit by a faint purple arcane glow that seeps from cracks in the floor. Pale moonlight
+comes from the upper left, and silver mist curls around fallen columns. Tall pines surround the clearing
+in deep green-black shadow.
+Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+Palette: #120E14, #1F2A24, #6B4C9A with a moon #D5D9E8. Mood: mysterious, hushed, magical.
+Composition: the broken arches and the glowing floor cracks sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bg3/bg3.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark pine forest in green-black shadow, low detail. New area on the right: more fallen columns fade into
+silver mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bg3/bg3.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arches rise at the center from 30% to 65% of the height, with the glowing cracks below.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Forest Glade at Morning (`bg3.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.bg3/bg3.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sunlit forest glade in the morning, with huge old trees, mossy
+standing stones and long golden shafts of light falling through pale mist. A small clear pool in the
+foreground mirrors the canopy, and soft violet wildflowers dot the grass. The air is warm and bright
+with floating pollen.
+Style: rich painterly fantasy concept art, warm firelight against cool moonlight, deep atmosphere.
+Palette: #F1E7C8, #C9A15A, #7FA06A with a violet #6B4C9A. Mood: warm, peaceful, bright.
+Composition: the standing stones and the light shafts sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.bg3/bg3.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden mist between trunks, low detail, kept calm and low in detail. New area on the right: the
+glade continues into pale gold haze with a faint arch. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.bg3/bg3.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light shafts fall through the center with the standing stones at about 52% of the height.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Call of Duty (`game.cod`)
+
+- **Genre:** modern military realism
+- **Setting:** desolate urban districts at dawn, haze, distant helicopter silhouettes
+- **Palette:** #556B2F, #B08D57, #3A3F44, #0B0C0D
+- **Motifs:** a smoky dawn skyline, a rain-soaked compound, a night-vision-green dusk
+- **Avoid:** game title, soldiers in focus, weapons, insignia, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a modern, realistic military
+world, without any people or weapons. Think desolate urban districts at dawn, empty concrete compounds in
+rain, smoky skylines and cold dusk with a faint green tint. The palette is olive (#556B2F), dusty tan
+(#B08D57), gunmetal (#3A3F44) and near-black (#0B0C0D). The look is cinematic documentary photography with
+heavy atmosphere, haze and muted color. Strictly no soldiers, no weapons, no vehicles in focus, no insignia,
+no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Smoky Dawn Skyline (`cod.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cod/cod.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A war-worn city skyline at dawn seen across an empty river, with
+broken tower silhouettes in layers of grey and olive haze. A band of warm tan light breaks along the
+horizon, lighting thin columns of smoke that rise and bend in the wind. The water is still and reflects
+the pale amber glow.
+Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+Palette: #556B2F, #B08D57, #3A3F44 with an accent #0B0C0D. Mood: somber, vast, atmospheric.
+Composition: the glowing horizon band and the tallest broken tower sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cod/cod.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark olive haze over still water, low in detail. New area on the right: the skyline thins out into low
+ruins and a pale sky. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cod/cod.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tallest tower rises at the center from 25% to 60% of the height, with the glow behind it
+and the river below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Watchtower in Fog (`cod.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cod/cod.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single bare concrete watchtower stands alone in a vast, smooth sea
+of grey-green fog, its top just emerging into pale light. A thin, soft beam of tan light from the low
+sun touches its edge. The sky is an empty gradient from charcoal to pale olive, and the fog below is
+perfectly smooth.
+Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+Palette: #0B0C0D, #3A3F44, #7C8A63 with a tan #B08D57. Mood: quiet, tense, solitary.
+Composition: the watchtower and its edge of light sits about 61–71% across and 28–72% down; more than
+70% of the image is empty fog and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cod/cod.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty olive-grey fog and sky, completely smooth and without detail. New area on the right: a faint
+second tower silhouette far in the fog. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cod/cod.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower rises from the lower center to about 38% of the height, with empty gradient sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Rain-Soaked Compound (`cod.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cod/cod.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An empty concrete compound in steady rain at dusk, with a plain
+chain-link fence in soft focus, wet concrete reflecting a dim sodium-orange lamp, and a low windowless
+building in the background. A faint green tint colors the shadows, and mist hangs between the walls.
+Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+Palette: #0B0C0D, #2B3A30, #3A3F44 with a lamp #D59B4A. Mood: gloomy, quiet, tense.
+Composition: the lamp glow and its reflection on the wet concrete sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cod/cod.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a dark concrete wall streaked with rain, low detail. New area on the right: the compound wall continues
+into mist with a faint far lamp. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cod/cod.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lamp glows at about 45% of the height, with its reflection on the wet ground below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Hazy Morning Plain (`cod.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cod/cod.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet, empty plain at early morning under a pale warm haze, with a
+long straight dirt road leading to a low line of distant hills. Soft golden light filters through a thin
+layer of mist, and a few dry grass tufts line the road. A single faint line of a power pylon marks the
+horizon.
+Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+Palette: #F1E8D4, #D8C89E, #8A9570 with a grey #7C8590. Mood: calm, hazy, spacious.
+Composition: the road and the distant hills in the golden mist sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cod/cod.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain pale haze over dry grass, low in detail. New area on the right: the plain continues with a faint
+far ridge in the haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cod/cod.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road runs up the center to the distant hills at about 50% of the height, under pale hazy
+sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Counter-Strike 2 (`game.cs2`)
+
+- **Genre:** grounded modern tactical shooter
+- **Setting:** sun-bleached desert towns, Mediterranean and North-African sandstone architecture, industrial yards
+- **Palette:** #D9A441, #C8B08A, #3E5C76, #1B1F24
+- **Motifs:** arched doorways, long dawn shadows, dust in the air, wooden crates, tiled rooftops
+- **Avoid:** game title, map names, soldiers, weapons, logos, crosshairs, graffiti text, team insignia, text, characters
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a grounded tactical world of
+sun-bleached desert towns. Think warm sandstone courtyards, arched doorways, tiled rooftops and dusty
+industrial yards in early-morning or late-afternoon light. The palette is sand and ochre (#D9A441, #C8B08A)
+with dusty steel-blue (#3E5C76) accents and charcoal shadows (#1B1F24). The look is refined architectural
+photography with gentle contrast, long raking shadows and floating dust, calm and anticipatory. No people, no
+weapons, no text, no signs, no graffiti. Keep the left edge and the bottom edge calm for desktop icons and the
+taskbar.
+```
+
+#### Desert Courtyard at Dawn (`cs2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cs2/cs2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sun-bleached sandstone courtyard at first light. A tall arched
+passage on the right leads through a thick wall into deep blue shade, while the left walls glow gold
+where the low sun rakes across them. Clay-tiled rooftops step up behind, a few wooden crates stand
+against a wall, and fine dust drifts through the long beams of light.
+Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+Palette: #D9A441, #C8B08A, #3E5C76 with an accent #1B1F24. Mood: quiet, warm, anticipatory.
+Composition: the arched passage and the golden wall beside it sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cs2/cs2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain, sunlit sandstone wall with soft stone texture, low detail. New area on the right: a low rooftop
+line of clay tiles and a pale hazy sky, gently fading. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cs2/cs2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arched passage rises through the center from 30% to 75% of the height, with gold light on
+the wall at the left and tiled roofs above. Same lighting, palette, materials and rendering style. Keep
+the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Doorway (`cs2.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cs2/cs2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast, sun-bleached sandstone wall fills the frame, almost
+featureless. Set into it, right of center, is a single tall arched wooden double door painted a faded
+dusty blue, slightly ajar, with a thin warm line of light inside. Early-morning sun rakes across the
+wall from the left, revealing fine stone texture, and a long soft shadow of the arch falls across the
+sand-colored ground.
+Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+Palette: #E9D9BC, #D9A441, #C8B08A with the door in #5E7C93 and shadows in #8A7356. Mood: quiet,
+anticipatory, sunlit.
+Composition: the doorway sits about 58–70% across and 28–68% down; more than 70% of the image is plain
+wall and ground. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, graffiti, signage, weapons, soldiers, people, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cs2/cs2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+more plain sunlit sandstone wall with soft texture, low detail. New area on the right: the wall
+continues and turns gently into shadow, with a small barred window high up. Same lighting direction,
+palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cs2/cs2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arched blue doorway is centered horizontally and spans roughly 30–75% of the height, with
+its long shadow falling toward the lower left. Same lighting, palette, materials and rendering style.
+Keep the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Dust in the Light Shaft (`cs2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cs2/cs2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The inside of an empty stone storehouse in the afternoon, seen from
+the dark end. A single high window sends a thick beam of gold light across the room, filled with
+slow-drifting dust, and lights a stack of wooden crates and a patch of worn tile floor. The rest of the
+room falls into soft umber and charcoal shadow.
+Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+Palette: #D9A441, #C8B08A, #3E5C76 with an accent #1B1F24. Mood: still, warm, hushed.
+Composition: the beam of light and the crates it touches sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cs2/cs2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+deep umber shadow on a plain stone wall with faint texture. New area on the right: the room's far wall
+fading into shadow, with a faint second window glow. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cs2/cs2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light beam falls diagonally from the upper right to a crate stack at about 60% of the
+height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Rooftops at Noon (`cs2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cs2/cs2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Sunny noon over a quiet desert town, seen from a high roof terrace.
+A jumble of flat sandstone rooftops, arched windows and small wooden awnings spreads below in warm cream
+and ochre, with deep blue shadows in the alleys. A pale, cloudless sky arches above, and a faint haze
+softens the far edge of town.
+Style: refined architectural photography, warm natural light, gentle contrast, calm and cinematic.
+Palette: #F0E4CB, #D9A441, #C8B08A with a shadow blue #3E5C76. Mood: bright, calm, spacious.
+Composition: the cluster of rooftops and the blue alley shadows sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cs2/cs2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain terrace wall in warm cream light, low detail. New area on the right: the rooftops thin into
+dusty haze and a faint, low horizon. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cs2/cs2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rooftops stack down the middle of the frame, the brightest cluster at about 50% of the
+height under a pale sky. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+### Cyberpunk 2077 (`game.cyberpunk`)
+
+- **Genre:** neon megacity future-noir
+- **Setting:** rain-slick streets, towering arcologies, yellow and cyan neon
+- **Palette:** #FCEE0A, #00F0FF, #FF003C, #0A0A12
+- **Motifs:** rain reflections, a monorail through towers, a lone vending glow, a smog sunset
+- **Avoid:** game title, characters, readable signs, abstract neon only, brand names, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a neon megacity of the future-noir
+genre. Think rain-slick streets, towering arcology blocks, a monorail threading through the towers, and yellow
+and cyan neon glowing as pure abstract light with no readable signs. The palette is acid yellow (#FCEE0A),
+cyan (#00F0FF), hot red (#FF003C) and near-black blue (#0A0A12). The look is cinematic night photography with
+heavy atmosphere, bloom and wet reflections. No people, no vehicles in focus, no signs or text of any kind.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Monorail Through the Towers (`cyberpunk.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cyberpunk/cyberpunk.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast megacity at night, with colossal dark arcology towers rising
+into low smog that glows purple and orange. A slim monorail line curves between them, its train a thin
+streak of cyan light. Rain-slick streets far below mirror blocks of glowing yellow and cyan neon, with
+no readable signs, only abstract light.
+Style: cinematic night photography, wet reflections, volumetric haze, soft bloom, rich blacks.
+Palette: #FCEE0A, #00F0FF, #FF003C with an accent #0A0A12. Mood: epic, moody, electric.
+Composition: the curving monorail streak between the towers sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, readable signs, brand names, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cyberpunk/cyberpunk.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark, haze-wrapped tower faces with a faint glow, low detail. New area on the right: the megacity
+stretches into purple-orange smog with distant tower lights. Same lighting direction, palette, materials
+and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cyberpunk/cyberpunk.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The monorail curves through the center at about 42% of the height, with towers rising on both
+sides. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Vending Glow (`cyberpunk.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cyberpunk/cyberpunk.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single glowing vending machine stands alone against a smooth, dark
+concrete wall on an empty rain-wet street at night. It glows soft cyan and yellow with abstract blocks
+of light and no readable labels, and its reflection stretches across the wet ground. The rest of the
+frame is clean dark blue-black space.
+Style: cinematic night photography, wet reflections, volumetric haze, soft bloom, rich blacks.
+Palette: #0A0A12, #151A2A, #00F0FF with a yellow #FCEE0A. Mood: lonely, quiet, noir.
+Composition: the vending machine and its reflection sits about 61–71% across and 32–68% down; more than
+70% of the image is dark wall and wet ground. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, readable signs, brand names, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cyberpunk/cyberpunk.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a smooth dark blue-black wall with faint rain streaks. New area on the right: the street continues into
+dark haze with a very faint far glow. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cyberpunk/cyberpunk.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The machine stands in the lower center from 40% to 75% of the height, with its reflection
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Rain Reflections on a Street (`cyberpunk.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cyberpunk/cyberpunk.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A narrow rain-slick alley at night, its asphalt a mirror for
+scattered neon colors in yellow, red and cyan that are only abstract glowing shapes. Rain lines catch
+the light, and steam rises from a grate. The alley walls rise as dark blocks into smoggy purple sky.
+Style: cinematic night photography, wet reflections, volumetric haze, soft bloom, rich blacks.
+Palette: #0A0A12, #1B1A2E, #FF003C with a cyan #00F0FF. Mood: wet, moody, cinematic.
+Composition: the neon reflections in the wet alley sits about 52–72% across and 45–65% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, readable signs, brand names, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cyberpunk/cyberpunk.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a dark, rain-streaked alley wall with faint texture, low detail. New area on the right: the alley
+continues into haze with a faint cyan glow. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cyberpunk/cyberpunk.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The alley runs up the center to a vanishing point at about 45% of the height, with
+reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Smog Sunset Skyline (`cyberpunk.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.cyberpunk/cyberpunk.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A megacity skyline at sunset, seen from a high rooftop through thin
+smog. The towers are soft grey-blue silhouettes in layers, with a pale orange and rose sun glowing as a
+smoky disc in a hazy cream sky. A few monorail lines trace thin dark curves between buildings.
+Style: cinematic night photography, wet reflections, volumetric haze, soft bloom, rich blacks.
+Palette: #F4DCC2, #E8946B, #8C9AB0 with a yellow #FCEE0A. Mood: hazy, warm, quiet.
+Composition: the glowing sun disc between the towers sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, readable signs, brand names, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.cyberpunk/cyberpunk.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain soft cream-orange smoggy sky, low detail. New area on the right: the towers fade into pale haze
+with a faint distant spire. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.cyberpunk/cyberpunk.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The sun disc glows at about 40% of the height in the center, with towers in layers below.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Deadlock (`game.deadlock`)
+
+- **Genre:** occult noir city
+- **Setting:** a 1920s art-deco metropolis, streetcars, fog lamps, a mystic glow
+- **Palette:** #C8A96B, #3F6E6A, #6B2E2E, #121314
+- **Motifs:** a deco skyline in fog, a rain-slick streetcar line, an occult glow without glyphs
+- **Avoid:** game title, heroes, readable signs, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by an occult noir city of the 1920s,
+with no people. Think art-deco skyscrapers rising into fog, rain-slick streetcar rails, glowing street lamps
+and a faint, mysterious glow with no glyphs or symbols. The palette is brass gold (#C8A96B), teal (#3F6E6A),
+oxblood (#6B2E2E) and near-black (#121314). The look is cinematic noir illustration with strong geometry, deep
+shadow and glowing fog. No figures, no vehicles in focus, no signs, no symbols, no text. Keep the left edge
+and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Deco Skyline in Fog (`deadlock.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.deadlock/deadlock.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A towering art-deco skyscraper with stepped setbacks and slender
+vertical ribs rises from a rain-slick night street, its top lost in thick glowing fog. Brass-gold street
+lamps line the avenue and make soft halos in the mist. A faint teal glow pulses behind a distant tower,
+and the wet pavement mirrors every light.
+Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+elegant.
+Palette: #C8A96B, #3F6E6A, #6B2E2E with an accent #121314. Mood: elegant, moody, mysterious.
+Composition: the skyscraper's stepped crown in the fog and the lamp halos below sits about 54–74% across
+and 36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.deadlock/deadlock.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark stone building faces and fog, low in detail. New area on the right: more deco towers recede into
+teal-gold mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.deadlock/deadlock.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The skyscraper rises through the center from 15% to 65% of the height, with lamp halos along
+the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### One Street Lamp in Fog (`deadlock.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.deadlock/deadlock.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single ornate brass street lamp glows warm gold in the middle of a
+vast, smooth bank of dark teal-black fog, with its soft halo catching thin drifting rain. The ground is
+a faint wet cobble reflection. Everything else is clean, empty dark space.
+Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+elegant.
+Palette: #121314, #1D2F2E, #3F6E6A with a lamp #C8A96B. Mood: quiet, lonely, noir.
+Composition: the lamp and its halo sits about 60–72% across and 32–68% down; more than 70% of the image
+is empty dark fog. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.deadlock/deadlock.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty dark teal-black fog, completely smooth, kept calm and low in detail. New area on the right: a
+faint far lamp halo in the fog. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.deadlock/deadlock.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lamp stands at about 52% of the height in the center, with its halo and reflection around
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Rain-Slick Streetcar Line (`deadlock.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.deadlock/deadlock.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wet cobblestone street with two shining streetcar rails curves
+between deco buildings at night, reflecting the warm gold of overhead lamps and a faint teal glow from a
+side alley. Light rain falls in the air, and a wisp of fog hovers above the rails. The street is empty.
+Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+elegant.
+Palette: #121314, #2A2D2E, #C8A96B with a teal #3F6E6A. Mood: wet, moody, quiet.
+Composition: the curve of the shining rails and the lamp reflections sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.deadlock/deadlock.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark deco building walls in soft shadow, kept calm and low in detail. New area on the right: the rails
+continue into fog with a faint far lamp. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.deadlock/deadlock.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rails curve up the center to a vanishing point at about 45% of the height, with
+reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Deco Plaza at Noon (`deadlock.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.deadlock/deadlock.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A broad, empty art-deco plaza at midday in pale gold light, with a
+round fountain of brass and stone, tall geometric lamp posts and symmetrical cream-colored buildings
+with stepped tops. A soft haze lies in the air, and a pale blue-green sky opens above.
+Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+elegant.
+Palette: #F4ECD6, #C8A96B, #8DB3AE with a shadow #6B5A44. Mood: elegant, calm, bright.
+Composition: the fountain and the stepped buildings behind it sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.deadlock/deadlock.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain cream stone paving in soft light, low detail. New area on the right: the plaza continues into pale
+golden haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.deadlock/deadlock.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The fountain sits at about 58% of the height in the center, with the buildings above. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Destiny 2 (`game.destiny2`)
+
+- **Genre:** mythic sci-fi
+- **Setting:** golden-age space architecture, ring-planet vistas, rusted colony ships in snow
+- **Palette:** #E9E5DA, #3A6EA5, #D4A84B, #0F1218
+- **Motifs:** a ruined launch site in snow, a ring-planet sunrise, an ancient vault in a jungle
+- **Avoid:** game title, the giant white sphere, Guardians, ships by design, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a mythic science-fiction world,
+with no people. Think ruined launch towers and rusted colony vessels half-buried in snow, ring-planet vistas
+at sunrise, ancient geometric vaults in jungles and sweeping golden-age architecture left to decay. The
+palette is bone white (#E9E5DA), steel blue (#3A6EA5), antique gold (#D4A84B) and deep space black (#0F1218).
+The look is cinematic concept art with epic scale, clean light and quiet awe. No figures, no creatures, no
+emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Ring Planet Sunrise (`destiny2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.destiny2/destiny2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A ruined launch tower of weathered white metal stands on a frozen
+plain, with a vast ring-planet rising on the horizon and flooding the sky with gold and steel-blue
+light. The rings cut a thin bright arc across the sky, and snowdrifts bury the tower's base. A rusted,
+broken colony hull lies half-covered in snow to the left.
+Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+Palette: #E9E5DA, #3A6EA5, #D4A84B with an accent #0F1218. Mood: awe-inspiring, quiet, mythic.
+Composition: the launch tower silhouetted against the rising ring planet sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.destiny2/destiny2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark blue snowdrifts in soft shadow, low detail. New area on the right: the plain continues to a distant
+ridge under thin glowing rings. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.destiny2/destiny2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower rises at the center from 25% to 70% of the height, with the ring planet glowing
+behind it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Ring Arc over the Snow (`destiny2.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.destiny2/destiny2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single thin, razor-clean arc of planetary ring spans a vast,
+smooth gradient sky from deep space black at the top to a faint steel-blue glow at the horizon. Below, a
+flat white snow plain meets the sky at a low, clean horizon. A tiny lone rusted spire stands far off.
+Everything else is empty.
+Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+Palette: #0F1218, #1C2A40, #E9E5DA with a gold #D4A84B. Mood: quiet, cold, vast.
+Composition: the ring arc and the tiny spire below it sits about 56–76% across and 38–62% down; more
+than 70% of the image is empty sky and snow. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.destiny2/destiny2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty black-to-blue sky, completely smooth and without stars. New area on the right: the snow plain
+continues to a faint pale horizon. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.destiny2/destiny2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ring arc curves across the upper center at about 35% of the height, with the snow plain
+filling the bottom third. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Vault in the Jungle (`destiny2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.destiny2/destiny2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An ancient geometric vault of pale stone and gold-etched lines,
+half-swallowed by dark jungle, with its huge doorway glowing soft blue in the gloom. Thick roots and
+giant ferns frame it, and drifting mist and floating pollen catch the light. The rest is deep
+green-black shadow.
+Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+Palette: #0F1218, #1B2E26, #3A6EA5 with a gold #D4A84B. Mood: mysterious, quiet, ancient.
+Composition: the glowing doorway and the stone around it sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, glyphs, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.destiny2/destiny2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark jungle foliage in green-black shadow, low detail. New area on the right: more roots and ferns fade
+into dark mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.destiny2/destiny2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The doorway glows at the center at about 52% of the height, with roots and ferns around it.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Colony Ship in Morning Snow (`destiny2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.destiny2/destiny2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A huge rusted colony vessel lies half-buried in a bright,
+wind-carved snowfield at morning, its hull rising like a cliff. Pale golden light rakes across the snow,
+and soft blue shadows pool in the drifts. The sky is a clean pale blue with a faint ring arc low on the
+horizon.
+Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+Palette: #F4F2EC, #BFD0E3, #D4A84B with a rust #8A5A3C. Mood: calm, bright, vast.
+Composition: the half-buried hull and its long shadow sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.destiny2/destiny2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth white snow with soft blue shadows, low detail. New area on the right: the snowfield continues to
+a faint far ridge. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.destiny2/destiny2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The hull rises at about 48% of the height in the center, with snow below and pale sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Diablo IV (`game.diablo4`)
+
+- **Genre:** gothic horror fantasy
+- **Setting:** a snowy mountain monastery, cathedral ruins, crimson skies, bleak moors
+- **Palette:** #8B0000, #C8B79A, #3D3B3A, #0A0807
+- **Motifs:** a cathedral silhouette in a blizzard, a lone lantern on a moor
+- **Avoid:** game title, demons, the logo, named villains, text, characters, UI or HUD elements, logos
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by gothic horror fantasy, with no
+creatures or people. Think a snowy mountain monastery, the black silhouette of a ruined cathedral in a
+blizzard, crimson skies over bleak moors and a lone lantern glowing in the dark. The palette is deep crimson
+(#8B0000), weathered parchment (#C8B79A), stone grey (#3D3B3A) and near-black (#0A0807). The look is somber
+painterly concept art with heavy atmosphere, cold air and a single warm or red light. No figures, no
+creatures, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Cathedral in the Blizzard (`diablo4.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.diablo4/diablo4.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The black silhouette of a vast ruined gothic cathedral rises from a
+snowbound mountainside, its broken spires and a hollow rose window barely visible through a driving
+blizzard. A thin band of crimson light glows low on the horizon behind it, staining the swirling snow
+dull red. The foreground is a field of deep snowdrifts and a few bare, black trees.
+Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+source.
+Palette: #8B0000, #C8B79A, #3D3B3A with an accent #0A0807. Mood: somber, cold, ominous.
+Composition: the cathedral silhouette and the crimson horizon behind it sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.diablo4/diablo4.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark snowdrifts and swirling snow in low contrast. New area on the right: the mountain slope continues
+with a faint far monastery light. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.diablo4/diablo4.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The cathedral rises through the center from 20% to 65% of the height, with the crimson glow
+behind its spires. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Lantern on the Moor (`diablo4.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.diablo4/diablo4.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small lantern glows warm amber on a bare wooden post on a
+vast, flat, dark moor under a smooth sky that fades from near-black at the top to a faint dull-crimson
+band at the horizon. Thin drifting snowflakes catch the lantern's light. Nothing else is in the frame.
+Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+source.
+Palette: #0A0807, #2A1514, #8B0000 with a lantern #E0A15A. Mood: lonely, quiet, bleak.
+Composition: the lantern and its glow on the snow sits about 61–71% across and 36–64% down; more than
+70% of the image is empty dark sky and moor. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.diablo4/diablo4.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty near-black to dull-crimson sky, completely smooth. New area on the right: the moor continues to
+a faint far ridge under crimson haze. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.diablo4/diablo4.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lantern glows at about 62% of the height in the lower center, with the empty dark sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Monastery Bell Tower in Snow (`diablo4.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.diablo4/diablo4.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A narrow stone bell tower with a pointed roof stands on a cliff edge
+above a snowy valley, half-hidden by fog. The bell hangs in a dark arched opening, and a faint warm
+window glows beneath it. Snow falls steadily in the grey-blue air, and the valley below fades into pale
+mist.
+Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+source.
+Palette: #0A0807, #3D3B3A, #8A97A6 with a window #E0A15A. Mood: cold, hushed, solemn.
+Composition: the bell tower's arched opening and the warm window sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.diablo4/diablo4.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark stone cliff and snow in soft grey shadow. New area on the right: more cliff and mist drop away into
+the valley. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.diablo4/diablo4.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower rises at about 45% of the height in the center, with the foggy valley below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Frozen Moor at Dawn (`diablo4.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.diablo4/diablo4.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide frozen moor at dawn, with pale frost on the grass and thin
+ice across still pools. The low sun is a dull pink-gold disc behind thin clouds, and a ruined stone arch
+stands alone in the middle distance. A few bare trees reach out of the mist, and everything is quiet and
+cold.
+Style: somber painterly gothic concept art, heavy atmosphere, cold air, a single warm or red light
+source.
+Palette: #EFE8DC, #C8B79A, #A0A5AC with a rose #B8756E. Mood: cold, still, gentle.
+Composition: the lone stone arch in the pink-gold light sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.diablo4/diablo4.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+pale frosted grass and mist, low in detail. New area on the right: the moor continues to a faint far
+ridge in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.diablo4/diablo4.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arch stands at about 48% of the height in the center, with the pale sky above and frosted
+grass below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+### Dota 2 (`game.dota2`)
+
+- **Genre:** high-fantasy war of two realms
+- **Setting:** lush golden radiance versus scorched crimson corruption, with a river between them
+- **Palette:** #C9A55A, #3C6E47, #8E2B2B, #1A1418
+- **Motifs:** a river dividing green and red lands, an ancient tree, a crumbling tower at dusk
+- **Avoid:** game title, heroes, the map layout, the emblem, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a high-fantasy world divided
+between two realms: one lush and golden-green, the other scorched and crimson, with a winding river between
+them. Think ancient trees, crumbling stone towers and glowing shrines in painterly light. The palette is
+antique gold (#C9A55A), forest green (#3C6E47), ember red (#8E2B2B) and dark plum-black (#1A1418). The look is
+matte fantasy painting with rich texture and moody light. No creatures, no figures, no emblems, no text. Keep
+the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### River Between Two Lands (`dota2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.dota2/dota2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A winding river runs through a vast fantasy valley, dividing a lush
+golden-green forest on the left from scorched red-black ground on the right. An ancient, huge tree glows
+with warm light on the green bank, while a crumbling stone tower smolders on the red bank. A dusky sky
+above is gold on the left and ember red on the right.
+Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+Palette: #C9A55A, #3C6E47, #8E2B2B with an accent #1A1418. Mood: epic, divided, mythic.
+Composition: the river fork between the glowing tree and the broken tower sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.dota2/dota2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark green forest in deep shadow, low in detail. New area on the right: scorched red hills and drifting
+ash fading into a dark sky. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.dota2/dota2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The river winds up the center of the frame with the tree and tower at about 40% of the height
+under a split sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Ancient Tree at Dusk (`dota2.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.dota2/dota2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single huge ancient tree with a wide, golden-lit canopy stands
+alone on a smooth, grassy hill under a vast gradient dusk sky that moves from plum-black to deep green
+to warm gold at the horizon. Tiny gold motes float from its branches. Everything else is empty, soft
+color.
+Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+Palette: #1A1418, #2D4C35, #C9A55A with a faint red #8E2B2B. Mood: quiet, majestic, still.
+Composition: the tree and its glowing canopy sits about 59–73% across and 30–70% down; more than 70% of
+the image is empty sky and hill. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.dota2/dota2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty plum-to-green dusk sky, completely smooth and without detail. New area on the right: the hill
+slopes into a faint red-lit horizon far away. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.dota2/dota2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tree stands in the lower center from 25% to 70% of the height, with empty dusk sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Crumbling Tower in Ember Light (`dota2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.dota2/dota2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The broken top of an ancient stone tower rises from a field of dark
+red rubble under a smoky crimson sky. Glowing embers float upward through the haze, and a thin vein of
+gold light runs through a crack in the stone. The surroundings fade into dark plum smoke.
+Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+Palette: #1A1418, #5A1F22, #8E2B2B with a gold #C9A55A. Mood: ominous, smoldering, quiet.
+Composition: the broken tower top and the glowing crack sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.dota2/dota2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark red rubble and drifting smoke, low in detail. New area on the right: the ruins fade into plum smoke
+with a distant glow. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.dota2/dota2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower rises from the lower center to about 45% of the height, with ember-lit smoke above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Golden Glade Morning (`dota2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.dota2/dota2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sunlit glade in a golden-green forest in the morning, with long
+shafts of warm light slanting through huge ancient trunks and drifting pollen. A calm stream in the
+foreground reflects the gold canopy, and a mossy stone ruin glows softly in the background. The air is
+bright with soft mist.
+Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+Palette: #F3E6B8, #C9A55A, #6FA06A with a deep green #3C6E47. Mood: warm, peaceful, luminous.
+Composition: the sunlit shafts and the mossy ruin sits about 54–74% across and 38–58% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.dota2/dota2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden mist between tree trunks, low in detail. New area on the right: the forest continues into
+pale gold haze with a distant arch. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.dota2/dota2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light shafts fall through the center with the ruin at about 50% of the height and the
+stream below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+### Elden Ring (`game.elden-ring`)
+
+- **Genre:** dark-fantasy ruined kingdom
+- **Setting:** a colossal glowing golden tree on the horizon, misty fields, ruined castles
+- **Palette:** #D4AF37, #6B6B47, #2C2A26, #0E0D0C
+- **Motifs:** a golden tree over fog, a lone ruined bridge, a graveyard of giant swords in mist
+- **Avoid:** game title, knights, bosses, exact castle designs, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a dark-fantasy ruined kingdom.
+Think a colossal, softly glowing golden tree on the far horizon, misty fields of dead grass, crumbling stone
+bridges and half-collapsed castles in fog, painted in muted olive and ash tones with a single source of warm
+gold. The palette is gold (#D4AF37), olive grey (#6B6B47), charcoal (#2C2A26) and near-black (#0E0D0C). The
+look is a painterly, matte fantasy landscape with vast scale, heavy fog and melancholy beauty. No people, no
+creatures, no armor, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and
+the taskbar.
+```
+
+#### Golden Tree over the Fog (`elden-ring.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.elden-ring/elden-ring.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A colossal golden tree glows on the far horizon, its enormous canopy
+spreading across the sky and lighting a sea of drifting grey fog. In the middle distance, a ruined
+castle with broken towers and a lone, half-collapsed stone bridge stand in the mist. The foreground
+fields of dead olive grass fade into darkness under a heavy ash-grey sky.
+Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+Palette: #D4AF37, #6B6B47, #2C2A26 with an accent #0E0D0C. Mood: majestic, melancholy, vast.
+Composition: the golden tree and the glowing fog beneath it sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.elden-ring/elden-ring.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark olive fields and mist in low contrast, low detail. New area on the right: the fog continues with a
+faint second ruined tower silhouette. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.elden-ring/elden-ring.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tree glows at the center at about 35% of the height, with the ruined bridge in the fog
+below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Bridge in the Mist (`elden-ring.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.elden-ring/elden-ring.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single weathered stone bridge arc spans a gap in a vast, smooth
+sea of grey mist, its far end vanishing. A faint warm gold glow lights the mist from the horizon behind
+it. The sky is an empty gradient of ash grey and olive, and there is nothing else in the frame.
+Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+Palette: #0E0D0C, #2C2A26, #6B6B47 with a gold #D4AF37. Mood: quiet, lonely, melancholy.
+Composition: the bridge arc and the gold glow behind it sits about 58–74% across and 35–65% down; more
+than 70% of the image is empty mist and sky. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.elden-ring/elden-ring.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty ash-grey mist and sky, completely smooth and clean. New area on the right: a very faint far ridge
+in pale mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.elden-ring/elden-ring.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The bridge arcs through the lower center at about 55% of the height, with empty misty sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Graveyard of Giant Swords (`elden-ring.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.elden-ring/elden-ring.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A silent field where huge, plain blades of rusted iron stand planted
+in the ground at leaning angles, half-wrapped in thick fog. Their pale, worn edges catch a thin gold
+light from a hidden sun, and the ground is damp black earth with sparse dead grass. The sky is a flat
+grey-olive haze.
+Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+Palette: #0E0D0C, #2C2A26, #6B6B47 with a gold #D4AF37. Mood: silent, ancient, ominous.
+Composition: the nearest leaning blades and the gold edge light sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, armor, skeletons, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.elden-ring/elden-ring.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark earth and fog with a few blades fading out, low detail. New area on the right: more blades recede
+into thick fog. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.elden-ring/elden-ring.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The blades lean through the center from 35% to 70% of the height, with fog filling the
+bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Golden Fields at Dawn (`elden-ring.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.elden-ring/elden-ring.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide field of tall golden grass at dawn, with a pale mist lifting
+from the ground and a colossal glowing tree faint and golden on the horizon. A few ancient broken stone
+pillars stand in the grass. The sky is soft cream with olive-grey clouds, and the light is warm and
+gentle.
+Style: painterly matte fantasy landscape, vast scale, heavy fog, melancholy and majestic.
+Palette: #F1E7C3, #D4AF37, #A9A778 with a grey #6B6B47. Mood: gentle, golden, quiet.
+Composition: the distant golden tree and the nearest stone pillars sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.elden-ring/elden-ring.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden grass and pale mist, low detail. New area on the right: the field stretches to a faint
+ruined tower in the mist. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.elden-ring/elden-ring.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The golden tree sits at about 36% of the height, with grass filling the lower half and
+pillars at the center. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+### Euro Truck Simulator 2 (`game.ets2`)
+
+- **Genre:** European road trip
+- **Setting:** an empty highway through an alpine valley at dawn, a coastal road, autumn countryside
+- **Palette:** #F2A541, #4E8098, #8BA888, #1B1F22
+- **Motifs:** a road into mountains at dawn, rain on a highway at dusk, a sunflower field road
+- **Avoid:** game title, branded trucks, road-sign text, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a relaxed European road trip, with
+no vehicles and no people. Think an empty highway winding through an alpine valley at dawn, a coastal road
+above a calm sea, rain on a highway at dusk and a quiet country road through golden sunflower fields. The
+palette is warm amber (#F2A541), slate blue (#4E8098), sage green (#8BA888) and asphalt (#1B1F22). The look is
+calm cinematic landscape photography with soft light and gentle haze. No vehicles, no people, no signs, no
+text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Alpine Highway at Dawn (`ets2.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.ets2/ets2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A smooth empty highway curves through a green alpine valley at dawn,
+leading toward snow-capped peaks that glow pink and gold in the first sun. Mist lies in the valley, and
+dark pines line the road. A small village with a church spire sits tiny on a far hillside, and the sky
+is a clear gradient from peach to pale blue.
+Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+Palette: #F2A541, #4E8098, #8BA888 with an accent #1B1F22. Mood: calm, hopeful, scenic.
+Composition: the road curving toward the glowing peaks sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, road signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.ets2/ets2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green valley and pine shadow, low in detail. New area on the right: the valley opens to more peaks
+and a faint hillside village. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.ets2/ets2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road curves up the center to the glowing peaks at about 40% of the height, with the dawn
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Straight Road into Mountains (`ets2.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.ets2/ets2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single straight road with a thin white center line runs to a
+vanishing point at the foot of a faint blue mountain range, under a vast, smooth, pale gradient sky of
+cream and soft blue. A few tiny roadside trees line the edges. Everything else is clean, empty space.
+Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+Palette: #FBF3E2, #F2A541, #9DBBCB with a mountain #6F8FA8. Mood: calm, simple, spacious.
+Composition: the vanishing point and the faint mountains sits about 60–72% across and 36–64% down; more
+than 70% of the image is empty sky and field. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, road signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.ets2/ets2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty cream-to-blue sky, completely smooth, kept calm and low in detail. New area on the right: the
+road and fields continue into pale haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.ets2/ets2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road converges to the vanishing point at about 55% of the height in the center, with the
+mountains behind and empty sky above. Same lighting, palette, materials and rendering style. Keep the
+bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Rain on the Highway at Dusk (`ets2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.ets2/ets2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wet empty highway at dusk, with thin rain falling and the asphalt
+reflecting a warm amber glow from the sky at the horizon. Dark pine forests line both sides, and a low
+mist hangs over the road. Soft rain-blurred lights glow far ahead as small warm points. The mood is
+quiet and a little lonely.
+Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+Palette: #1B1F22, #2F4452, #4E8098 with an amber #F2A541. Mood: quiet, wet, lonely.
+Composition: the amber horizon glow reflected in the wet road sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, road signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.ets2/ets2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark pine forest and rain in soft shadow, low detail. New area on the right: the road continues into
+dusk mist with faint far lights. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.ets2/ets2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road runs up the center to the amber glow at about 48% of the height, with reflections
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Sunflower Field Road (`ets2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.ets2/ets2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet country road crosses a wide field of golden sunflowers in
+the afternoon, with a few cypress trees along the edge and soft blue hills in the distance. Warm light
+falls from the left, and a few white clouds drift in a deep blue sky. The road is empty and warm.
+Style: calm cinematic landscape photography, soft light, gentle haze, long-lens depth.
+Palette: #FBF1CC, #F2A541, #8BA888 with a sky #6F9CC8. Mood: warm, sunny, peaceful.
+Composition: the road and the golden sunflower rows beside it sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, road signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.ets2/ets2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden flower rows in warm light, low in detail. New area on the right: the field continues to blue
+hills in haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.ets2/ets2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road runs up the center to about 52% of the height, with sunflowers on both sides and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Fortnite (`game.fortnite`)
+
+- **Genre:** bright cartoon adventure island
+- **Setting:** playful stylized nature with rolling hills, chunky trees and a purple storm wall on the horizon
+- **Palette:** #4CC9F0, #9B5DE5, #FEE440, #00BB77
+- **Motifs:** rolling candy-green hills, chunky stylized trees, a distant storm, a floating island at sunset
+- **Avoid:** game title, skins, the bus, llama, emotes, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a bright, playful cartoon island.
+Think rolling candy-green hills, chunky stylized trees, clean blue water and floating islands, with a distant
+purple storm wall on the horizon. The palette is sky blue (#4CC9F0), violet (#9B5DE5), sunshine yellow
+(#FEE440) and grass green (#00BB77). The look is a polished, soft stylized 3D render with rounded shapes,
+clean gradients and cheerful light, never childish or cluttered. No characters, no vehicles, no emblems, no
+text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Island Hills at Golden Hour (`fortnite.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.fortnite/fortnite.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sweeping island landscape at golden hour. Rolling candy-green
+hills with chunky round trees roll toward a calm blue bay, and a small floating rock island hovers in
+the pale sunset sky. On the far horizon a soft violet storm wall glows with faint, steady light. A
+winding sandy path curls through the hills.
+Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+Palette: #4CC9F0, #9B5DE5, #FEE440 with an accent #00BB77. Mood: cheerful, bright, adventurous.
+Composition: the floating island above the sunlit hills sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.fortnite/fortnite.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth sunlit green hills with a few round trees, low detail. New area on the right: a calm blue bay and
+a faint violet horizon glow. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.fortnite/fortnite.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The floating island hovers at about 32% of the height over hills that fill the lower half.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Lone Tree on the Hill (`fortnite.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.fortnite/fortnite.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single chunky, round-topped green tree stands on a smooth, rounded
+candy-green hill under a vast, soft sky gradient that moves from sky blue at the top to pale yellow at
+the horizon. A tiny floating rock island hovers far off, and a faint band of violet sits at the very
+edge of the world. Everything else is clean, empty color.
+Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+Palette: #4CC9F0, #9B5DE5, #FEE440 with an accent #00BB77. Mood: simple, bright, calm.
+Composition: the tree and its soft shadow sits about 59–73% across and 35–65% down; more than 70% of the
+image is empty sky and hill. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, vehicles, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.fortnite/fortnite.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty, smooth sky gradient with a hint of cloud. New area on the right: the hill slopes away to a
+faint violet horizon and a tiny distant floating rock. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.fortnite/fortnite.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Storm Wall at Dusk (`fortnite.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.fortnite/fortnite.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A calm purple dusk over a quiet island bay, with a towering wall of
+violet storm cloud glowing from within on the horizon. The water is still and reflects the cloud's soft
+magenta light, while a few chunky silhouetted trees line the near shore. Tiny fireflies glow yellow
+among them.
+Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+Palette: #1B1240, #5B3FA0, #9B5DE5 with a firefly yellow #FEE440. Mood: dramatic, calm, magical.
+Composition: the glowing storm wall and its reflection sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.fortnite/fortnite.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark teal-violet water and shoreline silhouettes, low detail. New area on the right: the storm wall
+stretches along the horizon, flickering faintly. Same lighting direction, palette, materials and level
+of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.fortnite/fortnite.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The storm wall rises across the center at about 40% of the height, with its glow reflected in
+the water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Sunny Shoreline (`fortnite.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.fortnite/fortnite.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A bright sunny shoreline with soft turquoise water lapping a pale
+sand beach. Chunky palm-shaped trees and round green bushes line the dunes, and a chain of small rocky
+islets sits in the bay under a cloud-dotted blue sky. The light is clean and cheerful with soft cream
+highlights.
+Style: polished stylized 3D render with rounded shapes and soft cheerful light, clean gradients.
+Palette: #E8F7FB, #4CC9F0, #F6E7A8 with a green #00BB77. Mood: sunny, fresh, relaxed.
+Composition: the sand curve and the nearest islet sits about 54–74% across and 38–58% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.fortnite/fortnite.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+calm turquoise water and pale sand, low detail. New area on the right: the beach curves away to more
+islets in blue haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.fortnite/fortnite.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The shoreline curves through the lower center, with an islet at about 50% of the height under
+a bright sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+### Forza Horizon 5 (`game.forza-h5`)
+
+- **Genre:** open-world road festival in Mexico
+- **Setting:** a volcano at golden hour, jungle roads, desert highways
+- **Palette:** #F25F5C, #FFE066, #247BA0, #1C1C1C
+- **Motifs:** an empty road to a volcano, festival lights at dusk, a coastal highway
+- **Avoid:** game title, branded cars, logos, sign text, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a sunlit open-world road festival
+in a warm, southern landscape, with no vehicles and no people. Think empty winding roads leading to a volcano
+at golden hour, jungle roads in dappled light, a desert highway under vast skies, a coastal road above a
+turquoise sea and colorful festival lights at dusk. The palette is coral red (#F25F5C), sun yellow (#FFE066),
+ocean blue (#247BA0) and asphalt black (#1C1C1C). The look is vivid cinematic photography with warm light,
+rich color and long-lens depth. No vehicles, no people, no signs, no text. Keep the left edge and the bottom
+edge calm for desktop icons and the taskbar.
+```
+
+#### Road to the Volcano (`forza-h5.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.forza-h5/forza-h5.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An empty winding road crosses a green plain toward a huge, smoking
+volcano glowing in golden hour light, its slopes striped in warm orange and deep green. Tall cactus and
+agave plants line the road, and long warm shadows fall across the asphalt. The sky is a vivid gradient
+of coral, gold and blue with soft clouds around the volcano peak.
+Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+Palette: #F25F5C, #FFE066, #247BA0 with an accent #1C1C1C. Mood: warm, free, adventurous.
+Composition: the volcano peak and the road leading toward it sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.forza-h5/forza-h5.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden grass and roadside plants, low in detail. New area on the right: the plain continues to a
+distant lake and hazy hills. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.forza-h5/forza-h5.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road winds up the center to the volcano at about 40% of the height, with the vivid sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Empty Desert Highway (`forza-h5.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.forza-h5/forza-h5.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single straight desert highway runs to a vanishing point on a flat
+horizon under a vast, smooth sky that fades from pale coral at the horizon to soft blue above. The
+asphalt has a thin dashed yellow center line, and the sand beside it is pale gold. Nothing else is in
+the frame.
+Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+Palette: #FFF1D8, #F6B189, #7FB7CF with a line #FFE066. Mood: calm, free, spacious.
+Composition: the vanishing point of the highway sits about 60–72% across and 36–64% down; more than 70%
+of the image is empty sky and sand. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.forza-h5/forza-h5.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale coral-to-blue sky, completely smooth, kept calm and low in detail. New area on the right:
+the highway continues into a faint heat haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.forza-h5/forza-h5.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road converges in the center to a vanishing point at about 55% of the height, with empty
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Festival Lights at Dusk (`forza-h5.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.forza-h5/forza-h5.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet town square at dusk, with strings of warm coral, yellow and
+blue lanterns crossing above empty cobbled streets and low, colorful adobe-style walls. A volcano is a
+soft dark silhouette against a violet-orange sky, and the lanterns reflect gently in a small puddle on
+the stones. The scene is warm and still.
+Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+Palette: #1C1C1C, #4A2B4F, #F25F5C with a blue #247BA0. Mood: warm, festive, calm.
+Composition: the strings of lanterns and the volcano silhouette behind them sits about 52–72% across and
+45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.forza-h5/forza-h5.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark adobe walls in soft color, low in detail. New area on the right: more lantern strings recede into
+the dusk haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.forza-h5/forza-h5.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lanterns glow at about 40% of the height across the center, with the volcano behind them.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Coastal Highway Morning (`forza-h5.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.forza-h5/forza-h5.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A smooth coastal highway curves along a cliff above a bright
+turquoise sea in the morning, with white surf at the rocks below and palm trees along the edge. A pale
+blue sky with a few thin clouds sits above, and a soft haze lies over a distant headland. The road is
+empty and warm.
+Style: vivid cinematic landscape photography, warm light, rich color, long-lens depth.
+Palette: #EFFAFB, #247BA0, #FFE066 with a coral #F25F5C. Mood: fresh, free, bright.
+Composition: the curve of the road above the turquoise sea sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, vehicles, people, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.forza-h5/forza-h5.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft turquoise water and pale cliffs, low in detail. New area on the right: the coast continues to a
+faint far headland in haze. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.forza-h5/forza-h5.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The road curves through the lower center to about 52% of the height, with the sea and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Genshin Impact (`game.genshin`)
+
+- **Genre:** anime cel-shaded fantasy open world
+- **Setting:** floating islands, windmills on green hills, a lantern-lit mountain town
+- **Palette:** #4FB3BF, #F2D398, #8DC26F, #2A3B4C
+- **Motifs:** windmill hills at golden hour, a lantern festival on water, a crystal lake
+- **Avoid:** game title, characters, the seven statues, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by an anime-style fantasy open world.
+Think rolling green hills with windmills, floating islands, a lantern-lit mountain town and a crystal-clear
+lake, all in a clean cel-shaded painting style with soft, luminous skies and gentle color. The palette is teal
+(#4FB3BF), warm cream-gold (#F2D398), fresh green (#8DC26F) and deep slate blue (#2A3B4C). The mood is
+peaceful, adventurous and bright. No people, no creatures, no emblems, no text. Keep the left edge and the
+bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Windmill Hills at Golden Hour (`genshin.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.genshin/genshin.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sweeping landscape of rolling emerald hills at golden hour, with a
+few white windmills on the ridges and floating rock islands drifting in a luminous cream and teal sky. A
+winding stone path leads to a small lantern-lit village at the foot of a mountain. Soft rim light edges
+every cloud and hilltop in gold.
+Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+art.
+Palette: #4FB3BF, #F2D398, #8DC26F with an accent #2A3B4C. Mood: peaceful, adventurous, luminous.
+Composition: the nearest windmill and the golden-lit hill beneath it sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.genshin/genshin.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth green hills with soft golden shadow, low detail. New area on the right: the ridge continues to a
+floating island and a faint distant mountain. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.genshin/genshin.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The windmill stands at about 42% of the height at the center, with hills below and floating
+islands above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Floating Island Alone (`genshin.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.genshin/genshin.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small floating island with a round green top and a pale
+stone underside hangs in a vast, soft sky gradient moving from deep teal at the top to cream at the
+horizon. A thin waterfall of glittering water falls from its edge into mist. One tiny windmill stands on
+its crown. Everything else is clean empty sky.
+Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+art.
+Palette: #E9F6F2, #4FB3BF, #8DC26F with a cream #F2D398. Mood: calm, serene, airy.
+Composition: the floating island and its thin waterfall sits about 59–73% across and 35–65% down; more
+than 70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.genshin/genshin.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty soft teal-to-cream sky, completely smooth, kept calm and low in detail. New area on the right:
+a few tiny drifting clouds and a faint distant island. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.genshin/genshin.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The island floats at about 42% of the height in the center, with empty gradient sky around
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Lantern Festival on the Water (`genshin.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.genshin/genshin.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A calm lake at dusk, covered with hundreds of small glowing paper
+lanterns drifting in warm gold and pale pink, their reflections trembling on dark teal water. A graceful
+stone bridge arches over the lake, and soft lights glimmer in a mountain village beyond. The sky is deep
+slate blue with a few faint stars.
+Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+art.
+Palette: #16222E, #2A3B4C, #F2D398 with a teal #4FB3BF. Mood: magical, serene, warm.
+Composition: the glowing lanterns drifting beneath the bridge sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.genshin/genshin.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark teal water with faint lantern reflections, low detail. New area on the right: the lake continues to
+a mountain village glowing faintly. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.genshin/genshin.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lanterns fill the lower half with the stone bridge arching at about 50% of the height.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Crystal Lake Morning (`genshin.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.genshin/genshin.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A crystal-clear turquoise lake in the morning, with glowing
+pale-blue crystal formations rising along the shore and a small wooden jetty reaching into the water.
+Mountains in soft blue-green layers surround the lake, and a gentle mist hovers over it. The sky is a
+bright, clean cream and teal gradient.
+Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+art.
+Palette: #EAF7F3, #4FB3BF, #A8D88A with a gold #F2D398. Mood: fresh, bright, tranquil.
+Composition: the crystal formations and the jetty sits about 54–74% across and 38–58% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.genshin/genshin.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth turquoise water and soft mist, low detail. New area on the right: the shoreline continues to
+layered blue-green mountains in haze. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.genshin/genshin.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The crystals rise at about 50% of the height in the center, with the jetty leading in from
+the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Grand Theft Auto V (`game.gta5`)
+
+- **Genre:** sun-soaked West-Coast metropolis
+- **Setting:** palm boulevards, hills, coastline and neon nights
+- **Palette:** #F7B733, #FC4A1A, #2E86AB, #1B1B2F
+- **Motifs:** palm silhouettes at sunset, a freeway interchange at dusk, pier lights, a desert highway
+- **Avoid:** game title, characters, the loading-screen comic style, sign text, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a sun-soaked West-Coast
+metropolis. Think palm-lined boulevards, golden hills, a long coastline, freeway interchanges at dusk and
+neon-lit nights, all in a warm, hazy, cinematic photographic look. The palette is golden yellow (#F7B733), hot
+orange-red (#FC4A1A), ocean blue (#2E86AB) and deep indigo (#1B1B2F). The mood is warm, nostalgic and relaxed.
+No people, no vehicles in focus, no readable signs, no logos. Keep the left edge and the bottom edge calm for
+desktop icons and the taskbar.
+```
+
+#### Palm Boulevard at Sunset (`gta5.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.gta5/gta5.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A long boulevard lined with tall, slim palm trees runs toward a huge
+sun sinking into a hazy coastal skyline. The palm silhouettes are dark against a sky that blazes from
+golden yellow to orange and soft pink, and the road shines with warm reflected light. Distant low
+buildings and hills form a layered, blue-hazed horizon.
+Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+Palette: #F7B733, #FC4A1A, #2E86AB with an accent #1B1B2F. Mood: warm, nostalgic, glowing.
+Composition: the sun and the palm line leading toward it sits about 54–74% across and 36–56% down; the
+road leads toward the sun. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, logos, readable signs, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.gta5/gta5.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden haze and a pale sky, low detail. New area on the right: the road curves away toward more
+hazy hills in rose light. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.gta5/gta5.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The sun sits at about 45% of the height in the center, with palm silhouettes rising on both
+sides and the road below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Palm at Dusk (`gta5.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.gta5/gta5.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single slim palm tree stands in silhouette against a smooth, clean
+sunset sky that fades from deep indigo at the top through magenta and orange to a pale gold band at the
+horizon. A thin dark horizon of low hills runs along the bottom. There is nothing else in the frame,
+just the palm, the sky and a small, faint sun glow.
+Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+Palette: #1B1B2F, #7A2E6B, #FC4A1A with a pale gold #F7B733. Mood: quiet, nostalgic, warm.
+Composition: the palm silhouette sits about 61–71% across and 28–72% down; more than 70% of the image is
+clean sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, logos, readable signs, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.gta5/gta5.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty gradient sky from indigo to orange, completely clean. New area on the right: a low dark hill
+line and a faint thin cloud at the horizon. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.gta5/gta5.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The palm stands in the lower center from 30% to 80% of the height, against the clean sunset
+gradient. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Freeway Interchange at Dusk (`gta5.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.gta5/gta5.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A looping freeway interchange seen from a high hill at dusk, its
+curved concrete ramps tracing long ribbons of soft orange and red light across the dusk. Below, a hazy
+city grid fades into a deep indigo sky with a thin band of pink at the horizon. The scene is calm and
+wide.
+Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+Palette: #14122A, #3A2F5E, #FC4A1A with a blue #2E86AB. Mood: moody, vast, warm.
+Composition: the glowing ramp loops of the interchange sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, logos, readable signs, text, UI or HUD elements, visible vehicles.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.gta5/gta5.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a dark, softly lit hillside and haze, low detail. New area on the right: the freeway continues toward a
+faint skyline and pale pink horizon. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.gta5/gta5.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The interchange loops across the lower center at about 62% of the height, with the indigo
+dusk sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Boardwalk at Morning (`gta5.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.gta5/gta5.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide, empty seaside boardwalk in soft morning light, lined with
+slim palm trees whose long shadows cross pale planks. A calm turquoise ocean glitters to the right under
+a hazy peach-and-blue sky, and a low hill line with tiny white houses sits on the far coast. A simple
+wooden pier reaches into the water.
+Style: cinematic photography, warm golden haze, long-lens compression, nostalgic and relaxed.
+Palette: #FBE8C8, #2E86AB, #F7B733 with a peach #F4A58A. Mood: calm, sunny, relaxed.
+Composition: the pier and the glittering water beside it sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, characters, logos, readable signs, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.gta5/gta5.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain pale boardwalk planks in soft morning light, low detail. New area on the right: the coast
+continues to more hills and a faint haze over the water. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.gta5/gta5.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The boardwalk runs up the center with the pier at about 50% of the height, and ocean and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Hades II (`game.hades2`)
+
+- **Genre:** bold painterly Greek-myth underworld
+- **Setting:** a moonlit crossroads, starlit temples, a purple-green mystic glow
+- **Palette:** #7B5EA7, #3FB27F, #E0B354, #0E0B16
+- **Motifs:** a moon over a ruined temple, a glowing crossroads, a starfield over a dark sea
+- **Avoid:** game title, characters, the logo, text, UI or HUD elements, logos
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a bold, painterly myth-and-moon
+world, with no people. Think a ruined columned temple under a huge moon, a glowing crossroads in the dark,
+starlit marble stairs and a dark sea under a starfield, in a flat, stylized illustration with strong shapes,
+rich hand-painted textures and a purple-green mystic glow. The palette is violet (#7B5EA7), jade green
+(#3FB27F), antique gold (#E0B354) and night black (#0E0B16). No figures, no creatures, no emblems, no text.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Moon over the Ruined Temple (`hades2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hades2/hades2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A huge pale moon rises behind a ruined temple of tall fluted marble
+columns and broken steps, its light spilling a violet glow over the stones. Jade-green flames flicker in
+two bowls on the steps, and glowing motes drift up like spirits. The sky is a deep violet-black with a
+scatter of golden stars, and the ground is dark, polished stone.
+Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+Palette: #7B5EA7, #3FB27F, #E0B354 with an accent #0E0B16. Mood: mythic, mysterious, glowing.
+Composition: the moon framed by the columns and the green flames sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hades2/hades2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark marble steps in violet shadow, low in detail. New area on the right: more broken columns recede
+into the dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hades2/hades2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
+steps below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Glowing Crossroads (`hades2.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hades2/hades2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single circular stone platform where four plain paths meet glows
+with a soft jade-green light at its center, in the middle of a vast, smooth, dark violet-black void.
+Thin golden motes float above it. Nothing else is in the frame, and the paths fade into darkness.
+Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+Palette: #0E0B16, #241A3A, #7B5EA7 with a glow #3FB27F. Mood: quiet, mystic, calm.
+Composition: the glowing center of the crossroads sits about 58–74% across and 36–64% down; more than
+70% of the image is empty dark void. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hades2/hades2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty dark violet-black void, completely smooth, kept calm and low in detail. New area on the right:
+the paths fade into black with a faint distant glow. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hades2/hades2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The crossroads glows at about 62% of the height in the lower center, with the dark void
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Starlit Dark Sea (`hades2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hades2/hades2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A calm, black-violet sea stretches under a vast starfield, with a
+few golden stars and a faint band of violet and jade nebula haze. A tiny ruined column stands on a rocky
+islet in the distance, lit by a thin silver moonlight. Soft ripples mirror the stars.
+Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+Palette: #0E0B16, #2B2250, #7B5EA7 with a star gold #E0B354. Mood: hushed, vast, mystic.
+Composition: the islet with the column and its reflection sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hades2/hades2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark violet water with faint star reflections, low detail. New area on the right: the sea continues into
+a starry haze with a faint far islet. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hades2/hades2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The islet sits at about 58% of the height in the center, with the starry sky above and
+reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Marble Temple at Dawn (`hades2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hades2/hades2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A white marble temple with fluted columns stands on a green hill at
+dawn, with soft gold and violet light on its stones and a pale sky behind. Thin mist drifts around the
+steps, and a few olive trees line the path. The scene is bright, calm and mythic.
+Style: bold hand-painted stylized illustration with strong shapes, rich textures and a mystic glow.
+Palette: #F7F1E2, #E0B354, #9BB58A with a violet #7B5EA7. Mood: serene, bright, mythic.
+Composition: the temple front and the dawn light on its columns sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hades2/hades2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green hillside and pale mist, low in detail. New area on the right: the hills continue to a faint
+far temple in haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hades2/hades2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The temple stands at about 45% of the height in the center, with the path leading up from
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Helldivers 2 (`game.helldivers2`)
+
+- **Genre:** satirical militaristic sci-fi
+- **Setting:** hostile alien planets, orbital strike light beams, burning skies
+- **Palette:** #FFE710, #F2F2F2, #2B2B2B, #C1272D
+- **Motifs:** an orbital beam on the horizon, a bug-hive wasteland, drop-pod trails at dusk
+- **Avoid:** game title, soldiers, propaganda text, emblems, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a satirical militaristic sci-fi
+world, with no people. Think hostile alien planets under burning skies, towering orbital light beams striking
+the horizon, hive-like mounds on dusty wastelands and long fiery trails from falling pods. The palette is
+warning yellow (#FFE710), off-white (#F2F2F2), charcoal (#2B2B2B) and blood red (#C1272D). The look is gritty
+cinematic concept art with smoke, embers and bold graphic contrast. No soldiers, no creatures in focus, no
+emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Orbital Beam on the Horizon (`helldivers2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.helldivers2/helldivers2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A hostile alien wasteland at dusk, with a single colossal column of
+white-yellow light striking down from the sky onto the far horizon and throwing a huge shockwave ring
+across the dust. Burning red clouds boil above, and hive-like earth mounds and jagged rock stand dark in
+the foreground. Long fiery trails of falling pods streak the sky.
+Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+Palette: #FFE710, #F2F2F2, #2B2B2B with an accent #C1272D. Mood: intense, dramatic, vast.
+Composition: the light column and the shockwave ring at its base sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.helldivers2/helldivers2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark charcoal rocks and drifting smoke, low detail. New area on the right: the wasteland continues to
+more distant burning clouds. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.helldivers2/helldivers2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light column rises through the center from 20% to 62% of the height, with the shockwave
+ring at its base. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### One Falling Pod (`helldivers2.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.helldivers2/helldivers2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single thin line of fire arcs across a vast, smooth sky that fades
+from charcoal at the top to a deep red glow at the horizon, ending in a tiny bright pod about to land on
+a dark, flat plain. A small plume of dust rises at the landing point. The rest of the frame is clean,
+empty smoky sky.
+Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+Palette: #2B2B2B, #5A1C1E, #C1272D with a yellow #FFE710. Mood: tense, stark, graphic.
+Composition: the fire trail and the landing point sits about 59–73% across and 35–65% down; more than
+70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.helldivers2/helldivers2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty charcoal-to-red smoky sky, completely smooth, kept calm and low in detail. New area on the
+right: the plain continues to a distant faint orange glow. Same lighting direction, palette, materials
+and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.helldivers2/helldivers2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The fire trail arcs down the center to the landing point at about 62% of the height, with
+empty sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Hive Mounds in Ash (`helldivers2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.helldivers2/helldivers2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A field of tall, ribbed earth mounds with dark tunnel openings rises
+from grey ash ground under a low smoky sky. Thin red embers drift upward, and a pale yellow sun disc
+glows through the haze behind the nearest mound. The scene is bleak, quiet and textured with fine ash.
+Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+Palette: #1B1B1B, #4A4543, #C1272D with a sun #FFE710. Mood: bleak, quiet, ominous.
+Composition: the nearest mound and the sun disc behind it sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.helldivers2/helldivers2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark ash ground and drifting smoke, low detail. New area on the right: more mounds recede into smoke and
+ember haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.helldivers2/helldivers2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The nearest mound rises at the center to about 45% of the height, with the sun glow behind
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Dusty Plain at Dawn (`helldivers2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.helldivers2/helldivers2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide alien plain at dawn, with soft pale dust haze and a low
+yellow sun. Rounded white rocks and pale spiky plants cast long shadows, and a single thin orbital beam
+is just visible in the far distance as a pale line. The sky is a bright pale yellow and warm grey.
+Style: gritty cinematic sci-fi concept art, smoke and embers, bold graphic contrast, dramatic scale.
+Palette: #F7F0D4, #FFE710, #B8B2A0 with a red #C1272D. Mood: calm, stark, spacious.
+Composition: the rocks and their long shadows sits about 54–74% across and 38–58% down. The left 15% and
+the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.helldivers2/helldivers2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft pale dust haze over a plain, low detail. New area on the right: the plain continues to a thin beam
+in the distance. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.helldivers2/helldivers2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rocks sit at about 58% of the height in the center, with the pale sky and the thin beam
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Honkai: Star Rail (`game.hsr`)
+
+- **Genre:** anime space fantasy
+- **Setting:** a train through starry space, retro-futuristic stations, a snowy steampunk city
+- **Palette:** #F4D06F, #6C5CE7, #A0E7E5, #121225
+- **Motifs:** a train window opening to a galaxy, a snowy brass city, a starlit platform
+- **Avoid:** game title, characters, the exact train design, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by an anime-style space fantasy.
+Think a warm retro-futuristic rail car interior with a big window onto a galaxy, quiet starlit platforms, and
+a snowy steampunk city of brass and glass under a violet sky. The palette is warm gold (#F4D06F), violet
+(#6C5CE7), aqua (#A0E7E5) and midnight indigo (#121225). The look is clean anime-style painting with luminous
+glows, soft gradients and a dreamy calm. No people, no creatures, no emblems, no text. Keep the left edge and
+the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Window to the Galaxy (`hsr.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hsr/hsr.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The inside of a cozy retro-futuristic rail car at night, with warm
+brass fittings, plush seats and soft lamps. A huge arched window frames a swirling galaxy of violet,
+aqua and gold stars. Gentle reflections of the lamps float on the glass, and a small potted plant sits
+by the window. The car is empty and tidy.
+Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+art.
+Palette: #F4D06F, #6C5CE7, #A0E7E5 with an accent #121225. Mood: dreamy, warm, wondrous.
+Composition: the galaxy seen through the arched window sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hsr/hsr.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+warm brass-lit wall and dark seat shapes, low in detail. New area on the right: the car's interior
+continues with another glowing lamp and a window edge. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hsr/hsr.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arched window rises in the center from 20% to 70% of the height, with the galaxy filling
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Lone Train Under the Stars (`hsr.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hsr/hsr.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small, plain locomotive silhouette with one warm glowing
+window crosses a thin, curved bridge of light through a vast, smooth night sky of deep indigo, violet
+and aqua. A few tiny stars scatter across the gradient. Everything else in the frame is empty, softly
+glowing space.
+Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+art.
+Palette: #121225, #2A2860, #6C5CE7 with a gold #F4D06F. Mood: quiet, dreamy, serene.
+Composition: the train and its glowing window sits about 58–74% across and 35–65% down; more than 70% of
+the image is empty starry sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hsr/hsr.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty indigo-to-violet sky, completely smooth, kept calm and low in detail. New area on the right: a
+faint thin curved bridge of light continues far off. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hsr/hsr.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The train crosses the center at about 55% of the height on its thin bridge of light, with
+empty gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Snowy Brass City (`hsr.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hsr/hsr.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A snowy steampunk city at dusk, with brass domes, copper pipes and
+tall chimneys softened by falling snow. Warm gold windows glow across the snow-covered rooftops, and a
+violet-blue sky fades into a pale aqua horizon. A thin wisp of steam rises from a chimney.
+Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+art.
+Palette: #16162E, #3B3A7A, #F4D06F with an aqua #A0E7E5. Mood: cozy, cold, magical.
+Composition: the domed rooftops and the warm windows sits about 52–72% across and 45–65% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hsr/hsr.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark snowy rooftops in soft violet shadow, low detail. New area on the right: the city continues into
+snowy haze with a faint far clock tower. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hsr/hsr.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The domes sit at about 55% of the height at the center, with the violet sky above. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Starlit Platform Morning (`hsr.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.hsr/hsr.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet open-air railway platform at dawn, with a pale stone floor,
+a wrought-iron bench and a tall lamp glowing softly. Beyond the platform edge, a sea of pastel clouds in
+lavender, aqua and gold stretches to a faint rising sun. The air is bright and calm.
+Style: clean anime-style painting with luminous glows, soft gradients and dreamy calm, fantasy concept
+art.
+Palette: #F6EEFA, #CFC8F5, #A0E7E5 with a gold #F4D06F. Mood: serene, bright, hopeful.
+Composition: the bench and the glowing clouds beyond the platform edge sits about 54–74% across and
+38–58% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.hsr/hsr.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a calm pale stone floor and a soft sky, low detail. New area on the right: the platform continues with a
+distant iron arch in pastel haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.hsr/hsr.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The bench sits at about 58% of the height in the center, with the pastel cloud sea above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Lethal Company (`game.lethal-company`)
+
+- **Genre:** lo-fi sci-fi horror
+- **Setting:** an abandoned industrial moon facility, foggy dusk, orange floodlights
+- **Palette:** #E2552C, #2E3B32, #A8A27F, #0B0C0B
+- **Motifs:** a lone floodlit facility in fog, a ship ramp glow, a retro terminal glow (no text)
+- **Avoid:** game title, creatures, readable text, logos, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by lo-fi sci-fi horror, with no
+creatures or people. Think an abandoned industrial moon facility in thick dusk fog, orange floodlights glowing
+through haze, a landing ramp lit from within and a retro terminal glow with no readable text. The palette is
+warning orange (#E2552C), dark swamp green (#2E3B32), dusty khaki (#A8A27F) and near-black (#0B0C0B). The look
+is a grainy-feeling low-poly retro 3D render with chunky shapes, heavy fog and strong light cones. No figures,
+no monsters, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+taskbar.
+```
+
+#### Facility in the Fog (`lethal-company.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lethal-company/lethal-company.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A lone concrete-and-steel industrial facility stands on a barren
+moon surface under a dusk sky, wrapped in thick green-grey fog. Orange floodlights on tall poles cut
+glowing cones through the haze, and a long grated catwalk leads to a lit door. A few tall pipes steam
+softly, and the ground is dusty gravel.
+Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+feel, eerie and calm.
+Palette: #E2552C, #2E3B32, #A8A27F with an accent #0B0C0B. Mood: eerie, lonely, atmospheric.
+Composition: the lit door and the floodlight cones in the fog sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lethal-company/lethal-company.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark fog-wrapped gravel ground, low in detail, kept calm and low in detail. New area on the right: the
+moon plain continues with another distant floodlight in fog. Same lighting direction, palette, materials
+and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lethal-company/lethal-company.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The facility stands at the center with the lit door at about 52% of the height and fog
+rolling below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### One Floodlight in Fog (`lethal-company.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lethal-company/lethal-company.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single tall floodlight pole glows warm orange in the middle of a
+vast, smooth bank of dark green-grey fog on a flat moon plain, its light making a soft round halo. The
+sky above is an empty, near-black green gradient. Nothing else is visible.
+Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+feel, eerie and calm.
+Palette: #0B0C0B, #1F2A24, #2E3B32 with a light #E2552C. Mood: lonely, quiet, eerie.
+Composition: the floodlight and its halo in the fog sits about 60–72% across and 34–66% down; more than
+70% of the image is empty fog and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lethal-company/lethal-company.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty dark green-grey fog and sky, completely smooth. New area on the right: the fog continues with a
+very faint far orange glow. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lethal-company/lethal-company.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The floodlight stands at about 55% of the height in the lower center, with its halo and empty
+fog around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Ship Ramp Glow (`lethal-company.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lethal-company/lethal-company.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The open ramp of a small landed spacecraft glows orange from the
+inside, throwing a warm rectangle of light onto dusty ground in thick night fog. Cables and plain crates
+sit by the ramp, and a faint green glow comes from a far tower. The sky is dark, and the air is full of
+drifting dust.
+Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+feel, eerie and calm.
+Palette: #0B0C0B, #1F2A24, #A8A27F with a glow #E2552C. Mood: tense, warm, quiet.
+Composition: the glowing ramp and the light it throws on the ground sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lethal-company/lethal-company.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark dusty ground and fog, low in detail. New area on the right: the fog thickens into darkness with a
+faint far light. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lethal-company/lethal-company.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ramp glows at about 60% of the height in the lower center, with fog and dark sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Moon Plain at Dusk (`lethal-company.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lethal-company/lethal-company.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide barren moon plain at early dusk, with soft pale khaki dust, a
+few smooth boulders and a low industrial silhouette on the horizon. A pale yellow-orange sun glows
+through thin haze, and the sky is a calm gradient of cream and soft green-grey. Gentle, hushed and
+empty.
+Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+feel, eerie and calm.
+Palette: #EFE8CE, #A8A27F, #8A9A86 with an orange #E2552C. Mood: quiet, hazy, lonely.
+Composition: the low industrial silhouette and the sun haze behind it sits about 54–74% across and
+38–58% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lethal-company/lethal-company.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft khaki dust and haze, low detail, kept calm and low in detail. New area on the right: the plain
+continues to a faint far ridge. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lethal-company/lethal-company.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The silhouette sits at about 55% of the height in the center, with the pale sun above and
+dust below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### League of Legends (`game.lol`)
+
+- **Genre:** painterly high fantasy of rival realms
+- **Setting:** a mystic river valley through ancient jungle, crystal light, rune-carved ruins
+- **Palette:** #C89B3C, #0A1428, #0AC8B9, #1E2328
+- **Motifs:** a glowing turquoise river, gold-trimmed stone ruins, floating spirit lights, a twilight canopy
+- **Avoid:** game title, champions, exact map layout, crests, logos, text, UI or HUD elements, characters
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a painterly high-fantasy world.
+Think a mystic river valley winding through ancient jungle, carved stone ruins trimmed in old gold, floating
+spirit lights and glowing turquoise water at twilight. The palette is deep midnight navy (#0A1428), charcoal
+(#1E2328), antique gold (#C89B3C) and luminous turquoise (#0AC8B9). The look is matte digital painting with
+soft brushwork, rich atmosphere and a sense of ancient calm. No people, no creatures, no emblems, no text.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### River of Light (`lol.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lol/lol.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A broad turquoise river glows through an ancient jungle valley at
+twilight. On its banks, moss-covered stone ruins with gold-trimmed carved edges rise between giant roots
+and ferns, and soft spirit lights drift above the water like fireflies. A distant stone arch crosses the
+river in the haze. The sky above is deep navy with a faint teal glow behind the canopy.
+Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+Palette: #C89B3C, #0A1428, #0AC8B9 with an accent #1E2328. Mood: mystical, ancient, serene.
+Composition: the glowing river bend and the stone arch beyond it sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lol/lol.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark jungle foliage in deep teal shadow, low in detail. New area on the right: the river continues into
+a misty valley with distant glowing ruins. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lol/lol.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The river winds up the center of the frame to the stone arch at about 40% of the height,
+under a navy twilight canopy. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Lone Ruin Above the Mist (`lol.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lol/lol.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single weathered stone tower with a thin gold-trimmed ledge stands
+on a tiny island of rock in a vast, smooth sea of deep navy mist. A soft turquoise glow rises from a
+doorway-shaped opening at its base, lighting the mist in a gentle halo. The sky is an empty, seamless
+gradient from midnight navy at the top to a faint teal haze at the horizon.
+Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+Palette: #C89B3C, #0A1428, #0AC8B9 with an accent #1E2328. Mood: quiet, solitary, mystical.
+Composition: the tower and its glowing base sits about 60–72% across and 32–68% down; more than 70% of
+the image is empty mist and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crests, text, people, creatures, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lol/lol.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty navy-to-teal mist and sky, completely clean and without detail. New area on the right: the mist
+rolls on, with a very faint second island silhouette far away. Same lighting direction, palette,
+materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lol/lol.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tower rises from the lower center to about 40% of the height, with empty gradient sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Jungle Canopy Glow (`lol.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lol/lol.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A close view of the underside of an ancient jungle canopy at night:
+huge dark leaves and hanging vines are edged with a soft turquoise glow from luminous spores floating in
+the air. A few gold-lit carved stones peek between roots at the bottom. Depth fades from crisp leaf
+detail into a deep teal-black haze.
+Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+Palette: #0A1428, #12373A, #0AC8B9 with a soft gold #C89B3C. Mood: hushed, damp, magical.
+Composition: the glowing leaves and spores sits about 52–72% across and 45–65% down. The left 15% and
+the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lol/lol.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+deep teal-black leaf shadow and a few hanging vines, low in detail. New area on the right: more hanging
+vines fading into dark teal haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lol/lol.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. Hanging vines and glowing leaves fill the center from 30% to 65% of the height, with the
+carved stones at the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Golden Valley Morning (`lol.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.lol/lol.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The same ancient river valley at morning, now bathed in soft golden
+light and pale mist. The turquoise river sparkles gently, the stone ruins show their weathered gold
+trim, and long shafts of sunlight fall through the jungle canopy. The sky is a pale warm cream fading to
+soft turquoise high above.
+Style: matte digital painting with soft brushwork, rich atmospheric light, fantasy concept-art quality.
+Palette: #F3E8C8, #C89B3C, #7FD3C8 with a deep green #2E5D52. Mood: warm, peaceful, luminous.
+Composition: the sunlit ruin and the river's glittering bend sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.lol/lol.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a soft sunlit jungle bank in warm green and cream, low detail. New area on the right: the valley fades
+into golden mist with a faint distant arch. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.lol/lol.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The river curves through the center with the sunlit ruin at about 45% of the height and pale
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Marvel Rivals (`game.marvel-rivals`)
+
+- **Genre:** comic-book multiverse city
+- **Setting:** a dramatic skyline split by glowing portals, bold cel-shaded painting
+- **Palette:** #E23636, #F5C518, #1F4E99, #121212
+- **Motifs:** a portal over a skyline, floating city fragments, a comic-halftone sky
+- **Avoid:** ANY superhero, costume, emblem or shield shape, game title, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a comic-book multiverse city.
+Think a dramatic skyline of generic towers split by huge glowing circular portals, floating fragments of
+streets and rooftops, and a bold cel-shaded painted style with halftone-dot skies and strong ink-like
+outlines. The palette is vivid red (#E23636), gold (#F5C518), royal blue (#1F4E99) and ink black (#121212).
+The mood is dynamic yet calm for a desktop. Strictly no figures, no costumes, no masks, no emblems, no shield
+or star shapes, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Portal Over the Skyline (`marvel-rivals.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.marvel-rivals/marvel-rivals.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A huge circular portal of swirling gold and red energy opens in a
+deep blue night sky above a skyline of generic towers. The portal's light spills down the building faces
+in bold cel-shaded streaks, and fragments of rooftops drift in a loose ring around it. A halftone-dot
+pattern fades the sky from navy to violet, and the street far below glows warm.
+Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+energy, clean and calm.
+Palette: #E23636, #F5C518, #1F4E99 with an accent #121212. Mood: dynamic, dramatic, epic.
+Composition: the glowing portal and the ring of drifting rooftop fragments sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.marvel-rivals/marvel-rivals.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark navy tower faces with halftone-dot shading, low in detail. New area on the right: the skyline
+continues with a smaller, distant portal glowing faintly. Same lighting direction, palette, materials
+and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.marvel-rivals/marvel-rivals.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The portal glows at the center at about 35% of the height, with the towers rising on both
+sides and the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### One Open Portal (`marvel-rivals.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.marvel-rivals/marvel-rivals.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single thin ring of gold and red light hangs in a vast, smooth
+navy halftone-dot sky, like a portal seen from far away. Inside the ring is a calm, deeper blue. A faint
+ink-black strip of generic rooftops runs along the very bottom. Everything else is clean, empty, softly
+dotted color.
+Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+energy, clean and calm.
+Palette: #121A33, #1F4E99, #F5C518 with a red edge #E23636. Mood: quiet, bold, graphic.
+Composition: the portal ring sits about 59–73% across and 35–65% down; more than 70% of the image is
+empty halftone sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.marvel-rivals/marvel-rivals.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty navy halftone sky with soft dots and no features. New area on the right: a faint distant second
+ring of light, tiny and dim. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.marvel-rivals/marvel-rivals.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The portal ring hangs at about 42% of the height in the center, with empty halftone sky
+around it and rooftops at the bottom. Same lighting, palette, materials and rendering style. Keep the
+bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Rain on Neon Rooftops (`marvel-rivals.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.marvel-rivals/marvel-rivals.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wet generic rooftop at night, with ventilation boxes and a water
+tower in black ink-like silhouettes. Rain lines fall in the bold comic style, and puddles reflect warm
+red and gold glows from a portal hidden behind clouds. Halftone shading gives the sky a soft, grainy
+texture.
+Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+energy, clean and calm.
+Palette: #0E1220, #1F4E99, #E23636 with a gold #F5C518. Mood: moody, stylish, quiet.
+Composition: the water tower and the wet rooftop reflections sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.marvel-rivals/marvel-rivals.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark rooftop silhouettes and rain lines, low in detail. New area on the right: the rooftops continue
+into a misty halftone sky with faint red glows. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.marvel-rivals/marvel-rivals.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rooftop sits in the lower third with the water tower at about 55% of the height and
+glowing clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Floating City Fragments (`marvel-rivals.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.marvel-rivals/marvel-rivals.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Broken pieces of a generic city, such as sections of street, a few
+plain towers and a round plaza, float in a bright sky of pale yellow and cream halftone dots. A gentle
+portal glows soft blue and gold in the distance. The blocks are painted in bold cel-shaded colors with
+clean outlines and soft shadows.
+Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+energy, clean and calm.
+Palette: #FFF4C9, #F5C518, #1F4E99 with a red #E23636. Mood: bright, whimsical, dynamic.
+Composition: the largest floating street section and the plaza on it sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.marvel-rivals/marvel-rivals.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a pale yellow halftone sky, calm and nearly empty. New area on the right: smaller floating fragments
+drift off into pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.marvel-rivals/marvel-rivals.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The largest fragment floats at about 50% of the height in the center, with pale halftone sky
+around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Monster Hunter Wilds (`game.mh-wilds`)
+
+- **Genre:** hunting adventure in wild ecosystems
+- **Setting:** windswept desert plains, lightning storms, oases
+- **Palette:** #D6A35C, #7E9F5B, #4F6D8F, #22201C
+- **Motifs:** a storm over plains, a distant unidentifiable giant silhouette, an oasis at dawn
+- **Avoid:** game title, official monsters, hunters, weapons, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a wild ecosystem adventure, with
+no people or identifiable creatures. Think windswept golden desert plains, towering lightning storms, a lush
+oasis at dawn and rugged rock formations under enormous skies. The palette is sandy gold (#D6A35C), sage green
+(#7E9F5B), storm blue (#4F6D8F) and dark umber (#22201C). The look is cinematic nature photography with huge
+skies, dramatic weather and rich natural color. A distant, unidentifiable giant silhouette is allowed only as
+a faint shape in haze. No people, no weapons, no text. Keep the left edge and the bottom edge calm for desktop
+icons and the taskbar.
+```
+
+#### Storm over the Plains (`mh-wilds.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.mh-wilds/mh-wilds.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast golden desert plain beneath an enormous storm: towering dark
+cumulonimbus clouds lit from within by branching lightning, with veils of rain trailing beneath. A shaft
+of warm sun breaks through on the far plain, lighting a ridge of red rock in gold. The foreground is
+rippled sand and sparse grass bending in the wind.
+Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+Palette: #D6A35C, #7E9F5B, #4F6D8F with an accent #22201C. Mood: wild, dramatic, vast.
+Composition: the lightning bolt and the sunlit ridge beneath it sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.mh-wilds/mh-wilds.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+rippled sand and sparse windblown grass in shadow, low detail. New area on the right: the storm front
+continues across the plain into rain haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.mh-wilds/mh-wilds.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lightning and sunlit ridge sit at the center at about 45% of the height, with the storm
+cloud above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Giant Silhouette in the Haze (`mh-wilds.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.mh-wilds/mh-wilds.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast, smooth desert plain in pale gold stretches to a faint
+horizon under a huge, empty sky of cream and soft blue. Far in the haze, a barely visible, enormous
+shape rises like a distant mountain with an unclear outline. A thin trail of dust drifts across the
+plain. Everything else is clean empty space.
+Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+Palette: #F3E5C6, #D6A35C, #9DB4C6 with a shape #8D8576. Mood: mysterious, quiet, vast.
+Composition: the faint giant shape in the haze sits about 59–73% across and 36–64% down; more than 70%
+of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.mh-wilds/mh-wilds.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale cream sky over a smooth plain. New area on the right: the plain continues with a faint
+ridge in the golden haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.mh-wilds/mh-wilds.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The faint shape rises at about 50% of the height in the center, with empty cream sky above
+and plain below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Oasis at Dawn (`mh-wilds.mood-01`)
+
+mood · mid · setup: wood, black · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.mh-wilds/mh-wilds.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small oasis pool at dawn, ringed by tall green reeds and a few
+palm-like trees, with warm sand dunes rising beyond. The water is a still mirror of pink and gold sky,
+and a thin mist hangs above it. Soft light rakes across the dune crests, and the sand is untouched.
+Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+Palette: #2A2C26, #7E9F5B, #D6A35C with a pink #D9928A. Mood: calm, fresh, hushed.
+Composition: the pool and its sky reflection sits about 52–72% across and 45–65% down. The left 15% and
+the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.mh-wilds/mh-wilds.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft sand dunes in warm shadow, low detail. New area on the right: the dunes continue into pale pink
+haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.mh-wilds/mh-wilds.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The pool sits at about 62% of the height in the lower center, with dunes and the dawn sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Red Rock Mesa at Noon (`mh-wilds.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.mh-wilds/mh-wilds.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A towering red-and-ochre rock mesa rises above a sunlit sage-green
+valley at midday, with soft white clouds in a deep blue sky. A thin river winds across the valley floor,
+and long layered rock strata glow in warm light. The scene is crisp, open and bright.
+Style: cinematic nature landscape photography, huge skies, dramatic weather, rich natural color.
+Palette: #F7E9D0, #D6A35C, #7E9F5B with a sky #6F9CC8. Mood: bright, open, grand.
+Composition: the mesa face and the winding river below it sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, hunters, weapons, identifiable creatures, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.mh-wilds/mh-wilds.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft sage valley and warm sand, low detail. New area on the right: the valley continues to more distant
+mesas in haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.mh-wilds/mh-wilds.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The mesa rises at about 40% of the height in the center, with the valley below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Minecraft (`game.minecraft`)
+
+- **Genre:** voxel sandbox world
+- **Setting:** cube-shaped terrain and trees, square sun and moon, blocky waterfalls and caves
+- **Palette:** #7CB342, #8D6E63, #4FC3F7, #2E2E2E
+- **Motifs:** a blocky cliff waterfall, a voxel village at dusk, cube clouds, a lantern-lit cave glow
+- **Avoid:** game title, mobs, block-face creatures, player figures, exact official textures, logos, text, UI or HUD elements, characters
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a voxel sandbox world. Terrain,
+trees, clouds, water and even the sun are made of clean, cube-shaped blocks, rendered as a polished, soft-lit
+3D scene with gentle depth of field. The palette is grass green (#7CB342), warm earth brown (#8D6E63), sky
+blue (#4FC3F7) and charcoal stone (#2E2E2E). The mood is calm, peaceful and a little nostalgic. Use original
+block shapes and original colors, never official textures. No creatures, no figures, no text, no logos, no
+interface. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Blocky Cliff Waterfall (`minecraft.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.minecraft/minecraft.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A grand voxel landscape: stepped, cube-built cliffs of grass and
+brown earth rise on the right, with a pale blue waterfall pouring down their blocky edge into a clear
+square-edged lake. Cube-shaped trees dot the slopes, and cloud blocks drift across a bright sky behind a
+square sun. Soft golden light falls from the upper left.
+Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+Palette: #7CB342, #8D6E63, #4FC3F7 with an accent #2E2E2E. Mood: peaceful, bright, adventurous.
+Composition: the waterfall and the lake it feeds sits about 54–74% across and 36–56% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.minecraft/minecraft.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a smooth stretch of blocky grass hills with a few cube trees, low detail. New area on the right: more
+blocky hills and a faint distant mountain block silhouette in haze. Same lighting direction, palette,
+materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.minecraft/minecraft.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The waterfall drops through the center from 25% to 65% of the height, with the lake below and
+block clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Single Block Tree (`minecraft.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.minecraft/minecraft.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. One cube-built tree with a dark brown square trunk and a rounded
+cluster of leafy green blocks stands alone on a flat, grassy block plain under a vast pale blue gradient
+sky. A single square white cloud floats high up, and a soft square sun glows near the horizon.
+Everything else is clean empty color.
+Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+Palette: #7CB342, #8D6E63, #4FC3F7 with an accent #2E2E2E. Mood: calm, simple, nostalgic.
+Composition: the tree and its soft block shadow sits about 60–72% across and 35–65% down; more than 70%
+of the image is empty sky and plain. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, mobs, figures, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.minecraft/minecraft.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale blue sky with soft gradient and no clouds. New area on the right: the grass plain
+continues to a faint line of distant block hills. Same lighting direction, palette, materials and level
+of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.minecraft/minecraft.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lantern Cave Glow (`minecraft.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.minecraft/minecraft.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The inside of a vast blocky cave, with square-cut stone walls in
+charcoal and warm brown, lit by a few lanterns whose warm orange glow pools on a stepped stone floor. A
+small underground lake of dark blue blocks reflects the light, and a faint teal glow shines from a
+distant tunnel mouth. Dust specks hang in the lantern light.
+Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+Palette: #1B1B1F, #3A3633, #8D6E63 with a lantern glow #F4A64A. Mood: hushed, warm, mysterious.
+Composition: the lantern glow on the stepped stone floor sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.minecraft/minecraft.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark charcoal stone blocks in deep shadow, low detail. New area on the right: the cave tunnel continues
+into a distant teal glow. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.minecraft/minecraft.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lantern pool sits at about 62% of the height, with cave walls rising on both sides above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Village at Dusk (`minecraft.alt-01`)
+
+alt · mid · setup: wood, black · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.minecraft/minecraft.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A cozy cube-built village on a gentle slope at dusk, with small
+blocky houses of wood and stone lit by warm yellow windows. A square moon rises in a gradient sky of
+orange, rose and deep blue, and cube clouds glow pink at the edges. A winding path of lighter blocks
+leads between fields to the village.
+Style: polished soft-lit 3D render of blocky voxel terrain, gentle depth of field, clean and calm.
+Palette: #F9B26B, #D9738B, #3B4A8C with a grass green #7CB342. Mood: cozy, peaceful, warm.
+Composition: the lit village and its path sits about 54–74% across and 38–58% down. The left 15% and the
+bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.minecraft/minecraft.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark blue hillside blocks fading into dusk, low detail. New area on the right: more distant lit houses
+and a faint blocky mountain in the haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.minecraft/minecraft.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The village sits on the slope at about 55% of the height, with the glowing dusk sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### osu! (`game.osu`)
+
+- **Genre:** abstract rhythm-game art
+- **Setting:** glowing concentric circles, pink gradients, beat pulses
+- **Palette:** #FF66AA, #FFFFFF, #2A2A3A, #111118
+- **Motifs:** concentric light rings, pulse waves in the dark, a soft pink aura
+- **Avoid:** game title, the logo composition, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by abstract rhythm-game visuals.
+Think glowing concentric circles, thin ripples of light expanding in the dark, soft pink gradients and gentle
+beat pulses, like sound made visible. The palette is bright pink (#FF66AA), white (#FFFFFF), charcoal
+(#2A2A3A) and near-black (#111118). The look is clean abstract digital art with glowing edges, soft bloom and
+smooth gradients. No objects, no figures, no letters or numbers, no emblems, no text. Keep the left edge and
+the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Pulse Rings in the Dark (`osu.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.osu/osu.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A set of thin, glowing pink and white concentric rings ripples
+outward from a bright center in a deep charcoal-black space, each ring slightly fainter and wider than
+the one before. Soft bloom surrounds the brightest rings, and a gentle pink aura fills the center. Tiny
+sparkles of light drift along the ripples.
+Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+Palette: #FF66AA, #FFFFFF, #2A2A3A with an accent #111118. Mood: rhythmic, glowing, hypnotic.
+Composition: the bright center and the first few rings sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp thin glowing lines; perfectly smooth, banding-free
+gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.osu/osu.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark charcoal space with a faint outer ring and no detail. New area on the right: the rings fade into
+dark with a trace of pink aura. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.osu/osu.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rings radiate from the center at about 45% of the height, widening to fill the frame.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Single Glowing Circle (`osu.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.osu/osu.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single thin ring of soft pink light hangs in the middle of a vast,
+smooth, near-black charcoal gradient, with a gentle bloom and a very faint second ring beyond it. The
+inside of the ring is a slightly lighter dark with a hint of pink haze. Everything else is clean, empty
+darkness.
+Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+Palette: #111118, #2A2A3A, #FF66AA with a white #FFFFFF. Mood: quiet, focused, minimal.
+Composition: the ring and its bloom sits about 58–74% across and 35–65% down; more than 70% of the image
+is empty dark space. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; smooth glowing gradients; perfectly smooth, banding-free
+gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.osu/osu.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty near-black charcoal gradient, completely smooth, kept calm and low in detail. New area on the
+right: a faint, wide, barely visible outer ring. Same lighting direction, palette, materials and level
+of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.osu/osu.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ring hangs at about 45% of the height in the center, with empty dark space around it.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Soft Pink Aura (`osu.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.osu/osu.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A soft aura of pink light rises from the bottom of a deep
+charcoal-violet gradient, with a few faint concentric ripples spreading through it like slow beats. The
+edges of the aura are feathered and blurred, with a very fine glow and tiny drifting light motes. The
+top of the frame fades into near-black.
+Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+Palette: #111118, #2A2A3A, #7A3A68 with a pink #FF66AA. Mood: calm, dreamy, soft.
+Composition: the center of the aura and the faint ripples sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; smooth glowing gradients; perfectly smooth, banding-free
+gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.osu/osu.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark charcoal-violet space with a hint of aura. New area on the right: the aura fades to dark with a few
+faint ripples. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.osu/osu.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The aura rises from the bottom to about 55% of the height in the center, with ripples
+spreading above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Light Ripples (`osu.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.osu/osu.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A pale white-pink background with large, soft concentric ripples
+spreading from a luminous center, each ring a thin line of rose and pale lilac. A gentle shadow gives
+them a cool, quiet depth, and tiny pink light motes float across the surface. The mood is airy and
+fresh.
+Style: clean abstract digital art, glowing thin lines, soft bloom, smooth gradients.
+Palette: #FFF5FA, #FFD0E4, #FF66AA with a lilac #D9C8F0. Mood: airy, soft, fresh.
+Composition: the luminous center and its nearest ripples sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp thin lines on a smooth gradient; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.osu/osu.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a soft pale pink-white surface, almost empty, kept calm and low in detail. New area on the right: the
+ripples fade out into a pale lilac haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.osu/osu.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ripples spread from the center at about 45% of the height, widening to fill the frame.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Overwatch 2 (`game.overwatch2`)
+
+- **Genre:** optimistic near-future hero world
+- **Setting:** bright global cities - Mediterranean, East-Asian, Nordic - with sleek tech
+- **Palette:** #F99E1A, #218FFE, #FFFFFF, #43484C
+- **Motifs:** a sunny futuristic plaza, cherry blossoms with clean tech, a coastal city with a hover-rail
+- **Avoid:** game title, heroes, payloads, the circle emblem, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by an optimistic near-future world.
+Think bright, sunlit cities with Mediterranean terraces, East-Asian cherry-blossom lanes and Nordic harbors,
+all lightly touched by sleek, clean technology such as hover-rails and curved glass. The palette is warm
+orange (#F99E1A), clear blue (#218FFE), white (#FFFFFF) and slate (#43484C). The look is polished stylized 3D
+concept art with cheerful light and clean shapes. No people, no robots, no emblems, no text. Keep the left
+edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Coastal City Hover-Rail (`overwatch2.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.overwatch2/overwatch2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sunlit Mediterranean-style coastal city with white terraced
+buildings stepping down a hill to a bright blue bay. A sleek elevated hover-rail curves through the city
+on slender pillars, its white shell catching the sun. Warm orange awnings and potted greenery add color,
+and a few fluffy clouds float in a clear blue sky.
+Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+Palette: #F99E1A, #218FFE, #FFFFFF with an accent #43484C. Mood: optimistic, bright, futuristic.
+Composition: the curving hover-rail above the white terraces sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.overwatch2/overwatch2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain white terrace walls in warm sunlight, low detail. New area on the right: the coast curves away
+into blue haze with a few more white towers. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.overwatch2/overwatch2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The hover-rail curves through the center at about 42% of the height, with terraces below and
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Cherry Blossom Lane (`overwatch2.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.overwatch2/overwatch2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet, empty lane of pale stone leads under a single branch of
+cherry blossom from the upper right. A smooth, curved white wall with a thin orange line runs along one
+side. Soft pink petals drift in a gentle light, and the sky is a calm, pale blue gradient. The scene is
+mostly clean empty space.
+Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+Palette: #FFFFFF, #F4C9D4, #218FFE with a line in #F99E1A. Mood: calm, gentle, bright.
+Composition: the blossom branch and the curve of the white wall sits about 58–74% across and 32–68%
+down; more than 70% of the image is calm wall, lane and sky. The left 15% and the bottom 8% stay calm
+and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80%
+of the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, people, robots, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.overwatch2/overwatch2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a clean pale stone lane and soft blue sky. New area on the right: the lane curves away between more pale
+wall into soft haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.overwatch2/overwatch2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The blossom branch hangs from the upper right at about 30% of the height, with the lane
+curving below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Nordic Harbor Dusk (`overwatch2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.overwatch2/overwatch2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A calm Nordic harbor at dusk, with simple wooden quay houses in
+slate and pale orange lit by warm windows. A sleek curved glass pavilion glows soft blue at the water's
+edge, and a clean white footbridge crosses the harbor. The sky fades from deep blue to a thin band of
+apricot.
+Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+Palette: #14202C, #43484C, #218FFE with a warm window #F99E1A. Mood: calm, cool, welcoming.
+Composition: the glowing glass pavilion and the harbor reflection sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.overwatch2/overwatch2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark, still harbor water with a faint reflection. New area on the right: the harbor opens into a quiet
+bay with a distant lit headland. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.overwatch2/overwatch2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The pavilion glows at about 58% of the height with the harbor reflection below and dusk sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Sunny Plaza (`overwatch2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.overwatch2/overwatch2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide, sunlit plaza in a clean near-future city, with smooth white
+paving, a round fountain with a soft arc of water and curved glass buildings reflecting a bright sky.
+Long soft shadows fall to the right, and a few small trees add green. A distant skyline of slim towers
+fades into a pale blue haze.
+Style: polished stylized concept art, bright optimistic light, clean shapes and soft color gradients.
+Palette: #FFFFFF, #CFE6FA, #218FFE with a warm accent #F99E1A. Mood: sunny, clean, cheerful.
+Composition: the fountain and the curved glass beyond it sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.overwatch2/overwatch2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain sunlit white paving with soft shadows, low detail. New area on the right: the plaza continues
+toward slim towers in pale haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.overwatch2/overwatch2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The fountain sits in the lower center at about 55% of the height with curved glass and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Palworld (`game.palworld`)
+
+- **Genre:** cheerful survival open world
+- **Setting:** lush grasslands, floating ruins, volcanic islands
+- **Palette:** #7FC8A9, #F9E784, #5DA9E9, #2E3A23
+- **Motifs:** grassy cliffs over a sea, a volcanic isle at sunset, overgrown ruins
+- **Avoid:** game title, creatures, the logo, text, characters, UI or HUD elements, logos
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a cheerful survival open world,
+with no creatures or people. Think lush grassy cliffs over a bright sea, floating ruined islands, a volcanic
+isle at sunset and overgrown ruins in warm light. The palette is fresh mint-green (#7FC8A9), butter yellow
+(#F9E784), sky blue (#5DA9E9) and deep leaf (#2E3A23). The look is a bright, polished, stylized 3D render with
+saturated but soft color and a welcoming mood. No creatures, no people, no emblems, no text. Keep the left
+edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Grassy Cliffs over the Sea (`palworld.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.palworld/palworld.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Lush green grassy cliffs with a few round-topped trees drop to a
+bright turquoise sea, with a crescent of pale sand beach below. Floating chunks of ruined stone with ivy
+hang in the sky above the bay, and fluffy clouds drift in a blue sky. Warm sun lights the cliff tops,
+with soft blue shadows below.
+Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+Palette: #7FC8A9, #F9E784, #5DA9E9 with an accent #2E3A23. Mood: cheerful, fresh, adventurous.
+Composition: the cliff edge and the floating ruins above the bay sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.palworld/palworld.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green grass and clouds in warm light, low detail. New area on the right: the coast continues to a
+volcanic island in blue haze. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.palworld/palworld.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The cliff edge sits at about 55% of the height in the lower center, with floating ruins at
+30% above the bay. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Single Floating Ruin (`palworld.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.palworld/palworld.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small floating chunk of grassy earth carries a lone
+ivy-covered stone arch, hanging in a vast, smooth sky gradient of pale mint at the horizon and soft sky
+blue above. A few tiny roots trail from its underside. Everything else is clean, empty sky.
+Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+Palette: #EAF8F2, #7FC8A9, #5DA9E9 with a yellow #F9E784. Mood: calm, simple, airy.
+Composition: the floating ruin and its stone arch sits about 59–73% across and 36–64% down; more than
+70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.palworld/palworld.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty soft mint-to-blue sky, completely smooth, kept calm and low in detail. New area on the right: a
+faint distant cloud and a hint of sea at the horizon. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.palworld/palworld.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The floating ruin hangs at about 45% of the height in the center, with empty sky around it.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Volcanic Isle at Sunset (`palworld.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.palworld/palworld.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small volcanic island rises from a calm sea at sunset, its cone
+glowing faintly orange at the crater, and a thin ribbon of smoke curling into a sky of orange, pink and
+deep violet. Dark green jungle covers its lower slopes, and the water mirrors the colors in soft
+ripples.
+Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+Palette: #1F1B3A, #6B3F72, #F28A4B with a green #2E3A23. Mood: warm, dramatic, calm.
+Composition: the glowing cone and its reflection sits about 52–72% across and 45–65% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.palworld/palworld.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark violet sea with faint reflections, low in detail. New area on the right: the sea continues to
+another small island silhouette in haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.palworld/palworld.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The volcano cone rises at about 42% of the height in the center, with its reflection in the
+sea below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Overgrown Ruins in Sun (`palworld.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.palworld/palworld.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sunlit clearing of ancient grey stone ruins, with arches and
+fallen columns covered in bright green moss and ivy. Wildflowers in yellow and white dot the grass, and
+soft golden light falls through leaves overhead. The air is warm and bright with floating pollen.
+Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+Palette: #F6F0CC, #7FC8A9, #F9E784 with a stone #A9AFA6. Mood: warm, peaceful, bright.
+Composition: the mossy arch and the sunlit grass in front of it sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.palworld/palworld.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft sunlit grass and leaf shadows, low detail. New area on the right: more mossy columns fade into a
+green haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.palworld/palworld.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The mossy arch stands at about 48% of the height in the center, with grass below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Path of Exile 2 (`game.poe2`)
+
+- **Genre:** grim dark fantasy
+- **Setting:** ruined ancient temples, cursed swamps, a blood-red moon, torchlit stone
+- **Palette:** #8A1C1C, #C2A878, #2F3A33, #0B0A09
+- **Motifs:** a blood moon over ruins, a torchlit stair into the dark, a drowned temple
+- **Avoid:** game title, characters, the logo, text, UI or HUD elements, logos
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a grim dark-fantasy world, with no
+people. Think ruined ancient temples, cursed swamps with dead trees, a blood-red moon and stone stairs
+descending into torchlit darkness. The palette is blood red (#8A1C1C), weathered bone (#C2A878), swamp
+green-black (#2F3A33) and near-black (#0B0A09). The look is gritty painterly concept art with heavy shadow,
+rich texture and a single warm light source. No creatures, no figures, no emblems, no text. Keep the left edge
+and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Blood Moon over the Ruins (`poe2.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.poe2/poe2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A huge blood-red moon rises behind the broken columns and collapsed
+arches of an ancient temple on a swamp island. The red light paints the stone in deep crimson and picks
+out dead trees reflected in black water. Thin mist coils between the ruins, and a few torch-like embers
+glow faintly on the temple steps.
+Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+Palette: #8A1C1C, #C2A878, #2F3A33 with an accent #0B0A09. Mood: ominous, grim, majestic.
+Composition: the blood moon framed by the broken columns sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.poe2/poe2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark swamp water and reeds in deep green-black shadow. New area on the right: more broken columns recede
+into misty dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.poe2/poe2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
+black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Single Red Moon (`poe2.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.poe2/poe2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single large dim blood-red moon hangs in a vast, smooth sky that
+fades from deep red-black at the horizon to pure black at the top, over a flat, dark, still swamp. Its
+soft red reflection lies in the black water, broken by one small, dead tree silhouette at the right.
+Nothing else is in the frame.
+Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+Palette: #0B0A09, #2A1010, #8A1C1C with a bone #C2A878. Mood: ominous, quiet, stark.
+Composition: the moon and its reflection sits about 58–74% across and 35–65% down; more than 70% of the
+image is empty dark sky and water. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.poe2/poe2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty red-black sky, completely smooth and clean. New area on the right: the swamp continues into
+dark mist with a faint far dead tree. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.poe2/poe2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The moon hangs at about 38% of the height in the upper center, with its reflection in the
+black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Torchlit Stair into the Dark (`poe2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.poe2/poe2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide stone stair of worn steps descends into pitch black beneath a
+carved archway, lit only by two flickering torches on the walls. Warm orange light glows on the nearest
+steps and fades quickly into deep shadow. The stone is cracked and mossy, and a thin mist curls at the
+bottom.
+Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+Palette: #0B0A09, #2F3A33, #8A5A28 with a flame #E0883A. Mood: tense, quiet, ancient.
+Composition: the nearest steps and the torchlight on them sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.poe2/poe2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark cracked stone wall with faint moss, low detail. New area on the right: the stair's wall continues
+into pitch dark with a faint far torch. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.poe2/poe2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The stair runs down through the center, with the torchlight at about 55% of the height and
+darkness below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Drowned Temple at Dawn (`poe2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.poe2/poe2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A half-drowned ancient temple in a calm, misty swamp at dawn, its
+stone arches and steps rising from pale green-grey water. Soft cream light filters through the mist, and
+gentle ripples spread around the pillars. Twisted pale trees line the far edge, and the sky is a muted
+rose and bone color.
+Style: gritty painterly dark-fantasy concept art, heavy shadow, rich texture, single warm light source.
+Palette: #EEE6D4, #C2A878, #8A9A8A with a rose #B58A82. Mood: quiet, eerie, serene.
+Composition: the arched temple front and its reflection sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.poe2/poe2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth pale green-grey water and mist, low detail. New area on the right: the swamp continues with a
+faint far pillar in mist. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.poe2/poe2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The temple front rises at about 48% of the height in the center, with its reflection in the
+water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+### PUBG: Battlegrounds (`game.pubg`)
+
+- **Genre:** realistic battle-royale landscapes
+- **Setting:** Eastern-European countryside, an abandoned military base, wheat fields, a cargo plane in the sky
+- **Palette:** #C8A951, #6B7A3A, #A9B4BF, #1C1F22
+- **Motifs:** a distant cargo plane over wheat, tiny parachutes at dawn, a lonely farmhouse
+- **Avoid:** game title, characters, the frying pan, branded crates, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by realistic Eastern-European
+countryside, without any people. Think wide golden wheat fields, lonely farmhouses, abandoned concrete
+military buildings, overcast skies and a distant plane high above. The palette is wheat gold (#C8A951), olive
+(#6B7A3A), cool grey sky (#A9B4BF) and charcoal (#1C1F22). The look is documentary-style landscape photography
+with natural, muted color and soft light. No people, no weapons, no vehicles in focus, no crests, no text.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Wheat Fields and a Distant Plane (`pubg.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.pubg/pubg.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide golden wheat field rolls toward a line of dark pines under a
+vast overcast sky. High above, a tiny cargo plane leaves a thin white trail, and a few small parachutes
+hang in the pale distance. A lonely farmhouse with a red-tiled roof stands at the field's edge, and a
+dirt track curves through the wheat.
+Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+Palette: #C8A951, #6B7A3A, #A9B4BF with an accent #1C1F22. Mood: wide, quiet, expectant.
+Composition: the farmhouse and the plane trail above it sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, vehicles in focus, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.pubg/pubg.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden wheat and a grey sky, low in detail. New area on the right: the field stretches to a faint
+road and a distant tree line. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.pubg/pubg.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The farmhouse sits at about 55% of the height at the center, with the plane trail high above
+in the sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Farmhouse (`pubg.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.pubg/pubg.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small farmhouse with a plain pale wall and a dark roof
+stands alone in a vast, smooth field of pale wheat, under a huge, empty overcast sky of soft grey-white.
+A thin line of pines marks the far horizon. The light is soft and even, and nothing else is in the
+frame.
+Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+Palette: #ECE8DE, #C8A951, #A9B4BF with a roof #3A3F44. Mood: quiet, solitary, spacious.
+Composition: the farmhouse sits about 60–72% across and 35–65% down; more than 70% of the image is empty
+sky and field. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.pubg/pubg.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty soft grey-white sky over pale wheat, low detail. New area on the right: the wheat continues to
+a faint tree line in the haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.pubg/pubg.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The farmhouse stands at about 60% of the height in the lower center, with an empty overcast
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Abandoned Base in Fog (`pubg.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.pubg/pubg.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A cluster of low, abandoned concrete military buildings with cracked
+walls and a rusted water tower stands in thick morning fog. A few dead trees and a long, plain perimeter
+fence fade into the mist. The sky is flat grey, and a faint warm sun disc glows through the fog.
+Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+Palette: #1C1F22, #4A5148, #A9B4BF with a sun #C8A951. Mood: gloomy, silent, hazy.
+Composition: the water tower and the buildings in the mist sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.pubg/pubg.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark olive-grey fog over weedy ground, low detail. New area on the right: the fence continues into thick
+mist with a faint far building. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.pubg/pubg.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The water tower rises at the center to about 38% of the height, with the buildings low below
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Parachutes at Dawn (`pubg.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.pubg/pubg.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Pale pink and gold dawn over a quiet green countryside, with a few
+tiny parachutes drifting down in a clear sky above rolling fields. A thin mist lies in the valley, and a
+line of pines stands in silhouette on a far ridge. The cargo plane is only a speck far off.
+Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+Palette: #F8E9D6, #E8B88A, #8FA66A with a grey #A9B4BF. Mood: hopeful, calm, bright.
+Composition: the cluster of tiny parachutes in the dawn sky sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.pubg/pubg.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft pink-gold sky and a faint ridge, low detail. New area on the right: the valley continues into pale
+mist with a faint distant village. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.pubg/pubg.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The parachutes drift at about 35% of the height in the center, over misty green fields. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Rainbow Six Siege X (`game.r6siege`)
+
+- **Genre:** tactical close quarters
+- **Setting:** a suburban house at night with dramatic light, barricades, dust in light shafts
+- **Palette:** #F7B500, #2F3640, #8C99A6, #0D0F12
+- **Motifs:** light shafts through a broken wall, rain on a dark house, a drone's-eye floor glow
+- **Avoid:** game title, operators, gadgets, logos, text, weapons, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by tactical close-quarters tension,
+using only empty spaces. Think an empty suburban house at night with dramatic hard light, shafts of
+dust-filled light through holes in walls, plank barricades and rain on dark windows. The palette is amber
+(#F7B500), slate (#2F3640), cool grey (#8C99A6) and near-black (#0D0F12). The look is cinematic photography
+with strong contrast, volumetric dust and rich shadow. No people, no weapons, no gadgets, no insignia, no
+text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Light Through the Broken Wall (`r6siege.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.r6siege/r6siege.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The inside of an empty suburban house at night. A rough hole in a
+plaster wall lets in broad shafts of warm amber light from a streetlamp outside, filled with floating
+dust and lighting a floor of scattered wood splinters. Plain wooden planks barricade a window to the
+left. The rest of the room falls into slate and black shadow.
+Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+Palette: #F7B500, #2F3640, #8C99A6 with an accent #0D0F12. Mood: tense, quiet, dramatic.
+Composition: the amber light shafts and the hole in the wall sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.r6siege/r6siege.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark slate wall with faint texture and a plank edge. New area on the right: a doorway to a darker room
+with a faint cold glow. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.r6siege/r6siege.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light shafts fall from the upper right to the floor, the hole at about 40% of the height.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Single Light Slit (`r6siege.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.r6siege/r6siege.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast, plain dark wall of slate-grey plaster fills the frame, with
+one thin vertical slit of warm amber light glowing in it, as if a door were ajar in another room. A soft
+wedge of light falls across a bare dark floor. The wall has a faint texture and nothing else.
+Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+Palette: #0D0F12, #2F3640, #8C99A6 with the slit in #F7B500. Mood: quiet, tense, minimal.
+Composition: the slit of light and its wedge on the floor sits about 61–71% across and 30–70% down; more
+than 70% of the image is plain dark wall. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.r6siege/r6siege.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain slate wall with faint plaster texture, low detail. New area on the right: the wall continues
+into deeper shadow. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.r6siege/r6siege.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The light slit rises through the center from 30% to 65% of the height, with its wedge on the
+floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Rain on a Dark House (`r6siege.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.r6siege/r6siege.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The exterior of a dark suburban house in heavy rain at night, seen
+from across a wet lawn. A single upstairs window glows faint amber behind blinds, and rain streaks the
+air in the light of a distant streetlamp. The roofline and a bare tree are black silhouettes against a
+deep slate sky.
+Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+Palette: #0D0F12, #232B35, #8C99A6 with a window glow #F7B500. Mood: moody, wet, quiet.
+Composition: the glowing upstairs window and the wet lawn sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.r6siege/r6siege.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a dark wet lawn and fence in deep shadow, low in detail. New area on the right: a hedge and a distant
+dim streetlamp in the rain. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.r6siege/r6siege.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The house stands at the center, with the window glowing at about 45% of the height and the
+wet lawn below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Sunlit Empty Room (`r6siege.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.r6siege/r6siege.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An empty suburban living room in soft morning light, with pale
+walls, bare wooden floors and tall windows letting in broad bars of sun filled with floating dust. A few
+moving boxes with no markings sit against one wall. The light is gentle and warm, with calm grey
+shadows.
+Style: cinematic interior photography, volumetric light, strong but readable contrast, tense and quiet.
+Palette: #F4EEE2, #D9C79A, #8C99A6 with a warm #F7B500. Mood: calm, bright, quiet.
+Composition: the sunbars on the floor and the dust in them sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, operators, weapons, gadgets, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.r6siege/r6siege.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain pale wall in soft light, low detail. New area on the right: an open doorway leading to a brighter
+hallway. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.r6siege/r6siege.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The sunbars fall across the center at about 55% of the height, over a bare wooden floor. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Red Dead Redemption 2 (`game.rdr2`)
+
+- **Genre:** American frontier, 1899
+- **Setting:** misty mountains, golden plains, bayou swamp, a campfire
+- **Palette:** #A33B20, #D9B26F, #4F5D2F, #1C1A17
+- **Motifs:** a tiny lone rider silhouette, plains at dawn, a foggy bayou, a snowy pass
+- **Avoid:** game title, faces, logos, the poster red background style, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by the American frontier of the late
+1800s. Think misty mountains, golden plains at dawn, a foggy bayou with mossy trees, a snowy pass and a small
+campfire in the dark, in a warm, dusty, cinematic photographic look. The palette is brick red (#A33B20), wheat
+gold (#D9B26F), moss green (#4F5D2F) and charcoal brown (#1C1A17). The mood is quiet, vast and nostalgic. At
+most one tiny anonymous silhouette for scale, no faces, no weapons, no emblems, no text. Keep the left edge
+and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Plains at Dawn (`rdr2.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rdr2/rdr2.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast golden prairie at dawn under a huge sky of pink, gold and
+soft blue clouds, with a line of misty blue mountains on the far horizon. Tall grass ripples in warm
+backlight, and a single winding dirt trail leads toward the mountains. A tiny lone rider on a horse is a
+distant dark silhouette on the trail.
+Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+nostalgic.
+Palette: #A33B20, #D9B26F, #4F5D2F with an accent #1C1A17. Mood: vast, quiet, nostalgic.
+Composition: the sunrise glow above the mountains and the trail leading to it sits about 54–74% across
+and 36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, faces, weapons, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rdr2/rdr2.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden grass and a pale pink sky, low in detail. New area on the right: the plains continue with a
+faint dark line of distant trees. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rdr2/rdr2.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The trail winds up the center to the mountains at about 48% of the height, with the glowing
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Rider on the Ridge (`rdr2.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rdr2/rdr2.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single tiny silhouette of a rider on horseback stands on a smooth,
+distant ridge against an enormous, empty sky that fades from pale gold at the horizon to soft blue-grey
+above. A thin line of low golden grass runs along the bottom. Nothing else is in the frame.
+Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+nostalgic.
+Palette: #F3E2BA, #D9B26F, #8C98A6 with the rider in #1C1A17. Mood: solitary, calm, nostalgic.
+Composition: the tiny rider on the ridge sits about 61–71% across and 38–62% down; more than 70% of the
+image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, faces, weapons, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rdr2/rdr2.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale gold-to-blue sky, completely smooth and clean. New area on the right: the ridge dips away
+to a faint hazy horizon. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rdr2/rdr2.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rider stands at about 62% of the height in the lower center, with an enormous empty sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Foggy Bayou (`rdr2.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rdr2/rdr2.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A still bayou in thick morning fog, with old cypress trunks rising
+from dark water and long curtains of grey moss hanging from the branches. A faint warm light glows
+through the fog, reflected in the water in a soft golden column. The water is dark green-brown, and a
+broken wooden jetty fades into the mist.
+Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+nostalgic.
+Palette: #1C1A17, #3A4630, #4F5D2F with a glow #D9B26F. Mood: damp, hushed, mysterious.
+Composition: the glowing fog column and its reflection sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, faces, weapons, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rdr2/rdr2.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark green-brown water and fog, low in detail. New area on the right: more cypress trunks and hanging
+moss fade into thick fog. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rdr2/rdr2.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The glowing column of fog rises at the center from 30% to 65% of the height, with its
+reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Snowy Pass at Noon (`rdr2.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rdr2/rdr2.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A high mountain pass blanketed in snow under a pale, bright sky,
+with dark pine trees dusted white along the slopes and a thin winding trail in the snow. Soft light
+falls across the ridges, and a few wisps of cloud touch the peaks. The scene is quiet, crisp and cold.
+Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+nostalgic.
+Palette: #F2F4F6, #C9D6E3, #7C8FA3 with a pine #3C4A38. Mood: crisp, calm, vast.
+Composition: the trail through the pass and the nearest pines sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, faces, weapons, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rdr2/rdr2.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+smooth white snow with soft blue shadows, low detail. New area on the right: the pass opens to far peaks
+in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rdr2/rdr2.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The trail winds up the center to a gap between peaks at about 45% of the height. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Roblox (`game.roblox`)
+
+- **Genre:** toy-like low-poly building worlds
+- **Setting:** bright plastic materials, floating obstacle platforms in the sky, studio-soft light
+- **Palette:** #00A2FF, #F2F3F3, #FFB000, #393B3D
+- **Motifs:** floating platform paths, studded plastic surfaces, low-poly islands, soft studio light
+- **Avoid:** game title, avatars, the tilted-square logo, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a toy-like world of bright plastic
+building bricks and floating platforms. Think low-poly islands, smooth studded plastic surfaces, glossy
+primary-color blocks and winding obstacle paths hovering in a soft sky, lit like a tidy photography studio.
+The palette is cheerful blue (#00A2FF), clean white (#F2F3F3), warm yellow (#FFB000) and charcoal (#393B3D).
+The look is a polished 3D render with soft shadows, gentle depth of field and a happy but uncluttered mood. No
+figures, no avatars, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and
+the taskbar.
+```
+
+#### Sky Obstacle Path (`roblox.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.roblox/roblox.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A winding path of floating plastic platforms in blue, white and
+yellow snakes through a bright sky. Chunky studded blocks, rounded ramps and a small spiral bridge hover
+over drifting soft clouds, each surface glossy with a clean highlight. In the far distance, a few
+low-poly islands with round bushes float in a pale blue haze.
+Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+and cheerful.
+Palette: #00A2FF, #F2F3F3, #FFB000 with an accent #393B3D. Mood: cheerful, bright, playful.
+Composition: the spiral bridge and the nearest platform cluster sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.roblox/roblox.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft white clouds and pale blue sky, low in detail. New area on the right: the path continues to a far
+floating island in blue haze. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.roblox/roblox.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The platform path spirals up the center of the frame with the spiral bridge at about 45% of
+the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### One Floating Block (`roblox.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.roblox/roblox.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single glossy yellow plastic brick with round studs floats alone
+in the middle of a vast, soft sky gradient that moves from clean white at the horizon to pale blue at
+the top. A soft, round shadow of the brick falls on a faint cloud beneath it. Everything else is empty,
+clean space.
+Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+and cheerful.
+Palette: #FFFFFF, #CFE9FB, #00A2FF with the brick in #FFB000. Mood: simple, calm, cheerful.
+Composition: the brick and its soft shadow sits about 60–72% across and 35–65% down; more than 70% of
+the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.roblox/roblox.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a clean, empty white-to-blue sky gradient with no features at all. New area on the right: a faint tiny
+cloud and an empty sky. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.roblox/roblox.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The brick floats at about 45% of the height, centered, with a soft cloud below and empty sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Studio Night Blocks (`roblox.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.roblox/roblox.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A dark studio set at night, with a few glossy plastic blocks in deep
+blue, charcoal and yellow stacked on a smooth black floor. A single soft overhead light makes a gentle
+pool of reflection under them, and tiny studs on the tops catch the glow. The background fades into a
+soft dark gradient.
+Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+and cheerful.
+Palette: #14161A, #393B3D, #0A6FB0 with a yellow #FFB000. Mood: calm, moody, tidy.
+Composition: the stack of blocks and their reflection sits about 52–72% across and 45–65% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.roblox/roblox.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a smooth dark floor and charcoal backdrop, low detail. New area on the right: the dark floor continues
+with a faint reflection of a distant block. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.roblox/roblox.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The block stack sits in the lower center at about 58% of the height, over a dark backdrop.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Low-Poly Island Morning (`roblox.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.roblox/roblox.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small low-poly island floats in a soft morning sky, with faceted
+green hills, a few round bushes and a pale blue pool of water cut into its center. Its underside is a
+stepped, faceted rock in warm grey. Soft white clouds drift below, and the light is clean and warm from
+the left.
+Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+and cheerful.
+Palette: #EAF6FF, #00A2FF, #8BD07B with a warm grey #B9B7B2. Mood: fresh, bright, calm.
+Composition: the island and its blue pool sits about 54–74% across and 38–58% down. The left 15% and the
+bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.roblox/roblox.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft clouds and pale blue sky, low detail. New area on the right: a second smaller island floats far
+away in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.roblox/roblox.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The island floats in the center at about 48% of the height, with clouds below and soft sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Rocket League (`game.rocket-league`)
+
+- **Genre:** neon sports arena at night
+- **Setting:** stadium floodlights, a hex-pattern field, boost-trail light streaks
+- **Palette:** #0070F3, #FF7A00, #0A0E1A, #C0C8D8
+- **Motifs:** an empty glowing arena, a giant ball on the center line, light trails in the air
+- **Avoid:** game title, cars, team crests, branding, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a neon night sports arena. Think
+an empty, glowing stadium with a hex-patterned field, tall floodlights, a giant plain ball on the center line
+and soft streaks of blue and orange light hanging in the air. The palette is electric blue (#0070F3), orange
+(#FF7A00), midnight (#0A0E1A) and cool silver (#C0C8D8). The look is a polished 3D render with atmospheric
+haze, strong bloom and clean geometry. No vehicles, no people, no crests, no text. Keep the left edge and the
+bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Empty Arena Glow (`rocket-league.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An empty, enormous night arena seen from one end. A hex-patterned
+pitch glows with soft blue lines, and a giant plain ball rests on the center line. Tall floodlights beam
+through haze from both sides, and curved orange and blue light trails arc through the air above the
+pitch like frozen motion. The stands are dark, tiered shapes.
+Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+lighting.
+Palette: #0070F3, #FF7A00, #0A0E1A with an accent #C0C8D8. Mood: dramatic, electric, anticipatory.
+Composition: the center ball and the light trails above it sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark empty tiered stands and drifting haze, low in detail. New area on the right: the stadium stretches
+into haze with distant glowing floodlights. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ball sits at the lower center at about 62% of the height, with light trails arcing above
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Ball on the Line (`rocket-league.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.52 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single smooth, plain pale ball rests on a thin glowing blue line
+across a vast, dark, glossy pitch. A faint orange rim light edges the ball from the upper right and a
+soft reflection falls beneath it. The surroundings dissolve into a deep midnight blue gradient with the
+faintest hex pattern.
+Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+lighting.
+Palette: #0A0E1A, #14233C, #C0C8D8 with a rim #FF7A00. Mood: quiet, focused, electric.
+Composition: the ball and its reflection sits about 60–72% across and 34–70% down; more than 70% of the
+image is empty dark floor and haze. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, cars, team crests, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a smooth dark glossy floor with a faint blue line. New area on the right: a faint far goal frame glowing
+softly in deep haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ball rests at about 55% of the height in the lower center, with dark empty gradient
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Floodlight Haze (`rocket-league.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A close view of the stadium floodlights from the pitch at night. A
+bank of white lamps blooms into soft rays through drifting haze, and the roof beams are dark
+silhouettes. A faint orange glow warms one edge, and cool blue light lies across the wet pitch below.
+Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+lighting.
+Palette: #080B14, #1A2A44, #C0C8D8 with an orange #FF7A00. Mood: moody, hazy, quiet.
+Composition: the glowing lamp bank and its rays sits about 52–72% across and 45–65% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark roof beams and haze, low in detail. New area on the right: the haze deepens with a faint second
+lamp bank far away. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The lamp bank blooms at about 38% of the height, with its rays falling toward the pitch
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Arena at Midday (`rocket-league.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The same arena seen empty in bright midday light, with a pale
+hex-patterned pitch gleaming in soft blues and whites. A giant plain ball sits on the center line, and
+the open roof lets in a clear sky. The tiered stands glow pale grey, and a few faint orange stripes mark
+the pitch.
+Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+lighting.
+Palette: #F2F6FB, #BFD3EC, #0070F3 with an orange #FF7A00. Mood: bright, clean, spacious.
+Composition: the center ball and the pale hex pitch sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty pale stands in soft light, low detail. New area on the right: the pitch extends to a distant goal
+in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ball sits at about 58% of the height at the center, with the pitch below and pale stands
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Rust (`game.rust`)
+
+- **Genre:** brutal survival
+- **Setting:** an overgrown abandoned industrial island, a rusted radar dish, a cold coast
+- **Palette:** #B7410E, #6B705C, #A5A58D, #1E1E1E
+- **Motifs:** a rusted dish in fog, a campfire on a cold beach, an overgrown monument
+- **Avoid:** game title, players, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a brutal survival world, with no
+people. Think an overgrown abandoned industrial island with a huge rusted radar dish, concrete ruins reclaimed
+by grass, a cold grey coast and a small campfire on a beach. The palette is oxidized orange (#B7410E), olive
+grey (#6B705C), stone (#A5A58D) and charcoal (#1E1E1E). The look is gritty documentary photography with
+overcast light, fog and rich texture of corroded metal and moss. No people, no weapons, no vehicles in focus,
+no signs, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Rusted Dish in the Fog (`rust.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rust/rust.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A colossal rusted radar dish stands on a grassy hill above a cold
+grey bay, its orange-brown surface streaked and peeling. Fog rolls around its base, and the overgrown
+concrete bunkers beside it are softened by moss and wild grass. The sky is a heavy pale grey with a thin
+gap of cool light on the horizon.
+Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+Palette: #B7410E, #6B705C, #A5A58D with an accent #1E1E1E. Mood: bleak, vast, haunting.
+Composition: the rusted dish and the pale gap of light beside it sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, players, weapons, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rust/rust.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark grassy hillside and fog, low in detail. New area on the right: the coast continues with another
+distant rusted tower in fog. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rust/rust.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The dish rises at the center from 25% to 65% of the height, with fog at its base and a grey
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Campfire on a Cold Beach (`rust.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rust/rust.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small campfire glows warm orange on a long, empty beach of dark
+grey pebbles, with a few pieces of driftwood around it. Beyond, the sea is a flat steel-grey plane under
+a vast, smooth, overcast sky. A thin wisp of smoke rises. Everything else is clean empty grey space.
+Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+Palette: #1E1E1E, #6B705C, #A5A58D with a fire #E07A2B. Mood: lonely, cold, quiet.
+Composition: the campfire and its warm glow on the stones sits about 60–72% across and 36–64% down; more
+than 70% of the image is empty grey sea and sky. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, players, weapons, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rust/rust.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty smooth overcast grey sky, completely clean. New area on the right: the beach continues to a
+faint far headland in mist. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rust/rust.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The fire glows at about 65% of the height in the lower center, with the empty grey sea and
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Overgrown Monument (`rust.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rust/rust.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The cracked concrete base of a large abandoned monument, thickly
+covered with ivy, moss and wild grass, stands in thin drifting fog. Rusted steel beams stick out of the
+stone, and a small pool of rainwater reflects the grey sky. The air is cold and damp, and the colors are
+olive and oxide orange.
+Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+Palette: #1E1E1E, #4A5240, #B7410E with a stone #A5A58D. Mood: damp, quiet, reclaimed.
+Composition: the ivy-covered concrete corner and the rainwater pool sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, players, weapons, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rust/rust.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark moss and corroded-metal texture on the nearby wall, low detail. New area on the right: more
+concrete and grass fade into fog. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rust/rust.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The concrete corner rises at about 45% of the height in the center, with the pool below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Coast at Midday (`rust.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.rust/rust.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A wide cold coast at midday under a bright, thin overcast sky, with
+pale grass-topped cliffs, a calm silver sea and a long rusted pier reaching into the water. The cliffs
+hold a few old concrete shelters covered with moss. The light is soft, even and bright.
+Style: gritty documentary photography, overcast light, fog, rich corroded-metal and moss texture.
+Palette: #E9E7DF, #A5A58D, #6B705C with an oxide #B7410E. Mood: calm, open, cool.
+Composition: the rusted pier and the pale sea beside it sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, players, weapons, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rust/rust.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft pale grass and cliffs in even light, low detail. New area on the right: the coast continues to a
+faint far headland. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.rust/rust.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The pier runs through the lower center to about 52% of the height, with the sea and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Sea of Thieves (`game.sea-of-thieves`)
+
+- **Genre:** stylized pirate adventure
+- **Setting:** turquoise seas, painterly islands, galleon silhouettes at sunset
+- **Palette:** #1FB5AD, #F2C14E, #4B3F72, #0E1B2C
+- **Motifs:** a lone ship at golden hour, a lantern-lit island at night, a storm at sea
+- **Avoid:** game title, characters, the skull cloud, emblems, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a stylized swashbuckling sea
+adventure, with no people. Think turquoise seas, painterly tropical islands, tall-sailed galleon silhouettes
+at golden hour, lantern-lit coves at night and dramatic storms. The palette is turquoise (#1FB5AD), golden
+yellow (#F2C14E), twilight purple (#4B3F72) and deep navy (#0E1B2C). The look is a painterly, stylized 3D
+concept art with rich color, soft clouds and glowing water. No figures, no flags with emblems, no skulls, no
+text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Galleon at Golden Hour (`sea-of-thieves.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A tall wooden galleon with full cream sails sails across a
+glittering turquoise sea at golden hour, its silhouette backlit by a huge low sun. Towering painterly
+clouds in gold, peach and purple fill the sky, and a small palm-covered island glows on the horizon. The
+water is full of sparkling reflections and soft foam.
+Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+Palette: #1FB5AD, #F2C14E, #4B3F72 with an accent #0E1B2C. Mood: adventurous, warm, glowing.
+Composition: the ship's sails against the golden sun sits about 54–74% across and 36–56% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+glittering turquoise water with soft foam, low detail. New area on the right: the sea continues to a few
+distant islands in golden haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ship sails at about 48% of the height in the center, with the sun behind it and water
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Sail at Sea (`sea-of-thieves.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single tiny ship with cream sails floats far out on a vast, smooth
+turquoise sea under a huge, empty sky that fades from pale turquoise at the horizon to soft blue above.
+A thin line of foam trails behind it. Everything else is clean, empty color.
+Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+Palette: #EAF9F7, #1FB5AD, #7CD3CD with a sail #FBF1D2. Mood: calm, free, spacious.
+Composition: the ship and the line of foam behind it sits about 60–72% across and 36–64% down; more than
+70% of the image is empty sea and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty soft turquoise-to-blue sky, completely smooth, kept calm and low in detail. New area on the
+right: the sea continues to a faint far island. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The ship floats at about 62% of the height in the lower center, with empty sky above. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Lantern Island at Night (`sea-of-thieves.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A small tropical island at night, with warm yellow lanterns glowing
+along a wooden dock and in the palms, reflected in a calm dark sea. A deep purple and navy sky is
+scattered with stars, and a thin crescent moon hangs above. A few silent boats rest by the shore.
+Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+Palette: #0E1B2C, #2A2D5A, #4B3F72 with a lantern #F2C14E. Mood: peaceful, warm, magical.
+Composition: the glowing lanterns on the dock and their reflections sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark navy sea with soft reflections, low in detail. New area on the right: the sea continues to another
+small island glow far away. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The dock lanterns glow at about 60% of the height in the lower center, with the starry sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Storm Clearing (`sea-of-thieves.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A calm turquoise sea beneath a clearing storm, with dark grey-purple
+clouds breaking apart and shafts of bright sun striking the water in glittering pools. A pale blue sky
+opens above, and a lone rocky island glows green in the light. The mood is relieved and bright.
+Style: painterly stylized concept art, rich color, soft clouds, glowing water, adventurous and warm.
+Palette: #E8F7F6, #1FB5AD, #F2C14E with a cloud #7A6AA8. Mood: relieved, bright, fresh.
+Composition: the sunlit island and the shafts of light on the water sits about 54–74% across and 38–58%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft turquoise water and thinning cloud, low in detail. New area on the right: the clouds drift away to
+a bright blue horizon. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.sea-of-thieves/sea-of-thieves.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The island sits at about 50% of the height in the center, with sun shafts falling on the
+water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+### Hollow Knight: Silksong (`game.silksong`)
+
+- **Genre:** hand-painted 2D gothic insect kingdom
+- **Setting:** ivory-silver spires, silk threads, bell towers, moss
+- **Palette:** #E9E4D8, #B23A48, #2D3142, #0D0E14
+- **Motifs:** silk threads catching light, a bell citadel in mist, a mossy grotto
+- **Avoid:** game title, the protagonist, characters, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a hand-painted 2D gothic kingdom
+of spires, silk and bells, with no creatures or people. Think ivory-silver towers rising through mist, fine
+silk threads glinting in the dark, a great bell tower in fog and a mossy grotto. The palette is ivory
+(#E9E4D8), deep crimson (#B23A48), slate indigo (#2D3142) and ink black (#0D0E14). The look is a flat,
+hand-painted 2D illustration with ink outlines, layered parallax depth and delicate gothic detail. No figures,
+no creatures, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+taskbar.
+```
+
+#### Bell Citadel in Mist (`silksong.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.silksong/silksong.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast ivory-silver citadel of needle-thin spires and a great arched
+bell tower rises through layers of indigo mist. Fine silk threads stretch between the towers and glint
+faintly. Crimson lanterns glow at the tower windows, and a deep slate sky fades to pale grey behind. The
+foreground is a dark mossy ledge in inky silhouette.
+Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+Palette: #E9E4D8, #B23A48, #2D3142 with an accent #0D0E14. Mood: gothic, quiet, majestic.
+Composition: the bell tower and the silk threads between the spires sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.silksong/silksong.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+inky dark ledge silhouettes in low detail, kept calm and low in detail. New area on the right: more
+spires fade into indigo mist. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.silksong/silksong.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The bell tower rises through the center from 20% to 65% of the height, with the silk threads
+crossing it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Silk Threads in the Dark (`silksong.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.silksong/silksong.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A few fine silk threads catch a soft ivory light as they sweep in a
+long graceful arc across a vast, smooth, ink-black and deep indigo background. One tiny crimson bead of
+light rests on the thread. Everything else is clean, empty darkness with a very faint mist.
+Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+Palette: #0D0E14, #2D3142, #E9E4D8 with a bead #B23A48. Mood: quiet, delicate, elegant.
+Composition: the arc of threads and the tiny crimson bead sits about 58–74% across and 35–65% down; more
+than 70% of the image is empty dark space. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.silksong/silksong.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+empty ink-black and indigo space, completely smooth, kept calm and low in detail. New area on the right:
+the threads continue in a faint arc and fade out. Same lighting direction, palette, materials and level
+of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.silksong/silksong.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The threads arc down the center, with the crimson bead at about 50% of the height, over empty
+dark space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Mossy Grotto (`silksong.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.silksong/silksong.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A hand-painted 2D grotto of dark rock with thick, soft green moss on
+its ledges and ceiling, lit by a faint pale glow from a hidden pool. Fine silk threads cross the cave
+mouth, and drifting spores float in the glow. A crimson flower blooms on a ledge at the left.
+Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+Palette: #0D0E14, #243229, #7D9A6A with a crimson #B23A48. Mood: hushed, damp, delicate.
+Composition: the glowing pool and the moss around it sits about 52–72% across and 45–65% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.silksong/silksong.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+inky dark cave rock and moss, low in detail. New area on the right: more mossy ledges recede into dark.
+Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.silksong/silksong.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The glowing pool sits at the center at about 55% of the height, with mossy ledges around it.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Ivory Spires at Dawn (`silksong.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.silksong/silksong.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A hand-painted 2D view of ivory-white towers and slender bridges
+rising out of a pale silver mist at dawn, their edges softened by warm light. Fine silk threads glitter
+between the spires like spider silk in the morning dew. The sky is a soft cream and pale rose gradient,
+with a few dark ink-line branches in the foreground.
+Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+Palette: #F5F1E6, #E9E4D8, #B89AA0 with a crimson #B23A48. Mood: airy, delicate, bright.
+Composition: the central spire and the glittering threads sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.silksong/silksong.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft cream mist and pale sky, low in detail. New area on the right: more towers and bridges fade into
+silver mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.silksong/silksong.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The spire rises at about 45% of the height in the center, with the threads glittering around
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Stardew Valley (`game.stardew`)
+
+- **Genre:** cozy pixel-art farm valley
+- **Setting:** a seasonal farm, a small town, glowing mines
+- **Palette:** #8CC152, #F6BB42, #A0522D, #2C3E50
+- **Motifs:** a pixel farm at dawn, an autumn orchard, a snowy cabin at night
+- **Avoid:** game title, characters, exact sprites, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a cozy pixel-art farm valley, with
+no people or animals. Think a small farm at dawn, an autumn orchard, a snowy cabin at night and glowing cave
+crystals, all in crisp original pixel art with a limited warm palette, soft pixel dithering in the skies and a
+gentle, homely mood. The palette is grass green (#8CC152), sunny yellow (#F6BB42), wood brown (#A0522D) and
+night blue (#2C3E50). Use clean, consistent pixel sizes and no anti-aliased blur. No characters, no animals,
+no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Farm at Dawn (`stardew.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.stardew/stardew.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A pixel-art farm valley at dawn, with a small wooden farmhouse and a
+red-roofed barn on a green hill, neat rows of crops in soft brown soil, and a fenced pasture. A winding
+dirt path leads down to a pond with lily pads. The sky is a dithered gradient of pink, peach and pale
+blue, and rolling hills fade into a lavender haze.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithered
+skies, cozy and warm.
+Palette: #8CC152, #F6BB42, #A0522D with an accent #2C3E50. Mood: cozy, peaceful, warm.
+Composition: the farmhouse and the barn on the hill sits about 54–74% across and 36–56% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.stardew/stardew.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+pixel-art green hills and soft sky, low in detail. New area on the right: the valley continues with a
+faint far hill and a tiny windmill. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.stardew/stardew.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The farmhouse sits at about 50% of the height in the center, with fields below and the dawn
+sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Lone Cabin in Snow (`stardew.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.stardew/stardew.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single tiny pixel-art wooden cabin with a snow-covered roof and
+one warm yellow lit window stands alone on a smooth snowy hill, under a vast, simple, dithered night sky
+of deep blue with a few tiny stars. A thin ribbon of chimney smoke rises. Everything else is clean,
+empty pixel color.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+cozy and warm.
+Palette: #1E2A3A, #2C3E50, #E8F0F8 with a window #F6BB42. Mood: quiet, cozy, still.
+Composition: the cabin and its lit window sits about 60–72% across and 36–64% down; more than 70% of the
+image is empty night sky and snow. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.stardew/stardew.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty dithered deep-blue night sky with a few stars. New area on the right: a faint line of pixel
+pine trees on a far hill. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.stardew/stardew.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The cabin sits at about 62% of the height in the lower center, with the empty night sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Glowing Crystal Cave (`stardew.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.stardew/stardew.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A pixel-art underground cave with stepped stone walls in dark blue
+and purple-grey, lit by clusters of glowing teal and pink crystals. A small pond reflects the glow, and
+a few wooden mine supports and a quiet minecart track lead into the dark. Tiny glowing mushrooms dot the
+floor.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithered
+skies, cozy and warm.
+Palette: #12172A, #2C3E50, #3FD0C4 with a pink #E86FA8. Mood: mysterious, cozy, quiet.
+Composition: the crystal clusters and their reflection in the pond sits about 52–72% across and 45–65%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.stardew/stardew.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark pixel-art cave walls in deep blue shadow, low detail. New area on the right: the cave continues
+with a faint distant crystal glow. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.stardew/stardew.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The crystals glow at about 52% of the height in the center, with the pond below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Autumn Orchard (`stardew.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.stardew/stardew.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A pixel-art orchard in autumn, with rows of round trees in orange,
+gold and red leaves, fallen leaves scattered across the grass, and a low stone wall. Warm afternoon
+light creates long pixel shadows, and a pale blue sky with a few blocky clouds sits above. A wooden gate
+stands open on a dirt path.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, warm autumn
+light, cozy and warm.
+Palette: #F7E8C4, #F6BB42, #D96B2B with a green #8CC152. Mood: warm, golden, peaceful.
+Composition: the rows of golden trees and the open gate sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.stardew/stardew.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft pixel grass and fallen leaves, low detail. New area on the right: the orchard continues to a faint
+line of hills. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.stardew/stardew.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rows of trees run through the center with the gate at about 58% of the height. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### Escape from Tarkov (`game.tarkov`)
+
+- **Genre:** gritty realism
+- **Setting:** snowy North-European urban decay, foggy forests, an abandoned shoreline resort
+- **Palette:** #5B6057, #9A8F7A, #2E3437, #0F1112
+- **Motifs:** fog over an abandoned resort, a snowy checkpoint, a dead forest at dusk
+- **Avoid:** game title, soldiers, gear, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by gritty realism and North-European
+urban decay, with no people. Think foggy pine forests, an abandoned shoreline resort in mist, snowy empty
+checkpoints and gray apartment blocks at dusk. The palette is faded green-grey (#5B6057), dirty beige
+(#9A8F7A), slate (#2E3437) and near-black (#0F1112). The look is documentary photography with muted,
+desaturated color, heavy fog and cold light. No people, no weapons, no vehicles in focus, no signs, no text.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Fog over the Abandoned Resort (`tarkov.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.tarkov/tarkov.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A large abandoned lakeside resort building with a long flat roof and
+rows of dark windows stands in thick morning fog beside a still, grey water. A line of bare, dead birch
+trees fades into the mist along the shore, and a cracked concrete promenade runs toward the building.
+The sky is a flat pale grey.
+Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+Palette: #5B6057, #9A8F7A, #2E3437 with an accent #0F1112. Mood: bleak, quiet, haunting.
+Composition: the resort building and its reflection in the grey water sits about 54–74% across and
+36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.tarkov/tarkov.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark dead trees and fog along the shore, low detail. New area on the right: the shoreline continues with
+another faint building in the mist. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.tarkov/tarkov.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The resort building stretches at about 48% of the height in the center, with its reflection
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Snowy Checkpoint Barrier (`tarkov.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.tarkov/tarkov.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single plain striped barrier arm rests across an empty,
+snow-covered road, with a small bare booth beside it, under a huge pale grey-white overcast sky. Soft
+snow fills the ground and the horizon dissolves into white mist. Nothing else is in the frame.
+Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+Palette: #F0F1F1, #C9CDD0, #9A8F7A with a barrier in #5B6057. Mood: empty, cold, still.
+Composition: the barrier arm and the booth sits about 60–72% across and 36–64% down; more than 70% of
+the image is empty snow and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.tarkov/tarkov.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale grey-white sky and snow, completely smooth. New area on the right: the road disappears
+into white mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.tarkov/tarkov.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The barrier sits at about 58% of the height in the lower center, with empty pale sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Dead Forest at Dusk (`tarkov.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.tarkov/tarkov.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A dense forest of tall, bare pines and leafless birches at dusk,
+with cold blue fog lying low among the trunks. A thin band of dull orange light glows at the horizon
+between the trees. The ground is covered in thin old snow and dry bracken, and the colors are muted and
+dark.
+Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+Palette: #0F1112, #2E3437, #5B6057 with a dusk glow #C48A4F. Mood: cold, hushed, ominous.
+Composition: the glowing horizon band between the trunks sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.tarkov/tarkov.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark tree trunks in blue-grey fog, low in detail. New area on the right: more trunks fade into dusk fog.
+Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.tarkov/tarkov.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The orange band glows at about 50% of the height at the center, with trunks rising through
+the frame. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Apartment Blocks in Morning Snow (`tarkov.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.tarkov/tarkov.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A row of plain grey concrete apartment blocks stands in fresh
+morning snow under a pale, bright sky. Their windows are dark, a bare tree line stands beside them, and
+a thin layer of mist lies on the ground. The light is soft and cool, and the colors are pale grey, white
+and faded beige.
+Style: documentary photography, desaturated muted color, heavy fog, cold diffused light.
+Palette: #F1F2F2, #CFD3D4, #9A8F7A with a slate #5B6057. Mood: cool, quiet, still.
+Composition: the nearest apartment block and its snowy ground sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, soldiers, weapons, gear, signs, logos, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.tarkov/tarkov.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft white snow and pale sky, low detail. New area on the right: the blocks continue into pale morning
+mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.tarkov/tarkov.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The blocks stand at about 50% of the height in the center, with snow below and pale sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Terraria (`game.terraria`)
+
+- **Genre:** 2D pixel adventure
+- **Setting:** a layered biome cross-section, glowing caverns, a night sky
+- **Palette:** #6AB04C, #3B3B98, #F0932B, #130F40
+- **Motifs:** a surface-to-underworld cross-section, a mushroom-glow cave, a starry surface
+- **Avoid:** game title, bosses, characters, exact sprites, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a 2D pixel-art adventure world,
+with no people or creatures. Think a side-on cross-section of the land from sunlit surface down through
+glowing caverns to a fiery underworld, mushroom-lit caves and a starry night over a grassy surface. All in
+crisp original pixel art with a limited palette and soft dithering. The palette is grass green (#6AB04C),
+indigo (#3B3B98), ember orange (#F0932B) and deep navy (#130F40). Use clean consistent pixel sizes with no
+blur. No characters, no creatures, no emblems, no text. Keep the left edge and the bottom edge calm for
+desktop icons and the taskbar.
+```
+
+#### Surface to Underworld (`terraria.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.terraria/terraria.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A side-on pixel-art cross-section of the land. At the top, a grassy
+surface with round trees under a twilight sky. Below, layers of brown dirt, grey stone and a glowing
+cavern with teal crystals and a pond. At the very bottom, a dark underworld of purple rock with rivers
+of orange lava. Thin vertical shafts connect the layers.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+rich depth.
+Palette: #6AB04C, #3B3B98, #F0932B with an accent #130F40. Mood: adventurous, layered, rich.
+Composition: the glowing cavern in the middle layers sits about 54–74% across and 36–56% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.terraria/terraria.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+pixel-art dark soil and stone layers, low in detail. New area on the right: the layers continue with
+another cave glow far away. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.terraria/terraria.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The cross-section stacks vertically with the glowing cavern at about 52% of the height. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Starry Surface (`terraria.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.terraria/terraria.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A smooth strip of pixel-art grass with one small round tree runs
+along the bottom of a vast, simple, dithered night sky of deep navy and indigo, scattered with a few
+tiny stars and a single crescent moon. The sky fades softly to a faint indigo glow at the horizon.
+Everything else is clean empty pixel color.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+rich depth.
+Palette: #130F40, #2A2780, #6AB04C with a moon #F5F0C8. Mood: quiet, calm, nostalgic.
+Composition: the tree and the crescent moon sits about 60–72% across and 36–64% down; more than 70% of
+the image is empty night sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.terraria/terraria.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty dithered deep navy sky with a few stars. New area on the right: the grass strip continues to a
+faint line of far hills. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.terraria/terraria.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The tree sits at about 70% of the height in the lower center, with the moon at about 25% and
+empty night sky between. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Mushroom Glow Cave (`terraria.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.terraria/terraria.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A pixel-art underground cave filled with giant glowing mushrooms in
+blue, teal and violet, their caps casting soft light on mossy stone and a still pool. Hanging vines and
+tiny drifting spores catch the glow, and the cave walls fade into deep navy darkness at the edges.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+rich depth.
+Palette: #0E0B33, #3B3B98, #4AC2D8 with a violet #9B7BFF. Mood: magical, hushed, glowing.
+Composition: the tallest mushroom cluster and its reflection in the pool sits about 52–72% across and
+45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.terraria/terraria.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark pixel-art cave wall and vines, low detail. New area on the right: more small mushrooms glow faintly
+in the dark. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.terraria/terraria.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The mushroom cluster glows at the center at about 52% of the height, with the pool below.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Sunny Meadow Surface (`terraria.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus-anime · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.terraria/terraria.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A bright pixel-art surface landscape on a sunny day, with rolling
+green hills, round leafy trees, a small pond and a few wooden fence posts. A pale blue dithered sky
+holds a few blocky clouds and a round yellow sun. Soft pixel shadows fall to the right, and everything
+is cheerful and clean.
+Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+rich depth.
+Palette: #E8F4FB, #6AB04C, #F9D56E with a sky #7EC8E3. Mood: sunny, cheerful, simple.
+Composition: the pond and the nearest round tree sits about 54–74% across and 38–58% down. The left 15%
+and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.terraria/terraria.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft pixel-art hills and sky, low in detail. New area on the right: the hills continue to a faint far
+mountain. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.terraria/terraria.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The pond sits at about 62% of the height in the center, with the sunny sky above. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+### THE FINALS (`game.the-finals`)
+
+- **Genre:** virtual game-show arena
+- **Setting:** a sleek glass cityscape mid-destruction, studio light rigs
+- **Palette:** #E9FF00, #FF2E63, #2B2D42, #EDF2F4
+- **Motifs:** floating debris frozen in time, a neon-lit vault glow, studio spotlights
+- **Avoid:** game title, contestants, sponsor text, logos, text, characters, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a virtual game-show arena built
+inside a glass city. Think sleek towers, studio light rigs, dramatic spotlights and architecture frozen
+mid-collapse, with debris floating in the air. The palette is acid yellow (#E9FF00), hot pink (#FF2E63), slate
+(#2B2D42) and cool white (#EDF2F4). The look is a polished 3D render with high contrast, crisp glass
+reflections and glossy highlights. No people, no vehicles, no sponsor logos, no text. Keep the left edge and
+the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Glass City Mid-Collapse (`the-finals.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.the-finals/the-finals.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A sleek glass tower in a futuristic arena city is caught
+mid-collapse, its upper floors cracking and breaking into huge slabs that hang in the air with a cloud
+of frozen glittering debris. Bright studio spotlights sweep across the shards in yellow and pink, and
+the surrounding towers reflect the chaos in their dark glass.
+Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+Palette: #E9FF00, #FF2E63, #2B2D42 with an accent #EDF2F4. Mood: dramatic, electric, frozen.
+Composition: the cracking tower top and the drifting glass slabs sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.the-finals/the-finals.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark glass tower faces with faint reflections, low detail. New area on the right: more towers continue
+into haze with crossing spotlight beams. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.the-finals/the-finals.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The cracking tower rises through the center from 15% to 60% of the height, with debris
+floating around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### One Frozen Shard (`the-finals.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.the-finals/the-finals.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single large slab of glass hangs in the air in the middle of a
+vast, smooth, studio-white gradient background, its edges catching one thin line of acid-yellow light
+and one of hot pink. A soft, round shadow falls on the pale floor far beneath it. Everything else is
+clean, empty space.
+Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+Palette: #EDF2F4, #C9D0D8, #2B2D42 with lines of #E9FF00 and #FF2E63. Mood: minimal, crisp, graphic.
+Composition: the glass slab and its colored edge lines sits about 59–73% across and 35–65% down; more
+than 70% of the image is empty studio space. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.the-finals/the-finals.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty clean white-to-grey studio backdrop, kept calm and low in detail. New area on the right: a few
+tiny glass fragments hanging far away in the haze. Same lighting direction, palette, materials and level
+of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.the-finals/the-finals.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The glass slab hangs in the center at about 45% of the height, with its soft shadow on the
+floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Vault Glow in the Dust (`the-finals.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.the-finals/the-finals.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A deep underground vault chamber with smooth dark walls lit by a
+glowing pink and yellow neon circle on the floor. Dust and sparks drift upward in the light, and a thin
+cone of a studio spotlight cuts down from the ceiling. The walls are glossy slate and reflect the glow.
+Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+Palette: #14141E, #2B2D42, #FF2E63 with a yellow #E9FF00. Mood: tense, glossy, moody.
+Composition: the glowing neon circle and the spotlight cone sits about 52–72% across and 45–65% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.the-finals/the-finals.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark glossy slate wall with faint reflections, kept calm and low in detail. New area on the right: the
+chamber continues into dark with a faint far neon glow. Same lighting direction, palette, materials and
+level of detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.the-finals/the-finals.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The glowing circle sits at the lower center at about 62% of the height, with the spotlight
+cone above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Studio Floodlights at Noon (`the-finals.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.the-finals/the-finals.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. An empty, bright arena stage in soft white light, with huge studio
+floodlight rigs hanging from the ceiling and a smooth glossy floor reflecting them. Small floating glass
+panels in the air catch yellow and pink highlights. The space is clean, airy and calm.
+Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+Palette: #F3F5F8, #D5DAE2, #2B2D42 with a pink #FF2E63. Mood: bright, clean, airy.
+Composition: the hanging floodlight rigs and their reflection sits about 54–74% across and 38–58% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.the-finals/the-finals.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain white stage wall in soft light, low detail. New area on the right: the stage continues with a
+distant glass panel in pale haze. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.the-finals/the-finals.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The floodlight rigs hang at about 30% of the height, with their reflection on the floor
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### VALORANT (`game.valorant`)
+
+- **Genre:** stylized near-future tactical shooter
+- **Setting:** clean sunlit plazas mixing Venetian, Moroccan and Japanese architecture with sleek tech, soft painterly 3D
+- **Palette:** #FF4655, #0F1923, #ECE8E1, #BDBCB7
+- **Motifs:** crisp geometric shadows, a canal city at dusk, a rooftop over a neon-lit bay, a single minimal red accent line
+- **Avoid:** game title, agents, ability effects, the V emblem, logos, text, weapons, UI or HUD elements, characters
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a stylized near-future tactical
+world. Think clean, sunlit plazas where Venetian canals, Moroccan arches and Japanese rooflines meet sleek
+white tech, rendered in a soft painterly 3D look with crisp geometric shadows. The palette is deep navy
+(#0F1923), warm off-white (#ECE8E1) and cool grey (#BDBCB7), with a single vivid coral-red accent line
+(#FF4655) per image. The mood is calm, precise and modern. No people, no weapons, no emblems, no text. Keep
+the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Canal Plaza at Dusk (`valorant.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.valorant/valorant.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A near-future canal city at dusk. White arched walkways and a slim
+curved bridge cross a still waterway, their clean edges catching the last warm light while deep navy
+shadow fills the arches. A single thin coral-red light line runs along one bridge railing. Soft glowing
+windows reflect in the water, and a pale lavender sky fades into navy above.
+Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+clean and modern.
+Palette: #FF4655, #0F1923, #ECE8E1 with an accent #BDBCB7. Mood: calm, precise, elegant.
+Composition: the curved bridge and its red light line sits about 54–74% across and 36–56% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.valorant/valorant.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+calm navy water and a quiet white wall in soft shadow. New area on the right: more arched walkways and a
+distant lit tower fading into dusk haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.valorant/valorant.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The bridge arcs across the center at about 50% of the height, with its reflection in the
+canal below and dusk sky above. Same lighting, palette, materials and rendering style. Keep the bottom
+10% calm. Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Single Red Line (`valorant.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.valorant/valorant.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast, smooth warm off-white wall fills the frame, with soft, crisp
+geometric shadows of unseen arches falling across it. Right of center, a single thin coral-red line runs
+vertically from the middle of the wall to the floor, like a thread of light. The floor is pale grey
+stone with a faint reflection. Everything else is clean empty space.
+Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+clean and modern.
+Palette: #ECE8E1, #BDBCB7, #8D8F94 with the line in #FF4655. Mood: minimal, calm, modern.
+Composition: the red line and the edge of the arch shadow sits about 60–72% across and 30–70% down; more
+than 70% of the image is plain wall and floor. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, emblems, text, weapons, people, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.valorant/valorant.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a plain off-white wall with soft, faint shadows. New area on the right: the wall continues and the arch
+shadows gently soften. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.valorant/valorant.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The red line runs vertically through the center from 30% to 70% of the height, with a soft
+arch shadow beside it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Rooftop over the Bay (`valorant.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.valorant/valorant.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A quiet rooftop terrace at night above a harbor bay. White parapet
+walls and a low bench catch the glow of soft neon signage that is only abstract colored light, in deep
+navy and coral. Far below, boats and bridges are small points of warm light on dark water, and a pale
+haze lifts from the surface.
+Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+clean and modern.
+Palette: #0F1923, #1D3042, #BDBCB7 with a glow #FF4655. Mood: cool, still, moody.
+Composition: the parapet corner and the glowing bay beyond sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, readable signs, text, weapons, people, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.valorant/valorant.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a dark, softly lit wall and parapet, low in detail. New area on the right: the bay widens into a haze of
+distant lights and a faint dark horizon. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.valorant/valorant.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The parapet corner sits at about 60% of the height with the glowing bay stretching away above
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Sunlit Arcade (`valorant.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.valorant/valorant.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A long, sunlit arcade of white pointed arches in a sleek near-future
+plaza, shot in bright morning light. Each arch frames a slice of pale blue sky, and crisp shadows fall
+diagonally across smooth stone tiles. A single narrow strip of coral-red tile marks the center of the
+floor, running toward the distance.
+Style: stylized painterly 3D architectural render, soft global illumination, crisp geometric shadows,
+clean and modern.
+Palette: #F1EEE8, #D3D2CE, #9DB4C8 with an accent #FF4655. Mood: bright, orderly, fresh.
+Composition: the nearest arch and the red tile strip sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, crosshairs, graffiti text, team insignia, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.valorant/valorant.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+plain sunlit white wall with soft shadow, low detail. New area on the right: more arches recede into
+pale haze with a hint of a canal. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.valorant/valorant.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arcade recedes through the center, the nearest arch spanning 25% to 75% of the height.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### Warframe (`game.warframe`)
+
+- **Genre:** space-ninja sci-fi
+- **Setting:** organic-tech orbiters, gas-giant vistas, ancient gold-white palatial architecture
+- **Palette:** #E0C589, #2E6F95, #C1C7CF, #0A0C10
+- **Motifs:** a gas giant seen from an orbiter window, golden ruins in the void
+- **Avoid:** game title, frames, characters, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by an elegant space-ninja
+science-fiction world, with no people or armor. Think a quiet organic-tech ship interior with a huge window
+onto a gas giant, ancient gold-and-white palatial architecture floating in the void, and calm cosmic vistas.
+The palette is warm gold (#E0C589), deep blue (#2E6F95), silver (#C1C7CF) and space black (#0A0C10). The look
+is polished cinematic concept art with sleek curves, soft rim light and a calm, refined mood. No figures, no
+armor, no weapons, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+taskbar.
+```
+
+#### Gas Giant from the Window (`warframe.hero-01`)
+
+hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.warframe/warframe.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The quiet interior of an organic-tech ship, with smooth curved ribs
+in silver and gold, looking out through a huge arched window at a banded blue-and-cream gas giant
+filling the sky. Soft light from the planet washes across the floor and the curved walls, and a thin
+ring of golden light traces the window's edge. The room is empty and still.
+Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+Palette: #E0C589, #2E6F95, #C1C7CF with an accent #0A0C10. Mood: calm, vast, elegant.
+Composition: the gas giant framed by the arched window sits about 54–74% across and 36–56% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.warframe/warframe.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark curved silver-gold wall ribs in soft shadow. New area on the right: more curved ribs and a faint
+second window glow. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.warframe/warframe.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The window arch rises through the center from 15% to 70% of the height, with the gas giant
+glowing inside it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Golden Ruin in the Void (`warframe.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.warframe/warframe.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A single small, ancient gold-and-white palatial arch floats in the
+middle of a vast, smooth, black void, lit by a thin warm rim light from one side and a faint blue glow
+from the other. A few tiny stars scatter across the darkness. Nothing else is in the frame.
+Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+Palette: #0A0C10, #1A2333, #E0C589 with a blue #2E6F95. Mood: quiet, solemn, elegant.
+Composition: the floating arch and its rim light sits about 59–73% across and 35–65% down; more than 70%
+of the image is empty black space. The left 15% and the bottom 8% stay calm and low-detail (desktop
+icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.warframe/warframe.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty deep black space with a few tiny stars. New area on the right: a faint distant second fragment
+of gold in the dark. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.warframe/warframe.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The arch floats at about 48% of the height in the center, with empty black space around it.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Palace Hall in the Void (`warframe.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.warframe/warframe.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A vast, empty palatial hall of white and gold columns drifting in
+deep space, its long floor reflecting a faint blue light from a distant planet. Dust and tiny golden
+motes float through the shafts of cold light, and the far end of the hall dissolves into black. The
+architecture is smooth, ancient and ornate.
+Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+Palette: #0A0C10, #2A3040, #E0C589 with a blue #2E6F95. Mood: hushed, ancient, vast.
+Composition: the long hall floor and its reflection of the blue light sits about 52–72% across and
+45–65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+there). Keep every important element inside the central 80% of the width and the middle 70% of the
+height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.warframe/warframe.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark gold-white columns fading into black, kept calm and low in detail. New area on the right: the hall
+continues into black with a faint far arch. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.warframe/warframe.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The hall runs up the center to a vanishing point at about 45% of the height, with the
+reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+Strictly no text, letters, logos, watermarks or UI.
+```
+
+#### Orbiter Dawn Over the Planet (`warframe.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.warframe/warframe.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A bright view from a ship's curved window of a gas giant at dawn,
+with banded pale blue, cream and rose clouds and a thin line of golden sunrise across its limb. The
+window frame is smooth white and gold, and a soft glow fills the room. Everything is calm, clean and
+luminous.
+Style: polished cinematic sci-fi concept art, sleek organic curves, soft rim light, calm and refined.
+Palette: #F6F1E4, #E0C589, #9CC0D8 with a rose #D9A9A0. Mood: bright, calm, luminous.
+Composition: the sunrise line across the planet limb sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.warframe/warframe.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a soft white-gold curved wall in even light, low detail. New area on the right: the window frame
+continues with a pale reflection. Same lighting direction, palette, materials and level of detail. No
+seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.warframe/warframe.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The planet limb crosses the center at about 50% of the height, with the window frame around
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+### World of Warcraft (`game.wow`)
+
+- **Genre:** stylized high-fantasy MMO
+- **Setting:** floating lands, a glowing elven forest at night, a colossal stone fortress
+- **Palette:** #F8B700, #148B9C, #3C5A2B, #1A1A2E
+- **Motifs:** a moonwell glow in a forest, floating isles at dawn, a harbor city at sunset
+- **Avoid:** game title, races, characters, faction crests, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by a stylized high-fantasy world,
+with no people or creatures. Think floating islands at dawn, a glowing forest at night with a still pool of
+pale blue light, a colossal stone fortress on a cliff and a harbor city at sunset. The palette is golden amber
+(#F8B700), deep teal (#148B9C), forest green (#3C5A2B) and midnight (#1A1A2E). The look is chunky, painterly
+game-concept art with slightly exaggerated shapes, bold light and warm adventure. No figures, no emblems, no
+text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Floating Isles at Dawn (`wow.hero-01`)
+
+hero · light · setup: white, wood · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wow/wow.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Several large floating islands of green grass and chunky pale rock
+drift through a sky of gold and rose at dawn, with waterfalls of mist pouring from their edges into a
+sea of glowing clouds. A small stone tower with a pointed roof stands on the nearest isle. Warm sun rays
+fan out from the horizon, and layers of golden haze fill the distance.
+Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+color.
+Palette: #F8B700, #148B9C, #3C5A2B with an accent #1A1A2E. Mood: adventurous, warm, luminous.
+Composition: the nearest isle with its stone tower and waterfall sits about 54–74% across and 36–56%
+down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+every important element inside the central 80% of the width and the middle 70% of the height so the
+image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wow/wow.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft golden clouds and haze, low in detail. New area on the right: more floating isles drift into the
+golden haze far away. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wow/wow.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The nearest isle floats at about 45% of the height in the center, with clouds below and
+sunrays above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+no text, letters, logos, watermarks or UI.
+```
+
+#### Moonwell in the Forest (`wow.minimal-01`)
+
+minimal · dark · setup: black, rgb · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wow/wow.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A still, round pool glows pale teal-blue at the center of a dark
+forest clearing, its light rising in a soft column through a gap in the canopy. A few tiny motes of
+light drift above it. The surrounding trees are simple dark green silhouettes, and the sky above is a
+smooth deep midnight gradient.
+Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+color.
+Palette: #1A1A2E, #1F3B2E, #148B9C with a glow #CFF4F0. Mood: quiet, magical, serene.
+Composition: the glowing pool and the light column above it sits about 60–72% across and 32–68% down;
+more than 70% of the image is dark forest and sky. The left 15% and the bottom 8% stay calm and
+low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wow/wow.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark green forest silhouettes in deep shadow, low in detail. New area on the right: more silhouetted
+trunks fade into a deep midnight haze. Same lighting direction, palette, materials and level of detail.
+No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wow/wow.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The pool glows at about 62% of the height in the lower center, with the light column rising
+above it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+#### Harbor City at Sunset (`wow.mood-01`)
+
+mood · mid · setup: wood, black · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wow/wow.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A harbor city of tall timber-and-stone buildings climbs a hillside
+above a calm bay at sunset, with big sails folded on the quay boats and warm golden windows in the
+towers. A huge round tower rises in the center, and the sky is a rich band of amber, rose and teal. The
+water mirrors the colors in soft ripples.
+Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+color.
+Palette: #1A1A2E, #148B9C, #F8B700 with a rose #D9738B. Mood: warm, lively, golden.
+Composition: the central tower and the glowing windows sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, flags with emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wow/wow.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark teal bay water with soft reflections, low detail. New area on the right: the hillside city
+continues around the bay into golden haze. Same lighting direction, palette, materials and level of
+detail. No seams, no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wow/wow.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The central tower rises at about 42% of the height, with its reflection in the bay below.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Fortress on the Cliff (`wow.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wow/wow.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A colossal stone fortress with round towers and heavy walls stands
+on a sunlit cliff above a green valley at midday. Pale blue sky and soft clouds frame it, and a thin
+river winds through the valley below. The stone is warm tan, with a few mossy patches and a plain
+roofline.
+Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+color.
+Palette: #F4EAD0, #F8B700, #7DA06A with a sky #9CC7D6. Mood: grand, bright, sturdy.
+Composition: the fortress towers and the sunlit cliff face sits about 54–74% across and 38–58% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wow/wow.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+a soft green valley and river in warm light, low detail. New area on the right: the cliffs continue to a
+faint far mountain in haze. Same lighting direction, palette, materials and level of detail. No seams,
+no repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wow/wow.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The fortress rises at about 45% of the height in the center, with the valley below and sky
+above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
+```
+
+### Black Myth: Wukong (`game.wukong`)
+
+- **Genre:** Chinese mythology action
+- **Setting:** misty karst mountains, ancient temples, autumn maples, golden clouds
+- **Palette:** #C79A3A, #8E2C1F, #5A6B4E, #121212
+- **Motifs:** a temple on a karst peak, a maple valley in mist, a golden cloud sea
+- **Avoid:** game title, the monkey-king figure, the staff, characters, logos, text, UI or HUD elements
+
+**Style bible** (paste first):
+
+```text
+We are creating a cohesive series of premium desktop wallpapers inspired by Chinese mythology landscapes, with
+no people or creatures. Think misty karst mountains with tiny temples on their peaks, autumn maple valleys,
+golden sunlit cloud seas and ancient stone stairs. The palette is gold (#C79A3A), lacquer red (#8E2C1F), pine
+green (#5A6B4E) and ink black (#121212). The look is a cinematic blend of ink-wash mountain painting and rich
+photographic realism, with layered mist and warm golden light. No figures, no weapons, no emblems, no text.
+Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+```
+
+#### Temple on a Karst Peak (`wukong.hero-01`)
+
+hero · mid · setup: wood, black · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wukong/wukong.hero-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A tall karst peak of dark grey rock rises from a sea of white mist,
+crowned with a small tiered temple with red pillars and curved golden-tiled roofs. Twisted pines cling
+to its cliffs, and a thin stone stair climbs the side. Behind, more peaks fade in layers of ink-wash
+grey and gold, and warm sunlight lights the mist from the right.
+Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+golden light.
+Palette: #C79A3A, #8E2C1F, #5A6B4E with an accent #121212. Mood: serene, mythic, majestic.
+Composition: the temple on the peak and the stair beneath it sits about 54–74% across and 36–56% down.
+The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wukong/wukong.hero-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft layered mist and pale peaks, low in detail. New area on the right: more karst peaks rise from the
+mist into golden haze. Same lighting direction, palette, materials and level of detail. No seams, no
+repeated or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wukong/wukong.hero-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The peak and temple rise at the center from 20% to 65% of the height, with mist below. Same
+lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+logos, watermarks or UI.
+```
+
+#### Golden Cloud Sea (`wukong.minimal-01`)
+
+minimal · light · setup: white, wood · focal 0.66, 0.50 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wukong/wukong.minimal-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A smooth sea of white and golden cloud stretches to a faint horizon
+under a vast, empty, pale gold and cream sky. A single tiny dark pine-topped rock pokes through the
+cloud at the right, like an island. A soft sun glow lies low at the horizon. Everything else is clean,
+empty color.
+Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+golden light.
+Palette: #FBF1D6, #E8C96A, #C79A3A with a rock #3A3A38. Mood: serene, spacious, bright.
+Composition: the small rock island in the cloud sea sits about 60–72% across and 36–64% down; more than
+70% of the image is empty cloud sea and sky. The left 15% and the bottom 8% stay calm and low-detail
+(desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+and the middle 70% of the height so the image can be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wukong/wukong.minimal-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+an empty pale gold sky and soft cloud, completely smooth. New area on the right: a second tiny peak far
+away in the haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wukong/wukong.minimal-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The rock stands at about 62% of the height in the lower center, with empty golden sky above.
+Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Maple Valley in Mist (`wukong.mood-01`)
+
+mood · dark · setup: black, rgb · focal 0.62, 0.55 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wukong/wukong.mood-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A deep mountain valley full of autumn maples in deep red and amber,
+wrapped in drifting mist, with a narrow stream and an old stone bridge with a red rail. A faint warm sun
+glows through the fog above the ridge. The colors are rich but muted, and the air is calm.
+Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+golden light.
+Palette: #1A1512, #5A6B4E, #8E2C1F with a gold #C79A3A. Mood: quiet, rich, hazy.
+Composition: the stone bridge and the red maples beside it sits about 52–72% across and 45–65% down. The
+left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wukong/wukong.mood-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+dark pine slopes in soft mist, low in detail. New area on the right: more maples and mist recede into
+the valley. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wukong/wukong.mood-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The bridge sits at about 58% of the height in the center, with the misty valley rising above
+it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+letters, logos, watermarks or UI.
+```
+
+#### Ancient Stair at Dawn (`wukong.alt-01`)
+
+alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+
+**Landscape (L)**: save as `art/raw/game.wukong/wukong.alt-01_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. A long ancient stone stair climbs a green mountainside toward a
+distant pavilion, with pale gold dawn light across the steps and thin mist drifting between old pines. A
+calm cloud sea fills the valley below, and soft pink light touches the peaks beyond. The air is clear
+and bright.
+Style: cinematic landscape blending ink-wash painting and photographic realism, layered mist, warm
+golden light.
+Palette: #F7EBD0, #C79A3A, #8DA37A with a rose #C98B7A. Mood: peaceful, luminous, ancient.
+Composition: the stair and the pavilion at its top sits about 54–74% across and 38–58% down. The left
+15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+important element inside the central 80% of the width and the middle 70% of the height so the image can
+be cropped to other screen shapes.
+Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+banding-free gradients; no noise, no vignette, no border or frame.
+Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+title, logos, characters, emblems, text, UI or HUD elements.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.wukong/wukong.alt-01_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+soft green slope and pale mist, low in detail. New area on the right: the mountains continue into
+pink-gold haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+or mirrored objects, no text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/game.wukong/wukong.alt-01_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+wallpaper. The stair climbs the center toward the pavilion at about 40% of the height, with cloud sea
+below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+text, letters, logos, watermarks or UI.
 ```

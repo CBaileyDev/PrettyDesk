@@ -1,0 +1,188 @@
+pack: game.stardew
+kind: game
+title: "Stardew Valley"
+inspiration:
+  genre: "cozy pixel-art farm valley"
+  setting: "a seasonal farm, a small town, glowing mines"
+  palette: ["#8CC152", "#F6BB42", "#A0522D", "#2C3E50"]
+  motifs: [a pixel farm at dawn, an autumn orchard, a snowy cabin at night]
+  avoid: [game title, characters, exact sprites, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a cozy pixel-art farm valley, with
+  no people or animals. Think a small farm at dawn, an autumn orchard, a snowy cabin at night and glowing cave
+  crystals, all in crisp original pixel art with a limited warm palette, soft pixel dithering in the skies and a
+  gentle, homely mood. The palette is grass green (#8CC152), sunny yellow (#F6BB42), wood brown (#A0522D) and
+  night blue (#2C3E50). Use clean, consistent pixel sizes and no anti-aliased blur. No characters, no animals,
+  no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: stardew.hero-01
+    title: "Farm at Dawn"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [farm, dawn, pixel-art]
+    accent: "#8CC152"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pixel-art farm valley at dawn, with a small wooden farmhouse and a
+        red-roofed barn on a green hill, neat rows of crops in soft brown soil, and a fenced pasture. A winding
+        dirt path leads down to a pond with lily pads. The sky is a dithered gradient of pink, peach and pale
+        blue, and rolling hills fade into a lavender haze.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithered
+        skies, cozy and warm.
+        Palette: #8CC152, #F6BB42, #A0522D with an accent #2C3E50. Mood: cozy, peaceful, warm.
+        Composition: the farmhouse and the barn on the hill sits about 54–74% across and 36–56% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        pixel-art green hills and soft sky, low in detail. New area on the right: the valley continues with a
+        faint far hill and a tiny windmill. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The farmhouse sits at about 50% of the height in the center, with fields below and the dawn
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: stardew.minimal-01
+    title: "Lone Cabin in Snow"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, cabin, snow]
+    accent: "#8CC152"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tiny pixel-art wooden cabin with a snow-covered roof and
+        one warm yellow lit window stands alone on a smooth snowy hill, under a vast, simple, dithered night sky
+        of deep blue with a few tiny stars. A thin ribbon of chimney smoke rises. Everything else is clean,
+        empty pixel color.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithering,
+        cozy and warm.
+        Palette: #1E2A3A, #2C3E50, #E8F0F8 with a window #F6BB42. Mood: quiet, cozy, still.
+        Composition: the cabin and its lit window sits about 60–72% across and 36–64% down; more than 70% of the
+        image is empty night sky and snow. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty dithered deep-blue night sky with a few stars. New area on the right: a faint line of pixel
+        pine trees on a far hill. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cabin sits at about 62% of the height in the lower center, with the empty night sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: stardew.mood-01
+    title: "Glowing Crystal Cave"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cave, crystals, pixel-art]
+    accent: "#8CC152"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pixel-art underground cave with stepped stone walls in dark blue
+        and purple-grey, lit by clusters of glowing teal and pink crystals. A small pond reflects the glow, and
+        a few wooden mine supports and a quiet minecart track lead into the dark. Tiny glowing mushrooms dot the
+        floor.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, soft dithered
+        skies, cozy and warm.
+        Palette: #12172A, #2C3E50, #3FD0C4 with a pink #E86FA8. Mood: mysterious, cozy, quiet.
+        Composition: the crystal clusters and their reflection in the pond sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark pixel-art cave walls in deep blue shadow, low detail. New area on the right: the cave continues
+        with a faint distant crystal glow. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The crystals glow at about 52% of the height in the center, with the pond below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: stardew.alt-01
+    title: "Autumn Orchard"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [orchard, autumn, pixel-art]
+    accent: "#8CC152"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pixel-art orchard in autumn, with rows of round trees in orange,
+        gold and red leaves, fallen leaves scattered across the grass, and a low stone wall. Warm afternoon
+        light creates long pixel shadows, and a pale blue sky with a few blocky clouds sits above. A wooden gate
+        stands open on a dirt path.
+        Style: detailed original pixel art with a limited palette, clean consistent pixel sizes, warm autumn
+        light, cozy and warm.
+        Palette: #F7E8C4, #F6BB42, #D96B2B with a green #8CC152. Mood: warm, golden, peaceful.
+        Composition: the rows of golden trees and the open gate sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pixel grass and fallen leaves, low detail. New area on the right: the orchard continues to a faint
+        line of hills. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rows of trees run through the center with the gate at about 58% of the height. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

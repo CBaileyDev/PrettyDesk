@@ -1,0 +1,182 @@
+pack: game.the-finals
+kind: game
+title: "THE FINALS"
+inspiration:
+  genre: "virtual game-show arena"
+  setting: "a sleek glass cityscape mid-destruction, studio light rigs"
+  palette: ["#E9FF00", "#FF2E63", "#2B2D42", "#EDF2F4"]
+  motifs: [floating debris frozen in time, a neon-lit vault glow, studio spotlights]
+  avoid: [game title, contestants, sponsor text, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a virtual game-show arena built
+  inside a glass city. Think sleek towers, studio light rigs, dramatic spotlights and architecture frozen
+  mid-collapse, with debris floating in the air. The palette is acid yellow (#E9FF00), hot pink (#FF2E63), slate
+  (#2B2D42) and cool white (#EDF2F4). The look is a polished 3D render with high contrast, crisp glass
+  reflections and glossy highlights. No people, no vehicles, no sponsor logos, no text. Keep the left edge and
+  the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: the-finals.hero-01
+    title: "Glass City Mid-Collapse"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [glass, tower, debris]
+    accent: "#E9FF00"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sleek glass tower in a futuristic arena city is caught
+        mid-collapse, its upper floors cracking and breaking into huge slabs that hang in the air with a cloud
+        of frozen glittering debris. Bright studio spotlights sweep across the shards in yellow and pink, and
+        the surrounding towers reflect the chaos in their dark glass.
+        Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+        Palette: #E9FF00, #FF2E63, #2B2D42 with an accent #EDF2F4. Mood: dramatic, electric, frozen.
+        Composition: the cracking tower top and the drifting glass slabs sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark glass tower faces with faint reflections, low detail. New area on the right: more towers continue
+        into haze with crossing spotlight beams. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cracking tower rises through the center from 15% to 60% of the height, with debris
+        floating around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: the-finals.minimal-01
+    title: "One Frozen Shard"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, glass, studio]
+    accent: "#E9FF00"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single large slab of glass hangs in the air in the middle of a
+        vast, smooth, studio-white gradient background, its edges catching one thin line of acid-yellow light
+        and one of hot pink. A soft, round shadow falls on the pale floor far beneath it. Everything else is
+        clean, empty space.
+        Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+        Palette: #EDF2F4, #C9D0D8, #2B2D42 with lines of #E9FF00 and #FF2E63. Mood: minimal, crisp, graphic.
+        Composition: the glass slab and its colored edge lines sits about 59–73% across and 35–65% down; more
+        than 70% of the image is empty studio space. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty clean white-to-grey studio backdrop, kept calm and low in detail. New area on the right: a few
+        tiny glass fragments hanging far away in the haze. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glass slab hangs in the center at about 45% of the height, with its soft shadow on the
+        floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: the-finals.mood-01
+    title: "Vault Glow in the Dust"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [vault, neon, dust]
+    accent: "#E9FF00"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A deep underground vault chamber with smooth dark walls lit by a
+        glowing pink and yellow neon circle on the floor. Dust and sparks drift upward in the light, and a thin
+        cone of a studio spotlight cuts down from the ceiling. The walls are glossy slate and reflect the glow.
+        Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+        Palette: #14141E, #2B2D42, #FF2E63 with a yellow #E9FF00. Mood: tense, glossy, moody.
+        Composition: the glowing neon circle and the spotlight cone sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark glossy slate wall with faint reflections, kept calm and low in detail. New area on the right: the
+        chamber continues into dark with a faint far neon glow. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glowing circle sits at the lower center at about 62% of the height, with the spotlight
+        cone above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: the-finals.alt-01
+    title: "Studio Floodlights at Noon"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [studio, lights, bright]
+    accent: "#E9FF00"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty, bright arena stage in soft white light, with huge studio
+        floodlight rigs hanging from the ceiling and a smooth glossy floor reflecting them. Small floating glass
+        panels in the air catch yellow and pink highlights. The space is clean, airy and calm.
+        Style: polished 3D render, high-contrast studio lighting, glossy glass reflections, dramatic and clean.
+        Palette: #F3F5F8, #D5DAE2, #2B2D42 with a pink #FF2E63. Mood: bright, clean, airy.
+        Composition: the hanging floodlight rigs and their reflection sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain white stage wall in soft light, low detail. New area on the right: the stage continues with a
+        distant glass panel in pale haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The floodlight rigs hang at about 30% of the height, with their reflection on the floor
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,184 @@
+pack: game.destiny2
+kind: game
+title: "Destiny 2"
+inspiration:
+  genre: "mythic sci-fi"
+  setting: "golden-age space architecture, ring-planet vistas, rusted colony ships in snow"
+  palette: ["#E9E5DA", "#3A6EA5", "#D4A84B", "#0F1218"]
+  motifs: [a ruined launch site in snow, a ring-planet sunrise, an ancient vault in a jungle]
+  avoid: [game title, the giant white sphere, Guardians, ships by design, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a mythic science-fiction world,
+  with no people. Think ruined launch towers and rusted colony vessels half-buried in snow, ring-planet vistas
+  at sunrise, ancient geometric vaults in jungles and sweeping golden-age architecture left to decay. The
+  palette is bone white (#E9E5DA), steel blue (#3A6EA5), antique gold (#D4A84B) and deep space black (#0F1218).
+  The look is cinematic concept art with epic scale, clean light and quiet awe. No figures, no creatures, no
+  emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: destiny2.hero-01
+    title: "Ring Planet Sunrise"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [planet, tower, snow]
+    accent: "#E9E5DA"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A ruined launch tower of weathered white metal stands on a frozen
+        plain, with a vast ring-planet rising on the horizon and flooding the sky with gold and steel-blue
+        light. The rings cut a thin bright arc across the sky, and snowdrifts bury the tower's base. A rusted,
+        broken colony hull lies half-covered in snow to the left.
+        Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+        Palette: #E9E5DA, #3A6EA5, #D4A84B with an accent #0F1218. Mood: awe-inspiring, quiet, mythic.
+        Composition: the launch tower silhouetted against the rising ring planet sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark blue snowdrifts in soft shadow, low detail. New area on the right: the plain continues to a distant
+        ridge under thin glowing rings. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower rises at the center from 25% to 70% of the height, with the ring planet glowing
+        behind it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: destiny2.minimal-01
+    title: "Ring Arc over the Snow"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, ring, snow]
+    accent: "#E9E5DA"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single thin, razor-clean arc of planetary ring spans a vast,
+        smooth gradient sky from deep space black at the top to a faint steel-blue glow at the horizon. Below, a
+        flat white snow plain meets the sky at a low, clean horizon. A tiny lone rusted spire stands far off.
+        Everything else is empty.
+        Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+        Palette: #0F1218, #1C2A40, #E9E5DA with a gold #D4A84B. Mood: quiet, cold, vast.
+        Composition: the ring arc and the tiny spire below it sits about 56–76% across and 38–62% down; more
+        than 70% of the image is empty sky and snow. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty black-to-blue sky, completely smooth and without stars. New area on the right: the snow plain
+        continues to a faint pale horizon. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ring arc curves across the upper center at about 35% of the height, with the snow plain
+        filling the bottom third. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: destiny2.mood-01
+    title: "Vault in the Jungle"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [vault, jungle, mystery]
+    accent: "#E9E5DA"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An ancient geometric vault of pale stone and gold-etched lines,
+        half-swallowed by dark jungle, with its huge doorway glowing soft blue in the gloom. Thick roots and
+        giant ferns frame it, and drifting mist and floating pollen catch the light. The rest is deep
+        green-black shadow.
+        Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+        Palette: #0F1218, #1B2E26, #3A6EA5 with a gold #D4A84B. Mood: mysterious, quiet, ancient.
+        Composition: the glowing doorway and the stone around it sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, glyphs, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark jungle foliage in green-black shadow, low detail. New area on the right: more roots and ferns fade
+        into dark mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The doorway glows at the center at about 52% of the height, with roots and ferns around it.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: destiny2.alt-01
+    title: "Colony Ship in Morning Snow"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [ship, snow, morning]
+    accent: "#E9E5DA"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A huge rusted colony vessel lies half-buried in a bright,
+        wind-carved snowfield at morning, its hull rising like a cliff. Pale golden light rakes across the snow,
+        and soft blue shadows pool in the drifts. The sky is a clean pale blue with a faint ring arc low on the
+        horizon.
+        Style: cinematic sci-fi concept art, epic scale, clean directional light, quiet awe.
+        Palette: #F4F2EC, #BFD0E3, #D4A84B with a rust #8A5A3C. Mood: calm, bright, vast.
+        Composition: the half-buried hull and its long shadow sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth white snow with soft blue shadows, low detail. New area on the right: the snowfield continues to
+        a faint far ridge. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The hull rises at about 48% of the height in the center, with snow below and pale sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

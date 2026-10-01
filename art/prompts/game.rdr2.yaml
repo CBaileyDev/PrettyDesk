@@ -1,0 +1,186 @@
+pack: game.rdr2
+kind: game
+title: "Red Dead Redemption 2"
+inspiration:
+  genre: "American frontier, 1899"
+  setting: "misty mountains, golden plains, bayou swamp, a campfire"
+  palette: ["#A33B20", "#D9B26F", "#4F5D2F", "#1C1A17"]
+  motifs: [a tiny lone rider silhouette, plains at dawn, a foggy bayou, a snowy pass]
+  avoid: [game title, faces, logos, the poster red background style, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by the American frontier of the late
+  1800s. Think misty mountains, golden plains at dawn, a foggy bayou with mossy trees, a snowy pass and a small
+  campfire in the dark, in a warm, dusty, cinematic photographic look. The palette is brick red (#A33B20), wheat
+  gold (#D9B26F), moss green (#4F5D2F) and charcoal brown (#1C1A17). The mood is quiet, vast and nostalgic. At
+  most one tiny anonymous silhouette for scale, no faces, no weapons, no emblems, no text. Keep the left edge
+  and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: rdr2.hero-01
+    title: "Plains at Dawn"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [plains, dawn, frontier]
+    accent: "#A33B20"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast golden prairie at dawn under a huge sky of pink, gold and
+        soft blue clouds, with a line of misty blue mountains on the far horizon. Tall grass ripples in warm
+        backlight, and a single winding dirt trail leads toward the mountains. A tiny lone rider on a horse is a
+        distant dark silhouette on the trail.
+        Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+        nostalgic.
+        Palette: #A33B20, #D9B26F, #4F5D2F with an accent #1C1A17. Mood: vast, quiet, nostalgic.
+        Composition: the sunrise glow above the mountains and the trail leading to it sits about 54–74% across
+        and 36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, faces, weapons, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden grass and a pale pink sky, low in detail. New area on the right: the plains continue with a
+        faint dark line of distant trees. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The trail winds up the center to the mountains at about 48% of the height, with the glowing
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rdr2.minimal-01
+    title: "Lone Rider on the Ridge"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, rider, sky]
+    accent: "#A33B20"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tiny silhouette of a rider on horseback stands on a smooth,
+        distant ridge against an enormous, empty sky that fades from pale gold at the horizon to soft blue-grey
+        above. A thin line of low golden grass runs along the bottom. Nothing else is in the frame.
+        Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+        nostalgic.
+        Palette: #F3E2BA, #D9B26F, #8C98A6 with the rider in #1C1A17. Mood: solitary, calm, nostalgic.
+        Composition: the tiny rider on the ridge sits about 61–71% across and 38–62% down; more than 70% of the
+        image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+        go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, faces, weapons, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty pale gold-to-blue sky, completely smooth and clean. New area on the right: the ridge dips away
+        to a faint hazy horizon. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rider stands at about 62% of the height in the lower center, with an enormous empty sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rdr2.mood-01
+    title: "Foggy Bayou"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [bayou, fog, swamp]
+    accent: "#A33B20"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A still bayou in thick morning fog, with old cypress trunks rising
+        from dark water and long curtains of grey moss hanging from the branches. A faint warm light glows
+        through the fog, reflected in the water in a soft golden column. The water is dark green-brown, and a
+        broken wooden jetty fades into the mist.
+        Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+        nostalgic.
+        Palette: #1C1A17, #3A4630, #4F5D2F with a glow #D9B26F. Mood: damp, hushed, mysterious.
+        Composition: the glowing fog column and its reflection sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, faces, weapons, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark green-brown water and fog, low in detail. New area on the right: more cypress trunks and hanging
+        moss fade into thick fog. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glowing column of fog rises at the center from 30% to 65% of the height, with its
+        reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rdr2.alt-01
+    title: "Snowy Pass at Noon"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [snow, pass, mountains]
+    accent: "#A33B20"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A high mountain pass blanketed in snow under a pale, bright sky,
+        with dark pine trees dusted white along the slopes and a thin winding trail in the snow. Soft light
+        falls across the ridges, and a few wisps of cloud touch the peaks. The scene is quiet, crisp and cold.
+        Style: cinematic landscape photography with a warm period look, dusty haze, gentle clarity, vast and
+        nostalgic.
+        Palette: #F2F4F6, #C9D6E3, #7C8FA3 with a pine #3C4A38. Mood: crisp, calm, vast.
+        Composition: the trail through the pass and the nearest pines sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, faces, weapons, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth white snow with soft blue shadows, low detail. New area on the right: the pass opens to far peaks
+        in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The trail winds up the center to a gap between peaks at about 45% of the height. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

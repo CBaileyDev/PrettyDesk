@@ -1,0 +1,188 @@
+pack: game.genshin
+kind: game
+title: "Genshin Impact"
+inspiration:
+  genre: "anime cel-shaded fantasy open world"
+  setting: "floating islands, windmills on green hills, a lantern-lit mountain town"
+  palette: ["#4FB3BF", "#F2D398", "#8DC26F", "#2A3B4C"]
+  motifs: [windmill hills at golden hour, a lantern festival on water, a crystal lake]
+  avoid: [game title, characters, the seven statues, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by an anime-style fantasy open world.
+  Think rolling green hills with windmills, floating islands, a lantern-lit mountain town and a crystal-clear
+  lake, all in a clean cel-shaded painting style with soft, luminous skies and gentle color. The palette is teal
+  (#4FB3BF), warm cream-gold (#F2D398), fresh green (#8DC26F) and deep slate blue (#2A3B4C). The mood is
+  peaceful, adventurous and bright. No people, no creatures, no emblems, no text. Keep the left edge and the
+  bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: genshin.hero-01
+    title: "Windmill Hills at Golden Hour"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [windmill, hills, golden-hour]
+    accent: "#4FB3BF"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sweeping landscape of rolling emerald hills at golden hour, with a
+        few white windmills on the ridges and floating rock islands drifting in a luminous cream and teal sky. A
+        winding stone path leads to a small lantern-lit village at the foot of a mountain. Soft rim light edges
+        every cloud and hilltop in gold.
+        Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+        art.
+        Palette: #4FB3BF, #F2D398, #8DC26F with an accent #2A3B4C. Mood: peaceful, adventurous, luminous.
+        Composition: the nearest windmill and the golden-lit hill beneath it sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth green hills with soft golden shadow, low detail. New area on the right: the ridge continues to a
+        floating island and a faint distant mountain. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The windmill stands at about 42% of the height at the center, with hills below and floating
+        islands above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: genshin.minimal-01
+    title: "Floating Island Alone"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, island, sky]
+    accent: "#4FB3BF"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small floating island with a round green top and a pale
+        stone underside hangs in a vast, soft sky gradient moving from deep teal at the top to cream at the
+        horizon. A thin waterfall of glittering water falls from its edge into mist. One tiny windmill stands on
+        its crown. Everything else is clean empty sky.
+        Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+        art.
+        Palette: #E9F6F2, #4FB3BF, #8DC26F with a cream #F2D398. Mood: calm, serene, airy.
+        Composition: the floating island and its thin waterfall sits about 59–73% across and 35–65% down; more
+        than 70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty soft teal-to-cream sky, completely smooth, kept calm and low in detail. New area on the right:
+        a few tiny drifting clouds and a faint distant island. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The island floats at about 42% of the height in the center, with empty gradient sky around
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: genshin.mood-01
+    title: "Lantern Festival on the Water"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [lanterns, lake, dusk]
+    accent: "#4FB3BF"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm lake at dusk, covered with hundreds of small glowing paper
+        lanterns drifting in warm gold and pale pink, their reflections trembling on dark teal water. A graceful
+        stone bridge arches over the lake, and soft lights glimmer in a mountain village beyond. The sky is deep
+        slate blue with a few faint stars.
+        Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+        art.
+        Palette: #16222E, #2A3B4C, #F2D398 with a teal #4FB3BF. Mood: magical, serene, warm.
+        Composition: the glowing lanterns drifting beneath the bridge sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark teal water with faint lantern reflections, low detail. New area on the right: the lake continues to
+        a mountain village glowing faintly. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lanterns fill the lower half with the stone bridge arching at about 50% of the height.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: genshin.alt-01
+    title: "Crystal Lake Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [lake, crystals, morning]
+    accent: "#4FB3BF"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A crystal-clear turquoise lake in the morning, with glowing
+        pale-blue crystal formations rising along the shore and a small wooden jetty reaching into the water.
+        Mountains in soft blue-green layers surround the lake, and a gentle mist hovers over it. The sky is a
+        bright, clean cream and teal gradient.
+        Style: anime-style cel-shaded painting, luminous skies, clean shapes and soft gradients, fantasy concept
+        art.
+        Palette: #EAF7F3, #4FB3BF, #A8D88A with a gold #F2D398. Mood: fresh, bright, tranquil.
+        Composition: the crystal formations and the jetty sits about 54–74% across and 38–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth turquoise water and soft mist, low detail. New area on the right: the shoreline continues to
+        layered blue-green mountains in haze. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The crystals rise at about 50% of the height in the center, with the jetty leading in from
+        the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

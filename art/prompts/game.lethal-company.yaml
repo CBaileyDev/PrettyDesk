@@ -1,0 +1,188 @@
+pack: game.lethal-company
+kind: game
+title: "Lethal Company"
+inspiration:
+  genre: "lo-fi sci-fi horror"
+  setting: "an abandoned industrial moon facility, foggy dusk, orange floodlights"
+  palette: ["#E2552C", "#2E3B32", "#A8A27F", "#0B0C0B"]
+  motifs: [a lone floodlit facility in fog, a ship ramp glow, a retro terminal glow (no text)]
+  avoid: [game title, creatures, readable text, logos, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by lo-fi sci-fi horror, with no
+  creatures or people. Think an abandoned industrial moon facility in thick dusk fog, orange floodlights glowing
+  through haze, a landing ramp lit from within and a retro terminal glow with no readable text. The palette is
+  warning orange (#E2552C), dark swamp green (#2E3B32), dusty khaki (#A8A27F) and near-black (#0B0C0B). The look
+  is a grainy-feeling low-poly retro 3D render with chunky shapes, heavy fog and strong light cones. No figures,
+  no monsters, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+  taskbar.
+wallpapers:
+  - id: lethal-company.hero-01
+    title: "Facility in the Fog"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [facility, fog, floodlights]
+    accent: "#E2552C"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A lone concrete-and-steel industrial facility stands on a barren
+        moon surface under a dusk sky, wrapped in thick green-grey fog. Orange floodlights on tall poles cut
+        glowing cones through the haze, and a long grated catwalk leads to a lit door. A few tall pipes steam
+        softly, and the ground is dusty gravel.
+        Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+        feel, eerie and calm.
+        Palette: #E2552C, #2E3B32, #A8A27F with an accent #0B0C0B. Mood: eerie, lonely, atmospheric.
+        Composition: the lit door and the floodlight cones in the fog sits about 54–74% across and 36–56% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark fog-wrapped gravel ground, low in detail, kept calm and low in detail. New area on the right: the
+        moon plain continues with another distant floodlight in fog. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The facility stands at the center with the lit door at about 52% of the height and fog
+        rolling below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lethal-company.minimal-01
+    title: "One Floodlight in Fog"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, floodlight, fog]
+    accent: "#E2552C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tall floodlight pole glows warm orange in the middle of a
+        vast, smooth bank of dark green-grey fog on a flat moon plain, its light making a soft round halo. The
+        sky above is an empty, near-black green gradient. Nothing else is visible.
+        Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+        feel, eerie and calm.
+        Palette: #0B0C0B, #1F2A24, #2E3B32 with a light #E2552C. Mood: lonely, quiet, eerie.
+        Composition: the floodlight and its halo in the fog sits about 60–72% across and 34–66% down; more than
+        70% of the image is empty fog and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty dark green-grey fog and sky, completely smooth. New area on the right: the fog continues with a
+        very faint far orange glow. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The floodlight stands at about 55% of the height in the lower center, with its halo and empty
+        fog around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lethal-company.mood-01
+    title: "Ship Ramp Glow"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [ship, ramp, fog]
+    accent: "#E2552C"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The open ramp of a small landed spacecraft glows orange from the
+        inside, throwing a warm rectangle of light onto dusty ground in thick night fog. Cables and plain crates
+        sit by the ramp, and a faint green glow comes from a far tower. The sky is dark, and the air is full of
+        drifting dust.
+        Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+        feel, eerie and calm.
+        Palette: #0B0C0B, #1F2A24, #A8A27F with a glow #E2552C. Mood: tense, warm, quiet.
+        Composition: the glowing ramp and the light it throws on the ground sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark dusty ground and fog, low in detail. New area on the right: the fog thickens into darkness with a
+        faint far light. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ramp glows at about 60% of the height in the lower center, with fog and dark sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: lethal-company.alt-01
+    title: "Moon Plain at Dusk"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [plain, dusk, empty]
+    accent: "#E2552C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide barren moon plain at early dusk, with soft pale khaki dust, a
+        few smooth boulders and a low industrial silhouette on the horizon. A pale yellow-orange sun glows
+        through thin haze, and the sky is a calm gradient of cream and soft green-grey. Gentle, hushed and
+        empty.
+        Style: retro low-poly 3D render with chunky shapes, heavy fog, strong light cones and a subtle lo-fi
+        feel, eerie and calm.
+        Palette: #EFE8CE, #A8A27F, #8A9A86 with an orange #E2552C. Mood: quiet, hazy, lonely.
+        Composition: the low industrial silhouette and the sun haze behind it sits about 54–74% across and
+        38–58% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft khaki dust and haze, low detail, kept calm and low in detail. New area on the right: the plain
+        continues to a faint far ridge. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The silhouette sits at about 55% of the height in the center, with the pale sun above and
+        dust below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

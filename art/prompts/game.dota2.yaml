@@ -1,0 +1,183 @@
+pack: game.dota2
+kind: game
+title: "Dota 2"
+inspiration:
+  genre: "high-fantasy war of two realms"
+  setting: "lush golden radiance versus scorched crimson corruption, with a river between them"
+  palette: ["#C9A55A", "#3C6E47", "#8E2B2B", "#1A1418"]
+  motifs: [a river dividing green and red lands, an ancient tree, a crumbling tower at dusk]
+  avoid: [game title, heroes, the map layout, the emblem, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a high-fantasy world divided
+  between two realms: one lush and golden-green, the other scorched and crimson, with a winding river between
+  them. Think ancient trees, crumbling stone towers and glowing shrines in painterly light. The palette is
+  antique gold (#C9A55A), forest green (#3C6E47), ember red (#8E2B2B) and dark plum-black (#1A1418). The look is
+  matte fantasy painting with rich texture and moody light. No creatures, no figures, no emblems, no text. Keep
+  the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: dota2.hero-01
+    title: "River Between Two Lands"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [river, fantasy, valley]
+    accent: "#C9A55A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A winding river runs through a vast fantasy valley, dividing a lush
+        golden-green forest on the left from scorched red-black ground on the right. An ancient, huge tree glows
+        with warm light on the green bank, while a crumbling stone tower smolders on the red bank. A dusky sky
+        above is gold on the left and ember red on the right.
+        Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+        Palette: #C9A55A, #3C6E47, #8E2B2B with an accent #1A1418. Mood: epic, divided, mythic.
+        Composition: the river fork between the glowing tree and the broken tower sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark green forest in deep shadow, low in detail. New area on the right: scorched red hills and drifting
+        ash fading into a dark sky. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The river winds up the center of the frame with the tree and tower at about 40% of the height
+        under a split sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: dota2.minimal-01
+    title: "Ancient Tree at Dusk"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, tree, dusk]
+    accent: "#C9A55A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single huge ancient tree with a wide, golden-lit canopy stands
+        alone on a smooth, grassy hill under a vast gradient dusk sky that moves from plum-black to deep green
+        to warm gold at the horizon. Tiny gold motes float from its branches. Everything else is empty, soft
+        color.
+        Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+        Palette: #1A1418, #2D4C35, #C9A55A with a faint red #8E2B2B. Mood: quiet, majestic, still.
+        Composition: the tree and its glowing canopy sits about 59–73% across and 30–70% down; more than 70% of
+        the image is empty sky and hill. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty plum-to-green dusk sky, completely smooth and without detail. New area on the right: the hill
+        slopes into a faint red-lit horizon far away. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tree stands in the lower center from 25% to 70% of the height, with empty dusk sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: dota2.mood-01
+    title: "Crumbling Tower in Ember Light"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [tower, embers, ruins]
+    accent: "#C9A55A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The broken top of an ancient stone tower rises from a field of dark
+        red rubble under a smoky crimson sky. Glowing embers float upward through the haze, and a thin vein of
+        gold light runs through a crack in the stone. The surroundings fade into dark plum smoke.
+        Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+        Palette: #1A1418, #5A1F22, #8E2B2B with a gold #C9A55A. Mood: ominous, smoldering, quiet.
+        Composition: the broken tower top and the glowing crack sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark red rubble and drifting smoke, low in detail. New area on the right: the ruins fade into plum smoke
+        with a distant glow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower rises from the lower center to about 45% of the height, with ember-lit smoke above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: dota2.alt-01
+    title: "Golden Glade Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [forest, morning, glade]
+    accent: "#C9A55A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sunlit glade in a golden-green forest in the morning, with long
+        shafts of warm light slanting through huge ancient trunks and drifting pollen. A calm stream in the
+        foreground reflects the gold canopy, and a mossy stone ruin glows softly in the background. The air is
+        bright with soft mist.
+        Style: matte fantasy painting with rich textures, painterly brushwork and moody dramatic light.
+        Palette: #F3E6B8, #C9A55A, #6FA06A with a deep green #3C6E47. Mood: warm, peaceful, luminous.
+        Composition: the sunlit shafts and the mossy ruin sits about 54–74% across and 38–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden mist between tree trunks, low in detail. New area on the right: the forest continues into
+        pale gold haze with a distant arch. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light shafts fall through the center with the ruin at about 50% of the height and the
+        stream below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

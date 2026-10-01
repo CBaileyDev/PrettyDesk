@@ -1,0 +1,189 @@
+pack: game.roblox
+kind: game
+title: "Roblox"
+inspiration:
+  genre: "toy-like low-poly building worlds"
+  setting: "bright plastic materials, floating obstacle platforms in the sky, studio-soft light"
+  palette: ["#00A2FF", "#F2F3F3", "#FFB000", "#393B3D"]
+  motifs: [floating platform paths, studded plastic surfaces, low-poly islands, soft studio light]
+  avoid: [game title, avatars, the tilted-square logo, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a toy-like world of bright plastic
+  building bricks and floating platforms. Think low-poly islands, smooth studded plastic surfaces, glossy
+  primary-color blocks and winding obstacle paths hovering in a soft sky, lit like a tidy photography studio.
+  The palette is cheerful blue (#00A2FF), clean white (#F2F3F3), warm yellow (#FFB000) and charcoal (#393B3D).
+  The look is a polished 3D render with soft shadows, gentle depth of field and a happy but uncluttered mood. No
+  figures, no avatars, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and
+  the taskbar.
+wallpapers:
+  - id: roblox.hero-01
+    title: "Sky Obstacle Path"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [floating, platforms, sky]
+    accent: "#00A2FF"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A winding path of floating plastic platforms in blue, white and
+        yellow snakes through a bright sky. Chunky studded blocks, rounded ramps and a small spiral bridge hover
+        over drifting soft clouds, each surface glossy with a clean highlight. In the far distance, a few
+        low-poly islands with round bushes float in a pale blue haze.
+        Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+        and cheerful.
+        Palette: #00A2FF, #F2F3F3, #FFB000 with an accent #393B3D. Mood: cheerful, bright, playful.
+        Composition: the spiral bridge and the nearest platform cluster sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft white clouds and pale blue sky, low in detail. New area on the right: the path continues to a far
+        floating island in blue haze. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The platform path spirals up the center of the frame with the spiral bridge at about 45% of
+        the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: roblox.minimal-01
+    title: "One Floating Block"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, brick, sky]
+    accent: "#00A2FF"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single glossy yellow plastic brick with round studs floats alone
+        in the middle of a vast, soft sky gradient that moves from clean white at the horizon to pale blue at
+        the top. A soft, round shadow of the brick falls on a faint cloud beneath it. Everything else is empty,
+        clean space.
+        Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+        and cheerful.
+        Palette: #FFFFFF, #CFE9FB, #00A2FF with the brick in #FFB000. Mood: simple, calm, cheerful.
+        Composition: the brick and its soft shadow sits about 60–72% across and 35–65% down; more than 70% of
+        the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a clean, empty white-to-blue sky gradient with no features at all. New area on the right: a faint tiny
+        cloud and an empty sky. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The brick floats at about 45% of the height, centered, with a soft cloud below and empty sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: roblox.mood-01
+    title: "Studio Night Blocks"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [blocks, studio, dark]
+    accent: "#00A2FF"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dark studio set at night, with a few glossy plastic blocks in deep
+        blue, charcoal and yellow stacked on a smooth black floor. A single soft overhead light makes a gentle
+        pool of reflection under them, and tiny studs on the tops catch the glow. The background fades into a
+        soft dark gradient.
+        Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+        and cheerful.
+        Palette: #14161A, #393B3D, #0A6FB0 with a yellow #FFB000. Mood: calm, moody, tidy.
+        Composition: the stack of blocks and their reflection sits about 52–72% across and 45–65% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth dark floor and charcoal backdrop, low detail. New area on the right: the dark floor continues
+        with a faint reflection of a distant block. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The block stack sits in the lower center at about 58% of the height, over a dark backdrop.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: roblox.alt-01
+    title: "Low-Poly Island Morning"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [island, low-poly, morning]
+    accent: "#00A2FF"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small low-poly island floats in a soft morning sky, with faceted
+        green hills, a few round bushes and a pale blue pool of water cut into its center. Its underside is a
+        stepped, faceted rock in warm grey. Soft white clouds drift below, and the light is clean and warm from
+        the left.
+        Style: polished 3D render of glossy plastic bricks, soft studio lighting, gentle depth of field, clean
+        and cheerful.
+        Palette: #EAF6FF, #00A2FF, #8BD07B with a warm grey #B9B7B2. Mood: fresh, bright, calm.
+        Composition: the island and its blue pool sits about 54–74% across and 38–58% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft clouds and pale blue sky, low detail. New area on the right: a second smaller island floats far
+        away in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The island floats in the center at about 48% of the height, with clouds below and soft sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -31,7 +31,7 @@ BANNED_PHRASES = (
 
 # Studios, publishers, platforms and launchers: never in prompt text (section 5).
 STUDIO_NAMES = (
-    "valve", "riot", "epic games", "blizzard", "rockstar", "ubisoft", "mojang", "microsoft", "nintendo",
+    "valve", "riot", "epic games", "blizzard entertainment", "rockstar", "ubisoft", "mojang", "microsoft", "nintendo",
     "bethesda", "activision", "electronic arts", "bungie", "mihoyo", "hoyoverse", "cd projekt", "larian",
     "fromsoftware", "capcom", "pocketpair", "game freak", "supergiant", "team cherry", "digital extremes",
     "playground games", "bandai", "square enix", "grinding gear", "embark", "behaviour", "marvel",
@@ -41,7 +41,7 @@ STUDIO_NAMES = (
 # Generic words that appear in game titles but are ordinary English; they are fine in prompts.
 TITLE_STOPWORDS = frozenset(
     "the of and a an in on to for with from impact star rail road horizon lost dead red rust wild wilds "
-    "company hunter hunters grand theft auto shift legends league strike counter global offensive "
+    "company hunter hunters valley world exile path grand theft auto shift legends league strike counter global offensive "
     "battle ground grounds sea thieves truck simulator euro silk song hollow knight black myth "
     "dream day night city line force war fall rider rain".split()
 )
@@ -279,6 +279,10 @@ def lint_pack(pack: Pack) -> list[Finding]:
             warn(f"focal point left of centre (the icon column lives there): {', '.join(left_heavy)}")
 
     terms = forbidden_terms(pack)
+    bible = " ".join(pack.style_bible.lower().split())
+    for term in terms:
+        if _mentions(bible, term):
+            err(f"styleBible contains the proper noun '{term}' (it is pasted into ChatGPT; ART_DIRECTION.md section 5)")
     for wp in pack.wallpapers:
         out.extend(lint_wallpaper(pack, wp, terms))
     return out

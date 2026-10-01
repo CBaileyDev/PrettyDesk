@@ -1,0 +1,188 @@
+pack: game.marvel-rivals
+kind: game
+title: "Marvel Rivals"
+inspiration:
+  genre: "comic-book multiverse city"
+  setting: "a dramatic skyline split by glowing portals, bold cel-shaded painting"
+  palette: ["#E23636", "#F5C518", "#1F4E99", "#121212"]
+  motifs: [a portal over a skyline, floating city fragments, a comic-halftone sky]
+  avoid: [ANY superhero, costume, emblem or shield shape, game title, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a comic-book multiverse city.
+  Think a dramatic skyline of generic towers split by huge glowing circular portals, floating fragments of
+  streets and rooftops, and a bold cel-shaded painted style with halftone-dot skies and strong ink-like
+  outlines. The palette is vivid red (#E23636), gold (#F5C518), royal blue (#1F4E99) and ink black (#121212).
+  The mood is dynamic yet calm for a desktop. Strictly no figures, no costumes, no masks, no emblems, no shield
+  or star shapes, no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: marvel-rivals.hero-01
+    title: "Portal Over the Skyline"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [portal, skyline, comic]
+    accent: "#E23636"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A huge circular portal of swirling gold and red energy opens in a
+        deep blue night sky above a skyline of generic towers. The portal's light spills down the building faces
+        in bold cel-shaded streaks, and fragments of rooftops drift in a loose ring around it. A halftone-dot
+        pattern fades the sky from navy to violet, and the street far below glows warm.
+        Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+        energy, clean and calm.
+        Palette: #E23636, #F5C518, #1F4E99 with an accent #121212. Mood: dynamic, dramatic, epic.
+        Composition: the glowing portal and the ring of drifting rooftop fragments sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark navy tower faces with halftone-dot shading, low in detail. New area on the right: the skyline
+        continues with a smaller, distant portal glowing faintly. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The portal glows at the center at about 35% of the height, with the towers rising on both
+        sides and the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: marvel-rivals.minimal-01
+    title: "One Open Portal"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, portal, halftone]
+    accent: "#E23636"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single thin ring of gold and red light hangs in a vast, smooth
+        navy halftone-dot sky, like a portal seen from far away. Inside the ring is a calm, deeper blue. A faint
+        ink-black strip of generic rooftops runs along the very bottom. Everything else is clean, empty, softly
+        dotted color.
+        Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+        energy, clean and calm.
+        Palette: #121A33, #1F4E99, #F5C518 with a red edge #E23636. Mood: quiet, bold, graphic.
+        Composition: the portal ring sits about 59–73% across and 35–65% down; more than 70% of the image is
+        empty halftone sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar
+        go there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty navy halftone sky with soft dots and no features. New area on the right: a faint distant second
+        ring of light, tiny and dim. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The portal ring hangs at about 42% of the height in the center, with empty halftone sky
+        around it and rooftops at the bottom. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: marvel-rivals.mood-01
+    title: "Rain on Neon Rooftops"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rooftop, rain, night]
+    accent: "#E23636"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wet generic rooftop at night, with ventilation boxes and a water
+        tower in black ink-like silhouettes. Rain lines fall in the bold comic style, and puddles reflect warm
+        red and gold glows from a portal hidden behind clouds. Halftone shading gives the sky a soft, grainy
+        texture.
+        Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+        energy, clean and calm.
+        Palette: #0E1220, #1F4E99, #E23636 with a gold #F5C518. Mood: moody, stylish, quiet.
+        Composition: the water tower and the wet rooftop reflections sits about 52–72% across and 45–65% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark rooftop silhouettes and rain lines, low in detail. New area on the right: the rooftops continue
+        into a misty halftone sky with faint red glows. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rooftop sits in the lower third with the water tower at about 55% of the height and
+        glowing clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: marvel-rivals.alt-01
+    title: "Floating City Fragments"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [floating, city, daylight]
+    accent: "#E23636"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Broken pieces of a generic city, such as sections of street, a few
+        plain towers and a round plaza, float in a bright sky of pale yellow and cream halftone dots. A gentle
+        portal glows soft blue and gold in the distance. The blocks are painted in bold cel-shaded colors with
+        clean outlines and soft shadows.
+        Style: bold cel-shaded digital painting with ink outlines and halftone-dot shading, dynamic comic-book
+        energy, clean and calm.
+        Palette: #FFF4C9, #F5C518, #1F4E99 with a red #E23636. Mood: bright, whimsical, dynamic.
+        Composition: the largest floating street section and the plaza on it sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, costumes, masks, emblems, shield or star shapes, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a pale yellow halftone sky, calm and nearly empty. New area on the right: smaller floating fragments
+        drift off into pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The largest fragment floats at about 50% of the height in the center, with pale halftone sky
+        around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

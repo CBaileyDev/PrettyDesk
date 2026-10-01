@@ -1,0 +1,183 @@
+pack: game.silksong
+kind: game
+title: "Hollow Knight: Silksong"
+inspiration:
+  genre: "hand-painted 2D gothic insect kingdom"
+  setting: "ivory-silver spires, silk threads, bell towers, moss"
+  palette: ["#E9E4D8", "#B23A48", "#2D3142", "#0D0E14"]
+  motifs: [silk threads catching light, a bell citadel in mist, a mossy grotto]
+  avoid: [game title, the protagonist, characters, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a hand-painted 2D gothic kingdom
+  of spires, silk and bells, with no creatures or people. Think ivory-silver towers rising through mist, fine
+  silk threads glinting in the dark, a great bell tower in fog and a mossy grotto. The palette is ivory
+  (#E9E4D8), deep crimson (#B23A48), slate indigo (#2D3142) and ink black (#0D0E14). The look is a flat,
+  hand-painted 2D illustration with ink outlines, layered parallax depth and delicate gothic detail. No figures,
+  no creatures, no emblems, no text. Keep the left edge and the bottom edge calm for desktop icons and the
+  taskbar.
+wallpapers:
+  - id: silksong.hero-01
+    title: "Bell Citadel in Mist"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [citadel, mist, 2d]
+    accent: "#E9E4D8"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast ivory-silver citadel of needle-thin spires and a great arched
+        bell tower rises through layers of indigo mist. Fine silk threads stretch between the towers and glint
+        faintly. Crimson lanterns glow at the tower windows, and a deep slate sky fades to pale grey behind. The
+        foreground is a dark mossy ledge in inky silhouette.
+        Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+        Palette: #E9E4D8, #B23A48, #2D3142 with an accent #0D0E14. Mood: gothic, quiet, majestic.
+        Composition: the bell tower and the silk threads between the spires sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        inky dark ledge silhouettes in low detail, kept calm and low in detail. New area on the right: more
+        spires fade into indigo mist. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bell tower rises through the center from 20% to 65% of the height, with the silk threads
+        crossing it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: silksong.minimal-01
+    title: "Silk Threads in the Dark"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, threads, dark]
+    accent: "#E9E4D8"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A few fine silk threads catch a soft ivory light as they sweep in a
+        long graceful arc across a vast, smooth, ink-black and deep indigo background. One tiny crimson bead of
+        light rests on the thread. Everything else is clean, empty darkness with a very faint mist.
+        Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+        Palette: #0D0E14, #2D3142, #E9E4D8 with a bead #B23A48. Mood: quiet, delicate, elegant.
+        Composition: the arc of threads and the tiny crimson bead sits about 58–74% across and 35–65% down; more
+        than 70% of the image is empty dark space. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty ink-black and indigo space, completely smooth, kept calm and low in detail. New area on the right:
+        the threads continue in a faint arc and fade out. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The threads arc down the center, with the crimson bead at about 50% of the height, over empty
+        dark space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: silksong.mood-01
+    title: "Mossy Grotto"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [grotto, moss, 2d]
+    accent: "#E9E4D8"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A hand-painted 2D grotto of dark rock with thick, soft green moss on
+        its ledges and ceiling, lit by a faint pale glow from a hidden pool. Fine silk threads cross the cave
+        mouth, and drifting spores float in the glow. A crimson flower blooms on a ledge at the left.
+        Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+        Palette: #0D0E14, #243229, #7D9A6A with a crimson #B23A48. Mood: hushed, damp, delicate.
+        Composition: the glowing pool and the moss around it sits about 52–72% across and 45–65% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        inky dark cave rock and moss, low in detail. New area on the right: more mossy ledges recede into dark.
+        Same lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored
+        objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glowing pool sits at the center at about 55% of the height, with mossy ledges around it.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: silksong.alt-01
+    title: "Ivory Spires at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [spires, dawn, 2d]
+    accent: "#E9E4D8"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A hand-painted 2D view of ivory-white towers and slender bridges
+        rising out of a pale silver mist at dawn, their edges softened by warm light. Fine silk threads glitter
+        between the spires like spider silk in the morning dew. The sky is a soft cream and pale rose gradient,
+        with a few dark ink-line branches in the foreground.
+        Style: hand-painted 2D illustration with ink outlines, layered flat depth, delicate gothic detail.
+        Palette: #F5F1E6, #E9E4D8, #B89AA0 with a crimson #B23A48. Mood: airy, delicate, bright.
+        Composition: the central spire and the glittering threads sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft cream mist and pale sky, low in detail. New area on the right: more towers and bridges fade into
+        silver mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The spire rises at about 45% of the height in the center, with the threads glittering around
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

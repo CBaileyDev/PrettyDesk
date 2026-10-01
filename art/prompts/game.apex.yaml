@@ -1,0 +1,183 @@
+pack: game.apex
+kind: game
+title: "Apex Legends"
+inspiration:
+  genre: "sci-fi frontier battle royale"
+  setting: "arid canyons with colossal derelict industrial machinery, alien flora, crashed ships"
+  palette: ["#DA292A", "#F2C14E", "#3B4A54", "#121417"]
+  motifs: [a lone zipline tower at sunset, a canyon with giant machinery, a desert outpost in storm light]
+  avoid: [game title, legends, weapons, drop-ship branding, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a sci-fi frontier world. Think
+  arid red-orange canyons, colossal rusted industrial machinery half-buried in the sand, strange alien plants,
+  crashed ship hulls and a lone tower against a huge sky. The palette is rust red (#DA292A), amber (#F2C14E),
+  steel grey-blue (#3B4A54) and near-black (#121417). The look is cinematic concept art with dramatic low sun,
+  haze and a sense of scale. No people, no weapons, no emblems, no text. Keep the left edge and the bottom edge
+  calm for desktop icons and the taskbar.
+wallpapers:
+  - id: apex.hero-01
+    title: "Canyon of Machines"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [canyon, machinery, sunset]
+    accent: "#DA292A"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast red canyon at sunset, with colossal rusted machinery
+        half-buried in its walls: a giant gear wheel, a leaning derelict crane and the broken hull of a crashed
+        ship. Low amber sun backlights the haze, and long shadows stretch across the sand. A few spiky alien
+        plants glow faintly in the shade at the foot of the cliffs.
+        Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+        Palette: #DA292A, #F2C14E, #3B4A54 with an accent #121417. Mood: epic, rugged, atmospheric.
+        Composition: the giant gear wheel and the crane silhouette against the sun sits about 54–74% across and
+        36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain red rock wall in warm shadow, low detail. New area on the right: the canyon winds on into amber
+        haze with a distant leaning tower. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The giant gear rises through the center from 25% to 65% of the height, with the sun glow
+        behind it and sand below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: apex.minimal-01
+    title: "Lone Zipline Tower"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, tower, desert]
+    accent: "#DA292A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single slender lattice tower stands alone on a smooth desert plain
+        under a huge, warm sky gradient that moves from pale cream at the horizon to soft apricot above. A thin
+        cable stretches from its top into the distance. The tower's long, soft shadow lies across the sand, and
+        a few tiny rocks dot the ground.
+        Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+        Palette: #F7E3BE, #F2C14E, #DA292A with the tower in #3B4A54. Mood: quiet, solitary, spacious.
+        Composition: the tower and its long shadow sits about 61–71% across and 28–72% down; more than 70% of
+        the image is empty sky and sand. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, weapons, characters, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty warm cream-to-apricot sky and plain sand, low detail. New area on the right: the plain continues
+        toward a faint, hazy mesa far away. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower stands in the lower center from 25% to 70% of the height, with empty sky above.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: apex.mood-01
+    title: "Outpost in Storm Light"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [outpost, storm, desert]
+    accent: "#DA292A"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small cluster of low, windswept desert shelters and one tall
+        antenna sits under a heavy orange-grey storm sky. Wind-blown sand streaks the air, and a thin gap in the
+        clouds lets a band of amber light fall across the roofs. The shelters are plain and rust-colored, with
+        no markings.
+        Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+        Palette: #2A1E1A, #6B3B2A, #F2C14E with a rust #DA292A. Mood: tense, quiet, windswept.
+        Composition: the outpost roofs lit by the band of light sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, dusty orange-grey sky and sand, low detail. New area on the right: the sand plain continues with
+        distant dust devils in haze. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The outpost sits at about 62% of the height with the storm sky above and the band of light
+        across it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: apex.alt-01
+    title: "Canyon at Midday"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [canyon, daylight, desert]
+    accent: "#DA292A"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide desert canyon in bright midday light. Sun-bleached red rock
+        walls glow in warm cream and rose, and a few giant, pale-rusted pipes and gear forms emerge from the
+        sand like bones. The sky is a clear pale blue and a faint warm haze lies along the canyon floor.
+        Style: cinematic sci-fi concept art, dramatic low sun, atmospheric haze, a strong sense of scale.
+        Palette: #F7E8D0, #E3A67B, #B05A3C with a sky #A9C4D6. Mood: bright, vast, dry.
+        Composition: the half-buried pipes and gear forms sits about 54–74% across and 38–58% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain sunlit red rock wall with soft texture, low detail. New area on the right: the canyon floor
+        continues into pale haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The half-buried forms sit in the lower center at about 55% of the height, below a pale blue
+        sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

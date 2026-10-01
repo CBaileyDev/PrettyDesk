@@ -1,0 +1,187 @@
+pack: game.rocket-league
+kind: game
+title: "Rocket League"
+inspiration:
+  genre: "neon sports arena at night"
+  setting: "stadium floodlights, a hex-pattern field, boost-trail light streaks"
+  palette: ["#0070F3", "#FF7A00", "#0A0E1A", "#C0C8D8"]
+  motifs: [an empty glowing arena, a giant ball on the center line, light trails in the air]
+  avoid: [game title, cars, team crests, branding, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a neon night sports arena. Think
+  an empty, glowing stadium with a hex-patterned field, tall floodlights, a giant plain ball on the center line
+  and soft streaks of blue and orange light hanging in the air. The palette is electric blue (#0070F3), orange
+  (#FF7A00), midnight (#0A0E1A) and cool silver (#C0C8D8). The look is a polished 3D render with atmospheric
+  haze, strong bloom and clean geometry. No vehicles, no people, no crests, no text. Keep the left edge and the
+  bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: rocket-league.hero-01
+    title: "Empty Arena Glow"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [arena, neon, night]
+    accent: "#0070F3"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty, enormous night arena seen from one end. A hex-patterned
+        pitch glows with soft blue lines, and a giant plain ball rests on the center line. Tall floodlights beam
+        through haze from both sides, and curved orange and blue light trails arc through the air above the
+        pitch like frozen motion. The stands are dark, tiered shapes.
+        Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+        lighting.
+        Palette: #0070F3, #FF7A00, #0A0E1A with an accent #C0C8D8. Mood: dramatic, electric, anticipatory.
+        Composition: the center ball and the light trails above it sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark empty tiered stands and drifting haze, low in detail. New area on the right: the stadium stretches
+        into haze with distant glowing floodlights. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ball sits at the lower center at about 62% of the height, with light trails arcing above
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rocket-league.minimal-01
+    title: "Ball on the Line"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, ball, dark]
+    accent: "#0070F3"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single smooth, plain pale ball rests on a thin glowing blue line
+        across a vast, dark, glossy pitch. A faint orange rim light edges the ball from the upper right and a
+        soft reflection falls beneath it. The surroundings dissolve into a deep midnight blue gradient with the
+        faintest hex pattern.
+        Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+        lighting.
+        Palette: #0A0E1A, #14233C, #C0C8D8 with a rim #FF7A00. Mood: quiet, focused, electric.
+        Composition: the ball and its reflection sits about 60–72% across and 34–70% down; more than 70% of the
+        image is empty dark floor and haze. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, cars, team crests, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth dark glossy floor with a faint blue line. New area on the right: a faint far goal frame glowing
+        softly in deep haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ball rests at about 55% of the height in the lower center, with dark empty gradient
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rocket-league.mood-01
+    title: "Floodlight Haze"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [floodlights, haze, stadium]
+    accent: "#0070F3"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A close view of the stadium floodlights from the pitch at night. A
+        bank of white lamps blooms into soft rays through drifting haze, and the roof beams are dark
+        silhouettes. A faint orange glow warms one edge, and cool blue light lies across the wet pitch below.
+        Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+        lighting.
+        Palette: #080B14, #1A2A44, #C0C8D8 with an orange #FF7A00. Mood: moody, hazy, quiet.
+        Composition: the glowing lamp bank and its rays sits about 52–72% across and 45–65% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark roof beams and haze, low in detail. New area on the right: the haze deepens with a faint second
+        lamp bank far away. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lamp bank blooms at about 38% of the height, with its rays falling toward the pitch
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: rocket-league.alt-01
+    title: "Arena at Midday"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [arena, daylight, sports]
+    accent: "#0070F3"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. The same arena seen empty in bright midday light, with a pale
+        hex-patterned pitch gleaming in soft blues and whites. A giant plain ball sits on the center line, and
+        the open roof lets in a clear sky. The tiered stands glow pale grey, and a few faint orange stripes mark
+        the pitch.
+        Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
+        lighting.
+        Palette: #F2F6FB, #BFD3EC, #0070F3 with an orange #FF7A00. Mood: bright, clean, spacious.
+        Composition: the center ball and the pale hex pitch sits about 54–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty pale stands in soft light, low detail. New area on the right: the pitch extends to a distant goal
+        in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ball sits at about 58% of the height at the center, with the pitch below and pale stands
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

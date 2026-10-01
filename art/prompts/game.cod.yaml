@@ -1,0 +1,183 @@
+pack: game.cod
+kind: game
+title: "Call of Duty"
+inspiration:
+  genre: "modern military realism"
+  setting: "desolate urban districts at dawn, haze, distant helicopter silhouettes"
+  palette: ["#556B2F", "#B08D57", "#3A3F44", "#0B0C0D"]
+  motifs: [a smoky dawn skyline, a rain-soaked compound, a night-vision-green dusk]
+  avoid: [game title, soldiers in focus, weapons, insignia, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a modern, realistic military
+  world, without any people or weapons. Think desolate urban districts at dawn, empty concrete compounds in
+  rain, smoky skylines and cold dusk with a faint green tint. The palette is olive (#556B2F), dusty tan
+  (#B08D57), gunmetal (#3A3F44) and near-black (#0B0C0D). The look is cinematic documentary photography with
+  heavy atmosphere, haze and muted color. Strictly no soldiers, no weapons, no vehicles in focus, no insignia,
+  no text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: cod.hero-01
+    title: "Smoky Dawn Skyline"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [skyline, dawn, haze]
+    accent: "#556B2F"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A war-worn city skyline at dawn seen across an empty river, with
+        broken tower silhouettes in layers of grey and olive haze. A band of warm tan light breaks along the
+        horizon, lighting thin columns of smoke that rise and bend in the wind. The water is still and reflects
+        the pale amber glow.
+        Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+        Palette: #556B2F, #B08D57, #3A3F44 with an accent #0B0C0D. Mood: somber, vast, atmospheric.
+        Composition: the glowing horizon band and the tallest broken tower sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark olive haze over still water, low in detail. New area on the right: the skyline thins out into low
+        ruins and a pale sky. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tallest tower rises at the center from 25% to 60% of the height, with the glow behind it
+        and the river below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cod.minimal-01
+    title: "Lone Watchtower in Fog"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, tower, fog]
+    accent: "#556B2F"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single bare concrete watchtower stands alone in a vast, smooth sea
+        of grey-green fog, its top just emerging into pale light. A thin, soft beam of tan light from the low
+        sun touches its edge. The sky is an empty gradient from charcoal to pale olive, and the fog below is
+        perfectly smooth.
+        Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+        Palette: #0B0C0D, #3A3F44, #7C8A63 with a tan #B08D57. Mood: quiet, tense, solitary.
+        Composition: the watchtower and its edge of light sits about 61–71% across and 28–72% down; more than
+        70% of the image is empty fog and sky. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty olive-grey fog and sky, completely smooth and without detail. New area on the right: a faint
+        second tower silhouette far in the fog. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tower rises from the lower center to about 38% of the height, with empty gradient sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cod.mood-01
+    title: "Rain-Soaked Compound"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rain, compound, dusk]
+    accent: "#556B2F"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty concrete compound in steady rain at dusk, with a plain
+        chain-link fence in soft focus, wet concrete reflecting a dim sodium-orange lamp, and a low windowless
+        building in the background. A faint green tint colors the shadows, and mist hangs between the walls.
+        Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+        Palette: #0B0C0D, #2B3A30, #3A3F44 with a lamp #D59B4A. Mood: gloomy, quiet, tense.
+        Composition: the lamp glow and its reflection on the wet concrete sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark concrete wall streaked with rain, low detail. New area on the right: the compound wall continues
+        into mist with a faint far lamp. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lamp glows at about 45% of the height, with its reflection on the wet ground below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cod.alt-01
+    title: "Hazy Morning Plain"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [plain, morning, haze]
+    accent: "#556B2F"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet, empty plain at early morning under a pale warm haze, with a
+        long straight dirt road leading to a low line of distant hills. Soft golden light filters through a thin
+        layer of mist, and a few dry grass tufts line the road. A single faint line of a power pylon marks the
+        horizon.
+        Style: cinematic documentary photography, heavy atmosphere, muted film color, restrained and serious.
+        Palette: #F1E8D4, #D8C89E, #8A9570 with a grey #7C8590. Mood: calm, hazy, spacious.
+        Composition: the road and the distant hills in the golden mist sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, soldiers, weapons, vehicles, insignia, logos, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain pale haze over dry grass, low in detail. New area on the right: the plain continues with a faint
+        far ridge in the haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The road runs up the center to the distant hills at about 50% of the height, under pale hazy
+        sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

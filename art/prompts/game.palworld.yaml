@@ -1,0 +1,182 @@
+pack: game.palworld
+kind: game
+title: "Palworld"
+inspiration:
+  genre: "cheerful survival open world"
+  setting: "lush grasslands, floating ruins, volcanic islands"
+  palette: ["#7FC8A9", "#F9E784", "#5DA9E9", "#2E3A23"]
+  motifs: [grassy cliffs over a sea, a volcanic isle at sunset, overgrown ruins]
+  avoid: [game title, creatures, the logo, text, characters, UI or HUD elements, logos]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a cheerful survival open world,
+  with no creatures or people. Think lush grassy cliffs over a bright sea, floating ruined islands, a volcanic
+  isle at sunset and overgrown ruins in warm light. The palette is fresh mint-green (#7FC8A9), butter yellow
+  (#F9E784), sky blue (#5DA9E9) and deep leaf (#2E3A23). The look is a bright, polished, stylized 3D render with
+  saturated but soft color and a welcoming mood. No creatures, no people, no emblems, no text. Keep the left
+  edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: palworld.hero-01
+    title: "Grassy Cliffs over the Sea"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [cliffs, sea, ruins]
+    accent: "#7FC8A9"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Lush green grassy cliffs with a few round-topped trees drop to a
+        bright turquoise sea, with a crescent of pale sand beach below. Floating chunks of ruined stone with ivy
+        hang in the sky above the bay, and fluffy clouds drift in a blue sky. Warm sun lights the cliff tops,
+        with soft blue shadows below.
+        Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+        Palette: #7FC8A9, #F9E784, #5DA9E9 with an accent #2E3A23. Mood: cheerful, fresh, adventurous.
+        Composition: the cliff edge and the floating ruins above the bay sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft green grass and clouds in warm light, low detail. New area on the right: the coast continues to a
+        volcanic island in blue haze. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cliff edge sits at about 55% of the height in the lower center, with floating ruins at
+        30% above the bay. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: palworld.minimal-01
+    title: "Single Floating Ruin"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, ruin, sky]
+    accent: "#7FC8A9"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small floating chunk of grassy earth carries a lone
+        ivy-covered stone arch, hanging in a vast, smooth sky gradient of pale mint at the horizon and soft sky
+        blue above. A few tiny roots trail from its underside. Everything else is clean, empty sky.
+        Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+        Palette: #EAF8F2, #7FC8A9, #5DA9E9 with a yellow #F9E784. Mood: calm, simple, airy.
+        Composition: the floating ruin and its stone arch sits about 59–73% across and 36–64% down; more than
+        70% of the image is empty sky. The left 15% and the bottom 8% stay calm and low-detail (desktop icons
+        and taskbar go there). Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty soft mint-to-blue sky, completely smooth, kept calm and low in detail. New area on the right: a
+        faint distant cloud and a hint of sea at the horizon. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The floating ruin hangs at about 45% of the height in the center, with empty sky around it.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: palworld.mood-01
+    title: "Volcanic Isle at Sunset"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [volcano, sunset, sea]
+    accent: "#7FC8A9"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small volcanic island rises from a calm sea at sunset, its cone
+        glowing faintly orange at the crater, and a thin ribbon of smoke curling into a sky of orange, pink and
+        deep violet. Dark green jungle covers its lower slopes, and the water mirrors the colors in soft
+        ripples.
+        Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+        Palette: #1F1B3A, #6B3F72, #F28A4B with a green #2E3A23. Mood: warm, dramatic, calm.
+        Composition: the glowing cone and its reflection sits about 52–72% across and 45–65% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark violet sea with faint reflections, low in detail. New area on the right: the sea continues to
+        another small island silhouette in haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The volcano cone rises at about 42% of the height in the center, with its reflection in the
+        sea below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: palworld.alt-01
+    title: "Overgrown Ruins in Sun"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [ruins, meadow, daylight]
+    accent: "#7FC8A9"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sunlit clearing of ancient grey stone ruins, with arches and
+        fallen columns covered in bright green moss and ivy. Wildflowers in yellow and white dot the grass, and
+        soft golden light falls through leaves overhead. The air is warm and bright with floating pollen.
+        Style: bright polished stylized 3D render, saturated soft color, welcoming light.
+        Palette: #F6F0CC, #7FC8A9, #F9E784 with a stone #A9AFA6. Mood: warm, peaceful, bright.
+        Composition: the mossy arch and the sunlit grass in front of it sits about 54–74% across and 38–58%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft sunlit grass and leaf shadows, low detail. New area on the right: more mossy columns fade into a
+        green haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The mossy arch stands at about 48% of the height in the center, with grass below. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

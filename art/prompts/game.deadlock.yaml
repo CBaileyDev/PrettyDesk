@@ -1,0 +1,185 @@
+pack: game.deadlock
+kind: game
+title: "Deadlock"
+inspiration:
+  genre: "occult noir city"
+  setting: "a 1920s art-deco metropolis, streetcars, fog lamps, a mystic glow"
+  palette: ["#C8A96B", "#3F6E6A", "#6B2E2E", "#121314"]
+  motifs: [a deco skyline in fog, a rain-slick streetcar line, an occult glow without glyphs]
+  avoid: [game title, heroes, readable signs, logos, text, characters, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by an occult noir city of the 1920s,
+  with no people. Think art-deco skyscrapers rising into fog, rain-slick streetcar rails, glowing street lamps
+  and a faint, mysterious glow with no glyphs or symbols. The palette is brass gold (#C8A96B), teal (#3F6E6A),
+  oxblood (#6B2E2E) and near-black (#121314). The look is cinematic noir illustration with strong geometry, deep
+  shadow and glowing fog. No figures, no vehicles in focus, no signs, no symbols, no text. Keep the left edge
+  and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: deadlock.hero-01
+    title: "Deco Skyline in Fog"
+    role: hero
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [skyline, deco, fog]
+    accent: "#C8A96B"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A towering art-deco skyscraper with stepped setbacks and slender
+        vertical ribs rises from a rain-slick night street, its top lost in thick glowing fog. Brass-gold street
+        lamps line the avenue and make soft halos in the mist. A faint teal glow pulses behind a distant tower,
+        and the wet pavement mirrors every light.
+        Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+        elegant.
+        Palette: #C8A96B, #3F6E6A, #6B2E2E with an accent #121314. Mood: elegant, moody, mysterious.
+        Composition: the skyscraper's stepped crown in the fog and the lamp halos below sits about 54–74% across
+        and 36–56% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark stone building faces and fog, low in detail. New area on the right: more deco towers recede into
+        teal-gold mist. Same lighting direction, palette, materials and level of detail. No seams, no repeated
+        or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The skyscraper rises through the center from 15% to 65% of the height, with lamp halos along
+        the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: deadlock.minimal-01
+    title: "One Street Lamp in Fog"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, lamp, fog]
+    accent: "#C8A96B"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single ornate brass street lamp glows warm gold in the middle of a
+        vast, smooth bank of dark teal-black fog, with its soft halo catching thin drifting rain. The ground is
+        a faint wet cobble reflection. Everything else is clean, empty dark space.
+        Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+        elegant.
+        Palette: #121314, #1D2F2E, #3F6E6A with a lamp #C8A96B. Mood: quiet, lonely, noir.
+        Composition: the lamp and its halo sits about 60–72% across and 32–68% down; more than 70% of the image
+        is empty dark fog. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty dark teal-black fog, completely smooth, kept calm and low in detail. New area on the right: a
+        faint far lamp halo in the fog. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The lamp stands at about 52% of the height in the center, with its halo and reflection around
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: deadlock.mood-01
+    title: "Rain-Slick Streetcar Line"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [street, rain, noir]
+    accent: "#C8A96B"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wet cobblestone street with two shining streetcar rails curves
+        between deco buildings at night, reflecting the warm gold of overhead lamps and a faint teal glow from a
+        side alley. Light rain falls in the air, and a wisp of fog hovers above the rails. The street is empty.
+        Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+        elegant.
+        Palette: #121314, #2A2D2E, #C8A96B with a teal #3F6E6A. Mood: wet, moody, quiet.
+        Composition: the curve of the shining rails and the lamp reflections sits about 52–72% across and 45–65%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark deco building walls in soft shadow, kept calm and low in detail. New area on the right: the rails
+        continue into fog with a faint far lamp. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rails curve up the center to a vanishing point at about 45% of the height, with
+        reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: deadlock.alt-01
+    title: "Deco Plaza at Noon"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [plaza, deco, daylight]
+    accent: "#C8A96B"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broad, empty art-deco plaza at midday in pale gold light, with a
+        round fountain of brass and stone, tall geometric lamp posts and symmetrical cream-colored buildings
+        with stepped tops. A soft haze lies in the air, and a pale blue-green sky opens above.
+        Style: cinematic noir illustration, art-deco geometry, deep shadow and glowing fog, atmospheric and
+        elegant.
+        Palette: #F4ECD6, #C8A96B, #8DB3AE with a shadow #6B5A44. Mood: elegant, calm, bright.
+        Composition: the fountain and the stepped buildings behind it sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain cream stone paving in soft light, low detail. New area on the right: the plaza continues into pale
+        golden haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fountain sits at about 58% of the height in the center, with the buildings above. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,188 @@
+pack: game.wow
+kind: game
+title: "World of Warcraft"
+inspiration:
+  genre: "stylized high-fantasy MMO"
+  setting: "floating lands, a glowing elven forest at night, a colossal stone fortress"
+  palette: ["#F8B700", "#148B9C", "#3C5A2B", "#1A1A2E"]
+  motifs: [a moonwell glow in a forest, floating isles at dawn, a harbor city at sunset]
+  avoid: [game title, races, characters, faction crests, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by a stylized high-fantasy world,
+  with no people or creatures. Think floating islands at dawn, a glowing forest at night with a still pool of
+  pale blue light, a colossal stone fortress on a cliff and a harbor city at sunset. The palette is golden amber
+  (#F8B700), deep teal (#148B9C), forest green (#3C5A2B) and midnight (#1A1A2E). The look is chunky, painterly
+  game-concept art with slightly exaggerated shapes, bold light and warm adventure. No figures, no emblems, no
+  text. Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: wow.hero-01
+    title: "Floating Isles at Dawn"
+    role: hero
+    tone: light
+    setupMatch: [white, wood]
+    tags: [floating, isles, dawn]
+    accent: "#F8B700"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Several large floating islands of green grass and chunky pale rock
+        drift through a sky of gold and rose at dawn, with waterfalls of mist pouring from their edges into a
+        sea of glowing clouds. A small stone tower with a pointed roof stands on the nearest isle. Warm sun rays
+        fan out from the horizon, and layers of golden haze fill the distance.
+        Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+        color.
+        Palette: #F8B700, #148B9C, #3C5A2B with an accent #1A1A2E. Mood: adventurous, warm, luminous.
+        Composition: the nearest isle with its stone tower and waterfall sits about 54–74% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden clouds and haze, low in detail. New area on the right: more floating isles drift into the
+        golden haze far away. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The nearest isle floats at about 45% of the height in the center, with clouds below and
+        sunrays above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wow.minimal-01
+    title: "Moonwell in the Forest"
+    role: minimal
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, pool, forest]
+    accent: "#F8B700"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A still, round pool glows pale teal-blue at the center of a dark
+        forest clearing, its light rising in a soft column through a gap in the canopy. A few tiny motes of
+        light drift above it. The surrounding trees are simple dark green silhouettes, and the sky above is a
+        smooth deep midnight gradient.
+        Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+        color.
+        Palette: #1A1A2E, #1F3B2E, #148B9C with a glow #CFF4F0. Mood: quiet, magical, serene.
+        Composition: the glowing pool and the light column above it sits about 60–72% across and 32–68% down;
+        more than 70% of the image is dark forest and sky. The left 15% and the bottom 8% stay calm and
+        low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+        the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark green forest silhouettes in deep shadow, low in detail. New area on the right: more silhouetted
+        trunks fade into a deep midnight haze. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pool glows at about 62% of the height in the lower center, with the light column rising
+        above it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wow.mood-01
+    title: "Harbor City at Sunset"
+    role: mood
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [harbor, sunset, city]
+    accent: "#F8B700"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A harbor city of tall timber-and-stone buildings climbs a hillside
+        above a calm bay at sunset, with big sails folded on the quay boats and warm golden windows in the
+        towers. A huge round tower rises in the center, and the sky is a rich band of amber, rose and teal. The
+        water mirrors the colors in soft ripples.
+        Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+        color.
+        Palette: #1A1A2E, #148B9C, #F8B700 with a rose #D9738B. Mood: warm, lively, golden.
+        Composition: the central tower and the glowing windows sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, flags with emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark teal bay water with soft reflections, low detail. New area on the right: the hillside city
+        continues around the bay into golden haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The central tower rises at about 42% of the height, with its reflection in the bay below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wow.alt-01
+    title: "Fortress on the Cliff"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [fortress, cliff, daylight]
+    accent: "#F8B700"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A colossal stone fortress with round towers and heavy walls stands
+        on a sunlit cliff above a green valley at midday. Pale blue sky and soft clouds frame it, and a thin
+        river winds through the valley below. The stone is warm tan, with a few mossy patches and a plain
+        roofline.
+        Style: stylized painterly game-concept art with chunky exaggerated shapes, bold warm light and rich
+        color.
+        Palette: #F4EAD0, #F8B700, #7DA06A with a sky #9CC7D6. Mood: grand, bright, sturdy.
+        Composition: the fortress towers and the sunlit cliff face sits about 54–74% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a soft green valley and river in warm light, low detail. New area on the right: the cliffs continue to a
+        faint far mountain in haze. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fortress rises at about 45% of the height in the center, with the valley below and sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

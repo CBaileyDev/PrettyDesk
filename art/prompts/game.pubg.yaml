@@ -1,0 +1,182 @@
+pack: game.pubg
+kind: game
+title: "PUBG: Battlegrounds"
+inspiration:
+  genre: "realistic battle-royale landscapes"
+  setting: "Eastern-European countryside, an abandoned military base, wheat fields, a cargo plane in the sky"
+  palette: ["#C8A951", "#6B7A3A", "#A9B4BF", "#1C1F22"]
+  motifs: [a distant cargo plane over wheat, tiny parachutes at dawn, a lonely farmhouse]
+  avoid: [game title, characters, the frying pan, branded crates, logos, text, UI or HUD elements]
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers inspired by realistic Eastern-European
+  countryside, without any people. Think wide golden wheat fields, lonely farmhouses, abandoned concrete
+  military buildings, overcast skies and a distant plane high above. The palette is wheat gold (#C8A951), olive
+  (#6B7A3A), cool grey sky (#A9B4BF) and charcoal (#1C1F22). The look is documentary-style landscape photography
+  with natural, muted color and soft light. No people, no weapons, no vehicles in focus, no crests, no text.
+  Keep the left edge and the bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: pubg.hero-01
+    title: "Wheat Fields and a Distant Plane"
+    role: hero
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [wheat, countryside, sky]
+    accent: "#C8A951"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide golden wheat field rolls toward a line of dark pines under a
+        vast overcast sky. High above, a tiny cargo plane leaves a thin white trail, and a few small parachutes
+        hang in the pale distance. A lonely farmhouse with a red-tiled roof stands at the field's edge, and a
+        dirt track curves through the wheat.
+        Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+        Palette: #C8A951, #6B7A3A, #A9B4BF with an accent #1C1F22. Mood: wide, quiet, expectant.
+        Composition: the farmhouse and the plane trail above it sits about 54–74% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, vehicles in focus, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft golden wheat and a grey sky, low in detail. New area on the right: the field stretches to a faint
+        road and a distant tree line. Same lighting direction, palette, materials and level of detail. No seams,
+        no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The farmhouse sits at about 55% of the height at the center, with the plane trail high above
+        in the sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pubg.minimal-01
+    title: "Lone Farmhouse"
+    role: minimal
+    tone: light
+    setupMatch: [white, wood]
+    tags: [minimal, farmhouse, field]
+    accent: "#C8A951"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single small farmhouse with a plain pale wall and a dark roof
+        stands alone in a vast, smooth field of pale wheat, under a huge, empty overcast sky of soft grey-white.
+        A thin line of pines marks the far horizon. The light is soft and even, and nothing else is in the
+        frame.
+        Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+        Palette: #ECE8DE, #C8A951, #A9B4BF with a roof #3A3F44. Mood: quiet, solitary, spacious.
+        Composition: the farmhouse sits about 60–72% across and 35–65% down; more than 70% of the image is empty
+        sky and field. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        an empty soft grey-white sky over pale wheat, low detail. New area on the right: the wheat continues to
+        a faint tree line in the haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The farmhouse stands at about 60% of the height in the lower center, with an empty overcast
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pubg.mood-01
+    title: "Abandoned Base in Fog"
+    role: mood
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [base, fog, abandoned]
+    accent: "#C8A951"
+    focal: { x: 0.62, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A cluster of low, abandoned concrete military buildings with cracked
+        walls and a rusted water tower stands in thick morning fog. A few dead trees and a long, plain perimeter
+        fence fade into the mist. The sky is flat grey, and a faint warm sun disc glows through the fog.
+        Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+        Palette: #1C1F22, #4A5148, #A9B4BF with a sun #C8A951. Mood: gloomy, silent, hazy.
+        Composition: the water tower and the buildings in the mist sits about 52–72% across and 45–65% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark olive-grey fog over weedy ground, low detail. New area on the right: the fence continues into thick
+        mist with a faint far building. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The water tower rises at the center to about 38% of the height, with the buildings low below
+        it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pubg.alt-01
+    title: "Parachutes at Dawn"
+    role: alt
+    tone: light
+    setupMatch: [white, wood]
+    tags: [dawn, sky, countryside]
+    accent: "#C8A951"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Pale pink and gold dawn over a quiet green countryside, with a few
+        tiny parachutes drifting down in a clear sky above rolling fields. A thin mist lies in the valley, and a
+        line of pines stands in silhouette on a far ridge. The cargo plane is only a speck far off.
+        Style: documentary landscape photography, natural muted color, soft overcast light, calm and realistic.
+        Palette: #F8E9D6, #E8B88A, #8FA66A with a grey #A9B4BF. Mood: hopeful, calm, bright.
+        Composition: the cluster of tiny parachutes in the dawn sky sits about 54–74% across and 38–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
+        title, logos, characters, emblems, text, UI or HUD elements.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pink-gold sky and a faint ridge, low detail. New area on the right: the valley continues into pale
+        mist with a faint distant village. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The parachutes drift at about 35% of the height in the center, over misty green fields. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
