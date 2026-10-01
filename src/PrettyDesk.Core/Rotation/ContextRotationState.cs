@@ -23,6 +23,12 @@ public sealed class ContextRotationState
 
     public ShuffleBagState Bag { get; set; } = new();
 
+    /// <summary>
+    /// Wallpapers for monitors 2..n when each monitor shows a different one (FR-MON-2). They are dealt from the same
+    /// bag as <see cref="CurrentWallpaperId"/>, so a cycle never repeats and monitors never duplicate while the pool allows.
+    /// </summary>
+    public List<string> AdditionalWallpaperIds { get; set; } = [];
+
     /// <summary>Set by an unlock event; consumed by the next resolve of a context using the unlock interval.</summary>
     public bool UnlockPending { get; set; }
 }
