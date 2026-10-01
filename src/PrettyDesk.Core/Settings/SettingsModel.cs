@@ -52,6 +52,9 @@ public sealed class GeneralSettings : SettingsSection
     public DateTimeOffset? PauseUntil { get; set; }
     public bool OnboardingCompleted { get; set; }
     public bool TrayHintShown { get; set; }
+
+    /// <summary>Follow the "beta" update channel (SPEC §9) instead of "stable".</summary>
+    public bool BetaUpdates { get; set; }
 }
 
 public sealed class DetectionSettings : SettingsSection

@@ -174,7 +174,9 @@ public static class ServiceRegistration
         services.AddSingleton<IExternalLauncher, ExternalLauncher>();
         services.AddSingleton<IStartupService, StartupService>();
         services.AddSingleton<IRunningAppsProvider, RunningAppsAdapter>();
-        services.AddSingleton<IUpdateService, NotSupportedUpdateService>();
+        services.AddSingleton<IUpdateBackend>(sp => new VelopackUpdateBackend(sp.GetRequiredService<ISettingsProvider>()));
+        services.AddSingleton<UpdateCoordinator>();
+        services.AddSingleton<IUpdateService>(sp => sp.GetRequiredService<UpdateCoordinator>());
         services.AddSingleton<IAppInfo, AppInfoService>();
         services.AddSingleton<IDiagnosticsExporter, DiagnosticsExporter>();
         services.AddSingleton<IRestoreService, RestoreService>();

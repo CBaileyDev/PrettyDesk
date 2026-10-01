@@ -78,10 +78,13 @@ public sealed partial class AppRuntime : IAsyncDisposable
             Get<WallpaperOrchestrator>().Start();
             Get<PrefetchCoordinator>().Run();
             Get<UnknownGameMonitor>().Start();
+            Get<UpdateCoordinator>().Start();
 
-            // Keep the Run-key entry pointing at this exe (portable copies move, installs update in place).
+            // Keep the Run-key entry pointing at this exe (portable copies move, installs update in place). Only after onboarding:
+            // until then the user has not yet been asked whether PrettyDesk may start with Windows (FR-APP-3).
             var startup = new StartupRegistration();
-            if (Get<ISettingsProvider>().Current.General.StartWithWindows && Environment.ProcessPath is { } exe && (!startup.IsEnabled || startup.IsStale(exe)))
+            var general = Get<ISettingsProvider>().Current.General;
+            if (general.OnboardingCompleted && general.StartWithWindows && Environment.ProcessPath is { } exe && (!startup.IsEnabled || startup.IsStale(exe)))
             {
                 startup.Enable(exe);
             }
@@ -131,6 +134,7 @@ public sealed partial class AppRuntime : IAsyncDisposable
         Get<DesktopWallpaperService>().Dispose();
         Get<TrayService>().Dispose();
         Get<NotificationCoordinator>().Dispose();
+        Get<UpdateCoordinator>().Dispose();
         Get<Core.Catalog.CatalogService>().Dispose();
         Get<Core.Content.ContentLibrary>().Dispose();
         Get<WallpaperRenderer>().Dispose();

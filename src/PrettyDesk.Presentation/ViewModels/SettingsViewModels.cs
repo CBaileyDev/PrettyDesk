@@ -77,6 +77,9 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     [ObservableProperty]
     private bool _restoreOnExit;
 
+    [ObservableProperty]
+    private bool _betaUpdates;
+
     public GeneralSettingsViewModel(ISettingsProvider settings, IStartupService startup, IUiDispatcher ui)
         : base(settings, ui)
     {
@@ -88,6 +91,7 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     {
         StartWithWindows = settings.General.StartWithWindows;
         RestoreOnExit = settings.General.RestoreOnExit;
+        BetaUpdates = settings.General.BetaUpdates;
     }
 
     partial void OnStartWithWindowsChanged(bool value)
@@ -109,6 +113,8 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     }
 
     partial void OnRestoreOnExitChanged(bool value) => Save(s => s.General.RestoreOnExit = value);
+
+    partial void OnBetaUpdatesChanged(bool value) => Save(s => s.General.BetaUpdates = value);
 }
 
 public sealed partial class DetectionSettingsViewModel : SettingsSectionViewModel

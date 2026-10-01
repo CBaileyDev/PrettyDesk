@@ -749,6 +749,14 @@
   <data name="Settings_Advanced" xml:space="preserve">
     <value>Advanced</value>
   </data>
+  <data name="Settings_BetaUpdates" xml:space="preserve">
+    <value>Get beta versions</value>
+    <comment>Settings &gt; General toggle: update channel</comment>
+  </data>
+  <data name="Settings_BetaUpdatesHelp" xml:space="preserve">
+    <value>Try new features early. Beta versions can be less stable, and you can switch back at any time.</value>
+    <comment>Help text under the beta toggle</comment>
+  </data>
   <data name="Settings_ClearDownloads" xml:space="preserve">
     <value>Clear downloaded content</value>
   </data>
@@ -1072,5 +1080,13 @@
   </data>
   <data name="Tray_Tooltip" xml:space="preserve">
     <value>PrettyDesk</value>
+  </data>
+  <data name="Uninstall_KeepDataBody" xml:space="preserve">
+    <value>Your original wallpaper has been put back.\n\nDo you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?\n\nChoose No to keep them in case you reinstall.</value>
+    <comment>Uninstall question about user data (Yes deletes, No keeps)</comment>
+  </data>
+  <data name="Uninstall_KeepDataTitle" xml:space="preserve">
+    <value>Uninstalling PrettyDesk</value>
+    <comment>Title of the uninstall question</comment>
   </data>
 </root>

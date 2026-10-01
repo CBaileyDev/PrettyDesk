@@ -35,6 +35,17 @@ public class SettingsSectionTests
     }
 
     [Fact]
+    public void Beta_channel_is_off_by_default_and_the_choice_is_saved()
+    {
+        var vm = new GeneralSettingsViewModel(_settings, Substitute.For<IStartupService>(), _ui);
+        vm.BetaUpdates.ShouldBeFalse();
+
+        vm.BetaUpdates = true;
+
+        _settings.Current.General.BetaUpdates.ShouldBeTrue();
+    }
+
+    [Fact]
     public void Toggling_start_with_windows_updates_the_run_key_service_and_settings()
     {
         var startup = Substitute.For<IStartupService>();

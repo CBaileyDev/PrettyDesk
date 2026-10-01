@@ -44,3 +44,6 @@ GetModuleHandleW
 GetDpiForSystem
 GetSystemMetricsForDpi
 SYSTEM_METRICS_INDEX
+MessageBox
+MESSAGEBOX_STYLE
+MESSAGEBOX_RESULT

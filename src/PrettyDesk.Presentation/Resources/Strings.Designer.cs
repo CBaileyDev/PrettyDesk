@@ -269,6 +269,8 @@ public static class Strings
         "Picker_Selected",
         "Picker_Title",
         "Settings_Advanced",
+        "Settings_BetaUpdates",
+        "Settings_BetaUpdatesHelp",
         "Settings_ClearDownloads",
         "Settings_ClearDownloadsDone",
         "Settings_ClearDownloadsFailed",
@@ -377,6 +379,8 @@ public static class Strings
         "Tray_Quit",
         "Tray_Resume",
         "Tray_Tooltip",
+        "Uninstall_KeepDataBody",
+        "Uninstall_KeepDataTitle",
     ];
 
     /// <summary>Check for updates</summary>
@@ -1123,6 +1127,12 @@ public static class Strings
     /// <summary>Advanced</summary>
     public static string Settings_Advanced => Get("Settings_Advanced");
 
+    /// <summary>Get beta versions</summary>
+    public static string Settings_BetaUpdates => Get("Settings_BetaUpdates");
+
+    /// <summary>Try new features early. Beta versions can be less stable, and you can switch back at any time.</summary>
+    public static string Settings_BetaUpdatesHelp => Get("Settings_BetaUpdatesHelp");
+
     /// <summary>Clear downloaded content</summary>
     public static string Settings_ClearDownloads => Get("Settings_ClearDownloads");
 
@@ -1446,4 +1456,10 @@ public static class Strings
 
     /// <summary>PrettyDesk</summary>
     public static string Tray_Tooltip => Get("Tray_Tooltip");
+
+    /// <summary>Your original wallpaper has been put back.\n\nDo you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?\n\nChoose No to keep them in case you reinstall.</summary>
+    public static string Uninstall_KeepDataBody => Get("Uninstall_KeepDataBody");
+
+    /// <summary>Uninstalling PrettyDesk</summary>
+    public static string Uninstall_KeepDataTitle => Get("Uninstall_KeepDataTitle");
 }

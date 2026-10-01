@@ -20,6 +20,8 @@
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_StartWithWindowsHelp}" />
           <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.RestoreOnExit, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_RestoreOnExit}" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOnExit}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOnExitHelp}" />
+          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.BetaUpdates, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_BetaUpdates}" AutomationProperties.Name="{x:Static res:Strings.Settings_BetaUpdates}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_BetaUpdatesHelp}" />
           <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding General.ErrorMessage}" Visibility="{Binding General.HasError, Converter={StaticResource BoolToVisibility}}" />
         </StackPanel>
       </Border>
