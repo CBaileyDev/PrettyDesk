@@ -14,6 +14,8 @@ jobs:
         with: { global-json-file: global.json, dotnet-version: 10.0.x }
       - run: dotnet build src/PrettyDesk.Core -c Release
       - run: dotnet test --project tests/PrettyDesk.Core.Tests -c Release
+      - run: dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release
+      - run: python3 tools/strings.py check
 
   windows:
     runs-on: windows-latest
@@ -30,6 +32,7 @@ jobs:
       - name: Core + Windows tests
         run: |
           dotnet test --project tests/PrettyDesk.Core.Tests -c Release --report-trx --results-directory TestResults
+          dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release --report-trx --results-directory TestResults
           dotnet test --project tests/PrettyDesk.Windows.Tests -c Release --report-trx --results-directory TestResults
       - uses: actions/upload-artifact@v4
         if: always()
