@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+publish/
+Releases/
+
+# Art pipeline (raw ChatGPT outputs and generated variants live outside git)
+art/raw/
+art/out/
+art/review/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets / signing
+*.pfx
+*.pem
+*.key
+.env
+
+# OS
+Thumbs.db
+.DS_Store
