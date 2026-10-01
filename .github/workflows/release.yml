@@ -1,0 +1,161 @@
+name: release
+
+# Tag vX.Y.Z (stable) or vX.Y.Z-beta.N (beta channel) to build, sign, pack with Velopack and create a DRAFT GitHub Release.
+# Run it manually (workflow_dispatch) to rehearse everything except the upload; the packages are kept as workflow artifacts.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to build, without the leading v (for example 1.0.0-beta.1)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PACK_ID: PrettyDeskApp # install folder %LOCALAPPDATA%\PrettyDeskApp; user data stays in %LOCALAPPDATA%\PrettyDesk (docs/adr/0006)
+  PACK_TITLE: PrettyDesk
+  VPK_VERSION: 1.2.161
+
+jobs:
+  package:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      max-parallel: 1 # both architectures upload into the same release, one after the other
+      matrix:
+        include:
+          - { rid: win-x64, arch: x64 }
+          - { rid: win-arm64, arch: arm64 }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - uses: actions/setup-dotnet@v4
+        with: { global-json-file: global.json, dotnet-version: 10.0.x }
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Resolve version and channel
+        shell: pwsh
+        run: |
+          $version = "${{ github.event.inputs.version }}"
+          if (-not $version) { $version = "${{ github.ref_name }}".TrimStart('v') }
+          if ($version -notmatch '^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$') { throw "'$version' is not a SemVer version" }
+          $stable = $version -notmatch '-'
+          $channel = "${{ matrix.rid }}-" + ($(if ($stable) { 'stable' } else { 'beta' }))
+          "VERSION=$version" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
+          "CHANNEL=$channel" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
+          "IS_STABLE=$stable" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
+          Write-Host "Building $version for ${{ matrix.rid }}, Velopack channel $channel"
+
+      - name: Starter wallpapers (offline set bundled in the installer)
+        shell: pwsh
+        env:
+          STARTER_URL: ${{ vars.STARTER_SET_URL }}
+          STARTER_SHA256: ${{ vars.STARTER_SET_SHA256 }}
+        run: |
+          if ($env:STARTER_URL) {
+            Invoke-WebRequest $env:STARTER_URL -OutFile starter.zip
+            if ($env:STARTER_SHA256 -and (Get-FileHash starter.zip -Algorithm SHA256).Hash -ne $env:STARTER_SHA256.ToUpper()) { throw "starter.zip hash mismatch" }
+            Expand-Archive starter.zip -DestinationPath content/starter -Force
+            $mb = (Get-ChildItem content/starter -Recurse | Measure-Object Length -Sum).Sum / 1MB
+            if ($mb -gt 60) { throw "starter set is $mb MB; the installer budget is 60 MB" }
+          } elseif ($env:IS_STABLE -eq 'True') {
+            throw "A stable release must ship the starter wallpapers. Set the STARTER_SET_URL repository variable (see docs/RELEASING.md)."
+          } else {
+            Write-Warning "No STARTER_SET_URL: this pre-release has no bundled wallpapers."
+          }
+
+      - name: Content host
+        shell: pwsh
+        run: |
+          if ($env:IS_STABLE -eq 'True' -and -not "${{ vars.CONTENT_BASE_URL }}") { throw "A stable release needs the CONTENT_BASE_URL repository variable." }
+
+      - name: Restore and regenerate third-party notices
+        run: |
+          dotnet restore src/PrettyDesk.App -r ${{ matrix.rid }}
+          python tools/gen_notices.py
+
+      - name: Publish (self-contained, ReadyToRun, no trimming)
+        run: >
+          dotnet publish src/PrettyDesk.App -c Release -r ${{ matrix.rid }} --self-contained true
+          -p:PublishReadyToRun=true -p:PublishTrimmed=false -p:PublishSingleFile=false
+          -p:MinVerVersionOverride=${{ env.VERSION }} -p:ContentBaseUrl=${{ vars.CONTENT_BASE_URL }}
+          -o publish/${{ matrix.rid }}
+
+      - name: Install vpk
+        run: dotnet tool install --global vpk --version ${{ env.VPK_VERSION }}
+
+      - name: Prepare Azure Trusted Signing (skipped when the secrets are not configured)
+        id: signing
+        shell: pwsh
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          TS_ENDPOINT: ${{ secrets.TRUSTED_SIGNING_ENDPOINT }}
+          TS_ACCOUNT: ${{ secrets.TRUSTED_SIGNING_ACCOUNT }}
+          TS_PROFILE: ${{ secrets.TRUSTED_SIGNING_PROFILE }}
+        run: |
+          if (-not ($env:AZURE_TENANT_ID -and $env:TS_ENDPOINT -and $env:TS_ACCOUNT -and $env:TS_PROFILE)) {
+            if ($env:IS_STABLE -eq 'True') { throw "A stable release must be code-signed: configure the Azure Trusted Signing secrets (docs/RELEASING.md)." }
+            Write-Warning "Signing secrets not set: this pre-release is UNSIGNED and will trigger SmartScreen."
+            "template=" | Out-File -Append -FilePath $env:GITHUB_OUTPUT -Encoding utf8
+            exit 0
+          }
+          $dlib = Join-Path $env:RUNNER_TEMP 'dlib'
+          New-Item -ItemType Directory -Force $dlib | Out-Null
+          Push-Location $dlib
+          Set-Content proj.csproj '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="Microsoft.Trusted.Signing.Client" Version="1.0.*" /></ItemGroup></Project>'
+          dotnet restore proj.csproj --packages pkgs
+          Pop-Location
+          $dll = (Get-ChildItem "$dlib/pkgs/microsoft.trusted.signing.client" -Recurse -Filter Azure.CodeSigning.Dlib.dll | Where-Object { $_.FullName -match '[\\/]x64[\\/]' } | Select-Object -First 1).FullName
+          $meta = Join-Path $env:RUNNER_TEMP 'metadata.json'
+          @{ Endpoint = $env:TS_ENDPOINT; CodeSigningAccountName = $env:TS_ACCOUNT; CertificateProfileName = $env:TS_PROFILE } | ConvertTo-Json | Set-Content $meta
+          $signtool = (Get-ChildItem "${env:ProgramFiles(x86)}/Windows Kits/10/bin" -Recurse -Filter signtool.exe | Where-Object { $_.FullName -match '[\\/]x64[\\/]' } | Sort-Object FullName -Descending | Select-Object -First 1).FullName
+          $template = "`"$signtool`" sign /v /fd SHA256 /tr http://timestamp.acs.microsoft.com /td SHA256 /dlib `"$dll`" /dmdf `"$meta`" {{file}}"
+          "template=$template" | Out-File -Append -FilePath $env:GITHUB_OUTPUT -Encoding utf8
+
+      - name: Release notes from the commit log
+        shell: pwsh
+        run: |
+          $previous = git describe --tags --abbrev=0 --match "v*" HEAD^ 2>$null
+          $range = if ($previous) { "$previous..HEAD" } else { "HEAD" }
+          $log = git log $range --no-merges --pretty="- %s"
+          "## PrettyDesk $env:VERSION`n`n$($log -join "`n")" | Set-Content release-notes.md -Encoding utf8
+
+      - name: Fetch the previous release so Velopack can build delta packages
+        continue-on-error: true # the first release has nothing to download
+        run: vpk download github --repoUrl https://github.com/${{ github.repository }} --token ${{ secrets.GITHUB_TOKEN }} --channel ${{ env.CHANNEL }} --outputDir releases/${{ matrix.rid }}
+
+      - name: Pack (installer, portable zip, full and delta packages)
+        shell: pwsh
+        run: |
+          $args = @('pack', '--packId', $env:PACK_ID, '--packTitle', $env:PACK_TITLE, '--packAuthors', 'PrettyDesk contributors',
+                    '--packVersion', $env:VERSION, '--packDir', "publish/${{ matrix.rid }}", '--mainExe', 'PrettyDesk.exe',
+                    '--icon', 'src/PrettyDesk.App/Assets/PrettyDesk.ico', '--runtime', '${{ matrix.rid }}', '--channel', $env:CHANNEL,
+                    '--outputDir', "releases/${{ matrix.rid }}", '--releaseNotes', 'release-notes.md', '--shortcuts', 'StartMenuRoot')
+          $template = '${{ steps.signing.outputs.template }}'
+          if ($template) { $args += @('--signTemplate', $template) }
+          vpk @args
+
+      - name: Keep the packages as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PrettyDesk-${{ env.VERSION }}-${{ matrix.rid }}
+          path: releases/${{ matrix.rid }}
+          if-no-files-found: error
+
+      - name: Upload to a draft GitHub Release (tags only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        run: |
+          $pre = @(); if ($env:IS_STABLE -ne 'True') { $pre = @('--pre') }
+          vpk upload github --repoUrl https://github.com/${{ github.repository }} --token ${{ secrets.GITHUB_TOKEN }} --outputDir releases/${{ matrix.rid }} `
+            --channel $env:CHANNEL --tag ${{ github.ref_name }} --releaseName "PrettyDesk $env:VERSION" --merge @pre

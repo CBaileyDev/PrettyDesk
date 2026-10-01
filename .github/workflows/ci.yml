@@ -16,6 +16,10 @@ jobs:
       - run: dotnet test --project tests/PrettyDesk.Core.Tests -c Release
       - run: dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release
       - run: python3 tools/strings.py check
+      - name: Third-party notices are up to date
+        run: |
+          dotnet restore src/PrettyDesk.App
+          python3 tools/gen_notices.py --check
 
   assetpipe:
     # Developer-only Python tooling: prompt lint, variant/crop math, build/review/publish.
@@ -34,6 +38,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 } # MinVer reads the git history and tags
       - uses: actions/setup-dotnet@v4
         with: { global-json-file: global.json, dotnet-version: 10.0.x }
       - run: dotnet restore PrettyDesk.sln

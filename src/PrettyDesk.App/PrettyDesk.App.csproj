@@ -13,12 +13,17 @@
     <Description>Switches your Windows 11 wallpaper to game-inspired art while you play.</Description>
     <!-- OWNER-DECISION (SPEC §13.2): the content host. Pass -p:ContentBaseUrl=https://.../v1/ at build time; empty = offline-only build. -->
     <ContentBaseUrl Condition="'$(ContentBaseUrl)' == ''"></ContentBaseUrl>
+    <!-- Version comes from the git tag (v1.2.3, v1.3.0-beta.1) via MinVer; untagged builds are 1.0.0-dev.* so the 1.0.0 catalog still loads. -->
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
+    <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="WPF-UI" Version="4.3.0" />
     <PackageReference Include="H.NotifyIcon.Wpf" Version="2.4.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Velopack" Version="1.2.161" />
+    <PackageReference Include="MinVer" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
