@@ -76,6 +76,12 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
     /// <summary>Fetches and applies a newer signed catalog. Returns true when <see cref="Current"/> changed.</summary>
     public async Task<bool> RefreshAsync(CancellationToken cancellationToken)
     {
+        if (!HasValidBaseUrl(_options.ContentBaseUrl))
+        {
+            LogNoContentUrl();
+            return false;
+        }
+
         if (!_verifier.HasKeys)
         {
             LogNoTrustedKeys();
@@ -101,6 +107,10 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
             _refreshGate.Release();
         }
     }
+
+    /// <summary>True when a build-time <c>ContentBaseUrl</c> is an absolute https URL ending in '/'.</summary>
+    public static bool HasValidBaseUrl(string? url) =>
+        !string.IsNullOrWhiteSpace(url) && url.EndsWith('/') && Uri.TryCreate(url, UriKind.Absolute, out var uri) && uri.Scheme == Uri.UriSchemeHttps;
 
     public void Dispose()
     {
@@ -245,6 +255,9 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
 
     [LoggerMessage(Level = LogLevel.Debug, Message = "Catalog refresh failed; will try again later")]
     private partial void LogRefreshFailed(Exception ex);
+
+    [LoggerMessage(Level = LogLevel.Information, Message = "No content URL is configured for this build; running on the bundled catalog")]
+    private partial void LogNoContentUrl();
 
     [LoggerMessage(Level = LogLevel.Information, Message = "No trusted catalog keys are compiled in; remote catalog updates are disabled")]
     private partial void LogNoTrustedKeys();

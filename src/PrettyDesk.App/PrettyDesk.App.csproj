@@ -5,10 +5,14 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>PrettyDesk</AssemblyName>
     <RootNamespace>PrettyDesk.App</RootNamespace>
+    <StartupObject>PrettyDesk.App.Program</StartupObject>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\PrettyDesk.ico</ApplicationIcon>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <Description>Switches your Windows 11 wallpaper to game-inspired art while you play.</Description>
+    <!-- OWNER-DECISION (SPEC §13.2): the content host. Pass -p:ContentBaseUrl=https://.../v1/ at build time; empty = offline-only build. -->
+    <ContentBaseUrl Condition="'$(ContentBaseUrl)' == ''"></ContentBaseUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="WPF-UI" Version="4.3.0" />
@@ -20,6 +24,30 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PrettyDesk.Core\PrettyDesk.Core.csproj" />
+    <ProjectReference Include="..\PrettyDesk.Presentation\PrettyDesk.Presentation.csproj" />
     <ProjectReference Include="..\PrettyDesk.Windows\PrettyDesk.Windows.csproj" />
+    <InternalsVisibleTo Include="PrettyDesk.App.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The WPF SDK drops these implicit usings because of the System.IO.Path / Shapes.Path clash; we never import Shapes. -->
+    <Using Include="System.IO" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- We provide our own Main (single-instance check, Velopack hooks), so App.xaml is a plain page. -->
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+    <Resource Include="Assets\*.ico" />
+    <EmbeddedResource Include="THIRD-PARTY-NOTICES.txt" LogicalName="THIRD-PARTY-NOTICES.txt" />
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>ContentBaseUrl</_Parameter1>
+      <_Parameter2>$(ContentBaseUrl)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\content\catalog.json')">
+    <Content Include="..\..\content\catalog.json" Link="content\catalog.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\content\starter')">
+    <Content Include="..\..\content\starter\**\*" Link="content\starter\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

@@ -208,6 +208,12 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
             return Task.CompletedTask;
         }
 
+        if (!CatalogService.HasValidBaseUrl(_catalog.Current.ContentBaseUrl))
+        {
+            // Offline-only build or catalog: only the bundled starter set and the user's images are available.
+            return Task.CompletedTask;
+        }
+
         var cooldown = _options.FailureCooldown ?? TimeSpan.FromMinutes(2);
         if (_failedAt.TryGetValue(packId, out var failed) && _time.GetUtcNow() - failed < cooldown)
         {

@@ -43,7 +43,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
     private readonly Dictionary<string, string> _applied = new(StringComparer.Ordinal);
     private readonly Dictionary<string, DateTimeOffset> _lastApply = new(StringComparer.Ordinal);
 
-    private ActiveGame? _activeGame;
+    private volatile ActiveGame? _activeGame;
     private volatile bool _advanceRequested;
     private volatile bool _forceReapply;
     private (string WallpaperId, DateTimeOffset Until)? _preview;

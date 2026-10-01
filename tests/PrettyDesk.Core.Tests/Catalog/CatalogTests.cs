@@ -365,6 +365,22 @@ public sealed class CatalogServiceTests : IDisposable
         handler.Requests.ShouldBeEmpty();
     }
 
+    [Theory]
+    [InlineData("")]
+    [InlineData("not a url")]
+    [InlineData("http://insecure.example/v1/")]
+    [InlineData("https://content.example/v1")]
+    public async Task Builds_without_a_valid_content_url_never_touch_the_network(string baseUrl)
+    {
+        var handler = new FakeHttpHandler(_ => FakeHttpHandler.Status(HttpStatusCode.OK));
+        var options = new CatalogServiceOptions(_dir.File("none.json"), _dir.File("cache"), baseUrl, new Version(1, 0, 0));
+        using var service = new CatalogService(options, new HttpClient(handler), new CatalogSignatureVerifier([_keys.Pub]), _time, NullLogger<CatalogService>.Instance);
+
+        (await service.RefreshAsync(TestContext.Current.CancellationToken)).ShouldBeFalse();
+
+        handler.Requests.ShouldBeEmpty();
+    }
+
     [Fact]
     public async Task Etag_is_sent_back_and_304_changes_nothing()
     {

@@ -322,6 +322,21 @@ public sealed class ContentLibraryTests : IDisposable
     }
 
     [Fact]
+    public async Task A_catalog_without_a_content_url_downloads_nothing_and_does_not_fail()
+    {
+        _catalog.Current = _catalog.Current with { ContentBaseUrl = string.Empty };
+        var handler = new FakeHttpHandler(Serve);
+        var library = Create(handler);
+        var failed = false;
+        library.DownloadFailed += (_, _) => failed = true;
+
+        await library.EnsurePackAsync("game.cs2", [Hd], TestContext.Current.CancellationToken);
+
+        handler.Requests.ShouldBeEmpty();
+        failed.ShouldBeFalse();
+    }
+
+    [Fact]
     public void Unknown_pack_requests_are_ignored_quietly()
     {
         var library = Create();

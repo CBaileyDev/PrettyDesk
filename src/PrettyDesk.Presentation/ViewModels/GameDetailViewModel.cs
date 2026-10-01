@@ -185,6 +185,9 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
         && name.IndexOfAny(['\\', '/', ':', '*', '?', '"', '<', '>', '|']) < 0;
 
     [RelayCommand]
+    private void Back() => _onRemoved();
+
+    [RelayCommand]
     private void Preview(WallpaperItemViewModel? item)
     {
         if (item is not null && item.IsAvailable)
