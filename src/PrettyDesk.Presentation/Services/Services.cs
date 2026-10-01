@@ -10,6 +10,9 @@ public interface IDialogService
 {
     Task<bool> ConfirmAsync(string title, string message, string confirmText, string cancelText);
 
+    /// <summary>Shows a message with several buttons and returns the index of the one pressed, or -1 when dismissed.</summary>
+    Task<int> ChooseAsync(string title, string message, IReadOnlyList<string> buttons);
+
     Task ShowMessageAsync(string title, string message);
 }
 

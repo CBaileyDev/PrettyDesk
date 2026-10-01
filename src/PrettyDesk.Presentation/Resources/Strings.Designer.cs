@@ -21,6 +21,15 @@ public static class Strings
     /// <summary>Every key in the resource file, for drift checks.</summary>
     public static IReadOnlyList<string> AllKeys { get; } =
     [
+        "Banner_Dismiss",
+        "Banner_LivelyBody",
+        "Banner_LivelyTitle",
+        "Banner_PolicyBody",
+        "Banner_PolicyTitle",
+        "Banner_SpotlightBody",
+        "Banner_SpotlightTitle",
+        "Banner_WallpaperEngineBody",
+        "Banner_WallpaperEngineTitle",
         "Bytes_B",
         "Bytes_GB",
         "Bytes_KB",
@@ -41,11 +50,96 @@ public static class Strings
         "Common_Remove",
         "Common_Retry",
         "Common_Save",
+        "Home_DisplayLabel",
+        "Home_NextWallpaper",
+        "Home_NoMonitors",
+        "Home_NoMonitorsDetail",
+        "Home_NoWallpaperYet",
+        "Home_Pause",
+        "Home_PauseOneHour",
+        "Home_PauseUntilResumed",
+        "Home_PreviewLabel",
+        "Home_PrimaryDisplay",
+        "Home_Resume",
+        "Home_Title",
         "Nav_About",
         "Nav_Defaults",
         "Nav_Home",
         "Nav_Library",
         "Nav_Settings",
+        "Settings_Advanced",
+        "Settings_ClearDownloads",
+        "Settings_ClearDownloadsDone",
+        "Settings_ClearDownloadsFailed",
+        "Settings_ClearDownloadsMessage",
+        "Settings_ClearDownloadsTitle",
+        "Settings_DetectDelay",
+        "Settings_DetectDelayHelp",
+        "Settings_DetectGames",
+        "Settings_DetectGamesHelp",
+        "Settings_Detection",
+        "Settings_DetectionLog",
+        "Settings_DetectionLogClear",
+        "Settings_DetectionLogEmpty",
+        "Settings_DetectionLogHelp",
+        "Settings_DetectionLogLine",
+        "Settings_DetectionLogMatched",
+        "Settings_DetectionLogNoForeground",
+        "Settings_DetectionLogNoMatch",
+        "Settings_DetectionLogPause",
+        "Settings_DetectionLogResume",
+        "Settings_ExitGrace",
+        "Settings_ExitGraceHelp",
+        "Settings_ExportDiagnostics",
+        "Settings_ExportDiagnosticsHelp",
+        "Settings_ExportDone",
+        "Settings_ExportFailed",
+        "Settings_GameOnSecondaryOnly",
+        "Settings_GameOnSecondaryOnlyHelp",
+        "Settings_General",
+        "Settings_MonitorDifferent",
+        "Settings_MonitorMode",
+        "Settings_MonitorSame",
+        "Settings_Monitors",
+        "Settings_Notifications",
+        "Settings_NotifyDownloadErrors",
+        "Settings_NotifyHelp",
+        "Settings_NotifyUnknownGames",
+        "Settings_NotifyUpdates",
+        "Settings_OpenLogs",
+        "Settings_PollSeconds",
+        "Settings_PollSecondsValue",
+        "Settings_PrefetchGames",
+        "Settings_PrefetchGamesHelp",
+        "Settings_ResetApp",
+        "Settings_ResetAppHelp",
+        "Settings_ResetFailed",
+        "Settings_ResetKeepImages",
+        "Settings_ResetMessage",
+        "Settings_ResetRemoveImages",
+        "Settings_ResetTitle",
+        "Settings_Restore",
+        "Settings_RestoreDone",
+        "Settings_RestoreFailed",
+        "Settings_RestoreMessage",
+        "Settings_RestoreNothing",
+        "Settings_RestoreOnExit",
+        "Settings_RestoreOnExitHelp",
+        "Settings_RestoreOriginal",
+        "Settings_RestoreOriginalHelp",
+        "Settings_RestoreTitle",
+        "Settings_Restoring",
+        "Settings_ShowInFolder",
+        "Settings_StartWithWindows",
+        "Settings_StartWithWindowsHelp",
+        "Settings_Storage",
+        "Settings_StorageCap",
+        "Settings_StorageCapValue",
+        "Settings_StorageUsed",
+        "Settings_Title",
+        "Settings_UnknownGameHints",
+        "Settings_UnknownGameHintsHelp",
+        "Settings_Working",
         "Status_ApplyFailed",
         "Status_Blocked",
         "Status_BlockedDetail",
@@ -72,6 +166,33 @@ public static class Strings
         "Time_OneDay",
         "Time_UnderMinute",
     ];
+
+    /// <summary>Dismiss</summary>
+    public static string Banner_Dismiss => Get("Banner_Dismiss");
+
+    /// <summary>It draws over your desktop, so PrettyDesk's wallpapers won't be visible while it's active. Pause or close Lively to see them.</summary>
+    public static string Banner_LivelyBody => Get("Banner_LivelyBody");
+
+    /// <summary>Lively Wallpaper is running</summary>
+    public static string Banner_LivelyTitle => Get("Banner_LivelyTitle");
+
+    /// <summary>Windows is set up so wallpapers can't be changed here, so PrettyDesk is paused. Ask your IT admin if you need this changed.</summary>
+    public static string Banner_PolicyBody => Get("Banner_PolicyBody");
+
+    /// <summary>Your organization manages your wallpaper</summary>
+    public static string Banner_PolicyTitle => Get("Banner_PolicyTitle");
+
+    /// <summary>When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper later brings back your last picture.</summary>
+    public static string Banner_SpotlightBody => Get("Banner_SpotlightBody");
+
+    /// <summary>Windows Spotlight or a slideshow is your background</summary>
+    public static string Banner_SpotlightTitle => Get("Banner_SpotlightTitle");
+
+    /// <summary>It draws over your desktop, so PrettyDesk's wallpapers won't be visible while it's active. Pause or close Wallpaper Engine to see them.</summary>
+    public static string Banner_WallpaperEngineBody => Get("Banner_WallpaperEngineBody");
+
+    /// <summary>Wallpaper Engine is running</summary>
+    public static string Banner_WallpaperEngineTitle => Get("Banner_WallpaperEngineTitle");
 
     /// <summary>{0} B</summary>
     public static string Bytes_B => Get("Bytes_B");
@@ -133,6 +254,42 @@ public static class Strings
     /// <summary>Save</summary>
     public static string Common_Save => Get("Common_Save");
 
+    /// <summary>Display {0} · {1}×{2}</summary>
+    public static string Home_DisplayLabel => Get("Home_DisplayLabel");
+
+    /// <summary>Next wallpaper</summary>
+    public static string Home_NextWallpaper => Get("Home_NextWallpaper");
+
+    /// <summary>No display detected</summary>
+    public static string Home_NoMonitors => Get("Home_NoMonitors");
+
+    /// <summary>PrettyDesk will pick up your screens as soon as Windows reports them.</summary>
+    public static string Home_NoMonitorsDetail => Get("Home_NoMonitorsDetail");
+
+    /// <summary>No wallpaper yet</summary>
+    public static string Home_NoWallpaperYet => Get("Home_NoWallpaperYet");
+
+    /// <summary>Pause</summary>
+    public static string Home_Pause => Get("Home_Pause");
+
+    /// <summary>Pause for 1 hour</summary>
+    public static string Home_PauseOneHour => Get("Home_PauseOneHour");
+
+    /// <summary>Pause until I resume</summary>
+    public static string Home_PauseUntilResumed => Get("Home_PauseUntilResumed");
+
+    /// <summary>Your desktop right now</summary>
+    public static string Home_PreviewLabel => Get("Home_PreviewLabel");
+
+    /// <summary>Display {0} · {1}×{2} (main)</summary>
+    public static string Home_PrimaryDisplay => Get("Home_PrimaryDisplay");
+
+    /// <summary>Resume</summary>
+    public static string Home_Resume => Get("Home_Resume");
+
+    /// <summary>Home</summary>
+    public static string Home_Title => Get("Home_Title");
+
     /// <summary>About</summary>
     public static string Nav_About => Get("Nav_About");
 
@@ -147,6 +304,225 @@ public static class Strings
 
     /// <summary>Settings</summary>
     public static string Nav_Settings => Get("Nav_Settings");
+
+    /// <summary>Advanced</summary>
+    public static string Settings_Advanced => Get("Settings_Advanced");
+
+    /// <summary>Clear downloaded content</summary>
+    public static string Settings_ClearDownloads => Get("Settings_ClearDownloads");
+
+    /// <summary>Freed {0}.</summary>
+    public static string Settings_ClearDownloadsDone => Get("Settings_ClearDownloadsDone");
+
+    /// <summary>Couldn't clear everything. Some files may be in use. Try again in a moment.</summary>
+    public static string Settings_ClearDownloadsFailed => Get("Settings_ClearDownloadsFailed");
+
+    /// <summary>Wallpapers will download again when you next need them. Your own images aren't touched.</summary>
+    public static string Settings_ClearDownloadsMessage => Get("Settings_ClearDownloadsMessage");
+
+    /// <summary>Clear downloaded wallpapers?</summary>
+    public static string Settings_ClearDownloadsTitle => Get("Settings_ClearDownloadsTitle");
+
+    /// <summary>Switch wallpaper after a game has run for</summary>
+    public static string Settings_DetectDelay => Get("Settings_DetectDelay");
+
+    /// <summary>Avoids switching when a game crashes right away or a launcher hands off.</summary>
+    public static string Settings_DetectDelayHelp => Get("Settings_DetectDelayHelp");
+
+    /// <summary>Detect games</summary>
+    public static string Settings_DetectGames => Get("Settings_DetectGames");
+
+    /// <summary>Turn this off to keep your wallpaper fixed no matter what you play.</summary>
+    public static string Settings_DetectGamesHelp => Get("Settings_DetectGamesHelp");
+
+    /// <summary>Detection</summary>
+    public static string Settings_Detection => Get("Settings_Detection");
+
+    /// <summary>Detection log</summary>
+    public static string Settings_DetectionLog => Get("Settings_DetectionLog");
+
+    /// <summary>Clear</summary>
+    public static string Settings_DetectionLogClear => Get("Settings_DetectionLogClear");
+
+    /// <summary>Waiting for you to switch to a game…</summary>
+    public static string Settings_DetectionLogEmpty => Get("Settings_DetectionLogEmpty");
+
+    /// <summary>Shows the app you're using and any game PrettyDesk recognises. Use it to check a game's exe name. It's shown here only and never saved.</summary>
+    public static string Settings_DetectionLogHelp => Get("Settings_DetectionLogHelp");
+
+    /// <summary>{0}  {1}  {2}</summary>
+    public static string Settings_DetectionLogLine => Get("Settings_DetectionLogLine");
+
+    /// <summary>matches: {0}</summary>
+    public static string Settings_DetectionLogMatched => Get("Settings_DetectionLogMatched");
+
+    /// <summary>(no foreground app)</summary>
+    public static string Settings_DetectionLogNoForeground => Get("Settings_DetectionLogNoForeground");
+
+    /// <summary>no catalog match</summary>
+    public static string Settings_DetectionLogNoMatch => Get("Settings_DetectionLogNoMatch");
+
+    /// <summary>Pause log</summary>
+    public static string Settings_DetectionLogPause => Get("Settings_DetectionLogPause");
+
+    /// <summary>Resume log</summary>
+    public static string Settings_DetectionLogResume => Get("Settings_DetectionLogResume");
+
+    /// <summary>Keep the game wallpaper after it closes for</summary>
+    public static string Settings_ExitGrace => Get("Settings_ExitGrace");
+
+    /// <summary>Covers games that restart themselves after a patch or a settings change.</summary>
+    public static string Settings_ExitGraceHelp => Get("Settings_ExitGraceHelp");
+
+    /// <summary>Export diagnostics</summary>
+    public static string Settings_ExportDiagnostics => Get("Settings_ExportDiagnostics");
+
+    /// <summary>Creates a zip with logs, settings and display info. It never includes a list of your running apps.</summary>
+    public static string Settings_ExportDiagnosticsHelp => Get("Settings_ExportDiagnosticsHelp");
+
+    /// <summary>Saved to {0}</summary>
+    public static string Settings_ExportDone => Get("Settings_ExportDone");
+
+    /// <summary>Couldn't create the diagnostics file. Check that there's free disk space and try again.</summary>
+    public static string Settings_ExportFailed => Get("Settings_ExportFailed");
+
+    /// <summary>Only change my other displays during games</summary>
+    public static string Settings_GameOnSecondaryOnly => Get("Settings_GameOnSecondaryOnly");
+
+    /// <summary>Your main display keeps your default wallpaper.</summary>
+    public static string Settings_GameOnSecondaryOnlyHelp => Get("Settings_GameOnSecondaryOnlyHelp");
+
+    /// <summary>General</summary>
+    public static string Settings_General => Get("Settings_General");
+
+    /// <summary>A different wallpaper on each display</summary>
+    public static string Settings_MonitorDifferent => Get("Settings_MonitorDifferent");
+
+    /// <summary>Wallpaper on multiple displays</summary>
+    public static string Settings_MonitorMode => Get("Settings_MonitorMode");
+
+    /// <summary>Same wallpaper on every display</summary>
+    public static string Settings_MonitorSame => Get("Settings_MonitorSame");
+
+    /// <summary>Monitors</summary>
+    public static string Settings_Monitors => Get("Settings_Monitors");
+
+    /// <summary>Notifications</summary>
+    public static string Settings_Notifications => Get("Settings_Notifications");
+
+    /// <summary>Tell me when a download fails</summary>
+    public static string Settings_NotifyDownloadErrors => Get("Settings_NotifyDownloadErrors");
+
+    /// <summary>PrettyDesk never notifies you when the wallpaper changes.</summary>
+    public static string Settings_NotifyHelp => Get("Settings_NotifyHelp");
+
+    /// <summary>Tell me when I might want to add a game</summary>
+    public static string Settings_NotifyUnknownGames => Get("Settings_NotifyUnknownGames");
+
+    /// <summary>Tell me when an update is available</summary>
+    public static string Settings_NotifyUpdates => Get("Settings_NotifyUpdates");
+
+    /// <summary>Open logs folder</summary>
+    public static string Settings_OpenLogs => Get("Settings_OpenLogs");
+
+    /// <summary>Check for games every</summary>
+    public static string Settings_PollSeconds => Get("Settings_PollSeconds");
+
+    /// <summary>{0} s</summary>
+    public static string Settings_PollSecondsValue => Get("Settings_PollSecondsValue");
+
+    /// <summary>Download wallpapers for games I have installed</summary>
+    public static string Settings_PrefetchGames => Get("Settings_PrefetchGames");
+
+    /// <summary>So the right wallpaper is ready the moment a game starts.</summary>
+    public static string Settings_PrefetchGamesHelp => Get("Settings_PrefetchGamesHelp");
+
+    /// <summary>Reset PrettyDesk</summary>
+    public static string Settings_ResetApp => Get("Settings_ResetApp");
+
+    /// <summary>Puts all settings back to their defaults and removes downloaded wallpapers.</summary>
+    public static string Settings_ResetAppHelp => Get("Settings_ResetAppHelp");
+
+    /// <summary>Couldn't reset PrettyDesk. Close any program that is using the PrettyDesk folder and try again.</summary>
+    public static string Settings_ResetFailed => Get("Settings_ResetFailed");
+
+    /// <summary>Reset, keep my images</summary>
+    public static string Settings_ResetKeepImages => Get("Settings_ResetKeepImages");
+
+    /// <summary>This resets every setting and removes downloaded wallpapers. Do you also want to remove the images you added yourself?</summary>
+    public static string Settings_ResetMessage => Get("Settings_ResetMessage");
+
+    /// <summary>Reset and remove my images</summary>
+    public static string Settings_ResetRemoveImages => Get("Settings_ResetRemoveImages");
+
+    /// <summary>Reset PrettyDesk?</summary>
+    public static string Settings_ResetTitle => Get("Settings_ResetTitle");
+
+    /// <summary>Restore original wallpaper</summary>
+    public static string Settings_Restore => Get("Settings_Restore");
+
+    /// <summary>Your original wallpaper is back.</summary>
+    public static string Settings_RestoreDone => Get("Settings_RestoreDone");
+
+    /// <summary>Couldn't restore your wallpaper. Try again in a moment.</summary>
+    public static string Settings_RestoreFailed => Get("Settings_RestoreFailed");
+
+    /// <summary>PrettyDesk will stop at your original wallpaper until you change something.</summary>
+    public static string Settings_RestoreMessage => Get("Settings_RestoreMessage");
+
+    /// <summary>There's no saved original wallpaper yet. PrettyDesk saves it the first time it changes your wallpaper.</summary>
+    public static string Settings_RestoreNothing => Get("Settings_RestoreNothing");
+
+    /// <summary>Restore my original wallpaper when PrettyDesk exits</summary>
+    public static string Settings_RestoreOnExit => Get("Settings_RestoreOnExit");
+
+    /// <summary>Closing the window never does this. Only quitting from the tray menu.</summary>
+    public static string Settings_RestoreOnExitHelp => Get("Settings_RestoreOnExitHelp");
+
+    /// <summary>Restore my original wallpaper</summary>
+    public static string Settings_RestoreOriginal => Get("Settings_RestoreOriginal");
+
+    /// <summary>Puts back the wallpaper you had before PrettyDesk first changed it. This works even if the original file was deleted.</summary>
+    public static string Settings_RestoreOriginalHelp => Get("Settings_RestoreOriginalHelp");
+
+    /// <summary>Restore your original wallpaper?</summary>
+    public static string Settings_RestoreTitle => Get("Settings_RestoreTitle");
+
+    /// <summary>Restoring…</summary>
+    public static string Settings_Restoring => Get("Settings_Restoring");
+
+    /// <summary>Show in folder</summary>
+    public static string Settings_ShowInFolder => Get("Settings_ShowInFolder");
+
+    /// <summary>Start with Windows</summary>
+    public static string Settings_StartWithWindows => Get("Settings_StartWithWindows");
+
+    /// <summary>PrettyDesk runs quietly in the tray. It never needs administrator rights.</summary>
+    public static string Settings_StartWithWindowsHelp => Get("Settings_StartWithWindowsHelp");
+
+    /// <summary>Storage</summary>
+    public static string Settings_Storage => Get("Settings_Storage");
+
+    /// <summary>Keep downloads under</summary>
+    public static string Settings_StorageCap => Get("Settings_StorageCap");
+
+    /// <summary>{0} GB</summary>
+    public static string Settings_StorageCapValue => Get("Settings_StorageCapValue");
+
+    /// <summary>Downloaded wallpapers use {0}</summary>
+    public static string Settings_StorageUsed => Get("Settings_StorageUsed");
+
+    /// <summary>Settings</summary>
+    public static string Settings_Title => Get("Settings_Title");
+
+    /// <summary>Offer to add games PrettyDesk doesn't know</summary>
+    public static string Settings_UnknownGameHints => Get("Settings_UnknownGameHints");
+
+    /// <summary>After a full-screen app has run for a minute, PrettyDesk can ask once whether to add it. Nothing is sent anywhere.</summary>
+    public static string Settings_UnknownGameHintsHelp => Get("Settings_UnknownGameHintsHelp");
+
+    /// <summary>Working…</summary>
+    public static string Settings_Working => Get("Settings_Working");
 
     /// <summary>Couldn't change the wallpaper. Trying again…</summary>
     public static string Status_ApplyFailed => Get("Status_ApplyFailed");
