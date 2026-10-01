@@ -7,15 +7,12 @@ using Velopack.Sources;
 namespace PrettyDesk.App.Services;
 
 /// <summary>
-/// Velopack against the GitHub Releases feed of the app repository (SPEC §9): channels "stable" and "beta". Only installed copies
+/// Velopack against the GitHub Releases feed of the app repository (SPEC §9): channels win-{arch}-stable and win-{arch}-beta. Only installed copies
 /// update themselves; portable zips and dev builds report <see cref="IsSupported"/> = false and the About page says so.
 /// Signature-verified by Velopack (package checksums); nothing about the user or machine is sent beyond the HTTPS request itself.
 /// </summary>
 public sealed class VelopackUpdateBackend : IUpdateBackend
 {
-    public const string StableChannel = "stable";
-    public const string BetaChannel = "beta";
-
     private readonly ISettingsProvider _settings;
     private readonly Lazy<UpdateManager?> _manager;
 
@@ -78,5 +75,5 @@ public sealed class VelopackUpdateBackend : IUpdateBackend
     private static UpdateManager Create(bool beta) =>
         new(
             new GithubSource(AppLinks.Repository, accessToken: null, prerelease: beta),
-            new UpdateOptions { ExplicitChannel = beta ? BetaChannel : StableChannel });
+            new UpdateOptions { ExplicitChannel = UpdateChannels.ForThisMachine(beta) });
 }

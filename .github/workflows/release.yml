@@ -132,18 +132,25 @@ jobs:
 
       - name: Fetch the previous release so Velopack can build delta packages
         continue-on-error: true # the first release has nothing to download
-        run: vpk download github --repoUrl https://github.com/${{ github.repository }} --token ${{ secrets.GITHUB_TOKEN }} --channel ${{ env.CHANNEL }} --outputDir releases/${{ matrix.rid }}
+        shell: pwsh
+        run: |
+          $pre = @(); if ($env:IS_STABLE -ne 'True') { $pre = @('--pre') }
+          vpk download github --repoUrl https://github.com/${{ github.repository }} --token ${{ secrets.GITHUB_TOKEN }} --channel $env:CHANNEL --outputDir releases/${{ matrix.rid }} @pre
 
       - name: Pack (installer, portable zip, full and delta packages)
         shell: pwsh
+        env: # read by the Azure.CodeSigning dlib (EnvironmentCredential) when signtool runs for each file
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         run: |
-          $args = @('pack', '--packId', $env:PACK_ID, '--packTitle', $env:PACK_TITLE, '--packAuthors', 'PrettyDesk contributors',
+          $packArgs = @('pack', '--packId', $env:PACK_ID, '--packTitle', $env:PACK_TITLE, '--packAuthors', 'PrettyDesk contributors',
                     '--packVersion', $env:VERSION, '--packDir', "publish/${{ matrix.rid }}", '--mainExe', 'PrettyDesk.exe',
                     '--icon', 'src/PrettyDesk.App/Assets/PrettyDesk.ico', '--runtime', '${{ matrix.rid }}', '--channel', $env:CHANNEL,
                     '--outputDir', "releases/${{ matrix.rid }}", '--releaseNotes', 'release-notes.md', '--shortcuts', 'StartMenuRoot')
           $template = '${{ steps.signing.outputs.template }}'
-          if ($template) { $args += @('--signTemplate', $template) }
-          vpk @args
+          if ($template) { $packArgs += @('--signTemplate', $template) }
+          vpk @packArgs
 
       - name: Keep the packages as a workflow artifact
         uses: actions/upload-artifact@v4

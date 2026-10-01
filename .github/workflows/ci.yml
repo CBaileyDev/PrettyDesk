@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install pyyaml pillow numpy pytest
+      - run: pip install pyyaml pillow numpy jsonschema pytest
       - run: python -m pytest -q tools/assetpipe
       - name: Prompts lint clean and PROMPTS.md up to date
         working-directory: tools/assetpipe
