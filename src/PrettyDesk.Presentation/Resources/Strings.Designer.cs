@@ -21,6 +21,26 @@ public static class Strings
     /// <summary>Every key in the resource file, for drift checks.</summary>
     public static IReadOnlyList<string> AllKeys { get; } =
     [
+        "About_CheckUpdates",
+        "About_Disclaimer",
+        "About_Licenses",
+        "About_LicensesHelp",
+        "About_PrivacyBody",
+        "About_PrivacyLink",
+        "About_PrivacyTitle",
+        "About_ProjectPage",
+        "About_ReportIssue",
+        "About_Title",
+        "About_UpdateAvailable",
+        "About_UpdateChecking",
+        "About_UpdateDownloading",
+        "About_UpdateFailed",
+        "About_UpdateIdle",
+        "About_UpdateNotSupported",
+        "About_UpdateReady",
+        "About_UpdateRestart",
+        "About_UpdateUpToDate",
+        "About_Version",
         "Add_AlreadyCovered",
         "Add_BrowseExe",
         "Add_DisplayName",
@@ -72,6 +92,43 @@ public static class Strings
         "Common_Remove",
         "Common_Retry",
         "Common_Save",
+        "Defaults_AddImages",
+        "Defaults_Battery",
+        "Defaults_BatteryHelp",
+        "Defaults_CollectionCount",
+        "Defaults_CollectionNotDownloaded",
+        "Defaults_CollectionToggle",
+        "Defaults_Collections",
+        "Defaults_CollectionsEmptyBody",
+        "Defaults_CollectionsEmptyTitle",
+        "Defaults_FixedHelp",
+        "Defaults_FixedPick",
+        "Defaults_FollowTheme",
+        "Defaults_FollowThemeHelp",
+        "Defaults_ImageWarning",
+        "Defaults_ImportDone",
+        "Defaults_ImportFailed",
+        "Defaults_ImportSkipped",
+        "Defaults_Interval",
+        "Defaults_IntervalCustomHelp",
+        "Defaults_IntervalCustomMinutes",
+        "Defaults_Intro",
+        "Defaults_KeepOne",
+        "Defaults_Mode",
+        "Defaults_ModeFixed",
+        "Defaults_ModeRotate",
+        "Defaults_MyImages",
+        "Defaults_MyImagesEmpty",
+        "Defaults_MyImagesHelp",
+        "Defaults_NoFixedYet",
+        "Defaults_Order",
+        "Defaults_RemoveImage",
+        "Defaults_SetupStyle",
+        "Defaults_SetupStyleHelp",
+        "Defaults_Title",
+        "Defaults_UseMyImages",
+        "Error_StartupBody",
+        "Error_StartupTitle",
         "Game_AddMyImages",
         "Game_AddWallpapers",
         "Game_Back",
@@ -157,6 +214,54 @@ public static class Strings
         "Nav_Home",
         "Nav_Library",
         "Nav_Settings",
+        "Notify_DownloadFailedBody",
+        "Notify_DownloadFailedTitle",
+        "Notify_SettingsRecoveredBody",
+        "Notify_SettingsRecoveredTitle",
+        "Notify_UnknownGameAction",
+        "Notify_UnknownGameBody",
+        "Notify_UnknownGameTitle",
+        "Notify_UpdateBody",
+        "Notify_UpdateTitle",
+        "Onboard_DoneBody",
+        "Onboard_DoneTip",
+        "Onboard_DoneTitle",
+        "Onboard_Failed",
+        "Onboard_GamesBody",
+        "Onboard_GamesEmptyBody",
+        "Onboard_GamesEmptyTitle",
+        "Onboard_GamesLoading",
+        "Onboard_GamesTitle",
+        "Onboard_ModeBody",
+        "Onboard_ModeFixed",
+        "Onboard_ModeInterval",
+        "Onboard_ModeRotate",
+        "Onboard_ModeTitle",
+        "Onboard_SpotlightNote",
+        "Onboard_Start",
+        "Onboard_StartupBody",
+        "Onboard_StartupTitle",
+        "Onboard_StartupToggle",
+        "Onboard_StepOf",
+        "Onboard_StyleBody",
+        "Onboard_StyleCleanWhite",
+        "Onboard_StyleCleanWhiteHelp",
+        "Onboard_StyleMatteBlack",
+        "Onboard_StyleMatteBlackHelp",
+        "Onboard_StylePastel",
+        "Onboard_StylePastelHelp",
+        "Onboard_StyleRgb",
+        "Onboard_StyleRgbHelp",
+        "Onboard_StyleSurprise",
+        "Onboard_StyleSurpriseHelp",
+        "Onboard_StyleTitle",
+        "Onboard_StyleWarmWood",
+        "Onboard_StyleWarmWoodHelp",
+        "Onboard_WelcomeBody",
+        "Onboard_WelcomePoint1",
+        "Onboard_WelcomePoint2",
+        "Onboard_WelcomePoint3",
+        "Onboard_WelcomeTitle",
         "Picker_Confirm",
         "Picker_Empty",
         "Picker_GroupMine",
@@ -236,6 +341,7 @@ public static class Strings
         "Settings_UnknownGameHints",
         "Settings_UnknownGameHintsHelp",
         "Settings_Working",
+        "Shell_NavLabel",
         "Status_ApplyFailed",
         "Status_Blocked",
         "Status_BlockedDetail",
@@ -261,7 +367,77 @@ public static class Strings
         "Time_Minutes",
         "Time_OneDay",
         "Time_UnderMinute",
+        "Tray_FirstHideBody",
+        "Tray_FirstHideTitle",
+        "Tray_Next",
+        "Tray_Open",
+        "Tray_Pause",
+        "Tray_PauseOneHour",
+        "Tray_PauseUntilResumed",
+        "Tray_Quit",
+        "Tray_Resume",
+        "Tray_Tooltip",
     ];
+
+    /// <summary>Check for updates</summary>
+    public static string About_CheckUpdates => Get("About_CheckUpdates");
+
+    /// <summary>PrettyDesk is an independent fan project and is not affiliated with or endorsed by any game publisher. All wallpapers are original artwork inspired by games, never copies of official art.</summary>
+    public static string About_Disclaimer => Get("About_Disclaimer");
+
+    /// <summary>Open-source licenses</summary>
+    public static string About_Licenses => Get("About_Licenses");
+
+    /// <summary>PrettyDesk is built with these open-source components.</summary>
+    public static string About_LicensesHelp => Get("About_LicensesHelp");
+
+    /// <summary>No telemetry. No accounts. PrettyDesk only contacts its own content server to download wallpapers and updates, and your list of running programs never leaves your PC.</summary>
+    public static string About_PrivacyBody => Get("About_PrivacyBody");
+
+    /// <summary>Privacy details</summary>
+    public static string About_PrivacyLink => Get("About_PrivacyLink");
+
+    /// <summary>Privacy</summary>
+    public static string About_PrivacyTitle => Get("About_PrivacyTitle");
+
+    /// <summary>Project page</summary>
+    public static string About_ProjectPage => Get("About_ProjectPage");
+
+    /// <summary>Report a problem</summary>
+    public static string About_ReportIssue => Get("About_ReportIssue");
+
+    /// <summary>About PrettyDesk</summary>
+    public static string About_Title => Get("About_Title");
+
+    /// <summary>Version {0} is available.</summary>
+    public static string About_UpdateAvailable => Get("About_UpdateAvailable");
+
+    /// <summary>Checking for updates…</summary>
+    public static string About_UpdateChecking => Get("About_UpdateChecking");
+
+    /// <summary>Downloading version {0}… {1}%</summary>
+    public static string About_UpdateDownloading => Get("About_UpdateDownloading");
+
+    /// <summary>Couldn't check for updates. Check your connection and try again.</summary>
+    public static string About_UpdateFailed => Get("About_UpdateFailed");
+
+    /// <summary>Check whether a newer version is available.</summary>
+    public static string About_UpdateIdle => Get("About_UpdateIdle");
+
+    /// <summary>This copy of PrettyDesk can't update itself. Download the newest installer from the project page.</summary>
+    public static string About_UpdateNotSupported => Get("About_UpdateNotSupported");
+
+    /// <summary>Version {0} is ready to install.</summary>
+    public static string About_UpdateReady => Get("About_UpdateReady");
+
+    /// <summary>Restart to update</summary>
+    public static string About_UpdateRestart => Get("About_UpdateRestart");
+
+    /// <summary>You're up to date.</summary>
+    public static string About_UpdateUpToDate => Get("About_UpdateUpToDate");
+
+    /// <summary>Version {0}</summary>
+    public static string About_Version => Get("About_Version");
 
     /// <summary>{0} is already set up as {1}.</summary>
     public static string Add_AlreadyCovered => Get("Add_AlreadyCovered");
@@ -415,6 +591,117 @@ public static class Strings
 
     /// <summary>Save</summary>
     public static string Common_Save => Get("Common_Save");
+
+    /// <summary>Add images…</summary>
+    public static string Defaults_AddImages => Get("Defaults_AddImages");
+
+    /// <summary>Pause rotation while Battery Saver is on</summary>
+    public static string Defaults_Battery => Get("Defaults_Battery");
+
+    /// <summary>Games still switch your wallpaper.</summary>
+    public static string Defaults_BatteryHelp => Get("Defaults_BatteryHelp");
+
+    /// <summary>{0} wallpapers</summary>
+    public static string Defaults_CollectionCount => Get("Defaults_CollectionCount");
+
+    /// <summary>Downloads when first used</summary>
+    public static string Defaults_CollectionNotDownloaded => Get("Defaults_CollectionNotDownloaded");
+
+    /// <summary>Use {0}</summary>
+    public static string Defaults_CollectionToggle => Get("Defaults_CollectionToggle");
+
+    /// <summary>Collections</summary>
+    public static string Defaults_Collections => Get("Defaults_Collections");
+
+    /// <summary>PrettyDesk will list its wallpaper collections once its catalog has loaded. You can still use your own images below.</summary>
+    public static string Defaults_CollectionsEmptyBody => Get("Defaults_CollectionsEmptyBody");
+
+    /// <summary>No collections yet</summary>
+    public static string Defaults_CollectionsEmptyTitle => Get("Defaults_CollectionsEmptyTitle");
+
+    /// <summary>Choose from the wallpapers in your selection.</summary>
+    public static string Defaults_FixedHelp => Get("Defaults_FixedHelp");
+
+    /// <summary>Pick your wallpaper</summary>
+    public static string Defaults_FixedPick => Get("Defaults_FixedPick");
+
+    /// <summary>Match Windows light and dark mode</summary>
+    public static string Defaults_FollowTheme => Get("Defaults_FollowTheme");
+
+    /// <summary>Light wallpapers in light mode, dark in dark mode.</summary>
+    public static string Defaults_FollowThemeHelp => Get("Defaults_FollowThemeHelp");
+
+    /// <summary>{0} may look soft on your display: {1}</summary>
+    public static string Defaults_ImageWarning => Get("Defaults_ImageWarning");
+
+    /// <summary>{0} image(s) added.</summary>
+    public static string Defaults_ImportDone => Get("Defaults_ImportDone");
+
+    /// <summary>Couldn't add those images. Check that the files still exist and try again.</summary>
+    public static string Defaults_ImportFailed => Get("Defaults_ImportFailed");
+
+    /// <summary>{0} image(s) couldn't be added. {1}</summary>
+    public static string Defaults_ImportSkipped => Get("Defaults_ImportSkipped");
+
+    /// <summary>Change every</summary>
+    public static string Defaults_Interval => Get("Defaults_Interval");
+
+    /// <summary>Between 1 minute and 7 days (10080 minutes).</summary>
+    public static string Defaults_IntervalCustomHelp => Get("Defaults_IntervalCustomHelp");
+
+    /// <summary>Custom interval in minutes</summary>
+    public static string Defaults_IntervalCustomMinutes => Get("Defaults_IntervalCustomMinutes");
+
+    /// <summary>What your desktop shows when you're not playing a game.</summary>
+    public static string Defaults_Intro => Get("Defaults_Intro");
+
+    /// <summary>Keep at least one collection or image turned on.</summary>
+    public static string Defaults_KeepOne => Get("Defaults_KeepOne");
+
+    /// <summary>Wallpaper</summary>
+    public static string Defaults_Mode => Get("Defaults_Mode");
+
+    /// <summary>One fixed wallpaper</summary>
+    public static string Defaults_ModeFixed => Get("Defaults_ModeFixed");
+
+    /// <summary>Rotate through my selection</summary>
+    public static string Defaults_ModeRotate => Get("Defaults_ModeRotate");
+
+    /// <summary>My images</summary>
+    public static string Defaults_MyImages => Get("Defaults_MyImages");
+
+    /// <summary>You haven't added any images yet.</summary>
+    public static string Defaults_MyImagesEmpty => Get("Defaults_MyImagesEmpty");
+
+    /// <summary>Drag images here or choose them. They need at least 1280 px on the long edge. PrettyDesk keeps its own copy.</summary>
+    public static string Defaults_MyImagesHelp => Get("Defaults_MyImagesHelp");
+
+    /// <summary>Pick a collection first, then choose your wallpaper.</summary>
+    public static string Defaults_NoFixedYet => Get("Defaults_NoFixedYet");
+
+    /// <summary>Order</summary>
+    public static string Defaults_Order => Get("Defaults_Order");
+
+    /// <summary>Remove {0}</summary>
+    public static string Defaults_RemoveImage => Get("Defaults_RemoveImage");
+
+    /// <summary>Redo setup style</summary>
+    public static string Defaults_SetupStyle => Get("Defaults_SetupStyle");
+
+    /// <summary>Answer "What does your setup look like?" again.</summary>
+    public static string Defaults_SetupStyleHelp => Get("Defaults_SetupStyleHelp");
+
+    /// <summary>Defaults</summary>
+    public static string Defaults_Title => Get("Defaults_Title");
+
+    /// <summary>Include my images</summary>
+    public static string Defaults_UseMyImages => Get("Defaults_UseMyImages");
+
+    /// <summary>Something went wrong while starting. Details were saved to the log. You can try starting PrettyDesk again.</summary>
+    public static string Error_StartupBody => Get("Error_StartupBody");
+
+    /// <summary>PrettyDesk couldn't start properly</summary>
+    public static string Error_StartupTitle => Get("Error_StartupTitle");
 
     /// <summary>Add my images…</summary>
     public static string Game_AddMyImages => Get("Game_AddMyImages");
@@ -671,6 +958,150 @@ public static class Strings
     /// <summary>Settings</summary>
     public static string Nav_Settings => Get("Nav_Settings");
 
+    /// <summary>The wallpapers for {0} didn't download. PrettyDesk will keep your current wallpaper and try again later.</summary>
+    public static string Notify_DownloadFailedBody => Get("Notify_DownloadFailedBody");
+
+    /// <summary>Couldn't download wallpapers</summary>
+    public static string Notify_DownloadFailedTitle => Get("Notify_DownloadFailedTitle");
+
+    /// <summary>PrettyDesk couldn't read its settings file, so it started fresh. The old file was kept next to it.</summary>
+    public static string Notify_SettingsRecoveredBody => Get("Notify_SettingsRecoveredBody");
+
+    /// <summary>Your settings were reset</summary>
+    public static string Notify_SettingsRecoveredTitle => Get("Notify_SettingsRecoveredTitle");
+
+    /// <summary>Add game</summary>
+    public static string Notify_UnknownGameAction => Get("Notify_UnknownGameAction");
+
+    /// <summary>Add {0} to PrettyDesk to give it its own wallpapers.</summary>
+    public static string Notify_UnknownGameBody => Get("Notify_UnknownGameBody");
+
+    /// <summary>Is that a game?</summary>
+    public static string Notify_UnknownGameTitle => Get("Notify_UnknownGameTitle");
+
+    /// <summary>Version {0} is ready. Open About to restart and update.</summary>
+    public static string Notify_UpdateBody => Get("Notify_UpdateBody");
+
+    /// <summary>PrettyDesk update available</summary>
+    public static string Notify_UpdateTitle => Get("Notify_UpdateTitle");
+
+    /// <summary>PrettyDesk is now in your system tray. Close this window any time. It keeps working quietly in the background.</summary>
+    public static string Onboard_DoneBody => Get("Onboard_DoneBody");
+
+    /// <summary>Tip: right-click the tray icon to change wallpaper or pause.</summary>
+    public static string Onboard_DoneTip => Get("Onboard_DoneTip");
+
+    /// <summary>You're all set</summary>
+    public static string Onboard_DoneTitle => Get("Onboard_DoneTitle");
+
+    /// <summary>Couldn't save your choices. Check that there's free disk space and try again.</summary>
+    public static string Onboard_Failed => Get("Onboard_Failed");
+
+    /// <summary>Turn on the games you want PrettyDesk to recognise. Everything stays on your PC.</summary>
+    public static string Onboard_GamesBody => Get("Onboard_GamesBody");
+
+    /// <summary>That's fine. PrettyDesk also recognises games as you launch them, and you can add any game later in Library.</summary>
+    public static string Onboard_GamesEmptyBody => Get("Onboard_GamesEmptyBody");
+
+    /// <summary>No supported games found yet</summary>
+    public static string Onboard_GamesEmptyTitle => Get("Onboard_GamesEmptyTitle");
+
+    /// <summary>Looking at your Steam and Epic libraries…</summary>
+    public static string Onboard_GamesLoading => Get("Onboard_GamesLoading");
+
+    /// <summary>Games we found on this PC</summary>
+    public static string Onboard_GamesTitle => Get("Onboard_GamesTitle");
+
+    /// <summary>This is what you see when you're not in a game.</summary>
+    public static string Onboard_ModeBody => Get("Onboard_ModeBody");
+
+    /// <summary>One wallpaper</summary>
+    public static string Onboard_ModeFixed => Get("Onboard_ModeFixed");
+
+    /// <summary>Change every</summary>
+    public static string Onboard_ModeInterval => Get("Onboard_ModeInterval");
+
+    /// <summary>Rotate wallpapers</summary>
+    public static string Onboard_ModeRotate => Get("Onboard_ModeRotate");
+
+    /// <summary>How should your desktop behave?</summary>
+    public static string Onboard_ModeTitle => Get("Onboard_ModeTitle");
+
+    /// <summary>Your desktop currently uses Windows Spotlight or a slideshow. When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper brings back your last picture.</summary>
+    public static string Onboard_SpotlightNote => Get("Onboard_SpotlightNote");
+
+    /// <summary>Get started</summary>
+    public static string Onboard_Start => Get("Onboard_Start");
+
+    /// <summary>So your wallpapers switch the moment you start a game. PrettyDesk starts quietly in the tray.</summary>
+    public static string Onboard_StartupBody => Get("Onboard_StartupBody");
+
+    /// <summary>Start with Windows</summary>
+    public static string Onboard_StartupTitle => Get("Onboard_StartupTitle");
+
+    /// <summary>Start PrettyDesk when I sign in</summary>
+    public static string Onboard_StartupToggle => Get("Onboard_StartupToggle");
+
+    /// <summary>Step {0} of {1}</summary>
+    public static string Onboard_StepOf => Get("Onboard_StepOf");
+
+    /// <summary>We'll pick wallpapers that match your desk. You can change this any time.</summary>
+    public static string Onboard_StyleBody => Get("Onboard_StyleBody");
+
+    /// <summary>Clean white</summary>
+    public static string Onboard_StyleCleanWhite => Get("Onboard_StyleCleanWhite");
+
+    /// <summary>Bright, airy, calm</summary>
+    public static string Onboard_StyleCleanWhiteHelp => Get("Onboard_StyleCleanWhiteHelp");
+
+    /// <summary>Matte black</summary>
+    public static string Onboard_StyleMatteBlack => Get("Onboard_StyleMatteBlack");
+
+    /// <summary>Dark, minimal, OLED-friendly</summary>
+    public static string Onboard_StyleMatteBlackHelp => Get("Onboard_StyleMatteBlackHelp");
+
+    /// <summary>Pastel</summary>
+    public static string Onboard_StylePastel => Get("Onboard_StylePastel");
+
+    /// <summary>Soft colours and dreamy skies</summary>
+    public static string Onboard_StylePastelHelp => Get("Onboard_StylePastelHelp");
+
+    /// <summary>RGB</summary>
+    public static string Onboard_StyleRgb => Get("Onboard_StyleRgb");
+
+    /// <summary>Dark with a single neon glow</summary>
+    public static string Onboard_StyleRgbHelp => Get("Onboard_StyleRgbHelp");
+
+    /// <summary>Surprise me</summary>
+    public static string Onboard_StyleSurprise => Get("Onboard_StyleSurprise");
+
+    /// <summary>One favourite from every collection</summary>
+    public static string Onboard_StyleSurpriseHelp => Get("Onboard_StyleSurpriseHelp");
+
+    /// <summary>What does your setup look like?</summary>
+    public static string Onboard_StyleTitle => Get("Onboard_StyleTitle");
+
+    /// <summary>Warm wood and plants</summary>
+    public static string Onboard_StyleWarmWood => Get("Onboard_StyleWarmWood");
+
+    /// <summary>Natural, cosy, sunlit</summary>
+    public static string Onboard_StyleWarmWoodHelp => Get("Onboard_StyleWarmWoodHelp");
+
+    /// <summary>Your desktop looks great even while you play. PrettyDesk switches to wallpapers inspired by your game, then goes back to your clean setup when you stop.</summary>
+    public static string Onboard_WelcomeBody => Get("Onboard_WelcomeBody");
+
+    /// <summary>Runs quietly in the tray. No account, no admin rights.</summary>
+    public static string Onboard_WelcomePoint1 => Get("Onboard_WelcomePoint1");
+
+    /// <summary>Never touches your games or anti-cheat.</summary>
+    public static string Onboard_WelcomePoint2 => Get("Onboard_WelcomePoint2");
+
+    /// <summary>One click restores your original wallpaper.</summary>
+    public static string Onboard_WelcomePoint3 => Get("Onboard_WelcomePoint3");
+
+    /// <summary>Welcome to PrettyDesk</summary>
+    public static string Onboard_WelcomeTitle => Get("Onboard_WelcomeTitle");
+
     /// <summary>Use selected</summary>
     public static string Picker_Confirm => Get("Picker_Confirm");
 
@@ -908,6 +1339,9 @@ public static class Strings
     /// <summary>Working…</summary>
     public static string Settings_Working => Get("Settings_Working");
 
+    /// <summary>Main navigation</summary>
+    public static string Shell_NavLabel => Get("Shell_NavLabel");
+
     /// <summary>Couldn't change the wallpaper. Trying again…</summary>
     public static string Status_ApplyFailed => Get("Status_ApplyFailed");
 
@@ -982,4 +1416,34 @@ public static class Strings
 
     /// <summary>in under a minute</summary>
     public static string Time_UnderMinute => Get("Time_UnderMinute");
+
+    /// <summary>It lives in your system tray. Right-click the icon to change wallpaper, pause or quit.</summary>
+    public static string Tray_FirstHideBody => Get("Tray_FirstHideBody");
+
+    /// <summary>PrettyDesk is still running</summary>
+    public static string Tray_FirstHideTitle => Get("Tray_FirstHideTitle");
+
+    /// <summary>Next wallpaper</summary>
+    public static string Tray_Next => Get("Tray_Next");
+
+    /// <summary>Open PrettyDesk</summary>
+    public static string Tray_Open => Get("Tray_Open");
+
+    /// <summary>Pause</summary>
+    public static string Tray_Pause => Get("Tray_Pause");
+
+    /// <summary>For 1 hour</summary>
+    public static string Tray_PauseOneHour => Get("Tray_PauseOneHour");
+
+    /// <summary>Until I resume</summary>
+    public static string Tray_PauseUntilResumed => Get("Tray_PauseUntilResumed");
+
+    /// <summary>Quit</summary>
+    public static string Tray_Quit => Get("Tray_Quit");
+
+    /// <summary>Resume</summary>
+    public static string Tray_Resume => Get("Tray_Resume");
+
+    /// <summary>PrettyDesk</summary>
+    public static string Tray_Tooltip => Get("Tray_Tooltip");
 }

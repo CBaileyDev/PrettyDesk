@@ -120,3 +120,9 @@ public interface IInstalledGamesProvider
 {
     Task<IReadOnlySet<string>> GetInstalledGameIdsAsync(CancellationToken cancellationToken = default);
 }
+
+/// <summary>Shows a tray notification. Implementations must never block and never show more than the caller asks for.</summary>
+public interface INotifier
+{
+    void Show(string title, string body, Action? onClick = null);
+}

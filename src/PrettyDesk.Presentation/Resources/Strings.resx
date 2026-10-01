@@ -4,6 +4,66 @@
   <resheader name="version"><value>2.0</value></resheader>
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="About_CheckUpdates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="About_Disclaimer" xml:space="preserve">
+    <value>PrettyDesk is an independent fan project and is not affiliated with or endorsed by any game publisher. All wallpapers are original artwork inspired by games, never copies of official art.</value>
+  </data>
+  <data name="About_Licenses" xml:space="preserve">
+    <value>Open-source licenses</value>
+  </data>
+  <data name="About_LicensesHelp" xml:space="preserve">
+    <value>PrettyDesk is built with these open-source components.</value>
+  </data>
+  <data name="About_PrivacyBody" xml:space="preserve">
+    <value>No telemetry. No accounts. PrettyDesk only contacts its own content server to download wallpapers and updates, and your list of running programs never leaves your PC.</value>
+  </data>
+  <data name="About_PrivacyLink" xml:space="preserve">
+    <value>Privacy details</value>
+  </data>
+  <data name="About_PrivacyTitle" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="About_ProjectPage" xml:space="preserve">
+    <value>Project page</value>
+  </data>
+  <data name="About_ReportIssue" xml:space="preserve">
+    <value>Report a problem</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>About PrettyDesk</value>
+  </data>
+  <data name="About_UpdateAvailable" xml:space="preserve">
+    <value>Version {0} is available.</value>
+  </data>
+  <data name="About_UpdateChecking" xml:space="preserve">
+    <value>Checking for updates…</value>
+  </data>
+  <data name="About_UpdateDownloading" xml:space="preserve">
+    <value>Downloading version {0}… {1}%</value>
+  </data>
+  <data name="About_UpdateFailed" xml:space="preserve">
+    <value>Couldn't check for updates. Check your connection and try again.</value>
+  </data>
+  <data name="About_UpdateIdle" xml:space="preserve">
+    <value>Check whether a newer version is available.</value>
+  </data>
+  <data name="About_UpdateNotSupported" xml:space="preserve">
+    <value>This copy of PrettyDesk can't update itself. Download the newest installer from the project page.</value>
+  </data>
+  <data name="About_UpdateReady" xml:space="preserve">
+    <value>Version {0} is ready to install.</value>
+  </data>
+  <data name="About_UpdateRestart" xml:space="preserve">
+    <value>Restart to update</value>
+  </data>
+  <data name="About_UpdateUpToDate" xml:space="preserve">
+    <value>You're up to date.</value>
+  </data>
+  <data name="About_Version" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
   <data name="Add_AlreadyCovered" xml:space="preserve">
     <value>{0} is already set up as {1}.</value>
   </data>
@@ -157,6 +217,117 @@
   </data>
   <data name="Common_Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Defaults_AddImages" xml:space="preserve">
+    <value>Add images…</value>
+  </data>
+  <data name="Defaults_Battery" xml:space="preserve">
+    <value>Pause rotation while Battery Saver is on</value>
+  </data>
+  <data name="Defaults_BatteryHelp" xml:space="preserve">
+    <value>Games still switch your wallpaper.</value>
+  </data>
+  <data name="Defaults_CollectionCount" xml:space="preserve">
+    <value>{0} wallpapers</value>
+  </data>
+  <data name="Defaults_CollectionNotDownloaded" xml:space="preserve">
+    <value>Downloads when first used</value>
+  </data>
+  <data name="Defaults_CollectionToggle" xml:space="preserve">
+    <value>Use {0}</value>
+  </data>
+  <data name="Defaults_Collections" xml:space="preserve">
+    <value>Collections</value>
+  </data>
+  <data name="Defaults_CollectionsEmptyBody" xml:space="preserve">
+    <value>PrettyDesk will list its wallpaper collections once its catalog has loaded. You can still use your own images below.</value>
+  </data>
+  <data name="Defaults_CollectionsEmptyTitle" xml:space="preserve">
+    <value>No collections yet</value>
+  </data>
+  <data name="Defaults_FixedHelp" xml:space="preserve">
+    <value>Choose from the wallpapers in your selection.</value>
+  </data>
+  <data name="Defaults_FixedPick" xml:space="preserve">
+    <value>Pick your wallpaper</value>
+  </data>
+  <data name="Defaults_FollowTheme" xml:space="preserve">
+    <value>Match Windows light and dark mode</value>
+  </data>
+  <data name="Defaults_FollowThemeHelp" xml:space="preserve">
+    <value>Light wallpapers in light mode, dark in dark mode.</value>
+  </data>
+  <data name="Defaults_ImageWarning" xml:space="preserve">
+    <value>{0} may look soft on your display: {1}</value>
+  </data>
+  <data name="Defaults_ImportDone" xml:space="preserve">
+    <value>{0} image(s) added.</value>
+  </data>
+  <data name="Defaults_ImportFailed" xml:space="preserve">
+    <value>Couldn't add those images. Check that the files still exist and try again.</value>
+  </data>
+  <data name="Defaults_ImportSkipped" xml:space="preserve">
+    <value>{0} image(s) couldn't be added. {1}</value>
+  </data>
+  <data name="Defaults_Interval" xml:space="preserve">
+    <value>Change every</value>
+  </data>
+  <data name="Defaults_IntervalCustomHelp" xml:space="preserve">
+    <value>Between 1 minute and 7 days (10080 minutes).</value>
+  </data>
+  <data name="Defaults_IntervalCustomMinutes" xml:space="preserve">
+    <value>Custom interval in minutes</value>
+  </data>
+  <data name="Defaults_Intro" xml:space="preserve">
+    <value>What your desktop shows when you're not playing a game.</value>
+  </data>
+  <data name="Defaults_KeepOne" xml:space="preserve">
+    <value>Keep at least one collection or image turned on.</value>
+  </data>
+  <data name="Defaults_Mode" xml:space="preserve">
+    <value>Wallpaper</value>
+  </data>
+  <data name="Defaults_ModeFixed" xml:space="preserve">
+    <value>One fixed wallpaper</value>
+  </data>
+  <data name="Defaults_ModeRotate" xml:space="preserve">
+    <value>Rotate through my selection</value>
+  </data>
+  <data name="Defaults_MyImages" xml:space="preserve">
+    <value>My images</value>
+  </data>
+  <data name="Defaults_MyImagesEmpty" xml:space="preserve">
+    <value>You haven't added any images yet.</value>
+  </data>
+  <data name="Defaults_MyImagesHelp" xml:space="preserve">
+    <value>Drag images here or choose them. They need at least 1280 px on the long edge. PrettyDesk keeps its own copy.</value>
+  </data>
+  <data name="Defaults_NoFixedYet" xml:space="preserve">
+    <value>Pick a collection first, then choose your wallpaper.</value>
+  </data>
+  <data name="Defaults_Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Defaults_RemoveImage" xml:space="preserve">
+    <value>Remove {0}</value>
+  </data>
+  <data name="Defaults_SetupStyle" xml:space="preserve">
+    <value>Redo setup style</value>
+  </data>
+  <data name="Defaults_SetupStyleHelp" xml:space="preserve">
+    <value>Answer "What does your setup look like?" again.</value>
+  </data>
+  <data name="Defaults_Title" xml:space="preserve">
+    <value>Defaults</value>
+  </data>
+  <data name="Defaults_UseMyImages" xml:space="preserve">
+    <value>Include my images</value>
+  </data>
+  <data name="Error_StartupBody" xml:space="preserve">
+    <value>Something went wrong while starting. Details were saved to the log. You can try starting PrettyDesk again.</value>
+  </data>
+  <data name="Error_StartupTitle" xml:space="preserve">
+    <value>PrettyDesk couldn't start properly</value>
   </data>
   <data name="Game_AddMyImages" xml:space="preserve">
     <value>Add my images…</value>
@@ -413,6 +584,150 @@
   <data name="Nav_Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="Notify_DownloadFailedBody" xml:space="preserve">
+    <value>The wallpapers for {0} didn't download. PrettyDesk will keep your current wallpaper and try again later.</value>
+  </data>
+  <data name="Notify_DownloadFailedTitle" xml:space="preserve">
+    <value>Couldn't download wallpapers</value>
+  </data>
+  <data name="Notify_SettingsRecoveredBody" xml:space="preserve">
+    <value>PrettyDesk couldn't read its settings file, so it started fresh. The old file was kept next to it.</value>
+  </data>
+  <data name="Notify_SettingsRecoveredTitle" xml:space="preserve">
+    <value>Your settings were reset</value>
+  </data>
+  <data name="Notify_UnknownGameAction" xml:space="preserve">
+    <value>Add game</value>
+  </data>
+  <data name="Notify_UnknownGameBody" xml:space="preserve">
+    <value>Add {0} to PrettyDesk to give it its own wallpapers.</value>
+  </data>
+  <data name="Notify_UnknownGameTitle" xml:space="preserve">
+    <value>Is that a game?</value>
+  </data>
+  <data name="Notify_UpdateBody" xml:space="preserve">
+    <value>Version {0} is ready. Open About to restart and update.</value>
+  </data>
+  <data name="Notify_UpdateTitle" xml:space="preserve">
+    <value>PrettyDesk update available</value>
+  </data>
+  <data name="Onboard_DoneBody" xml:space="preserve">
+    <value>PrettyDesk is now in your system tray. Close this window any time. It keeps working quietly in the background.</value>
+  </data>
+  <data name="Onboard_DoneTip" xml:space="preserve">
+    <value>Tip: right-click the tray icon to change wallpaper or pause.</value>
+  </data>
+  <data name="Onboard_DoneTitle" xml:space="preserve">
+    <value>You're all set</value>
+  </data>
+  <data name="Onboard_Failed" xml:space="preserve">
+    <value>Couldn't save your choices. Check that there's free disk space and try again.</value>
+  </data>
+  <data name="Onboard_GamesBody" xml:space="preserve">
+    <value>Turn on the games you want PrettyDesk to recognise. Everything stays on your PC.</value>
+  </data>
+  <data name="Onboard_GamesEmptyBody" xml:space="preserve">
+    <value>That's fine. PrettyDesk also recognises games as you launch them, and you can add any game later in Library.</value>
+  </data>
+  <data name="Onboard_GamesEmptyTitle" xml:space="preserve">
+    <value>No supported games found yet</value>
+  </data>
+  <data name="Onboard_GamesLoading" xml:space="preserve">
+    <value>Looking at your Steam and Epic libraries…</value>
+  </data>
+  <data name="Onboard_GamesTitle" xml:space="preserve">
+    <value>Games we found on this PC</value>
+  </data>
+  <data name="Onboard_ModeBody" xml:space="preserve">
+    <value>This is what you see when you're not in a game.</value>
+  </data>
+  <data name="Onboard_ModeFixed" xml:space="preserve">
+    <value>One wallpaper</value>
+  </data>
+  <data name="Onboard_ModeInterval" xml:space="preserve">
+    <value>Change every</value>
+  </data>
+  <data name="Onboard_ModeRotate" xml:space="preserve">
+    <value>Rotate wallpapers</value>
+  </data>
+  <data name="Onboard_ModeTitle" xml:space="preserve">
+    <value>How should your desktop behave?</value>
+  </data>
+  <data name="Onboard_SpotlightNote" xml:space="preserve">
+    <value>Your desktop currently uses Windows Spotlight or a slideshow. When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper brings back your last picture.</value>
+  </data>
+  <data name="Onboard_Start" xml:space="preserve">
+    <value>Get started</value>
+  </data>
+  <data name="Onboard_StartupBody" xml:space="preserve">
+    <value>So your wallpapers switch the moment you start a game. PrettyDesk starts quietly in the tray.</value>
+  </data>
+  <data name="Onboard_StartupTitle" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="Onboard_StartupToggle" xml:space="preserve">
+    <value>Start PrettyDesk when I sign in</value>
+  </data>
+  <data name="Onboard_StepOf" xml:space="preserve">
+    <value>Step {0} of {1}</value>
+  </data>
+  <data name="Onboard_StyleBody" xml:space="preserve">
+    <value>We'll pick wallpapers that match your desk. You can change this any time.</value>
+  </data>
+  <data name="Onboard_StyleCleanWhite" xml:space="preserve">
+    <value>Clean white</value>
+  </data>
+  <data name="Onboard_StyleCleanWhiteHelp" xml:space="preserve">
+    <value>Bright, airy, calm</value>
+  </data>
+  <data name="Onboard_StyleMatteBlack" xml:space="preserve">
+    <value>Matte black</value>
+  </data>
+  <data name="Onboard_StyleMatteBlackHelp" xml:space="preserve">
+    <value>Dark, minimal, OLED-friendly</value>
+  </data>
+  <data name="Onboard_StylePastel" xml:space="preserve">
+    <value>Pastel</value>
+  </data>
+  <data name="Onboard_StylePastelHelp" xml:space="preserve">
+    <value>Soft colours and dreamy skies</value>
+  </data>
+  <data name="Onboard_StyleRgb" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="Onboard_StyleRgbHelp" xml:space="preserve">
+    <value>Dark with a single neon glow</value>
+  </data>
+  <data name="Onboard_StyleSurprise" xml:space="preserve">
+    <value>Surprise me</value>
+  </data>
+  <data name="Onboard_StyleSurpriseHelp" xml:space="preserve">
+    <value>One favourite from every collection</value>
+  </data>
+  <data name="Onboard_StyleTitle" xml:space="preserve">
+    <value>What does your setup look like?</value>
+  </data>
+  <data name="Onboard_StyleWarmWood" xml:space="preserve">
+    <value>Warm wood and plants</value>
+  </data>
+  <data name="Onboard_StyleWarmWoodHelp" xml:space="preserve">
+    <value>Natural, cosy, sunlit</value>
+  </data>
+  <data name="Onboard_WelcomeBody" xml:space="preserve">
+    <value>Your desktop looks great even while you play. PrettyDesk switches to wallpapers inspired by your game, then goes back to your clean setup when you stop.</value>
+  </data>
+  <data name="Onboard_WelcomePoint1" xml:space="preserve">
+    <value>Runs quietly in the tray. No account, no admin rights.</value>
+  </data>
+  <data name="Onboard_WelcomePoint2" xml:space="preserve">
+    <value>Never touches your games or anti-cheat.</value>
+  </data>
+  <data name="Onboard_WelcomePoint3" xml:space="preserve">
+    <value>One click restores your original wallpaper.</value>
+  </data>
+  <data name="Onboard_WelcomeTitle" xml:space="preserve">
+    <value>Welcome to PrettyDesk</value>
+  </data>
   <data name="Picker_Confirm" xml:space="preserve">
     <value>Use selected</value>
   </data>
@@ -650,6 +965,9 @@
   <data name="Settings_Working" xml:space="preserve">
     <value>Working…</value>
   </data>
+  <data name="Shell_NavLabel" xml:space="preserve">
+    <value>Main navigation</value>
+  </data>
   <data name="Status_ApplyFailed" xml:space="preserve">
     <value>Couldn't change the wallpaper. Trying again…</value>
   </data>
@@ -724,5 +1042,35 @@
   </data>
   <data name="Time_UnderMinute" xml:space="preserve">
     <value>in under a minute</value>
+  </data>
+  <data name="Tray_FirstHideBody" xml:space="preserve">
+    <value>It lives in your system tray. Right-click the icon to change wallpaper, pause or quit.</value>
+  </data>
+  <data name="Tray_FirstHideTitle" xml:space="preserve">
+    <value>PrettyDesk is still running</value>
+  </data>
+  <data name="Tray_Next" xml:space="preserve">
+    <value>Next wallpaper</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Open PrettyDesk</value>
+  </data>
+  <data name="Tray_Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Tray_PauseOneHour" xml:space="preserve">
+    <value>For 1 hour</value>
+  </data>
+  <data name="Tray_PauseUntilResumed" xml:space="preserve">
+    <value>Until I resume</value>
+  </data>
+  <data name="Tray_Quit" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="Tray_Resume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="Tray_Tooltip" xml:space="preserve">
+    <value>PrettyDesk</value>
   </data>
 </root>
