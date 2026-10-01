@@ -3,12 +3,13 @@
 PrettyDesk changes your Windows 11 wallpaper to game-inspired art while you play, then goes back to your clean default (or a rotating
 set) when you stop. It lives in the tray, needs no admin rights, and sends nothing anywhere.
 
-> **Status:** feature-complete against [`docs/SPEC.md`](docs/SPEC.md) milestones M0-M6; the artwork itself is the owner's next step
-> (all 286 prompts are written, see [`art/PROMPTS.md`](art/PROMPTS.md)), and M7 (soak and manual QA on real hardware) is still to be run.
-> Windows behavior is proven only where CI says so; see [`docs/PERF.md`](docs/PERF.md) and [`docs/QA_CHECKLIST.md`](docs/QA_CHECKLIST.md).
+> **Status:** implemented through the spec's milestones M0-M6 in [`docs/SPEC.md`](docs/SPEC.md). The artwork itself is the owner's next step
+> (all 286 prompts are written, see [`art/PROMPTS.md`](art/PROMPTS.md)). The installer, updater and uninstall hook compile and are unit-tested
+> but have **not yet run** on a real install, and M7 (24 h soak, manual QA on real hardware) is still to be done. Windows behavior is proven only
+> where CI says so; see [`docs/PERF.md`](docs/PERF.md) and [`docs/QA_CHECKLIST.md`](docs/QA_CHECKLIST.md).
 
 ## What it does
-- **Game-aware.** Detects 45 games out of the box (new ones arrive through a signed online catalog, no app update needed). When a game
+- **Game-aware.** Detects 46 games out of the box (new ones arrive through a signed online catalog, no app update needed). When a game
   starts, your desktop switches to a matching wallpaper; when it exits, your default returns. Add your own games in a few clicks.
 - **Made for "clean setup" people.** Default collections match your desk: Matte Black, Clean White, Warm Minimal, Sage and Botanical,
   Aura Gradients, Misty Nature, Painted Landscapes, Steel Blue Night, Cozy Lo-fi, Deep Space, Pastel Dream, Neon Minimal, Architecture

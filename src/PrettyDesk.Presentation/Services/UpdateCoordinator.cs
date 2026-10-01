@@ -39,6 +39,7 @@ public sealed partial class UpdateCoordinator : IUpdateService, IDisposable
     private ITimer? _timer;
     private AvailableUpdate? _ready;
     private UpdateState _state;
+    private int _disposed;
 
     public UpdateCoordinator(IUpdateBackend backend, TimeProvider time, ILogger<UpdateCoordinator> logger)
     {
@@ -142,6 +143,12 @@ public sealed partial class UpdateCoordinator : IUpdateService, IDisposable
 
     public void Dispose()
     {
+        // Idempotent: registered under two DI service types and also disposed explicitly by AppRuntime.
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         _cts.Cancel();
         _timer?.Dispose();
         _cts.Dispose();

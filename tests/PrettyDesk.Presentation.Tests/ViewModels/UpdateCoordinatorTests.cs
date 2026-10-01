@@ -39,6 +39,16 @@ public sealed class UpdateCoordinatorTests : IDisposable
     }
 
     [Fact]
+    public void Disposing_twice_is_harmless_because_the_container_disposes_once_per_registration()
+    {
+        var updates = Create();
+        updates.Start();
+        updates.Dispose();
+
+        Should.NotThrow(() => updates.Dispose());
+    }
+
+    [Fact]
     public async Task Up_to_date_when_the_feed_has_nothing_newer()
     {
         var updates = Create();
