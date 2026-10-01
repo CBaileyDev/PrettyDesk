@@ -1,0 +1,36 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  core-linux:
+    # Keeps PrettyDesk.Core portable: no Windows APIs may leak in.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { global-json-file: global.json, dotnet-version: 10.0.x }
+      - run: dotnet build src/PrettyDesk.Core -c Release
+      - run: dotnet test --project tests/PrettyDesk.Core.Tests -c Release
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { global-json-file: global.json, dotnet-version: 10.0.x }
+      - run: dotnet restore PrettyDesk.sln
+      - run: dotnet format PrettyDesk.sln --verify-no-changes --no-restore
+      - name: Build (warnings are errors) win-x64
+        run: dotnet build PrettyDesk.sln -c Release --no-restore -p:Platform="Any CPU"
+      - name: Build win-arm64 app
+        run: dotnet build src/PrettyDesk.App -c Release -r win-arm64
+      - name: Core + Windows tests
+        run: |
+          dotnet test --project tests/PrettyDesk.Core.Tests -c Release --report-trx --results-directory TestResults
+          dotnet test --project tests/PrettyDesk.Windows.Tests -c Release --report-trx --results-directory TestResults
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: test-results, path: TestResults }
