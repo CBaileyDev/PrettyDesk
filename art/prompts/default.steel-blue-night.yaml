@@ -1,0 +1,357 @@
+pack: default.steel-blue-night
+kind: default
+title: "Steel Blue Night"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Steel Blue Night. Every image is a
+  cool, moody night scene in steel blue (#4A6A8A), slate (#2B3A4A), deep midnight (#0C141C) and cold white
+  (#DCE6EE), with only occasional restrained pale lights. The look is cinematic night photography with soft
+  bokeh, rain, fog and concrete, calm and slightly melancholic, never busy or neon. Darks are rich with visible
+  form. Gradients are smooth and banding-free. No text, no readable signs, no people, no frames or borders. Keep
+  the left edge and the bottom edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: sn-01
+    title: "Rain on Glass"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [rain, bokeh, city]
+    starter: true
+    accent: "#6F93B5"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Fine raindrops cling to a window pane, each one holding a tiny
+        upside-down reflection of the city behind. Beyond the glass, a soft blur of steel-blue and pale white
+        lights spreads across the dark in round bokeh discs, brightest in the right half. A thin line of
+        condensation runs along the bottom edge of the glass.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #0C141C, #2B3A4A, #4A6A8A with a cold white bokeh #DCE6EE. Mood: quiet, introspective, cool.
+        Composition: the sharpest cluster of raindrops against the brightest bokeh sits about 56–76% across and
+        36–60% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp raindrop detail and reflections; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, readable signs,
+        vehicles, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, softly blurred rainy glass with only a few dim bokeh discs. New area on the right: more bokeh
+        lights spread out, fainter and farther, with a few new raindrops. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The raindrops and bokeh fill the frame with the brightest cluster at about 45% of the height.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-02
+    title: "Night Coastline"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [coast, night, sea]
+    starter: false
+    accent: "#58789A"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dark rocky coastline curves away along a calm steel-blue sea under
+        a clear night sky. A string of tiny warm-white lights marks a far headland, and its reflection draws a
+        soft thin line on the water. Pale surf glows faintly along the rocks in the foreground, and a faint band
+        of lighter blue marks the horizon.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #080F16, #1E2F40, #4A6A8A with a pale surf #C9D7E3. Mood: calm, vast, cool.
+        Composition: the far headland lights and their reflection sits about 54–74% across and 41–63% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, buildings,
+        boats, vehicles, people, readable signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, calm sea and rock in deep blue shade, low in detail. New area on the right: the coastline curves
+        on, with a second faint string of lights far away. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The coastline curves through the lower center, with the headland lights at about 55% of the
+        height under a dark sky. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-03
+    title: "Cold Concrete Stair"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [concrete, architecture, stair]
+    starter: false
+    accent: "#7F95A8"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A monumental concrete staircase of broad, shallow steps rises into
+        darkness, lit by a single pale blue-white light from above. Each step edge catches a thin, clean
+        highlight while the treads fall into deep slate shadow. The board-marked concrete shows a fine vertical
+        texture. There is nothing else, only stairs, light and shadow.
+        Style: architectural night photography, board-marked concrete, a single light source, cinematic and
+        austere.
+        Palette: #0A1118, #27343F, #55697A with a cold highlight #C7D4DF. Mood: monumental, silent, cool.
+        Composition: the brightest step edges and the light pool sits about 55–75% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, railings,
+        doors, people, signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm concrete wall in deep shade with a delicate vertical texture. New area on the right: the stairs
+        continue upward into soft dark, with a faint second light far above. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The staircase climbs vertically through the center with the light pool at about 40% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-04
+    title: "Foggy Bridge"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [bridge, fog, night]
+    starter: false
+    accent: "#6C8AA8"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long suspension bridge crosses a dark river in thick night fog,
+        its cables and towers only faint silhouettes in deep blue-grey. A string of dim pale lights marks the
+        deck and dissolves into the mist at both ends. The water below is smooth and nearly black, with a few
+        thin reflected streaks of light.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #0A121A, #263646, #4A6A8A with a pale lamp glow #BCCCDA. Mood: mysterious, calm, cool.
+        Composition: the central tower and its pale lamp glow, a centered and symmetrical composition, sits
+        about 40–60% across and 34–58% down; the bridge spans evenly to both sides so the image holds with
+        hidden icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, vehicles,
+        people, readable signs, boats.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a thick bank of dark blue fog over smooth water, very low in detail. New area on the right: the bridge
+        deck continues into brighter fog with one more faint tower. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The bridge tower rises through the center, with the lamp glow at about 45% of the height over
+        dark water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-05
+    title: "Moonlit Overcast"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [moon, clouds, night]
+    starter: false
+    accent: "#7A98B8"
+    focal: { x: 0.50, y: 0.40 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A full moon glows softly behind a veil of thin steel-blue cloud, its
+        light diffused into a wide, round halo. Dark layers of cloud drift across the sky in soft horizontal
+        bands, brighter near the center and deepening to blue-black at the corners. A thin, calm silhouette of
+        low hills marks the bottom of the frame.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #070D14, #1D2C3C, #4A6A8A with a pale moon glow #D5E0EA. Mood: serene, quiet, vast.
+        Composition: the moon's halo, a centered and symmetrical composition, sits about 40–60% across and
+        28–52% down; the cloud bands are balanced on both sides so the image holds with hidden icons. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp cloud edges around the halo; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, stars, birds,
+        buildings, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark cloud bands in smooth gradients, low contrast. New area on the right: dark cloud bands in smooth
+        gradients, with the faintest edge of the halo. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moon halo sits centered at about 35% of the height with dark clouds around it and the
+        hill line at the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-06
+    title: "Wet Street Reflections"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [street, wet, reflections]
+    starter: false
+    accent: "#6385A8"
+    focal: { x: 0.66, y: 0.54 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty, rain-wet street runs away into the distance at night, its
+        asphalt a smooth mirror of cool blue light. A few distant lamps glow as soft pale stars of light, and
+        their long vertical reflections stretch toward the viewer. Dark, indistinct building walls rise on both
+        sides into low cloud.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #090F16, #223142, #4A6A8A with a pale lamp #CDDAE5. Mood: lonely, quiet, cool.
+        Composition: the converging reflections of the lamps in the wet road sits about 56–76% across and 42–66%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, cars, people,
+        readable signs, shop windows.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, softly blurred building wall in deep blue shade. New area on the right: the street continues into
+        mist with a few more distant lamps. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The wet road runs up the center to a vanishing point at about 45% of the height, with its
+        reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-07
+    title: "Winter Pier at Dusk"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [pier, dusk, water]
+    starter: false
+    accent: "#5E7F9F"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A long wooden pier extends straight out over a calm steel-blue bay
+        at dusk, its planks and posts dark silhouettes in the fading light. At its far end, a single small pale
+        lamp glows against a deep blue sky with a faint warm line at the horizon. Thin mist hovers over the
+        water.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #0A141E, #2A3F55, #5E7F9F with a pale lamp #D6E2EC. Mood: still, reflective, cool.
+        Composition: the pier's end and its small lamp sits about 56–76% across and 39–61% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, boats, people,
+        birds, readable signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm dark blue water and mist, low in detail. New area on the right: the bay opens wide, with a faint,
+        distant line of hills in the haze. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The pier runs from the lower center to the lamp at about 48% of the height, under a deep blue
+        sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sn-08
+    title: "Blue Hour Skyline Haze"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [skyline, haze, blue-hour]
+    starter: false
+    accent: "#6A8CB0"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A far-off city skyline stands as a flat band of soft blue-grey
+        silhouettes in heavy evening haze, with only a few tiny windows lit pale white. The sky above glows with
+        a smooth gradient from deep midnight blue at the top to a faint steel-blue band at the horizon. A dark,
+        calm expanse of water or plain fills the foreground.
+        Style: cinematic night photography, shallow depth of field, cool tonality, calm and melancholic.
+        Palette: #0A121B, #243649, #5E7F9F with a pale window light #D3DFE9. Mood: calm, distant, cool.
+        Composition: the skyline band and the faint horizon glow sits about 54–74% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp skyline edges and smooth haze gradients; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, readable signs,
+        vehicles, people, bridges.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth gradient sky and dark water with no features. New area on the right: the skyline thins out into
+        lower buildings and haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The skyline sits at about 58% of the height, with a deep gradient sky above and dark water
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

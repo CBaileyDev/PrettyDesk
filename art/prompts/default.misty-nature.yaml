@@ -1,0 +1,357 @@
+pack: default.misty-nature
+kind: default
+title: "Misty Nature"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Misty Nature. Every image is a quiet,
+  desaturated landscape in fog white (#EEF0EF), soft green-grey (#8FA39A), slate blue (#5F7A8C) and deep forest
+  (#2F4540): layered ridges, still lakes, black-sand beaches and pine forests wrapped in mist. The look is
+  fine-art landscape photography with a long-exposure calm, delicate atmospheric perspective and wide, empty
+  space. Gradients and haze are smooth and banding-free. No text of any kind, no people, no buildings, no frames
+  or borders. Keep the left edge and bottom edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: mn-01
+    title: "Layered Ridges in Fog"
+    role: default
+    tone: mid
+    setupMatch: [wood, white, black]
+    tags: [mountains, fog, layers]
+    starter: true
+    accent: "#7E93A0"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Five successive mountain ridges recede into thick morning fog, each
+        one paler and bluer than the last, from deep forest green in front to a ghostly white-blue at the
+        horizon. The fog pools in the valleys between them in soft, glowing bands. The sky is a smooth, pale,
+        even gradient with no clouds.
+        Style: fine-art landscape photography, telephoto compression, delicate atmospheric perspective, serene.
+        Palette: #EEF1F0, #BFCBD0, #8FA39A with a deep forest #2F4540. Mood: serene, vast, hushed.
+        Composition: the middle ridges where the fog glows brightest sits about 54–74% across and 36–60% down;
+        the horizon sits near the upper third. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp ridge silhouettes and fog layer edges; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, buildings,
+        roads, birds, people, power lines.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm layered ridges dissolving into a smooth pale fog, very low contrast. New area on the right: the
+        ridges continue, with one taller peak emerging faintly from the fog. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ridges stack vertically with the brightest fog band at about 50% of the height and pale
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-02
+    title: "Alpine Lake at Blue Hour"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb, white]
+    tags: [lake, alpine, blue-hour]
+    starter: false
+    accent: "#5F7A8C"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A perfectly still alpine lake mirrors a range of dark, snow-dusted
+        peaks at blue hour, the water a smooth sheet of deep slate blue. The peaks fade into a gradient sky of
+        indigo above and a faint peach glow at the horizon. A thin line of low mist floats just above the water,
+        and the far shore is a soft dark band of pines.
+        Style: long-exposure landscape photography, mirror reflections, cool blue-hour tonality, tranquil and
+        cinematic.
+        Palette: #0F1B26, #2A4358, #5F7A8C with a faint peach horizon #D9A98E. Mood: tranquil, cool, majestic.
+        Composition: the mirror line where the peaks meet their reflection sits about 56–76% across and 40–60%
+        down; the horizon sits near the center-lower third. The left 15% and the bottom 8% stay calm and
+        low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+        the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp peak ridges and a clean mirror reflection; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, boats, cabins,
+        birds, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm dark water and a hint of the pine shoreline, low in detail. New area on the right: the peaks
+        continue with one lower snowy summit, mirrored in the water. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The peaks rise in the upper half with the mirror line at about 55% of the height and calm
+        water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-03
+    title: "Black Sand Beach"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [beach, black-sand, coast]
+    starter: false
+    accent: "#8EA0A8"
+    focal: { x: 0.64, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide beach of fine black volcanic sand meets a calm grey-green
+        sea. A thin foam line draws a long, slow curve along the shore, and the wet sand mirrors a pale, hazy
+        sky. Far off, a dark sea stack stands faint in the mist at the end of the curve. The light is soft,
+        overcast and silvery.
+        Style: minimalist coastal photography, long exposure, muted tonality, quiet and cinematic.
+        Palette: #E7ECEC, #AAB8BC, #5E6F73 with a deep black sand #1A1E20. Mood: calm, hushed, elemental.
+        Composition: the curve of the foam line and the faint sea stack sits about 54–74% across and 44–66%
+        down; the horizon sits near the upper third. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp wet-sand texture and foam edges; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        birds, boats, people, driftwood.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth wet black sand reflecting soft grey sky, low detail. New area on the right: the shoreline
+        continues to a second faint sea stack in the haze. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The foam curve sweeps through the lower center, with the sea stack at about 45% of the height
+        in pale mist. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-04
+    title: "Pine Forest Mist"
+    role: default
+    tone: mid
+    setupMatch: [wood, black]
+    tags: [pines, forest, mist]
+    starter: false
+    accent: "#6F8A82"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Tall, slender pine trunks rise in straight vertical lines out of a
+        thick white mist, repeating into the distance in softer and softer grey-green silhouettes. A faint glow
+        of diffused morning light brightens the center of the fog, and the forest floor is lost in white. The
+        composition is calm and rhythmic.
+        Style: atmospheric forest photography, soft fog, vertical rhythm, hushed and minimal.
+        Palette: #EEF1EF, #C4D0CB, #8AA097 with a dark pine #2F4540. Mood: hushed, rhythmic, peaceful.
+        Composition: the glowing center of the fog between the trunks, a centered and symmetrical composition,
+        sits about 40–60% across and 36–64% down; the trunks are balanced on both sides so the image holds with
+        hidden icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp trunk edges in the nearest pines; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, animals, paths,
+        signs, people, snow.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        evenly spaced faint trunks in heavy mist, very low contrast. New area on the right: evenly spaced faint
+        trunks thinning into brighter mist, with a soft glow. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The trunks rise vertically through the whole frame with the glow centered at about 48% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-05
+    title: "Still Lake Morning"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [lake, morning, reflection]
+    starter: false
+    accent: "#9BB2B8"
+    focal: { x: 0.50, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A flat, glass-like lake in the first soft light of morning, with a
+        low band of wooded hills along the far shore half-hidden in pale mist. The water mirrors the pearl-white
+        sky with a faint blush at the horizon, and a few barely visible ripples catch the light near the center.
+        The foreground is clean, open water.
+        Style: high-key landscape photography, mirror-still water, soft pastel tonality, serene.
+        Palette: #F1F3F0, #D3DDDE, #A3B9BC with a faint blush #E8D4CB. Mood: peaceful, bright, spacious.
+        Composition: the far shoreline and its reflection, a centered and symmetrical composition, sits about
+        40–60% across and 42–62% down; the shoreline sits near the middle third and the hills balance on both
+        sides so the image holds with hidden icons. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp shoreline reflection and subtle ripple detail; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, boats, docks,
+        birds, people, buildings.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm, empty pearl-grey water and sky with no features. New area on the right: the shoreline continues
+        into thicker mist with one faint, distant island. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shoreline sits at about 52% of the height, with pale sky above and mirrored water below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-06
+    title: "Cliffs in Sea Mist"
+    role: default
+    tone: mid
+    setupMatch: [black, white]
+    tags: [cliffs, sea, mist]
+    starter: false
+    accent: "#7D9298"
+    focal: { x: 0.68, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Dark green sea cliffs step down toward a calm slate-blue sea, their
+        upper edges swallowed by drifting white mist. Smooth, slow waves run in long soft lines toward the base
+        of the rock, and a thin band of pale light breaks through the haze at the horizon. The scene is
+        monochrome, hushed and wide.
+        Style: long-exposure coastal photography, silky water, muted tones, cinematic calm.
+        Palette: #E9EEEE, #AFC0C2, #6B8187 with a deep cliff green #2F4540. Mood: quiet, brooding, calm.
+        Composition: the nearest cliff face and the band of light behind it sits about 57–79% across and 36–56%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp rock texture and silky water lines; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, lighthouses,
+        boats, birds, people, buildings.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm silky water and drifting mist with no landmarks. New area on the right: a second, fainter cliff
+        headland emerges from the mist at the far right. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cliffs rise from the lower left to about 40% of the height, with mist and pale light
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-07
+    title: "Dawn Valley Clouds"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [valley, clouds, dawn]
+    starter: false
+    accent: "#B6B8C4"
+    focal: { x: 0.64, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broad valley is filled with a smooth sea of white cloud at dawn,
+        with a few dark green hilltops rising out of it like islands. The sky above glows a pale peach and
+        lilac, with soft light bathing the tops of the cloud. A distant mountain range fades into the haze on
+        the horizon.
+        Style: fine-art landscape photography, cloud inversion, soft pastel dawn light, peaceful and expansive.
+        Palette: #F4F1EE, #DCD6DB, #B6B8C4 with a dark hill green #3A5048. Mood: peaceful, expansive, gentle.
+        Composition: the nearest green hilltop island and the bright cloud edge sits about 54–74% across and
+        44–66% down; the cloud surface sits near the lower third. The left 15% and the bottom 8% stay calm and
+        low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of
+        the width and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp hilltop silhouettes and cloud texture; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, buildings,
+        roads, birds, people, towers.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth sea of cloud and pale peach-lilac sky, low in detail. New area on the right: the cloud sea
+        stretches on, with a faint line of distant mountains at the horizon. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cloud sea fills the lower half with the hilltop at about 55% of the height and the
+        glowing sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mn-08
+    title: "Fjord Silence"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [fjord, water, moody]
+    starter: false
+    accent: "#6B8590"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A narrow fjord of glassy dark water winds between steep, forested
+        walls that fade into low cloud. A silver-grey light falls on the water from a break in the overcast,
+        picking out a gentle line of ripples in the middle of the channel. The far end of the fjord disappears
+        into pale mist.
+        Style: moody landscape photography, long exposure, muted blue-green palette, quiet and cinematic.
+        Palette: #E4EAEB, #8EA5AC, #4A6068 with a deep forest #1F302C. Mood: still, cold, majestic.
+        Composition: the silver patch of water and the fjord's far bend sits about 55–75% across and 39–61%
+        down; the fjord winds toward the upper right. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp ripple and rock-wall detail along the channel; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, boats, houses,
+        birds, people, bridges.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm dark forested wall in soft shadow, low in detail. New area on the right: the fjord bends away, with
+        fainter cliffs vanishing into pale mist. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fjord winds up from the lower center to a pale vanishing point at about 40% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

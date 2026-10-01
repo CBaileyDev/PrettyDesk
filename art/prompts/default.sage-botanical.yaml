@@ -1,0 +1,358 @@
+pack: default.sage-botanical
+kind: default
+title: "Sage & Botanical"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Sage and Botanical. Every image is a
+  calm, natural study in sage green (#9CAF88), olive (#7A8450), deep moss (#4F5D3A) and cream (#F0EBDD): leaves,
+  ferns, moss, eucalyptus and soft greenhouse light. The look is refined botanical photography with a gentle,
+  slightly desaturated palette, true-to-life texture, and generous negative space. Gradients are smooth and
+  banding-free. No text of any kind, no people, no frames or borders. Keep the left edge and the bottom edge
+  calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: sb-01
+    title: "Monstera Shadow"
+    role: default
+    tone: light
+    setupMatch: [wood, white]
+    tags: [monstera, shadow, plaster]
+    starter: true
+    accent: "#9CAF88"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pale sage-tinted plaster wall in soft afternoon sun, with the
+        sharp-edged shadow of a large split monstera leaf and two smaller leaves falling diagonally from the
+        upper right. The shadows are a soft green-grey with delicate edges, and a faint warm glow gathers toward
+        the lower left. The wall shows fine plaster texture.
+        Style: minimalist botanical photography, natural light, true-to-life plaster, quiet and airy.
+        Palette: #EEF0E4, #D7DEC6, #BDC9A8 with leaf shadows #8A9A78. Mood: serene, fresh, sunlit.
+        Composition: the largest leaf shadow sits about 54–74% across and 34–58% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp edges on the leaf-shadow cutouts; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, the plant
+        itself, pots, furniture, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth, evenly lit sage plaster with a hint of warm glow. New area on the right: smaller leaf shadows
+        trailing off the main one, softer and fainter. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The big leaf shadow enters from the upper right and reaches down to about 50% of the height,
+        with smaller leaves below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-02
+    title: "Misty Fern Forest"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [ferns, forest, mist]
+    starter: false
+    accent: "#7A8F5F"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet forest floor of arching ferns in the foreground, their
+        fronds sharp and glossy in sage and olive, receding into soft white mist between slender trunks. Pale
+        light filters from above and behind, glowing in the fog and picking out the edges of the nearest fronds.
+        The farthest trees are only faint grey-green shapes.
+        Style: atmospheric nature photography, shallow depth of field, soft fog, painterly calm.
+        Palette: #E4EAD8, #B5C49E, #7F9366 with a deep moss #4F5D3A. Mood: hushed, damp, restful.
+        Composition: the sharpest fern frond cluster sits about 53–75% across and 40–64% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp fern frond detail in the focal cluster; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, animals, paths,
+        signs, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft mist and out-of-focus ferns in low contrast. New area on the right: slender tree trunks dissolve
+        into brighter fog, with one distant glow of light. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fern fronds arch in the lower center at about 60% of the height, with trunks and mist
+        rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-03
+    title: "Moss Macro"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [moss, macro, texture]
+    starter: false
+    accent: "#6F8A4A"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An extreme close view of a cushion of bright moss on a dark, damp
+        stone, each tiny star-shaped sprig in sharp focus in the center and melting into a creamy blur toward
+        the edges. Dewdrops hold tiny reflections of pale sky. Soft diffuse light from above gives the moss a
+        luminous spring-green tint against the cool grey stone.
+        Style: macro nature photography, shallow focus, dewy and velvety.
+        Palette: #C8D8A6, #8FA860, #5A7338 with a cool stone grey #6B716B. Mood: fresh, intimate, tranquil.
+        Composition: the sharpest moss cushion with dew sits about 56–76% across and 40–60% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp sprig and dewdrop detail; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, insects,
+        flowers, people, hands.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft-focus moss and dark damp stone, low in contrast and detail. New area on the right: the moss cushion
+        continues, melting into a creamy blur with a few distant dewdrop glints. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moss cushion fills the center at about 50% of the height, fading to blur above and below.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-04
+    title: "Eucalyptus on Linen"
+    role: default
+    tone: light
+    setupMatch: [wood, white]
+    tags: [eucalyptus, linen, still-life]
+    starter: false
+    accent: "#A7B79A"
+    focal: { x: 0.68, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A few long eucalyptus stems with round silver-sage leaves rest
+        diagonally across a pale cream linen cloth, their leaves dusted with a soft blue-grey bloom. Gentle
+        window light from the left casts delicate, slightly blurred shadows to the right. The linen shows its
+        natural weave and a few soft creases.
+        Style: editorial botanical still-life, soft daylight, natural linen texture, calm and elegant.
+        Palette: #F2EEE0, #DCE2CC, #B5C2A4 with a silvery leaf tone #A7B79A. Mood: gentle, airy, refined.
+        Composition: the eucalyptus stems and their leaf cluster sits about 56–80% across and 38–58% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp leaf edges and linen weave; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, vases, flowers,
+        people, hands.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain linen in soft light, with only faint creases. New area on the right: the stems taper to a few last
+        leaves and the linen softens into pale haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The eucalyptus stems cross diagonally through the center at about 45% of the height, over
+        cream linen. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-05
+    title: "Greenhouse Glass"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [greenhouse, glass, soft-light]
+    starter: false
+    accent: "#B8C8A8"
+    focal: { x: 0.50, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Misted greenhouse glass in thin white mullions seen straight on,
+        with pale sage foliage blurred softly behind it into abstract green shapes. Condensation beads on the
+        panes catch small points of daylight, and the whole view is washed with a luminous, milky morning glow
+        that brightens toward the upper right.
+        Style: soft-focus architectural and botanical photography, condensation, diffused light, fresh and
+        dreamy.
+        Palette: #F3F5EA, #D8E2C8, #B1C49C with a faint white frame #F8F8F2. Mood: fresh, misty, bright.
+        Composition: the brightest pane group with condensation, a centered and symmetrical composition, sits
+        about 38–62% across and 38–58% down; the panes are balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp condensation droplets on the nearest panes; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, pots,
+        furniture, signs, legible plant labels.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        foggy panes with low contrast and softly blurred green. New area on the right: more panes recede into
+        milky glow, with the foliage dissolving into light. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glass grid fills the frame with the brightest pane group at about 45% of the height. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-06
+    title: "Olive Branch Hush"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [olive, branch, dusk]
+    starter: false
+    accent: "#8E9A6A"
+    focal: { x: 0.66, y: 0.44 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single olive branch with narrow silver-green leaves reaches in
+        from the upper right against a smooth gradient sky of pale sage fading to warm cream at the horizon. The
+        leaves catch a little backlight and show their paler undersides. The background is soft, with a hint of
+        distant hills melting into haze.
+        Style: fine-art botanical photography, shallow depth of field, backlit leaves, soft and painterly.
+        Palette: #EDEFD9, #C9D2AE, #8E9A6A with a warm cream #F1E6CD. Mood: peaceful, hushed, golden-green.
+        Composition: the branch tip and its leaves sits about 54–78% across and 32–56% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp leaf edges and vein detail; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, olives, birds,
+        insects, people, buildings.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth sage-to-cream sky gradient, completely clean and empty. New area on the right: distant soft
+        hills and a few blurred leaves drifting out of the frame. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The branch descends from the upper right, with its leaf cluster at about 40% of the height
+        over soft sage sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-07
+    title: "Palm Frond Light"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [palm, shadow, tropical]
+    starter: false
+    accent: "#A8B68E"
+    focal: { x: 0.50, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Soft shadows of palm fronds fan out across a pale sage-white wall
+        from the center, the leaf edges feathered and overlapping in layers of translucent green-grey. A gentle
+        warm sun glow lifts the center of the wall, while the corners settle into a cooler, quieter tone. The
+        wall has subtle plaster texture.
+        Style: minimalist tropical photography, soft shadow play, natural light, clean and relaxed.
+        Palette: #F2F4E8, #DDE4CF, #BECBA9 with soft shadow green #A8B68E. Mood: relaxed, airy, bright.
+        Composition: the center of the frond-shadow fan, a centered and symmetrical composition, sits about
+        40–60% across and 36–60% down; the fan spreads evenly to both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp feathered shadow edges; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, the palm
+        itself, furniture, people, birds.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a few faint, thin frond shadows fading into smooth, evenly lit plaster wall. New area on the right: a
+        few more trailing frond shadows fade out into smooth wall, with a slightly warmer glow. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The frond-shadow fan spreads from the upper center and reaches down to about 55% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sb-08
+    title: "Fern Fiddlehead Dawn"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [fiddlehead, dawn, macro]
+    starter: false
+    accent: "#7D9A5C"
+    focal: { x: 0.67, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single young fern fiddlehead uncurls in the foreground, its
+        tightly coiled spiral glowing bright spring green in soft dawn light. Behind it, layers of out-of-focus
+        ferns and mist fade to pale sage and cream. The coil is covered in fine golden-brown fuzz that glows at
+        the edges, and dew sparkles along the stem.
+        Style: macro botanical photography, shallow depth of field, backlit and luminous, delicate and fresh.
+        Palette: #EEF1DD, #C4D49C, #8AA862 with a deep moss #4F5D3A. Mood: fresh, tender, quiet.
+        Composition: the fiddlehead spiral sits about 57–77% across and 40–60% down. The left 15% and the bottom
+        8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside
+        the central 80% of the width and the middle 70% of the height so the image can be cropped to other
+        screen shapes.
+        Technical: highest available resolution; crisp fuzz and spiral detail with dew; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, insects,
+        people, hands, flowers.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        softly blurred ferns and mist in pale sage, low contrast. New area on the right: more out-of-focus
+        fronds uncurl into a gentle glow. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The fiddlehead spiral sits at about 45% of the height, with its stem curving down to the
+        lower center and mist above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

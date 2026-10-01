@@ -1,0 +1,357 @@
+pack: default.clean-white
+kind: default
+title: "Clean White"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Clean White. Every image is bright,
+  airy and quiet: warm off-white plaster, paper, ceramic, snow and linen in #F4F2EE, #E8E6E1 and #CFC8BC, with
+  soft grey-taupe shadows and never any pure glaring white. The look is minimalist interior and architectural
+  photography in natural daylight, with true-to-life texture and large areas of calm negative space. Gradients
+  of light are smooth and banding-free. No text of any kind, no people, no frames or borders. Keep the left edge
+  and the bottom edge calm and low-contrast for desktop icons and the taskbar.
+wallpapers:
+  - id: cw-01
+    title: "Afternoon Leaf Shadows"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [botanical, shadow, plaster]
+    starter: true
+    accent: "#B9B2A6"
+    focal: { x: 0.62, y: 0.42 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A softly textured warm off-white plaster wall in late-afternoon sun.
+        Crisp but gentle shadows of a leafy olive branch and a few long grass blades fall diagonally across the
+        wall from the upper right, slightly blurred at their tips as if the plant sits a little way from the
+        wall. A faint warm glow fades toward the lower left.
+        Style: minimalist interior photography, natural light, true-to-life plaster texture, quiet and airy.
+        Palette: #F4F2EE, #E8E4DC, #CFC8BC with soft grey-taupe shadows #B9B2A6. Mood: serene, clean, sunlit.
+        Composition: the densest cluster of leaf shadows sits about 52–72% across and 30–54% down; the shadows
+        thin out toward the edges. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail in the shadow edges; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, furniture,
+        people; the plant itself is not visible, only its shadow.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth, sunlit plaster with only a hint of warm glow. New area on the right: a few more sparse leaf and
+        grass shadows trailing off the branch, gradually softer. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The olive-branch shadow enters from the upper right and arcs down to about 45% of the height,
+        with grass-blade shadows below it. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-02
+    title: "Folded Paper"
+    role: default
+    tone: light
+    setupMatch: [white]
+    tags: [paper, geometric, minimal]
+    starter: false
+    accent: "#BDB7AB"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single large sheet of thick white paper is folded into a few
+        crisp, angular facets that rise gently toward the center of the frame. Soft daylight from the upper left
+        lights some planes pure warm white and leaves others in pale grey shade, with razor-clean edges where
+        they meet. The paper surface shows a faint cotton grain.
+        Style: studio still-life photography, soft box light, paper craft minimalism.
+        Palette: #F6F4F0, #E9E6E0, #D3CEC5 with soft shadow grey #BDB7AB. Mood: precise, calm, fresh.
+        Composition: the central fold where the brightest and darkest planes meet, a symmetrical composition,
+        sits about 40–60% across and 40–60% down; the facets repeat symmetrically left and right so the image
+        holds with hidden icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp paper edges and fibre texture; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, pencil lines,
+        creases that form letters, people, hands.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        the same pale facets flattening into a smooth, softly shaded sheet, low detail. New area on the right:
+        the facets continue and flatten into a smooth sheet with one more gentle fold. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The folded planes stack vertically around the center, with the sharpest fold at about 48% of
+        the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-03
+    title: "Curved White Wall"
+    role: default
+    tone: light
+    setupMatch: [white, black]
+    tags: [architectural, curve, sky]
+    starter: false
+    accent: "#C4BFB5"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sweeping white plaster wall curves in a smooth S-shape from the
+        lower left into the distance, its surface gently graded from bright sun to soft grey shade. A thin strip
+        of pale blue-grey sky shows above it. At the base, a pale stone ground catches a few long, soft shadows.
+        There are no windows or doors, only the clean curve.
+        Style: contemporary architectural photography, overcast-bright daylight, serene and sculptural.
+        Palette: #F5F3EF, #E6E3DD, #CFCAC1 with a pale sky #B8C4CC. Mood: airy, elegant, calm.
+        Composition: the point where the curve turns, with the brightest plaster, sits about 56–76% across and
+        38–58% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges where plaster meets sky; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, windows, doors,
+        railings, people, plants.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth plaster in even soft light, almost featureless. New area on the right: the curve continues and
+        gently softens into hazy pale sky and ground. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The curve rises from the lower left to the upper right, its brightest area at about 45% of
+        the height, with pale sky above. Same lighting, palette, materials and rendering style. Keep the bottom
+        10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-04
+    title: "Snowfield Haze"
+    role: default
+    tone: light
+    setupMatch: [white]
+    tags: [snow, winter, minimal]
+    starter: false
+    accent: "#C9CED3"
+    focal: { x: 0.64, y: 0.55 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A vast, gently undulating snowfield under a soft overcast sky, the
+        horizon so pale that the land and sky almost merge. A single low, faint ridge in cool blue-grey runs
+        across the distance on the lower third. Subtle ripples of wind on the snow surface catch a little soft
+        shade. Everything is hushed and nearly white.
+        Style: high-key landscape photography, fine tonal range, minimalist winter calm.
+        Palette: #F7F7F5, #E9EBEC, #D5D9DD with a faint blue-grey ridge #C9CED3. Mood: hushed, spacious, cool.
+        Composition: the faint ridge and the nearest snow ripples sits about 54–74% across and 46–64% down; the
+        horizon sits about one third from the bottom. The left 15% and the bottom 8% stay calm and low-detail
+        (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
+        and the middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp snow-ripple texture in the foreground; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, trees,
+        footprints, animals, people, buildings.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth, empty snow and pale haze with almost no detail. New area on the right: the ridge fades and a
+        second, fainter ridge appears far in the haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The snowfield fills the lower 60% with the faint ridge at about 58% of the height and a pale,
+        empty sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-05
+    title: "Ceramic Forms"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [ceramic, still-life, objects]
+    starter: false
+    accent: "#C9C2B5"
+    focal: { x: 0.68, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Three matte white ceramic vessels of different heights and rounded
+        shapes stand together on a pale plaster surface, with no handles or decoration. Soft window light from
+        the left models each curve in gentle grey gradients and casts long, diffused shadows to the right. The
+        wall behind is a seamless warm off-white.
+        Style: modern still-life photography, soft natural light, tactile glazed-clay minimalism.
+        Palette: #F5F3EE, #E7E3DB, #D2CCC1 with soft shadow taupe #C9C2B5. Mood: gentle, refined, tactile.
+        Composition: the group of vessels, anchored by the tallest one, sits about 57–79% across and 40–64%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp glaze texture and soft rim detail; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, flowers,
+        plants, people, hands, branding.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth plaster wall and surface in even light, almost empty. New area on the right: a fourth, smaller
+        bowl-shaped form far to the right, softer and slightly out of focus. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The three vessels stand in the lower center, the tallest rising to about 45% of the height,
+        with plain wall above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-06
+    title: "Sheer Curtain Light"
+    role: default
+    tone: light
+    setupMatch: [white, wood, pastel]
+    tags: [linen, window, soft-light]
+    starter: false
+    accent: "#CFC9BC"
+    focal: { x: 0.50, y: 0.45 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A sheer white linen curtain hangs in soft, even vertical folds,
+        backlit by bright morning light from a window behind it. The light glows through the weave in a warm,
+        luminous haze, and a faint soft shadow of a window frame is suggested at the lower edge. The folds are
+        loose and slightly uneven, like real fabric moving in a light breeze.
+        Style: airy lifestyle photography, backlit fabric, natural linen texture, dreamy but clean.
+        Palette: #F7F5F0, #EEEBE4, #DDD8CE with a gentle glow #CFC9BC. Mood: bright, calm, restful.
+        Composition: the brightest, most luminous fold, a centered and symmetrical composition, sits about
+        40–60% across and 33–57% down; the folds are balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp linen weave in the nearest fold; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, window frames
+        with detail, furniture, people, plants.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm, soft folds in even glow with very little contrast. New area on the right: the curtain continues
+        with a slightly stronger fold and a soft shadow, easing into the glow. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The curtain folds fall vertically through the center with the brightest glow at about 40% of
+        the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-07
+    title: "Pale Sand Ripples"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [sand, desert, texture]
+    starter: false
+    accent: "#CDC3B0"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Wind ripples in very pale, almost white sand run in gentle curved
+        lines toward a soft crest on the right. Low morning sun rakes across from the left, painting every
+        ripple with a thin bright edge and a soft cream shadow. The far dune fades into a pale, hazy sky with no
+        clouds.
+        Style: minimalist desert photography, raking light, subtle warm tonality.
+        Palette: #F6F1E8, #EBE3D4, #D9CFBB with soft shadow sand #CDC3B0. Mood: warm, quiet, spacious.
+        Composition: the crest of the nearest dune and its ripples sits about 55–75% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp ripple edges in the raking light; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        plants, animals, people, tracks.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth sand with only the faintest ripples, bright and low in contrast. New area on the right: the dune
+        crest continues, softening into pale haze with one distant dune line. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ripples curve up from the lower left toward a soft crest at about 45% of the height, with
+        pale sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cw-08
+    title: "Plaster Niche"
+    role: default
+    tone: light
+    setupMatch: [white, wood]
+    tags: [arch, plaster, architectural]
+    starter: false
+    accent: "#C6BFB2"
+    focal: { x: 0.62, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tall arched niche is carved into a smooth, hand-troweled
+        white plaster wall. Warm daylight enters from the upper left, lighting one inner edge in bright cream
+        and leaving the deep curve of the niche in soft grey. The wall surface shows faint trowel marks, and the
+        floor below is a pale, matte stone.
+        Style: architectural interior photography, natural light, hand-finished plaster texture, calm and
+        elegant.
+        Palette: #F5F2EC, #E8E3DA, #D1CABE with soft shadow grey #C6BFB2. Mood: quiet, timeless, warm.
+        Composition: the arched niche, with its lit inner edge, sits about 53–71% across and 34–66% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp trowel texture around the arch; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, objects inside
+        the niche, plants, people, doors.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain plaster wall in even light with delicate trowel marks. New area on the right: the wall continues,
+        then turns gently into shade with the hint of a second, smaller arch. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The tall arch is centered, rising from 30% to 75% of the height, with plaster above and stone
+        floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

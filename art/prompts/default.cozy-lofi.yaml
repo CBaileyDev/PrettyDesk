@@ -1,0 +1,356 @@
+pack: default.cozy-lofi
+kind: default
+title: "Cozy Lo-fi"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Cozy Lo-fi. Every image is a
+  hand-painted animated-film background: warm lamp amber (#F2B25C) against dusk blue (#2E3F66) and soft plum,
+  with painterly brushwork, gentle gradients and a slightly nostalgic mood. Interiors and rooftops are tidy,
+  quiet and lived-in, with rain, plants, warm lights and soft shadows. There are never any characters, animals
+  or people. No text, no readable book spines or screens, no frames or borders. Gradients are smooth and
+  banding-free. Keep the left edge and the bottom edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: cl-01
+    title: "Desk by the Rainy Window"
+    role: default
+    tone: dark
+    setupMatch: [wood, pastel, black]
+    tags: [desk, rain, lamp]
+    starter: true
+    accent: "#F2B25C"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small wooden desk sits beneath a tall window streaked with rain,
+        the city outside a soft blue blur of lights. On the desk, a glowing amber lamp, a steaming mug and a few
+        closed notebooks make a warm pool of light. A potted plant leans toward the glass, and the wall behind
+        is a dusky plum.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #F2B25C, #2E3F66, #6B4A66 with a soft cream #F6E6C8. Mood: cozy, nostalgic, calm.
+        Composition: the lamp-lit desk and mug sits about 56–76% across and 40–64% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable text on books or screens, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm plum wall and the edge of the window, low in detail. New area on the right: the window continues
+        with more rain-streaked glass and a distant blue city glow. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The desk and lamp sit in the lower center at about 60% of the height, with the rainy window
+        rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-02
+    title: "Reading Nook at Night"
+    role: default
+    tone: dark
+    setupMatch: [wood, pastel]
+    tags: [nook, books, window-seat]
+    starter: false
+    accent: "#EFA85A"
+    focal: { x: 0.68, y: 0.54 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A deep window seat piled with soft cushions and a knitted blanket
+        sits under a round window, its glass showing a deep blue night with a small crescent moon. A warm lamp
+        on a shelf lights rows of plain, unlabelled books in earthy colors. A small plant hangs from the
+        ceiling, its leaves lit amber.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #EFA85A, #2B3A63, #7C5A6E with a cream #F4E3C3. Mood: snug, warm, peaceful.
+        Composition: the window seat, its blanket and the lamp glow sits about 58–78% across and 42–66% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable book titles, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm shaded wall and a few shelf edges, low in detail. New area on the right: more shelves and a
+        hanging plant, fading into warm shadow. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The window seat sits at the lower center at about 60% of the height, with the round window
+        above it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-03
+    title: "Rooftop at Dusk"
+    role: default
+    tone: mid
+    setupMatch: [pastel, wood]
+    tags: [rooftop, dusk, city]
+    starter: false
+    accent: "#F3A65A"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A quiet city rooftop at dusk, with a low brick parapet, a few potted
+        plants and a pair of empty chairs beside a small table with string lights. Behind it, a layered skyline
+        of soft blue buildings glows with tiny warm windows under a sky shifting from peach to lavender. A faint
+        trail of cloud catches the last light.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #F3A65A, #D9829A, #5B6FA6 with a deep dusk blue #2E3F66. Mood: peaceful, warm, wistful.
+        Composition: the table with its string lights and the glowing skyline behind sits about 54–74% across
+        and 38–62% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable signs, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft peach-to-lavender sky above a calm parapet, low in detail. New area on the right: the skyline fades
+        into haze with a distant water tower silhouette. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The table sits in the lower center at about 62% of the height with the skyline and gradient
+        sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-04
+    title: "Plant Shelf at Dawn"
+    role: default
+    tone: light
+    setupMatch: [wood, white, pastel]
+    tags: [plants, shelf, dawn]
+    starter: false
+    accent: "#F6C97A"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A pale wooden shelf by a sunlit window holds a row of small potted
+        plants in clay pots: a trailing vine, a tiny cactus and a fern, with a ceramic jug and a folded cloth.
+        Soft yellow dawn light falls across them from the left, throwing long, gentle shadows on a warm cream
+        wall.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #F6C97A, #8DAA7A, #E8D5B5 with a clay #C97E57. Mood: fresh, gentle, hopeful.
+        Composition: the row of potted plants on the shelf sits about 56–76% across and 36–60% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable labels, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm cream wall with the window edge and a patch of warm light. New area on the right: the shelf
+        continues with a few more plain pots and a soft window glow. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shelf sits in the center at about 55% of the height, with the sunlit wall above and
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-05
+    title: "Midnight Kitchen Glow"
+    role: default
+    tone: dark
+    setupMatch: [wood, black]
+    tags: [kitchen, night, warm]
+    starter: false
+    accent: "#EEA45A"
+    focal: { x: 0.50, y: 0.54 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small, tidy kitchen at midnight, lit only by one amber pendant
+        lamp above a round wooden table. A kettle rests on the stove, a window shows deep blue night, and the
+        wall tiles shine softly in warm and cool light. A fruit bowl, a teapot and two empty cups sit on the
+        table.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #EEA45A, #28365C, #6C4B5E with a cream #F2E1C0. Mood: quiet, warm, calm.
+        Composition: the table beneath the pendant lamp, a centered and symmetrical composition, sits about
+        40–60% across and 42–66% down; the room is balanced on both sides so the image holds with hidden icons.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable text, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        tiled wall and a cabinet edge in warm shade, low in detail. New area on the right: a tall window with a
+        deep blue night sky and a faint glow of far city lights. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The table and lamp sit centered at about 60% of the height, with the window glow above. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-06
+    title: "Bookshop Window in Rain"
+    role: default
+    tone: dark
+    setupMatch: [wood, black]
+    tags: [shop, rain, street]
+    starter: false
+    accent: "#F0AC5C"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small corner bookshop seen from a rainy street at night, its big
+        window glowing warm amber behind stacked, unlabelled books and a hanging paper lantern. Rain streaks the
+        glass and the wet cobbled pavement reflects the golden light. A faded striped awning shelters the
+        doorway, and the neighboring walls fall into blue shadow.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #F0AC5C, #283A62, #77506A with a cream #F3E0BE. Mood: inviting, wistful, warm.
+        Composition: the glowing shop window and its lantern sits about 54–74% across and 40–64% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable signs or titles, people, vehicles.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark blue-shadowed brick wall and a drainpipe, low in detail. New area on the right: the street
+        continues with the soft glow of another distant lamp and wet cobbles. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shop window glows at the lower center at about 58% of the height, with dark rainy sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-07
+    title: "Balcony Garden Sunset"
+    role: default
+    tone: mid
+    setupMatch: [pastel, wood]
+    tags: [balcony, garden, sunset]
+    starter: false
+    accent: "#F4A361"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A tiny city balcony overflowing with potted plants and a hanging
+        string of lights looks out over rooftops at sunset. A wooden chair with a folded blanket and a watering
+        can sit beside a low rail. The sky blazes from peach to rose to lavender, and the plants glow with warm
+        rim light.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #F4A361, #D8798F, #8A6FA8 with a leaf green #7FA06A. Mood: relaxed, golden, content.
+        Composition: the chair and plants against the sunset glow sits about 56–76% across and 38–62% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable signs, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft peach-rose sky and a railing edge, low in detail. New area on the right: the rooftops fade into a
+        lavender haze with a faint far-off tower. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The chair and plants sit in the lower center at about 62% of the height, with the sunset sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: cl-08
+    title: "Attic Window Moon"
+    role: default
+    tone: dark
+    setupMatch: [black, wood]
+    tags: [attic, moon, stars]
+    starter: false
+    accent: "#EBA05C"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.15
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A cozy attic room with a sloped wooden ceiling and a big round
+        window framing a pale full moon in a deep blue starry sky. A small lamp glows on a low wooden chest
+        beneath the window, with a folded patchwork blanket and a few cushions on the floor. Dust motes drift in
+        the warm light.
+        Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
+        Palette: #EBA05C, #26355E, #6D4C6E with a pale moon #E9E7F2. Mood: dreamy, quiet, snug.
+        Composition: the round window and the moon, a centered and symmetrical composition, sits about 40–60%
+        across and 34–58% down; the room is balanced on both sides so the image holds with hidden icons. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean painted detail on the focal area; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        animals, readable text, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        the sloped wooden ceiling in warm shade, low in detail. New area on the right: the sloped wooden ceiling
+        and a dark corner with a small hanging star lantern. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The round window sits centered at about 42% of the height, with the lamp and chest glowing
+        below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

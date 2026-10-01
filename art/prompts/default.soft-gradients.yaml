@@ -1,0 +1,442 @@
+pack: default.soft-gradients
+kind: default
+title: "Aura Gradients"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Aura Gradients. Every image is a soft
+  aura or mesh gradient: large, smoothly blended fields of color with gentle luminous shapes such as ribbons,
+  frosted-glass orbs and drifting blurred blobs, finished with a very fine film grain. Palettes rotate between
+  dusk peach, ocean teal, lavender haze, graphite and mint, always with two to four harmonious hues per image.
+  The look is modern, calm and abstract, with original shapes only (never imitate any operating system's default
+  wallpapers). Gradients are perfectly smooth and banding-free. No text, no objects, no people, no frames. Keep
+  the left edge and bottom edge calm for desktop icons and the taskbar.
+wallpapers:
+  - id: sg-01
+    title: "Dusk Peach Ribbons"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [peach, ribbon, warm]
+    starter: true
+    accent: "#F4A38C"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Two broad, translucent ribbons of color sweep in a slow S-curve
+        across a soft gradient field that moves from warm apricot at the bottom to pale rose and cream at the
+        top. Where the ribbons overlap, they blend into a glowing coral. Their edges are feathered and
+        weightless, with no hard lines anywhere.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #FFD9BF, #F4A38C, #E58AA0 with a cream highlight #FFF1E0. Mood: warm, gentle, optimistic.
+        Composition: the overlap of the two ribbons sits about 54–74% across and 38–58% down. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a clean apricot-to-cream gradient with only the faintest blur of the ribbons. New area on the right: the
+        ribbons thin out and dissolve into soft rose haze. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ribbons sweep diagonally from the lower left to the upper right, overlapping at about 45%
+        of the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-02
+    title: "Ocean Teal Orb"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [teal, orb, glass]
+    starter: false
+    accent: "#2FB8B0"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single large frosted-glass orb floats in the center of a deep
+        ocean-teal gradient, its surface softly luminous with a brighter cyan core and a faint aqua rim. The
+        background deepens from rich teal in the middle to near-black navy at the corners. A soft glow spreads
+        around the orb like light in water.
+        Style: abstract 3D-rendered frosted glass over a soft mesh gradient, fine film grain.
+        Palette: #0B3C47, #137C86, #2FB8B0 with a deep navy #06151C. Mood: deep, serene, luminous.
+        Composition: the orb, a centered and symmetrical composition, sits about 40–60% across and 32–60% down;
+        the gradient is balanced on both sides so the image holds with hidden icons. The left 15% and the bottom
+        8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside
+        the central 80% of the width and the middle 70% of the height so the image can be cropped to other
+        screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth deep teal-to-navy gradient with a trace of glow. New area on the right: smooth deep teal-to-navy
+        gradient with a second, tiny faint orb far away. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The orb sits at the center at about 42% of the height, over a gradient that darkens toward
+        the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-03
+    title: "Lavender Haze"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [lavender, haze, soft]
+    starter: false
+    accent: "#B9A6E3"
+    focal: { x: 0.66, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Large, overlapping soft blobs of lavender, periwinkle and pale pink
+        drift across a milky white background, blending into one another like watercolor on wet paper. The
+        brightest area is a luminous pearl-white glow near the upper right, and the colors deepen gently toward
+        the lower left.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #F1ECFA, #D4C7F2, #B9A6E3 with a pale pink #F6D3E4. Mood: dreamy, soft, calm.
+        Composition: the luminous pearl glow where the blobs meet sits about 56–76% across and 36–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm, evenly toned lavender-to-white gradient with no shapes. New area on the right: the blobs thin
+        into a pale periwinkle haze with a faint pink bloom. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The blobs stack vertically with the pearl glow at about 40% of the height and deeper lavender
+        at the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-04
+    title: "Graphite Aura"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [graphite, aura, minimal]
+    starter: false
+    accent: "#7B8594"
+    focal: { x: 0.68, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth graphite-grey mesh gradient with one soft, glowing aura of
+        steel blue rising from the lower right, fading through slate to charcoal. A faint secondary glow of warm
+        grey sits behind it. The shapes are large and weightless, with no edges, like light diffused through
+        smoke.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #1A1D22, #2E333B, #4A5360 with a steel-blue glow #7B8594. Mood: calm, focused, modern.
+        Composition: the center of the steel-blue aura sits about 58–78% across and 40–60% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; smooth dark gradients with fine grain to prevent banding;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a quiet charcoal gradient with only the faintest hint of glow. New area on the right: the aura thins out
+        into a smooth slate haze and fades to charcoal. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The aura rises from the lower right toward the center at about 55% of the height, with
+        charcoal above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-05
+    title: "Mint Frost Orbs"
+    role: default
+    tone: light
+    setupMatch: [white, pastel]
+    tags: [mint, orbs, glass]
+    starter: false
+    accent: "#9FDCC4"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A cluster of three frosted-glass orbs of different sizes rests on a
+        pale mint-to-white gradient, each orb softly translucent with a milky center and a thin brighter rim.
+        Soft green shadows pool beneath them, and a gentle luminous haze gathers behind the largest one.
+        Style: soft 3D-rendered frosted glass over a mesh gradient, fine film grain, minimal and fresh.
+        Palette: #F0FAF5, #CDEEDF, #9FDCC4 with a deeper seafoam #6FBFA3. Mood: fresh, cool, airy.
+        Composition: the cluster of orbs, anchored by the largest, sits about 52–76% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth mint-to-white gradient with a faint glow and no shapes. New area on the right: a fourth, tiny
+        orb far away, blurred, near a soft shadow. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The orb cluster sits in the lower center, the largest orb rising to about 45% of the height,
+        over a pale mint field. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-06
+    title: "Sunset Mesh"
+    role: default
+    tone: dark
+    setupMatch: [rgb, black]
+    tags: [sunset, mesh, vivid]
+    starter: false
+    accent: "#FF7A59"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A rich mesh gradient blends deep violet at the top into magenta,
+        then coral, then glowing amber low in the frame, like a sunset reduced to pure color. Soft, overlapping
+        fields of hue drift into each other, and a brighter amber bloom sits at the lower right.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #2A1B4F, #A3318F, #FF7A59 with an amber bloom #FFC27A. Mood: warm, vivid, cinematic.
+        Composition: the amber bloom and the coral band above it sits about 56–76% across and 42–62% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a deep violet-to-magenta gradient, calm and dark with little variation. New area on the right: the amber
+        bloom fades into coral and violet haze. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The color bands stack horizontally with the amber bloom at about 65% of the height and deep
+        violet above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-07
+    title: "Ocean Glass Wave"
+    role: default
+    tone: light
+    setupMatch: [white, pastel]
+    tags: [ocean, wave, glass]
+    starter: false
+    accent: "#7FCBD6"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A smooth, translucent wave of aqua glass curves across the frame
+        from left to right, its edge catching a soft white highlight. Behind it the background shifts from pale
+        sky blue at the top to seafoam at the bottom. Subtle internal caustics suggest light passing through
+        water.
+        Style: abstract 3D-rendered translucent glass over a soft gradient, fine film grain, serene.
+        Palette: #E8F7F9, #BFE8EE, #7FCBD6 with a seafoam #A6E0D0. Mood: clear, calm, refreshing.
+        Composition: the crest of the wave, a centered and symmetrical composition, sits about 40–60% across and
+        40–60% down; the wave arcs evenly from both sides so the image holds with hidden icons. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a clean sky-blue-to-seafoam gradient with the wave's tail just fading in. New area on the right: the
+        wave curves away and thins to a pale aqua haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The wave crest arcs across the center at about 48% of the height, with pale blue above and
+        seafoam below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-08
+    title: "Rose Quartz Bloom"
+    role: default
+    tone: light
+    setupMatch: [pastel]
+    tags: [rose, bloom, soft]
+    starter: false
+    accent: "#E7A9B8"
+    focal: { x: 0.65, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A large, soft bloom of rose-quartz pink glows against a
+        blush-to-cream gradient, its center a luminous pearly white and its edges feathering out into peach and
+        pale lilac. A faint secondary bloom in lilac overlaps its lower left, and the whole scene feels
+        weightless.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #FDF0F0, #F4CBD3, #E7A9B8 with a pale lilac #D9C9EE. Mood: tender, soft, dreamy.
+        Composition: the pearly center of the rose bloom sits about 55–75% across and 36–56% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a soft blush-to-cream gradient with a trace of lilac. New area on the right: the bloom dissolves into
+        peach and lilac haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The rose bloom sits at about 42% of the height with lilac behind it and cream at the top and
+        bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-09
+    title: "Midnight Violet Drift"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [violet, midnight, drift]
+    starter: false
+    accent: "#7F6BE0"
+    focal: { x: 0.64, y: 0.48 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Slow, drifting clouds of deep violet and indigo overlap against
+        near-black blue. A softly glowing orchid-purple core sits right of center, with a thin halo of lighter
+        lavender and a faint blue edge glow. The shapes are completely smooth and weightless, with no stars or
+        horizon.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #0D0B24, #231A52, #4A3AA0 with an orchid glow #7F6BE0. Mood: deep, dreamy, calm.
+        Composition: the glowing orchid core sits about 54–74% across and 38–58% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; smooth dark gradients with fine grain to prevent banding;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth near-black indigo with the faintest violet drift. New area on the right: the violet clouds drift
+        out and dissolve into near-black blue. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The violet core sits at about 45% of the height in the center, with darker indigo above and
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: sg-10
+    title: "Sage Cloud Gradient"
+    role: default
+    tone: mid
+    setupMatch: [wood, pastel, white]
+    tags: [sage, cloud, earthy]
+    starter: false
+    accent: "#A9BC9A"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broad, calm gradient fades from soft sage green at the top through
+        pale oat to a warm cream at the bottom, with two large, feathered cloud-like blobs of lighter sage
+        drifting through the middle. The overall tone is earthy and natural, very quiet, with the faintest warm
+        glow near the horizon line of the gradient.
+        Style: abstract digital art, soft mesh gradient with fine film grain, modern and calm.
+        Palette: #C3D1B4, #A9BC9A, #E9E2CF with a warm cream #F4EEDD. Mood: grounded, gentle, restful.
+        Composition: the two cloud-like blobs, a centered and symmetrical composition, sits about 40–60% across
+        and 36–64% down; the gradient is balanced on both sides so the image holds with hidden icons. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth blended color transitions; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        objects, hard-edged shapes.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain sage-to-cream gradient with the faintest blob edge. New area on the right: a plain sage-to-cream
+        gradient with a trace of the second blob. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The two blobs drift through the center at about 50% of the height, with sage above and cream
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

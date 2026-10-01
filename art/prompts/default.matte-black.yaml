@@ -1,0 +1,363 @@
+pack: default.matte-black
+kind: default
+title: "Matte Black"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Matte Black. Every image lives in true
+  blacks and deep charcoals (#050506 to #1A1B1E) with exactly one restrained rim light, either a cool
+  silver-blue or a warm amber, that reveals form without lighting the whole scene. The look is high-end fine-art
+  photography with a medium-format feel: sculptural, quiet, OLED-friendly and luxurious. Darks are rich but
+  never crushed, so form stays visible in the shadows. Skies and empty areas are seamless, banding-free
+  gradients. No text of any kind, no people, no frames or borders. Keep the left edge and bottom edge calm for
+  desktop icons and the taskbar.
+wallpapers:
+  - id: mb-01
+    title: "Obsidian Dune"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [minimal, oled, sculptural]
+    starter: true
+    accent: "#AEB4BC"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An ultra-minimal scene of a single smooth sand dune made of fine
+        matte-black sand. Its sharp, curved crest sweeps from the lower right toward the center of the frame. A
+        faint cool silver rim light grazes the crest from the upper right, revealing delicate wind ripples on
+        the slope; everything else falls away into deep charcoal and true black. The sky is a seamless
+        near-black gradient with no stars.
+        Style: high-end fine-art photography with a medium-format look; sculptural, quiet and luxurious.
+        Palette: #050506, #0E0F11, #1A1B1E with a subtle silver highlight #AEB4BC. Mood: calm, focused, premium.
+        Composition: the dune crest, occupying the right half, sits about 56–76% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the ridge; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        animals.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm, near-black empty space with only the faintest suggestion of a low dune. New area on the right: a
+        second, smaller dune ridge fading into darkness, catching a whisper of the same silver rim light. Same
+        lighting direction, palette, materials and level of detail. No seams, no repeated or mirrored objects,
+        no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dune crest rises diagonally from the lower right toward the upper center, with its
+        brightest rim light at about 40% of the height. Same lighting, palette, materials and rendering style.
+        Keep the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-02
+    title: "Folded Black Silk"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [silk, texture, soft-light]
+    starter: false
+    accent: "#8C93A0"
+    focal: { x: 0.50, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Heavy black silk fabric falls in a few long, soft vertical folds
+        across the whole frame, the folds widening gently toward the center. A single broad, diffused light from
+        the upper left slides across the satin surface, turning the crest of each fold into a smooth ribbon of
+        cool grey while the valleys sink into velvet black. The weave is just visible at the highlights.
+        Style: luxury product photography, macro-lens softness, tactile and sensual.
+        Palette: #050506, #101114, #1C1D21 with a soft steel highlight #8C93A0. Mood: serene, tactile, elegant.
+        Composition: the central fold and its brightest highlight, a symmetrical drape, sits about 40–60% across
+        and 38–58% down; the folds mirror gently left and right so the image works with hidden icons. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp thread detail at the highlights; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, hands,
+        jewelry.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        more calm vertical folds in deep shadow, nearly black, with barely any highlight. New area on the right:
+        the folds continue and relax into a smoother, flatter drape, with a single faint highlight echoing the
+        central one. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
+        mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The folds run vertically from top to bottom with the brightest ribbon of light at about 45%
+        of the height, centered horizontally. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-03
+    title: "Basalt Columns at Dusk"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [stone, water, geometric]
+    starter: false
+    accent: "#7F8FA3"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A low group of hexagonal basalt columns steps down into perfectly
+        still, black water. The tops of the columns catch a thin cool light from the right, outlining their
+        clean geometric edges, while their reflections sink into the glassy surface. Above, a smooth gradient
+        sky fades from charcoal at the horizon to near-black at the top. The far shore is only a darker band.
+        Style: fine-art landscape photography, long exposure, glassy water, restrained and architectural.
+        Palette: #050506, #0F1114, #1E2126 with a cool slate highlight #7F8FA3. Mood: still, geometric, quiet.
+        Composition: the column group, stepping down from the right, sits about 54–74% across and 42–62% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp edges on the stone tops and a mirror-clean reflection;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, boats,
+        birds.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm, empty black water with a faint dark horizon. New area on the right: a few more columns fading into
+        the dark, their tops barely catching the same cool light. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The columns step down diagonally from the upper right to the lower center, with their
+        reflection filling the lower half. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-04
+    title: "Liquid Metal Droplet"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [metal, macro, minimal]
+    starter: false
+    accent: "#C7CCD4"
+    focal: { x: 0.67, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single perfect droplet of dark chrome liquid has just landed on a
+        mirror-black surface, sending out a few thin concentric ripples. The droplet reflects one soft strip of
+        light and the faint outline of a studio dome. The ripples fade out smoothly into the black, and the rest
+        of the frame is clean negative space.
+        Style: premium macro product photography, mirror reflections, hyper-clean studio black.
+        Palette: #050506, #0C0D0F, #17181B with a bright metal highlight #C7CCD4. Mood: precise, futuristic,
+        calm.
+        Composition: the droplet and its first two ripples sits about 57–77% across and 42–62% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the droplet reflection and ripple edges;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, hands,
+        bubbles.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a calm sweep of mirror-black surface with only the faintest outer ripple. New area on the right: the
+        ripples widen and dissolve into smooth, empty darkness. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The droplet sits at about 45% of the height, centered, with ripples spreading wide and calm
+        above and below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-05
+    title: "Total Eclipse"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [eclipse, celestial, symmetrical]
+    starter: false
+    accent: "#E7D9C0"
+    focal: { x: 0.50, y: 0.44 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A perfectly black disc hangs in a near-black sky, its edge lit by a
+        very thin, delicate ring of pale warm corona light. Faint streamers of the corona extend a short way
+        outward and dissolve into the dark. Below, a flat, featureless black plain meets the sky at a low
+        horizon line.
+        Style: astrophotography meets minimalist art print; clean, solemn and graphic.
+        Palette: #050506, #0B0B0D, #15161A with a pale warm rim #E7D9C0. Mood: solemn, hypnotic, premium.
+        Composition: the eclipse disc, a centered and symmetrical composition, sits about 40–60% across and
+        34–54% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp detail on the thin corona ring; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, stars, people,
+        buildings.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth near-black sky with the faintest glow rising toward the horizon. New area on the right: the same
+        smooth near-black sky, with the corona streamers trailing a little farther to this side. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The eclipse disc sits centered at about 38% of the height, with the black plain filling the
+        lower third. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-06
+    title: "Monolith in the Fog"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [monolith, fog, moody]
+    starter: false
+    accent: "#9AA3AE"
+    focal: { x: 0.62, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single tall, perfectly rectangular matte-black monolith stands on
+        an empty dark plain, its lower third swallowed by low drifting fog. A cool silver-blue glow rises from
+        behind it and traces its edges in a hairline of light. The fog is soft and layered, brighter near the
+        base of the monolith and fading to black at the edges of the frame.
+        Style: cinematic minimalism, atmospheric haze, volumetric light, photographic realism.
+        Palette: #050506, #101216, #20242A with a cool silver-blue glow #9AA3AE. Mood: mysterious, still,
+        monumental.
+        Composition: the monolith, with its glowing edge, sits about 52–72% across and 40–60% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp detail on the monolith edges and fog layers; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        animals, text carved in stone.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        empty dark plain with thin fog drifting slowly, almost black. New area on the right: more drifting fog
+        and a faint, distant second glow low on the horizon. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The monolith stands tall at the center of the frame from 30% to 70% of the height, fog
+        pooling at its base. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-07
+    title: "Carbon Light Streak"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [texture, carbon, technical]
+    starter: false
+    accent: "#6F7C8C"
+    focal: { x: 0.70, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A close view of a matte-black woven carbon-fiber surface, the fine
+        diagonal weave visible across the frame. A single long, soft diagonal streak of cool light crosses from
+        the lower left to the upper right, brightest where it meets the weave, and the rest of the surface sinks
+        into near-black.
+        Style: macro material photography, shallow depth of field, precise and technical.
+        Palette: #050506, #0D0E10, #181A1D with a cool steel streak #6F7C8C. Mood: focused, technical,
+        restrained.
+        Composition: the brightest part of the light streak sits about 60–80% across and 36–56% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp weave detail where the light lands; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, logos,
+        stitching with lettering, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        the weave continues in deep shadow, almost black and low in contrast. New area on the right: the light
+        streak fades out softly and the weave dissolves into darkness. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The light streak runs diagonally from the lower left to the upper right, passing through the
+        center at about 45% of the height. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: mb-08
+    title: "Midnight Ridgeline"
+    role: default
+    tone: dark
+    setupMatch: [black]
+    tags: [mountains, layered, warm-rim]
+    starter: false
+    accent: "#C9985A"
+    focal: { x: 0.64, y: 0.56 }
+    upscaler: x4plus
+    grain: 0.3
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Layered black mountain ridges recede into the distance, each one a
+        slightly lighter charcoal than the one in front, separated by thin bands of haze. A hair-thin line of
+        warm amber light skims the farthest ridge where the sun has just set. The sky above is a smooth gradient
+        from deep warm charcoal at the horizon to pure black at the top.
+        Style: fine-art landscape photography, telephoto compression, atmospheric layers.
+        Palette: #050506, #121316, #24262B with a warm amber rim #C9985A. Mood: quiet, vast, contemplative.
+        Composition: the farthest ridge and its amber rim sits about 54–74% across and 46–66% down; the horizon
+        sits near the lower third. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and
+        taskbar go there). Keep every important element inside the central 80% of the width and the middle 70%
+        of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp ridge silhouettes and delicate haze layers; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        buildings, birds.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        calm layered ridges fading into smooth dark haze, very low contrast. New area on the right: the ridges
+        continue and one low peak rises, its edge catching a trace of the amber light. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ridges stack vertically with the amber rim at about 60% of the height and the dark sky
+        filling the upper half. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

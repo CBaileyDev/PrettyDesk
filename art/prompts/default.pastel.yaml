@@ -1,0 +1,356 @@
+pack: default.pastel
+kind: default
+title: "Pastel Dream"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Pastel Dream. Every image is soft,
+  light and gently surreal, in blush pink (#F6CFD8), lavender (#D3C6EE), mint (#C6EBDD), butter yellow (#FBEBB0)
+  and sky (#CFE4F6). Scenes are cloudscapes, pastel deserts, smooth clay-like 3D shapes and calm seas at sunset,
+  all with creamy gradients, soft light and no harsh contrast. The look is clean and dreamy, never childish or
+  busy. Gradients are perfectly smooth and banding-free. No text, no people, no characters, no frames or
+  borders. Keep the left edge and the bottom edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: pd-01
+    title: "Pastel Cloudscape"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [clouds, sky, soft]
+    starter: true
+    accent: "#F2B8CC"
+    focal: { x: 0.64, y: 0.46 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dreamy sky of big, fluffy clouds in blush pink, lavender and
+        butter yellow drifts across a gradient background that fades from soft sky blue at the top to warm cream
+        at the horizon. Each cloud is rounded and softly lit from the upper right, with gentle shadow in lilac.
+        A small, bright patch of golden light glows between two clouds.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #F6CFD8, #D3C6EE, #FBEBB0 with a sky blue #CFE4F6. Mood: dreamy, gentle, airy.
+        Composition: the golden glow between the two largest clouds sits about 54–74% across and 34–58% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        animals, characters, hard shadows.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft blue-to-cream sky with a few wisps of pink cloud, low in detail. New area on the right: the clouds
+        thin out into streaks of lavender and butter yellow. Same lighting direction, palette, materials and
+        level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The clouds stack vertically with the golden glow at about 42% of the height and soft sky
+        above and below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-02
+    title: "Pastel Desert"
+    role: default
+    tone: light
+    setupMatch: [pastel, wood]
+    tags: [desert, dunes, soft]
+    starter: false
+    accent: "#F0B9A0"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Smooth, rounded dunes in peach, blush and sand roll across the frame
+        under a pale lavender and mint sky. A thin crisp ridge line separates the sunlit side in cream-peach
+        from the soft rose shadow side. A single tiny cloud floats in the sky, and the dunes are free of any
+        footprints or plants.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #F6D7C3, #F0B9A0, #E3A5B8 with a lavender sky #D8CDEF. Mood: calm, sweet, spacious.
+        Composition: the main ridge line and its sunlit slope sits about 56–76% across and 40–64% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        plants, animals, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth blush dunes in soft shade, low in detail. New area on the right: more dunes roll away in lighter
+        peach and mint haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dunes roll through the lower half, with the ridge line at about 55% of the height under a
+        pale gradient sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-03
+    title: "Clay Shapes"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [3d, clay, shapes]
+    starter: false
+    accent: "#BFA8E8"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small arrangement of soft, smooth clay-like 3D shapes rests on a
+        pale pastel surface: a rounded arch in lavender, a sphere in blush pink and a short cylinder in mint.
+        Gentle studio light from the upper left gives each form a creamy gradient and a soft, short shadow. The
+        background is a seamless pale cream.
+        Style: soft 3D render of matte clay-like forms, studio lighting, creamy gradients, minimalist.
+        Palette: #D3C6EE, #F6CFD8, #C6EBDD with a cream #FFF6E4. Mood: playful, soft, calm.
+        Composition: the arch and sphere grouping sits about 52–76% across and 40–64% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, characters,
+        faces, text, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain pale cream backdrop with a soft shadow edge. New area on the right: a small mint cube blurred in
+        the distance, beside a gentle shadow. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The shapes cluster in the lower center, the arch rising to about 45% of the height over a
+        plain cream backdrop. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-04
+    title: "Cotton Candy Sunset Sea"
+    role: default
+    tone: light
+    setupMatch: [pastel]
+    tags: [sea, sunset, soft]
+    starter: false
+    accent: "#F2A9BE"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A calm, glassy sea at sunset reflects a sky of cotton-candy pink,
+        lavender and apricot clouds. A low soft sun melts into a band of golden cream at the horizon, and its
+        reflection forms a narrow, glowing path across the water. Tiny, smooth ripples catch the light.
+        Everything is soft, creamy and serene.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #F6CFD8, #D3C6EE, #FBD9A8 with a golden cream #FFF1D0. Mood: sweet, calm, dreamy.
+        Composition: the sun's glow on the horizon and its reflection, a centered and symmetrical composition,
+        sits about 40–60% across and 38–62% down; the sky and sea are balanced on both sides so the image holds
+        with hidden icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go
+        there). Keep every important element inside the central 80% of the width and the middle 70% of the
+        height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, boats, birds,
+        people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft pink-lavender clouds over calm water, low in detail. New area on the right: soft pink-lavender
+        clouds over calm water, with a faint, clean line of horizon far away. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The sun glow sits at the center at about 52% of the height, with its reflection falling down
+        the bottom half. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-05
+    title: "Mint Hills"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [hills, mint, landscape]
+    starter: false
+    accent: "#A9DBC4"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Layered, rounded hills in mint, seafoam and pale butter yellow roll
+        toward a soft peach horizon, each ridge slightly lighter than the one before. A pale blush sky with a
+        thin cream cloud sits above. Light comes from the right, giving each hill a smooth gradient and a gentle
+        shadow side in soft green.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #C6EBDD, #A9DBC4, #FBEBB0 with a peach #F8CDB6. Mood: fresh, calm, gentle.
+        Composition: the middle ridge and its sunlit slope sits about 56–76% across and 38–62% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, trees,
+        buildings, animals, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft mint hills fading into pale haze, low in detail. New area on the right: more hills roll away to a
+        peach horizon with a faint blush cloud. Same lighting direction, palette, materials and level of detail.
+        No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The hills stack up the frame with the middle ridge at about 52% of the height and a pale
+        gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-06
+    title: "Lavender Moon Dune"
+    role: default
+    tone: light
+    setupMatch: [pastel, white]
+    tags: [moon, dune, lavender]
+    starter: false
+    accent: "#C5B0EA"
+    focal: { x: 0.64, y: 0.44 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A large, pale full moon hangs low over a smooth lavender dune, its
+        soft glow tinting the sky with layers of lilac, blush and cream. The dune curves in a gentle arc across
+        the lower right, with a rose-lilac shadow side. The moon's surface is a faint, smooth cream with barely
+        visible texture.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #E8DDF7, #C5B0EA, #F6CFD8 with a pale moon cream #FFF4DC. Mood: dreamy, serene, soft.
+        Composition: the moon and the crest of the dune beneath it sits about 54–74% across and 32–56% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, stars, plants,
+        people, footprints.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a gentle gradient sky of lilac and cream, completely clean. New area on the right: the dune continues in
+        soft lilac, with a smaller moon-glow reflected in the haze. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The moon sits at about 38% of the height, centered above a dune that curves across the bottom
+        third. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-07
+    title: "Butter Sky Island"
+    role: default
+    tone: light
+    setupMatch: [pastel, wood]
+    tags: [island, floating, sky]
+    starter: false
+    accent: "#F5D78A"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small, smooth floating island of soft green and cream rock hangs
+        in a pale butter-yellow and sky-blue sky, with a gentle waterfall of mist falling from its edge into a
+        bed of clouds. Soft cream light comes from the upper right, giving the island rounded highlights and
+        pale lavender shadows.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #FBEBB0, #CFE4F6, #C6EBDD with a lavender shade #D3C6EE. Mood: whimsical, calm, light.
+        Composition: the floating island and its mist fall sits about 53–75% across and 38–62% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, buildings,
+        trees, animals, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a smooth pale gradient sky with a few thin clouds, low in detail. New area on the right: a second, tiny
+        island far away, soft and hazy, in the pale sky. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The island hangs at about 42% of the height in the center, with clouds below and pale sky
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: pd-08
+    title: "Blush Dune Dawn"
+    role: default
+    tone: light
+    setupMatch: [pastel, wood, white]
+    tags: [dune, dawn, blush]
+    starter: false
+    accent: "#F4B4C4"
+    focal: { x: 0.50, y: 0.56 }
+    upscaler: x4plus-anime
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A wide blush-pink dune field at dawn, the sand softly rippled and
+        glowing with pale gold light along the crests. The sky above is a smooth gradient of cream, lilac and
+        pale peach, with a few thin streaks of cloud. A thin soft haze rests above the farthest dunes, and the
+        scene is symmetrical and calm.
+        Style: soft dreamy digital art with creamy gradients and gentle volumetric light, clean and calm.
+        Palette: #FBE4E8, #F4B4C4, #FBEBB0 with a lilac #D9CCF0. Mood: gentle, hopeful, quiet.
+        Composition: the glowing crests of the central dunes, a centered and symmetrical composition, sits about
+        40–60% across and 44–68% down; the dune field is balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; smooth pastel gradients and clean soft edges on the focal
+        subject; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        plants, animals, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth blush sand with soft ripples, low in detail. New area on the right: smooth blush sand and a faint
+        line of far dunes in haze. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dunes fill the lower half with the glowing crest at about 58% of the height under a
+        creamy gradient sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

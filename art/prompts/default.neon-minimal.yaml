@@ -1,0 +1,366 @@
+pack: default.neon-minimal
+kind: default
+title: "Neon Minimal"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Neon Minimal. Every image is near-black
+  (#050507 to #12121A) with exactly ONE neon accent color per image, chosen from magenta (#FF2D95), cyan
+  (#19E3F0), violet (#8A5CFF) or orange (#FF7A1A). The look is sleek, quiet synthwave minimalism: a single light
+  line in a dark room, wet-street reflections, a minimal sunset grid, a glowing ring in fog. There is lots of
+  empty dark space, soft glow and gentle bloom, never busy, never multi-colored. Gradients are smooth and
+  banding-free. No text, no signs, no people, no frames or borders. Keep the left edge and the bottom edge calm
+  and dark for desktop icons and the taskbar.
+wallpapers:
+  - id: nm-01
+    title: "Single Magenta Line"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [magenta, line, dark-room]
+    starter: true
+    accent: "#FF2D95"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A single thin horizontal neon tube glows magenta on a bare,
+        near-black wall in an empty dark room. The light spills softly over the matte wall and across a glossy
+        black floor, where it forms a faint, blurred reflection. A trace of pink bloom softens the ends of the
+        tube, and everything else stays in deep shadow.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0F0F16, #1A1A24 with a neon magenta #FF2D95. Mood: sleek, quiet, modern.
+        Composition: the glowing line and its reflection sits about 56–76% across and 42–62% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, furniture,
+        readable signs, people, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a deep black wall and floor with a faint magenta haze, low in detail. New area on the right: the neon
+        line ends in a soft glow, with the wall continuing into black. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The neon line crosses the center at about 50% of the height, with its reflection in the
+        glossy floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-02
+    title: "Cyan Wet Street"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cyan, wet-street, reflection]
+    starter: false
+    accent: "#19E3F0"
+    focal: { x: 0.64, y: 0.56 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. An empty, rain-slicked alley at night, its dark asphalt glossy under
+        thin rain. A single vertical cyan light on a distant wall paints a long, shimmering reflection down the
+        wet road toward the viewer. The walls on both sides are black and featureless, and a soft cyan haze
+        lingers in the air around the light.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0D1117, #16202A with a neon cyan #19E3F0. Mood: lonely, cool, cinematic.
+        Composition: the cyan light and its long reflection sits about 54–74% across and 44–68% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        vehicles, readable signs, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark, wet black wall and road with a faint cyan sheen. New area on the right: the alley extends into
+        dark haze with a trace of cyan glow. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The cyan light sits at about 45% of the height with its reflection running down through the
+        lower center. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-03
+    title: "Minimal Synth Sunset"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [orange, sunset, synthwave]
+    starter: false
+    accent: "#FF7A1A"
+    focal: { x: 0.50, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A flat, dark plain stretches to a sharp horizon under a near-black
+        sky, with a half sun in neon orange sinking behind the horizon line. The sun is a clean disc with a few
+        thin horizontal bands cut through its lower part, and its orange glow fades softly into the sky. Fine,
+        faint perspective lines on the ground lead toward it.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #12101A, #2A1A22 with a neon orange #FF7A1A. Mood: retro, calm, graphic.
+        Composition: the half-sun on the horizon, a centered and symmetrical composition, sits about 40–60%
+        across and 40–64% down; the horizon is level and balanced on both sides so the image holds with hidden
+        icons. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, palm trees,
+        cars, people, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark plain and a faint orange glow along the horizon. New area on the right: a dark plain and a faint
+        orange glow along the horizon, with a few thin perspective lines. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The half-sun sits centered at about 56% of the height, with the dark plain and faint grid
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-04
+    title: "Violet Ring in Fog"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [violet, ring, fog]
+    starter: false
+    accent: "#8A5CFF"
+    focal: { x: 0.66, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A perfect thin ring of glowing violet light stands upright in dense,
+        low-lying fog, its lower edge dissolving into the mist. The fog is lit softly from within by the ring
+        and fades to black at the edges, and a faint circle of light reflects on the damp ground. Nothing else
+        is in the frame.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0E0C18, #1A1830 with a neon violet #8A5CFF. Mood: mysterious, still, futuristic.
+        Composition: the ring and the glowing fog around it sits about 56–76% across and 36–60% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        buildings, text, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        dark fog and shadow with a faint violet haze. New area on the right: the fog drifts into black with a
+        trace of violet glow. Same lighting direction, palette, materials and level of detail. No seams, no
+        repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The ring stands in the center at about 45% of the height, with fog filling the lower half.
+        Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
+        letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-05
+    title: "Magenta Horizon Grid"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [magenta, grid, horizon]
+    starter: false
+    accent: "#FF2D95"
+    focal: { x: 0.64, y: 0.58 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dark reflective plane stretches to a thin glowing magenta horizon,
+        with a fine perspective grid of faint lines receding toward it. The sky is a near-black gradient with a
+        subtle magenta haze along the horizon. There are no mountains, no sun and no objects, only the clean,
+        glowing line and the grid.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0F0D16, #1B1424 with a neon magenta #FF2D95. Mood: minimal, hypnotic,
+        retro-futuristic.
+        Composition: the glowing horizon line where the grid meets the sky sits about 54–74% across and 48–68%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, mountains,
+        suns, vehicles, people, text.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark grid fading into black with a faint pink haze. New area on the right: the grid fades into black
+        with a trace of magenta glow along the horizon. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The magenta horizon sits at about 60% of the height, with the grid fanning toward the viewer
+        below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-06
+    title: "Cyan Doorway Glow"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [cyan, doorway, architecture]
+    starter: false
+    accent: "#19E3F0"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A tall, narrow slit of cyan light glows in a smooth black concrete
+        wall, like a doorway left slightly open to a bright room. The light spills in a thin, sharp wedge across
+        the dark floor and brushes the wall edges. A faint cyan haze catches in the air. The concrete is dark,
+        matte and utterly plain.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0C1014, #161C22 with a neon cyan #19E3F0. Mood: quiet, mysterious, sleek.
+        Composition: the glowing slit and the wedge of light on the floor sits about 55–73% across and 34–66%
+        down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep
+        every important element inside the central 80% of the width and the middle 70% of the height so the
+        image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp, clean glowing edges on the neon subject; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, doors
+        with detail, text, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain dark concrete wall with faint texture, low in detail. New area on the right: the dark wall
+        continues with a very faint cyan glow reflecting on its surface. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The glowing slit rises from the lower center to about 35% of the height, with its wedge of
+        light below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-07
+    title: "Orange Heat Haze"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [orange, haze, gradient]
+    starter: false
+    accent: "#FF7A1A"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A deep black frame holds a single soft orb of glowing orange light
+        in the center, its edges dissolving into a smooth, warm haze that fades through dull rust into pure
+        black. A faint thin ring of light circles it at a distance. The whole image is a study in soft glow and
+        darkness.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #140B08, #2B130A with a neon orange #FF7A1A. Mood: warm, hypnotic, minimal.
+        Composition: the glowing orb, a centered and symmetrical composition, sits about 40–60% across and
+        38–62% down; the glow is balanced on both sides so the image holds with hidden icons. The left 15% and
+        the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; smooth glow gradients with no hard edges; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, stars, objects,
+        text, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth near-black space with a faint rust haze. New area on the right: smooth near-black space with a
+        faint rust haze and the thin ring just visible. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The orb sits centered at about 45% of the height, with the haze fading evenly to black. Same
+        lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
+        logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: nm-08
+    title: "Violet Rain Window"
+    role: default
+    tone: dark
+    setupMatch: [black, rgb]
+    tags: [violet, rain, window]
+    starter: false
+    accent: "#8A5CFF"
+    focal: { x: 0.66, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A dark rain-streaked window with a single soft violet glow blurring
+        beyond the glass, like a distant light in the night. Drops cling to the pane, bending the glow into
+        soft, round shapes and tiny reflections. The room is nearly black, and the only light is a quiet violet
+        bloom in the right half.
+        Style: minimalist cinematic digital art, a single neon light source with soft bloom, deep blacks, sleek
+        and quiet.
+        Palette: #050507, #0E0B18, #181430 with a neon violet #8A5CFF. Mood: moody, quiet, intimate.
+        Composition: the violet bloom behind the sharpest raindrops sits about 56–76% across and 38–62% down.
+        The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp raindrop detail; perfectly smooth, banding-free
+        gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people,
+        buildings, readable signs, other colored lights.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a dark rainy pane with faint reflections and no light. New area on the right: the glass continues with a
+        few more raindrops and a very faint violet haze. Same lighting direction, palette, materials and level
+        of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The violet bloom sits at about 45% of the height in the center, with raindrops streaking down
+        the glass below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}

@@ -1,0 +1,360 @@
+pack: default.warm-minimal
+kind: default
+title: "Warm Minimal"
+styleBible: |
+  We are creating a cohesive series of premium desktop wallpapers called Warm Minimal. Every image is built from
+  sand, oat, clay, travertine, light oak and linen: warm neutrals (#E9DCC8, #D9C3A5, #C4A07C, #A87B5A) in soft
+  natural daylight or golden-hour light. The look is quiet architectural and still-life photography with
+  tactile, true-to-life materials, gentle contrast and plenty of empty space, like a page from an architecture
+  magazine. Light gradients are smooth and banding-free. No text of any kind, no people, no frames or borders.
+  Keep the left edge and bottom edge calm and low-detail for desktop icons and the taskbar.
+wallpapers:
+  - id: wm-01
+    title: "Golden Hour Dunes"
+    role: default
+    tone: mid
+    setupMatch: [wood, pastel]
+    tags: [dunes, golden-hour, sand]
+    starter: true
+    accent: "#C4A07C"
+    focal: { x: 0.64, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Smooth, rolling sand dunes in warm oat and apricot tones glow in low
+        golden-hour sun. A single sharp ridge line sweeps from the lower left to the upper right, with the
+        sunlit side in soft peach and the shaded side in a gentle clay brown. The sky is a cloudless pale cream
+        gradient. Fine wind ripples texture the nearest slope.
+        Style: fine-art desert photography, golden-hour light, medium-format tonality, calm and sculptural.
+        Palette: #EBDCC5, #D9B98F, #B98A5E with a deep clay shadow #8B6446. Mood: warm, serene, spacious.
+        Composition: the main ridge line and its brightest slope sits about 54–74% across and 40–60% down; the
+        horizon sits near the upper third. The left 15% and the bottom 8% stay calm and low-detail (desktop
+        icons and taskbar go there). Keep every important element inside the central 80% of the width and the
+        middle 70% of the height so the image can be cropped to other screen shapes.
+        Technical: highest available resolution; crisp ripple detail on the nearest slope; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, footprints,
+        plants, animals, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        smooth, shaded dune slopes in soft clay tones with very low detail. New area on the right: a second,
+        lower dune ridge in hazy peach light, fading toward the horizon. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The main ridge rises diagonally from the lower left, its brightest slope at about 45% of the
+        height, with cream sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-02
+    title: "Travertine Arches"
+    role: default
+    tone: light
+    setupMatch: [wood, white]
+    tags: [arches, stone, architectural]
+    starter: false
+    accent: "#CDB99A"
+    focal: { x: 0.62, y: 0.48 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A row of three smooth travertine arches recedes along a sunlit wall,
+        each opening framing a patch of soft cream sky. Warm afternoon light enters from the right and casts
+        clean curved shadows across the pale stone floor. The stone shows delicate horizontal banding in oat and
+        sand tones, and nothing else is in the scene.
+        Style: architectural photography, warm afternoon sun, honed stone texture, quiet and refined.
+        Palette: #EFE3D0, #DCC9A9, #C7AE88 with sunlit shadow tan #A98D68. Mood: calm, sunlit, timeless.
+        Composition: the nearest arch and its curved shadow, sits about 50–74% across and 38–58% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp stone banding and arch edges; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, doors, plants,
+        railings, people, signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain sunlit stone wall with soft vertical tonal variation, low detail. New area on the right: two more
+        arches continue and fade into warm haze. Same lighting direction, palette, materials and level of
+        detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The arches stack in perspective along the left, with the nearest arch centered between 30%
+        and 75% of the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
+        Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-03
+    title: "Ceramic Still Life"
+    role: default
+    tone: light
+    setupMatch: [wood, pastel]
+    tags: [ceramic, still-life, clay]
+    starter: false
+    accent: "#B98A5E"
+    focal: { x: 0.66, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A small still life of hand-thrown terracotta and oat-colored
+        ceramics on a pale oak surface: a tall narrow vase, a wide shallow bowl and a round jug, all in matte
+        unglazed clay. Soft window light from the left shapes their curves, and long gentle shadows fall to the
+        right on a warm sand-colored wall behind them.
+        Style: editorial still-life photography, soft daylight, natural clay and wood texture, understated and
+        warm.
+        Palette: #EEE2CE, #D8BC98, #B98A5E with a soft oak shadow #8E6B4A. Mood: gentle, grounded, tactile.
+        Composition: the vase and bowl grouping sits about 54–78% across and 40–64% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp clay texture and grain on the oak; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, flowers,
+        plants, food, people, hands, branding.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        a plain warm sand wall and oak surface in even, quiet light. New area on the right: a fourth, smaller
+        bowl far to the right, softly out of focus, beside a thin line of shadow. Same lighting direction,
+        palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The three ceramic pieces cluster in the lower center, the vase rising to about 42% of the
+        height, with plain wall above. Same lighting, palette, materials and rendering style. Keep the bottom
+        10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-04
+    title: "Linen Curtain Light"
+    role: default
+    tone: light
+    setupMatch: [wood, white]
+    tags: [linen, window, soft-light]
+    starter: false
+    accent: "#D3BFA0"
+    focal: { x: 0.50, y: 0.46 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A natural oat-colored linen curtain hangs in loose, relaxed vertical
+        folds, glowing softly as warm morning sun filters through the weave. A faint, blurred pattern of
+        window-bar shadows crosses the lower folds. The fabric shows its slubby, uneven texture, and the light
+        fades gently to the edges of the frame.
+        Style: lifestyle interior photography, backlit linen, natural fibres, airy and warm.
+        Palette: #F1E6D3, #E3D1B3, #CDB48F with a soft glow #D3BFA0. Mood: peaceful, bright, restful.
+        Composition: the most luminous fold, a centered and symmetrical composition, sits about 40–60% across
+        and 34–58% down; the folds are balanced on both sides so the image holds with hidden icons. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important
+        element inside the central 80% of the width and the middle 70% of the height so the image can be cropped
+        to other screen shapes.
+        Technical: highest available resolution; crisp linen slub texture in the nearest fold; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, furniture,
+        plants, people, visible window details.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft, even folds fading into warm glow with very little contrast. New area on the right: the curtain
+        gathers into a fuller fold, still softly lit, with a faint bar shadow. Same lighting direction, palette,
+        materials and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The curtain falls vertically through the center with its brightest glow at about 40% of the
+        height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-05
+    title: "Terracotta Wall"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [terracotta, wall, texture]
+    starter: false
+    accent: "#B5714C"
+    focal: { x: 0.65, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A broad terracotta-plaster wall, hand-finished and softly mottled,
+        fills the frame in warm clay and rose-brown. A strong, low sun from the upper left throws the clean
+        diagonal shadow of an unseen parapet across the surface, a bright sunlit band above it and a soft shadow
+        band below. The plaster shows fine pores and gentle trowel sweeps.
+        Style: architectural photography, strong natural sunlight, rich plaster texture, Mediterranean calm.
+        Palette: #E4B792, #C98A62, #A8603E with a deep shadow #7A4630. Mood: warm, sunlit, grounded.
+        Composition: the diagonal line between light and shadow sits about 51–79% across and 40–60% down. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp plaster pores and trowel texture along the light edge;
+        perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, windows, doors,
+        plants, people, signs.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        evenly lit, softly mottled terracotta plaster with only faint trowel marks, low detail. New area on the
+        right: the diagonal shadow continues and a second, fainter shadow band appears beyond it. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The diagonal line of shadow crosses the frame from the lower left to the upper right through
+        about 45% of the height. Same lighting, palette, materials and rendering style. Keep the bottom 10%
+        calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-06
+    title: "Oak and Linen Morning"
+    role: default
+    tone: light
+    setupMatch: [wood, white]
+    tags: [oak, interior, morning]
+    starter: false
+    accent: "#CDAE84"
+    focal: { x: 0.68, y: 0.54 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A close, calm tabletop view: a light oak surface with a fine open
+        grain, a folded oat linen cloth and an empty round ceramic dish in warm sand. Early sunlight slides in
+        from the left across the grain and shows every fine texture. The wall behind is a seamless pale cream,
+        softly out of focus.
+        Style: minimalist lifestyle photography, shallow depth of field, natural wood and fabric textures.
+        Palette: #F0E5D2, #DEC8A4, #C8A87E with a soft oak shadow #A58660. Mood: quiet, fresh, welcoming.
+        Composition: the dish and folded linen sits about 56–80% across and 44–64% down. The left 15% and the
+        bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element
+        inside the central 80% of the width and the middle 70% of the height so the image can be cropped to
+        other screen shapes.
+        Technical: highest available resolution; crisp wood grain and cloth weave in the foreground; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, food, flowers,
+        cutlery, people, hands, branding.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain oak surface and soft cream wall with very low detail. New area on the right: the oak surface
+        continues with a soft stripe of morning sun and a blurred small vase far to the right. Same lighting
+        direction, palette, materials and level of detail. No seams, no repeated or mirrored objects, no text or
+        logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dish and linen sit in the lower center, at about 60% of the height, with cream wall
+        above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
+        text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-07
+    title: "Sandstone Canyon Glow"
+    role: default
+    tone: mid
+    setupMatch: [wood]
+    tags: [canyon, sandstone, glow]
+    starter: false
+    accent: "#C7875A"
+    focal: { x: 0.64, y: 0.52 }
+    upscaler: x4plus
+    grain: 0.25
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. Smooth, wind-carved sandstone walls curve around a narrow passage,
+        glowing in warm apricot and rose from light bounced off the rock. Fine horizontal layers in the stone
+        ripple like silk, with the brightest glow deep in the curve and soft shadow near the edges. A thin strip
+        of pale cream sky is visible at the very top.
+        Style: fine-art landscape photography, reflected light, silky sandstone texture, warm and meditative.
+        Palette: #EACBA4, #D29F73, #B2704A with a deep shadow #7C4B33. Mood: glowing, hushed, organic.
+        Composition: the brightest curve of the stone passage sits about 54–74% across and 42–62% down. The left
+        15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp stone layers along the glowing curve; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people, plants,
+        footprints, water.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        soft shaded rock curves with very low contrast. New area on the right: the passage curves away and
+        softens into a warm, hazy glow. Same lighting direction, palette, materials and level of detail. No
+        seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The stone passage curves through the center with its brightest glow at about 50% of the
+        height and a thin cream sky at the top. Same lighting, palette, materials and rendering style. Keep the
+        bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
+
+  - id: wm-08
+    title: "Quiet Courtyard Wall"
+    role: default
+    tone: light
+    setupMatch: [wood, white, pastel]
+    tags: [courtyard, sunlit, stucco]
+    starter: false
+    accent: "#D1B791"
+    focal: { x: 0.50, y: 0.50 }
+    upscaler: x4plus
+    grain: 0.2
+    portrait: true
+    prompts:
+      landscape: |
+        A 16:9 landscape desktop wallpaper. A large sand-colored stucco wall in a quiet courtyard, lit by warm
+        afternoon sun. A single soft, rounded shadow of an unseen tree falls across its center, dappled at the
+        edges. The ground at the base is pale pressed earth. The wall is almost featureless, with only fine
+        surface texture and a subtle warm gradient from bright to calm.
+        Style: minimalist architectural photography, dappled natural light, soft stucco texture, calm and
+        sunlit.
+        Palette: #F0E4CF, #DEC8A6, #C8AC84 with a soft shadow #AB8F6A. Mood: tranquil, sunlit, simple.
+        Composition: the central dappled shadow, a centered and symmetrical composition, sits about 40–60%
+        across and 36–64% down; the wall is nearly even to both sides so the image holds with hidden icons. The
+        left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
+        important element inside the central 80% of the width and the middle 70% of the height so the image can
+        be cropped to other screen shapes.
+        Technical: highest available resolution; crisp stucco grain at the edge of the shadow; perfectly smooth,
+        banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, windows, doors,
+        plants, furniture, people.
+      ultrawide: |
+        Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
+        and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
+        plain, evenly sunlit stucco with very faint texture. New area on the right: the wall continues, with the
+        dappled shadow thinning into a few scattered light spots. Same lighting direction, palette, materials
+        and level of detail. No seams, no repeated or mirrored objects, no text or logos.
+      portrait: |
+        Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
+        wallpaper. The dappled shadow sits centered at about 45% of the height, with plain stucco above and pale
+        ground below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
+        no text, letters, logos, watermarks or UI.
+    reviewNotes: ""
+    approved: false
+    rawSha256: {}
