@@ -116,3 +116,55 @@ public interface IWallpaperBackup
     /// <summary>Idempotent: does nothing when a backup already exists.</summary>
     Task EnsureBackupAsync(CancellationToken cancellationToken = default);
 }
+
+/// <summary>What the UI needs from the orchestrator: observe status and issue the manual controls (FR-WP-7, FR-WP-10).</summary>
+public interface IWallpaperController
+{
+    Orchestration.OrchestratorStatus Status { get; }
+
+    event Action<Orchestration.OrchestratorStatus>? StatusChanged;
+
+    void NextWallpaper();
+
+    void Pause(TimeSpan? duration);
+
+    void Resume();
+
+    void Preview(string wallpaperId, TimeSpan? duration = null);
+
+    void CancelPreview();
+}
+
+/// <summary>What the UI needs from the content library: thumbnails, pack status, user images, storage (FR-CON-6/7).</summary>
+public interface IContentBrowser
+{
+    Content.PackProgress GetPackState(string packId);
+
+    /// <summary>A small image for the wallpaper (thumbnail, else the smallest local variant), or null when nothing is on disk.</summary>
+    string? GetPreviewImagePath(string wallpaperId);
+
+    IReadOnlyList<Content.UserImage> ListUserImages();
+
+    Content.ImportResult ImportUserImage(string sourcePath);
+
+    bool RemoveUserImage(string id);
+
+    long StorageUsageBytes();
+
+    /// <summary>Deletes downloaded packs (keeping the given ones) and returns the bytes freed.</summary>
+    long ClearDownloaded(IReadOnlySet<string>? keepPackIds = null);
+
+    void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors);
+
+    event Action<Content.PackProgress>? ProgressChanged;
+
+    event Action<string>? PackChanged;
+
+    event Action<string, Exception>? DownloadFailed;
+}
+
+/// <summary>Live detection feed for Settings → Advanced. Displayed only, never persisted (SPEC §7).</summary>
+public interface IDetectionFeed
+{
+    event Action<Detection.DetectionObservation>? Observed;
+}

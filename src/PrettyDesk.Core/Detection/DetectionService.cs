@@ -18,7 +18,7 @@ public sealed record DetectionConfiguration(
 /// foreground and Steam changes, and wakes itself at the tracker's next deadline. Every trigger funnels into one
 /// serial consumer so evaluation never races (SPEC §5.5).
 /// </summary>
-public sealed partial class DetectionService : IAsyncDisposable
+public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
 {
     private readonly IProcessSource _processes;
     private readonly IForegroundSource? _foreground;

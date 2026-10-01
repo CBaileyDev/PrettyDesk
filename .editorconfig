@@ -38,3 +38,5 @@ dotnet_naming_style.underscore_camel.capitalization = camel_case
 dotnet_diagnostic.CA2007.severity = none
 # Localization is handled through resources in the App project (NFR-11); Core logs/exceptions are developer-facing.
 dotnet_diagnostic.CA1303.severity = none
+# The app is C#-only: VB reserved words (e.g. Resume) are not a concern for member names.
+dotnet_diagnostic.CA1716.severity = none

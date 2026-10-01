@@ -27,7 +27,7 @@ public sealed record ContentLibraryOptions(
 /// Everything about wallpaper files on disk: resolves wallpapers to local variants (downloaded packs, bundled starter set,
 /// the user's images), and downloads only the variants the attached monitors need (FR-CON-3/4/5/6).
 /// </summary>
-public sealed partial class ContentLibrary : IContentLibrary, IDisposable
+public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, IDisposable
 {
     private readonly ICatalogProvider _catalog;
     private readonly PackStore _packs;
@@ -127,6 +127,55 @@ public sealed partial class ContentLibrary : IContentLibrary, IDisposable
         }
 
         return LocateFile(entry.Pack, thumb.Path);
+    }
+
+    public string? GetPreviewImagePath(string wallpaperId)
+    {
+        if (GetThumbnailPath(wallpaperId) is { } thumb)
+        {
+            return thumb;
+        }
+
+        // No thumbnail: the smallest variant on disk is the cheapest thing to decode at thumbnail size.
+        return TryGetAsset(wallpaperId)?.Variants.Values.OrderBy(v => (long)v.Width * v.Height).FirstOrDefault()?.Path;
+    }
+
+    public IReadOnlyList<UserImage> ListUserImages() => _user.List();
+
+    public ImportResult ImportUserImage(string sourcePath)
+    {
+        var result = _user.Import(sourcePath);
+        if (result.Ok)
+        {
+            PackChanged?.Invoke(Orchestration.ContentIds.UserPackId);
+        }
+
+        return result;
+    }
+
+    public bool RemoveUserImage(string id)
+    {
+        var removed = _user.Remove(id);
+        if (removed)
+        {
+            PackChanged?.Invoke(Orchestration.ContentIds.UserPackId);
+        }
+
+        return removed;
+    }
+
+    public long StorageUsageBytes() => _packs.UsageBytes();
+
+    public long ClearDownloaded(IReadOnlySet<string>? keepPackIds = null)
+    {
+        var freed = _packs.ClearAll(keepPackIds);
+        _states.Clear();
+        foreach (var packId in _catalog.Current.Packs.Select(p => p.Id))
+        {
+            PackChanged?.Invoke(packId);
+        }
+
+        return freed;
     }
 
     public PackProgress GetPackState(string packId)

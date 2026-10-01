@@ -12,7 +12,7 @@ namespace PrettyDesk.Core.Orchestration;
 /// state dirty; one serial consumer recomputes <em>desired</em> (monitor → render request), diffs it against what is
 /// <em>applied</em>, and calls <see cref="IWallpaperSetter"/> only for the differences (FR-APPLY-4).
 /// </summary>
-public sealed partial class WallpaperOrchestrator : IAsyncDisposable
+public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsyncDisposable
 {
     /// <summary>Recompute debounce (SPEC §5.4).</summary>
     public static readonly TimeSpan Debounce = TimeSpan.FromMilliseconds(250);
