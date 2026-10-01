@@ -35,7 +35,10 @@ public sealed partial class RenderCache
         return System.IO.Path.Combine(_directory, $"{Sanitize(wallpaperId)}_{variantKey}_{width}x{height}_{hash8}.png");
     }
 
-    /// <summary>Returns true and refreshes the LRU timestamp when the render already exists.</summary>
+    /// <summary>
+    /// Returns true and refreshes the LRU stamp when the render already exists. The stamp is the write time (access times are
+    /// unreliable on NTFS/relatime); it is only bumped when older than an hour so a hot file is not rewritten constantly.
+    /// </summary>
     public static bool TryUse(string path)
     {
         if (!File.Exists(path))
@@ -45,7 +48,10 @@ public sealed partial class RenderCache
 
         try
         {
-            File.SetLastAccessTimeUtc(path, DateTime.UtcNow);
+            if (DateTime.UtcNow - File.GetLastWriteTimeUtc(path) > TimeSpan.FromHours(1))
+            {
+                File.SetLastWriteTimeUtc(path, DateTime.UtcNow);
+            }
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
         {
@@ -86,7 +92,7 @@ public sealed partial class RenderCache
             }
 
             var protectedPaths = _appliedPaths();
-            foreach (var file in files.OrderBy(f => f.LastAccessTimeUtc).ThenBy(f => f.LastWriteTimeUtc))
+            foreach (var file in files.OrderBy(f => f.LastWriteTimeUtc))
             {
                 if (total <= _maxBytes)
                 {

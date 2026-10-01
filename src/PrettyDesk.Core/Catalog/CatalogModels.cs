@@ -16,84 +16,84 @@ public sealed record FocalPoint(double X, double Y)
 
 public sealed record FileRef
 {
-    public string Path { get; init; } = "";
-    public int W { get; init; }
-    public int H { get; init; }
-    public long Bytes { get; init; }
-    public string Sha256 { get; init; } = "";
+    public string Path { get; set; } = "";
+    public int W { get; set; }
+    public int H { get; set; }
+    public long Bytes { get; set; }
+    public string Sha256 { get; set; } = "";
 }
 
 public sealed record DetectionRules
 {
-    public IReadOnlyList<string> ExeNames { get; init; } = [];
-    public IReadOnlyList<uint> SteamAppIds { get; init; } = [];
-    public IReadOnlyList<string> PathContains { get; init; } = [];
-    public IReadOnlyList<string> WindowTitleContains { get; init; } = [];
-    public IReadOnlyList<string> ExcludeExeNames { get; init; } = [];
+    public IReadOnlyList<string> ExeNames { get; set; } = [];
+    public IReadOnlyList<uint> SteamAppIds { get; set; } = [];
+    public IReadOnlyList<string> PathContains { get; set; } = [];
+    public IReadOnlyList<string> WindowTitleContains { get; set; } = [];
+    public IReadOnlyList<string> ExcludeExeNames { get; set; } = [];
 }
 
 public sealed record GameEntry
 {
-    public string Id { get; init; } = "";
-    public string DisplayName { get; init; } = "";
-    public DetectionRules Detection { get; init; } = new();
-    public string PackId { get; init; } = "";
-    public string AddedIn { get; init; } = "";
+    public string Id { get; set; } = "";
+    public string DisplayName { get; set; } = "";
+    public DetectionRules Detection { get; set; } = new();
+    public string PackId { get; set; } = "";
+    public string AddedIn { get; set; } = "";
 
     /// <summary>ISO date the owner confirmed the exe names in the Detection log (docs/GAME_CATALOG_SEED.md).</summary>
-    public string? Verified { get; init; }
+    public string? Verified { get; set; }
 }
 
 public sealed record WallpaperEntry
 {
-    public string Id { get; init; } = "";
-    public string Title { get; init; } = "";
-    public string Tone { get; init; } = Tones.Dark;
-    public IReadOnlyList<string> Tags { get; init; } = [];
-    public IReadOnlyList<string> SetupMatch { get; init; } = [];
-    public FocalPoint Focal { get; init; } = FocalPoint.Center;
-    public string? Accent { get; init; }
-    public bool Starter { get; init; }
-    public string Role { get; init; } = "default";
-    public FileRef? Thumb { get; init; }
-    public IReadOnlyDictionary<string, FileRef> Variants { get; init; } = new Dictionary<string, FileRef>();
+    public string Id { get; set; } = "";
+    public string Title { get; set; } = "";
+    public string Tone { get; set; } = Tones.Dark;
+    public IReadOnlyList<string> Tags { get; set; } = [];
+    public IReadOnlyList<string> SetupMatch { get; set; } = [];
+    public FocalPoint Focal { get; set; } = FocalPoint.Center;
+    public string? Accent { get; set; }
+    public bool Starter { get; set; }
+    public string Role { get; set; } = "default";
+    public FileRef? Thumb { get; set; }
+    public IReadOnlyDictionary<string, FileRef> Variants { get; set; } = new Dictionary<string, FileRef>();
 }
 
 public sealed record PackEntry
 {
-    public string Id { get; init; } = "";
-    public string Kind { get; init; } = "game";
-    public int Version { get; init; } = 1;
-    public string Title { get; init; } = "";
-    public IReadOnlyList<WallpaperEntry> Wallpapers { get; init; } = [];
+    public string Id { get; set; } = "";
+    public string Kind { get; set; } = "game";
+    public int Version { get; set; } = 1;
+    public string Title { get; set; } = "";
+    public IReadOnlyList<WallpaperEntry> Wallpapers { get; set; } = [];
 }
 
 public sealed record CollectionEntry
 {
-    public string Id { get; init; } = "";
-    public string PackId { get; init; } = "";
-    public string Title { get; init; } = "";
-    public IReadOnlyList<string> SetupMatch { get; init; } = [];
-    public string Tone { get; init; } = Tones.Dark;
-    public int Order { get; init; }
+    public string Id { get; set; } = "";
+    public string PackId { get; set; } = "";
+    public string Title { get; set; } = "";
+    public IReadOnlyList<string> SetupMatch { get; set; } = [];
+    public string Tone { get; set; } = Tones.Dark;
+    public int Order { get; set; }
 }
 
 public sealed record CatalogDocument
 {
     public const int CurrentSchemaVersion = 1;
 
-    public int SchemaVersion { get; init; } = CurrentSchemaVersion;
-    public string CatalogVersion { get; init; } = "";
-    public string MinAppVersion { get; init; } = "1.0.0";
-    public string ContentBaseUrl { get; init; } = "";
+    public int SchemaVersion { get; set; } = CurrentSchemaVersion;
+    public string CatalogVersion { get; set; } = "";
+    public string MinAppVersion { get; set; } = "1.0.0";
+    public string ContentBaseUrl { get; set; } = "";
 
     /// <summary>Launchers and helpers that must never count as a game (docs/GAME_CATALOG_SEED.md §1).</summary>
-    public IReadOnlyList<string> ExcludeExeNames { get; init; } = [];
+    public IReadOnlyList<string> ExcludeExeNames { get; set; } = [];
 
-    public IReadOnlyList<GameEntry> Games { get; init; } = [];
-    public IReadOnlyList<PackEntry> Packs { get; init; } = [];
-    public IReadOnlyList<CollectionEntry> Collections { get; init; } = [];
-    public string Disclaimer { get; init; } = "";
+    public IReadOnlyList<GameEntry> Games { get; set; } = [];
+    public IReadOnlyList<PackEntry> Packs { get; set; } = [];
+    public IReadOnlyList<CollectionEntry> Collections { get; set; } = [];
+    public string Disclaimer { get; set; } = "";
 
     public static CatalogDocument Empty { get; } = new();
 

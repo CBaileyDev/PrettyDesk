@@ -191,7 +191,7 @@ public sealed class RenderCacheTests : IDisposable
         Directory.CreateDirectory(_dir.File("c"));
         var path = _dir.File("c/" + name);
         File.WriteAllBytes(path, new byte[kb * 1024]);
-        File.SetLastAccessTimeUtc(path, lastAccess);
+        File.SetLastWriteTimeUtc(path, lastAccess);
         return path;
     }
 
