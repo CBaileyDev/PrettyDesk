@@ -91,3 +91,21 @@ public interface IWallpaperRenderer
     /// <summary>Renders (or fetches from cache) an exact-pixel PNG for the monitor and returns its path (FR-APPLY-2/3).</summary>
     Task<string> RenderAsync(WallpaperAsset asset, MonitorInfo monitor, CancellationToken cancellationToken = default);
 }
+
+/// <summary>Immutable-by-convention settings snapshots; mutate only through <see cref="Update"/> (SPEC §5.5: no locks).</summary>
+public interface ISettingsProvider
+{
+    Settings.AppSettings Current { get; }
+
+    event Action? Changed;
+
+    /// <summary>Clones the current settings, applies the change, swaps the snapshot, persists, and raises <see cref="Changed"/>.</summary>
+    void Update(Action<Settings.AppSettings> mutate);
+}
+
+public interface ICatalogProvider
+{
+    CatalogDocument Current { get; }
+
+    event Action? Changed;
+}
