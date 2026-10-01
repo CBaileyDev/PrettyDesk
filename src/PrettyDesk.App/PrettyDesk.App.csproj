@@ -44,8 +44,9 @@
       <_Parameter2>$(ContentBaseUrl)</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
-  <ItemGroup Condition="Exists('..\..\content\catalog.json')">
-    <Content Include="..\..\content\catalog.json" Link="content\catalog.json" CopyToOutputDirectory="PreserveNewest" />
+  <ItemGroup>
+    <!-- The bundled catalog snapshot (FR-CON-1) is the source catalog; the signed copy from the content host replaces it once newer. -->
+    <Content Include="..\..\content\catalog.src.json" Link="content\catalog.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
   <ItemGroup Condition="Exists('..\..\content\starter')">
     <Content Include="..\..\content\starter\**\*" Link="content\starter\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />

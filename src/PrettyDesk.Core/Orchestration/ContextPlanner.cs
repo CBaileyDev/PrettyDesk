@@ -12,13 +12,18 @@ public static class ContentIds
     public const string UserPackId = "user";
 }
 
-/// <summary>What a context should show: its candidate pool (only wallpapers present on disk) and how it rotates.</summary>
+/// <summary>
+/// What a context should show: its candidate pool (only wallpapers present on disk) and how it rotates.
+/// <see cref="PendingDownloads"/> counts catalog wallpapers the user could see but that are not on disk yet; zero with an empty
+/// pool means there is nothing to wait for (an empty or fully excluded pack), so the caller must not sit in "loading" forever.
+/// </summary>
 public sealed record ContextPlan(
     string ContextKey,
     IReadOnlyList<string> Pool,
     RotationPolicy Policy,
     bool IsFixed,
-    string Title);
+    string Title,
+    int PendingDownloads = 0);
 
 /// <summary>Pure pool/policy resolution for the default context and game contexts (FR-WP-1/2/8/9).</summary>
 public static class ContextPlanner
@@ -81,10 +86,11 @@ public static class ContextPlanner
             ? custom.Wallpapers
             : game.PackId is { } packId ? content.GetWallpaperIds(packId) : [];
 
-        var pool = ids
-            .Distinct(StringComparer.Ordinal)
-            .Where(id => !excluded.Contains(id) && content.TryGetAsset(id) is not null)
-            .ToList();
+        var candidates = ids.Distinct(StringComparer.Ordinal).Where(id => !excluded.Contains(id)).ToList();
+        var pool = candidates.Where(id => content.TryGetAsset(id) is not null).ToList();
+
+        // Only catalog packs can still arrive; a custom game's images are local files, so a missing one never loads later.
+        var pending = custom is null ? candidates.Count - pool.Count : 0;
 
         var key = GameKey(game.Id);
         if (g.Mode == WallpaperMode.Fixed && g.FixedWallpaperId is { } fixedId && content.TryGetAsset(fixedId) is not null)
@@ -92,7 +98,7 @@ public static class ContextPlanner
             return new ContextPlan(key, [fixedId], new RotationPolicy(g.Order, RotationInterval.Never), IsFixed: true, game.DisplayName);
         }
 
-        return new ContextPlan(key, pool, new RotationPolicy(g.Order, g.Interval), IsFixed: false, game.DisplayName);
+        return new ContextPlan(key, pool, new RotationPolicy(g.Order, g.Interval), IsFixed: false, game.DisplayName, pending);
     }
 
     private static string DescribeSelection(SelectionSettings selection, CatalogDocument catalog)

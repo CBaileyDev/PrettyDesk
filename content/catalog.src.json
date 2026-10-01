@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.10.01.1",
+  "minAppVersion": "1.0.0",
+  "contentBaseUrl": "",
+  "excludeExeNames": [
+    "steam.exe",
+    "steamwebhelper.exe",
+    "EpicGamesLauncher.exe",
+    "EpicWebHelper.exe",
+    "RiotClientServices.exe",
+    "RiotClientUx.exe",
+    "LeagueClient.exe",
+    "LeagueClientUx.exe",
+    "Battle.net.exe",
+    "Agent.exe",
+    "EADesktop.exe",
+    "EABackgroundService.exe",
+    "UbisoftConnect.exe",
+    "upc.exe",
+    "GalaxyClient.exe",
+    "HoYoPlay.exe",
+    "vgc.exe",
+    "vgtray.exe",
+    "EasyAntiCheat.exe",
+    "EasyAntiCheat_EOS.exe",
+    "BEService.exe",
+    "javaw.exe"
+  ],
+  "games": [
+    {
+      "id": "cs2",
+      "displayName": "Counter-Strike 2",
+      "detection": {
+        "exeNames": [
+          "cs2.exe"
+        ],
+        "steamAppIds": [
+          730
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.cs2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "valorant",
+      "displayName": "VALORANT",
+      "detection": {
+        "exeNames": [
+          "VALORANT-Win64-Shipping.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.valorant",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "lol",
+      "displayName": "League of Legends",
+      "detection": {
+        "exeNames": [
+          "League of Legends.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.lol",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "fortnite",
+      "displayName": "Fortnite",
+      "detection": {
+        "exeNames": [
+          "FortniteClient-Win64-Shipping.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.fortnite",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "minecraft",
+      "displayName": "Minecraft",
+      "detection": {
+        "exeNames": [
+          "Minecraft.Windows.exe",
+          "javaw.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [
+          "Minecraft"
+        ],
+        "excludeExeNames": []
+      },
+      "packId": "game.minecraft",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "roblox",
+      "displayName": "Roblox",
+      "detection": {
+        "exeNames": [
+          "RobloxPlayerBeta.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.roblox",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "apex",
+      "displayName": "Apex Legends",
+      "detection": {
+        "exeNames": [
+          "r5apex.exe",
+          "r5apex_dx12.exe"
+        ],
+        "steamAppIds": [
+          1172470
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.apex",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "overwatch2",
+      "displayName": "Overwatch 2",
+      "detection": {
+        "exeNames": [
+          "Overwatch.exe"
+        ],
+        "steamAppIds": [
+          2357570
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.overwatch2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "rocket-league",
+      "displayName": "Rocket League",
+      "detection": {
+        "exeNames": [
+          "RocketLeague.exe"
+        ],
+        "steamAppIds": [
+          252950
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.rocket-league",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "gta5",
+      "displayName": "Grand Theft Auto V",
+      "detection": {
+        "exeNames": [
+          "GTA5.exe",
+          "GTA5_Enhanced.exe"
+        ],
+        "steamAppIds": [
+          271590,
+          3240220
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.gta5",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "marvel-rivals",
+      "displayName": "Marvel Rivals",
+      "detection": {
+        "exeNames": [
+          "Marvel-Win64-Shipping.exe"
+        ],
+        "steamAppIds": [
+          2767030
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.marvel-rivals",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "cod",
+      "displayName": "Call of Duty",
+      "detection": {
+        "exeNames": [
+          "cod.exe"
+        ],
+        "steamAppIds": [
+          1938090
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.cod",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "dota2",
+      "displayName": "Dota 2",
+      "detection": {
+        "exeNames": [
+          "dota2.exe"
+        ],
+        "steamAppIds": [
+          570
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.dota2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "r6siege",
+      "displayName": "Rainbow Six Siege X",
+      "detection": {
+        "exeNames": [
+          "RainbowSix.exe",
+          "RainbowSix_Vulkan.exe"
+        ],
+        "steamAppIds": [
+          359550
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.r6siege",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "cyberpunk",
+      "displayName": "Cyberpunk 2077",
+      "detection": {
+        "exeNames": [
+          "Cyberpunk2077.exe"
+        ],
+        "steamAppIds": [
+          1091500
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.cyberpunk",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "elden-ring",
+      "displayName": "Elden Ring",
+      "detection": {
+        "exeNames": [
+          "eldenring.exe"
+        ],
+        "steamAppIds": [
+          1245620
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.elden-ring",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "elden-ring-nightreign",
+      "displayName": "Elden Ring Nightreign",
+      "detection": {
+        "exeNames": [
+          "nightreign.exe"
+        ],
+        "steamAppIds": [
+          2622380
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.elden-ring",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "genshin",
+      "displayName": "Genshin Impact",
+      "detection": {
+        "exeNames": [
+          "GenshinImpact.exe",
+          "YuanShen.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.genshin",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "pubg",
+      "displayName": "PUBG: Battlegrounds",
+      "detection": {
+        "exeNames": [
+          "TslGame.exe"
+        ],
+        "steamAppIds": [
+          578080
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.pubg",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "helldivers2",
+      "displayName": "Helldivers 2",
+      "detection": {
+        "exeNames": [
+          "helldivers2.exe"
+        ],
+        "steamAppIds": [
+          553850
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.helldivers2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "bg3",
+      "displayName": "Baldur's Gate 3",
+      "detection": {
+        "exeNames": [
+          "bg3.exe",
+          "bg3_dx11.exe"
+        ],
+        "steamAppIds": [
+          1086940
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.bg3",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "rdr2",
+      "displayName": "Red Dead Redemption 2",
+      "detection": {
+        "exeNames": [
+          "RDR2.exe"
+        ],
+        "steamAppIds": [
+          1174180
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.rdr2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "destiny2",
+      "displayName": "Destiny 2",
+      "detection": {
+        "exeNames": [
+          "destiny2.exe"
+        ],
+        "steamAppIds": [
+          1085660
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.destiny2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "hsr",
+      "displayName": "Honkai: Star Rail",
+      "detection": {
+        "exeNames": [
+          "StarRail.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.hsr",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "the-finals",
+      "displayName": "THE FINALS",
+      "detection": {
+        "exeNames": [
+          "Discovery.exe"
+        ],
+        "steamAppIds": [
+          2073850
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.the-finals",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "poe2",
+      "displayName": "Path of Exile 2",
+      "detection": {
+        "exeNames": [
+          "PathOfExile.exe",
+          "PathOfExileSteam.exe",
+          "PathOfExile_x64.exe",
+          "PathOfExile_x64Steam.exe"
+        ],
+        "steamAppIds": [
+          2694490
+        ],
+        "pathContains": [
+          "Path of Exile 2"
+        ],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.poe2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "diablo4",
+      "displayName": "Diablo IV",
+      "detection": {
+        "exeNames": [
+          "Diablo IV.exe"
+        ],
+        "steamAppIds": [
+          2344520
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.diablo4",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "wow",
+      "displayName": "World of Warcraft",
+      "detection": {
+        "exeNames": [
+          "Wow.exe",
+          "WowClassic.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.wow",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "mh-wilds",
+      "displayName": "Monster Hunter Wilds",
+      "detection": {
+        "exeNames": [
+          "MonsterHunterWilds.exe"
+        ],
+        "steamAppIds": [
+          2246340
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.mh-wilds",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "palworld",
+      "displayName": "Palworld",
+      "detection": {
+        "exeNames": [
+          "Palworld-Win64-Shipping.exe"
+        ],
+        "steamAppIds": [
+          1623730
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.palworld",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "stardew",
+      "displayName": "Stardew Valley",
+      "detection": {
+        "exeNames": [
+          "Stardew Valley.exe",
+          "StardewModdingAPI.exe"
+        ],
+        "steamAppIds": [
+          413150
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.stardew",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "terraria",
+      "displayName": "Terraria",
+      "detection": {
+        "exeNames": [
+          "Terraria.exe"
+        ],
+        "steamAppIds": [
+          105600,
+          1281930
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.terraria",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "rust",
+      "displayName": "Rust",
+      "detection": {
+        "exeNames": [
+          "RustClient.exe"
+        ],
+        "steamAppIds": [
+          252490
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.rust",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "tarkov",
+      "displayName": "Escape from Tarkov",
+      "detection": {
+        "exeNames": [
+          "EscapeFromTarkov.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.tarkov",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "silksong",
+      "displayName": "Hollow Knight: Silksong",
+      "detection": {
+        "exeNames": [
+          "Hollow Knight Silksong.exe"
+        ],
+        "steamAppIds": [
+          1030300
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.silksong",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "wukong",
+      "displayName": "Black Myth: Wukong",
+      "detection": {
+        "exeNames": [
+          "b1-Win64-Shipping.exe"
+        ],
+        "steamAppIds": [
+          2358720
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.wukong",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "sea-of-thieves",
+      "displayName": "Sea of Thieves",
+      "detection": {
+        "exeNames": [
+          "SoTGame.exe"
+        ],
+        "steamAppIds": [
+          1172620
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.sea-of-thieves",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "lethal-company",
+      "displayName": "Lethal Company",
+      "detection": {
+        "exeNames": [
+          "Lethal Company.exe"
+        ],
+        "steamAppIds": [
+          1966720
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.lethal-company",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "hades2",
+      "displayName": "Hades II",
+      "detection": {
+        "exeNames": [
+          "Hades2.exe"
+        ],
+        "steamAppIds": [
+          1145350
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.hades2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "deadlock",
+      "displayName": "Deadlock",
+      "detection": {
+        "exeNames": [
+          "deadlock.exe"
+        ],
+        "steamAppIds": [
+          1422450
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.deadlock",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "forza-h5",
+      "displayName": "Forza Horizon 5",
+      "detection": {
+        "exeNames": [
+          "ForzaHorizon5.exe"
+        ],
+        "steamAppIds": [
+          1551360
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.forza-h5",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "warframe",
+      "displayName": "Warframe",
+      "detection": {
+        "exeNames": [
+          "Warframe.x64.exe"
+        ],
+        "steamAppIds": [
+          230410
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.warframe",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "osu",
+      "displayName": "osu!",
+      "detection": {
+        "exeNames": [
+          "osu!.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.osu",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "ets2",
+      "displayName": "Euro Truck Simulator 2",
+      "detection": {
+        "exeNames": [
+          "eurotrucks2.exe"
+        ],
+        "steamAppIds": [
+          227300
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.ets2",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "bf6",
+      "displayName": "Battlefield 6",
+      "detection": {
+        "exeNames": [
+          "bf6.exe"
+        ],
+        "steamAppIds": [],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.bf6",
+      "addedIn": "2026.10.01.1"
+    },
+    {
+      "id": "arc-raiders",
+      "displayName": "ARC Raiders",
+      "detection": {
+        "exeNames": [],
+        "steamAppIds": [
+          1808500
+        ],
+        "pathContains": [],
+        "windowTitleContains": [],
+        "excludeExeNames": []
+      },
+      "packId": "game.arc-raiders",
+      "addedIn": "2026.10.01.1"
+    }
+  ],
+  "packs": [
+    {
+      "id": "default.architectural",
+      "kind": "default",
+      "version": 0,
+      "title": "Architecture & Light",
+      "wallpapers": []
+    },
+    {
+      "id": "default.clean-white",
+      "kind": "default",
+      "version": 0,
+      "title": "Clean White",
+      "wallpapers": []
+    },
+    {
+      "id": "default.cozy-lofi",
+      "kind": "default",
+      "version": 0,
+      "title": "Cozy Lo-fi",
+      "wallpapers": []
+    },
+    {
+      "id": "default.deep-space",
+      "kind": "default",
+      "version": 0,
+      "title": "Deep Space",
+      "wallpapers": []
+    },
+    {
+      "id": "default.matte-black",
+      "kind": "default",
+      "version": 0,
+      "title": "Matte Black",
+      "wallpapers": []
+    },
+    {
+      "id": "default.misty-nature",
+      "kind": "default",
+      "version": 0,
+      "title": "Misty Nature",
+      "wallpapers": []
+    },
+    {
+      "id": "default.neon-minimal",
+      "kind": "default",
+      "version": 0,
+      "title": "Neon Minimal",
+      "wallpapers": []
+    },
+    {
+      "id": "default.painted",
+      "kind": "default",
+      "version": 0,
+      "title": "Painted Landscapes",
+      "wallpapers": []
+    },
+    {
+      "id": "default.pastel",
+      "kind": "default",
+      "version": 0,
+      "title": "Pastel Dream",
+      "wallpapers": []
+    },
+    {
+      "id": "default.sage-botanical",
+      "kind": "default",
+      "version": 0,
+      "title": "Sage & Botanical",
+      "wallpapers": []
+    },
+    {
+      "id": "default.soft-gradients",
+      "kind": "default",
+      "version": 0,
+      "title": "Aura Gradients",
+      "wallpapers": []
+    },
+    {
+      "id": "default.steel-blue-night",
+      "kind": "default",
+      "version": 0,
+      "title": "Steel Blue Night",
+      "wallpapers": []
+    },
+    {
+      "id": "default.warm-minimal",
+      "kind": "default",
+      "version": 0,
+      "title": "Warm Minimal",
+      "wallpapers": []
+    },
+    {
+      "id": "game.apex",
+      "kind": "game",
+      "version": 0,
+      "title": "Apex Legends",
+      "wallpapers": []
+    },
+    {
+      "id": "game.arc-raiders",
+      "kind": "game",
+      "version": 0,
+      "title": "ARC Raiders",
+      "wallpapers": []
+    },
+    {
+      "id": "game.bf6",
+      "kind": "game",
+      "version": 0,
+      "title": "Battlefield 6",
+      "wallpapers": []
+    },
+    {
+      "id": "game.bg3",
+      "kind": "game",
+      "version": 0,
+      "title": "Baldur's Gate 3",
+      "wallpapers": []
+    },
+    {
+      "id": "game.cod",
+      "kind": "game",
+      "version": 0,
+      "title": "Call of Duty",
+      "wallpapers": []
+    },
+    {
+      "id": "game.cs2",
+      "kind": "game",
+      "version": 0,
+      "title": "Counter-Strike 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.cyberpunk",
+      "kind": "game",
+      "version": 0,
+      "title": "Cyberpunk 2077",
+      "wallpapers": []
+    },
+    {
+      "id": "game.deadlock",
+      "kind": "game",
+      "version": 0,
+      "title": "Deadlock",
+      "wallpapers": []
+    },
+    {
+      "id": "game.destiny2",
+      "kind": "game",
+      "version": 0,
+      "title": "Destiny 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.diablo4",
+      "kind": "game",
+      "version": 0,
+      "title": "Diablo IV",
+      "wallpapers": []
+    },
+    {
+      "id": "game.dota2",
+      "kind": "game",
+      "version": 0,
+      "title": "Dota 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.elden-ring",
+      "kind": "game",
+      "version": 0,
+      "title": "Elden Ring",
+      "wallpapers": []
+    },
+    {
+      "id": "game.ets2",
+      "kind": "game",
+      "version": 0,
+      "title": "Euro Truck Simulator 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.fortnite",
+      "kind": "game",
+      "version": 0,
+      "title": "Fortnite",
+      "wallpapers": []
+    },
+    {
+      "id": "game.forza-h5",
+      "kind": "game",
+      "version": 0,
+      "title": "Forza Horizon 5",
+      "wallpapers": []
+    },
+    {
+      "id": "game.genshin",
+      "kind": "game",
+      "version": 0,
+      "title": "Genshin Impact",
+      "wallpapers": []
+    },
+    {
+      "id": "game.gta5",
+      "kind": "game",
+      "version": 0,
+      "title": "Grand Theft Auto V",
+      "wallpapers": []
+    },
+    {
+      "id": "game.hades2",
+      "kind": "game",
+      "version": 0,
+      "title": "Hades II",
+      "wallpapers": []
+    },
+    {
+      "id": "game.helldivers2",
+      "kind": "game",
+      "version": 0,
+      "title": "Helldivers 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.hsr",
+      "kind": "game",
+      "version": 0,
+      "title": "Honkai: Star Rail",
+      "wallpapers": []
+    },
+    {
+      "id": "game.lethal-company",
+      "kind": "game",
+      "version": 0,
+      "title": "Lethal Company",
+      "wallpapers": []
+    },
+    {
+      "id": "game.lol",
+      "kind": "game",
+      "version": 0,
+      "title": "League of Legends",
+      "wallpapers": []
+    },
+    {
+      "id": "game.marvel-rivals",
+      "kind": "game",
+      "version": 0,
+      "title": "Marvel Rivals",
+      "wallpapers": []
+    },
+    {
+      "id": "game.mh-wilds",
+      "kind": "game",
+      "version": 0,
+      "title": "Monster Hunter Wilds",
+      "wallpapers": []
+    },
+    {
+      "id": "game.minecraft",
+      "kind": "game",
+      "version": 0,
+      "title": "Minecraft",
+      "wallpapers": []
+    },
+    {
+      "id": "game.osu",
+      "kind": "game",
+      "version": 0,
+      "title": "osu!",
+      "wallpapers": []
+    },
+    {
+      "id": "game.overwatch2",
+      "kind": "game",
+      "version": 0,
+      "title": "Overwatch 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.palworld",
+      "kind": "game",
+      "version": 0,
+      "title": "Palworld",
+      "wallpapers": []
+    },
+    {
+      "id": "game.poe2",
+      "kind": "game",
+      "version": 0,
+      "title": "Path of Exile 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.pubg",
+      "kind": "game",
+      "version": 0,
+      "title": "PUBG: Battlegrounds",
+      "wallpapers": []
+    },
+    {
+      "id": "game.r6siege",
+      "kind": "game",
+      "version": 0,
+      "title": "Rainbow Six Siege X",
+      "wallpapers": []
+    },
+    {
+      "id": "game.rdr2",
+      "kind": "game",
+      "version": 0,
+      "title": "Red Dead Redemption 2",
+      "wallpapers": []
+    },
+    {
+      "id": "game.roblox",
+      "kind": "game",
+      "version": 0,
+      "title": "Roblox",
+      "wallpapers": []
+    },
+    {
+      "id": "game.rocket-league",
+      "kind": "game",
+      "version": 0,
+      "title": "Rocket League",
+      "wallpapers": []
+    },
+    {
+      "id": "game.rust",
+      "kind": "game",
+      "version": 0,
+      "title": "Rust",
+      "wallpapers": []
+    },
+    {
+      "id": "game.sea-of-thieves",
+      "kind": "game",
+      "version": 0,
+      "title": "Sea of Thieves",
+      "wallpapers": []
+    },
+    {
+      "id": "game.silksong",
+      "kind": "game",
+      "version": 0,
+      "title": "Hollow Knight: Silksong",
+      "wallpapers": []
+    },
+    {
+      "id": "game.stardew",
+      "kind": "game",
+      "version": 0,
+      "title": "Stardew Valley",
+      "wallpapers": []
+    },
+    {
+      "id": "game.tarkov",
+      "kind": "game",
+      "version": 0,
+      "title": "Escape from Tarkov",
+      "wallpapers": []
+    },
+    {
+      "id": "game.terraria",
+      "kind": "game",
+      "version": 0,
+      "title": "Terraria",
+      "wallpapers": []
+    },
+    {
+      "id": "game.the-finals",
+      "kind": "game",
+      "version": 0,
+      "title": "THE FINALS",
+      "wallpapers": []
+    },
+    {
+      "id": "game.valorant",
+      "kind": "game",
+      "version": 0,
+      "title": "VALORANT",
+      "wallpapers": []
+    },
+    {
+      "id": "game.warframe",
+      "kind": "game",
+      "version": 0,
+      "title": "Warframe",
+      "wallpapers": []
+    },
+    {
+      "id": "game.wow",
+      "kind": "game",
+      "version": 0,
+      "title": "World of Warcraft",
+      "wallpapers": []
+    },
+    {
+      "id": "game.wukong",
+      "kind": "game",
+      "version": 0,
+      "title": "Black Myth: Wukong",
+      "wallpapers": []
+    }
+  ],
+  "collections": [
+    {
+      "id": "default.matte-black",
+      "packId": "default.matte-black",
+      "title": "Matte Black",
+      "setupMatch": [
+        "black"
+      ],
+      "tone": "dark",
+      "order": 1
+    },
+    {
+      "id": "default.clean-white",
+      "packId": "default.clean-white",
+      "title": "Clean White",
+      "setupMatch": [
+        "white"
+      ],
+      "tone": "light",
+      "order": 2
+    },
+    {
+      "id": "default.warm-minimal",
+      "packId": "default.warm-minimal",
+      "title": "Warm Minimal",
+      "setupMatch": [
+        "wood"
+      ],
+      "tone": "light",
+      "order": 3
+    },
+    {
+      "id": "default.sage-botanical",
+      "packId": "default.sage-botanical",
+      "title": "Sage & Botanical",
+      "setupMatch": [
+        "wood",
+        "white"
+      ],
+      "tone": "light",
+      "order": 4
+    },
+    {
+      "id": "default.soft-gradients",
+      "packId": "default.soft-gradients",
+      "title": "Aura Gradients",
+      "setupMatch": [
+        "black",
+        "white",
+        "wood",
+        "pastel",
+        "rgb"
+      ],
+      "tone": "mid",
+      "order": 5
+    },
+    {
+      "id": "default.misty-nature",
+      "packId": "default.misty-nature",
+      "title": "Misty Nature",
+      "setupMatch": [
+        "black",
+        "white",
+        "wood",
+        "pastel",
+        "rgb"
+      ],
+      "tone": "mid",
+      "order": 6
+    },
+    {
+      "id": "default.painted",
+      "packId": "default.painted",
+      "title": "Painted Landscapes",
+      "setupMatch": [
+        "wood",
+        "pastel"
+      ],
+      "tone": "mid",
+      "order": 7
+    },
+    {
+      "id": "default.steel-blue-night",
+      "packId": "default.steel-blue-night",
+      "title": "Steel Blue Night",
+      "setupMatch": [
+        "black",
+        "rgb"
+      ],
+      "tone": "dark",
+      "order": 8
+    },
+    {
+      "id": "default.cozy-lofi",
+      "packId": "default.cozy-lofi",
+      "title": "Cozy Lo-fi",
+      "setupMatch": [
+        "wood",
+        "pastel"
+      ],
+      "tone": "mid",
+      "order": 9
+    },
+    {
+      "id": "default.deep-space",
+      "packId": "default.deep-space",
+      "title": "Deep Space",
+      "setupMatch": [
+        "black",
+        "rgb"
+      ],
+      "tone": "dark",
+      "order": 10
+    },
+    {
+      "id": "default.pastel",
+      "packId": "default.pastel",
+      "title": "Pastel Dream",
+      "setupMatch": [
+        "pastel"
+      ],
+      "tone": "light",
+      "order": 11
+    },
+    {
+      "id": "default.neon-minimal",
+      "packId": "default.neon-minimal",
+      "title": "Neon Minimal",
+      "setupMatch": [
+        "rgb"
+      ],
+      "tone": "dark",
+      "order": 12
+    },
+    {
+      "id": "default.architectural",
+      "packId": "default.architectural",
+      "title": "Architecture & Light",
+      "setupMatch": [
+        "white",
+        "black"
+      ],
+      "tone": "mid",
+      "order": 13
+    }
+  ],
+  "disclaimer": "PrettyDesk is an independent fan project and is not affiliated with or endorsed by any game publisher."
+}

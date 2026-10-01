@@ -225,6 +225,14 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
         var game = _activeGame is null ? null : registry.Find(_activeGame.GameId);
         var gamePlan = game is null ? null : ContextPlanner.PlanGame(game, settings, catalog, _content);
 
+        if (game is not null && gamePlan is { Pool.Count: 0, PendingDownloads: 0 })
+        {
+            // Nothing to wait for (a pack without wallpapers yet, or everything excluded): behave as if no game was detected
+            // instead of showing "loading" indefinitely.
+            game = null;
+            gamePlan = null;
+        }
+
         if (game is not null && gamePlan is { Pool.Count: 0 })
         {
             if (game.PackId is { } packId)

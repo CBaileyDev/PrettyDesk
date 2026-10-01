@@ -8,7 +8,7 @@ import os
 import sys
 from pathlib import Path
 
-from . import commands, lint, publish, render_prompts, review
+from . import commands, lint, publish, render_prompts, review, starter
 from .packs import PackError, find_pack, load_all
 from .paths import Layout
 
@@ -140,6 +140,17 @@ def cmd_publish(layout: Layout, args: argparse.Namespace) -> int:
         return 1
 
 
+def cmd_starter(layout: Layout, args: argparse.Namespace) -> int:
+    packs = _load(layout)
+    try:
+        report = starter.build_starter(layout, packs)
+    except starter.StarterError as ex:
+        print(f"error: {ex}", file=sys.stderr)
+        return 1
+    print(f"Starter set: {len(report.variants)} wallpapers + {len(report.thumbs)} thumbnails, {report.total_bytes / 1_048_576:.1f} MB (budget 60 MB) in content/starter/")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="assetpipe", description="PrettyDesk asset pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -167,6 +178,8 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("review", help="HTML contact sheet with safe-zone overlays")
     p.add_argument("--pack", required=True)
     p.set_defaults(fn=cmd_review)
+
+    sub.add_parser("starter", help="assemble content/starter (installer's offline wallpapers) from approved builds").set_defaults(fn=cmd_starter)
 
     p = sub.add_parser("publish", help="update catalog, sign, upload")
     p.add_argument("--pack", required=True)

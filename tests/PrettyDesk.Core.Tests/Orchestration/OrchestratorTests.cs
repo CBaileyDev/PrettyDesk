@@ -28,7 +28,7 @@ public sealed class OrchestratorTests : IAsyncDisposable
     {
         _catalog = new FakeCatalog(new CatalogDocument
         {
-            Games = [TestData.Game("cs2", configure: b => b.Exe.Add("cs2.exe")), TestData.Game("valorant", configure: b => b.Exe.Add("v.exe"))],
+            Games = [TestData.Game("cs2", configure: b => b.Exe.Add("cs2.exe")), TestData.Game("valorant", configure: b => b.Exe.Add("v.exe")), TestData.Game("nothing", configure: b => b.Exe.Add("n.exe"))],
             Collections =
             [
                 new CollectionEntry { Id = "default.matte-black", PackId = "default.matte-black", Title = "Matte Black" },
@@ -39,6 +39,7 @@ public sealed class OrchestratorTests : IAsyncDisposable
         _content.AddPack("default.clean-white", Tones.Light, true, "cw-01", "cw-02");
         _content.AddPack("game.cs2", Tones.Dark, true, "cs2-hero", "cs2-min", "cs2-mood");
         _content.AddPack("game.valorant", Tones.Dark, false, "val-hero", "val-min");
+        _content.AddPack("game.nothing", Tones.Dark, true);
 
         var scheduler = new RotationScheduler(_rotation, _time, new Random(1));
         _orchestrator = new WallpaperOrchestrator(_monitors, _setter, new FakeRenderer(), _content, _system, _catalog, _settings, scheduler, null, _time, NullLogger<WallpaperOrchestrator>.Instance);
@@ -188,6 +189,34 @@ public sealed class OrchestratorTests : IAsyncDisposable
         _orchestrator.Status.GameName.ShouldBe("valorant");
         _setter.Calls.Count.ShouldBe(calls);
         _content.Requested.ShouldContain("game.valorant");
+    }
+
+    [Fact]
+    public async Task Game_whose_pack_has_no_wallpapers_falls_back_to_default_instead_of_loading_forever()
+    {
+        await Reconcile();
+        var before = LastPath();
+
+        _orchestrator.SetActiveGame(new ActiveGame("nothing", false));
+        _time.Advance(TimeSpan.FromSeconds(5));
+        await Reconcile();
+
+        _orchestrator.Status.Mode.ShouldBe(OrchestratorMode.Default);
+        LastPath().ShouldBe(before);
+        _content.Requested.ShouldNotContain("game.nothing");
+    }
+
+    [Fact]
+    public async Task Game_with_every_wallpaper_excluded_also_falls_back_to_default()
+    {
+        _settings.Update(s => s.GetGame("valorant").Excluded = ["val-hero", "val-min"]);
+
+        _orchestrator.SetActiveGame(new ActiveGame("valorant", false));
+        _time.Advance(TimeSpan.FromSeconds(5));
+        await Reconcile();
+
+        _orchestrator.Status.Mode.ShouldBe(OrchestratorMode.Default);
+        _content.Requested.ShouldNotContain("game.valorant");
     }
 
     [Fact]

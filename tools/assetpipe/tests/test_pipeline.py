@@ -1,6 +1,7 @@
 import json
 
 import numpy as np
+import pytest
 from PIL import Image
 
 from assetpipe import commands, imaging, publish, render_prompts, review
@@ -171,3 +172,22 @@ def test_prompts_markdown_contains_copy_blocks_and_file_names(layout):
     assert "art/raw/default.matte-black/mb-01_L.png" in md and "_U.png" in md and "_P.png" in md
     assert md.count("```text") == 1 + 3  # style bible + three prompts
     assert "1 packs · 1 wallpapers" in md
+
+
+def test_starter_set_copies_the_starter_variant_and_every_thumbnail_and_refuses_unapproved(layout, monkeypatch):
+    from assetpipe import starter
+
+    monkeypatch.setattr(imaging, "realesrgan_path", lambda: None)
+    pack = setup_pack(layout, starter=True)
+    make_masters(layout, pack.id, "mb-01")
+    built = commands.build_wallpaper(layout, pack, pack.wallpapers[0], only={"16x9"})
+    commands.write_manifest(layout, pack, [built])
+
+    with pytest.raises(starter.StarterError, match="not approved"):
+        starter.build_starter(layout, [pack])
+
+    pack.wallpapers[0].approved = True
+    report = starter.build_starter(layout, [pack])
+    assert report.variants == ["mb-01_16x9.jpg"] and report.thumbs == ["mb-01_thumb.jpg"]
+    assert (layout.root / "content" / "starter" / "mb-01_16x9.jpg").exists()
+    assert report.total_bytes > 0
