@@ -138,3 +138,59 @@ internal sealed class FakeDetectionFeed : IDetectionFeed
     public void Raise(string? exe, params string[] matches) =>
         Observed?.Invoke(new PrettyDesk.Core.Detection.DetectionObservation(exe, matches));
 }
+
+internal sealed class FakeCatalogProvider(PrettyDesk.Core.Catalog.CatalogDocument document) : ICatalogProvider
+{
+    public PrettyDesk.Core.Catalog.CatalogDocument Current { get; set; } = document;
+
+    public event Action? Changed;
+
+    public void Raise() => Changed?.Invoke();
+}
+
+internal sealed class FakeLibrary : IContentLibrary
+{
+    public Dictionary<string, List<string>> Packs { get; } = [];
+    public HashSet<string> Available { get; } = [];
+
+    public event Action<string>? PackChanged;
+
+    public IReadOnlyList<string> GetWallpaperIds(string packId) => Packs.GetValueOrDefault(packId) ?? [];
+
+    public PrettyDesk.Core.Catalog.WallpaperAsset? TryGetAsset(string wallpaperId) =>
+        Available.Contains(wallpaperId)
+            ? new PrettyDesk.Core.Catalog.WallpaperAsset(wallpaperId, "p", wallpaperId, "dark", PrettyDesk.Core.Catalog.FocalPoint.Center, new Dictionary<string, PrettyDesk.Core.Catalog.LocalVariant>(), "h")
+            : null;
+
+    public void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors)
+    {
+    }
+
+    public void Raise(string packId) => PackChanged?.Invoke(packId);
+}
+
+internal sealed class FakeFilePicker : PrettyDesk.Presentation.Services.IFilePicker
+{
+    public List<string> Images { get; set; } = [];
+    public string? Executable { get; set; }
+
+    public IReadOnlyList<string> PickImages() => Images;
+
+    public string? PickExecutable() => Executable;
+}
+
+internal sealed class FakeRunningApps : PrettyDesk.Presentation.Services.IRunningAppsProvider
+{
+    public List<PrettyDesk.Presentation.Services.RunningApp> Apps { get; set; } = [];
+
+    public IReadOnlyList<PrettyDesk.Presentation.Services.RunningApp> GetWindowedApps() => Apps;
+}
+
+internal sealed class FakeInstalled : PrettyDesk.Presentation.Services.IInstalledGamesProvider
+{
+    public HashSet<string> Ids { get; set; } = [];
+    public bool Throw { get; set; }
+
+    public Task<IReadOnlySet<string>> GetInstalledGameIdsAsync(CancellationToken cancellationToken = default) =>
+        Throw ? throw new IOException("scan failed") : Task.FromResult<IReadOnlySet<string>>(Ids);
+}

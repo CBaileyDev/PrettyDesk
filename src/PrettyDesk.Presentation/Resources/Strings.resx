@@ -4,6 +4,72 @@
   <resheader name="version"><value>2.0</value></resheader>
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Add_AlreadyCovered" xml:space="preserve">
+    <value>{0} is already set up as {1}.</value>
+  </data>
+  <data name="Add_BrowseExe" xml:space="preserve">
+    <value>Browse for program…</value>
+  </data>
+  <data name="Add_DisplayName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Add_Exe" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="Add_ImportMine" xml:space="preserve">
+    <value>Add my images…</value>
+  </data>
+  <data name="Add_ImportSkipped" xml:space="preserve">
+    <value>{0} image(s) couldn't be added: {1}</value>
+  </data>
+  <data name="Add_Intro" xml:space="preserve">
+    <value>Pick the game from your running apps, or browse to its program file.</value>
+  </data>
+  <data name="Add_LauncherBlocked" xml:space="preserve">
+    <value>{0} is a launcher or helper, not a game, so PrettyDesk can't use it.</value>
+  </data>
+  <data name="Add_NeedName" xml:space="preserve">
+    <value>Give the game a name.</value>
+  </data>
+  <data name="Add_NeedWallpaper" xml:space="preserve">
+    <value>Choose at least one wallpaper.</value>
+  </data>
+  <data name="Add_NoExe" xml:space="preserve">
+    <value>Choose a program first.</value>
+  </data>
+  <data name="Add_PickFromCollections" xml:space="preserve">
+    <value>Choose from collections…</value>
+  </data>
+  <data name="Add_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Add_Running" xml:space="preserve">
+    <value>Running apps</value>
+  </data>
+  <data name="Add_RunningEmpty" xml:space="preserve">
+    <value>No apps with a window were found. Start your game, then press Refresh.</value>
+  </data>
+  <data name="Add_Save" xml:space="preserve">
+    <value>Add game</value>
+  </data>
+  <data name="Add_SaveFailed" xml:space="preserve">
+    <value>Couldn't add the game. Try again.</value>
+  </data>
+  <data name="Add_Saved" xml:space="preserve">
+    <value>{0} was added.</value>
+  </data>
+  <data name="Add_Search" xml:space="preserve">
+    <value>Search running apps</value>
+  </data>
+  <data name="Add_Title" xml:space="preserve">
+    <value>Add a game</value>
+  </data>
+  <data name="Add_Wallpapers" xml:space="preserve">
+    <value>Wallpapers for this game</value>
+  </data>
+  <data name="Add_WallpapersHelp" xml:space="preserve">
+    <value>Choose at least one. They can come from your own images or from any collection.</value>
+  </data>
   <data name="Banner_Dismiss" xml:space="preserve">
     <value>Dismiss</value>
   </data>
@@ -92,6 +158,117 @@
   <data name="Common_Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Game_AddMyImages" xml:space="preserve">
+    <value>Add my images…</value>
+  </data>
+  <data name="Game_AddWallpapers" xml:space="preserve">
+    <value>Add wallpapers…</value>
+  </data>
+  <data name="Game_Back" xml:space="preserve">
+    <value>Back to Library</value>
+  </data>
+  <data name="Game_DetectionExe" xml:space="preserve">
+    <value>Program: {0}</value>
+  </data>
+  <data name="Game_DetectionHelp" xml:space="preserve">
+    <value>You can see which program is running in Settings → Advanced → Detection log.</value>
+  </data>
+  <data name="Game_DetectionNone" xml:space="preserve">
+    <value>No detection rules.</value>
+  </data>
+  <data name="Game_DetectionSteam" xml:space="preserve">
+    <value>Steam app: {0}</value>
+  </data>
+  <data name="Game_DetectionTitle" xml:space="preserve">
+    <value>How PrettyDesk recognises this game</value>
+  </data>
+  <data name="Game_Download" xml:space="preserve">
+    <value>Download wallpapers</value>
+  </data>
+  <data name="Game_DownloadFailed" xml:space="preserve">
+    <value>The download didn't finish. Check your connection and try again.</value>
+  </data>
+  <data name="Game_Downloading" xml:space="preserve">
+    <value>Downloading… {0}%</value>
+  </data>
+  <data name="Game_EditExe" xml:space="preserve">
+    <value>Program names (one per line)</value>
+  </data>
+  <data name="Game_EditExeHelp" xml:space="preserve">
+    <value>The file name of the game, for example MyGame.exe.</value>
+  </data>
+  <data name="Game_Enabled" xml:space="preserve">
+    <value>Change my wallpaper when I play this game</value>
+  </data>
+  <data name="Game_ExeInvalid" xml:space="preserve">
+    <value>Program names must end in .exe and can't contain folders.</value>
+  </data>
+  <data name="Game_Favorite" xml:space="preserve">
+    <value>Use {0} as my favourite</value>
+  </data>
+  <data name="Game_Include" xml:space="preserve">
+    <value>Include {0}</value>
+  </data>
+  <data name="Game_KeepOne" xml:space="preserve">
+    <value>Keep at least one wallpaper turned on.</value>
+  </data>
+  <data name="Game_Mode" xml:space="preserve">
+    <value>Wallpaper</value>
+  </data>
+  <data name="Game_ModeFixed" xml:space="preserve">
+    <value>Always use my favourite</value>
+  </data>
+  <data name="Game_ModeRotate" xml:space="preserve">
+    <value>Rotate through the wallpapers below</value>
+  </data>
+  <data name="Game_NoWallpapers" xml:space="preserve">
+    <value>This game has no wallpapers yet. Add some below.</value>
+  </data>
+  <data name="Game_NotDownloaded" xml:space="preserve">
+    <value>Not downloaded yet</value>
+  </data>
+  <data name="Game_Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Game_OrderSequential" xml:space="preserve">
+    <value>In order</value>
+  </data>
+  <data name="Game_OrderShuffle" xml:space="preserve">
+    <value>Shuffle</value>
+  </data>
+  <data name="Game_Preview" xml:space="preserve">
+    <value>Preview on desktop</value>
+  </data>
+  <data name="Game_PreviewHelp" xml:space="preserve">
+    <value>Shows it for 15 seconds, then goes back.</value>
+  </data>
+  <data name="Game_RemoveGame" xml:space="preserve">
+    <value>Remove this game</value>
+  </data>
+  <data name="Game_RemoveMessage" xml:space="preserve">
+    <value>PrettyDesk will stop changing your wallpaper for it. Your images stay on your PC.</value>
+  </data>
+  <data name="Game_RemoveTitle" xml:space="preserve">
+    <value>Remove {0}?</value>
+  </data>
+  <data name="Game_Rotation" xml:space="preserve">
+    <value>Change wallpaper</value>
+  </data>
+  <data name="Game_RotationHelp" xml:space="preserve">
+    <value>By default a game keeps one wallpaper for the whole session and shows the next one next time.</value>
+  </data>
+  <data name="Game_Suggest" xml:space="preserve">
+    <value>Suggest this game to PrettyDesk</value>
+  </data>
+  <data name="Game_SuggestHelp" xml:space="preserve">
+    <value>Opens a prefilled GitHub issue with only the program name and display name. Nothing is sent until you press Submit there.</value>
+  </data>
+  <data name="Game_Unfavorite" xml:space="preserve">
+    <value>Stop using {0} as my favourite</value>
+  </data>
+  <data name="Game_WallpapersTitle" xml:space="preserve">
+    <value>Wallpapers</value>
+  </data>
   <data name="Home_DisplayLabel" xml:space="preserve">
     <value>Display {0} · {1}×{2}</value>
   </data>
@@ -128,6 +305,99 @@
   <data name="Home_Title" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Interval_Custom" xml:space="preserve">
+    <value>Custom…</value>
+  </data>
+  <data name="Interval_Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Interval_Days" xml:space="preserve">
+    <value>Every {0} days</value>
+  </data>
+  <data name="Interval_Hour" xml:space="preserve">
+    <value>Every hour</value>
+  </data>
+  <data name="Interval_Hours" xml:space="preserve">
+    <value>Every {0} hours</value>
+  </data>
+  <data name="Interval_Minutes" xml:space="preserve">
+    <value>Every {0} minutes</value>
+  </data>
+  <data name="Interval_Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="Interval_Session" xml:space="preserve">
+    <value>Next session</value>
+  </data>
+  <data name="Interval_Unlock" xml:space="preserve">
+    <value>On every unlock</value>
+  </data>
+  <data name="Library_AddGame" xml:space="preserve">
+    <value>Add a game</value>
+  </data>
+  <data name="Library_ChipCustom" xml:space="preserve">
+    <value>Added by you</value>
+  </data>
+  <data name="Library_ChipDownloading" xml:space="preserve">
+    <value>Downloading {0}%</value>
+  </data>
+  <data name="Library_ChipFailed" xml:space="preserve">
+    <value>Download failed</value>
+  </data>
+  <data name="Library_ChipInstalled" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="Library_ChipNotDownloaded" xml:space="preserve">
+    <value>Not downloaded</value>
+  </data>
+  <data name="Library_ChipReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Library_DisclaimerNote" xml:space="preserve">
+    <value>Wallpapers are original art inspired by each game. PrettyDesk is not affiliated with any game publisher.</value>
+  </data>
+  <data name="Library_EmptyCatalogBody" xml:space="preserve">
+    <value>PrettyDesk will fill this in as soon as it can reach its game catalog. You can still add any game yourself.</value>
+  </data>
+  <data name="Library_EmptyCatalogTitle" xml:space="preserve">
+    <value>The game list isn't available yet</value>
+  </data>
+  <data name="Library_EmptyEnabledBody" xml:space="preserve">
+    <value>Turn a game on to give it its own wallpaper.</value>
+  </data>
+  <data name="Library_EmptyEnabledTitle" xml:space="preserve">
+    <value>No games are turned on</value>
+  </data>
+  <data name="Library_EmptyInstalledBody" xml:space="preserve">
+    <value>PrettyDesk looks at your Steam and Epic libraries. Games from other launchers can be added with Add a game.</value>
+  </data>
+  <data name="Library_EmptyInstalledTitle" xml:space="preserve">
+    <value>No installed games found</value>
+  </data>
+  <data name="Library_EmptySearchBody" xml:space="preserve">
+    <value>Try a different name, or switch the filter back to All.</value>
+  </data>
+  <data name="Library_EmptySearchTitle" xml:space="preserve">
+    <value>No games match</value>
+  </data>
+  <data name="Library_FilterAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Library_FilterEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Library_FilterInstalled" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="Library_GameToggle" xml:space="preserve">
+    <value>Show wallpapers for {0}</value>
+  </data>
+  <data name="Library_Search" xml:space="preserve">
+    <value>Search games</value>
+  </data>
+  <data name="Library_Title" xml:space="preserve">
+    <value>Library</value>
+  </data>
   <data name="Nav_About" xml:space="preserve">
     <value>About</value>
   </data>
@@ -142,6 +412,24 @@
   </data>
   <data name="Nav_Settings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="Picker_Confirm" xml:space="preserve">
+    <value>Use selected</value>
+  </data>
+  <data name="Picker_Empty" xml:space="preserve">
+    <value>Nothing to choose from yet. Download a collection or add your own images.</value>
+  </data>
+  <data name="Picker_GroupMine" xml:space="preserve">
+    <value>My images</value>
+  </data>
+  <data name="Picker_Search" xml:space="preserve">
+    <value>Search wallpapers</value>
+  </data>
+  <data name="Picker_Selected" xml:space="preserve">
+    <value>{0} selected</value>
+  </data>
+  <data name="Picker_Title" xml:space="preserve">
+    <value>Choose wallpapers</value>
   </data>
   <data name="Settings_Advanced" xml:space="preserve">
     <value>Advanced</value>

@@ -21,6 +21,28 @@ public static class Strings
     /// <summary>Every key in the resource file, for drift checks.</summary>
     public static IReadOnlyList<string> AllKeys { get; } =
     [
+        "Add_AlreadyCovered",
+        "Add_BrowseExe",
+        "Add_DisplayName",
+        "Add_Exe",
+        "Add_ImportMine",
+        "Add_ImportSkipped",
+        "Add_Intro",
+        "Add_LauncherBlocked",
+        "Add_NeedName",
+        "Add_NeedWallpaper",
+        "Add_NoExe",
+        "Add_PickFromCollections",
+        "Add_Refresh",
+        "Add_Running",
+        "Add_RunningEmpty",
+        "Add_Save",
+        "Add_SaveFailed",
+        "Add_Saved",
+        "Add_Search",
+        "Add_Title",
+        "Add_Wallpapers",
+        "Add_WallpapersHelp",
         "Banner_Dismiss",
         "Banner_LivelyBody",
         "Banner_LivelyTitle",
@@ -50,6 +72,43 @@ public static class Strings
         "Common_Remove",
         "Common_Retry",
         "Common_Save",
+        "Game_AddMyImages",
+        "Game_AddWallpapers",
+        "Game_Back",
+        "Game_DetectionExe",
+        "Game_DetectionHelp",
+        "Game_DetectionNone",
+        "Game_DetectionSteam",
+        "Game_DetectionTitle",
+        "Game_Download",
+        "Game_DownloadFailed",
+        "Game_Downloading",
+        "Game_EditExe",
+        "Game_EditExeHelp",
+        "Game_Enabled",
+        "Game_ExeInvalid",
+        "Game_Favorite",
+        "Game_Include",
+        "Game_KeepOne",
+        "Game_Mode",
+        "Game_ModeFixed",
+        "Game_ModeRotate",
+        "Game_NoWallpapers",
+        "Game_NotDownloaded",
+        "Game_Order",
+        "Game_OrderSequential",
+        "Game_OrderShuffle",
+        "Game_Preview",
+        "Game_PreviewHelp",
+        "Game_RemoveGame",
+        "Game_RemoveMessage",
+        "Game_RemoveTitle",
+        "Game_Rotation",
+        "Game_RotationHelp",
+        "Game_Suggest",
+        "Game_SuggestHelp",
+        "Game_Unfavorite",
+        "Game_WallpapersTitle",
         "Home_DisplayLabel",
         "Home_NextWallpaper",
         "Home_NoMonitors",
@@ -62,11 +121,48 @@ public static class Strings
         "Home_PrimaryDisplay",
         "Home_Resume",
         "Home_Title",
+        "Interval_Custom",
+        "Interval_Daily",
+        "Interval_Days",
+        "Interval_Hour",
+        "Interval_Hours",
+        "Interval_Minutes",
+        "Interval_Never",
+        "Interval_Session",
+        "Interval_Unlock",
+        "Library_AddGame",
+        "Library_ChipCustom",
+        "Library_ChipDownloading",
+        "Library_ChipFailed",
+        "Library_ChipInstalled",
+        "Library_ChipNotDownloaded",
+        "Library_ChipReady",
+        "Library_DisclaimerNote",
+        "Library_EmptyCatalogBody",
+        "Library_EmptyCatalogTitle",
+        "Library_EmptyEnabledBody",
+        "Library_EmptyEnabledTitle",
+        "Library_EmptyInstalledBody",
+        "Library_EmptyInstalledTitle",
+        "Library_EmptySearchBody",
+        "Library_EmptySearchTitle",
+        "Library_FilterAll",
+        "Library_FilterEnabled",
+        "Library_FilterInstalled",
+        "Library_GameToggle",
+        "Library_Search",
+        "Library_Title",
         "Nav_About",
         "Nav_Defaults",
         "Nav_Home",
         "Nav_Library",
         "Nav_Settings",
+        "Picker_Confirm",
+        "Picker_Empty",
+        "Picker_GroupMine",
+        "Picker_Search",
+        "Picker_Selected",
+        "Picker_Title",
         "Settings_Advanced",
         "Settings_ClearDownloads",
         "Settings_ClearDownloadsDone",
@@ -167,6 +263,72 @@ public static class Strings
         "Time_UnderMinute",
     ];
 
+    /// <summary>{0} is already set up as {1}.</summary>
+    public static string Add_AlreadyCovered => Get("Add_AlreadyCovered");
+
+    /// <summary>Browse for program…</summary>
+    public static string Add_BrowseExe => Get("Add_BrowseExe");
+
+    /// <summary>Name</summary>
+    public static string Add_DisplayName => Get("Add_DisplayName");
+
+    /// <summary>Program</summary>
+    public static string Add_Exe => Get("Add_Exe");
+
+    /// <summary>Add my images…</summary>
+    public static string Add_ImportMine => Get("Add_ImportMine");
+
+    /// <summary>{0} image(s) couldn't be added: {1}</summary>
+    public static string Add_ImportSkipped => Get("Add_ImportSkipped");
+
+    /// <summary>Pick the game from your running apps, or browse to its program file.</summary>
+    public static string Add_Intro => Get("Add_Intro");
+
+    /// <summary>{0} is a launcher or helper, not a game, so PrettyDesk can't use it.</summary>
+    public static string Add_LauncherBlocked => Get("Add_LauncherBlocked");
+
+    /// <summary>Give the game a name.</summary>
+    public static string Add_NeedName => Get("Add_NeedName");
+
+    /// <summary>Choose at least one wallpaper.</summary>
+    public static string Add_NeedWallpaper => Get("Add_NeedWallpaper");
+
+    /// <summary>Choose a program first.</summary>
+    public static string Add_NoExe => Get("Add_NoExe");
+
+    /// <summary>Choose from collections…</summary>
+    public static string Add_PickFromCollections => Get("Add_PickFromCollections");
+
+    /// <summary>Refresh</summary>
+    public static string Add_Refresh => Get("Add_Refresh");
+
+    /// <summary>Running apps</summary>
+    public static string Add_Running => Get("Add_Running");
+
+    /// <summary>No apps with a window were found. Start your game, then press Refresh.</summary>
+    public static string Add_RunningEmpty => Get("Add_RunningEmpty");
+
+    /// <summary>Add game</summary>
+    public static string Add_Save => Get("Add_Save");
+
+    /// <summary>Couldn't add the game. Try again.</summary>
+    public static string Add_SaveFailed => Get("Add_SaveFailed");
+
+    /// <summary>{0} was added.</summary>
+    public static string Add_Saved => Get("Add_Saved");
+
+    /// <summary>Search running apps</summary>
+    public static string Add_Search => Get("Add_Search");
+
+    /// <summary>Add a game</summary>
+    public static string Add_Title => Get("Add_Title");
+
+    /// <summary>Wallpapers for this game</summary>
+    public static string Add_Wallpapers => Get("Add_Wallpapers");
+
+    /// <summary>Choose at least one. They can come from your own images or from any collection.</summary>
+    public static string Add_WallpapersHelp => Get("Add_WallpapersHelp");
+
     /// <summary>Dismiss</summary>
     public static string Banner_Dismiss => Get("Banner_Dismiss");
 
@@ -254,6 +416,117 @@ public static class Strings
     /// <summary>Save</summary>
     public static string Common_Save => Get("Common_Save");
 
+    /// <summary>Add my images…</summary>
+    public static string Game_AddMyImages => Get("Game_AddMyImages");
+
+    /// <summary>Add wallpapers…</summary>
+    public static string Game_AddWallpapers => Get("Game_AddWallpapers");
+
+    /// <summary>Back to Library</summary>
+    public static string Game_Back => Get("Game_Back");
+
+    /// <summary>Program: {0}</summary>
+    public static string Game_DetectionExe => Get("Game_DetectionExe");
+
+    /// <summary>You can see which program is running in Settings → Advanced → Detection log.</summary>
+    public static string Game_DetectionHelp => Get("Game_DetectionHelp");
+
+    /// <summary>No detection rules.</summary>
+    public static string Game_DetectionNone => Get("Game_DetectionNone");
+
+    /// <summary>Steam app: {0}</summary>
+    public static string Game_DetectionSteam => Get("Game_DetectionSteam");
+
+    /// <summary>How PrettyDesk recognises this game</summary>
+    public static string Game_DetectionTitle => Get("Game_DetectionTitle");
+
+    /// <summary>Download wallpapers</summary>
+    public static string Game_Download => Get("Game_Download");
+
+    /// <summary>The download didn't finish. Check your connection and try again.</summary>
+    public static string Game_DownloadFailed => Get("Game_DownloadFailed");
+
+    /// <summary>Downloading… {0}%</summary>
+    public static string Game_Downloading => Get("Game_Downloading");
+
+    /// <summary>Program names (one per line)</summary>
+    public static string Game_EditExe => Get("Game_EditExe");
+
+    /// <summary>The file name of the game, for example MyGame.exe.</summary>
+    public static string Game_EditExeHelp => Get("Game_EditExeHelp");
+
+    /// <summary>Change my wallpaper when I play this game</summary>
+    public static string Game_Enabled => Get("Game_Enabled");
+
+    /// <summary>Program names must end in .exe and can't contain folders.</summary>
+    public static string Game_ExeInvalid => Get("Game_ExeInvalid");
+
+    /// <summary>Use {0} as my favourite</summary>
+    public static string Game_Favorite => Get("Game_Favorite");
+
+    /// <summary>Include {0}</summary>
+    public static string Game_Include => Get("Game_Include");
+
+    /// <summary>Keep at least one wallpaper turned on.</summary>
+    public static string Game_KeepOne => Get("Game_KeepOne");
+
+    /// <summary>Wallpaper</summary>
+    public static string Game_Mode => Get("Game_Mode");
+
+    /// <summary>Always use my favourite</summary>
+    public static string Game_ModeFixed => Get("Game_ModeFixed");
+
+    /// <summary>Rotate through the wallpapers below</summary>
+    public static string Game_ModeRotate => Get("Game_ModeRotate");
+
+    /// <summary>This game has no wallpapers yet. Add some below.</summary>
+    public static string Game_NoWallpapers => Get("Game_NoWallpapers");
+
+    /// <summary>Not downloaded yet</summary>
+    public static string Game_NotDownloaded => Get("Game_NotDownloaded");
+
+    /// <summary>Order</summary>
+    public static string Game_Order => Get("Game_Order");
+
+    /// <summary>In order</summary>
+    public static string Game_OrderSequential => Get("Game_OrderSequential");
+
+    /// <summary>Shuffle</summary>
+    public static string Game_OrderShuffle => Get("Game_OrderShuffle");
+
+    /// <summary>Preview on desktop</summary>
+    public static string Game_Preview => Get("Game_Preview");
+
+    /// <summary>Shows it for 15 seconds, then goes back.</summary>
+    public static string Game_PreviewHelp => Get("Game_PreviewHelp");
+
+    /// <summary>Remove this game</summary>
+    public static string Game_RemoveGame => Get("Game_RemoveGame");
+
+    /// <summary>PrettyDesk will stop changing your wallpaper for it. Your images stay on your PC.</summary>
+    public static string Game_RemoveMessage => Get("Game_RemoveMessage");
+
+    /// <summary>Remove {0}?</summary>
+    public static string Game_RemoveTitle => Get("Game_RemoveTitle");
+
+    /// <summary>Change wallpaper</summary>
+    public static string Game_Rotation => Get("Game_Rotation");
+
+    /// <summary>By default a game keeps one wallpaper for the whole session and shows the next one next time.</summary>
+    public static string Game_RotationHelp => Get("Game_RotationHelp");
+
+    /// <summary>Suggest this game to PrettyDesk</summary>
+    public static string Game_Suggest => Get("Game_Suggest");
+
+    /// <summary>Opens a prefilled GitHub issue with only the program name and display name. Nothing is sent until you press Submit there.</summary>
+    public static string Game_SuggestHelp => Get("Game_SuggestHelp");
+
+    /// <summary>Stop using {0} as my favourite</summary>
+    public static string Game_Unfavorite => Get("Game_Unfavorite");
+
+    /// <summary>Wallpapers</summary>
+    public static string Game_WallpapersTitle => Get("Game_WallpapersTitle");
+
     /// <summary>Display {0} · {1}×{2}</summary>
     public static string Home_DisplayLabel => Get("Home_DisplayLabel");
 
@@ -290,6 +563,99 @@ public static class Strings
     /// <summary>Home</summary>
     public static string Home_Title => Get("Home_Title");
 
+    /// <summary>Custom…</summary>
+    public static string Interval_Custom => Get("Interval_Custom");
+
+    /// <summary>Daily</summary>
+    public static string Interval_Daily => Get("Interval_Daily");
+
+    /// <summary>Every {0} days</summary>
+    public static string Interval_Days => Get("Interval_Days");
+
+    /// <summary>Every hour</summary>
+    public static string Interval_Hour => Get("Interval_Hour");
+
+    /// <summary>Every {0} hours</summary>
+    public static string Interval_Hours => Get("Interval_Hours");
+
+    /// <summary>Every {0} minutes</summary>
+    public static string Interval_Minutes => Get("Interval_Minutes");
+
+    /// <summary>Never</summary>
+    public static string Interval_Never => Get("Interval_Never");
+
+    /// <summary>Next session</summary>
+    public static string Interval_Session => Get("Interval_Session");
+
+    /// <summary>On every unlock</summary>
+    public static string Interval_Unlock => Get("Interval_Unlock");
+
+    /// <summary>Add a game</summary>
+    public static string Library_AddGame => Get("Library_AddGame");
+
+    /// <summary>Added by you</summary>
+    public static string Library_ChipCustom => Get("Library_ChipCustom");
+
+    /// <summary>Downloading {0}%</summary>
+    public static string Library_ChipDownloading => Get("Library_ChipDownloading");
+
+    /// <summary>Download failed</summary>
+    public static string Library_ChipFailed => Get("Library_ChipFailed");
+
+    /// <summary>Installed</summary>
+    public static string Library_ChipInstalled => Get("Library_ChipInstalled");
+
+    /// <summary>Not downloaded</summary>
+    public static string Library_ChipNotDownloaded => Get("Library_ChipNotDownloaded");
+
+    /// <summary>Ready</summary>
+    public static string Library_ChipReady => Get("Library_ChipReady");
+
+    /// <summary>Wallpapers are original art inspired by each game. PrettyDesk is not affiliated with any game publisher.</summary>
+    public static string Library_DisclaimerNote => Get("Library_DisclaimerNote");
+
+    /// <summary>PrettyDesk will fill this in as soon as it can reach its game catalog. You can still add any game yourself.</summary>
+    public static string Library_EmptyCatalogBody => Get("Library_EmptyCatalogBody");
+
+    /// <summary>The game list isn't available yet</summary>
+    public static string Library_EmptyCatalogTitle => Get("Library_EmptyCatalogTitle");
+
+    /// <summary>Turn a game on to give it its own wallpaper.</summary>
+    public static string Library_EmptyEnabledBody => Get("Library_EmptyEnabledBody");
+
+    /// <summary>No games are turned on</summary>
+    public static string Library_EmptyEnabledTitle => Get("Library_EmptyEnabledTitle");
+
+    /// <summary>PrettyDesk looks at your Steam and Epic libraries. Games from other launchers can be added with Add a game.</summary>
+    public static string Library_EmptyInstalledBody => Get("Library_EmptyInstalledBody");
+
+    /// <summary>No installed games found</summary>
+    public static string Library_EmptyInstalledTitle => Get("Library_EmptyInstalledTitle");
+
+    /// <summary>Try a different name, or switch the filter back to All.</summary>
+    public static string Library_EmptySearchBody => Get("Library_EmptySearchBody");
+
+    /// <summary>No games match</summary>
+    public static string Library_EmptySearchTitle => Get("Library_EmptySearchTitle");
+
+    /// <summary>All</summary>
+    public static string Library_FilterAll => Get("Library_FilterAll");
+
+    /// <summary>Enabled</summary>
+    public static string Library_FilterEnabled => Get("Library_FilterEnabled");
+
+    /// <summary>Installed</summary>
+    public static string Library_FilterInstalled => Get("Library_FilterInstalled");
+
+    /// <summary>Show wallpapers for {0}</summary>
+    public static string Library_GameToggle => Get("Library_GameToggle");
+
+    /// <summary>Search games</summary>
+    public static string Library_Search => Get("Library_Search");
+
+    /// <summary>Library</summary>
+    public static string Library_Title => Get("Library_Title");
+
     /// <summary>About</summary>
     public static string Nav_About => Get("Nav_About");
 
@@ -304,6 +670,24 @@ public static class Strings
 
     /// <summary>Settings</summary>
     public static string Nav_Settings => Get("Nav_Settings");
+
+    /// <summary>Use selected</summary>
+    public static string Picker_Confirm => Get("Picker_Confirm");
+
+    /// <summary>Nothing to choose from yet. Download a collection or add your own images.</summary>
+    public static string Picker_Empty => Get("Picker_Empty");
+
+    /// <summary>My images</summary>
+    public static string Picker_GroupMine => Get("Picker_GroupMine");
+
+    /// <summary>Search wallpapers</summary>
+    public static string Picker_Search => Get("Picker_Search");
+
+    /// <summary>{0} selected</summary>
+    public static string Picker_Selected => Get("Picker_Selected");
+
+    /// <summary>Choose wallpapers</summary>
+    public static string Picker_Title => Get("Picker_Title");
 
     /// <summary>Advanced</summary>
     public static string Settings_Advanced => Get("Settings_Advanced");
