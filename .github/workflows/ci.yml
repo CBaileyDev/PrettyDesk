@@ -31,10 +31,7 @@ jobs:
         run: dotnet build src/PrettyDesk.App -c Release -r win-arm64
       - name: Core + Windows tests
         run: |
-          dotnet test --project tests/PrettyDesk.Core.Tests -c Release --report-trx --results-directory TestResults
-          dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release --report-trx --results-directory TestResults
-          dotnet test --project tests/PrettyDesk.Windows.Tests -c Release --report-trx --results-directory TestResults
-          dotnet test --project tests/PrettyDesk.App.Tests -c Release --report-trx --results-directory TestResults
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with: { name: test-results, path: TestResults }
+          dotnet test --project tests/PrettyDesk.Core.Tests -c Release
+          dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release
+          dotnet test --project tests/PrettyDesk.Windows.Tests -c Release
+          dotnet test --project tests/PrettyDesk.App.Tests -c Release
