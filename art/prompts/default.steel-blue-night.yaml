@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The raindrops and bokeh fill the frame with the brightest cluster at about 45% of the height.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c06e6a65ed33f51c87dc2eb92491a5541a68f2b17e482178d5c186ec9490a107", P: "9cbff5e8e48a2450c1a9d48debdbae822e1cea3d86a1f57572def48475d8dd63", U: "b2a61c1063e54910a05a0bde3d36ccf2ce5c05b4a5d13b150f59e12869f687ba"}
 
   - id: sn-02
     title: "Night Coastline"

@@ -57,7 +57,7 @@ wallpapers:
         logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "8855bf90075a9387160db84a033be059e4adb8016cb756366fd547d30fe0912e"}
 
   - id: terraria.minimal-01
     title: "Starry Surface"
@@ -100,7 +100,7 @@ wallpapers:
         calm. Strictly no text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "0a132a6dd73f027ad883e6fb2455f834af53441fc0691f8bc2d1ea2b3d1d2ef1"}
 
   - id: terraria.mood-01
     title: "Mushroom Glow Cave"
@@ -142,7 +142,7 @@ wallpapers:
         letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "848203c72f9583310770350a8929173451d798a427ab85287158d9de7964c7a3"}
 
   - id: terraria.alt-01
     title: "Sunny Meadow Surface"
@@ -185,4 +185,4 @@ wallpapers:
         logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "95efe2435c1fd9228d96fb3a92c85867f02aa7a37f5e544f5d1032326873a293"}

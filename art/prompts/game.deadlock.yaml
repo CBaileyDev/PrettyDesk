@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The skyscraper rises through the center from 15% to 65% of the height, with lamp halos along
         the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f21e4cc49bcdc667982a0c7d50c6bca6af2780e9487b195b897a09985fb6c9c8"}
 
   - id: deadlock.minimal-01
     title: "One Street Lamp in Fog"
@@ -96,9 +96,9 @@ wallpapers:
         wallpaper. The lamp stands at about 52% of the height in the center, with its halo and reflection around
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f8b7411fca0ca7406ad730719e05ec4ed62e5cdfbd2371aab87f59e331ab3e84"}
 
   - id: deadlock.mood-01
     title: "Rain-Slick Streetcar Line"
@@ -138,9 +138,9 @@ wallpapers:
         wallpaper. The rails curve up the center to a vanishing point at about 45% of the height, with
         reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "06dc4912ddd9150fcf95e79d387a59f61d40e417800a1b921a89f5310fd7992e"}
 
   - id: deadlock.alt-01
     title: "Deco Plaza at Noon"
@@ -180,6 +180,6 @@ wallpapers:
         wallpaper. The fountain sits at about 58% of the height in the center, with the buildings above. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7663d2b39218d55312204d0204ada05e05ce60ee376b69d5ef998d05d38bb8ce"}

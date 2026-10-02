@@ -63,6 +63,39 @@ public sealed class FileDownloaderTests : IDisposable
     }
 
     [Fact]
+    public async Task A_download_without_a_declared_size_still_has_a_hard_limit()
+    {
+        var oversized = new byte[FileDownloader.MaxDownloadBytes + 1];
+        var destination = _dir.File("oversized.jpg");
+        var downloader = Create(new FakeHttpHandler(_ => FakeHttpHandler.Ok(oversized)));
+
+        await Should.ThrowAsync<InvalidDataException>(() => downloader.DownloadAsync(Url, destination, Hash(oversized), null,
+            TestContext.Current.CancellationToken));
+        File.Exists(destination).ShouldBeFalse();
+        File.Exists(destination + ".part").ShouldBeFalse();
+    }
+
+    [Fact]
+    public async Task A_stalled_download_body_times_out_and_releases_the_transfer()
+    {
+        var time = new FakeTimeProvider();
+        using var stalled = new StalledStream();
+        var handler = new FakeHttpHandler(_ => new HttpResponseMessage(HttpStatusCode.OK) { Content = new StreamContent(stalled) });
+        var downloader = new FileDownloader(new HttpClient(handler), time, NullLogger<FileDownloader>.Instance) { RetryDelay = TimeSpan.Zero };
+        var run = downloader.DownloadAsync(Url, _dir.File("stalled.jpg"), Hash(_payload), null, TestContext.Current.CancellationToken);
+        await stalled.Started.Task.WaitAsync(TestContext.Current.CancellationToken);
+        for (var attempt = 1; attempt <= FileDownloader.MaxAttempts; attempt++)
+        {
+            SpinWait.SpinUntil(() => handler.Requests.Count >= attempt, TimeSpan.FromSeconds(10)).ShouldBeTrue();
+            time.Advance(FileDownloader.TransferTimeout);
+        }
+
+        await Should.ThrowAsync<OperationCanceledException>(() => run);
+        handler.Requests.Count.ShouldBe(FileDownloader.MaxAttempts);
+        File.Exists(_dir.File("stalled.jpg")).ShouldBeFalse();
+    }
+
+    [Fact]
     public async Task Resumes_from_a_partial_file_using_a_range_request()
     {
         var dest = _dir.File("a.jpg");
@@ -448,5 +481,66 @@ public sealed class UserImageStoreTests : IDisposable
 
         UserImageStore.ResolutionWarning(image, [new MonitorInfo("m", 0, 0, 1920, 1080, true)]).ShouldBeNull();
         UserImageStore.ResolutionWarning(image, [new MonitorInfo("m", 0, 0, 3840, 2160, true)]).ShouldNotBeNull().ShouldContain("3840×2160");
+    }
+}
+
+public sealed class PackStoreContainmentTests : IDisposable
+{
+    private readonly TempDir _dir = new();
+
+    public void Dispose() => _dir.Dispose();
+
+    [Theory]
+    [InlineData("..")]
+    [InlineData(".")]
+    [InlineData("")]
+    [InlineData("../evil")]
+    [InlineData("a/../../b")]
+    public void A_pack_id_can_never_resolve_outside_the_pack_root(string packId)
+    {
+        var store = new PackStore(_dir.File("packs"));
+        var root = Path.GetFullPath(store.Root);
+
+        var directory = Path.GetFullPath(store.VersionDirectory(packId, 1));
+
+        directory.ShouldStartWith(root + Path.DirectorySeparatorChar);
+        Path.GetFullPath(Path.Combine(directory, "..", "..")).ShouldBe(root);
+    }
+}
+
+public sealed class FileDownloaderSizeCapTests : IDisposable
+{
+    private static readonly Uri Url = new("https://content.example.com/v1/packs/p/v1/a.jpg");
+    private readonly TempDir _dir = new();
+
+    public void Dispose() => _dir.Dispose();
+
+    [Fact]
+    public async Task A_response_larger_than_the_declared_size_is_aborted_and_leaves_no_files()
+    {
+        var oversized = new byte[400_000];
+        var handler = new FakeHttpHandler(_ => FakeHttpHandler.Ok(oversized));
+        var downloader = new FileDownloader(new HttpClient(handler), new FakeTimeProvider(), NullLogger<FileDownloader>.Instance) { RetryDelay = TimeSpan.Zero };
+        var dest = _dir.File("out/a.jpg");
+
+        await Should.ThrowAsync<InvalidDataException>(() =>
+            downloader.DownloadAsync(Url, dest, Convert.ToHexStringLower(SHA256.HashData(oversized)), null, TestContext.Current.CancellationToken, expectedBytes: 100_000));
+
+        File.Exists(dest).ShouldBeFalse();
+        File.Exists(dest + ".part").ShouldBeFalse();
+        handler.Requests.Count.ShouldBe(1);
+    }
+
+    [Fact]
+    public async Task A_response_matching_the_declared_size_downloads_normally()
+    {
+        var body = new byte[50_000];
+        var handler = new FakeHttpHandler(_ => FakeHttpHandler.Ok(body));
+        var downloader = new FileDownloader(new HttpClient(handler), new FakeTimeProvider(), NullLogger<FileDownloader>.Instance) { RetryDelay = TimeSpan.Zero };
+        var dest = _dir.File("out/a.jpg");
+
+        await downloader.DownloadAsync(Url, dest, Convert.ToHexStringLower(SHA256.HashData(body)), null, TestContext.Current.CancellationToken, expectedBytes: body.Length);
+
+        File.Exists(dest).ShouldBeTrue();
     }
 }

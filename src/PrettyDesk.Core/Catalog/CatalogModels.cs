@@ -124,6 +124,7 @@ public sealed record CatalogDocument
     PropertyNameCaseInsensitive = true,
     ReadCommentHandling = System.Text.Json.JsonCommentHandling.Skip,
     AllowTrailingCommas = true,
+    RespectNullableAnnotations = true,
     WriteIndented = true,
     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
 [JsonSerializable(typeof(CatalogDocument))]

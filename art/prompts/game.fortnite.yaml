@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The floating island hovers at about 32% of the height over hills that fill the lower half.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c6308eb307effd786de37d8e347cff761a797fbf3715b9d819bfcc946e6326fe"}
 
   - id: fortnite.minimal-01
     title: "Lone Tree on the Hill"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7c5e908e9b1248b09cab3ab9acc1bc30c7fb6910adaa6908a6ddd35a98786f1a"}
 
   - id: fortnite.mood-01
     title: "Storm Wall at Dusk"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The storm wall rises across the center at about 40% of the height, with its glow reflected in
         the water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2af945163fe2931aaa1f2c96a69d9d3fe738ee412782b9d1a13b0894cd0523fb"}
 
   - id: fortnite.alt-01
     title: "Sunny Shoreline"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The shoreline curves through the lower center, with an islet at about 50% of the height under
         a bright sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "9057d9dd68cb3ce7d98f0bc9aa1b30ecb408f7d93ced9d4887d893cb16920fc5"}

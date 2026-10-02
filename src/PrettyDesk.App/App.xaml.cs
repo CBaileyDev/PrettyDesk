@@ -32,14 +32,19 @@ public partial class App : Application, IAsyncDisposable
         _paths.EnsureCreated();
         Log.Logger = Logging.Create(_paths);
         InstallGlobalHandlers();
-        ApplicationThemeManager.ApplySystemTheme();
+        SessionEnding += OnSessionEnding;
+        AppAppearance.Initialize();
 
         try
         {
             _provider = new ServiceCollection().AddPrettyDesk(_paths).BuildServiceProvider(new ServiceProviderOptions { ValidateOnBuild = true, ValidateScopes = true });
+            AppAppearance.Bind(_provider.GetRequiredService<ISettingsProvider>());
             _runtime = new AppRuntime(_provider);
             _runtime.QuitRequested += OnQuitRequested;
             _runtime.StartUi();
+#if PRETTYDESK_ACCEPTANCE
+            AcceptanceHarness.RecordTrayReady(Program.StartupClock.Elapsed.TotalMilliseconds);
+#endif
             _instance.Listen(() => Dispatcher.BeginInvoke(() => _provider.GetRequiredService<WindowManager>().ShowMainWindow()));
 
             var background = _args.Contains(AppConstants.BackgroundArgument, StringComparer.OrdinalIgnoreCase);
@@ -54,6 +59,19 @@ public partial class App : Application, IAsyncDisposable
             }
 
             await _runtime.StartEngineAsync();
+#if PRETTYDESK_ACCEPTANCE
+            // A bounded acceptance run exits through the real Quit path, including wallpaper restoration.
+            if (int.TryParse(Environment.GetEnvironmentVariable("PRETTYDESK_ACCEPTANCE_QUIT_AFTER_SECONDS"), out var seconds) && seconds > 0)
+            {
+                var exitTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(seconds) };
+                exitTimer.Tick += (_, _) =>
+                {
+                    exitTimer.Stop();
+                    OnQuitRequested();
+                };
+                exitTimer.Start();
+            }
+#endif
         }
 #pragma warning disable CA1031 // NFR-13: a startup failure is shown in human words; the log has the details.
         catch (Exception ex)
@@ -73,6 +91,12 @@ public partial class App : Application, IAsyncDisposable
         }
 
         GC.SuppressFinalize(this);
+    }
+
+    protected override void OnExit(ExitEventArgs e)
+    {
+        AppAppearance.Shutdown();
+        base.OnExit(e);
     }
 
     private async void OnQuitRequested()
@@ -96,6 +120,35 @@ public partial class App : Application, IAsyncDisposable
             Log.CloseAndFlush();
             _instance.Dispose();
             Shutdown();
+        }
+    }
+
+    /// <summary>
+    /// Logoff or shutdown: we use <c>OnExplicitShutdown</c>, so without this the stop path (restore-on-exit, state flush) never
+    /// runs. Bounded so a stuck COM call cannot make Windows wait on us.
+    /// </summary>
+    private void OnSessionEnding(object? sender, SessionEndingCancelEventArgs e)
+    {
+        try
+        {
+            if (_runtime is null || _provider is null)
+            {
+                return;
+            }
+
+            var runtime = _runtime;
+            var provider = _provider;
+            Task.Run(async () =>
+            {
+                await runtime.StopAsync();
+                provider.GetRequiredService<PrettyDesk.Core.Settings.AppStateService>().SaveNow();
+            }).Wait(TimeSpan.FromSeconds(5));
+        }
+#pragma warning disable CA1031 // Session is ending: nothing useful can be done with a cleanup failure.
+        catch (Exception ex)
+#pragma warning restore CA1031
+        {
+            Log.Warning(ex, "Cleanup on session end failed");
         }
     }
 

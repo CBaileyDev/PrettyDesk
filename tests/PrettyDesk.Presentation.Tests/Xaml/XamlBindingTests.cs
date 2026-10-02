@@ -166,15 +166,18 @@ public partial class XamlBindingTests
 
             var target = context;
             var effective = path;
-            if (body.Contains("RelativeSource", StringComparison.Ordinal))
+            if (body.Contains("RelativeSource", StringComparison.Ordinal) || body.Contains("x:Reference", StringComparison.Ordinal))
             {
-                // Supported pattern: {Binding DataContext.X, RelativeSource={RelativeSource AncestorType=UserControl}} → the view's root VM.
+                // Supported patterns: {Binding DataContext.X, RelativeSource={RelativeSource AncestorType=UserControl}} and
+                // {Binding DataContext.X, Source={x:Reference Name}} (for virtualized containers created before parenting) → the view's root VM.
                 if (!path.StartsWith("DataContext.", StringComparison.Ordinal))
                 {
                     continue;
                 }
 
-                target = viewRoot;
+                // Home's discovery action deliberately targets the containing shell window.
+                target = body.Contains("AncestorType=Window", StringComparison.Ordinal) && viewRoot == typeof(HomeViewModel)
+                    ? typeof(ShellViewModel) : viewRoot;
                 effective = path["DataContext.".Length..];
             }
 

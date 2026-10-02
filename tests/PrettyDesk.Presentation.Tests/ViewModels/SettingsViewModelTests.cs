@@ -20,6 +20,26 @@ public class SettingsSectionTests
     public SettingsSectionTests() => Strings.Culture = CultureInfo.GetCultureInfo("en-US");
 
     [Fact]
+    public void Personalization_is_opt_in_and_persists_without_loading_writes()
+    {
+        using var vm = new GeneralSettingsViewModel(_settings, Substitute.For<IStartupService>(), _ui);
+        vm.Theme.ShouldBe(AppThemePreference.System);
+        vm.DesktopClock.ShouldBeFalse();
+        vm.DesktopNowPlaying.ShouldBeFalse();
+        vm.DesktopVisualizer.ShouldBeFalse();
+        _settings.UpdateCount.ShouldBe(0);
+        vm.Theme = AppThemePreference.Dark;
+        vm.DesktopClock = true;
+        vm.DesktopNowPlaying = true;
+        vm.DesktopVisualizer = true;
+        _settings.Current.General.Theme.ShouldBe(AppThemePreference.Dark);
+        _settings.Current.General.DesktopClock.ShouldBeTrue();
+        _settings.Current.General.DesktopNowPlaying.ShouldBeTrue();
+        _settings.Current.General.DesktopVisualizer.ShouldBeTrue();
+        _settings.UpdateCount.ShouldBe(4);
+    }
+
+    [Fact]
     public void General_loads_defaults_and_saves_changes()
     {
         var startup = Substitute.For<IStartupService>();

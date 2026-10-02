@@ -15,31 +15,68 @@ public sealed class RuleMatcher
 {
     private readonly GameRegistry _registry;
     private readonly IProcessDetailsSource? _details;
+    private readonly Dictionary<string, List<GameDefinition>> _byExe = new(StringComparer.OrdinalIgnoreCase);
+    private readonly HashSet<string> _liveDetailExes = new(StringComparer.OrdinalIgnoreCase);
+
+    public bool RequiresLiveDetails(IReadOnlyList<ProcessInfo> processes) => processes.Any(p => _liveDetailExes.Contains(p.ExeName));
 
     public RuleMatcher(GameRegistry registry, IProcessDetailsSource? details)
     {
         _registry = registry;
         _details = details;
+        foreach (var game in registry.Games)
+        {
+            foreach (var exe in game.Rules.ExeNames.Distinct(StringComparer.OrdinalIgnoreCase))
+            {
+                if (!_byExe.TryGetValue(exe, out var candidates))
+                {
+                    _byExe[exe] = candidates = [];
+                }
+
+                candidates.Add(game);
+                if (game.Rules.PathContains.Count > 0 || game.Rules.WindowTitleContains.Count > 0)
+                {
+                    _liveDetailExes.Add(exe);
+                }
+            }
+        }
     }
 
     public IReadOnlyList<GameMatch> Match(IReadOnlyList<ProcessInfo> processes, uint steamRunningAppId)
     {
         var matches = new List<GameMatch>();
-        foreach (var game in _registry.Games)
+        var matchedPids = new Dictionary<string, List<int>>(StringComparer.Ordinal);
+        foreach (var process in processes)
         {
-            var pids = new List<int>();
-            foreach (var process in processes)
+            if (!_byExe.TryGetValue(process.ExeName, out var candidates))
             {
-                if (MatchesProcess(game.Rules, process))
-                {
-                    pids.Add(process.Pid);
-                }
+                continue;
             }
 
-            var viaSteam = steamRunningAppId != 0 && game.Rules.SteamAppIds.Contains(steamRunningAppId);
-            if (pids.Count > 0 || viaSteam)
+            foreach (var game in candidates)
             {
-                matches.Add(new GameMatch(game.Id, pids, viaSteam && pids.Count == 0));
+                if (!MatchesProcess(game.Rules, process))
+                {
+                    continue;
+                }
+
+                if (!matchedPids.TryGetValue(game.Id, out var pids))
+                {
+                    matchedPids[game.Id] = pids = [];
+                }
+
+                pids.Add(process.Pid);
+            }
+        }
+
+        foreach (var game in _registry.Games)
+        {
+            matchedPids.TryGetValue(game.Id, out var pids);
+
+            var viaSteam = steamRunningAppId != 0 && game.Rules.SteamAppIds.Contains(steamRunningAppId);
+            if (pids is not null || viaSteam)
+            {
+                matches.Add(new GameMatch(game.Id, pids ?? (IReadOnlyList<int>)Array.Empty<int>(), viaSteam && pids is null));
             }
         }
 
@@ -48,12 +85,12 @@ public sealed class RuleMatcher
 
     private bool MatchesProcess(DetectionRules rules, ProcessInfo process)
     {
-        if (!rules.ExeNames.Contains(process.ExeName, StringComparer.OrdinalIgnoreCase))
+        if (!ContainsExeName(rules.ExeNames, process.ExeName))
         {
             return false;
         }
 
-        if (rules.ExcludeExeNames.Contains(process.ExeName, StringComparer.OrdinalIgnoreCase))
+        if (ContainsExeName(rules.ExcludeExeNames, process.ExeName))
         {
             return false;
         }
@@ -86,5 +123,18 @@ public sealed class RuleMatcher
         }
 
         return true;
+    }
+
+    private static bool ContainsExeName(IReadOnlyList<string> names, string exeName)
+    {
+        for (var index = 0; index < names.Count; index++)
+        {
+            if (string.Equals(names[index], exeName, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

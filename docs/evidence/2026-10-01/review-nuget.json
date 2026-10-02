@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "parameters": "--vulnerable --include-transitive",
+  "sources": [
+    "https://api.nuget.org/v3/index.json",
+    "C:/Program Files (x86)/Microsoft SDKs/NuGetPackages/"
+  ],
+  "projects": [
+    {
+      "path": "<workspace>/src/PrettyDesk.Core/PrettyDesk.Core.csproj"
+    },
+    {
+      "path": "<workspace>/tests/PrettyDesk.Core.Tests/PrettyDesk.Core.Tests.csproj"
+    },
+    {
+      "path": "<workspace>/src/PrettyDesk.Windows/PrettyDesk.Windows.csproj"
+    },
+    {
+      "path": "<workspace>/tools/catalog-sign/CatalogSign.csproj"
+    },
+    {
+      "path": "<workspace>/tests/PrettyDesk.Windows.Tests/PrettyDesk.Windows.Tests.csproj"
+    },
+    {
+      "path": "<workspace>/src/PrettyDesk.App/PrettyDesk.App.csproj"
+    },
+    {
+      "path": "<workspace>/src/PrettyDesk.Presentation/PrettyDesk.Presentation.csproj"
+    },
+    {
+      "path": "<workspace>/tests/PrettyDesk.Presentation.Tests/PrettyDesk.Presentation.Tests.csproj"
+    },
+    {
+      "path": "<workspace>/tests/PrettyDesk.App.Tests/PrettyDesk.App.Tests.csproj"
+    }
+  ]
+}

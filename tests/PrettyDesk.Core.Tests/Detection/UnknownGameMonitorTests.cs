@@ -122,12 +122,27 @@ public sealed class UnknownGameMonitorTests : IDisposable
         _hints.ShouldBeEmpty();
     }
 
-    private sealed class StubForeground : IForegroundSource
+    internal sealed class StubForeground : IForegroundSource
     {
         public ForegroundInfo? Current { get; set; }
 
 #pragma warning disable CS0067 // Required by the interface; this stub never raises it.
         public event Action? Changed;
 #pragma warning restore CS0067
+    }
+}
+
+public sealed class UnknownGameMonitorFaultTests
+{
+    [Fact]
+    public void An_exception_from_the_timer_sample_never_escapes_the_timer_callback()
+    {
+        var time = new FakeTimeProvider(new DateTimeOffset(2026, 10, 1, 20, 0, 0, TimeSpan.Zero));
+        var foreground = new UnknownGameMonitorTests.StubForeground { Current = new ForegroundInfo(5, "indie.exe") };
+        using var monitor = new UnknownGameMonitor(
+            foreground, () => throw new InvalidOperationException("shell query failed"), _ => false, new UnknownGameHinter(), new FakeSettings(), time);
+        monitor.Start();
+
+        Should.NotThrow(() => time.Advance(UnknownGameMonitor.SampleInterval));
     }
 }

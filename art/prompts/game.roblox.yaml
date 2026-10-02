@@ -55,9 +55,9 @@ wallpapers:
         wallpaper. The platform path spirals up the center of the frame with the spiral bridge at about 45% of
         the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "bf7fdb5485bea1be0094c35edbca835982b3ee6aa568ab6e86c78c10ae7bddd0"}
 
   - id: roblox.minimal-01
     title: "One Floating Block"
@@ -98,9 +98,9 @@ wallpapers:
         wallpaper. The brick floats at about 45% of the height, centered, with a soft cloud below and empty sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2b05ce6267892840287c9ee20b5cd82320cb66e71023b4cd235a2230ccea1d8c"}
 
   - id: roblox.mood-01
     title: "Studio Night Blocks"
@@ -141,9 +141,9 @@ wallpapers:
         wallpaper. The block stack sits in the lower center at about 58% of the height, over a dark backdrop.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c5ba3e89ca1fbd47efd7266ce80a302d953e2495f4ac95d01e3de46c1061c1df"}
 
   - id: roblox.alt-01
     title: "Low-Poly Island Morning"
@@ -184,6 +184,6 @@ wallpapers:
         wallpaper. The island floats in the center at about 48% of the height, with clouds below and soft sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "52fe49d16697d08ebde48169b2fb7a945213d30471522ec6bbf5d50f1721681a"}

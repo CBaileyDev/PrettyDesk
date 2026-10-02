@@ -14,6 +14,12 @@ public interface ISettingsMigration
 
 public sealed record JsonLoadResult<T>(T Value, bool RecoveredFromCorruption, string? CorruptBackupPath);
 
+/// <summary>Validates collection elements and other invariants not enforced by the JSON serializer.</summary>
+public interface IJsonFileValidatable
+{
+    bool IsValid();
+}
+
 /// <summary>
 /// Versioned JSON file with atomic writes (temp + replace) and corrupt-file recovery: a file that cannot be read is
 /// moved to <c>name.corrupt-&lt;timestamp&gt;.json</c> and replaced with defaults.
@@ -26,6 +32,7 @@ public sealed class JsonFileStore<T>
     private readonly int _currentVersion;
     private readonly Dictionary<int, ISettingsMigration> _migrations;
     private readonly TimeProvider _time;
+    private bool _unreadableOnLoad;
 
     public JsonFileStore(
         string path,
@@ -58,7 +65,8 @@ public sealed class JsonFileStore<T>
                 return Recover();
             }
 
-            var version = document["schemaVersion"]?.GetValue<int>() ?? 0;
+            // A hand-edited file without schemaVersion is current unless a real v0 migration exists.
+            var version = document["schemaVersion"]?.GetValue<int>() ?? (_migrations.ContainsKey(0) ? 0 : _currentVersion);
             while (version < _currentVersion)
             {
                 if (!_migrations.TryGetValue(version, out var migration))
@@ -72,9 +80,16 @@ public sealed class JsonFileStore<T>
             }
 
             var value = document.Deserialize(_typeInfo);
-            return value is null ? Recover() : new JsonLoadResult<T>(value, false, null);
+            return value is null || value is IJsonFileValidatable { } validatable && !validatable.IsValid()
+                ? Recover() : new JsonLoadResult<T>(value, false, null);
         }
-        catch (Exception ex) when (ex is JsonException or InvalidOperationException or FormatException or IOException or UnauthorizedAccessException)
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            // Locked by antivirus or a backup tool, not corrupt: keep the file where it is and never overwrite it blindly.
+            _unreadableOnLoad = true;
+            return new JsonLoadResult<T>(new T(), false, null);
+        }
+        catch (Exception ex) when (ex is JsonException or InvalidOperationException or FormatException or ArgumentException)
         {
             return Recover();
         }
@@ -86,6 +101,20 @@ public sealed class JsonFileStore<T>
         if (!string.IsNullOrEmpty(directory))
         {
             Directory.CreateDirectory(directory);
+        }
+
+        if (_unreadableOnLoad)
+        {
+            // The file could not be read at startup, so defaults are in memory. Move the real file aside before replacing
+            // it; if that fails too, throw so the caller retries later rather than destroying the user's settings.
+            var stamp = _time.GetUtcNow().ToString("yyyyMMddTHHmmssfff", System.Globalization.CultureInfo.InvariantCulture);
+            var name = System.IO.Path.GetFileNameWithoutExtension(_path);
+            if (File.Exists(_path))
+            {
+                File.Move(_path, System.IO.Path.Combine(directory ?? ".", $"{name}.unreadable-{stamp}.json"), overwrite: true);
+            }
+
+            _unreadableOnLoad = false;
         }
 
         var temp = _path + ".tmp";

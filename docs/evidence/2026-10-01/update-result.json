@@ -1,0 +1,8 @@
+{
+  "InstalledVersion": "1.0.0",
+  "UpdatedVersion": "1.0.1",
+  "StartupMilliseconds": 434.9847,
+  "ProcessId": 32064,
+  "Signed": false,
+  "Feed": "%WORKSPACE%/TestResults/acceptance/feed"
+}

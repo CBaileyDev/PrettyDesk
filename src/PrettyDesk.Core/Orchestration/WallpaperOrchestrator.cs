@@ -214,6 +214,14 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
         {
             if (now < preview.Until)
             {
+                if (!await TryEnsureBackupAsync(cancellationToken))
+                {
+                    // FR-RESTORE-1: never overwrite the original with a preview when it could not be saved first.
+                    _failures++;
+                    Publish(new OrchestratorStatus { Mode = OrchestratorMode.Preview, ApplyFailed = true, WallpaperByMonitor = CurrentIds(monitors) }, now + FailureBackoff(_failures));
+                    return;
+                }
+
                 failed = await ApplyPreviewAsync(preview.WallpaperId, monitors, now, cancellationToken);
                 Publish(new OrchestratorStatus { Mode = OrchestratorMode.Preview, ApplyFailed = failed, WallpaperByMonitor = monitors.ToDictionary(m => m.Id, _ => preview.WallpaperId) }, preview.Until);
                 return;
@@ -300,24 +308,11 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
             }
         }
 
-        if (!_backupEnsured && _backup is not null && assignments.Count > 0)
+        if (assignments.Count > 0 && !await TryEnsureBackupAsync(cancellationToken))
         {
-            // FR-RESTORE-1: the original wallpaper is snapshotted before the very first apply, and a failure here must
-            // stop us from overwriting it.
-            try
-            {
-                await _backup.EnsureBackupAsync(cancellationToken);
-                _backupEnsured = true;
-            }
-#pragma warning disable CA1031 // NFR-13: reported as a failed apply and retried with backoff.
-            catch (Exception ex) when (ex is not OperationCanceledException)
-#pragma warning restore CA1031
-            {
-                LogBackupFailed(ex);
-                _failures++;
-                Publish((status ?? new OrchestratorStatus()) with { ApplyFailed = true, WallpaperByMonitor = CurrentIds(monitors) }, now + FailureBackoff(_failures));
-                return;
-            }
+            _failures++;
+            Publish((status ?? new OrchestratorStatus()) with { ApplyFailed = true, WallpaperByMonitor = CurrentIds(monitors) }, now + FailureBackoff(_failures));
+            return;
         }
 
         var applied = new Dictionary<string, string>();
@@ -424,6 +419,32 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
         {
             LogApplyFailed(wallpaperId, ex);
             return new ApplyOutcome(true, null);
+        }
+    }
+
+    /// <summary>
+    /// FR-RESTORE-1: the original wallpaper is snapshotted before the very first apply (preview included), and a failure here
+    /// must stop us from overwriting it. Returns false when the backup could not be made.
+    /// </summary>
+    private async Task<bool> TryEnsureBackupAsync(CancellationToken cancellationToken)
+    {
+        if (_backupEnsured || _backup is null)
+        {
+            return true;
+        }
+
+        try
+        {
+            await _backup.EnsureBackupAsync(cancellationToken);
+            _backupEnsured = true;
+            return true;
+        }
+#pragma warning disable CA1031 // NFR-13: reported as a failed apply and retried with backoff.
+        catch (Exception ex) when (ex is not OperationCanceledException)
+#pragma warning restore CA1031
+        {
+            LogBackupFailed(ex);
+            return false;
         }
     }
 

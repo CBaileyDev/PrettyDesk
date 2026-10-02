@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The tower rises at the center from 25% to 70% of the height, with the ring planet glowing
         behind it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "33588bea3af068812d6f0032b69c4b22298f87908354ddbe01dedb323c91d6ae"}
 
   - id: destiny2.minimal-01
     title: "Ring Arc over the Snow"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The ring arc curves across the upper center at about 35% of the height, with the snow plain
         filling the bottom third. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ae90c780e90bc53424b464f89a728e98425047b81371a2251069cdcdbc6cec4e"}
 
   - id: destiny2.mood-01
     title: "Vault in the Jungle"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The doorway glows at the center at about 52% of the height, with roots and ferns around it.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "97fcf2732054ac9e303475a9904f2d6ece1bc60da5d45b57b3b0322db36b7d03"}
 
   - id: destiny2.alt-01
     title: "Colony Ship in Morning Snow"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The hull rises at about 48% of the height in the center, with snow below and pale sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f4d66ffcf08005dd60c2f25aeb5dcb101427737a954549237340fd5b05678ce0"}

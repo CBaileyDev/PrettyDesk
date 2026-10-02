@@ -20,6 +20,61 @@ public sealed class WallpaperTests : IDisposable
     // Created lazily so non-Windows runs skip before touching any Windows-only API.
     private DesktopWallpaperService Service => _created ??= new DesktopWallpaperService(TimeProvider.System, NullLogger<DesktopWallpaperService>.Instance);
 
+    [Fact]
+    public async Task Slideshow_backup_restores_original_source_shuffle_and_interval()
+    {
+        WindowsOnly.Require();
+        Assert.SkipWhen(WindowsSystemState.ReadBackgroundType() is "spotlight" or "solid", "The existing background mode cannot be exercised safely by this slideshow test.");
+        var originalSlideshow = WindowsSystemState.ReadBackgroundType() == "slideshow"
+            ? await Service.GetSlideshowAsync(TestContext.Current.CancellationToken) : null;
+        var monitors = Service.GetMonitors();
+        Assert.SkipWhen(monitors.Count == 0, "No desktop is available.");
+        var originals = new Dictionary<string, string?>();
+        foreach (var monitor in monitors)
+        {
+            originals[monitor.Id] = await Service.GetAsync(monitor.Id, TestContext.Current.CancellationToken);
+        }
+
+        var position = await Service.GetPositionAsync(TestContext.Current.CancellationToken);
+        var color = await Service.GetBackgroundColorAsync(TestContext.Current.CancellationToken);
+        var folder = _dir.File("slides");
+        Directory.CreateDirectory(folder);
+        File.Copy(MakeImage("slide.png", SKColors.SeaGreen), Path.Combine(folder, "slide.png"));
+        using var state = new AppStateService(new JsonFileStore<AppState>(_dir.File("slides-state.json"),
+            AppStateJsonContext.Default.AppState, AppState.CurrentSchemaVersion, TimeProvider.System), TimeProvider.System);
+        var backup = new WallpaperBackupService(Service, state, _dir.File("slides-backup"), _dir.File("cache"),
+            TimeProvider.System, NullLogger<WallpaperBackupService>.Instance);
+        try
+        {
+            await Service.SetSlideshowAsync(new SlideshowSnapshot([folder], 1, 120_000), TestContext.Current.CancellationToken);
+            var before = await Service.GetSlideshowAsync(TestContext.Current.CancellationToken);
+            WindowsSystemState.ReadBackgroundType().ShouldBe("slideshow");
+            await backup.EnsureBackupAsync(TestContext.Current.CancellationToken);
+            state.Current.Backup!.SlideshowItems.ShouldNotBeEmpty();
+            await Service.SetAsync(monitors[0].Id, MakeImage("replacement.png", SKColors.Black), TestContext.Current.CancellationToken);
+            var result = await backup.RestoreAsync(TestContext.Current.CancellationToken);
+            result.Note.ShouldBeNull();
+            var after = await Service.GetSlideshowAsync(TestContext.Current.CancellationToken);
+            after.Items.ShouldBe(before.Items);
+            after.Options.ShouldBe(before.Options);
+            after.Interval.ShouldBe(before.Interval);
+            WindowsSystemState.ReadBackgroundType().ShouldBe("slideshow");
+        }
+        finally
+        {
+            foreach (var original in originals.Where(x => !string.IsNullOrEmpty(x.Value)))
+            {
+                await Service.SetAsync(original.Key, original.Value!, position, CancellationToken.None);
+            }
+
+            await Service.SetBackgroundColorAsync(color, CancellationToken.None);
+            if (originalSlideshow is { Items.Count: > 0 })
+            {
+                await Service.SetSlideshowAsync(originalSlideshow, CancellationToken.None);
+            }
+        }
+    }
+
     public void Dispose()
     {
         _created?.Dispose();
@@ -51,6 +106,9 @@ public sealed class WallpaperTests : IDisposable
     public async Task Setting_a_wallpaper_through_COM_is_readable_back_and_restorable()
     {
         WindowsOnly.Require();
+        Assert.SkipWhen(WindowsSystemState.ReadBackgroundType() == "spotlight", "Preserve the existing Spotlight mode.");
+        var originalSlideshow = WindowsSystemState.ReadBackgroundType() == "slideshow"
+            ? await Service.GetSlideshowAsync(TestContext.Current.CancellationToken) : null;
         var monitor = Service.GetMonitors() is { Count: > 0 } list ? list[0] : null;
         Assert.SkipWhen(monitor is null, "No monitor/desktop available in this session.");
         var original = await Service.GetAsync(monitor.Id, TestContext.Current.CancellationToken);
@@ -69,6 +127,11 @@ public sealed class WallpaperTests : IDisposable
             {
                 await Service.SetAsync(monitor.Id, original, originalPosition, CancellationToken.None);
             }
+
+            if (originalSlideshow is { Items.Count: > 0 })
+            {
+                await Service.SetSlideshowAsync(originalSlideshow, CancellationToken.None);
+            }
         }
     }
 
@@ -76,6 +139,9 @@ public sealed class WallpaperTests : IDisposable
     public async Task Backup_then_apply_then_restore_returns_the_original_even_if_the_source_file_is_deleted()
     {
         WindowsOnly.Require();
+        Assert.SkipWhen(WindowsSystemState.ReadBackgroundType() == "spotlight", "Preserve the existing Spotlight mode.");
+        var originalSlideshow = WindowsSystemState.ReadBackgroundType() == "slideshow"
+            ? await Service.GetSlideshowAsync(TestContext.Current.CancellationToken) : null;
         var monitors = Service.GetMonitors();
         Assert.SkipWhen(monitors.Count == 0, "No monitor/desktop available in this session.");
         var monitor = monitors[0];
@@ -101,6 +167,11 @@ public sealed class WallpaperTests : IDisposable
             {
                 await Service.SetAsync(monitor.Id, original, originalPosition, CancellationToken.None);
             }
+
+            if (originalSlideshow is { Items.Count: > 0 })
+            {
+                await Service.SetSlideshowAsync(originalSlideshow, CancellationToken.None);
+            }
         }
     }
 
@@ -118,5 +189,29 @@ public sealed class WallpaperTests : IDisposable
         await backup.EnsureBackupAsync(TestContext.Current.CancellationToken);
 
         state.Current.Backup!.CreatedAt.ShouldBe(first);
+    }
+
+    [Fact]
+    public async Task Backup_must_be_persisted_before_wallpaper_can_be_replaced_and_can_retry_after_disk_failure()
+    {
+        WindowsOnly.Require();
+        Assert.SkipWhen(WindowsSystemState.ReadBackgroundType() == "spotlight", "Preserve existing Spotlight mode.");
+        Assert.SkipWhen(Service.GetMonitors().Count == 0, "No desktop is available.");
+        var path = _dir.File("blocked-state.json");
+        Directory.CreateDirectory(path);
+        using var state = new AppStateService(new JsonFileStore<AppState>(path, AppStateJsonContext.Default.AppState,
+            AppState.CurrentSchemaVersion, TimeProvider.System), TimeProvider.System);
+        var backup = new WallpaperBackupService(Service, state, _dir.File("blocked-backup"), _dir.File("cache"),
+            TimeProvider.System, NullLogger<WallpaperBackupService>.Instance);
+
+        await Should.ThrowAsync<IOException>(() => backup.EnsureBackupAsync(TestContext.Current.CancellationToken));
+        var first = state.Current.Backup.ShouldNotBeNull().CreatedAt;
+        await Should.ThrowAsync<IOException>(() => backup.EnsureBackupAsync(TestContext.Current.CancellationToken));
+        Directory.Delete(path);
+        await backup.EnsureBackupAsync(TestContext.Current.CancellationToken);
+
+        File.Exists(path).ShouldBeTrue();
+        state.LastSaveFailed.ShouldBeFalse();
+        state.Current.Backup.CreatedAt.ShouldBe(first);
     }
 }

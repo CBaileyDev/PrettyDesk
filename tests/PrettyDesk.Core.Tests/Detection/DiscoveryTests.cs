@@ -1,3 +1,4 @@
+using System.Text.Json;
 using PrettyDesk.Core.Abstractions;
 using PrettyDesk.Core.Catalog;
 using PrettyDesk.Core.Detection;
@@ -117,7 +118,14 @@ public sealed class InstalledGameScannerTests : IDisposable
     {
         var epic = _dir.File("Manifests");
         Directory.CreateDirectory(epic);
-        File.WriteAllText(Path.Combine(epic, "a.item"), """{ "DisplayName": "Fortnite", "InstallLocation": "C:\\Epic\\Fortnite", "LaunchExecutable": "FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe" }""");
+        var location = _dir.File("Fortnite");
+        Directory.CreateDirectory(location);
+        File.WriteAllText(Path.Combine(epic, "a.item"), JsonSerializer.Serialize(new
+        {
+            DisplayName = "Fortnite",
+            InstallLocation = location,
+            LaunchExecutable = @"FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe",
+        }));
         File.WriteAllText(Path.Combine(epic, "b.item"), """{ "DisplayName": "Half", "InstallLocation": "C:\\x", "bIsIncompleteInstall": true }""");
         File.WriteAllText(Path.Combine(epic, "c.item"), "{ not json");
         File.WriteAllText(Path.Combine(epic, "d.item"), "[1,2]");
@@ -154,6 +162,122 @@ public sealed class InstalledGameScannerTests : IDisposable
         };
 
         InstalledGameScanner.MatchCatalog(catalog, installed).Select(g => g.Id).ShouldBe(["cs2", "fortnite"]);
+    }
+
+    [Fact]
+    public void A_locked_epic_manifest_does_not_hide_other_installed_games()
+    {
+        var epic = _dir.File("Epic");
+        Directory.CreateDirectory(epic);
+        var locked = Path.Combine(epic, "a.item");
+        File.WriteAllText(locked, "{}");
+        var location = _dir.File("Good");
+        Directory.CreateDirectory(location);
+        File.WriteAllText(Path.Combine(epic, "b.item"), JsonSerializer.Serialize(new
+        {
+            DisplayName = "Good",
+            InstallLocation = location,
+            LaunchExecutable = "good.exe",
+        }));
+        using var handle = File.Open(locked, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+
+        new InstalledGameScanner(null, epic).Scan().ShouldHaveSingleItem().DisplayName.ShouldBe("Good");
+    }
+
+    [Fact]
+    public void Invalid_library_path_does_not_hide_games_in_later_libraries()
+    {
+        var steam = _dir.File("Steam");
+        var blocked = _dir.File("Blocked");
+        var good = _dir.File("Good");
+        Directory.CreateDirectory(Path.Combine(steam, "steamapps"));
+        var escapedBlocked = blocked.Replace("\\", "\\\\", StringComparison.Ordinal);
+        var escapedGood = good.Replace("\\", "\\\\", StringComparison.Ordinal);
+        File.WriteAllText(Path.Combine(steam, "steamapps", "libraryfolders.vdf"),
+            "\"libraryfolders\" { \"1\" \"" + escapedBlocked + "\0\" \"2\" {\"path\" \"" + escapedGood + "\"} }");
+        Manifest(good, 570, "Dota 2", "dota 2 beta");
+
+        new InstalledGameScanner(steam, null).Scan().ShouldHaveSingleItem().SteamAppId.ShouldBe(570u);
+    }
+
+    [Fact]
+    public void Legacy_library_layout_is_scanned()
+    {
+        var steam = _dir.File("Steam");
+        var second = _dir.File("Second");
+        Directory.CreateDirectory(Path.Combine(steam, "steamapps"));
+        File.WriteAllText(Path.Combine(steam, "steamapps", "libraryfolders.vdf"),
+            "\"libraryfolders\" { \"1\" \"" + second.Replace("\\", "\\\\", StringComparison.Ordinal) + "\" }");
+        Manifest(second, 570, "Dota 2", "dota 2 beta");
+
+        new InstalledGameScanner(steam, null).Scan().ShouldHaveSingleItem().SteamAppId.ShouldBe(570u);
+    }
+
+    [Fact]
+    public void Locked_libraryfolders_file_does_not_hide_the_primary_library()
+    {
+        var steam = _dir.File("Steam");
+        Manifest(steam, 730, "CS2", "CS2");
+        var folders = Path.Combine(steam, "steamapps", "libraryfolders.vdf");
+        File.WriteAllText(folders, "{}");
+        using var handle = File.Open(folders, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+
+        new InstalledGameScanner(steam, null).Scan().ShouldHaveSingleItem().SteamAppId.ShouldBe(730u);
+    }
+
+    [Fact]
+    public void Epic_shared_executable_hints_respect_path_disambiguation()
+    {
+        var catalog = new CatalogDocument
+        {
+            Games = [Game("poe2", configure: b => { b.Exe.Add("PathOfExile.exe"); b.Path.Add("Path of Exile 2"); })],
+        };
+        var installed = new[] { new InstalledGame("epic", @"D:\Games\Path of Exile", "PathOfExile.exe", null, "PoE1") };
+
+        InstalledGameScanner.MatchCatalog(catalog, installed).ShouldBeEmpty();
+    }
+
+    [Fact]
+    public void Epic_bootstrappers_match_exact_titles_with_trademark_marks_but_not_DLC()
+    {
+        var catalog = new CatalogDocument
+        {
+            Games =
+            [
+                Game("rl", configure: b => b.Exe.Add("RocketLeague.exe")) with { DisplayName = "Rocket League" },
+                Game("cyberpunk", configure: b => b.Exe.Add("Cyberpunk2077.exe")) with { DisplayName = "Cyberpunk 2077" },
+            ],
+        };
+        var installed = new[]
+        {
+            new InstalledGame("epic", "local", "Binaries/Win64/Launcher.exe", null, "Rocket League®"),
+            new InstalledGame("epic", "local", "redprelauncher.exe", null, "Cyberpunk 2077: Phantom Liberty"),
+        };
+
+        InstalledGameScanner.MatchCatalog(catalog, installed).Select(g => g.Id).ShouldBe(["rl"]);
+    }
+
+    [Fact]
+    public void Epic_stale_manifests_and_addon_content_are_not_installed_games()
+    {
+        var epic = _dir.File("Epic");
+        Directory.CreateDirectory(epic);
+        var location = _dir.File("Installed");
+        Directory.CreateDirectory(location);
+        File.WriteAllText(Path.Combine(epic, "missing.item"), JsonSerializer.Serialize(new
+        {
+            DisplayName = "Gone",
+            InstallLocation = _dir.File("Gone"),
+            LaunchExecutable = "gone.exe",
+        }));
+        File.WriteAllText(Path.Combine(epic, "addon.item"), JsonSerializer.Serialize(new
+        {
+            DisplayName = "Addon",
+            InstallLocation = location,
+            LaunchExecutable = "",
+        }));
+
+        new InstalledGameScanner(null, epic).Scan().ShouldBeEmpty();
     }
 }
 

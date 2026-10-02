@@ -44,8 +44,21 @@ public abstract class SettingsSection
     public Dictionary<string, JsonElement>? Extra { get; set; }
 }
 
+[JsonConverter(typeof(CamelEnumConverter<AppThemePreference>))]
+public enum AppThemePreference
+{
+    System,
+    Light,
+    Dark,
+}
+
 public sealed class GeneralSettings : SettingsSection
 {
+    public AppThemePreference Theme { get; set; } = AppThemePreference.System;
+    public bool DesktopClock { get; set; }
+    public bool DesktopNowPlaying { get; set; }
+    public bool DesktopVisualizer { get; set; }
+    public string? ClockMonitorId { get; set; }
     public bool StartWithWindows { get; set; } = true;
     public bool RestoreOnExit { get; set; }
     public bool Paused { get; set; }
@@ -87,6 +100,7 @@ public sealed class DefaultSettings : SettingsSection
 public sealed class GameSettings : SettingsSection
 {
     public bool Enabled { get; set; } = true;
+    public bool PrefetchWallpapers { get; set; } = true;
     public WallpaperMode Mode { get; set; } = WallpaperMode.Rotate;
     public string? FixedWallpaperId { get; set; }
     public List<string> Excluded { get; set; } = [];
@@ -123,7 +137,7 @@ public sealed class NotificationSettings : SettingsSection
     public bool UnknownGames { get; set; } = true;
 }
 
-public sealed class AppSettings : SettingsSection
+public sealed class AppSettings : SettingsSection, IJsonFileValidatable
 {
     public const int CurrentSchemaVersion = 1;
 
@@ -150,6 +164,16 @@ public sealed class AppSettings : SettingsSection
     }
 
     public bool IsGameEnabled(string gameId) => !Games.TryGetValue(gameId, out var game) || game.Enabled;
+
+    // Nullable annotations do not validate collection elements during JSON deserialization.
+    public bool IsValid() =>
+        Default.Selection.Collections.All(s => !string.IsNullOrWhiteSpace(s)) &&
+        Default.Selection.Wallpapers.All(s => !string.IsNullOrWhiteSpace(s)) &&
+        Default.Selection.Excluded.All(s => !string.IsNullOrWhiteSpace(s)) &&
+        Games.Values.All(g => g is not null && g.Excluded.All(s => !string.IsNullOrWhiteSpace(s))) &&
+        CustomGames.All(g => g is not null && !string.IsNullOrWhiteSpace(g.Id) && !string.IsNullOrWhiteSpace(g.DisplayName) &&
+            g.ExeNames.All(s => !string.IsNullOrWhiteSpace(s)) && g.Wallpapers.All(s => !string.IsNullOrWhiteSpace(s))) &&
+        double.IsFinite(Content.MaxCacheGB) && Content.MaxCacheGB is >= 0.1 and <= 100;
 }
 
 [JsonSourceGenerationOptions(
@@ -158,6 +182,7 @@ public sealed class AppSettings : SettingsSection
     PropertyNameCaseInsensitive = true,
     ReadCommentHandling = JsonCommentHandling.Skip,
     AllowTrailingCommas = true,
+    RespectNullableAnnotations = true,
     WriteIndented = true,
     DefaultIgnoreCondition = JsonIgnoreCondition.Never)]
 [JsonSerializable(typeof(AppSettings))]

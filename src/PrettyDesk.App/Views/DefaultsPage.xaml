@@ -8,7 +8,7 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:DefaultsViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
     <StackPanel AllowDrop="True" Drop="OnDrop" DragOver="OnDragOver">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Defaults_Title}" />
       <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_Intro}" />
@@ -23,20 +23,20 @@
         </ItemsControl.ItemsPanel>
         <ItemsControl.ItemTemplate>
           <DataTemplate DataType="{x:Type vm:CollectionCardViewModel}">
-            <Border Width="200" Margin="0,0,16,16" Style="{StaticResource CardStyle}" Padding="0">
+            <Border Width="236" Margin="0,0,16,20" Style="{StaticResource CardStyle}" Padding="0">
               <StackPanel>
-                <Grid Height="112">
-                  <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="8,8,0,0" />
-                  <Border CornerRadius="8,8,0,0" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
+                <Grid Height="172">
+                  <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="24,24,0,0" />
+                  <Border CornerRadius="24,24,0,0" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
                     <Border.Background>
                       <ImageBrush ImageSource="{Binding PreviewPath, Converter={StaticResource PathToImage}, ConverterParameter=400}" Stretch="UniformToFill" />
                     </Border.Background>
                   </Border>
                 </Grid>
-                <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Margin="12,10,12,0" TextTrimming="CharacterEllipsis" />
-                <TextBlock Text="{Binding CountText}" Style="{StaticResource MutedStyle}" FontSize="12" Margin="12,0" />
-                <TextBlock Text="{Binding StatusText}" Style="{StaticResource MutedStyle}" FontSize="12" Margin="12,0,12,0" />
-                <ui:ToggleSwitch Margin="12,6,12,12" IsChecked="{Binding IsSelected, Mode=TwoWay}" AutomationProperties.Name="{Binding ToggleLabel}" />
+                <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Margin="16,14,16,4" TextTrimming="CharacterEllipsis" />
+                <TextBlock Text="{Binding CountText}" Style="{StaticResource MutedStyle}" FontSize="12" Margin="16,0" />
+                <TextBlock Text="{Binding StatusText}" Style="{StaticResource MutedStyle}" FontSize="12" Margin="16,2,16,0" />
+                <ui:ToggleSwitch Margin="16,12,16,16" IsChecked="{Binding IsSelected, Mode=TwoWay}" AutomationProperties.Name="{Binding ToggleLabel}" />
               </StackPanel>
             </Border>
           </DataTemplate>

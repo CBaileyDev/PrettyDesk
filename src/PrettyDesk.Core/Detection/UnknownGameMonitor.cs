@@ -47,7 +47,22 @@ public sealed class UnknownGameMonitor : IDisposable
 
     public event Action<UnknownGameHint>? HintAvailable;
 
-    public void Start() => _timer ??= _time.CreateTimer(_ => Tick(), null, SampleInterval, SampleInterval);
+    public void Start() => _timer ??= _time.CreateTimer(_ => SafeTick(), null, SampleInterval, SampleInterval);
+
+    /// <summary>Timer entry point: a failing query or hint subscriber must not crash the process from a threadpool thread.</summary>
+    private void SafeTick()
+    {
+        try
+        {
+            Tick();
+        }
+#pragma warning disable CA1031 // NFR-13: hints are best-effort; skip this sample and try again at the next interval.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            // intentionally ignored
+        }
+    }
 
     public void Dispose() => _timer?.Dispose();
 

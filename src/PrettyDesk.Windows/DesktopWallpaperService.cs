@@ -6,6 +6,7 @@ using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.System.Com;
 using Windows.Win32.UI.Shell;
+using Windows.Win32.UI.Shell.Common;
 using Windows.Win32.UI.WindowsAndMessaging;
 
 namespace PrettyDesk.Windows;
@@ -51,7 +52,7 @@ public sealed partial class DesktopWallpaperService : IWallpaperSetter, IMonitor
                     session.SetPositionIfDifferent(position);
                     session.SetWallpaper(monitorId, path);
                     return true;
-                }, cancellationToken);
+                }, cancellationToken).ConfigureAwait(false);
                 return;
             }
             catch (Exception ex) when (ex is not OperationCanceledException || !cancellationToken.IsCancellationRequested)
@@ -62,7 +63,7 @@ public sealed partial class DesktopWallpaperService : IWallpaperSetter, IMonitor
                     break;
                 }
 
-                await Task.Delay(TimeSpan.FromMilliseconds(500 * (1 << (attempt - 1))), _time, cancellationToken);
+                await Task.Delay(TimeSpan.FromMilliseconds(500 * (1 << (attempt - 1))), _time, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -75,7 +76,7 @@ public sealed partial class DesktopWallpaperService : IWallpaperSetter, IMonitor
 
     public async Task<string?> GetAsync(string monitorId, CancellationToken cancellationToken = default)
     {
-        var path = await RunAsync(session => session.GetWallpaper(monitorId), cancellationToken);
+        var path = await RunAsync(session => session.GetWallpaper(monitorId), cancellationToken).ConfigureAwait(false);
         return string.IsNullOrEmpty(path) ? null : path;
     }
 
@@ -91,6 +92,23 @@ public sealed partial class DesktopWallpaperService : IWallpaperSetter, IMonitor
 
     public Task<uint> GetBackgroundColorAsync(CancellationToken cancellationToken = default) =>
         RunAsync(session => session.GetBackgroundColor(), cancellationToken);
+
+    public Task<SlideshowSnapshot> GetSlideshowAsync(CancellationToken cancellationToken = default) =>
+        RunAsync(session => session.GetSlideshow(), cancellationToken);
+
+    public Task SetSlideshowAsync(SlideshowSnapshot snapshot, CancellationToken cancellationToken = default) =>
+        RunAsync(session =>
+        {
+            session.SetSlideshow(snapshot);
+            return true;
+        }, cancellationToken);
+
+    public Task SetEnabledAsync(bool enabled, CancellationToken cancellationToken = default) =>
+        RunAsync(session =>
+        {
+            session.SetEnabled(enabled);
+            return true;
+        }, cancellationToken);
 
     public Task SetBackgroundColorAsync(uint colorRef, CancellationToken cancellationToken = default) =>
         RunAsync(session =>
@@ -134,7 +152,9 @@ public sealed partial class DesktopWallpaperService : IWallpaperSetter, IMonitor
         var worker = CurrentWorker();
         try
         {
-            return await worker.Enqueue(work).WaitAsync(CallTimeout, _time, cancellationToken);
+            // GetMonitors is also called synchronously by WPF view-model construction. Returning to the
+            // caller's dispatcher here would deadlock that thread while it waits for this task.
+            return await worker.Enqueue(work).WaitAsync(CallTimeout, _time, cancellationToken).ConfigureAwait(false);
         }
         catch (TimeoutException)
         {
@@ -263,6 +283,8 @@ public enum DesktopPosition
 }
 
 /// <summary>A live <c>IDesktopWallpaper</c>. Thread-affine: create, use and dispose on the STA thread only.</summary>
+public sealed record SlideshowSnapshot(IReadOnlyList<string> Items, uint Options, uint Interval);
+
 internal sealed unsafe class ComSession : IDisposable
 {
     private IDesktopWallpaper* _wallpaper;
@@ -313,6 +335,94 @@ internal sealed unsafe class ComSession : IDisposable
     }
 
     public void SetBackgroundColor(uint colorRef) => _wallpaper->SetBackgroundColor(new COLORREF(colorRef));
+
+    public void SetEnabled(bool enabled) => _wallpaper->Enable(enabled);
+
+    public SlideshowSnapshot GetSlideshow()
+    {
+        IShellItemArray* array = null;
+        try
+        {
+            _wallpaper->GetSlideshow(&array);
+            uint count;
+            array->GetCount(&count);
+            var items = new List<string>();
+            for (uint i = 0; i < count; i++)
+            {
+                IShellItem* item = null;
+                try
+                {
+                    array->GetItemAt(i, &item);
+                    PWSTR name;
+                    item->GetDisplayName(SIGDN.SIGDN_DESKTOPABSOLUTEPARSING, &name);
+                    if (TakeString(name) is { } path)
+                    {
+                        items.Add(path);
+                    }
+                }
+                finally
+                {
+                    if (item is not null)
+                    {
+                        item->Release();
+                    }
+                }
+            }
+
+            DESKTOP_SLIDESHOW_OPTIONS options;
+            uint interval;
+            _wallpaper->GetSlideshowOptions(&options, &interval);
+            return new SlideshowSnapshot(items, (uint)options, interval);
+        }
+        finally
+        {
+            if (array is not null)
+            {
+                array->Release();
+            }
+        }
+    }
+
+    public void SetSlideshow(SlideshowSnapshot snapshot)
+    {
+        ArgumentNullException.ThrowIfNull(snapshot);
+        if (snapshot.Items.Count == 0)
+        {
+            throw new ArgumentException("A slideshow needs its original source items.", nameof(snapshot));
+        }
+
+        var pidls = new nint[snapshot.Items.Count];
+        IShellItemArray* array = null;
+        try
+        {
+            for (var i = 0; i < pidls.Length; i++)
+            {
+                PInvoke.SHParseDisplayName(snapshot.Items[i], null, out var pidl, 0).ThrowOnFailure();
+                pidls[i] = (nint)pidl;
+            }
+
+            fixed (nint* pointers = pidls)
+            {
+                PInvoke.SHCreateShellItemArrayFromIDLists((uint)pidls.Length, (ITEMIDLIST**)pointers, &array).ThrowOnFailure();
+            }
+
+            _wallpaper->SetSlideshow(array);
+            _wallpaper->SetSlideshowOptions((DESKTOP_SLIDESHOW_OPTIONS)snapshot.Options, snapshot.Interval);
+            _wallpaper->Enable(true);
+        }
+        finally
+        {
+            if (array is not null)
+            {
+                array->Release();
+            }
+
+            foreach (var pidl in pidls)
+            {
+                PInvoke.CoTaskMemFree((void*)pidl);
+            }
+        }
+    }
 
     public List<MonitorInfo> GetMonitors()
     {

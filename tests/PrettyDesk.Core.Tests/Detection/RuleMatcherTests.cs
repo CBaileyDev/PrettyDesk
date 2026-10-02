@@ -10,6 +10,20 @@ namespace PrettyDesk.Core.Tests.Detection;
 
 public class RuleMatcherTests
 {
+    [Fact]
+    public void Background_process_scan_keeps_temporary_allocations_small()
+    {
+        var games = Enumerable.Range(0, 46).Select(i => Game($"g{i}", configure: b => b.Exe.Add($"g{i}.exe"))).ToArray();
+        var matcher = new RuleMatcher(Registry(games), null);
+        var processes = Enumerable.Range(0, 1000).Select(i => Proc(i + 1, "background.exe")).ToArray();
+        matcher.Match(processes, 0);
+        var before = GC.GetAllocatedBytesForCurrentThread();
+        var matches = matcher.Match(processes, 0);
+        var allocated = GC.GetAllocatedBytesForCurrentThread() - before;
+        matches.ShouldBeEmpty();
+        allocated.ShouldBeLessThan(10_000);
+    }
+
     private static IReadOnlyList<GameMatch> Run(GameRegistry registry, FakeDetails? details, uint steam, params ProcessInfo[] processes) =>
         new RuleMatcher(registry, details).Match(processes, steam);
 

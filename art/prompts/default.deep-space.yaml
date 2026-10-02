@@ -50,9 +50,9 @@ wallpapers:
         wallpaper. The planet arc sweeps across the lower third, with the sunrise flare at about 62% of the
         height and black space above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "663835326fc7a57434d39879b404ca156bd30db4c6dbf97707b7e13eca94b5b1", P: "742ca3a3afeb2481e3ea340b9edeb43dc35f4b3eb2f5b4868d79dfadc3959d0d", U: "afb4df8ae33b10cf9a2d83d353c48df478a8304675f084a978ad4f379f017082"}
 
   - id: ds-02
     title: "Eclipse Corona"

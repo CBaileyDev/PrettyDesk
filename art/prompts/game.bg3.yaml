@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The spire cluster rises through the center from 20% to 60% of the height, with the river
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "296409df9e041d4f1d2a9d296053c855f4a49c1c7536ff9cd0d0bd96457f0334"}
 
   - id: bg3.minimal-01
     title: "Campfire Under the Stars"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The campfire glows at about 70% of the height in the lower center, with the starfield filling
         the sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8508420b3753596ffccb8eab50f610847a122d2e7d8ce94c2eae2bd092ba9831"}
 
   - id: bg3.mood-01
     title: "Arcane Ruins in Moonlight"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The arches rise at the center from 30% to 65% of the height, with the glowing cracks below.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "77733c9e5a49a2d0f71a92825f5a86ecbf6e65b8958227f0c5bd7e9502167bce"}
 
   - id: bg3.alt-01
     title: "Forest Glade at Morning"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The light shafts fall through the center with the standing stones at about 52% of the height.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6ba3477708c66d7b31d5fe862d4afe8212b9271902846421ab00e3c1f2c5d64d"}

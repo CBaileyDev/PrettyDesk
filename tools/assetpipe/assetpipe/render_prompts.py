@@ -63,6 +63,8 @@ def render_pack(pack: Pack) -> str:
             f"- **Avoid:** {', '.join(insp.get('avoid', []))}",
             "",
         ]
+    if pack.art_mode == "named-fan-art":
+        lines += [f"**Named fan art:** {', '.join(pack.named_subjects)}. Original compositions; verify car geometry, no HUD/text/logos, safe crops and distribution rights before release.", ""]
     lines += ["**Style bible** (paste first):", "", _block(pack.style_bible)]
     lines += [_wallpaper(pack, wp) for wp in pack.wallpapers]
     return "\n".join(lines)

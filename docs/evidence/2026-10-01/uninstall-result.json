@@ -1,0 +1,20 @@
+{
+  "ExitCode": 0,
+  "HookRan": true,
+  "RunKeyRemoved": true,
+  "UserDataKept": true,
+  "Monitors": [
+    {
+      "Width": 2560,
+      "Height": 1440,
+      "HashMatches": true
+    },
+    {
+      "Width": 2560,
+      "Height": 1440,
+      "HashMatches": true
+    }
+  ],
+  "PositionRestored": true,
+  "ColorRestored": true
+}

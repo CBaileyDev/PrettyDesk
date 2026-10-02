@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The portal glows at the center at about 35% of the height, with the towers rising on both
         sides and the street below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "4d47b77a10dd31d74234531949a3b3ec4b767240f3ee6305bc435dda33ed0f61"}
 
   - id: marvel-rivals.minimal-01
     title: "One Open Portal"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The portal ring hangs at about 42% of the height in the center, with empty halftone sky
         around it and rooftops at the bottom. Same lighting, palette, materials and rendering style. Keep the
         bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "b6a533d07d3850a579f1e21f7e83ae0a2ff41bebf14754ab8ae0a2c4d1262c4b"}
 
   - id: marvel-rivals.mood-01
     title: "Rain on Neon Rooftops"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The rooftop sits in the lower third with the water tower at about 55% of the height and
         glowing clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e375ea03a4dc6d5079c1a32203180cfcf3211616135e5fc1421849b4dc767585"}
 
   - id: marvel-rivals.alt-01
     title: "Floating City Fragments"
@@ -183,6 +183,6 @@ wallpapers:
         wallpaper. The largest fragment floats at about 50% of the height in the center, with pale halftone sky
         around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2227b149fcc9a9f18efddad18bfb6e826d3502551e6c873a85bbe18e533f3174"}

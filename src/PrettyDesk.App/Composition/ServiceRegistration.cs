@@ -111,13 +111,16 @@ public static class ServiceRegistration
         services.AddSingleton<IWallpaperBackup>(sp => sp.GetRequiredService<WallpaperBackupService>());
         services.AddSingleton<ShellMessageWindow>();
         services.AddSingleton<SessionEvents>();
+        services.AddSingleton<DesktopClockService>();
+        services.AddSingleton<NowPlayingSource>();
+        services.AddSingleton<IPlaybackControls>(sp => sp.GetRequiredService<NowPlayingSource>());
         services.AddSingleton<UserNotificationStateSource>();
-        services.AddSingleton<IInstalledGameScanner>(_ =>
+        services.AddSingleton<IInstalledGameScanner>(sp =>
         {
             using var steamKey = Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam");
             var steamPath = steamKey?.GetValue("SteamPath") as string;
             var epic = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Epic", "EpicGamesLauncher", "Data", "Manifests");
-            return new InstalledGameScanner(steamPath, epic);
+            return new WindowsInstalledGameScanner(new InstalledGameScanner(steamPath, epic), sp.GetRequiredService<ICatalogProvider>());
         });
     }
 

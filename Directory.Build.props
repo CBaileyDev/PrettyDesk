@@ -8,9 +8,17 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
-    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == ''">win-x64;win-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers Condition="'$(RuntimeIdentifier)' != ''">$(RuntimeIdentifier)</RuntimeIdentifiers>
+    <NuGetLockFilePath Condition="'$(RuntimeIdentifiers)' == 'win-x64' Or '$(RuntimeIdentifier)' == 'win-x64'">$(MSBuildProjectDirectory)/packages.win-x64.lock.json</NuGetLockFilePath>
+    <NuGetLockFilePath Condition="'$(RuntimeIdentifiers)' == 'win-arm64' Or '$(RuntimeIdentifier)' == 'win-arm64'">$(MSBuildProjectDirectory)/packages.win-arm64.lock.json</NuGetLockFilePath>
+    <NuGetLockFilePath Condition="'$(PublishReadyToRun)' == 'true' And ('$(RuntimeIdentifiers)' == 'win-x64' Or '$(RuntimeIdentifier)' == 'win-x64')">$(MSBuildProjectDirectory)/packages.publish.win-x64.lock.json</NuGetLockFilePath>
+    <NuGetLockFilePath Condition="'$(PublishReadyToRun)' == 'true' And ('$(RuntimeIdentifiers)' == 'win-arm64' Or '$(RuntimeIdentifier)' == 'win-arm64')">$(MSBuildProjectDirectory)/packages.publish.win-arm64.lock.json</NuGetLockFilePath>
     <Company>PrettyDesk</Company>
     <Product>PrettyDesk</Product>
     <Copyright>PrettyDesk contributors</Copyright>
+    <!-- Source archives have no Git tags; a deterministic development version avoids MinVer warnings. -->
+    <MinVerVersionOverride Condition="'$(MinVerVersionOverride)' == '' And !Exists('$(MSBuildThisFileDirectory).git')">1.0.0-dev.0</MinVerVersionOverride>
   </PropertyGroup>
 </Project>

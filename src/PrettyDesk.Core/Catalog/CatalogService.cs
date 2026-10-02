@@ -17,6 +17,8 @@ public sealed record CatalogServiceOptions(string BundledCatalogPath, string Cac
 public sealed partial class CatalogService : ICatalogProvider, IDisposable
 {
     public const int MaxCatalogBytes = 8 * 1024 * 1024;
+    public const int MaxSignatureBytes = 1024;
+    public static readonly TimeSpan TransferTimeout = TimeSpan.FromMinutes(2);
     public static readonly TimeSpan RefreshInterval = TimeSpan.FromHours(24);
 
     private readonly CatalogServiceOptions _options;
@@ -91,9 +93,11 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
         await _refreshGate.WaitAsync(cancellationToken);
         try
         {
-            return await RefreshCoreAsync(cancellationToken);
+            using var timeout = new CancellationTokenSource(TransferTimeout, _time);
+            using var transfer = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeout.Token);
+            return await RefreshCoreAsync(transfer.Token);
         }
-        catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or IOException or UnauthorizedAccessException)
+        catch (Exception ex) when (ex is HttpRequestException or OperationCanceledException or IOException or UnauthorizedAccessException)
         {
             if (!cancellationToken.IsCancellationRequested)
             {
@@ -139,9 +143,9 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
         response.EnsureSuccessStatusCode();
         var catalogBytes = await ReadBoundedAsync(response, ct);
 
-        using var sigResponse = await _http.GetAsync(_options.ContentBaseUrl + "catalog.json.sig", ct);
+        using var sigResponse = await _http.GetAsync(_options.ContentBaseUrl + "catalog.json.sig", HttpCompletionOption.ResponseHeadersRead, ct);
         sigResponse.EnsureSuccessStatusCode();
-        var signature = await sigResponse.Content.ReadAsStringAsync(ct);
+        var signature = Encoding.UTF8.GetString(await ReadBoundedAsync(sigResponse, ct, MaxSignatureBytes));
 
         var check = Evaluate(catalogBytes, signature);
         if (!check.Ok)
@@ -195,11 +199,16 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
                 return null;
             }
 
+            if (new FileInfo(path).Length > MaxCatalogBytes)
+            {
+                return null;
+            }
+
             var bytes = File.ReadAllBytes(path);
             if (signatureRequired)
             {
                 var sigPath = path + ".sig";
-                if (!File.Exists(sigPath) || !_verifier.VerifyBase64(bytes, File.ReadAllText(sigPath)))
+                if (!File.Exists(sigPath) || new FileInfo(sigPath).Length > MaxSignatureBytes || !_verifier.VerifyBase64(bytes, File.ReadAllText(sigPath)))
                 {
                     return null;
                 }
@@ -214,9 +223,9 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
         }
     }
 
-    private static async Task<byte[]> ReadBoundedAsync(HttpResponseMessage response, CancellationToken ct)
+    private static async Task<byte[]> ReadBoundedAsync(HttpResponseMessage response, CancellationToken ct, int maxBytes = MaxCatalogBytes)
     {
-        if (response.Content.Headers.ContentLength > MaxCatalogBytes)
+        if (response.Content.Headers.ContentLength > maxBytes)
         {
             throw new HttpRequestException("catalog too large");
         }
@@ -228,7 +237,7 @@ public sealed partial class CatalogService : ICatalogProvider, IDisposable
         while ((read = await stream.ReadAsync(chunk, ct)) > 0)
         {
             buffer.Write(chunk, 0, read);
-            if (buffer.Length > MaxCatalogBytes)
+            if (buffer.Length > maxBytes)
             {
                 throw new HttpRequestException("catalog too large");
             }

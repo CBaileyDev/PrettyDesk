@@ -18,7 +18,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
       <StackPanel MaxWidth="640" HorizontalAlignment="Left">
         <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Add_Title}" />
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Add_Intro}" />

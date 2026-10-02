@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
         black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "66596f90c81477f246d7b77eda5acb4d149ad48467a7b1ee205b7a94134b988a"}
 
   - id: poe2.minimal-01
     title: "Single Red Moon"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The moon hangs at about 38% of the height in the upper center, with its reflection in the
         black water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2f8dcff24f78660c8aeab7c0589dcac64c8329a55a017be9e54367d078a51e86"}
 
   - id: poe2.mood-01
     title: "Torchlit Stair into the Dark"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The stair runs down through the center, with the torchlight at about 55% of the height and
         darkness below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "1049f4d42a44607e15d9492bb2da6854c5d938d4bf8ec6269c246021a424ae4e"}
 
   - id: poe2.alt-01
     title: "Drowned Temple at Dawn"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The temple front rises at about 48% of the height in the center, with its reflection in the
         water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "fab1fd18f67cebc05724b991a8c097088a2c89930ef0d4c6bf0f668e4c714ff6"}

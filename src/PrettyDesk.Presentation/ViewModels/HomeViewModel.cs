@@ -209,7 +209,7 @@ public sealed partial class HomeViewModel : ViewModelBase
         var minY = list.Min(m => m.Top);
         var maxX = list.Max(m => m.Left + m.PixelWidth);
         var maxY = list.Max(m => m.Top + m.PixelHeight);
-        var scale = (CanvasWidth - (Gap * (list.Count - 1))) / Math.Max(1, maxX - minX);
+        var scale = CanvasWidth / Math.Max(1, maxX - minX);
         CanvasHeight = Math.Max(120, ((maxY - minY) * scale) + (Gap * 2));
 
         var status = _controller.Status;
@@ -221,7 +221,7 @@ public sealed partial class HomeViewModel : ViewModelBase
             var label = Strings.Format(m.IsPrimary ? Strings.Home_PrimaryDisplay : Strings.Home_DisplayLabel, i + 1, m.PixelWidth, m.PixelHeight);
             Monitors.Add(new MonitorPreviewViewModel(
                 m.Id,
-                ((m.Left - minX) * scale) + (Gap * i),
+                (m.Left - minX) * scale,
                 ((m.Top - minY) * scale) + Gap,
                 m.PixelWidth * scale,
                 m.PixelHeight * scale,

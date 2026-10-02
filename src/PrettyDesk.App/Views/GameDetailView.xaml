@@ -16,7 +16,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
       <StackPanel>
         <Button Content="{x:Static res:Strings.Game_Back}" Command="{Binding BackCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Game_Back}" />
         <TextBlock Style="{StaticResource PageTitleStyle}" Margin="0,16,0,0" Text="{Binding Name}" />
@@ -24,6 +24,10 @@
         <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0">
           <StackPanel>
             <ui:ToggleSwitch IsChecked="{Binding Enabled, Mode=TwoWay}" Content="{x:Static res:Strings.Game_Enabled}" AutomationProperties.Name="{x:Static res:Strings.Game_Enabled}" />
+            <StackPanel Margin="0,12,0,0" Visibility="{Binding IsCustom, Converter={StaticResource InverseBoolToVisibility}}">
+              <ui:ToggleSwitch IsChecked="{Binding PrefetchWallpapers, Mode=TwoWay}" Content="{x:Static res:Strings.Game_Prefetch}" AutomationProperties.Name="{x:Static res:Strings.Game_Prefetch}" />
+              <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{x:Static res:Strings.Game_PrefetchHelp}" />
+            </StackPanel>
             <StackPanel Margin="0,16,0,0" Orientation="Horizontal">
               <RadioButton GroupName="GameMode" Content="{x:Static res:Strings.Game_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_ModeRotate}" />
               <RadioButton GroupName="GameMode" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
@@ -35,10 +39,12 @@
 
         <!-- Pack download state (catalog games) -->
         <StackPanel Orientation="Horizontal" Margin="0,12,0,0" Visibility="{Binding PackStatusText, Converter={StaticResource NullToCollapsed}}">
-          <Border Style="{StaticResource ChipStyle}"><TextBlock Text="{Binding PackStatusText}" FontSize="12" Style="{StaticResource BodyStyle}" /></Border>
+          <Border Style="{StaticResource ChipStyle}" VerticalAlignment="Center"><TextBlock Text="{Binding PackStatusText}" FontSize="12" Style="{StaticResource BodyStyle}" VerticalAlignment="Center" TextAlignment="Center" /></Border>
           <Button Margin="12,0,0,0" Content="{x:Static res:Strings.Game_Download}" Command="{Binding DownloadCommand}" Visibility="{Binding CanDownload, Converter={StaticResource BoolToVisibility}}"
                   AutomationProperties.Name="{x:Static res:Strings.Game_Download}" />
         </StackPanel>
+
+        <TextBlock Text="{Binding PackStatusHelp}" Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Visibility="{Binding PackStatusHelp, Converter={StaticResource NullToCollapsed}}" />
 
         <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Game_WallpapersTitle}" />
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_NoWallpapers}" Visibility="{Binding HasWallpapers, Converter={StaticResource InverseBoolToVisibility}}" />

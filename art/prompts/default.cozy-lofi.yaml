@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The desk and lamp sit in the lower center at about 60% of the height, with the rainy window
         rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "204575c5e6a318f6532e2506ecb6f5d2279781f83fc3c0d666e16ba99056e6de", P: "fa8c0f36c97b6db7e943be3e9e617e7d0ea2dbda507edb2b21254f92e9fb73e3", U: "cb9fc3f319d1321cef5d617cdddad6cc5a012d7ac0d5396bfcecb854ade9f5c8"}
 
   - id: cl-02
     title: "Reading Nook at Night"

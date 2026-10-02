@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The tree glows at the center at about 35% of the height, with the ruined bridge in the fog
         below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8078367c4364c141c587b79bea8ee35d7ed6ef38ac923ecd9478777b4c6df806"}
 
   - id: elden-ring.minimal-01
     title: "Lone Bridge in the Mist"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The bridge arcs through the lower center at about 55% of the height, with empty misty sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "5fd732e501147c9854ac16ec7fd5d6ba91c757b08de888d12c5206dd784ff584"}
 
   - id: elden-ring.mood-01
     title: "Graveyard of Giant Swords"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The blades lean through the center from 35% to 70% of the height, with fog filling the
         bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7268ace9de163a380f7021d0595004b3359fa7ec90bcf7a33efb371dcb777680"}
 
   - id: elden-ring.alt-01
     title: "Golden Fields at Dawn"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The golden tree sits at about 36% of the height, with grass filling the lower half and
         pillars at the center. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "cea2b803c784f692235216bb4301523fa34847327b619715002a2191b7c5e6ae"}

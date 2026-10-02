@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The arched passage rises through the center from 30% to 75% of the height, with gold light on
         the wall at the left and tiled roofs above. Same lighting, palette, materials and rendering style. Keep
         the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "58f9e58bf140ef4441bb8ecb49932aac1f2e0e3347ba6723fa778485257ef14e"}
 
   - id: cs2.minimal-01
     title: "Lone Doorway"
@@ -98,9 +98,9 @@ wallpapers:
         wallpaper. The arched blue doorway is centered horizontally and spans roughly 30–75% of the height, with
         its long shadow falling toward the lower left. Same lighting, palette, materials and rendering style.
         Keep the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f243168fd2f0751584581ec572ea97ffdffeb3f7fa32b75254bac29830657d97"}
 
   - id: cs2.mood-01
     title: "Dust in the Light Shaft"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The light beam falls diagonally from the upper right to a crate stack at about 60% of the
         height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "a63d0d13d068d249938fd5c384e1741b628abbd9fb1ebc400275bed11e7ec95c"}
 
   - id: cs2.alt-01
     title: "Rooftops at Noon"
@@ -182,6 +182,6 @@ wallpapers:
         wallpaper. The rooftops stack down the middle of the frame, the brightest cluster at about 50% of the
         height under a pale sky. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d0ab81fbf3cd34a28777fe564fb15c17f5c0a6c0fe2184b1122185016b6b59ea"}

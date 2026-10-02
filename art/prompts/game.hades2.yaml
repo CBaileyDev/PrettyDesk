@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The moon glows at the center at about 35% of the height, with the columns framing it and the
         steps below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8e6728c6c456ddf3cdd981e78a711154053462b7f5c0aefabf9e45d611b340c3"}
 
   - id: hades2.minimal-01
     title: "Glowing Crossroads"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The crossroads glows at about 62% of the height in the lower center, with the dark void
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d055d778daf32e8af54146a2fc72c3c17b0cc018aefb1c2ca271b218da1100c0"}
 
   - id: hades2.mood-01
     title: "Starlit Dark Sea"
@@ -135,9 +135,9 @@ wallpapers:
         wallpaper. The islet sits at about 58% of the height in the center, with the starry sky above and
         reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6a08d36e823076cae7c932bd7780050e5d7a4a488d7334aa0b0b19b25b8a0122"}
 
   - id: hades2.alt-01
     title: "Marble Temple at Dawn"
@@ -176,6 +176,6 @@ wallpapers:
         wallpaper. The temple stands at about 45% of the height in the center, with the path leading up from
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "84549a1f4d380c9b123857209a7709444161b63d5e89584f50ec61d44a690f64"}

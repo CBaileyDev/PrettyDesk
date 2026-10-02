@@ -1,0 +1,10 @@
+{
+  "Completed": true,
+  "DurationSeconds": 601.6120243,
+  "ProcessId": 32064,
+  "LogicalCores": 32,
+  "Samples": 120,
+  "CpuAveragePercent": 0.013116666666666658,
+  "CpuPeakPercent": 0.078,
+  "PrivateMBPeak": 71.7
+}

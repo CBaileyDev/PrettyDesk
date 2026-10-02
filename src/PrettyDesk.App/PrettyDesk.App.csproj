@@ -17,8 +17,15 @@
     <MinVerTagPrefix>v</MinVerTagPrefix>
     <MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
     <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
+    <DefineConstants Condition="'$(AcceptanceTesting)' == 'true'">$(DefineConstants);PRETTYDESK_ACCEPTANCE</DefineConstants>
+    <!-- Crossgen2 runs on the x64 build host when publishing ARM64. Its host runtime is part of the restore graph;
+         declare it before locked-mode validation so restore and publish agree on that graph. -->
+    <RuntimeIdentifiers Condition="'$(PublishReadyToRun)' == 'true' And '$(RuntimeIdentifier)' == 'win-arm64'">win-arm64;win-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
+    <!-- A tray utility should not retain a large ephemeral heap on high-memory PCs. -->
+    <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="7" />
+    <RuntimeHostConfigurationOption Include="System.GC.HeapHardLimit" Value="33554432" />
     <PackageReference Include="WPF-UI" Version="4.3.0" />
     <PackageReference Include="H.NotifyIcon.Wpf" Version="2.4.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
@@ -44,10 +51,15 @@
     <ApplicationDefinition Remove="App.xaml" />
     <Page Include="App.xaml" />
     <Resource Include="Assets\*.ico" />
+    <Resource Include="Assets\Glass-*.jpg" />
     <EmbeddedResource Include="THIRD-PARTY-NOTICES.txt" LogicalName="THIRD-PARTY-NOTICES.txt" />
     <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
       <_Parameter1>ContentBaseUrl</_Parameter1>
       <_Parameter2>$(ContentBaseUrl)</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute" Condition="'$(AcceptanceTesting)' == 'true'">
+      <_Parameter1>AcceptanceDataRoot</_Parameter1>
+      <_Parameter2>$(AcceptanceDataRoot)</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>

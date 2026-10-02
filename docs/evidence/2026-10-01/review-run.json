@@ -1,0 +1,4 @@
+{
+  "ProcessId": 44608,
+  "Scope": "Fixed offline wallpaper, detection initially disabled to preserve real running game; isolated settings; timed real Quit at 640 seconds"
+}

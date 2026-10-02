@@ -74,13 +74,15 @@ public sealed class CatalogSignatureVerifier
 
 /// <summary>
 /// Public keys compiled into the app (FR-CON-2: "the app accepts a list of public keys").
-/// OWNER-DECISION: generate a production key pair with <c>catalog-sign keygen</c>, keep the private key in the CI secret
-/// store (or offline), and paste the base64 public key here. Until then remote catalogs are rejected (fail closed) and
-/// the app runs on its bundled snapshot.
+/// The private key is held outside the checkout, encrypted with Windows CurrentUser DPAPI.
+/// Only this public SubjectPublicKeyInfo is distributed. Add a new key before rotating the signing key.
 /// </summary>
 public static class TrustedKeys
 {
-    public static IReadOnlyList<string> PublicKeysBase64 { get; } = [];
+    public static IReadOnlyList<string> PublicKeysBase64 { get; } =
+    [
+        "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEKISQnDOl/cde6mucXpchSTmPuYrTbZmwP7M3OdqlZE4Om2C4Fs9S/akiBrxpAcDiG72uPhI1hFN51ESYpSQXA==",
+    ];
 
     public static CatalogSignatureVerifier CreateVerifier() =>
         new(PublicKeysBase64.Select(Convert.FromBase64String).ToList());

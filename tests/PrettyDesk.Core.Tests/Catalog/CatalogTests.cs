@@ -138,6 +138,30 @@ public class CatalogValidatorTests
     [Fact]
     public void Malformed_json_is_rejected() => Check("{ nope").Rejection.ShouldBe(CatalogRejection.Malformed);
 
+    [Theory]
+    [InlineData("packs", "null")]
+    [InlineData("games", "[null]")]
+    [InlineData("wallpapers", "[null]")]
+    [InlineData("detection", "null")]
+    [InlineData("exeNames", "[null]")]
+    [InlineData("variants", "{\"16x9\":null}")]
+    [InlineData("focal", "null")]
+    public void Explicit_nulls_are_rejected_without_throwing(string name, string replacement)
+    {
+        var node = System.Text.Json.Nodes.JsonNode.Parse(Json())!;
+        var parent = name switch
+        {
+            "packs" or "games" => node,
+            "wallpapers" => node["packs"]![0]!,
+            "detection" => node["games"]![0]!,
+            "exeNames" => node["games"]![0]!["detection"]!,
+            _ => node["packs"]![0]!["wallpapers"]![0]!,
+        };
+        parent[name] = System.Text.Json.Nodes.JsonNode.Parse(replacement);
+
+        Check(node.ToJsonString()).Ok.ShouldBeFalse();
+    }
+
     [Fact]
     public void Newer_schema_is_rejected() =>
         Check(Json(d => d["schemaVersion"] = 2)).Rejection.ShouldBe(CatalogRejection.UnsupportedSchema);
@@ -462,6 +486,47 @@ public sealed class CatalogServiceTests : IDisposable
 
     private static void SpinUntil(Func<bool> condition) =>
         SpinWait.SpinUntil(condition, TimeSpan.FromSeconds(10)).ShouldBeTrue();
+
+    [Fact]
+    public async Task A_stalled_catalog_body_times_out_and_keeps_the_loaded_catalog()
+    {
+        using var stalled = new StalledStream();
+        using var service = Create(new FakeHttpHandler(_ => new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = new StreamContent(stalled),
+        }));
+        var run = service.RefreshAsync(TestContext.Current.CancellationToken);
+        await stalled.Started.Task.WaitAsync(TestContext.Current.CancellationToken);
+        _time.Advance(CatalogService.TransferTimeout);
+
+        (await run).ShouldBeFalse();
+        service.Current.CatalogVersion.ShouldBe("2026.10.01.1");
+    }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task Oversized_signature_is_rejected_with_or_without_content_length(bool withLength)
+    {
+        var newer = CatalogJson("2026.10.02.1");
+        var signature = Encoding.UTF8.GetBytes(Sign(newer) + new string(' ', 2048));
+        var handler = new FakeHttpHandler(req =>
+        {
+            if (!req.RequestUri!.AbsolutePath.EndsWith(".sig", StringComparison.Ordinal))
+            {
+                return FakeHttpHandler.Ok(newer);
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = withLength ? new ByteArrayContent(signature) : new StreamContent(new MemoryStream(signature)),
+            };
+        });
+        using var service = Create(handler);
+
+        (await service.RefreshAsync(TestContext.Current.CancellationToken)).ShouldBeFalse();
+        service.Current.CatalogVersion.ShouldBe("2026.10.01.1");
+    }
 }
 
 public class CatalogDefaultsRegressionTests

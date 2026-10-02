@@ -4,7 +4,8 @@ using PrettyDesk.Core.Settings;
 
 namespace PrettyDesk.Windows;
 
-public sealed record RestoreResult(int MonitorsRestored, bool NothingToRestore, string? Note);
+/// <param name="UsedBackupCopies">True when a wallpaper now points into <c>backup</c>, so that folder must outlive an uninstall data wipe.</param>
+public sealed record RestoreResult(int MonitorsRestored, bool NothingToRestore, string? Note, bool UsedBackupCopies = false);
 
 /// <summary>
 /// Snapshots the user's original wallpaper(s) before PrettyDesk's very first apply and restores them on request or at
@@ -43,6 +44,11 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
     {
         if (_state.Current.Backup is not null)
         {
+            if (_state.LastSaveFailed && !_state.SaveNow())
+            {
+                throw new IOException("PrettyDesk couldn't save your original wallpaper backup. Free some disk space or check folder access before retrying.");
+            }
+
             return;
         }
 
@@ -53,6 +59,12 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
         }
 
         Directory.CreateDirectory(_backupDirectory);
+        if (WindowsSystemState.ReadBackgroundType() == "spotlight")
+        {
+            // Windows exposes no supported API to resume desktop Spotlight. Preserve the original
+            // behavior rather than replacing it with a picture which cannot be restored exactly.
+            throw new InvalidOperationException("Windows Spotlight is active. Switch Background to Picture or Slideshow in Windows Settings before enabling PrettyDesk; your Spotlight background has been left unchanged.");
+        }
         var backup = new BackupMetadata
         {
             CreatedAt = _time.GetUtcNow(),
@@ -60,6 +72,15 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
             BackgroundColor = await _wallpaper.GetBackgroundColorAsync(cancellationToken),
             BackgroundType = WindowsSystemState.ReadBackgroundType(),
         };
+
+        if (backup.BackgroundType == "slideshow")
+        {
+            // Do not apply anything until the source and timing have been captured successfully.
+            var slideshow = await _wallpaper.GetSlideshowAsync(cancellationToken);
+            backup.SlideshowItems = slideshow.Items.ToList();
+            backup.SlideshowOptions = slideshow.Options;
+            backup.SlideshowInterval = slideshow.Interval;
+        }
 
         for (var i = 0; i < monitors.Count; i++)
         {
@@ -73,7 +94,10 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
         }
 
         _state.Current.Backup = backup;
-        _state.SaveNow();
+        if (!_state.SaveNow())
+        {
+            throw new IOException("PrettyDesk couldn't save your original wallpaper backup. Free some disk space or check folder access before retrying.");
+        }
         LogBackedUp(backup.Monitors.Count, backup.BackgroundType);
     }
 
@@ -87,6 +111,27 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
         }
 
         var current = _wallpaper.GetMonitors();
+        if (current.Count == 0 && backup.Monitors.Count > 0)
+        {
+            // GetMonitors folds a COM failure or timeout into an empty list. That is not "nothing to restore": report it so the
+            // user (or the uninstall log) knows the original was NOT put back.
+            throw new InvalidOperationException("Could not read the monitor list, so the original wallpaper was not restored.");
+        }
+
+        if (backup.BackgroundType == "solid")
+        {
+            await _wallpaper.SetBackgroundColorAsync(backup.BackgroundColor, cancellationToken);
+            await _wallpaper.SetEnabledAsync(false, cancellationToken);
+            return new RestoreResult(current.Count, NothingToRestore: false, null);
+        }
+
+        if (backup.BackgroundType == "slideshow" && backup.SlideshowItems.Count > 0)
+        {
+            await _wallpaper.SetPositionAsync((DesktopPosition)backup.Position, cancellationToken);
+            await _wallpaper.SetBackgroundColorAsync(backup.BackgroundColor, cancellationToken);
+            await _wallpaper.SetSlideshowAsync(new SlideshowSnapshot(backup.SlideshowItems, backup.SlideshowOptions, backup.SlideshowInterval), cancellationToken);
+            return new RestoreResult(current.Count, NothingToRestore: false, null);
+        }
         var usable = backup.Monitors
             .Select(entry => (Entry: entry, Path: ResolveFile(entry)))
             .Where(x => x.Path is not null)
@@ -109,13 +154,29 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
         await _wallpaper.SetBackgroundColorAsync(backup.BackgroundColor, cancellationToken);
 
         var note = backup.BackgroundType is "slideshow" or "spotlight"
-            ? $"Your desktop was using {backup.BackgroundType} before PrettyDesk. Windows does not allow apps to turn that back on, so your last picture was restored. You can re-enable it in Settings → Personalization → Background."
+            ? $"Your desktop was using {backup.BackgroundType} before PrettyDesk. Automatic restoration is unavailable for this saved backup, so your last picture was restored. Re-enable it in Settings → Personalization → Background."
             : null;
-        return new RestoreResult(restored, NothingToRestore: false, note);
+        var usedCopies = false;
+        foreach (var monitor in current)
+        {
+            var path = (usable.FirstOrDefault(x => x.Entry.MonitorId == monitor.Id).Path ?? usable[0].Path)!;
+            usedCopies |= path.StartsWith(_backupDirectory, StringComparison.OrdinalIgnoreCase);
+        }
+
+        return new RestoreResult(restored, NothingToRestore: false, note, usedCopies);
     }
 
+    /// <summary>
+    /// Prefers the user's own original file (it lives outside our data folder, so deleting our data at uninstall cannot blank
+    /// the desktop) and falls back to the backup copy when the original has since been moved or deleted.
+    /// </summary>
     private string? ResolveFile(BackupMonitorEntry entry)
     {
+        if (entry.OriginalPath is not null && File.Exists(entry.OriginalPath))
+        {
+            return entry.OriginalPath;
+        }
+
         if (entry.BackupFile is not null)
         {
             var copy = Path.Combine(_backupDirectory, entry.BackupFile);
@@ -125,7 +186,7 @@ public sealed partial class WallpaperBackupService : IWallpaperBackup
             }
         }
 
-        return entry.OriginalPath is not null && File.Exists(entry.OriginalPath) ? entry.OriginalPath : null;
+        return null;
     }
 
     private string? CopyOriginal(int index, string? original)

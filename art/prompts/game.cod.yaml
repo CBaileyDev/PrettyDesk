@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The tallest tower rises at the center from 25% to 60% of the height, with the glow behind it
         and the river below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "264c68983ad6b23d39d9d8a35b8ea543d0eb871aaf9d1dbca94fb1f78f93edef"}
 
   - id: cod.minimal-01
     title: "Lone Watchtower in Fog"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tower rises from the lower center to about 38% of the height, with empty gradient sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ce8946e0e9275a06d0dbd37c6f39ce2fa559f3ab2740d0ff210b00840979c173"}
 
   - id: cod.mood-01
     title: "Rain-Soaked Compound"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The lamp glows at about 45% of the height, with its reflection on the wet ground below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "50aad283f1087697b4caa0e7b1df6605fd5ed32961186db991fc500e2f997a2b"}
 
   - id: cod.alt-01
     title: "Hazy Morning Plain"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The road runs up the center to the distant hills at about 50% of the height, under pale hazy
         sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "5520c090ff8982ba86382bda3bcab8b91a4c16e9973bb448d56b34318a81ac74"}

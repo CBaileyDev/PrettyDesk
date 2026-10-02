@@ -55,6 +55,8 @@ internal sealed class FakeConflicts : IEnvironmentConflictSource
 
 internal sealed class FakeContentBrowser : IContentBrowser
 {
+    public Dictionary<string, PackDownloadPlan> Plans { get; } = [];
+    public PackDownloadPlan GetDownloadPlan(string packId, IReadOnlyList<MonitorInfo> monitors) => Plans.GetValueOrDefault(packId) ?? new(true, true, 1024, ["16x9"], false);
     public Dictionary<string, string> Previews { get; } = [];
     public Dictionary<string, PackProgress> States { get; } = [];
     public List<UserImage> Images { get; } = [];

@@ -9,12 +9,14 @@ namespace PrettyDesk.App.Services;
 /// <summary>
 /// Velopack against the GitHub Releases feed of the app repository (SPEC §9): channels win-{arch}-stable and win-{arch}-beta. Only installed copies
 /// update themselves; portable zips and dev builds report <see cref="IsSupported"/> = false and the About page says so.
-/// Signature-verified by Velopack (package checksums); nothing about the user or machine is sent beyond the HTTPS request itself.
+/// Velopack checks package integrity against feed checksums. Publisher authenticity also depends on the release account,
+/// HTTPS and production code signing; checksums alone are not signatures. No user or game data is sent.
 /// </summary>
 public sealed class VelopackUpdateBackend : IUpdateBackend
 {
     private readonly ISettingsProvider _settings;
     private readonly Lazy<UpdateManager?> _manager;
+    private readonly Func<bool, UpdateManager> _createManager;
 
     /// <summary>The opaque token handed to <see cref="UpdateCoordinator"/> for a release found by this session.</summary>
     private sealed record Found(UpdateManager Manager, UpdateInfo Info);
@@ -22,7 +24,15 @@ public sealed class VelopackUpdateBackend : IUpdateBackend
     public VelopackUpdateBackend(ISettingsProvider settings)
     {
         _settings = settings;
+        _createManager = Create;
         _manager = new Lazy<UpdateManager?>(TryCreateDefault);
+    }
+
+    internal VelopackUpdateBackend(ISettingsProvider settings, Func<bool, UpdateManager> createManager)
+    {
+        _settings = settings;
+        _createManager = createManager;
+        _manager = new Lazy<UpdateManager?>(() => createManager(false));
     }
 
     public bool IsSupported => _manager.Value is { IsInstalled: true, IsPortable: false };
@@ -33,7 +43,7 @@ public sealed class VelopackUpdateBackend : IUpdateBackend
     public async Task<AvailableUpdate?> CheckAsync(CancellationToken cancellationToken)
     {
         // The channel can change while the app runs, so each check builds a manager for the channel chosen now.
-        var manager = Create(_settings.Current.General.BetaUpdates);
+        var manager = _createManager(_settings.Current.General.BetaUpdates);
         var info = await manager.CheckForUpdatesAsync().WaitAsync(cancellationToken);
         return info is null ? null : new AvailableUpdate(info.TargetFullRelease.Version.ToString(), new Found(manager, info));
     }

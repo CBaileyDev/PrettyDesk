@@ -12,13 +12,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with: { global-json-file: global.json, dotnet-version: 10.0.x }
+      - run: dotnet restore PrettyDesk.sln --locked-mode
       - run: dotnet build src/PrettyDesk.Core -c Release
       - run: dotnet test --project tests/PrettyDesk.Core.Tests -c Release
       - run: dotnet test --project tests/PrettyDesk.Presentation.Tests -c Release
       - run: python3 tools/strings.py check
       - name: Third-party notices are up to date
         run: |
-          dotnet restore src/PrettyDesk.App
+          dotnet restore src/PrettyDesk.App --locked-mode
           python3 tools/gen_notices.py --check
 
   assetpipe:
@@ -28,6 +29,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Authored documentation links
+        run: python tools/check_docs.py
       - run: pip install pyyaml pillow numpy jsonschema pytest
       - run: python -m pytest -q tools/assetpipe
       - name: Prompts lint clean and PROMPTS.md up to date
@@ -41,12 +44,12 @@ jobs:
         with: { fetch-depth: 0 } # MinVer reads the git history and tags
       - uses: actions/setup-dotnet@v4
         with: { global-json-file: global.json, dotnet-version: 10.0.x }
-      - run: dotnet restore PrettyDesk.sln
+      - run: dotnet restore PrettyDesk.sln --locked-mode
       - run: dotnet format PrettyDesk.sln --verify-no-changes --no-restore
       - name: Build (warnings are errors) win-x64
         run: dotnet build PrettyDesk.sln -c Release --no-restore -p:Platform="Any CPU"
       - name: Build win-arm64 app
-        run: dotnet build src/PrettyDesk.App -c Release -r win-arm64
+        run: dotnet build src/PrettyDesk.App -c Release -r win-arm64 -p:RestoreLockedMode=true
       - name: Core + Windows tests
         run: |
           dotnet test --project tests/PrettyDesk.Core.Tests -c Release

@@ -10,7 +10,7 @@
                  d:DataContext="{d:DesignInstance Type=vm:OnboardingViewModel}"
                  Title="PrettyDesk" Width="760" Height="600" MinWidth="640" MinHeight="520"
                  WindowStartupLocation="CenterScreen"
-                 WindowBackdropType="Mica"
+                 Background="{DynamicResource DeskAmbientBrush}" FontFamily="Segoe UI Variable, Segoe UI" WindowBackdropType="Mica"
                  ExtendsContentIntoTitleBar="True"
                  AutomationProperties.Name="PrettyDesk">
   <Grid>
@@ -109,6 +109,54 @@
         </StackPanel>
       </ScrollViewer>
 
+      <!-- Wallpapers matched to the user's displays -->
+      <Grid Visibility="{Binding Step, Converter={StaticResource EnumEqualsToVisibility}, ConverterParameter=Wallpapers}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+          <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Onboard_WallpapersTitle}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_WallpapersBody}" Margin="0,0,0,12" />
+          <Border Style="{StaticResource CardStyle}" Padding="12" Margin="0,0,0,12">
+            <StackPanel>
+              <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding DisplaySummary}" />
+              <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_DisplayFitHelp}" Margin="0,4,0,0" />
+            </StackPanel>
+          </Border>
+        </StackPanel>
+        <ScrollViewer x:Name="WallpaperList" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+          <StackPanel>
+            <ItemsControl ItemsSource="{Binding WallpaperChoices}" Focusable="False" AutomationProperties.Name="{x:Static res:Strings.Onboard_WallpapersTitle}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:OnboardingPackViewModel}">
+                  <Border Style="{StaticResource CardStyle}" Padding="12" Margin="0,0,0,8">
+                    <StackPanel>
+                      <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" IsEnabled="{Binding CanSelect}" AutomationProperties.Name="{Binding Name}">
+                        <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding Name}" />
+                      </CheckBox>
+                      <TextBlock Style="{StaticResource MutedStyle}" Text="{Binding Status}" Margin="26,4,0,0" AutomationProperties.LiveSetting="Polite" />
+                      <ProgressBar Maximum="100" Value="{Binding Progress}" Margin="26,8,0,0" Visibility="{Binding IsDownloading, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{Binding Name}" />
+                    </StackPanel>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_NoGamePacks}" Visibility="{Binding HasWallpaperChoices, Converter={StaticResource InverseBoolToVisibility}}" />
+          </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" Margin="0,8,0,0" Visibility="{Binding HasWallpaperChoices, Converter={StaticResource BoolToVisibility}}">
+          <Grid>
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource BodyStyle}" Text="{Binding DownloadSummary}" VerticalAlignment="Center" Margin="0,0,12,0" AutomationProperties.LiveSetting="Polite" />
+            <ui:Button Grid.Column="1" Content="{x:Static res:Strings.Onboard_DownloadSelected}" Command="{Binding DownloadSelectedCommand}" AutomationProperties.Name="{x:Static res:Strings.Onboard_DownloadSelected}" />
+          </Grid>
+          <CheckBox IsChecked="{Binding DownloadInBackground, Mode=TwoWay}" Content="{x:Static res:Strings.Onboard_DownloadBackground}" Margin="0,12,0,0" AutomationProperties.Name="{x:Static res:Strings.Onboard_DownloadBackground}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_BackgroundHelp}" Margin="0,4,0,0" />
+        </StackPanel>
+      </Grid>
+
       <!-- Start with Windows -->
       <StackPanel Visibility="{Binding Step, Converter={StaticResource EnumEqualsToVisibility}, ConverterParameter=Startup}">
         <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Onboard_StartupTitle}" />
@@ -132,8 +180,8 @@
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
       <TextBlock Style="{StaticResource MutedStyle}" VerticalAlignment="Center" Text="{Binding StepText}" />
-      <Button Grid.Column="1" Margin="0,0,8,0" MinWidth="96" Content="{x:Static res:Strings.Common_Back}" Command="{Binding BackCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Back}" />
-      <Button Grid.Column="2" MinWidth="120" Content="{Binding NextText}" Command="{Binding NextCommand}" IsDefault="True" AutomationProperties.Name="{Binding NextText}" />
+      <ui:Button Grid.Column="1" Margin="0,0,8,0" MinWidth="96" Content="{x:Static res:Strings.Common_Back}" Command="{Binding BackCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Back}" />
+      <ui:Button Grid.Column="2" Appearance="Primary" MinWidth="120" Content="{Binding NextText}" Command="{Binding NextCommand}" IsDefault="True" AutomationProperties.Name="{Binding NextText}" />
     </Grid>
   </Grid>
 </ui:FluentWindow>

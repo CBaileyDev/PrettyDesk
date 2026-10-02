@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The hover-rail curves through the center at about 42% of the height, with terraces below and
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7cdb5e795958e31c4e787e47f505c65bad959421e4d98a182c2a9119d7d4e63a"}
 
   - id: overwatch2.minimal-01
     title: "Cherry Blossom Lane"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The blossom branch hangs from the upper right at about 30% of the height, with the lane
         curving below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7b07afed4106a892f9b9944e040094a5260c51cc58d4283c1a3a91dd18b91565"}
 
   - id: overwatch2.mood-01
     title: "Nordic Harbor Dusk"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The pavilion glows at about 58% of the height with the harbor reflection below and dusk sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "4066868cf8f7145d3c8d42557e1bb152aaf85bc628a9057d59cdcbdc9d1a9820"}
 
   - id: overwatch2.alt-01
     title: "Sunny Plaza"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The fountain sits in the lower center at about 55% of the height with curved glass and sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d66ae2cbc1b752aa2a3c0d48e6c206f147bd836fb6a5cabad49663867af911c9"}

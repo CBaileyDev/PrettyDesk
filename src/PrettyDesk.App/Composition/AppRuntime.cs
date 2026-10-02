@@ -35,6 +35,7 @@ public sealed partial class AppRuntime : IAsyncDisposable
     public void StartUi()
     {
         Get<TrayService>().Start();
+        Get<DesktopClockService>().Start();
         Get<WindowManager>().QuitRequested += OnQuitRequested;
 
         var settings = Get<SettingsService>();
@@ -121,6 +122,7 @@ public sealed partial class AppRuntime : IAsyncDisposable
 
     public async ValueTask DisposeAsync()
     {
+        Get<DesktopClockService>().Dispose();
         await StopAsync();
         Get<AppStateService>().Dispose();
         await Get<DetectionService>().DisposeAsync();

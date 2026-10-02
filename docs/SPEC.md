@@ -1,11 +1,13 @@
 # PrettyDesk — Product & Engineering Specification
 
-> **Audience:** the implementing engineer/agent (Claude Sonnet 5.5) and the project owner.
+> **Audience:** implementing engineers, agents and the project owner.
 > **Status:** v1.0 spec, 2026-10-01.
+> **Scope:** baseline requirements, not a completion report. See [current architecture](ARCHITECTURE.md),
+> [dated review evidence](REVIEW_2026-10-01.md) and [next-update proposals](updates/README.md).
 > **Companion docs:**
 > - [`ART_DIRECTION.md`](./ART_DIRECTION.md): wallpaper aesthetics, prompt-writing rules, prompt file format
 > - [`GAME_CATALOG_SEED.md`](./GAME_CATALOG_SEED.md): first game list, detection hints and art direction for each game
-> - [`../CLAUDE.md`](../CLAUDE.md): working rules for the implementing agent
+> - [`../AGENTS.md`](../AGENTS.md): shared working rules and repository navigation
 
 Requirement keywords: **MUST** means required for v1.0. **SHOULD** means required unless there's a documented reason not to. **MAY** marks an optional or stretch item. Requirements have IDs (e.g. `FR-DET-3`) so commits, tests and PRs can reference them.
 

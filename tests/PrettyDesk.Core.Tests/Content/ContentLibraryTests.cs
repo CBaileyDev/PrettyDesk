@@ -92,6 +92,121 @@ public sealed class ContentLibraryTests : IDisposable
         Directory.Exists(_packs.VersionDirectory("game.cs2", version)) ? Directory.GetFiles(_packs.VersionDirectory("game.cs2", version)).Select(f => Path.GetFileName(f)).OrderBy(n => n, StringComparer.Ordinal).ToArray() : [];
 
     [Fact]
+    public async Task Missing_host_is_an_explicit_unavailable_state_without_network()
+    {
+        _catalog.Current = MakeCatalog(1) with { ContentBaseUrl = "" };
+        var requests = 0;
+        var library = Create(new FakeHttpHandler(_ => { requests++; return FakeHttpHandler.Status(HttpStatusCode.NotFound); }));
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Unavailable);
+        await library.EnsurePackAsync("game.cs2", [Hd], CancellationToken.None);
+        requests.ShouldBe(0);
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Unavailable);
+    }
+
+    [Fact]
+    public async Task Two_1440p_landscape_displays_share_one_variant_and_preview_matches_downloads()
+    {
+        var library = Create();
+        MonitorInfo[] displays = [new("one", 0, 0, 2560, 1440, true), new("two", 2560, 0, 2560, 1440, false)];
+        var plan = library.GetDownloadPlan("game.cs2", displays);
+        plan.VariantKeys.ShouldBe(["16x9"]);
+        plan.MissingBytes.ShouldBe(20000); // two wallpapers, each with a 5000-byte image and thumbnail
+        await library.EnsurePackAsync("game.cs2", displays, TestContext.Current.CancellationToken);
+        LocalFiles().Length.ShouldBe(4);
+        LocalFiles().ShouldNotContain(f => f.Contains("21x9", StringComparison.Ordinal));
+        library.GetDownloadPlan("game.cs2", displays).MissingBytes.ShouldBe(0);
+    }
+
+    [Fact]
+    public async Task A_locally_ready_landscape_pack_still_needs_an_ultrawide_variant()
+    {
+        var library = Create();
+        await library.EnsurePackAsync("game.cs2", [Hd], TestContext.Current.CancellationToken);
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Ready);
+        var plan = library.GetDownloadPlan("game.cs2", [Hd, Ultra]);
+        plan.VariantKeys.ShouldBe(["16x9", "21x9"]);
+        plan.MissingBytes.ShouldBe(10000);
+        _catalog.Current = _catalog.Current with { ContentBaseUrl = "" };
+        library.GetDownloadPlan("game.cs2", [Hd]).MissingBytes.ShouldBe(0);
+        library.GetDownloadPlan("game.cs2", [Ultra]).CanDownload.ShouldBeFalse();
+    }
+
+    [Fact]
+    public void Portrait_fallback_and_missing_displays_are_explained_in_the_plan()
+    {
+        var library = Create();
+        var portrait = library.GetDownloadPlan("game.cs2", [new("portrait", 0, 0, 1440, 2560, true)]);
+        portrait.VariantKeys.ShouldBe(["16x9"]);
+        portrait.UsesFallback.ShouldBeTrue();
+        library.GetDownloadPlan("game.cs2", []).HasWallpapers.ShouldBeFalse();
+        library.GetDownloadPlan("missing", [Hd]).HasWallpapers.ShouldBeFalse();
+    }
+
+    [Fact]
+    public async Task A_new_display_format_requested_during_download_is_not_lost()
+    {
+        var handler = new GatedHandler(Serve);
+        var library = Create(handler);
+        var landscape = library.EnsurePackAsync("game.cs2", [Hd], TestContext.Current.CancellationToken);
+        SpinWait.SpinUntil(() => handler.Active > 0, TimeSpan.FromSeconds(10)).ShouldBeTrue();
+        var mixed = library.EnsurePackAsync("game.cs2", [Hd, Ultra], TestContext.Current.CancellationToken);
+        handler.Open();
+        await Task.WhenAll(landscape, mixed);
+        library.GetDownloadPlan("game.cs2", [Hd, Ultra]).MissingBytes.ShouldBe(0);
+        LocalFiles().Length.ShouldBe(6);
+    }
+
+    [Fact]
+    public async Task Actual_portrait_and_ultrawide_art_are_selected_for_a_mixed_setup()
+    {
+        foreach (var wallpaper in _catalog.Current.Packs.Single().Wallpapers)
+        {
+            var variants = wallpaper.Variants.ToDictionary(v => v.Key, v => v.Value);
+            variants["9x16"] = Publish($"packs/game.cs2/v1/{wallpaper.Id}_9x16.jpg", 2160, 3840, 23);
+            wallpaper.Variants = variants;
+        }
+
+        var library = Create();
+        MonitorInfo[] displays = [Hd, Ultra, new("portrait", 0, 0, 1440, 2560, false)];
+        var plan = library.GetDownloadPlan("game.cs2", displays);
+        plan.VariantKeys.ShouldBe(["16x9", "21x9", "9x16"]);
+        plan.UsesFallback.ShouldBeFalse();
+        await library.EnsurePackAsync("game.cs2", displays, TestContext.Current.CancellationToken);
+        LocalFiles().Length.ShouldBe(8);
+    }
+
+    [Fact]
+    public async Task No_display_downloads_no_files_and_cancellation_clears_downloading_status()
+    {
+        var handler = new GatedHandler(Serve);
+        var library = Create(handler);
+        await library.EnsurePackAsync("game.cs2", [], TestContext.Current.CancellationToken);
+        handler.Active.ShouldBe(0);
+        LocalFiles().ShouldBeEmpty();
+        using var cancel = new CancellationTokenSource();
+        var download = library.EnsurePackAsync("game.cs2", [Hd], cancel.Token);
+        SpinWait.SpinUntil(() => handler.Active > 0, TimeSpan.FromSeconds(10)).ShouldBeTrue();
+        await cancel.CancelAsync();
+        await download;
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.NotDownloaded);
+    }
+
+    [Fact]
+    public async Task Explicit_retry_bypasses_automatic_failure_cooldown()
+    {
+        var failing = true;
+        var library = Create(new FakeHttpHandler(r => failing ? FakeHttpHandler.Status(HttpStatusCode.InternalServerError) : Serve(r)));
+        await library.EnsurePackAsync("game.cs2", [Hd], CancellationToken.None);
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Failed);
+        failing = false;
+        await library.EnsurePackAsync("game.cs2", [Hd], CancellationToken.None);
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Failed);
+        library.RetryPack("game.cs2", [Hd]);
+        await library.EnsurePackAsync("game.cs2", [Hd], CancellationToken.None);
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Ready);
+    }
+
+    [Fact]
     public void Disposing_twice_is_harmless()
     {
         var library = Create();
@@ -175,6 +290,42 @@ public sealed class ContentLibraryTests : IDisposable
             library.EnsurePackAsync("game.cs2", [Hd], TestContext.Current.CancellationToken));
 
         handler.Requests.Count.ShouldBe(4);
+    }
+
+    [Fact]
+    public async Task Requests_from_different_threads_share_the_same_inflight_task()
+    {
+        var handler = new GatedHandler(Serve);
+        var library = Create(handler);
+        using var barrier = new Barrier(9);
+        var runs = new Task[8];
+        var threads = Enumerable.Range(0, runs.Length).Select(index => new Thread(() =>
+        {
+            barrier.SignalAndWait(TestContext.Current.CancellationToken);
+            runs[index] = library.EnsurePackAsync("game.cs2", [Hd], TestContext.Current.CancellationToken);
+        })).ToArray();
+        foreach (var thread in threads)
+        {
+            thread.Start();
+        }
+
+        barrier.SignalAndWait(TestContext.Current.CancellationToken);
+        foreach (var thread in threads)
+        {
+            thread.Join(TimeSpan.FromSeconds(10)).ShouldBeTrue();
+        }
+
+        try
+        {
+            runs.ShouldAllBe(run => ReferenceEquals(run, runs[0]));
+        }
+        finally
+        {
+            handler.Open();
+            await Task.WhenAll(runs);
+        }
+
+        library.GetPackState("game.cs2").State.ShouldBe(PackStateKind.Ready);
     }
 
     [Fact]

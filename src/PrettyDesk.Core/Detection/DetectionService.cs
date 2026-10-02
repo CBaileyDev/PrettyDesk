@@ -35,6 +35,15 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
     private ITimer? _deadlineTimer;
     private Task? _loop;
     private int _disposed;
+    private ProcessInfo[]? _lastProcesses;
+    private IReadOnlyList<GameMatch>? _lastMatches;
+    private RuleMatcher? _lastMatcher;
+    private uint _lastSteam;
+    private int _lastForeground;
+    private DateTimeOffset _lastBroadEvaluation;
+
+    /// <summary>In-memory work counter for tests and diagnostics; never stores process lists.</summary>
+    public long BroadEvaluationCount { get; private set; }
 
     public DetectionService(
         IProcessSource processes,
@@ -88,7 +97,6 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
             _config = configuration;
         }
 
-        _tracker.UpdateOptions(configuration.Options);
         _pollTimer?.Change(TimeSpan.Zero, configuration.PollInterval);
         Signal();
     }
@@ -102,8 +110,11 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
             config = _config;
         }
 
+        _tracker.UpdateOptions(config.Options);
+
         if (!config.Enabled)
         {
+            _lastMatches = null;
             _tracker.Reset();
             ScheduleDeadline();
             return;
@@ -111,8 +122,27 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
 
         var processes = _processes.Snapshot();
         var foreground = _foreground?.Current;
-        var matches = config.Matcher.Match(processes, _steam?.CurrentAppId ?? 0);
-        _tracker.Observe(_time.GetUtcNow(), matches, foreground?.Pid ?? 0);
+        var now = _time.GetUtcNow();
+        var steam = _steam?.CurrentAppId ?? 0;
+        var foregroundPid = foreground?.Pid ?? 0;
+        // Keep the existing snapshot cadence so missed starts still meet FR-DET-2. Only reuse name-only
+        // matching for an unchanged active session. Live path/title rules always re-query their candidates.
+        var ordered = processes.OrderBy(p => p.Pid).ToArray();
+        if (_lastMatches is null || Active is null || Active.InGrace || config.Matcher.RequiresLiveDetails(processes) ||
+            !ReferenceEquals(config.Matcher, _lastMatcher) || steam != _lastSteam || foregroundPid != _lastForeground ||
+            now - _lastBroadEvaluation >= TimeSpan.FromSeconds(30) || !_lastProcesses!.SequenceEqual(ordered))
+        {
+            _lastMatches = config.Matcher.Match(processes, steam);
+            _lastProcesses = ordered;
+            _lastMatcher = config.Matcher;
+            _lastSteam = steam;
+            _lastForeground = foregroundPid;
+            _lastBroadEvaluation = now;
+            BroadEvaluationCount++;
+        }
+
+        var matches = _lastMatches;
+        _tracker.Observe(now, matches, foregroundPid);
         ScheduleDeadline();
         Observed?.Invoke(new DetectionObservation(foreground?.ExeName, matches.Select(m => m.GameId).ToList()));
     }

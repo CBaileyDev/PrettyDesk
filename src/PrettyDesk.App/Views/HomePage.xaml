@@ -8,9 +8,19 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
     <StackPanel>
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Home_Title}" />
+      <Border CornerRadius="24" Margin="0,8,0,12" BorderBrush="{DynamicResource DeskStrokeBrush}" BorderThickness="1" Visibility="{DynamicResource DeskArtVisibility}">
+        <Border.Background><ImageBrush ImageSource="/PrettyDesk;component/Assets/Glass-Bloom.jpg" Stretch="UniformToFill" /></Border.Background>
+        <StackPanel Margin="28,36" MaxWidth="420" HorizontalAlignment="Left">
+          <TextBlock Text="{x:Static res:Strings.Home_GlassTitle}" FontSize="26" FontWeight="SemiBold" Foreground="#25182C" TextWrapping="Wrap" />
+          <TextBlock Text="{x:Static res:Strings.Home_GlassDetail}" Foreground="#493448" TextWrapping="Wrap" Margin="0,8,0,16" />
+          <Button Content="{x:Static res:Strings.Home_GlassAction}" HorizontalAlignment="Left" Background="#EFFFFFFF" Foreground="#182035"
+                  Command="{Binding DataContext.NavigateToCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{x:Static vm:PageKind.Defaults}"
+                  AutomationProperties.Name="{x:Static res:Strings.Home_GlassAction}" />
+        </StackPanel>
+      </Border>
 
       <!-- Environment conflicts (FR-APPLY-7): detected and explained, never silently fixed. -->
       <ItemsControl ItemsSource="{Binding Banners}" Margin="0,8,0,0" Focusable="False">
@@ -37,6 +47,28 @@
         </ItemsControl.ItemTemplate>
       </ItemsControl>
 
+      <!-- Status card with the primary actions. -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,12,0,0" Padding="26,30">
+        <StackPanel>
+          <StackPanel VerticalAlignment="Center" AutomationProperties.Name="{Binding Headline}">
+            <TextBlock FontSize="20" FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Headline}" />
+            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{Binding Detail}" Visibility="{Binding Detail, Converter={StaticResource NullToCollapsed}}" />
+
+
+    </StackPanel>
+          <WrapPanel Margin="0,20,0,0" VerticalAlignment="Center">
+            <Button Content="{x:Static res:Strings.Home_NextWallpaper}" Command="{Binding NextCommand}" Margin="0,0,8,0" MinWidth="140"
+                    Background="#007AFF" Foreground="White" BorderBrush="#007AFF"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_NextWallpaper}" />
+            <Button Content="{x:Static res:Strings.Home_PauseOneHour}" Command="{Binding PauseForOneHourCommand}" Margin="0,0,8,0"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseOneHour}" />
+            <Button Content="{x:Static res:Strings.Home_PauseUntilResumed}" Command="{Binding PauseUntilResumedCommand}" Margin="0,0,8,0"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseUntilResumed}" />
+            <Button Content="{x:Static res:Strings.Home_Resume}" Command="{Binding ResumeCommand}"
+                    AutomationProperties.Name="{x:Static res:Strings.Home_Resume}" />
+          </WrapPanel>
+        </StackPanel>
+      </Border>
       <!-- To-scale preview of every display with its current wallpaper. -->
       <Border Style="{StaticResource CardStyle}" Margin="0,8,0,0">
         <StackPanel>
@@ -63,13 +95,18 @@
                         <ImageBrush ImageSource="{Binding ThumbnailPath, Converter={StaticResource PathToImage}, ConverterParameter=960}" Stretch="UniformToFill" />
                       </Border.Background>
                     </Border>
-                    <TextBlock Text="{Binding Label}" Foreground="White" FontSize="22" Margin="14,0,0,10" VerticalAlignment="Bottom" />
+
                   </Grid>
                 </DataTemplate>
               </ItemsControl.ItemTemplate>
             </ItemsControl>
           </Viewbox>
 
+          <ItemsControl ItemsSource="{Binding Monitors}" Margin="0,12,0,0">
+            <ItemsControl.ItemTemplate><DataTemplate DataType="{x:Type vm:MonitorPreviewViewModel}">
+              <TextBlock Text="{Binding Label}" Style="{StaticResource BodyStyle}" Margin="0,3" />
+            </DataTemplate></ItemsControl.ItemTemplate>
+          </ItemsControl>
           <StackPanel Visibility="{Binding HasMonitors, Converter={StaticResource InverseBoolToVisibility}}" Margin="0,24" HorizontalAlignment="Center">
             <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" HorizontalAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitors}" />
             <TextBlock Style="{StaticResource MutedStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitorsDetail}" />
@@ -77,29 +114,6 @@
         </StackPanel>
       </Border>
 
-      <!-- Status card with the primary actions. -->
-      <Border Style="{StaticResource CardStyle}" Margin="0,12,0,0">
-        <Grid>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-          </Grid.ColumnDefinitions>
-          <StackPanel VerticalAlignment="Center" AutomationProperties.Name="{Binding Headline}">
-            <TextBlock FontSize="20" FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Headline}" />
-            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{Binding Detail}" Visibility="{Binding Detail, Converter={StaticResource NullToCollapsed}}" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-            <Button Content="{x:Static res:Strings.Home_NextWallpaper}" Command="{Binding NextCommand}" Margin="0,0,8,0" MinWidth="140"
-                    AutomationProperties.Name="{x:Static res:Strings.Home_NextWallpaper}" />
-            <Button Content="{x:Static res:Strings.Home_PauseOneHour}" Command="{Binding PauseForOneHourCommand}" Margin="0,0,8,0"
-                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseOneHour}" />
-            <Button Content="{x:Static res:Strings.Home_PauseUntilResumed}" Command="{Binding PauseUntilResumedCommand}" Margin="0,0,8,0"
-                    AutomationProperties.Name="{x:Static res:Strings.Home_PauseUntilResumed}" />
-            <Button Content="{x:Static res:Strings.Home_Resume}" Command="{Binding ResumeCommand}"
-                    AutomationProperties.Name="{x:Static res:Strings.Home_Resume}" />
-          </StackPanel>
-        </Grid>
-      </Border>
     </StackPanel>
   </ScrollViewer>
 </UserControl>

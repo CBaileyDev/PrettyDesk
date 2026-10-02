@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The main ridge rises diagonally from the lower left, its brightest slope at about 45% of the
         height, with cream sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "b0cda299ea2c2dec422b277d395c6030f1a5f12ff119ea2725ab3b612a87e1b6", P: "1d2d910fc959a0e8c1cbfb34628b3b27904b93f01dd4aaf1a6e4e988c8a9e6ab", U: "6c5eaa4e82ee7aa1373d6b04ed5099be28a8b66dad2ad017e9b9e47f7693e42e"}
 
   - id: wm-02
     title: "Travertine Arches"

@@ -15,6 +15,7 @@ public enum OnboardingStep
     Style,
     Mode,
     Games,
+    Wallpapers,
     Startup,
     Done,
 }
@@ -54,10 +55,10 @@ public sealed partial class OnboardingGameViewModel : ObservableObject
     public string Name { get; }
 }
 
-/// <summary>First-run flow (SPEC §2.1): welcome → setup style → default mode → installed games → start with Windows → done.</summary>
+/// <summary>First-run flow (SPEC §2.1): welcome → style → mode → games → display-matched downloads → startup → done.</summary>
 public sealed partial class OnboardingViewModel : ViewModelBase
 {
-    public const int QuestionSteps = 5;
+    public const int QuestionSteps = 6;
 
     private readonly ISettingsProvider _settings;
     private readonly ICatalogProvider _catalog;
@@ -91,6 +92,9 @@ public sealed partial class OnboardingViewModel : ViewModelBase
     [ObservableProperty]
     private bool _isLoadingGames;
 
+    [ObservableProperty]
+    private bool _isScanFailed;
+
     public OnboardingViewModel(
         ISettingsProvider settings,
         ICatalogProvider catalog,
@@ -98,7 +102,8 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         IStartupService startup,
         IEnvironmentConflictSource conflicts,
         IContentBrowser content,
-        IMonitorProvider monitors)
+        IMonitorProvider monitors,
+        IUiDispatcher ui)
     {
         _settings = settings;
         _catalog = catalog;
@@ -107,6 +112,12 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         _conflicts = conflicts;
         _content = content;
         _monitors = monitors;
+        _ui = ui;
+        DownloadInBackground = settings.Current.Content.PrefetchInstalledGames;
+        _content.ProgressChanged += OnDownloadProgress;
+        _content.PackChanged += OnPackChanged;
+        _catalog.Changed += OnDisplayPlanChanged;
+        _monitors.Changed += OnDisplayPlanChanged;
 
         IntervalChoices = IntervalLabels.Presets(includeSession: false);
         SelectedInterval = IntervalChoices.First(c => c.Value == RotationInterval.Every(TimeSpan.FromMinutes(30)));
@@ -134,7 +145,7 @@ public sealed partial class OnboardingViewModel : ViewModelBase
 
     public bool HasGames => Games.Count > 0;
 
-    public bool ShowGamesEmpty => _gamesLoaded && !IsLoadingGames && Games.Count == 0;
+    public bool ShowGamesEmpty => _gamesLoaded && !IsLoadingGames && !IsScanFailed && Games.Count == 0;
 
     public bool ShowSpotlightNote { get; }
 
@@ -154,7 +165,7 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         _ => Strings.Common_Next,
     };
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanAdvance))]
     private async Task NextAsync()
     {
         switch (Step)
@@ -168,6 +179,10 @@ public sealed partial class OnboardingViewModel : ViewModelBase
                 await LoadGamesAsync();
                 break;
             case OnboardingStep.Games:
+                BuildWallpaperChoices();
+                Step = OnboardingStep.Wallpapers;
+                break;
+            case OnboardingStep.Wallpapers:
                 Step = OnboardingStep.Startup;
                 break;
             case OnboardingStep.Startup:
@@ -200,6 +215,7 @@ public sealed partial class OnboardingViewModel : ViewModelBase
     partial void OnStepChanged(OnboardingStep value)
     {
         BackCommand.NotifyCanExecuteChanged();
+        NextCommand.NotifyCanExecuteChanged();
     }
 
     partial void OnSelectedStyleChanged(SetupStyle value) => MarkSelectedStyle();
@@ -218,7 +234,9 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         if (e.PropertyName == nameof(IsBusy))
         {
             OnPropertyChanged(nameof(CanGoBack));
+            OnPropertyChanged(nameof(CanAdvance));
             BackCommand.NotifyCanExecuteChanged();
+            NextCommand.NotifyCanExecuteChanged();
         }
     }
 
@@ -230,6 +248,9 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         }
 
         IsLoadingGames = true;
+        IsScanFailed = false;
+        OnPropertyChanged(nameof(CanAdvance));
+        NextCommand.NotifyCanExecuteChanged();
         try
         {
             var ids = await _installed.GetInstalledGameIdsAsync();
@@ -237,22 +258,33 @@ public sealed partial class OnboardingViewModel : ViewModelBase
             Games.Clear();
             foreach (var game in catalog.Games.Where(g => ids.Contains(g.Id)).OrderBy(g => g.DisplayName, StringComparer.CurrentCultureIgnoreCase))
             {
-                Games.Add(new OnboardingGameViewModel(game.Id, game.DisplayName));
+                Games.Add(new OnboardingGameViewModel(game.Id, game.DisplayName) { IsEnabled = _settings.Current.IsGameEnabled(game.Id) });
             }
         }
-#pragma warning disable CA1031 // A failed scan just means an empty list; onboarding must never block on it.
+#pragma warning disable CA1031 // Report a retryable scan failure; onboarding must never block on it.
         catch (Exception)
 #pragma warning restore CA1031
         {
             Games.Clear();
+            IsScanFailed = true;
         }
         finally
         {
             _gamesLoaded = true;
             IsLoadingGames = false;
+            OnPropertyChanged(nameof(CanAdvance));
+            NextCommand.NotifyCanExecuteChanged();
             OnPropertyChanged(nameof(HasGames));
             OnPropertyChanged(nameof(ShowGamesEmpty));
         }
+    }
+
+    [RelayCommand]
+    private async Task RetryScanAsync()
+    {
+        if (IsLoadingGames) { return; }
+        _gamesLoaded = false;
+        await LoadGamesAsync();
     }
 
     private async Task FinishAsync()
@@ -270,14 +302,22 @@ public sealed partial class OnboardingViewModel : ViewModelBase
                 foreach (var game in Games)
                 {
                     s.GetGame(game.Id).Enabled = game.IsEnabled;
+                    if (WallpaperChoices.FirstOrDefault(p => p.GameId == game.Id) is { } choice)
+                    {
+                        s.GetGame(game.Id).PrefetchWallpapers = choice.IsSelected;
+                    }
                 }
 
+                s.Content.PrefetchInstalledGames = DownloadInBackground;
                 s.General.StartWithWindows = StartWithWindows;
                 s.General.OnboardingCompleted = true;
             });
 
             _startup.Apply(StartWithWindows);
-            Prefetch(catalog);
+            if (DownloadInBackground)
+            {
+                RequestSelectedDownloads(retry: false);
+            }
             Step = OnboardingStep.Done;
             await Task.CompletedTask;
         }, Strings.Onboard_Failed);
@@ -300,21 +340,4 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         return selection.Wallpapers.Count > 0 ? selection.Wallpapers[0] : null;
     }
 
-    /// <summary>Start downloading the packs for games the user turned on so wallpapers are ready when they launch (FR-CON-4).</summary>
-    private void Prefetch(PrettyDesk.Core.Catalog.CatalogDocument catalog)
-    {
-        if (!_settings.Current.Content.PrefetchInstalledGames)
-        {
-            return;
-        }
-
-        var monitors = _monitors.GetMonitors();
-        foreach (var game in Games.Where(g => g.IsEnabled))
-        {
-            if (catalog.FindGame(game.Id)?.PackId is { } packId)
-            {
-                _content.RequestPack(packId, monitors);
-            }
-        }
-    }
 }

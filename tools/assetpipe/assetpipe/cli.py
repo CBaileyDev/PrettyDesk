@@ -147,7 +147,7 @@ def cmd_starter(layout: Layout, args: argparse.Namespace) -> int:
     except starter.StarterError as ex:
         print(f"error: {ex}", file=sys.stderr)
         return 1
-    print(f"Starter set: {len(report.variants)} wallpapers + {len(report.thumbs)} thumbnails, {report.total_bytes / 1_048_576:.1f} MB (budget 60 MB) in content/starter/")
+    print(f"Starter set: {len(report.variants)} wallpapers + {len(report.thumbs)} thumbnails, {report.total_bytes / 1_048_576:.1f} MB in content/starter/ (see offline bundle policy)")
     return 0
 
 

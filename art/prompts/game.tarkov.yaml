@@ -55,7 +55,7 @@ wallpapers:
         text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "f6386166d3a37296ea43c7c9fb5ae522831339dd744b63cd9bee1608e1679bfe"}
 
   - id: tarkov.minimal-01
     title: "Snowy Checkpoint Barrier"
@@ -96,7 +96,7 @@ wallpapers:
         letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "a02099be0bd481976218ff8bb3ace4787163ae183567981ecf570698560489aa"}
 
   - id: tarkov.mood-01
     title: "Dead Forest at Dusk"
@@ -138,7 +138,7 @@ wallpapers:
         text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "708ad6fca77b77ebd062d3de4cf95b95fa6166dff134340160da445178fcc7e7"}
 
   - id: tarkov.alt-01
     title: "Apartment Blocks in Morning Snow"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The blocks stand at about 50% of the height in the center, with snow below and pale sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "46f52b362e93e6b518be5f7f1aaed55e82a35eeabd083f77aa69cf9287c0ba8f"}

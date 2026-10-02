@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The dish rises at the center from 25% to 65% of the height, with fog at its base and a grey
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "493c135a93dd26fd3f9ba601a591c173389e8a41dff0e382f9567f5f957dda1f"}
 
   - id: rust.minimal-01
     title: "Lone Campfire on a Cold Beach"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The fire glows at about 65% of the height in the lower center, with the empty grey sea and
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7f8fbc5964a6214a0da3b4d56bbe53eb0972398012f24d75577350595dd2f796"}
 
   - id: rust.mood-01
     title: "Overgrown Monument"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The concrete corner rises at about 45% of the height in the center, with the pool below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "dec519eb1e05b400be22b6f470c6ebdce3029a4ad615c361c267a42f9483812c"}
 
   - id: rust.alt-01
     title: "Coast at Midday"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The pier runs through the lower center to about 52% of the height, with the sea and sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "385c9c45e6360f0cb570ead74ed2c4b03ba25be456018c736f7be48430de034e"}

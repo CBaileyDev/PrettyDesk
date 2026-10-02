@@ -73,7 +73,7 @@ public sealed class ForegroundWatcher : IForegroundSource, IDisposable
             0,
             PInvoke.WINEVENT_OUTOFCONTEXT);
 
-        Refresh();
+        SafeRefresh();
         _ready.Set();
 
         MSG message;
@@ -86,7 +86,25 @@ public sealed class ForegroundWatcher : IForegroundSource, IDisposable
 
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
     private static void OnForegroundChanged(HWINEVENTHOOK hook, uint eventType, HWND hwnd, int idObject, int idChild, uint eventThread, uint eventTime) =>
-        Instance?.Refresh();
+        Instance?.SafeRefresh();
+
+    /// <summary>
+    /// Runs inside an <c>[UnmanagedCallersOnly]</c> callback, where an escaping exception fast-fails the whole process
+    /// (NFR-13), so nothing may propagate: a failed refresh just keeps the previous foreground info.
+    /// </summary>
+    private void SafeRefresh()
+    {
+        try
+        {
+            Refresh();
+        }
+#pragma warning disable CA1031 // NFR-13: an exception here would kill the process; subscribers and the process-details lookup are not allowed to.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            // keep _current as it was; the next foreground change retries
+        }
+    }
 
     private unsafe void Refresh()
     {

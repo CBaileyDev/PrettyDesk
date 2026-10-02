@@ -11,6 +11,9 @@ from dataclasses import dataclass
 from .packs import PROMPT_KINDS, ROLES, SETUP_MATCHES, TONES, UPSCALERS, Pack, Wallpaper
 
 LANDSCAPE_WORDS = (120, 220)
+APPROVED_NAMED_SUBJECTS = {
+    "game.rocket-league": {"rocket league", "rocket", "octane", "fennec", "2016 batmobile", "batmobile", "champions field", "neo tokyo"},
+}
 
 OPENING = "A 16:9 landscape desktop wallpaper."
 SAFE_ZONE = (
@@ -63,7 +66,7 @@ PROPER_NOUNS = (
 CENTERED_TOLERANCE = 0.06
 MIN_CENTERED_PER_DEFAULT_PACK = 2
 
-DEFAULT_PACK_SIZES = {"default.soft-gradients": 10}
+DEFAULT_PACK_SIZES = {"default.soft-gradients": 10, "default.ios-glass": 3}
 DEFAULT_PACK_SIZE = 8
 EXPECTED_DEFAULT_PACKS = (
     "default.matte-black", "default.clean-white", "default.warm-minimal", "default.sage-botanical",
@@ -101,7 +104,8 @@ def forbidden_terms(pack: Pack) -> list[str]:
         for token in re.split(r"[^a-z0-9!]+", title):
             if len(token) >= 5 and token not in TITLE_STOPWORDS:
                 terms.append(token)
-    return terms
+    allowed = APPROVED_NAMED_SUBJECTS.get(pack.id, set()) if pack.art_mode == "named-fan-art" else set()
+    return [term for term in terms if term not in allowed]
 
 
 def _mentions(text_lower: str, term: str) -> bool:
@@ -236,6 +240,15 @@ def lint_pack(pack: Pack) -> list[Finding]:
         err("styleBible is required")
     elif word_count(pack.style_bible) < 40:
         err("styleBible is too short to steer a series (needs 40+ words)")
+
+    if pack.art_mode not in ("generic", "named-fan-art"):
+        err("artMode must be generic or named-fan-art")
+    if pack.art_mode == "named-fan-art":
+        allowed = APPROVED_NAMED_SUBJECTS.get(pack.id)
+        if allowed is None or not pack.named_subjects or any(s.lower() not in allowed for s in pack.named_subjects):
+            err("named-fan-art requires a reviewed pack and its approved namedSubjects list")
+    elif pack.named_subjects:
+        err("namedSubjects requires named-fan-art mode")
 
     ids = [w.id for w in pack.wallpapers]
     if len(ids) != len(set(ids)):

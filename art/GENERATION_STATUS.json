@@ -1,0 +1,24 @@
+{
+  "updatedUtc": "2026-10-01T07:09:16.444917+00:00",
+  "status": "IN_PROGRESS",
+  "wallpapersRequired": 289,
+  "mastersRequired": {
+    "L": 289,
+    "U": 289,
+    "P": 289
+  },
+  "mastersGenerated": {
+    "L": 197,
+    "U": 32,
+    "P": 32
+  },
+  "wallpapersBuilt": 184,
+  "wallpapersInCatalog": 169,
+  "starterCollectionsBundled": 14,
+  "remaining": {
+    "L": 92,
+    "U": 257,
+    "P": 257
+  },
+  "note": "Generation is not complete until every required master is generated, visually reviewed, built and cataloged."
+}

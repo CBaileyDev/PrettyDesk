@@ -67,9 +67,61 @@ public abstract class SettingsSectionViewModel : ViewModelBase
     }
 }
 
+public sealed record DisplayChoice(string Id, string Label);
+
 public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
 {
     private readonly IStartupService _startup;
+
+    [ObservableProperty]
+    private AppThemePreference _theme;
+
+    [ObservableProperty]
+    private bool _desktopClock;
+
+    [ObservableProperty]
+    private bool _desktopNowPlaying;
+
+    [ObservableProperty]
+    private bool _desktopVisualizer;
+
+    partial void OnDesktopNowPlayingChanged(bool value) => Save(s => s.General.DesktopNowPlaying = value);
+
+    partial void OnDesktopVisualizerChanged(bool value) => Save(s => s.General.DesktopVisualizer = value);
+
+    [ObservableProperty]
+    private DisplayChoice? _clockMonitor;
+
+    public IReadOnlyList<DisplayChoice> ClockMonitors { get; private set; } = [];
+
+    private readonly IMonitorProvider? _monitors;
+    private readonly IPlaybackControls? _playback;
+
+    [RelayCommand]
+    private Task PlayPauseAsync() => RunAsync(async () =>
+    {
+        if (_playback is null || !await _playback.TogglePlayPauseAsync())
+        {
+            throw new InvalidOperationException("No controllable media session.");
+        }
+    }, Strings.Settings_MediaUnavailable);
+
+    [RelayCommand]
+    private Task NextTrackAsync() => RunAsync(async () =>
+    {
+        if (_playback is null || !await _playback.NextAsync())
+        {
+            throw new InvalidOperationException("No controllable media session.");
+        }
+    }, Strings.Settings_MediaUnavailable);
+
+    partial void OnDesktopClockChanged(bool value) => Save(s => s.General.DesktopClock = value);
+
+    partial void OnClockMonitorChanged(DisplayChoice? value) => Save(s => s.General.ClockMonitorId = value?.Id);
+
+    public static IReadOnlyList<AppThemePreference> ThemeChoices { get; } = Enum.GetValues<AppThemePreference>();
+
+    partial void OnThemeChanged(AppThemePreference value) => Save(s => s.General.Theme = value);
 
     [ObservableProperty]
     private bool _startWithWindows;
@@ -80,10 +132,12 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     [ObservableProperty]
     private bool _betaUpdates;
 
-    public GeneralSettingsViewModel(ISettingsProvider settings, IStartupService startup, IUiDispatcher ui)
+    public GeneralSettingsViewModel(ISettingsProvider settings, IStartupService startup, IUiDispatcher ui, IMonitorProvider? monitors = null, IPlaybackControls? playback = null)
         : base(settings, ui)
     {
         _startup = startup;
+        _monitors = monitors;
+        _playback = playback;
         InitialLoad();
     }
 
@@ -92,6 +146,16 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
         StartWithWindows = settings.General.StartWithWindows;
         RestoreOnExit = settings.General.RestoreOnExit;
         BetaUpdates = settings.General.BetaUpdates;
+        Theme = settings.General.Theme;
+        DesktopClock = settings.General.DesktopClock;
+        DesktopNowPlaying = settings.General.DesktopNowPlaying;
+        DesktopVisualizer = settings.General.DesktopVisualizer;
+        var monitors = _monitors?.GetMonitors() ?? [];
+        ClockMonitors = monitors.Select((m, i) => new DisplayChoice(m.Id,
+            Strings.Format(m.IsPrimary ? Strings.Home_PrimaryDisplay : Strings.Home_DisplayLabel, i + 1, m.PixelWidth, m.PixelHeight))).ToList();
+        OnPropertyChanged(nameof(ClockMonitors));
+        var selectedId = settings.General.ClockMonitorId ?? monitors.FirstOrDefault(m => m.IsPrimary)?.Id;
+        ClockMonitor = ClockMonitors.FirstOrDefault(m => m.Id == selectedId);
     }
 
     partial void OnStartWithWindowsChanged(bool value)

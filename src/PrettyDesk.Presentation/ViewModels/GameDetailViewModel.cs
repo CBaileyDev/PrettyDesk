@@ -29,6 +29,9 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
     private bool _enabled = true;
 
     [ObservableProperty]
+    private bool _prefetchWallpapers = true;
+
+    [ObservableProperty]
     private bool _isRotate = true;
 
     [ObservableProperty]
@@ -42,6 +45,9 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
 
     [ObservableProperty]
     private string _packStatusText = string.Empty;
+
+    [ObservableProperty]
+    private string? _packStatusHelp;
 
     [ObservableProperty]
     private bool _canDownload;
@@ -87,6 +93,7 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
         IntervalChoices = IntervalLabels.Presets(includeSession: true);
         _content.PackChanged += OnContentChanged;
         _content.ProgressChanged += OnProgress;
+        _catalog.Changed += OnCatalogChanged;
         InitialLoad();
     }
 
@@ -116,6 +123,7 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
     {
         var game = settings.Games.GetValueOrDefault(_game.Id) ?? new GameSettings();
         Enabled = game.Enabled;
+        PrefetchWallpapers = game.PrefetchWallpapers;
         IsRotate = game.Mode == WallpaperMode.Rotate;
         IsShuffle = game.Order == RotationOrder.Shuffle;
         SelectedInterval = IntervalChoices.FirstOrDefault(c => c.Value == game.Interval) ?? new IntervalChoice(game.Interval, IntervalLabels.Of(game.Interval));
@@ -129,6 +137,8 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
     }
 
     partial void OnEnabledChanged(bool value) => Save(s => s.GetGame(_game.Id).Enabled = value);
+
+    partial void OnPrefetchWallpapersChanged(bool value) => Save(s => s.GetGame(_game.Id).PrefetchWallpapers = value);
 
     partial void OnIsRotateChanged(bool value)
     {
@@ -196,12 +206,19 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanDownload))]
     private void Download()
     {
         if (_game.PackId is { } packId)
         {
-            _content.RequestPack(packId, _monitors.GetMonitors());
+            if (_content.GetPackState(packId).State == PackStateKind.Failed)
+            {
+                _content.RetryPack(packId, _monitors.GetMonitors());
+            }
+            else
+            {
+                _content.RequestPack(packId, _monitors.GetMonitors());
+            }
             RefreshPackStatus();
         }
     }
@@ -264,6 +281,7 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
         {
             _content.PackChanged -= OnContentChanged;
             _content.ProgressChanged -= OnProgress;
+            _catalog.Changed -= OnCatalogChanged;
         }
 
         base.Dispose(disposing);
@@ -276,6 +294,8 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
             Load(Settings.Current);
         }
     });
+
+    private void OnCatalogChanged() => _ui.Post(() => Load(Settings.Current));
 
     private void OnProgress(PackProgress progress) => _ui.Post(() =>
     {
@@ -352,6 +372,7 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
 
     private void RefreshPackStatus()
     {
+        PackStatusHelp = null;
         if (_game.PackId is not { } packId)
         {
             PackStatusText = string.Empty;
@@ -365,9 +386,15 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
             PackStateKind.Downloading => Strings.Format(Strings.Game_Downloading, (int)(state.Fraction * 100)),
             PackStateKind.Failed => Strings.Game_DownloadFailed,
             PackStateKind.Ready => Strings.Library_ChipReady,
+            PackStateKind.Unavailable => Strings.Library_ChipUnavailable,
             _ => Strings.Library_ChipNotDownloaded,
         };
         CanDownload = state.State is PackStateKind.NotDownloaded or PackStateKind.Failed;
+        if (state.State == PackStateKind.Unavailable)
+        {
+            PackStatusHelp = Strings.Game_PackUnavailable;
+        }
+        DownloadCommand.NotifyCanExecuteChanged();
     }
 }
 

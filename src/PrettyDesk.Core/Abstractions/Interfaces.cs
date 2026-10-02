@@ -83,6 +83,7 @@ public interface IContentLibrary
     /// <summary>Starts a background download of the pack variants needed by the monitors, if not already running.</summary>
     void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors);
 
+
     event Action<string>? PackChanged;
 }
 
@@ -138,6 +139,8 @@ public interface IWallpaperController
 /// <summary>What the UI needs from the content library: thumbnails, pack status, user images, storage (FR-CON-6/7).</summary>
 public interface IContentBrowser
 {
+    Content.PackDownloadPlan GetDownloadPlan(string packId, IReadOnlyList<MonitorInfo> monitors);
+
     Content.PackProgress GetPackState(string packId);
 
     /// <summary>A small image for the wallpaper (thumbnail, else the smallest local variant), or null when nothing is on disk.</summary>
@@ -156,6 +159,9 @@ public interface IContentBrowser
 
     void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors);
 
+    /// <summary>Explicit user retry; implementations may bypass automatic retry cooldown.</summary>
+    void RetryPack(string packId, IReadOnlyList<MonitorInfo> monitors) => RequestPack(packId, monitors);
+
     event Action<Content.PackProgress>? ProgressChanged;
 
     event Action<string>? PackChanged;
@@ -167,4 +173,11 @@ public interface IContentBrowser
 public interface IDetectionFeed
 {
     event Action<Detection.DetectionObservation>? Observed;
+}
+
+public interface IPlaybackControls
+{
+    Task<bool> TogglePlayPauseAsync();
+
+    Task<bool> NextAsync();
 }
