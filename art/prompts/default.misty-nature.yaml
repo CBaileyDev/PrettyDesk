@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The ridges stack vertically with the brightest fog band at about 50% of the height and pale
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c960e2113d4b55a27af18c9f1b8f869dd8cb035c0f89a4c34f5627e165f48d88", P: "af0355b8e9d69aae1c175415e15c6f9a72d7a98dc0860e66e167c7f37c8ba1fb", U: "5429151443b8eefbcf359e6a24e70321ca8527412a83eb5ea39cb5b7df760ce8"}
 
   - id: mn-02
     title: "Alpine Lake at Blue Hour"

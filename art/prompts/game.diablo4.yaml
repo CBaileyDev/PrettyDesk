@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The cathedral rises through the center from 20% to 65% of the height, with the crimson glow
         behind its spires. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "5fcbd834ffa064ea904931900e9660385037694a6bc7b0fdc774029c40fddab6"}
 
   - id: diablo4.minimal-01
     title: "Lone Lantern on the Moor"
@@ -96,9 +96,9 @@ wallpapers:
         wallpaper. The lantern glows at about 62% of the height in the lower center, with the empty dark sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7c3dd5fc661b97f2f6c9dc1bf9795bed5e3ad5990538363afdf499cff26f786f"}
 
   - id: diablo4.mood-01
     title: "Monastery Bell Tower in Snow"
@@ -139,9 +139,9 @@ wallpapers:
         wallpaper. The tower rises at about 45% of the height in the center, with the foggy valley below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e1ce608484aad723469347b8771306d49cdf34161d619f98ccb3a4e03d5d1faf"}
 
   - id: diablo4.alt-01
     title: "Frozen Moor at Dawn"
@@ -182,6 +182,6 @@ wallpapers:
         wallpaper. The arch stands at about 48% of the height in the center, with the pale sky above and frosted
         grass below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7e975a7f06df06d7700580704f171a49d46d06784595a441b3d7b3b87e436874"}

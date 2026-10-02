@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The monorail curves through the center at about 42% of the height, with towers rising on both
         sides. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "bb8ae363e566db7ef322e1642c52115f237c1661810d1dc16760ebc318b1bca7"}
 
   - id: cyberpunk.minimal-01
     title: "Lone Vending Glow"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The machine stands in the lower center from 40% to 75% of the height, with its reflection
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "887f0df4d32c40aed1888877acebab8c4660a4b746a75e402543ebb58f9843cd"}
 
   - id: cyberpunk.mood-01
     title: "Rain Reflections on a Street"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The alley runs up the center to a vanishing point at about 45% of the height, with
         reflections below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e5438355fa6ada565eb6059b9971968e6cae4870baf3c624a99b4bc4ba6e2c32"}
 
   - id: cyberpunk.alt-01
     title: "Smog Sunset Skyline"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The sun disc glows at about 40% of the height in the center, with towers in layers below.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "fe84e2a4bc95cb306e79f0e9430eb7e5fc8d046dce0c007148e1fef8fc34972c"}

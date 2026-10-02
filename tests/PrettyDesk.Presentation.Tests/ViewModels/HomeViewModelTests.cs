@@ -26,6 +26,17 @@ public sealed class HomeViewModelTests : IDisposable
     private HomeViewModel Create() => _vm = new HomeViewModel(_controller, _monitors, _content, _conflicts, new InlineDispatcher(), _time);
 
     [Fact]
+    public void Stacked_displays_share_their_real_horizontal_origin()
+    {
+        _monitors.Monitors = [new("upper", 0, -1080, 1920, 1080, false), new("lower", 0, 0, 2560, 1440, true)];
+        var vm = Create();
+        vm.Monitors[0].X.ShouldBe(vm.Monitors[1].X);
+        vm.Monitors[0].Y.ShouldBeLessThan(vm.Monitors[1].Y);
+        (vm.Monitors[0].Y + vm.Monitors[0].Height).ShouldBe(vm.Monitors[1].Y, 0.001);
+        (vm.Monitors[0].Width / vm.Monitors[1].Width).ShouldBe(1920.0 / 2560, 0.001);
+    }
+
+    [Fact]
     public void Shows_the_current_status_text_on_creation()
     {
         _controller.Status = new OrchestratorStatus { Mode = OrchestratorMode.Default, DefaultTitle = "Matte Black", IsRotating = true, NextChange = _time.GetUtcNow() + TimeSpan.FromMinutes(12) };
@@ -109,7 +120,7 @@ public sealed class HomeViewModelTests : IDisposable
 
         vm.Monitors.Count.ShouldBe(2);
         var (left, right) = (vm.Monitors[0], vm.Monitors[1]);
-        (left.X + left.Width).ShouldBeLessThan(right.X);
+        (left.X + left.Width).ShouldBe(right.X, 0.001);
         (right.X + right.Width).ShouldBeLessThanOrEqualTo(HomeViewModel.CanvasWidth + 0.001);
         (left.Height / right.Height).ShouldBe(1440.0 / 1920, 0.001);
         vm.CanvasHeight.ShouldBeGreaterThanOrEqualTo(right.Y + right.Height);

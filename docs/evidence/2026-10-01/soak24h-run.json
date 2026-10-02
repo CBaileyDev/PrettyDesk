@@ -1,0 +1,9 @@
+{
+  "Status": "RUNNING",
+  "Started": "2026-10-01T01:36:47.0505319-04:00",
+  "ExpectedCompletion": "2026-10-02T01:36:47.0524185-04:00",
+  "AppProcessId": 32792,
+  "SamplerProcessId": 40656,
+  "Version": "1.0.2",
+  "Context": "Default, fixed mb-01, two 2560x1440 monitors, window closed"
+}

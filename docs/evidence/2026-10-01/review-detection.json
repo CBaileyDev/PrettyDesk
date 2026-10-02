@@ -1,0 +1,10 @@
+{
+  "CatalogGames": 46,
+  "VerifiedCatalogGames": 0,
+  "SteamManifests": 3,
+  "EpicManifests": 3,
+  "SnapshotContainsSelf": true,
+  "ExistingInstallDirectories": 6,
+  "MissingInstallDirectories": 0,
+  "Scope": "Read-only discovery counts. Local installed and running game identifiers omitted for publication."
+}

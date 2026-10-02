@@ -170,3 +170,22 @@ def test_game_title_words_that_are_ordinary_english_are_allowed(tmp_path):
     doc = pack_doc("game.zz", "game", wps, title="Quiet Valley World",
                    inspiration={"genre": "g", "setting": "s", "palette": ["#111111"], "motifs": ["m"], "avoid": ["logo", "text", "character"]})
     assert not any("valley" in m or "world" in m for m in errors(lint.lint_pack(_pack(tmp_path, doc))))
+
+
+def test_named_subject_exception_is_scoped_and_other_guards_remain(tmp_path):
+    doc = _default_pack_doc()
+    doc["artMode"] = "named-fan-art"
+    doc["namedSubjects"] = ["Rocket League"]
+    assert any("reviewed pack" in m for m in errors(lint.lint_pack(_pack(tmp_path, doc))))
+    doc["pack"] = "game.rocket-league"
+    doc["kind"] = "game"
+    doc["title"] = "Rocket League"
+    pack = _pack(tmp_path, doc)
+    assert "rocket league" not in lint.forbidden_terms(pack)
+    assert "elden ring" in lint.forbidden_terms(pack)
+    pack.wallpapers[0].prompts["landscape"] = "Rocket League screenshot from 8K"
+    findings = errors(lint.lint_pack(pack))
+    assert any("banned phrase" in m for m in findings)
+    assert any("safe-zone" in m for m in findings)
+    pack.named_subjects = ["Elden Ring"]
+    assert any("reviewed pack" in m for m in errors(lint.lint_pack(pack)))

@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The sun sits at about 45% of the height in the center, with palm silhouettes rising on both
         sides and the road below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f94f80d6dfaaf2be13a21ac66941dcca58ba40a97d5000d37b27295f26103ba2"}
 
   - id: gta5.minimal-01
     title: "Lone Palm at Dusk"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The palm stands in the lower center from 30% to 80% of the height, against the clean sunset
         gradient. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "56e74f6c688c2c629307b3676fb4fb2345a38cf4d88c47e70aada54597ced068"}
 
   - id: gta5.mood-01
     title: "Freeway Interchange at Dusk"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The interchange loops across the lower center at about 62% of the height, with the indigo
         dusk sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2ba860a83b1b42a05b703562e5ae82204fd02685ab5090034227ce7bc5b44456"}
 
   - id: gta5.alt-01
     title: "Boardwalk at Morning"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The boardwalk runs up the center with the pier at about 50% of the height, and ocean and sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f5d806fc8bffb26f523bd5cf75749e1cdf77d1dd034740e088b3051ba80932e5"}

@@ -98,11 +98,12 @@ public sealed class CatalogSourceTests
     }
 
     [Fact]
-    public void The_thirteen_default_collections_match_the_onboarding_quiz()
+    public void Default_collections_include_the_quiz_styles_and_the_Liquid_Glass_capsule()
     {
         var collections = Source.Value.Collections;
-        collections.Count.ShouldBe(13);
-        collections.Select(c => c.Order).ShouldBe(Enumerable.Range(1, 13));
+        collections.Count.ShouldBe(14);
+        collections.Select(c => c.Order).ShouldBe(Enumerable.Range(1, 14));
+        collections[0].Id.ShouldBe("default.ios-glass");
 
         foreach (var collection in collections)
         {

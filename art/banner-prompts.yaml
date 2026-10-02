@@ -1,0 +1,22 @@
+date: '2026-10-01'
+tool: built-in imagegen
+dark:
+  asset: src/PrettyDesk.App/Assets/Banner-Dark.png
+  prompt: Premium panoramic 3:1 original silver glass-loop sculpture, charcoal background,
+    muted cool reflections, generous breathing room, no text or logos. Readable at
+    170 by 76 pixels.
+  sha256: afb166c044df0a10715285ca511e7dfbdfb8af718f3067ef05efe8eddd8b6404
+light:
+  asset: src/PrettyDesk.App/Assets/Banner-Light.png
+  prompt: Matched light-theme edit preserving exact sculpture and camera, soft neutral
+    off-white background, subtle silver-gray reflections and soft grounding shadow,
+    no text or logos.
+  sha256: f33dcc6754c9479aa684f07291b727443f40df0f5454719008326a0562531e72
+review: Both images inspected individually and in actual WPF sidebar renders.
+currentHeader:
+  date: '2026-10-01'
+  source: src/PrettyDesk.App/Views/MainWindow.xaml
+  design: Centered horizontal vector monitor/landscape mark and PrettyDesk wordmark;
+    transparent background, live theme brushes, no decorative bitmap tile.
+  status: Replaces the generated banner in the application; earlier artwork retained
+    as provenance and excluded from shipped resources.

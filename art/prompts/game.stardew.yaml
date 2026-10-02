@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The farmhouse sits at about 50% of the height in the center, with fields below and the dawn
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "46d91a9c8bea6ee8ad6cc182c60a9d9e3ff88bfc9255432fa15ef12689384897"}
 
   - id: stardew.minimal-01
     title: "Lone Cabin in Snow"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The cabin sits at about 62% of the height in the lower center, with the empty night sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "137c048de3665fd25fa8d943bb7de6ac6b8c5631cb23a668da9ae770ea122ca0"}
 
   - id: stardew.mood-01
     title: "Glowing Crystal Cave"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The crystals glow at about 52% of the height in the center, with the pond below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2f65c825abccafadf9788d0ca106018a0fe157f72f244807ec5f3dac09540766"}
 
   - id: stardew.alt-01
     title: "Autumn Orchard"
@@ -183,6 +183,6 @@ wallpapers:
         wallpaper. The rows of trees run through the center with the gate at about 58% of the height. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "58ecacf57b10bb72214eb9bfc728a61f2efbd3b0cbf52f4c22a5e2680433a0ea"}

@@ -53,7 +53,7 @@ public class OnboardingViewModelTests
         });
     }
 
-    private OnboardingViewModel Vm() => new(_settings, _catalog, _installed, _startup, _conflicts, _content, _monitors);
+    private OnboardingViewModel Vm() => new(_settings, _catalog, _installed, _startup, _conflicts, _content, _monitors, new InlineDispatcher());
 
     private static async Task Advance(OnboardingViewModel vm, int times)
     {
@@ -84,13 +84,13 @@ public class OnboardingViewModelTests
 
         await Advance(vm, 1);
         vm.Step.ShouldBe(OnboardingStep.Style);
-        vm.StepText.ShouldBe("Step 2 of 5");
+        vm.StepText.ShouldBe("Step 2 of 6");
         vm.CanGoBack.ShouldBeTrue();
 
         vm.BackCommand.Execute(null);
         vm.Step.ShouldBe(OnboardingStep.Welcome);
 
-        await Advance(vm, 4);
+        await Advance(vm, 5);
         vm.Step.ShouldBe(OnboardingStep.Startup);
         vm.NextText.ShouldBe("Finish");
     }
@@ -130,20 +130,26 @@ public class OnboardingViewModelTests
         await Advance(vm, 3);
 
         vm.ShowGamesEmpty.ShouldBeTrue();
-        await vm.NextCommand.ExecuteAsync(null);
+        await Advance(vm, 2);
         vm.Step.ShouldBe(OnboardingStep.Startup);
     }
 
     [Fact]
-    public async Task A_failing_scan_is_treated_as_no_games_found()
+    public async Task A_failing_scan_is_retryable_and_does_not_claim_no_games_found()
     {
         _installed.Throw = true;
         var vm = Vm();
 
         await Advance(vm, 3);
 
-        vm.ShowGamesEmpty.ShouldBeTrue();
+        vm.IsScanFailed.ShouldBeTrue();
+        vm.ShowGamesEmpty.ShouldBeFalse();
         vm.HasError.ShouldBeFalse();
+        _installed.Throw = false;
+        _installed.Ids = ["cs2"];
+        await vm.RetryScanCommand.ExecuteAsync(null);
+        vm.IsScanFailed.ShouldBeFalse();
+        vm.Games.ShouldHaveSingleItem();
     }
 
     [Fact]
@@ -155,7 +161,7 @@ public class OnboardingViewModelTests
         vm.SelectedInterval = vm.IntervalChoices.First(c => c.Value == RotationInterval.Every(TimeSpan.FromHours(1)));
         await Advance(vm, 3);
         vm.Games.First(g => g.Id == "apex").IsEnabled = false;
-        await Advance(vm, 1);
+        await Advance(vm, 2);
         vm.StartWithWindows = false;
 
         await Advance(vm, 1);
@@ -180,7 +186,7 @@ public class OnboardingViewModelTests
         var vm = Vm();
         await Advance(vm, 3);
         vm.Games.First(g => g.Id == "apex").IsEnabled = false;
-        await Advance(vm, 2);
+        await Advance(vm, 3);
 
         _content.Requested.ShouldBe(["game.cs2"]);
     }
@@ -192,7 +198,7 @@ public class OnboardingViewModelTests
         _installed.Ids = ["cs2"];
         var vm = Vm();
 
-        await Advance(vm, 5);
+        await Advance(vm, 6);
 
         _content.Requested.ShouldBeEmpty();
     }
@@ -204,7 +210,7 @@ public class OnboardingViewModelTests
         vm.ChooseStyleCommand.Execute(vm.StyleOptions.First(o => o.Style == SetupStyle.MatteBlack));
         vm.IsRotate = false;
 
-        await Advance(vm, 5);
+        await Advance(vm, 6);
 
         _settings.Current.Default.Mode.ShouldBe(WallpaperMode.Fixed);
         _settings.Current.Default.FixedWallpaperId.ShouldBe("mb-02");
@@ -215,7 +221,7 @@ public class OnboardingViewModelTests
     {
         var vm = Vm();
 
-        await Advance(vm, 5);
+        await Advance(vm, 6);
 
         _settings.Current.Default.Selection.Wallpapers.ShouldBe(["mb-02", "ds-01"]);
         _settings.Current.Default.Selection.Collections.ShouldBeEmpty();
@@ -227,7 +233,7 @@ public class OnboardingViewModelTests
         var vm = Vm();
         var completed = 0;
         vm.Completed += () => completed++;
-        await Advance(vm, 5);
+        await Advance(vm, 6);
         vm.IsDone.ShouldBeTrue();
         vm.NextText.ShouldBe("Done");
         vm.CanGoBack.ShouldBeFalse();
@@ -243,9 +249,9 @@ public class OnboardingViewModelTests
         var settings = Substitute.For<ISettingsProvider>();
         settings.Current.Returns(new AppSettings());
         settings.When(s => s.Update(Arg.Any<Action<AppSettings>>())).Do(_ => throw new IOException("disk full"));
-        var vm = new OnboardingViewModel(settings, _catalog, _installed, _startup, _conflicts, _content, _monitors);
+        var vm = new OnboardingViewModel(settings, _catalog, _installed, _startup, _conflicts, _content, _monitors, new InlineDispatcher());
 
-        await Advance(vm, 5);
+        await Advance(vm, 6);
 
         vm.Step.ShouldBe(OnboardingStep.Startup);
         vm.ErrorMessage.ShouldNotBeNull().ShouldContain("free disk space");
@@ -262,6 +268,105 @@ public class OnboardingViewModelTests
 
     [Fact]
     public void No_spotlight_note_for_a_normal_background() => Vm().ShowSpotlightNote.ShouldBeFalse();
+
+    [Fact]
+    public async Task Download_step_explains_two_landscape_displays_and_preserves_individual_opt_out()
+    {
+        _installed.Ids = ["cs2", "apex"];
+        _monitors.Monitors = [new("one", 0, 0, 2560, 1440, true), new("two", 2560, 0, 2560, 1440, false)];
+        using var vm = Vm();
+        await Advance(vm, 4);
+        vm.Step.ShouldBe(OnboardingStep.Wallpapers);
+        vm.DisplaySummary.ShouldContain("2 × 2560×1440");
+        vm.DisplaySummary.ShouldContain("Landscape 16:9");
+        vm.WallpaperChoices.Single(p => p.GameId == "apex").IsSelected = false;
+        vm.DownloadSelectedCommand.Execute(null);
+        _content.Requested.ShouldBe(["game.cs2"]);
+        await Advance(vm, 2);
+        _content.Requested.ShouldBe(["game.cs2"]); // finish does not enqueue a second run
+        _settings.Current.Games["apex"].Enabled.ShouldBeTrue();
+        _settings.Current.Games["apex"].PrefetchWallpapers.ShouldBeFalse();
+    }
+
+    [Fact]
+    public async Task Offline_ready_and_unavailable_packs_are_distinct_and_never_requested()
+    {
+        _installed.Ids = ["cs2", "apex"];
+        _content.Plans["game.cs2"] = new(true, false, 0, ["16x9"], false);
+        _content.Plans["game.apex"] = new(true, false, 1000, ["16x9"], false);
+        using var vm = Vm();
+        await Advance(vm, 4);
+        vm.WallpaperChoices.Single(p => p.GameId == "cs2").Status.ShouldContain("no download needed");
+        var unavailable = vm.WallpaperChoices.Single(p => p.GameId == "apex");
+        unavailable.CanSelect.ShouldBeFalse();
+        unavailable.IsSelected.ShouldBeFalse();
+        unavailable.Status.ShouldContain("unavailable");
+        vm.DownloadSelectedCommand.CanExecute(null).ShouldBeFalse();
+        await Advance(vm, 2);
+        _content.Requested.ShouldBeEmpty();
+    }
+
+    [Fact]
+    public async Task Download_status_failure_retry_and_disposal_are_observed_without_blocking_setup()
+    {
+        _installed.Ids = ["cs2"];
+        using var vm = Vm();
+        await Advance(vm, 4);
+        vm.DownloadSelectedCommand.Execute(null);
+        var row = vm.WallpaperChoices.Single();
+        row.IsDownloading.ShouldBeTrue();
+        _content.RaiseProgress(new("game.cs2", PrettyDesk.Core.Content.PackStateKind.Downloading, 0.4));
+        row.Status.ShouldContain("40%");
+        _content.RaiseProgress(new("game.cs2", PrettyDesk.Core.Content.PackStateKind.Failed, 0));
+        row.Status.ShouldContain("retry");
+        vm.DownloadSelectedCommand.CanExecute(null).ShouldBeTrue();
+        vm.DownloadSelectedCommand.Execute(null);
+        _content.Requested.Count.ShouldBe(2);
+        await vm.NextCommand.ExecuteAsync(null);
+        vm.Step.ShouldBe(OnboardingStep.Startup);
+        vm.Dispose();
+        _content.RaiseProgress(new("game.cs2", PrettyDesk.Core.Content.PackStateKind.Downloading, 0.8));
+        row.Status.ShouldNotContain("80%");
+    }
+
+    [Fact]
+    public async Task Returning_to_games_updates_choices_without_losing_existing_selections()
+    {
+        _installed.Ids = ["cs2", "apex"];
+        using var vm = Vm();
+        await Advance(vm, 4);
+        vm.WallpaperChoices.Single(p => p.GameId == "cs2").IsSelected = false;
+        vm.BackCommand.Execute(null);
+        vm.Games.Single(g => g.Id == "apex").IsEnabled = false;
+        await vm.NextCommand.ExecuteAsync(null);
+        vm.WallpaperChoices.ShouldHaveSingleItem().GameId.ShouldBe("cs2");
+        vm.WallpaperChoices.Single().IsSelected.ShouldBeFalse();
+        vm.DownloadInBackground = false;
+        await Advance(vm, 2);
+        _settings.Current.Content.PrefetchInstalledGames.ShouldBeFalse();
+        _content.Requested.ShouldBeEmpty();
+    }
+
+    [Fact]
+    public async Task Display_changes_refresh_format_guidance_and_no_display_is_not_a_dead_end()
+    {
+        _installed.Ids = ["cs2"];
+        using var vm = Vm();
+        await Advance(vm, 4);
+        _monitors.Monitors = [new("portrait", 0, 0, 1440, 2560, true)];
+        _content.Plans["game.cs2"] = new(true, true, 2048, ["9x16"], false);
+        _monitors.Raise();
+        vm.DisplaySummary.ShouldContain("Portrait 9:16");
+        vm.WallpaperChoices.Single().Status.ShouldContain("Portrait 9:16");
+        _monitors.Monitors = [];
+        _content.Plans["game.cs2"] = new(false, false, 0, [], false);
+        _monitors.Raise();
+        vm.DisplaySummary.ShouldContain("No displays");
+        vm.DownloadSelectedCommand.CanExecute(null).ShouldBeFalse();
+        await Advance(vm, 2);
+        vm.Step.ShouldBe(OnboardingStep.Done);
+        _content.Requested.ShouldBeEmpty();
+    }
 }
 
 public class AboutViewModelTests
@@ -430,7 +535,7 @@ public class ShellAndTrayTests
     [Fact]
     public void Navigation_lists_the_five_pages_from_the_spec()
     {
-        new ShellFixture().Vm.NavItems.Select(n => n.Label).ShouldBe(["Home", "Library", "Defaults", "Settings", "About"]);
+        new ShellFixture().Vm.NavItems.Select(n => n.Label).ShouldBe(["Home", "Library", "Wallpapers", "Settings", "About"]);
     }
 
     [Fact]

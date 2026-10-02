@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The cliff edge sits at about 55% of the height in the lower center, with floating ruins at
         30% above the bay. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "14566159893acc62f073d9c3dafbe264704ce500ba095a365cee1d15cb8bd3ca"}
 
   - id: palworld.minimal-01
     title: "Single Floating Ruin"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The floating ruin hangs at about 45% of the height in the center, with empty sky around it.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "276c158cdcc2c19855d0c2e10882a54971a19fd208780b573a2d80481ef76e20"}
 
   - id: palworld.mood-01
     title: "Volcanic Isle at Sunset"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The volcano cone rises at about 42% of the height in the center, with its reflection in the
         sea below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "fd5eb31caaad3b1a685deb44fafa571668d551f63ff7ebea8071aa578551f0bb"}
 
   - id: palworld.alt-01
     title: "Overgrown Ruins in Sun"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The mossy arch stands at about 48% of the height in the center, with grass below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "96d0ae18c129a78f350c34d2a69a07940ea4ce35749c1f6ff22033d0cacf702f"}

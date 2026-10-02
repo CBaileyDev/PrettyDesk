@@ -51,6 +51,8 @@ class Pack:
     inspiration: dict[str, Any] | None
     path: Path
     raw: dict[str, Any]
+    art_mode: str = "generic"
+    named_subjects: list[str] = field(default_factory=list)
 
     @property
     def game_id(self) -> str:
@@ -111,6 +113,8 @@ def load_pack(path: Path) -> Pack:
         inspiration=raw.get("inspiration"),
         path=path,
         raw=raw,
+        art_mode=str(raw.get("artMode", "generic")),
+        named_subjects=_as_list(raw.get("namedSubjects")),
     )
 
 

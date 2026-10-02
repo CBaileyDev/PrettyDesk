@@ -156,3 +156,62 @@ public class JsonFileStoreTests
         public void Migrate(JsonObject document) => apply(document);
     }
 }
+
+public class JsonFileStoreRobustnessTests
+{
+    private static JsonFileStore<AppSettings> Store(string path) =>
+        new(path, SettingsJsonContext.Default.AppSettings, AppSettings.CurrentSchemaVersion, new FakeTimeProvider());
+
+    [Fact]
+    public void A_file_that_is_locked_when_read_is_not_treated_as_corrupt_and_is_not_silently_overwritten()
+    {
+        using var dir = new TempDir();
+        var path = dir.File("settings.json");
+        var settings = new AppSettings();
+        settings.Games["valorant"] = new GameSettings { Enabled = false };
+        Store(path).Save(settings);
+        var original = File.ReadAllText(path);
+
+        JsonLoadResult<AppSettings> result;
+        var store = Store(path);
+        using (new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None))
+        {
+            result = store.Load();
+        }
+
+        result.RecoveredFromCorruption.ShouldBeFalse();
+        File.ReadAllText(path).ShouldBe(original);
+
+        // Saving later must keep the user's real file instead of destroying it with the in-memory defaults.
+        store.Save(new AppSettings());
+
+        Directory.GetFiles(dir.Path, "settings.unreadable-*.json").ShouldHaveSingleItem();
+        File.ReadAllText(Directory.GetFiles(dir.Path, "settings.unreadable-*.json")[0]).ShouldBe(original);
+    }
+
+    [Fact]
+    public void A_hand_edited_file_without_schemaVersion_is_loaded_not_discarded()
+    {
+        using var dir = new TempDir();
+        var path = dir.File("settings.json");
+        File.WriteAllText(path, """{ "detection": { "detectDelaySeconds": 7 } }""");
+
+        var result = Store(path).Load();
+
+        result.RecoveredFromCorruption.ShouldBeFalse();
+        result.Value.Detection.DetectDelaySeconds.ShouldBe(7);
+    }
+
+    [Fact]
+    public void Duplicate_keys_are_recovered_like_any_corrupt_file()
+    {
+        using var dir = new TempDir();
+        var path = dir.File("settings.json");
+        File.WriteAllText(path, """{ "schemaVersion": 1, "general": {}, "general": {} }""");
+
+        var result = Store(path).Load();
+
+        result.RecoveredFromCorruption.ShouldBeTrue();
+        result.CorruptBackupPath.ShouldNotBeNull();
+    }
+}

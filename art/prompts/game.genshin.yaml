@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The windmill stands at about 42% of the height at the center, with hills below and floating
         islands above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d4d6329c07097dbaf2427c871dce65d0f42bbaaf1564e9ab678f232eea4a7d2c"}
 
   - id: genshin.minimal-01
     title: "Floating Island Alone"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The island floats at about 42% of the height in the center, with empty gradient sky around
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d66a6a145194d76b00190d288daad1c1626a53de681f1e3167d808e7fc0ec4e3"}
 
   - id: genshin.mood-01
     title: "Lantern Festival on the Water"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The lanterns fill the lower half with the stone bridge arching at about 50% of the height.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "86854d68ba7b36e1fe9e91f7db7f4d216eb3783c6411134abea706a9dd27a523"}
 
   - id: genshin.alt-01
     title: "Crystal Lake Morning"
@@ -183,6 +183,6 @@ wallpapers:
         wallpaper. The crystals rise at about 50% of the height in the center, with the jetty leading in from
         the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "af1f8d9d7c6cb4067ded7c6f310e29e6d7ae4ecfa9c665c575690b45cae9382c"}

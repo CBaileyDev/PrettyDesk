@@ -55,7 +55,7 @@ wallpapers:
         Strictly no text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "e7c1ab6862d93f9c13ffbf2acc7e663277f7dbf5a298f96cd6f8ca125510ec7e"}
 
   - id: the-finals.minimal-01
     title: "One Frozen Shard"
@@ -97,7 +97,7 @@ wallpapers:
         no text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "4c7dbcf61d207d37958afea06ce8d80b40270411b6b2b0e14e1b8ec389c3c93e"}
 
   - id: the-finals.mood-01
     title: "Vault Glow in the Dust"
@@ -138,7 +138,7 @@ wallpapers:
         text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "cdc79dd062ebe549a1335206b772d05492499ae913771a4b62d9d72de5ceb9cd"}
 
   - id: the-finals.alt-01
     title: "Studio Floodlights at Noon"
@@ -179,4 +179,4 @@ wallpapers:
         text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "6a5957205ea36f5595e3d7dd5e869837a6a2266c8bace26fe6a1e3f2a4c7fc58"}

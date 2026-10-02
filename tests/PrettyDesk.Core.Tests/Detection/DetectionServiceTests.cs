@@ -182,6 +182,51 @@ public class DetectionServiceTests
         await Task.Run(() => Thread.Yield());
     }
 
+    [Fact]
+    public async Task Unchanged_session_reuses_matching_but_keeps_start_exit_and_foreground_checks()
+    {
+        await using var service = Create();
+        _processes.Running = [Proc(42, "g.exe")];
+        service.EvaluateOnce();
+        _time.Advance(TimeSpan.FromSeconds(3));
+        service.EvaluateOnce();
+        var broad = service.BroadEvaluationCount;
+        for (var i = 0; i < 10; i++)
+        {
+            _time.Advance(TimeSpan.FromSeconds(2));
+            service.EvaluateOnce();
+        }
+
+        service.BroadEvaluationCount.ShouldBe(broad);
+        _processes.Snapshots.ShouldBe(12);
+        _foreground.Current = new ForegroundInfo(42, "g.exe");
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(broad + 1);
+        _processes.Running = [];
+        service.EvaluateOnce();
+        service.Active!.InGrace.ShouldBeTrue();
+        _time.Advance(TimeSpan.FromSeconds(10));
+        service.EvaluateOnce();
+        service.Active.ShouldBeNull();
+    }
+
+    [Fact]
+    public async Task Changed_process_identity_and_fallback_expiry_force_matching()
+    {
+        await using var service = Create();
+        _processes.Running = [new ProcessInfo(42, "g.exe", 1, _time.GetUtcNow())];
+        service.EvaluateOnce();
+        _time.Advance(TimeSpan.FromSeconds(3));
+        service.EvaluateOnce();
+        var broad = service.BroadEvaluationCount;
+        _time.Advance(TimeSpan.FromSeconds(30));
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(broad + 1);
+        _processes.Running = [new ProcessInfo(42, "g.exe", 1, _time.GetUtcNow())];
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(broad + 2);
+    }
+
     private sealed class FakeProcesses : IProcessSource
     {
         public IReadOnlyList<ProcessInfo> Running { get; set; } = [];

@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The giant gear rises through the center from 25% to 65% of the height, with the sun glow
         behind it and sand below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "caf3f205da02ddd114df2661ee7ad8c5840ac679b21a5d4b336cfe51a8cad28a", P: "59c778fa6e92944c799cde55f69f720f493c7b9f4de3c472b77a7b111a48ea3c", U: "06d57c99aea410da58c2dac1cebd1425429778d5bf071e0722615387d855726f"}
 
   - id: apex.minimal-01
     title: "Lone Zipline Tower"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tower stands in the lower center from 25% to 70% of the height, with empty sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "b76e574ce9da92bf26ec42ef4c27208e0e52f2b7c633dcd020efeb7ad8334f62", P: "d003e4b9be0c6491869c0ed54993d155f4b6aef75b7e6922f54504cf898385bc", U: "257b01e414ecb2da30493a322e4692cfa21625dae7a14fd6670146cb1ac91484"}
 
   - id: apex.mood-01
     title: "Outpost in Storm Light"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The outpost sits at about 62% of the height with the storm sky above and the band of light
         across it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "122ec8ad2167305c0697e9b21323a5244dc306eef8c23af72324e9f93ac40ef2", P: "900134c9c11b73f658d3e39d0b521541681e255fba4f62a08ba0633ce4260616", U: "e17407f457434b5aad8cb4a0cf0ddbf2e151475629cee72eefdc432a9038ce40"}
 
   - id: apex.alt-01
     title: "Canyon at Midday"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The half-buried forms sit in the lower center at about 55% of the height, below a pale blue
         sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "54dea801e1678d193e17f48a8fbaad689b9b6e3c8ec671f813792a72c6ca000e", P: "d3e6bf9d1b03c6a1e19c040f86e0dc04d3879bb4105ec65029feef509c200b68", U: "d7f2c78363e491141462bfc759d6600251cf83c36dde479d0f934f824a81bba0"}

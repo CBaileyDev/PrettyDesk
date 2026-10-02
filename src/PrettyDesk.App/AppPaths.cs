@@ -5,6 +5,9 @@ public sealed class AppPaths
 {
     public AppPaths(string? rootOverride = null)
     {
+#if PRETTYDESK_ACCEPTANCE
+        rootOverride ??= AcceptanceHarness.DataRoot;
+#endif
         Root = rootOverride ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), AppConstants.ProductName);
         LocalAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         BundledContent = Path.Combine(AppContext.BaseDirectory, "content");

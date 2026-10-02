@@ -12,7 +12,7 @@ A PrettyDesk wallpaper is **done** only when it meets all of these:
 2. It's calm where the UI lives. The left edge (desktop icons) and the bottom edge (taskbar) are low-detail.
 3. It survives every crop: 16:9, 16:10, 3:2, 21:9, 32:9 and, where portrait art exists, 9:16.
 4. It's technically clean at 100% zoom on a 4K monitor. That means no banding, no blotchy darks, no AI garble, no text-like squiggles, and no seams.
-5. It's original. It *evokes* a game; it doesn't *copy* one (§5).
+5. It's newly composed artwork. Generic packs evoke a game; approved fan-art packs may use recognizable named subjects (§5).
 6. It belongs to its set. Every wallpaper in a pack shares a palette and rendering style.
 
 Fewer, better wallpapers beat many mediocre ones. If a generation is 90% good, regenerate it.
@@ -46,7 +46,11 @@ Sources:
 
 ## 3. Default collections
 
-There are 13 collections with **8 wallpapers each** (`soft-gradients` has 10), 106 wallpapers in total. Within each collection, vary:
+The 13 base collections have **8 wallpapers each** (`soft-gradients` has 10), 106 wallpapers in total.
+The user-requested `default.ios-glass` supplement adds an intentionally small three-colorway capsule (Tide, Bloom, Dusk),
+bringing the default art plan to 14 collections and 109 wallpapers. Its original glass sculptures use separately authored landscape,
+ultrawide and portrait compositions; all six rendered ratios are tagged `bundled` for offline use. See `IOS_DESIGN.md`.
+Within each collection, vary:
 - the subject
 - the time of day
 - the focal position: at least 2 centered and symmetrical (for people who hide their icons), and the rest right-of-center
@@ -126,22 +130,29 @@ Each game pack MUST contain at least one `tone: dark` wallpaper and SHOULD conta
 
 ---
 
-## 5. Game-inspired, not copied (IP guardrails, MANDATORY)
+## 5. Generic inspiration and approved recognizable fan art
 
-We distribute these images, so they must be **original artwork that evokes a game's world**. Translate each game into **generic ingredients**:
+The owner has approved recognizable Rocket League fan art, including the game
+name, Octane, Fennec and Batmobile in generation prompts. This supersedes the old
+blanket prohibition for that art direction. The [pilot document](updates/rocket-league-fan-art.md)
+contains full named-subject drafts and the pending pipeline migration.
 
-| Translate into (OK) | Never include (NOT OK) |
-|---|---|
-| Genre and setting ("near-future tactical arena city", "dark-fantasy ruined kingdom") | The game's **name**, studio name, map names, character names, faction names |
-| Color palette and lighting mood | Logos, emblems, insignia, title text, any text at all |
-| Era and architecture style ("sun-bleached Mediterranean sandstone courtyards") | Recognizable characters, their outfits or weapons, official creature designs |
-| Generic archetypal motifs ("a colossal glowing golden tree on the horizon", "floating sky islands", "voxel-like blocky terrain") | Recreations of official key art, loading screens, box art or iconic exact shots |
-| Weather, time of day, materials | "In the style of <living artist>", "Studio Ghibli", "Pixar", "screenshot from <game>" |
+| Mode | Prompt direction | Current implementation |
+|---|---|---|
+| Generic inspiration (default) | Translate genre, setting, palette, motifs, weather and materials without named game subjects | Existing YAML and lint behavior |
+| Approved recognizable fan art | Use explicitly approved game, location and car names; recognizable forms in newly authored compositions | Rocket League direction approved; per-pack pipeline mode still pending |
 
-Rules:
-1. **Never put the game's name in the prompt.** It increases the risk of copying, and ChatGPT may refuse or produce IP-infringing output. The YAML's `title` and `pack` fields hold the name; the prompt text doesn't.
-2. Each game YAML starts with a **translation block** (`inspiration:`) that lists genre, palette (hex), motifs and an explicit `avoid:` list (§7). Prompts are built only from that block.
-3. A recognizable vibe is the goal; a recognizable *asset* is a failure. If a result looks like an official screenshot or a known character, reject it.
+Both modes retain desktop safe zones, full written prompts, technical review,
+provenance and deliberate shot variety. No readable text, HUD, watermark or copied
+official key-art composition. Do not extract official assets or imply endorsement.
+Recognizable approved car geometry is a review goal for the Rocket League pilot,
+not an automatic rejection reason.
+
+The existing `inspiration:` YAML block and linter still implement generic mode;
+do not weaken validation globally or claim the new drafts already pass it. Keep
+named drafts in update docs until parsing, scoped lint and generated review text
+are migrated together. Public release applicability and attribution are tracked
+separately in the [pilot release checklist](updates/rocket-league-fan-art.md#review-and-distribution).
 
 ---
 
@@ -161,7 +172,7 @@ Rules:
    - [ ] The left 15% and bottom 8% are calm; the focal point sits where the YAML says
    - [ ] Gradients and darks are smooth at 100% zoom (temporarily raise the screen brightness to check for banding or blotches)
    - [ ] It still reads well at thumbnail size
-   - [ ] It doesn't look like official art, a screenshot or a known character
+   - [ ] It follows its approved art mode: generic inspiration, or recognizable approved fan-art subjects in a new composition; no implied official endorsement
    - [ ] It feels like the rest of its pack
 6. If a check fails, regenerate and add a short note to `reviewNotes`. If it passes, set `approved: true`, and adjust `focal` if the subject landed somewhere else.
 
@@ -232,7 +243,11 @@ Target **120–220 words**. Don't use "4K/8K/ultra HD" keyword spam, "trending o
 
 ---
 
-## 8. Deliverables for the implementing agent
+## 8. Baseline deliverables and prompt self-review
+
+These A1/A2 counts describe the initial plan. The supplemental Liquid Glass
+collection and current completion counts are tracked in `art/GENERATION_STATUS.json`.
+The approved Rocket League direction follows §5 and its separate migration plan.
 
 **A1: default collections (before engineering milestone M3)**
 - `art/prompts/default.*.yaml`: 13 files and 106 wallpapers in total, following §3, §4 and §7.
@@ -241,10 +256,10 @@ Target **120–220 words**. Don't use "4K/8K/ultra HD" keyword spam, "trending o
 
 **A2: game packs**
 - `art/prompts/game.*.yaml` for **every** game in `GAME_CATALOG_SEED.md`, with 3 required wallpapers each (`hero`, `minimal`, `mood`) plus `alt` where the game has a strong second look.
-- Each file starts with an `inspiration` block researched from public descriptions of the game's world. Research the *mood*; don't recreate assets.
+- Each file starts with an `inspiration` block researched from public descriptions of the game's world. Generic packs translate the mood; the approved Rocket League fan-art pilot uses recognizable subjects in newly composed scenes (§5).
 
 **Self-review before committing prompts** (check every one):
-- [ ] The game name and other proper nouns from the game appear nowhere in prompt text
+- [ ] Generic packs avoid game proper nouns; approved fan-art packs use only the scoped named subjects authorized for that pack (§5)
 - [ ] The structure follows §7.1 and is 120–220 words
 - [ ] Focal position is stated and matches `focal`
 - [ ] Safe-zone, technical and exclusion sentences are present

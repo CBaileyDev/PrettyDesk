@@ -38,7 +38,7 @@ public sealed class WindowManager : IAppController
         {
             var viewModel = _shell();
             _main = new MainWindow(viewModel);
-            SystemThemeWatcher.Watch(_main);
+
             _main.Closed += (_, _) =>
             {
                 viewModel.Dispose();
@@ -56,7 +56,7 @@ public sealed class WindowManager : IAppController
         {
             var viewModel = _onboarding();
             _onboardingWindow = new OnboardingWindow(viewModel);
-            SystemThemeWatcher.Watch(_onboardingWindow);
+
             _onboardingWindow.Closed += (_, _) =>
             {
                 _onboardingWindow = null;

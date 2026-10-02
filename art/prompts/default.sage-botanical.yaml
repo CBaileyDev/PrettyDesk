@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The big leaf shadow enters from the upper right and reaches down to about 50% of the height,
         with smaller leaves below. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8cf7d2ca07ab3f7a8ecdb0ebb860cae6e49b8984fa35f9d94e699379c2934b2f", P: "d43663b29d9d513147bbc325f6f27b07c5b90d2d6a6fb33b28e67b60d3170dc7", U: "5694adbb10c522808ae3038bf76ac05b6edf8fefbf0e0690fb98c162d689eec5"}
 
   - id: sb-02
     title: "Misty Fern Forest"

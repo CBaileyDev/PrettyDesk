@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The road curves up the center to the glowing peaks at about 40% of the height, with the dawn
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "94e00026e18c053f5704769e956a8da712b9c4127786ead1b1935b8d31de59dc"}
 
   - id: ets2.minimal-01
     title: "Straight Road into Mountains"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The road converges to the vanishing point at about 55% of the height in the center, with the
         mountains behind and empty sky above. Same lighting, palette, materials and rendering style. Keep the
         bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "920d93bb049fc0db8683a6f59eb781e327221c467a523c7121f7917e8a3b4438"}
 
   - id: ets2.mood-01
     title: "Rain on the Highway at Dusk"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The road runs up the center to the amber glow at about 48% of the height, with reflections
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "b96110eefde37c246dbce4366bdcdb074f3543a56d80b4ea0d4a7b1e8563fa9c"}
 
   - id: ets2.alt-01
     title: "Sunflower Field Road"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The road runs up the center to about 52% of the height, with sunflowers on both sides and sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "02169a7a8839d0e53db54829673b832650a66afc09607fe8c9d5e7662bf67c13"}

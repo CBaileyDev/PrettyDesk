@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The rings radiate from the center at about 45% of the height, widening to fill the frame.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "bab26b8f000de5cad1c01daf32fa0f053fd6062a231c487c6fea4334b39ec80e"}
 
   - id: osu.minimal-01
     title: "Single Glowing Circle"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The ring hangs at about 45% of the height in the center, with empty dark space around it.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7d025b2ec04a9a25c300ee996a33a904739b25ddf34f64f4b720a3554b111fde"}
 
   - id: osu.mood-01
     title: "Soft Pink Aura"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The aura rises from the bottom to about 55% of the height in the center, with ripples
         spreading above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e40277932a471752431184615bd5f659236aa290150b1c66fbd0858984747311"}
 
   - id: osu.alt-01
     title: "Light Ripples"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The ripples spread from the center at about 45% of the height, widening to fill the frame.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8964bb75b799b2c5724d93f68ad411225855fb9e03a9ef71ad235dc9253df8ff"}

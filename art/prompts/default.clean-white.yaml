@@ -48,9 +48,9 @@ wallpapers:
         wallpaper. The olive-branch shadow enters from the upper right and arcs down to about 45% of the height,
         with grass-blade shadows below it. Same lighting, palette, materials and rendering style. Keep the
         bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ae1ca2e825c32df46180b40e1c98496f8719010d15a70725020ccab054af1048", P: "7989b3b25def297a42c3d5fe737208d79227dfb0c05cde4787792b4dd186882e", U: "9112578a1e203b1462e45a37ea6e6635082c15f1864b7b3a48280f77d3f6d810"}
 
   - id: cw-02
     title: "Folded Paper"

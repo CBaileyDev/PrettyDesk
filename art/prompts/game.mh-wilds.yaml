@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The lightning and sunlit ridge sit at the center at about 45% of the height, with the storm
         cloud above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e4f93570511ad8b10a5e0de365bea5bc72bd2b703b1acc46c5287b81bd09c6e8"}
 
   - id: mh-wilds.minimal-01
     title: "Giant Silhouette in the Haze"
@@ -96,9 +96,9 @@ wallpapers:
         wallpaper. The faint shape rises at about 50% of the height in the center, with empty cream sky above
         and plain below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c305161d0d176344b50c874f44ea98b36e42a8d93e5ecbe7ab2b45d439f2296f"}
 
   - id: mh-wilds.mood-01
     title: "Oasis at Dawn"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The pool sits at about 62% of the height in the lower center, with dunes and the dawn sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "cab69fcb8e7288fabc6bbd707afb7b1fbb06190343dd69a0c66e259649cded3d"}
 
   - id: mh-wilds.alt-01
     title: "Red Rock Mesa at Noon"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The mesa rises at about 40% of the height in the center, with the valley below. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "9e20958bb68d9fa39f078fd06ca3ee3775e324952861b4726c7d44f53653df68"}

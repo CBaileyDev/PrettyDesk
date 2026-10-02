@@ -75,6 +75,16 @@ public sealed class PrefetchCoordinatorTests : IDisposable
     }
 
     [Fact]
+    public void A_game_can_stay_enabled_without_background_prefetch()
+    {
+        _settings.Update(s => s.GetGame("cs2").PrefetchWallpapers = false);
+        _coordinator.WantedPacks().ShouldNotContain("game.cs2");
+        _coordinator.WantedPacks().ShouldContain("game.apex");
+        _settings.Current.IsGameEnabled("cs2").ShouldBeTrue();
+        SettingsService.Clone(_settings.Current).Games["cs2"].PrefetchWallpapers.ShouldBeFalse();
+    }
+
+    [Fact]
     public void The_user_images_pseudo_collection_is_never_requested()
     {
         _settings.Update(s => s.Default.Selection.Collections = ["user"]);

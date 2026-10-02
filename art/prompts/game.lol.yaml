@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The river winds up the center of the frame to the stone arch at about 40% of the height,
         under a navy twilight canopy. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "b4c71bd9b50d01a15a3012d15d81f5504740407d02558a58f506a0639e682398"}
 
   - id: lol.minimal-01
     title: "Lone Ruin Above the Mist"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tower rises from the lower center to about 40% of the height, with empty gradient sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "5c326329fc7f4dea14a06214e9a7aa6a60dda71962ff2b48ac2b555bc1044d52"}
 
   - id: lol.mood-01
     title: "Jungle Canopy Glow"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. Hanging vines and glowing leaves fill the center from 30% to 65% of the height, with the
         carved stones at the bottom. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6ad6bb507904de9455d943b4d6dfb7825002b227a3540304af75bd513ec12674"}
 
   - id: lol.alt-01
     title: "Golden Valley Morning"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The river curves through the center with the sunlit ruin at about 45% of the height and pale
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ff09a1e5eba11ab3b778761ff8cc410589f0ff62c34e0dc8ccbaa537dd4a9589"}

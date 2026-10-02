@@ -8,7 +8,7 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
     <StackPanel MaxWidth="720" HorizontalAlignment="Left">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Settings_Title}" />
 
@@ -16,12 +16,28 @@
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_General}" />
       <Border Style="{StaticResource CardStyle}">
         <StackPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" Text="{x:Static res:Strings.Settings_AppTheme}" />
+          <ComboBox ItemsSource="{x:Static vm:GeneralSettingsViewModel.ThemeChoices}" SelectedItem="{Binding General.Theme, Mode=TwoWay}" HorizontalAlignment="Left" MinWidth="160" Margin="0,8,0,4" AutomationProperties.Name="{x:Static res:Strings.Settings_AppTheme}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_AppThemeHelp}" Margin="0,0,0,16" />
           <ui:ToggleSwitch IsChecked="{Binding General.StartWithWindows, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_StartWithWindows}" AutomationProperties.Name="{x:Static res:Strings.Settings_StartWithWindows}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_StartWithWindowsHelp}" />
           <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.RestoreOnExit, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_RestoreOnExit}" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOnExit}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOnExitHelp}" />
           <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.BetaUpdates, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_BetaUpdates}" AutomationProperties.Name="{x:Static res:Strings.Settings_BetaUpdates}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_BetaUpdatesHelp}" />
+          <ui:ToggleSwitch IsChecked="{Binding General.DesktopClock, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_DesktopClock}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_DesktopClock}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DesktopClockHelp}" />
+          <ComboBox ItemsSource="{Binding General.ClockMonitors}" SelectedItem="{Binding General.ClockMonitor, Mode=TwoWay}" DisplayMemberPath="Label" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_ClockMonitor}" />
+          <ui:ToggleSwitch IsChecked="{Binding General.DesktopNowPlaying, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NowPlaying}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_NowPlaying}" />
+          <ui:ToggleSwitch IsChecked="{Binding General.DesktopVisualizer, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_Visualizer}" Margin="0,12,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_Visualizer}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_VisualizerHelp}" />
+          <WrapPanel Margin="0,8,0,0">
+            <Button Content="{x:Static res:Strings.Settings_PlayPause}" Command="{Binding General.PlayPauseCommand}" Margin="0,0,8,0" AutomationProperties.Name="{x:Static res:Strings.Settings_PlayPause}" />
+            <Button Content="{x:Static res:Strings.Settings_NextTrack}" Command="{Binding General.NextTrackCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_NextTrack}" />
+          </WrapPanel>
+          <TextBlock Style="{StaticResource BodyStyle}" Text="{x:Static res:Strings.Settings_WindowsColors}" Margin="0,16,0,0" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_WindowsColorsHelp}" />
+          <Button Content="{x:Static res:Strings.Settings_OpenColors}" Click="OnOpenColors" HorizontalAlignment="Left" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_OpenColors}" />
           <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding General.ErrorMessage}" Visibility="{Binding General.HasError, Converter={StaticResource BoolToVisibility}}" />
         </StackPanel>
       </Border>

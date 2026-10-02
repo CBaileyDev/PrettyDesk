@@ -6,13 +6,21 @@ namespace PrettyDesk.App;
 /// </summary>
 public sealed class SingleInstance : IDisposable
 {
+#if PRETTYDESK_ACCEPTANCE
+    private static readonly string AcceptanceScope = Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(
+        System.Text.Encoding.UTF8.GetBytes(AcceptanceHarness.DataRoot)))[..12];
+    private static readonly string MutexName = @"Local\PrettyDesk.Acceptance.SingleInstance." + AcceptanceScope;
+    private static readonly string ShowEventName = @"Local\PrettyDesk.Acceptance.ShowWindow." + AcceptanceScope;
+#else
     private const string MutexName = @"Local\PrettyDesk.SingleInstance";
     private const string ShowEventName = @"Local\PrettyDesk.ShowWindow";
+#endif
 
     private readonly Mutex _mutex;
     private readonly EventWaitHandle _showEvent;
     private readonly ManualResetEvent _stop = new(false);
     private Thread? _listener;
+    private int _disposed;
 
     private SingleInstance(Mutex mutex, EventWaitHandle showEvent)
     {
@@ -56,6 +64,12 @@ public sealed class SingleInstance : IDisposable
 
     public void Dispose()
     {
+        // Quit disposes this explicitly and Program's `using` disposes it again; the second call must be a no-op.
+        if (Interlocked.Exchange(ref _disposed, 1) != 0)
+        {
+            return;
+        }
+
         _stop.Set();
         _listener?.Join(TimeSpan.FromSeconds(1));
         _showEvent.Dispose();

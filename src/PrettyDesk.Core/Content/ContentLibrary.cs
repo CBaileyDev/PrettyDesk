@@ -14,9 +14,12 @@ public enum PackStateKind
     Downloading,
     Ready,
     Failed,
+    Unavailable,
 }
 
 public sealed record PackProgress(string PackId, PackStateKind State, double Fraction);
+
+public sealed record PackDownloadPlan(bool HasWallpapers, bool CanDownload, long MissingBytes, IReadOnlyList<string> VariantKeys, bool UsesFallback);
 
 public sealed record ContentLibraryOptions(
     string? BundledContentDirectory,
@@ -39,7 +42,8 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
     private readonly TimeProvider _time;
     private readonly ILogger<ContentLibrary> _logger;
     private readonly SemaphoreSlim _downloadGate;
-    private readonly ConcurrentDictionary<string, Task> _inflight = new();
+    private sealed record DownloadRun(Task Task, IReadOnlySet<string> Variants);
+    private readonly ConcurrentDictionary<string, Lazy<DownloadRun>> _inflight = new();
     private readonly ConcurrentDictionary<string, PackProgress> _states = new();
     private readonly ConcurrentDictionary<string, DateTimeOffset> _failedAt = new();
     private readonly ConcurrentDictionary<string, DateTimeOffset> _touched = new();
@@ -193,16 +197,46 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
         }
 
         var ready = pack.Wallpapers.Count(w => TryGetAsset(w.Id) is not null);
-        return new PackProgress(packId, ready == pack.Wallpapers.Count ? PackStateKind.Ready : PackStateKind.NotDownloaded, (double)ready / pack.Wallpapers.Count);
+        var kind = ready == pack.Wallpapers.Count ? PackStateKind.Ready
+            : CatalogService.HasValidBaseUrl(_catalog.Current.ContentBaseUrl) ? PackStateKind.NotDownloaded : PackStateKind.Unavailable;
+        return new PackProgress(packId, kind, (double)ready / pack.Wallpapers.Count);
+    }
+
+    /// <summary>Exact display-specific missing files, using the same selection and local checks as downloading.</summary>
+    public PackDownloadPlan GetDownloadPlan(string packId, IReadOnlyList<MonitorInfo> monitors)
+    {
+        var pack = _catalog.Current.FindPack(packId);
+        var displays = monitors.Where(m => m.PixelWidth > 0 && m.PixelHeight > 0).ToList();
+        if (pack is null || pack.Wallpapers.Count == 0 || displays.Count == 0)
+        {
+            return new(false, false, 0, [], false);
+        }
+
+        var choices = pack.Wallpapers.SelectMany(w => displays.Select(m => VariantSelector.Select(m.PixelWidth, m.PixelHeight,
+            w.Variants.Where(v => Variants.IsKnown(v.Key)).ToDictionary(v => v.Key, v => Variants.Find(v.Key)!.Ratio)))).OfType<VariantChoice>().ToList();
+        var files = pack.Wallpapers.SelectMany(w => FilesNeeded(pack, w, displays)).Select(f => f.File).DistinctBy(f => f.Path).ToList();
+        return new(choices.Count > 0, CatalogService.HasValidBaseUrl(_catalog.Current.ContentBaseUrl), files.Sum(f => f.Bytes),
+            choices.Select(c => c.Key).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList(), choices.Any(c => c.IsFallback));
     }
 
     // ---- downloading ----------------------------------------------------------------------------------------------
 
     public void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors) => _ = EnsurePackAsync(packId, monitors, _cts.Token);
 
+    public void RetryPack(string packId, IReadOnlyList<MonitorInfo> monitors)
+    {
+        _failedAt.TryRemove(packId, out _);
+        RequestPack(packId, monitors);
+    }
+
     /// <summary>Downloads whatever the monitors need for a pack. Concurrent calls for the same pack share one run.</summary>
     public Task EnsurePackAsync(string packId, IReadOnlyList<MonitorInfo> monitors, CancellationToken cancellationToken)
     {
+        if (!monitors.Any(m => m.PixelWidth > 0 && m.PixelHeight > 0))
+        {
+            return Task.CompletedTask;
+        }
+
         var pack = _catalog.Current.FindPack(packId);
         if (pack is null || pack.Wallpapers.Count == 0)
         {
@@ -211,7 +245,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
 
         if (!CatalogService.HasValidBaseUrl(_catalog.Current.ContentBaseUrl))
         {
-            // Offline-only build or catalog: only the bundled starter set and the user's images are available.
+            Publish(GetPackState(packId));
             return Task.CompletedTask;
         }
 
@@ -221,7 +255,20 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
             return Task.CompletedTask;
         }
 
-        return _inflight.GetOrAdd(packId, _ => RunAsync(pack, monitors.ToList(), cancellationToken));
+        // GetOrAdd may invoke its factory concurrently. Only the winning Lazy may start the download, otherwise
+        // duplicate runs race on the same .part files and can announce a failure for a pack that another run completed.
+        var needed = GetDownloadPlan(packId, monitors).VariantKeys.ToHashSet(StringComparer.Ordinal);
+        var run = _inflight.GetOrAdd(packId, _ => new Lazy<DownloadRun>(() => new DownloadRun(RunAsync(pack, monitors.ToList(), cancellationToken), needed))).Value;
+        return needed.IsSubsetOf(run.Variants) ? run.Task : CompleteAdditionalFormatsAsync(run.Task, packId, monitors.ToList(), cancellationToken);
+    }
+
+    private async Task CompleteAdditionalFormatsAsync(Task running, string packId, IReadOnlyList<MonitorInfo> monitors, CancellationToken ct)
+    {
+        await running.ConfigureAwait(false);
+        if (!ct.IsCancellationRequested && GetPackState(packId).State == PackStateKind.Ready && GetDownloadPlan(packId, monitors).MissingBytes > 0)
+        {
+            await EnsurePackAsync(packId, monitors, ct).ConfigureAwait(false);
+        }
     }
 
     /// <summary>Background prefetch for installed + enabled games (FR-CON-4).</summary>
@@ -288,7 +335,8 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
         }
         catch (OperationCanceledException) when (ct.IsCancellationRequested)
         {
-            // shutting down
+            _states.TryRemove(pack.Id, out _);
+            Publish(GetPackState(pack.Id));
         }
 #pragma warning disable CA1031 // A failed pack download must never crash the tray; it is reported through DownloadFailed.
         catch (Exception ex)
@@ -311,7 +359,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
         try
         {
             var destination = _packs.FilePath(pack.Id, pack.Version, file.Path);
-            await _downloader.DownloadAsync(new Uri(baseUri, file.Path), destination, file.Sha256, progress, ct);
+            await _downloader.DownloadAsync(new Uri(baseUri, file.Path), destination, file.Sha256, progress, ct, file.Bytes);
         }
         finally
         {
@@ -490,6 +538,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
 
     private void InvalidateIndex()
     {
+        _states.Clear();
         lock (_indexLock)
         {
             _index = null;

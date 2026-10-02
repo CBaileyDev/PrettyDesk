@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using System.Text.Json;
 using PrettyDesk.Core.Abstractions;
 using PrettyDesk.Core.Catalog;
@@ -12,6 +13,7 @@ namespace PrettyDesk.Core.Detection.Discovery;
 /// </summary>
 public sealed class InstalledGameScanner : IInstalledGameScanner
 {
+    private const int MaxManifestBytes = 1024 * 1024;
     private readonly string? _steamPath;
     private readonly string? _epicManifestDirectory;
 
@@ -34,11 +36,31 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
     {
         var list = installed.ToList();
         var steamIds = list.Where(i => i.SteamAppId is not null).Select(i => i.SteamAppId!.Value).ToHashSet();
-        var exes = list.Where(i => !string.IsNullOrEmpty(i.ExeHint)).Select(i => Path.GetFileName(i.ExeHint!.Replace('\\', '/'))).ToHashSet(StringComparer.OrdinalIgnoreCase);
-
         return catalog.Games
-            .Where(g => g.Detection.SteamAppIds.Any(steamIds.Contains) || g.Detection.ExeNames.Any(exes.Contains))
+            .Where(g => g.Detection.SteamAppIds.Any(steamIds.Contains) || list.Any(i =>
+                MatchesExeHint(g.Detection, i) || i.Source == "epic" &&
+                !string.IsNullOrWhiteSpace(i.ExeHint) &&
+                string.Equals(NormalizeTitle(g.DisplayName), NormalizeTitle(i.DisplayName), StringComparison.OrdinalIgnoreCase)))
             .ToList();
+    }
+
+    // Epic often declares a bootstrapper rather than the gameplay exe. Its primary, complete manifest still identifies
+    // the installed title. Match the whole title, allowing only trademark marks and surrounding whitespace to differ.
+    private static string NormalizeTitle(string title) => title.Normalize(NormalizationForm.FormC)
+        .Replace("®", "", StringComparison.Ordinal).Replace("™", "", StringComparison.Ordinal).Trim();
+
+    private static bool MatchesExeHint(DetectionRules rules, InstalledGame installed)
+    {
+        if (string.IsNullOrEmpty(installed.ExeHint))
+        {
+            return false;
+        }
+
+        var exe = Path.GetFileName(installed.ExeHint.Replace('\\', '/'));
+        var path = installed.InstallPath + "/" + installed.ExeHint;
+        return rules.ExeNames.Contains(exe, StringComparer.OrdinalIgnoreCase) &&
+            !rules.ExcludeExeNames.Contains(exe, StringComparer.OrdinalIgnoreCase) &&
+            (rules.PathContains.Count == 0 || rules.PathContains.Any(p => path.Contains(p, StringComparison.OrdinalIgnoreCase)));
     }
 
     private void ScanSteam(List<InstalledGame> games)
@@ -48,20 +70,28 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
             return;
         }
 
+        var libraries = new List<string> { _steamPath };
         try
         {
-            var libraries = new List<string> { _steamPath };
             var foldersFile = Path.Combine(_steamPath, "steamapps", "libraryfolders.vdf");
-            if (File.Exists(foldersFile))
+            if (File.Exists(foldersFile) && new FileInfo(foldersFile).Length <= MaxManifestBytes)
             {
                 var folders = VdfParser.Parse(File.ReadAllText(foldersFile))["libraryfolders"];
                 if (folders is not null)
                 {
-                    libraries.AddRange(folders.Children.Values.Select(f => f.Text("path")).Where(p => !string.IsNullOrEmpty(p)).Select(p => p!));
+                    libraries.AddRange(folders.Children.Values.Select(f => f.Text("path") ?? f.Value).Where(p => !string.IsNullOrEmpty(p)).Select(p => p!));
                 }
             }
 
-            foreach (var library in libraries.Distinct(StringComparer.OrdinalIgnoreCase))
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or ArgumentException)
+        {
+            // Still scan the primary library when Steam is rewriting or locking libraryfolders.vdf.
+        }
+
+        foreach (var library in libraries.Distinct(StringComparer.OrdinalIgnoreCase))
+        {
+            try
             {
                 var apps = Path.Combine(library, "steamapps");
                 if (!Directory.Exists(apps))
@@ -78,10 +108,10 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
                     }
                 }
             }
-        }
-        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
-        {
-            // An unreadable Steam folder contributes nothing.
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or ArgumentException)
+            {
+                // A broken or unavailable library must not hide games in later libraries.
+            }
         }
     }
 
@@ -89,6 +119,11 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
     {
         try
         {
+            if (new FileInfo(manifestPath).Length > MaxManifestBytes)
+            {
+                return null;
+            }
+
             var state = VdfParser.Parse(File.ReadAllText(manifestPath))["AppState"];
             if (state is null || !uint.TryParse(state.Text("appid"), NumberStyles.None, CultureInfo.InvariantCulture, out var appId))
             {
@@ -105,7 +140,7 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
             var installDir = state.Text("installdir") ?? string.Empty;
             return new InstalledGame("steam", Path.Combine(steamApps, "common", installDir), null, appId, name);
         }
-        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or ArgumentException)
         {
             return null;
         }
@@ -124,6 +159,11 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
             {
                 try
                 {
+                    if (new FileInfo(item).Length > MaxManifestBytes)
+                    {
+                        continue;
+                    }
+
                     using var document = JsonDocument.Parse(File.ReadAllText(item));
                     var root = document.RootElement;
                     if (root.ValueKind != JsonValueKind.Object)
@@ -138,14 +178,16 @@ public sealed class InstalledGameScanner : IInstalledGameScanner
 
                     var name = Text(root, "DisplayName");
                     var location = Text(root, "InstallLocation");
-                    if (name is null || location is null)
+                    var executable = Text(root, "LaunchExecutable");
+                    if (name is null || location is null || executable is null ||
+                        !executable.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || !Directory.Exists(location))
                     {
                         continue;
                     }
 
-                    games.Add(new InstalledGame("epic", location, Text(root, "LaunchExecutable"), null, name));
+                    games.Add(new InstalledGame("epic", location, executable, null, name));
                 }
-                catch (JsonException)
+                catch (Exception ex) when (ex is JsonException or IOException or UnauthorizedAccessException)
                 {
                     // one corrupt manifest must not hide the others
                 }

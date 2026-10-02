@@ -7,7 +7,7 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:AboutViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24,8,24,24">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
     <StackPanel MaxWidth="720" HorizontalAlignment="Left">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.About_Title}" />
       <TextBlock Style="{StaticResource MutedStyle}" Text="{Binding VersionText}" />

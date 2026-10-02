@@ -16,6 +16,7 @@ param(
   [int]$Minutes = 10,
   [int]$IntervalSeconds = 5,
   [string]$ProcessName = 'PrettyDesk',
+  [int]$ProcessId = 0,
   [string]$OutFile = "soak-$(Get-Date -Format 'yyyyMMdd-HHmm').csv"
 )
 
@@ -24,7 +25,7 @@ $cores = [Environment]::ProcessorCount
 $samples = [System.Collections.Generic.List[object]]::new()
 $started = Get-Date
 
-$proc = Get-Process -Name $ProcessName -ErrorAction SilentlyContinue | Select-Object -First 1
+$proc = if ($ProcessId -gt 0) { Get-Process -Id $ProcessId -ErrorAction SilentlyContinue } else { Get-Process -Name $ProcessName -ErrorAction SilentlyContinue | Select-Object -First 1 }
 if (-not $proc) { throw "PrettyDesk is not running. Start it (window closed, in the tray) and run this again." }
 Write-Host "Sampling PID $($proc.Id) every $IntervalSeconds s for $([math]::Round($durationSeconds / 60)) min on $cores logical cores..."
 
@@ -38,13 +39,23 @@ while (((Get-Date) - $started).TotalSeconds -lt $durationSeconds) {
   $cpu = $proc.TotalProcessorTime
   $cpuPercent = (($cpu - $lastCpu).TotalSeconds / (($now - $lastTime).TotalSeconds * $cores)) * 100
   $lastCpu = $cpu; $lastTime = $now
-  $samples.Add([pscustomobject]@{
+  $sample = [pscustomobject]@{
     Time = $now.ToString('o'); CpuPercent = [math]::Round($cpuPercent, 3)
     PrivateMB = [math]::Round($proc.PrivateMemorySize64 / 1MB, 1); WorkingSetMB = [math]::Round($proc.WorkingSet64 / 1MB, 1)
     Handles = $proc.HandleCount; Threads = $proc.Threads.Count
-  })
+  }
+  $samples.Add($sample)
+  if ($samples.Count -eq 1) { $sample | Export-Csv -NoTypeInformation -Path $OutFile }
+  else { $sample | Export-Csv -NoTypeInformation -Append -Path $OutFile }
 }
-$samples | Export-Csv -NoTypeInformation -Path $OutFile
+$summary = [pscustomobject]@{
+  Completed = $true; DurationSeconds = ((Get-Date) - $started).TotalSeconds
+  ProcessId = $proc.Id; LogicalCores = $cores; Samples = $samples.Count
+  CpuAveragePercent = ($samples | Measure-Object CpuPercent -Average).Average
+  CpuPeakPercent = ($samples | Measure-Object CpuPercent -Maximum).Maximum
+  PrivateMBPeak = ($samples | Measure-Object PrivateMB -Maximum).Maximum
+}
+$summary | ConvertTo-Json | Set-Content "$OutFile.summary.json"
 
 $cpuAvg = ($samples | Measure-Object CpuPercent -Average).Average
 $cpuMax = ($samples | Measure-Object CpuPercent -Maximum).Maximum

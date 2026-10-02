@@ -11,7 +11,7 @@ from pathlib import Path
 from . import imaging
 from .packs import RAW_SUFFIX, Pack, Wallpaper
 from .paths import Layout
-from .variants import MAX_FILE_BYTES, VARIANTS, Variant
+from .variants import MAX_FILE_BYTES, VARIANTS, Variant, focal_crop, needs_upscale
 
 
 def sha256_file(path: Path) -> str:
@@ -140,6 +140,19 @@ def build_wallpaper(layout: Layout, pack: Pack, wp: Wallpaper, only: set[str] | 
         result.errors.append("no L master; nothing to build")
         return result
 
+    for suffix, master in masters.items():
+        result.errors.extend(f"{suffix}: {problem}" for problem in imaging.check_master(master, suffix))
+    if result.errors:
+        return result
+
+    # Upscale each master once for the selected rendition set rather than running the GPU model
+    # again for every crop. The original raw hashes still identify the generation source.
+    if imaging.realesrgan_path() is not None:
+        for suffix, master in list(masters.items()):
+            selected = [v for v in VARIANTS if v.source == suffix and (not only or v.key in only)]
+            if any(needs_upscale(focal_crop(master.width, master.height, v.ratio, wp.focal_x, wp.focal_y), v.width, v.height) for v in selected):
+                masters[suffix] = imaging.upscale_4x(master, wp.upscaler)
+
     for spec in VARIANTS:
         if only and spec.key not in only:
             continue
@@ -150,8 +163,6 @@ def build_wallpaper(layout: Layout, pack: Pack, wp: Wallpaper, only: set[str] | 
             else:
                 result.warnings.append(f"no {spec.source} master: variant {spec.key} skipped")
             continue
-        for problem in imaging.check_master(master, spec.source):
-            result.errors.append(f"{spec.source}: {problem}")
         rendered = imaging.render_variant(master, spec, wp.focal_x, wp.focal_y, wp.upscaler, wp.grain)
         data = imaging.encode_jpeg(rendered.image)
         if rendered.soft:
@@ -218,6 +229,13 @@ def update_raw_hashes(yaml_text: str, wallpaper_id: str, hashes: dict[str, str])
         m = _RAW_LINE.match(lines[i])
         if m:
             body = ", ".join(f'{k}: "{v}"' for k, v in sorted(hashes.items()))
+            # A block-style map spans multiple indented lines. Remove the old
+            # children as well, otherwise the new inline map makes invalid YAML.
+            end = i + 1
+            indent = len(m.group(1))
+            while end < len(lines) and lines[end].strip() and len(lines[end]) - len(lines[end].lstrip()) > indent:
+                end += 1
+            del lines[i + 1:end]
             lines[i] = f"{m.group(1)}rawSha256: {{{body}}}"
             break
     return "\n".join(lines)

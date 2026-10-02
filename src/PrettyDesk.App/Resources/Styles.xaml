@@ -1,6 +1,60 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:conv="clr-namespace:PrettyDesk.App.Converters">
+                    xmlns:conv="clr-namespace:PrettyDesk.App.Converters"
+                    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+
+  <!-- Static optical layers keep the tray utility quiet: no continuous blur or animation. -->
+  <SolidColorBrush x:Key="DeskCanvasBrush" Color="#F5F5F4" />
+  <SolidColorBrush x:Key="DeskGlassBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="DeskInkBrush" Color="#182035" />
+  <SolidColorBrush x:Key="DeskMutedBrush" Color="#596477" />
+  <SolidColorBrush x:Key="DeskBlueBrush" Color="#007AFF" />
+  <SolidColorBrush x:Key="DeskPanelBrush" Color="#FAFAF9" />
+  <SolidColorBrush x:Key="DeskSoftBrush" Color="#EBEFF4" />
+  <SolidColorBrush x:Key="DeskStrokeBrush" Color="#DADDDD" />
+  <SolidColorBrush x:Key="DeskShellBrush" Color="#CCFFFFFF" />
+  <SolidColorBrush x:Key="DeskRimBrush" Color="#DDFFFFFF" />
+  <Visibility x:Key="DeskArtVisibility">Visible</Visibility>
+  <LinearGradientBrush x:Key="DeskAmbientBrush" StartPoint="0,0" EndPoint="1,1">
+    <GradientStop Color="#EDF3FF" Offset="0" />
+    <GradientStop Color="#F8F8FC" Offset="0.55" />
+    <GradientStop Color="#F2EBFA" Offset="1" />
+  </LinearGradientBrush>
+  <Style TargetType="Window">
+    <Setter Property="FontFamily" Value="Segoe UI Variable, Segoe UI" />
+    <Setter Property="Background" Value="{DynamicResource DeskCanvasBrush}" />
+  </Style>
+  <Style TargetType="UserControl">
+    <Setter Property="FontFamily" Value="Segoe UI Variable, Segoe UI" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+  <Style TargetType="Button">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskBlueBrush}" />
+    <Setter Property="Background" Value="{DynamicResource DeskSoftBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource DeskStrokeBrush}" />
+    <Setter Property="Padding" Value="16,9" />
+    <Setter Property="MinHeight" Value="38" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Capsule" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="19" Padding="{TemplateBinding Padding}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" RecognizesAccessKey="True" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Capsule" Property="Opacity" Value="0.8" /></Trigger>
+            <Trigger Property="IsPressed" Value="True"><Setter TargetName="Capsule" Property="Opacity" Value="0.6" /></Trigger>
+            <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Capsule" Property="Opacity" Value="0.45" /></Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Capsule" Property="BorderBrush" Value="#007AFF" /><Setter TargetName="Capsule" Property="BorderThickness" Value="2" /></Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
   <conv:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibility" />
   <conv:InverseBoolConverter x:Key="InverseBool" />
@@ -10,42 +64,67 @@
   <conv:PathToImageConverter x:Key="PathToImage" />
   <conv:SeverityToBrushConverter x:Key="SeverityToBrush" />
   <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+  <Style TargetType="ui:ToggleSwitch" BasedOn="{StaticResource DefaultUiToggleSwitchStyle}">
+    <Setter Property="Background" Value="{DynamicResource DeskBlueBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskInkBrush}" />
+  </Style>
+  <Style TargetType="ui:Button" BasedOn="{StaticResource DefaultUiButtonStyle}">
+    <Setter Property="CornerRadius" Value="20" />
+    <Setter Property="Padding" Value="16,9" />
+  </Style>
+
+  <Style x:Key="SegmentedOptionStyle" TargetType="RadioButton">
+    <Setter Property="Foreground" Value="{DynamicResource DeskMutedBrush}" />
+    <Setter Property="Padding" Value="14,8" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="RadioButton">
+      <Border x:Name="Segment" CornerRadius="17" Padding="{TemplateBinding Padding}" Background="{DynamicResource DeskSoftBrush}" BorderThickness="1" BorderBrush="Transparent">
+        <ContentPresenter VerticalAlignment="Center" />
+      </Border>
+      <ControlTemplate.Triggers>
+        <Trigger Property="IsChecked" Value="True"><Setter TargetName="Segment" Property="Background" Value="#007AFF" /><Setter Property="Foreground" Value="White" /></Trigger>
+        <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Segment" Property="BorderBrush" Value="{DynamicResource DeskBlueBrush}" /><Setter TargetName="Segment" Property="BorderThickness" Value="2" /></Trigger>
+        <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Segment" Property="Opacity" Value="0.8" /></Trigger>
+        <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Segment" Property="Opacity" Value="0.45" /></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
 
   <Style x:Key="PageTitleStyle" TargetType="TextBlock">
-    <Setter Property="FontSize" Value="28" />
+    <Setter Property="FontSize" Value="34" />
     <Setter Property="FontWeight" Value="SemiBold" />
-    <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
-    <Setter Property="Margin" Value="0,0,0,4" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskInkBrush}" />
+    <Setter Property="Margin" Value="0,0,0,8" />
   </Style>
 
   <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
-    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontSize" Value="20" />
     <Setter Property="FontWeight" Value="SemiBold" />
-    <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
-    <Setter Property="Margin" Value="0,24,0,8" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskInkBrush}" />
+    <Setter Property="Margin" Value="0,28,0,14" />
   </Style>
 
   <Style x:Key="BodyStyle" TargetType="TextBlock">
-    <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskInkBrush}" />
     <Setter Property="TextWrapping" Value="Wrap" />
   </Style>
 
   <Style x:Key="MutedStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyStyle}">
-    <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource DeskMutedBrush}" />
   </Style>
 
   <Style x:Key="CardStyle" TargetType="Border">
-    <Setter Property="Background" Value="{DynamicResource CardBackgroundFillColorDefaultBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource CardStrokeColorDefaultBrush}" />
+    <Setter Property="Background" Value="{DynamicResource DeskGlassBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource DeskStrokeBrush}" />
     <Setter Property="BorderThickness" Value="1" />
-    <Setter Property="CornerRadius" Value="8" />
-    <Setter Property="Padding" Value="16" />
+    <Setter Property="CornerRadius" Value="24" />
+    <Setter Property="Padding" Value="24,26" />
   </Style>
 
   <Style x:Key="ChipStyle" TargetType="Border">
-    <Setter Property="Background" Value="{DynamicResource ControlFillColorSecondaryBrush}" />
-    <Setter Property="CornerRadius" Value="10" />
-    <Setter Property="Padding" Value="8,2" />
+    <Setter Property="Background" Value="{DynamicResource DeskSoftBrush}" />
+    <Setter Property="CornerRadius" Value="12" />
+    <Setter Property="Padding" Value="10,4" />
     <Setter Property="HorizontalAlignment" Value="Left" />
   </Style>
 

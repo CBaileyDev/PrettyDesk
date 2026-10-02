@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The trail winds up the center to the mountains at about 48% of the height, with the glowing
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "cd496e97b91c80a21021ddee581526963e99b279f1491dd1fe317925cde55093"}
 
   - id: rdr2.minimal-01
     title: "Lone Rider on the Ridge"
@@ -96,9 +96,9 @@ wallpapers:
         wallpaper. The rider stands at about 62% of the height in the lower center, with an enormous empty sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "0f76dd47475a1b6235dcc990756cccbec285bb913e3f8a193716a2da135449e7"}
 
   - id: rdr2.mood-01
     title: "Foggy Bayou"
@@ -139,9 +139,9 @@ wallpapers:
         wallpaper. The glowing column of fog rises at the center from 30% to 65% of the height, with its
         reflection below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "76256523d37fca9ca20d11ad06a70393969085a87c71e96376342c6da97acd6d"}
 
   - id: rdr2.alt-01
     title: "Snowy Pass at Noon"
@@ -181,6 +181,6 @@ wallpapers:
         wallpaper. The trail winds up the center to a gap between peaks at about 45% of the height. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "8d79d2aa4a1166420f58b1ae976cd91b8489b9886a9cfe5908914a5c6cc5b0fc"}

@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The arched window rises in the center from 20% to 70% of the height, with the galaxy filling
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "bdc7f775261c7034532b3d2fcda45dc980300614a9689a1d4e8d9102ef4d3ad1"}
 
   - id: hsr.minimal-01
     title: "Lone Train Under the Stars"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The train crosses the center at about 55% of the height on its thin bridge of light, with
         empty gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "39b88d805a6d5e24aa8a6862611eccea67dbc30542a6e8f45a848769b2f543a2"}
 
   - id: hsr.mood-01
     title: "Snowy Brass City"
@@ -139,9 +139,9 @@ wallpapers:
         wallpaper. The domes sit at about 55% of the height at the center, with the violet sky above. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "e6651013af50021f1901120feba2d8239467f324692f57ce8803853243a8ace0"}
 
   - id: hsr.alt-01
     title: "Starlit Platform Morning"
@@ -181,6 +181,6 @@ wallpapers:
         wallpaper. The bench sits at about 58% of the height in the center, with the pastel cloud sea above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "19f3006e5e3fe0e082ed1047537d8d238b6403a98403634c95b465af03b675b6"}

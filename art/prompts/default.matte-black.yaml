@@ -51,9 +51,9 @@ wallpapers:
         wallpaper. The dune crest rises diagonally from the lower right toward the upper center, with its
         brightest rim light at about 40% of the height. Same lighting, palette, materials and rendering style.
         Keep the bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "cacfd31636407936bfab663e52948c58b8215a6ff9d30567d990c79b43f8572b", P: "d9924fb73168a384d79d103130e07840aca3e6ab801bb2c4a0dabac51e9141d7", U: "b97c7d95449e9515c6b91dee2412886a05de8317ac27eeacf91c52edaa31e04a"}
 
   - id: mb-02
     title: "Folded Black Silk"

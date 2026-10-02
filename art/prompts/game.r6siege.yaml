@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The light shafts fall from the upper right to the floor, the hole at about 40% of the height.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "185fae21218e3a6b46e2c4f98465094ab33df8ba76237e08d1099b8d6a2c6146"}
 
   - id: r6siege.minimal-01
     title: "Single Light Slit"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The light slit rises through the center from 30% to 65% of the height, with its wedge on the
         floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6542f24f2f87bf7b09a305e44cdefa632fb1662458792a0452efd4279d8401e6"}
 
   - id: r6siege.mood-01
     title: "Rain on a Dark House"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The house stands at the center, with the window glowing at about 45% of the height and the
         wet lawn below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f2e99304383fe1f0d4f4c7b20db6ce1732c3dde90a072f86cda926ec63f1627e"}
 
   - id: r6siege.alt-01
     title: "Sunlit Empty Room"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The sunbars fall across the center at about 55% of the height, over a bare wooden floor. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "5a833fccc38836473189dddc2ce09113fa5039697deaf53cf1dc1d6411b121e8"}

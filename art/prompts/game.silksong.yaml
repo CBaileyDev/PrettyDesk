@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The bell tower rises through the center from 20% to 65% of the height, with the silk threads
         crossing it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "966f80da5bd7ed0a74bfec414aa261d9315f77d6ddc90615c2afa1e2b53d9f29"}
 
   - id: silksong.minimal-01
     title: "Silk Threads in the Dark"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The threads arc down the center, with the crimson bead at about 50% of the height, over empty
         dark space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c20b46a5371e016ae1e7ef78e4e010875dd1c5acf63b5f0a1e1c9b8456df17b1"}
 
   - id: silksong.mood-01
     title: "Mossy Grotto"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The glowing pool sits at the center at about 55% of the height, with mossy ledges around it.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "a9f6c25dfa87363d73ac866c972f18064244328561c6aaa9b51e0fa9dd833d6f"}
 
   - id: silksong.alt-01
     title: "Ivory Spires at Dawn"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The spire rises at about 45% of the height in the center, with the threads glittering around
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d4cc1e427ffb40e862f2d48b4af9763307a00d519dbd4433859cf69544191fe7"}

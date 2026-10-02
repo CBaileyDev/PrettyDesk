@@ -66,6 +66,12 @@ public static partial class CatalogValidator
     /// <summary>Returns the first structural problem, or null when the catalog is sound.</summary>
     public static string? FindProblem(CatalogDocument doc)
     {
+        if (doc.Packs is null || doc.Games is null || doc.Collections is null || doc.ExcludeExeNames is null ||
+            doc.ExcludeExeNames.Any(string.IsNullOrWhiteSpace))
+        {
+            return "catalog lists must not contain null or empty entries";
+        }
+
         if (!string.IsNullOrEmpty(doc.ContentBaseUrl) &&
             (!Uri.TryCreate(doc.ContentBaseUrl, UriKind.Absolute, out var baseUri) || baseUri.Scheme != Uri.UriSchemeHttps || !doc.ContentBaseUrl.EndsWith('/')))
         {
@@ -76,6 +82,11 @@ public static partial class CatalogValidator
         var wallpaperIds = new HashSet<string>(StringComparer.Ordinal);
         foreach (var pack in doc.Packs)
         {
+            if (pack is null || pack.Wallpapers is null)
+            {
+                return "pack and wallpaper lists must not be null";
+            }
+
             if (string.IsNullOrWhiteSpace(pack.Id) || !packIds.Add(pack.Id))
             {
                 return $"duplicate or empty pack id '{pack.Id}'";
@@ -83,6 +94,13 @@ public static partial class CatalogValidator
 
             foreach (var wallpaper in pack.Wallpapers)
             {
+                if (wallpaper is null || wallpaper.Focal is null || wallpaper.Variants is null ||
+                    wallpaper.Tags is null || wallpaper.SetupMatch is null ||
+                    wallpaper.Tags.Any(string.IsNullOrWhiteSpace) || wallpaper.SetupMatch.Any(string.IsNullOrWhiteSpace))
+                {
+                    return "wallpaper data must not contain null or empty entries";
+                }
+
                 if (string.IsNullOrWhiteSpace(wallpaper.Id) || !wallpaperIds.Add(wallpaper.Id))
                 {
                     return $"duplicate or empty wallpaper id '{wallpaper.Id}'";
@@ -117,6 +135,17 @@ public static partial class CatalogValidator
         var gameIds = new HashSet<string>(StringComparer.Ordinal);
         foreach (var game in doc.Games)
         {
+            if (game is null || game.Detection is null || game.Detection.ExeNames is null ||
+                game.Detection.SteamAppIds is null || game.Detection.PathContains is null ||
+                game.Detection.WindowTitleContains is null || game.Detection.ExcludeExeNames is null ||
+                game.Detection.ExeNames.Any(string.IsNullOrWhiteSpace) ||
+                game.Detection.PathContains.Any(string.IsNullOrWhiteSpace) ||
+                game.Detection.WindowTitleContains.Any(string.IsNullOrWhiteSpace) ||
+                game.Detection.ExcludeExeNames.Any(string.IsNullOrWhiteSpace))
+            {
+                return "game detection rules must not contain null or empty entries";
+            }
+
             if (string.IsNullOrWhiteSpace(game.Id) || !gameIds.Add(game.Id))
             {
                 return $"duplicate or empty game id '{game.Id}'";
@@ -135,6 +164,11 @@ public static partial class CatalogValidator
 
         foreach (var collection in doc.Collections)
         {
+            if (collection is null || collection.SetupMatch is null || collection.SetupMatch.Any(string.IsNullOrWhiteSpace))
+            {
+                return "collection data must not contain null or empty entries";
+            }
+
             if (!packIds.Contains(collection.PackId))
             {
                 return $"collection '{collection.Id}' references missing pack '{collection.PackId}'";
@@ -147,6 +181,11 @@ public static partial class CatalogValidator
     /// <summary>Paths must be relative to <c>contentBaseUrl</c>: no scheme, no traversal, no rooted paths (SPEC §6.2).</summary>
     public static string? FileProblem(FileRef file)
     {
+        if (file is null || file.Sha256 is null)
+        {
+            return "file reference must not be null";
+        }
+
         if (string.IsNullOrWhiteSpace(file.Path) || file.Path.Contains("..", StringComparison.Ordinal) || file.Path.StartsWith('/') ||
             file.Path.StartsWith('\\') || file.Path.Contains(':', StringComparison.Ordinal) || file.Path.Contains('\\', StringComparison.Ordinal))
         {

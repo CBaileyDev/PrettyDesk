@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The road winds up the center to the volcano at about 40% of the height, with the vivid sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "4499fc67955032450e08ac0b014cc1f90574fd392a99a1e6b2e5217879896e4c"}
 
   - id: forza-h5.minimal-01
     title: "Empty Desert Highway"
@@ -96,9 +96,9 @@ wallpapers:
         wallpaper. The road converges in the center to a vanishing point at about 55% of the height, with empty
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "4481c76ecb9cec875501fac4767e2775261fd5c92f1556e34420cbaacc185ee5"}
 
   - id: forza-h5.mood-01
     title: "Festival Lights at Dusk"
@@ -138,9 +138,9 @@ wallpapers:
         wallpaper. The lanterns glow at about 40% of the height across the center, with the volcano behind them.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "2fdf78387ab0c059dd2e25e9fa42fb571508d515d9f40920fa17955efca94dbc"}
 
   - id: forza-h5.alt-01
     title: "Coastal Highway Morning"
@@ -180,6 +180,6 @@ wallpapers:
         wallpaper. The road curves through the lower center to about 52% of the height, with the sea and sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d5a107b827bc5da9ff0750917d2d75d71e67a9ed050896a0070671df06e8ea7b"}

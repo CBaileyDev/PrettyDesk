@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The light column rises through the center from 20% to 62% of the height, with the shockwave
         ring at its base. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7ffa853db1638bf3f24262f85ed12c6d850057a899efbdfe36af600139cc35c5"}
 
   - id: helldivers2.minimal-01
     title: "One Falling Pod"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The fire trail arcs down the center to the landing point at about 62% of the height, with
         empty sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "0be8912ae2892f7e3d3b77080d23323a2142cbdec4106aa2bb5f00abb9a85a7a"}
 
   - id: helldivers2.mood-01
     title: "Hive Mounds in Ash"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The nearest mound rises at the center to about 45% of the height, with the sun glow behind
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "11e09c017ecacbd86aaa38ae0c581b647ff289c03a450b27afe3386c1855100a"}
 
   - id: helldivers2.alt-01
     title: "Dusty Plain at Dawn"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The rocks sit at about 58% of the height in the center, with the pale sky and the thin beam
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "03aa377a8b01748425caa26a4a9f5a7fd2a0518a8f4f47e211a2311de566caf1"}

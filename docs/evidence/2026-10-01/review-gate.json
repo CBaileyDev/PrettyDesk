@@ -1,0 +1,92 @@
+[
+  {
+    "Check": "build",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 5.49
+  },
+  {
+    "Check": "tests-Core",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 2.88
+  },
+  {
+    "Check": "tests-Presentation",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 1.85
+  },
+  {
+    "Check": "tests-Windows",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 5.45
+  },
+  {
+    "Check": "tests-App",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 7.52
+  },
+  {
+    "Check": "format",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 11.76
+  },
+  {
+    "Check": "assetpipe",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 24.24
+  },
+  {
+    "Check": "strings",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 0.11
+  },
+  {
+    "Check": "notices",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 0.13
+  },
+  {
+    "Check": "catalog-schema",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 0.24
+  },
+  {
+    "Check": "starter-hashes",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 0.19
+  },
+  {
+    "Check": "prompt-lint",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 1.55
+  },
+  {
+    "Check": "nuget-audit",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 8.35
+  },
+  {
+    "Check": "publish-win-x64",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 17.18
+  },
+  {
+    "Check": "publish-win-arm64",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Seconds": 2.16
+  }
+]

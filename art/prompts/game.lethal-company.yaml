@@ -55,9 +55,9 @@ wallpapers:
         wallpaper. The facility stands at the center with the lit door at about 52% of the height and fog
         rolling below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "7c3fbc4e28822cc0c744b5be418397feadc32adcb197f247a66c0189d7a8836a"}
 
   - id: lethal-company.minimal-01
     title: "One Floodlight in Fog"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The floodlight stands at about 55% of the height in the lower center, with its halo and empty
         fog around it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "f82045c01207d8f68e38cf10a7537f1b01559dec377e7f5bebf892216ea0f836"}
 
   - id: lethal-company.mood-01
     title: "Ship Ramp Glow"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The ramp glows at about 60% of the height in the lower center, with fog and dark sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c2d5645c524442e0623bdaa6aed8c6a416d1c31843953ea366670ee2896b3894"}
 
   - id: lethal-company.alt-01
     title: "Moon Plain at Dusk"
@@ -183,6 +183,6 @@ wallpapers:
         wallpaper. The silhouette sits at about 55% of the height in the center, with the pale sun above and
         dust below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ddfaec16aeae2349d5cbb6212b07b216abdd41eb2af252f48ef9f525d3cf6d0d"}

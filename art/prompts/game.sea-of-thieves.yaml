@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The ship sails at about 48% of the height in the center, with the sun behind it and water
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "31bd70cc9ff433ab3801f5d8b33b4f6f6d11369940f22af6db7cea8141707bea"}
 
   - id: sea-of-thieves.minimal-01
     title: "Lone Sail at Sea"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The ship floats at about 62% of the height in the lower center, with empty sky above. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "46f7b211419c123baaf905937c35e550b70362717bff24b36cf3681a8b03ff1d"}
 
   - id: sea-of-thieves.mood-01
     title: "Lantern Island at Night"
@@ -135,9 +135,9 @@ wallpapers:
         wallpaper. The dock lanterns glow at about 60% of the height in the lower center, with the starry sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "667f70158926480a53e269a2c1d18341ed02b61f2f9268394efbe1fa323d6e79"}
 
   - id: sea-of-thieves.alt-01
     title: "Storm Clearing"
@@ -176,6 +176,6 @@ wallpapers:
         wallpaper. The island sits at about 50% of the height in the center, with sun shafts falling on the
         water below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "62c7a092349fd905d2244947d816a621f785f32750d8435f12bc03cef1b57821"}

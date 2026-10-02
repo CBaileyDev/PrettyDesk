@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The river winds up the center of the frame with the tree and tower at about 40% of the height
         under a split sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "ca7cbc9e8c39645ebb24c28762844bad799293bb935b14c41cfa2914e3b767c5"}
 
   - id: dota2.minimal-01
     title: "Ancient Tree at Dusk"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tree stands in the lower center from 25% to 70% of the height, with empty dusk sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "af9423eb11c60df15761ea571ccc6f9378ab2dd110cde71c6e8e3ce38b841a05"}
 
   - id: dota2.mood-01
     title: "Crumbling Tower in Ember Light"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The tower rises from the lower center to about 45% of the height, with ember-lit smoke above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "03145f60dab3504ca5859eaadc0fa799b66c8b75077aad0ac9b60cd26e0ccd77"}
 
   - id: dota2.alt-01
     title: "Golden Glade Morning"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The light shafts fall through the center with the ruin at about 50% of the height and the
         stream below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6bbdd4c70be36f7e249fcbada8a9c325f385d4b6325efe0316548942f1f84008"}

@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The farmhouse sits at about 55% of the height at the center, with the plane trail high above
         in the sky. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "04c1bbc8003ebea384c0294ff95023a2c7b02667e07c788249ac7e4615479c7c"}
 
   - id: pubg.minimal-01
     title: "Lone Farmhouse"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The farmhouse stands at about 60% of the height in the lower center, with an empty overcast
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "82a768fe0eb702060dd21e9171522e56dd5f40d79b9262bb04e90d8215e6335e"}
 
   - id: pubg.mood-01
     title: "Abandoned Base in Fog"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The water tower rises at the center to about 38% of the height, with the buildings low below
         it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "d42da9ad575046d50e5a1176ad4e134d6b1366ca9b95a825c4e6eb4f864578dc"}
 
   - id: pubg.alt-01
     title: "Parachutes at Dawn"
@@ -177,6 +177,6 @@ wallpapers:
         wallpaper. The parachutes drift at about 35% of the height in the center, over misty green fields. Same
         lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
         logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "01a7a1e6e1ad373c546ee65f4c8d01cfd9020156d1cb0b41ff341b2b571a4223"}

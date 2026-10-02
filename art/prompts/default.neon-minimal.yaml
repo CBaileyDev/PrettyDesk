@@ -50,9 +50,9 @@ wallpapers:
         wallpaper. The neon line crosses the center at about 50% of the height, with its reflection in the
         glossy floor below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "cb2f9133c6b77fa19bef3426aabf55c59ca9d56e22983b3d73a5d678b1137690", P: "79c4a0918086832d056d29f60692c203f272a7f099c9c48ce8b40343d7a96c4f", U: "0e2de2a5babac804d45f392b30c78802131c39e2825d081260252b3801f7ab4b"}
 
   - id: nm-02
     title: "Cyan Wet Street"

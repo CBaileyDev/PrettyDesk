@@ -17,7 +17,7 @@
 
   <Grid>
     <!-- The grid of games -->
-    <Grid Visibility="{Binding IsListVisible, Converter={StaticResource BoolToVisibility}}" Margin="24,8,24,0">
+    <Grid Visibility="{Binding IsListVisible, Converter={StaticResource BoolToVisibility}}" Margin="28,20,28,0">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
@@ -35,45 +35,55 @@
                 AutomationProperties.Name="{x:Static res:Strings.Library_AddGame}" />
       </Grid>
 
-      <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,12,0,12">
+      <WrapPanel Grid.Row="1" Margin="0,12,0,12">
         <ui:TextBox Width="280" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static res:Strings.Library_Search}"
                  AutomationProperties.Name="{x:Static res:Strings.Library_Search}" />
-        <RadioButton GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterAll}" Margin="16,0,0,0"
+        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterAll}" Margin="12,0,0,0"
                      IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=All}"
                      AutomationProperties.Name="{x:Static res:Strings.Library_FilterAll}" />
-        <RadioButton GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterInstalled}" Margin="8,0,0,0"
+        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterInstalled}" Margin="6,0,0,0"
                      IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Installed}"
                      AutomationProperties.Name="{x:Static res:Strings.Library_FilterInstalled}" />
-        <RadioButton GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterEnabled}" Margin="8,0,0,0"
+        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterEnabled}" Margin="6,0,0,0"
                      IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Enabled}"
                      AutomationProperties.Name="{x:Static res:Strings.Library_FilterEnabled}" />
-      </StackPanel>
+      </WrapPanel>
 
       <TextBlock Grid.Row="2" Style="{StaticResource MutedStyle}" Margin="0,0,0,8" Text="{Binding Toast}" Visibility="{Binding Toast, Converter={StaticResource NullToCollapsed}}" />
       <TextBlock Grid.Row="2" Style="{StaticResource ErrorTextStyle}" Margin="0,0,0,8" Text="{Binding ErrorMessage}" Visibility="{Binding HasError, Converter={StaticResource BoolToVisibility}}" />
 
-      <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" Padding="0,0,0,24">
-        <StackPanel>
-          <ItemsControl ItemsSource="{Binding Games}" Focusable="False">
-            <ItemsControl.ItemsPanel>
-              <ItemsPanelTemplate>
-                <WrapPanel />
-              </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
+      <Grid Grid.Row="3" Margin="0,0,0,16">
+        <Grid.RowDefinitions><RowDefinition Height="*" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+          <ui:VirtualizingGridView x:Name="GameTiles" ItemsSource="{Binding Games}" Focusable="False"
+                                  Orientation="Vertical" SpacingMode="None" StretchItems="False"
+                                  Background="Transparent" BorderThickness="0" Padding="0"
+                                  VirtualizingPanel.CacheLength="0.5" VirtualizingPanel.VirtualizationMode="Recycling"
+                                  ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                  AutomationProperties.Name="{x:Static res:Strings.Library_Title}">
+            <ui:VirtualizingGridView.ItemContainerStyle>
+              <Style TargetType="ListViewItem" d:DataType="{x:Type vm:GameCardViewModel}">
+                <Setter Property="Padding" Value="0" /><Setter Property="Margin" Value="0" />
+                <Setter Property="Focusable" Value="False" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                <Setter Property="AutomationProperties.Name" Value="{Binding Name}" />
+                <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListViewItem"><ContentPresenter /></ControlTemplate></Setter.Value></Setter>
+              </Style>
+            </ui:VirtualizingGridView.ItemContainerStyle>
+            <ui:VirtualizingGridView.ItemTemplate>
               <DataTemplate DataType="{x:Type vm:GameCardViewModel}">
-                <Border Width="224" Margin="0,0,16,16" Style="{StaticResource CardStyle}" Padding="0">
+                <Border Width="236" Margin="0,0,16,20" Style="{StaticResource CardStyle}" Padding="0">
                   <StackPanel>
                     <Button Padding="0" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch"
-                            Command="{Binding DataContext.OpenGameCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            Command="{Binding DataContext.OpenGameCommand, Source={x:Reference GameTiles}}"
                             CommandParameter="{Binding}"
                             AutomationProperties.Name="{Binding Name}">
                       <StackPanel>
-                        <Grid Height="126">
-                          <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="8,8,0,0">
+                        <Grid Height="172">
+                          <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="24,24,0,0">
                             <TextBlock Text="{Binding Initial}" FontSize="44" FontWeight="SemiBold" Foreground="#CCFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" />
                           </Border>
-                          <Border CornerRadius="8,8,0,0" Visibility="{Binding ThumbnailPath, Converter={StaticResource NullToCollapsed}}">
+                          <Border CornerRadius="24,24,0,0" Visibility="{Binding ThumbnailPath, Converter={StaticResource NullToCollapsed}}">
                             <Border.Background>
                               <ImageBrush ImageSource="{Binding ThumbnailPath, Converter={StaticResource PathToImage}, ConverterParameter=448}" Stretch="UniformToFill" />
                             </Border.Background>
@@ -95,8 +105,8 @@
                   </StackPanel>
                 </Border>
               </DataTemplate>
-            </ItemsControl.ItemTemplate>
-          </ItemsControl>
+            </ui:VirtualizingGridView.ItemTemplate>
+          </ui:VirtualizingGridView>
 
           <!-- Designed empty state -->
           <StackPanel Visibility="{Binding HasGames, Converter={StaticResource InverseBoolToVisibility}}" HorizontalAlignment="Center" Margin="0,48,0,0" MaxWidth="420">
@@ -105,9 +115,8 @@
             <Button Content="{x:Static res:Strings.Library_AddGame}" Command="{Binding OpenAddGameCommand}" HorizontalAlignment="Center" AutomationProperties.Name="{x:Static res:Strings.Library_AddGame}" />
           </StackPanel>
 
-          <TextBlock Style="{StaticResource MutedStyle}" FontSize="12" Margin="0,8,0,0" Text="{x:Static res:Strings.Library_DisclaimerNote}" />
-        </StackPanel>
-      </ScrollViewer>
+          <TextBlock Grid.Row="1" Style="{StaticResource MutedStyle}" FontSize="12" Margin="0,8,0,0" Text="{x:Static res:Strings.Library_DisclaimerNote}" />
+      </Grid>
     </Grid>
 
     <ContentControl Content="{Binding Detail}" Visibility="{Binding Detail, Converter={StaticResource NullToCollapsed}}" Focusable="False" />

@@ -791,3 +791,65 @@ public sealed class OrchestratorBackupTests : IAsyncDisposable
         }
     }
 }
+
+public sealed class OrchestratorPreviewBackupTests : IAsyncDisposable
+{
+    private readonly FakeTimeProvider _time = new(new DateTimeOffset(2026, 10, 1, 9, 0, 0, TimeSpan.Zero));
+    private readonly FakeSetter _setter = new();
+    private readonly CountingBackup _backup = new();
+    private readonly WallpaperOrchestrator _orchestrator;
+
+    public OrchestratorPreviewBackupTests()
+    {
+        var content = new FakeContent();
+        content.AddPack("default.matte-black", Tones.Dark, true, "mb-01", "mb-02");
+        var catalog = new FakeCatalog(new CatalogDocument
+        {
+            Collections = [new CollectionEntry { Id = "default.matte-black", PackId = "default.matte-black", Title = "Matte Black" }],
+        });
+        _orchestrator = new WallpaperOrchestrator(
+            new FakeMonitors(), _setter, new FakeRenderer(), content, new FakeSystem(), catalog, new FakeSettings(),
+            new RotationScheduler(new Dictionary<string, ContextRotationState>(), _time, new Random(1)), null, _time,
+            NullLogger<WallpaperOrchestrator>.Instance, _backup);
+    }
+
+    public ValueTask DisposeAsync() => _orchestrator.DisposeAsync();
+
+    [Fact]
+    public async Task A_preview_as_the_very_first_apply_backs_up_the_original_first()
+    {
+        _orchestrator.Preview("mb-02");
+
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _backup.Calls.ShouldBe(1);
+        _backup.AppliedCountAtBackup.ShouldBe(0);
+        _setter.Calls.ShouldNotBeEmpty();
+    }
+
+    [Fact]
+    public async Task A_preview_never_overwrites_the_original_when_the_backup_fails()
+    {
+        _backup.Fail = true;
+        _orchestrator.Preview("mb-02");
+
+        await _orchestrator.ReconcileAsync(TestContext.Current.CancellationToken);
+
+        _setter.Calls.ShouldBeEmpty();
+        _orchestrator.Status.ApplyFailed.ShouldBeTrue();
+    }
+
+    private sealed class CountingBackup : IWallpaperBackup
+    {
+        public int Calls { get; private set; }
+        public int AppliedCountAtBackup { get; private set; } = -1;
+        public bool Fail { get; set; }
+
+        public Task EnsureBackupAsync(CancellationToken cancellationToken = default)
+        {
+            Calls++;
+            AppliedCountAtBackup = 0;
+            return Fail ? throw new IOException("disk full") : Task.CompletedTask;
+        }
+    }
+}

@@ -51,6 +51,20 @@ public sealed class SteamRunningAppWatcher : ISteamRunningAppSource, IDisposable
 
     private void Run()
     {
+        try
+        {
+            Watch();
+        }
+#pragma warning disable CA1031 // NFR-13: an exception on this thread (key deleted mid-read, a bad subscriber, Dispose race) must not crash the process.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            // detection falls back to process polling when Steam's AppID signal is lost
+        }
+    }
+
+    private void Watch()
+    {
         while (!_stop.WaitOne(0))
         {
             using var key = Registry.CurrentUser.OpenSubKey(KeyPath);

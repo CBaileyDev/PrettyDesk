@@ -6,6 +6,23 @@ tick each line, and write the machine and build next to anything you could not r
 
 **Build under test:** `__________` (from About) **Tester:** `__________` **Date:** `__________`
 
+## Local execution record — 2026-10-01
+
+Tester: Codex on Windows 11 Pro build 26200, Ryzen 9950X3D, x64, two 2560×1440 displays. Builds: acceptance 1.0.0 / 1.0.1 for installed update/uninstall; self-contained ReadyToRun acceptance 1.0.2 for performance. Acceptance commands and isolated data paths are compiled out of normal release builds.
+
+| Check | Verdict / scope |
+|---|---|
+| Offline content | PASS: all 13 default collections resolve a real 3840×2160 asset and thumbnail without starting network refresh; bundle hashes and schema validated |
+| Catalog signing / downloads | PASS: shipped key verifies a real HTTPS fixture; generated wallpaper and thumbnail downloaded with hash checks; corrupt assets, tampered and unsigned feeds rejected, cached catalog retained |
+| Velopack install/update | PASS: silent isolated install of 1.0.0; backend check + download + apply/restart into 1.0.1 from a real local feed; full and delta packages produced |
+| Uninstall | PASS: actual updater uninstall hook ran; both original image hashes, position and color restored; Run value removed. The native Yes/No prompt also passed twice with isolated data: No kept settings/all five directories, Yes deleted them |
+| Slideshow restore | PASS: real COM test restores source items, shuffle option and interval |
+| UI | PASS: WPF pages instantiate with no binding errors; changed Home banner wraps correctly in captured render. Native Mica, complete keyboard/Narrator and DPI matrix NOT RUN |
+| CPU / startup / latency | PASS within the local scopes recorded in PERF.md; active-idle memory exceeded 100 MB in 1.0.2 (**FAIL**), 1.0.3 retest and 24 h soak RUNNING |
+| Public signing, production host, ARM64 run, other OS versions, five real games / anti-cheat | NOT RUN / unavailable or pending owner configuration |
+
+Evidence lives in `docs/evidence/2026-10-01`; raw UI renders are in `TestResults/ui`. The full pre-release checklist below remains unticked where its broader criterion has not actually been exercised. M7 is not complete.
+
 ## 0. Before you start
 - [ ] Fresh Windows 11 user profile or VM snapshot (so first-run, onboarding and uninstall are real).
 - [ ] Note your current wallpaper(s) and, if any, Spotlight / slideshow / Wallpaper Engine / Lively status.
@@ -47,9 +64,9 @@ For each game below, launch it, confirm the Detection log shows the exe name fro
 - [ ] **Explorer restart:** `taskkill /f /im explorer.exe`, then start Explorer: the wallpaper is re-applied.
 - [ ] Battery Saver on: rotation pauses if that option is on. [ ] Light/dark switch with "follow Windows theme" on.
 - [ ] Unactivated Windows (watermark/personalization restrictions): app shows a human message instead of failing silently.
-- [ ] **Spotlight** was active before install: the backup note and the restore message are honest (Spotlight cannot be re-enabled automatically; ADR/BACKLOG).
+- [ ] **Spotlight** active before first apply: background is left untouched, applying is blocked, and the Home/onboarding explanation tells the user to select Picture or Slideshow. Test migration of an older Spotlight backup separately.
 - [ ] **Wallpaper Engine** and **Lively** running: the conflict banner appears on Home with a clear next step.
-- [ ] Slideshow was active before install: restore puts back the last picture and says so.
+- [x] Slideshow source items, shuffle and interval round-trip through backup/apply/restore on the local Windows desktop (2026-10-01 integration test). Full installer/UI flow with an actively rotating slideshow still needs the release matrix.
 
 ## 5. Restore and "leave"
 - [ ] Settings > Restore my original wallpaper works even after the original file was deleted (uses the backup copy).
@@ -78,3 +95,19 @@ For each game below, launch it, confirm the Detection log shows the exe name fro
 
 ## 10. Sign-off
 - [ ] Zero open blocker findings. Known issues copied to the release notes.
+
+## Local review evidence — 2026-10-01
+
+See [the full review](REVIEW_2026-10-01.md) for scope and remaining release gates. These checks do not close the broader
+hardware/manual rows above:
+
+- [x] Read-only real launcher scan identifies installed Cyberpunk, Fortnite, and Rocket League; the current running Rocket League process matches its catalog rule. No real game launched by the probe.
+- [x] Corrupt/null JSON recovery, catalog/signature/asset resource bounds, stalled-body cancellation, and concurrent download regressions.
+- [x] A failed durable wallpaper backup blocks applying; a later successful save retries the same original snapshot (real Windows regression).
+- [x] Active ten-minute tray sample: 0.023% average CPU, 63.0 MiB peak private memory on the local 32-thread desktop.
+- [x] Real Quit restores the two-monitor slideshow configuration, including source items and timing.
+- [x] WPF page smoke and captured light/dark/minimum-window layouts inspected; seven App tests also passed under the current 32 MiB managed heap cap.
+- [x] Current cached synthetic game start/exit benchmark, five runs: 3.757–3.801 s entry and 10.058–10.308 s exit; real Quit restores the original configuration afterward.
+- [x] Final 15-check gate, including locked x64/ARM64 publishing and dependency audit; 804 distinct .NET/Python tests passed including the separate HTTPS fixture.
+- [ ] Complete a new 24-hour soak of the current build. The older run was interrupted and has no completion summary.
+- [ ] Verify all 46 catalog games individually; zero rules currently have dated verification. Shared executable names under denied path access need particular attention.

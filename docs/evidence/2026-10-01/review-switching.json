@@ -1,0 +1,26 @@
+{
+  "Fixture": "synthetic custom game process",
+  "Cached": true,
+  "Samples": [
+    {
+      "EnterMilliseconds": 3801.2241,
+      "ExitMilliseconds": 10308.3434
+    },
+    {
+      "EnterMilliseconds": 3774.77,
+      "ExitMilliseconds": 10057.9572
+    },
+    {
+      "EnterMilliseconds": 3756.8183,
+      "ExitMilliseconds": 10217.4536
+    },
+    {
+      "EnterMilliseconds": 3769.218,
+      "ExitMilliseconds": 10222.1338
+    },
+    {
+      "EnterMilliseconds": 3783.3359,
+      "ExitMilliseconds": 10241.8713
+    }
+  ]
+}

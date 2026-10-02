@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The machine silhouette stands at about 38% of the height in the center, with ruins below and
         the glowing sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "850f563ea7260c44dbcdda8de7f073a0e8152796d9ea46ed38616b4bd8cdb5a8", P: "b2918b7500b893c7c6a0b744880174564836dedc9aaaac3cedc93a2350df9100", U: "31121194ff27ec48bc183ae430475d743788aa7036279428dbff27cac9a199e4"}
 
   - id: arc-raiders.minimal-01
     title: "Lone Machine in the Haze"
@@ -94,9 +94,9 @@ wallpapers:
         wallpaper. The machine stands at about 52% of the height in the lower center, with the empty gradient
         sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "34ecacb4ec02435752058d308aa11997b614d9f0f9c0ffd25fdf0b85a71b539e", P: "90b30f3cb06aa786d1cf4f7b10e049203f4fe367235cca9d2eea74316c46dc25", U: "08d052cc4ec6c8ddf91cf6cdb8ce28e4a7f2e60ec622d752f02ba98170444074"}
 
   - id: arc-raiders.mood-01
     title: "Overgrown Highway at Dusk"
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The highway curves through the center at about 55% of the height, with the glowing sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "dc1b6ee4e4cf040b0c7c4af16598d50ad4dc490e3d87f93f1a2e19497e78892b", P: "58415beeafbe934be7a5906a04add3560d6665740132bbb0574c0c1eaa42fe8f", U: "c354617209587d0b374869af0a2179229c0e5e4525b33956692fdcc5485d1c12"}
 
   - id: arc-raiders.alt-01
     title: "Poster Sky over Green Ruins"
@@ -178,6 +178,6 @@ wallpapers:
         wallpaper. The sun disc sits at about 36% of the height in the center, with the ruins and lake below.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "316ab619e865da67ac7b15889e998fe8239e58dc694d3912b90b5970dcb84673", P: "4f71658ef68648485d968f6b12b7fe388166707bbe0e21aa417f881cc64efb30", U: "a653e587ca0302c059b8e6eae91d37454bcff7492cd71a642e2df96a858a00f3"}

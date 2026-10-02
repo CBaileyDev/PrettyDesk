@@ -146,7 +146,7 @@
     <value>Your organization manages your wallpaper</value>
   </data>
   <data name="Banner_SpotlightBody" xml:space="preserve">
-    <value>When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper later brings back your last picture.</value>
+    <value>Slideshow sources and timing are backed up and restored. Windows Spotlight cannot be resumed automatically, so PrettyDesk leaves it unchanged. Switch Windows Background to Picture or Slideshow to use PrettyDesk.</value>
   </data>
   <data name="Banner_SpotlightTitle" xml:space="preserve">
     <value>Windows Spotlight or a slideshow is your background</value>
@@ -318,7 +318,7 @@
     <value>Answer "What does your setup look like?" again.</value>
   </data>
   <data name="Defaults_Title" xml:space="preserve">
-    <value>Defaults</value>
+    <value>Wallpapers</value>
   </data>
   <data name="Defaults_UseMyImages" xml:space="preserve">
     <value>Include my images</value>
@@ -442,6 +442,15 @@
   </data>
   <data name="Home_DisplayLabel" xml:space="preserve">
     <value>Display {0} · {1}×{2}</value>
+  </data>
+  <data name="Home_GlassAction" xml:space="preserve">
+    <value>Explore wallpapers</value>
+  </data>
+  <data name="Home_GlassDetail" xml:space="preserve">
+    <value>Explore Liquid Glass: three original iOS-inspired wallpapers, ready offline.</value>
+  </data>
+  <data name="Home_GlassTitle" xml:space="preserve">
+    <value>A little clarity. A whole new desktop.</value>
   </data>
   <data name="Home_NextWallpaper" xml:space="preserve">
     <value>Next wallpaper</value>
@@ -573,7 +582,7 @@
     <value>About</value>
   </data>
   <data name="Nav_Defaults" xml:space="preserve">
-    <value>Defaults</value>
+    <value>Wallpapers</value>
   </data>
   <data name="Nav_Home" xml:space="preserve">
     <value>Home</value>
@@ -654,7 +663,7 @@
     <value>How should your desktop behave?</value>
   </data>
   <data name="Onboard_SpotlightNote" xml:space="preserve">
-    <value>Your desktop currently uses Windows Spotlight or a slideshow. When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper brings back your last picture.</value>
+    <value>PrettyDesk restores your slideshow source, shuffle setting, and interval. Windows Spotlight remains unchanged until you switch Windows Background to Picture or Slideshow.</value>
   </data>
   <data name="Onboard_Start" xml:space="preserve">
     <value>Get started</value>
@@ -1082,11 +1091,61 @@
     <value>PrettyDesk</value>
   </data>
   <data name="Uninstall_KeepDataBody" xml:space="preserve">
-    <value>Your original wallpaper has been put back.\n\nDo you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?\n\nChoose No to keep them in case you reinstall.</value>
+    <value>Do you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?
+
+Choose No to keep them in case you reinstall.</value>
     <comment>Uninstall question about user data (Yes deletes, No keeps)</comment>
   </data>
   <data name="Uninstall_KeepDataTitle" xml:space="preserve">
     <value>Uninstalling PrettyDesk</value>
     <comment>Title of the uninstall question</comment>
   </data>
+  <data name="Game_PackUnavailable" xml:space="preserve"><value>This pack is not bundled and the content host is not configured. Use a ready default collection or add your own wallpaper.</value><comment>Personalization update</comment></data>
+  <data name="Library_ChipUnavailable" xml:space="preserve"><value>Unavailable offline</value><comment>Personalization update</comment></data>
+  <data name="Settings_AppTheme" xml:space="preserve"><value>App theme</value><comment>Personalization update</comment></data>
+  <data name="Settings_AppThemeHelp" xml:space="preserve"><value>Follow Windows, or choose Light or Dark. High contrast always takes precedence.</value><comment>Personalization update</comment></data>
+  <data name="Settings_WindowsColors" xml:space="preserve"><value>Windows taskbar and colors</value><comment>Personalization update</comment></data>
+  <data name="Settings_WindowsColorsHelp" xml:space="preserve"><value>Windows controls taskbar transparency and automatic wallpaper accent. Open Colors to choose your preferences.</value><comment>Personalization update</comment></data>
+  <data name="Settings_OpenColors" xml:space="preserve"><value>Open Windows Colors</value><comment>Personalization update</comment></data>
+  <data name="Settings_DesktopClock" xml:space="preserve"><value>Desktop clock</value><comment>Personalization update</comment></data>
+  <data name="Settings_DesktopClockHelp" xml:space="preserve"><value>Show a quiet clock on the desktop. It hides while a game is active, the session is locked or battery saver is on.</value><comment>Personalization update</comment></data>
+  <data name="Settings_ClockMonitor" xml:space="preserve"><value>Clock display</value><comment>Personalization update</comment></data>
+  <data name="Settings_NowPlaying" xml:space="preserve"><value>Show now playing</value><comment>Desktop personalization</comment></data>
+  <data name="Settings_Visualizer" xml:space="preserve"><value>Playback visualizer</value><comment>Desktop personalization</comment></data>
+  <data name="Settings_VisualizerHelp" xml:space="preserve"><value>Analyze the default output device locally, at up to 15 frames per second. No microphone, recordings or uploads. Stops during games, lock and battery saver; respects reduced motion.</value><comment>Desktop personalization</comment></data>
+  <data name="Settings_PlayPause" xml:space="preserve"><value>Play / pause</value><comment>Desktop personalization</comment></data>
+  <data name="Settings_NextTrack" xml:space="preserve"><value>Next track</value><comment>Desktop personalization</comment></data>
+  <data name="Settings_MediaUnavailable" xml:space="preserve"><value>No active media session supports this control.</value><comment>Desktop personalization</comment></data>
+  <data name="Widget_NothingPlaying" xml:space="preserve"><value>Nothing playing</value><comment>Desktop surface status</comment></data>
+  <data name="Widget_PlaybackUnavailable" xml:space="preserve"><value>Playback device unavailable. Retrying…</value><comment>Desktop surface status</comment></data>
+  <data name="Widget_VisualizerPaused" xml:space="preserve"><value>Visualizer paused by Windows accessibility preferences</value><comment>Desktop surface status</comment></data>
+  <data name="Widget_DefaultOutput" xml:space="preserve"><value>Default playback output</value><comment>Desktop surface status</comment></data>
+  <data name="Widget_MediaUnavailable" xml:space="preserve"><value>Now playing unavailable</value><comment>Desktop surface status</comment></data>
+  <data name="Onboard_WallpapersTitle" xml:space="preserve"><value>Wallpapers for your setup</value></data>
+  <data name="Onboard_WallpapersBody" xml:space="preserve"><value>Choose the games to prepare now. We select the wallpaper formats your displays need.</value></data>
+  <data name="Onboard_DisplayFitHelp" xml:space="preserve"><value>Only the formats your displays need. Same-shaped displays share one download; resolution is adjusted automatically.</value></data>
+  <data name="Onboard_DisplayGroup" xml:space="preserve"><value>{0} × {1}×{2} · {3}</value></data>
+  <data name="Onboard_DisplaysMissing" xml:space="preserve"><value>No displays detected. You can continue and download later in Library.</value></data>
+  <data name="Onboard_FormatLandscape" xml:space="preserve"><value>Landscape 16:9</value></data>
+  <data name="Onboard_FormatUltrawide" xml:space="preserve"><value>Ultrawide 21:9</value></data>
+  <data name="Onboard_FormatPortrait" xml:space="preserve"><value>Portrait 9:16</value></data>
+  <data name="Onboard_FormatSuperwide" xml:space="preserve"><value>Super ultrawide 32:9</value></data>
+  <data name="Onboard_NoMatchingArt" xml:space="preserve"><value>No matching artwork is available yet. You can add your own images later.</value></data>
+  <data name="Onboard_AlreadyIncluded" xml:space="preserve"><value>Ready for your displays · no download needed</value></data>
+  <data name="Onboard_DownloadUnavailable" xml:space="preserve"><value>Downloads are unavailable right now. Included wallpapers still work offline.</value></data>
+  <data name="Onboard_DownloadProgress" xml:space="preserve"><value>Downloading · {0}%</value></data>
+  <data name="Onboard_DownloadRetry" xml:space="preserve"><value>Download failed. Select Download selected to retry, or continue and try later.</value></data>
+  <data name="Onboard_PackDownloadSize" xml:space="preserve"><value>{0} to download · {1}</value></data>
+  <data name="Onboard_FormatFallback" xml:space="preserve"><value>Some wallpapers use the closest available format and are cropped to fit.</value></data>
+  <data name="Onboard_Megabytes" xml:space="preserve"><value>{0} MB</value></data>
+  <data name="Onboard_NoDownloadsNeeded" xml:space="preserve"><value>Nothing selected needs downloading.</value></data>
+  <data name="Onboard_DownloadTotal" xml:space="preserve"><value>Selected: {0} · up to {1} to download</value></data>
+  <data name="Onboard_DownloadSelected" xml:space="preserve"><value>Download selected</value></data>
+  <data name="Onboard_NoGamePacks" xml:space="preserve"><value>Your included default wallpapers are ready. You can add games and download more from Library later.</value></data>
+  <data name="Onboard_DownloadBackground" xml:space="preserve"><value>Prepare selected game wallpapers automatically</value></data>
+  <data name="Onboard_BackgroundHelp" xml:space="preserve"><value>Continue while downloads run. Unchecking stops future downloads; active downloads continue.</value></data>
+  <data name="Onboard_ScanFailed" xml:space="preserve"><value>We could not check your installed games. Try again, or continue and add games in Library later.</value></data>
+  <data name="Onboard_ScanRetry" xml:space="preserve"><value>Check again</value></data>
+  <data name="Game_Prefetch" xml:space="preserve"><value>Prepare wallpapers before I play</value></data>
+  <data name="Game_PrefetchHelp" xml:space="preserve"><value>Download only the formats your displays need. Requires installed-game downloads to be enabled in Settings.</value></data>
 </root>

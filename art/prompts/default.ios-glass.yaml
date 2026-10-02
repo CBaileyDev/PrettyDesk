@@ -1,0 +1,168 @@
+pack: default.ios-glass
+kind: default
+title: Liquid Glass · iOS Inspired
+styleBible: A cohesive three-piece capsule of original optical sculptures. Large translucent
+  glass ribbons form flowing arcs with luminous edges, subtle chromatic dispersion
+  and smooth refraction. Quiet fields of color at the left edge leave room for desktop
+  icons. Each colorway uses the same material vocabulary with distinctive cool, warm
+  or midnight lighting. No logos, text, devices or copied stock artwork.
+wallpapers:
+  - id: ios.tide
+    title: Tide
+    role: default
+    tone: light
+    setupMatch:
+      - white
+      - pastel
+      - rgb
+      - black
+    tags:
+      - ios-inspired
+      - glass
+      - abstract
+      - bundled
+    starter: true
+    accent: '#44BFEF'
+    focal:
+      x: 0.55
+      y: 0.5
+    upscaler: x4plus-anime
+    grain: 0
+    portrait: true
+    prompts:
+      landscape: 'A 16:9 landscape desktop wallpaper. Three large translucent curved
+        ribbons overlap in an elegant optical sculpture. Luminous edges refract the
+        background into soft chromatic highlights; broad arcs sweep upward from the
+        lower right. Style: original abstract digital sculpture with tangible glass
+        depth and impeccable smooth shading. Palette: #44BFEF, #174BA8, #E7F5FC. Composition:
+        the overlapping curves sit about 50-75% across and 35-65% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes. Technical:
+        highest available resolution; smooth blended color transitions; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures,
+        UI elements, people or devices.'
+      ultrawide: 'Extend this exact image into an ultra-wide 3:1 panorama by continuing
+        the glass scene naturally to the left and right. New area on the left: a luminous
+        quiet color field with faint reflected caustic light. New area on the right:
+        elegant glass arcs dissolve into the soft background glow. Same palette and
+        material. No seams, repeated or mirrored objects, text or logos.'
+      portrait: Using the attached image as the style and content reference, recompose
+        the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from
+        the lower right, leaving a calm upper third. Same palette, refraction and
+        material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks
+        or devices.
+    approved: true
+    reviewNotes: Generated with built-in imagegen; all landscape, ultrawide and portrait
+      masters visually reviewed on 2026-10-01.
+    rawSha256:
+      L: 991979168bf1a547ccc246720ebbe2ec3318cc0c8248da5e9c3a6831e3d93d98
+      U: 892d26edac7e0551d56a49130200a9b21a6588d6314a9e19ad64b922d243133f
+      P: 9b2e9db5a924318375e6466f7dcbbef301fb9e456bed853ae45ddd3a26a29d89
+  - id: ios.bloom
+    title: Bloom
+    role: default
+    tone: light
+    setupMatch:
+      - white
+      - pastel
+      - rgb
+      - black
+    tags:
+      - ios-inspired
+      - glass
+      - abstract
+      - bundled
+    starter: false
+    accent: '#EF86AD'
+    focal:
+      x: 0.55
+      y: 0.5
+    upscaler: x4plus-anime
+    grain: 0
+    portrait: true
+    prompts:
+      landscape: 'A 16:9 landscape desktop wallpaper. Three large translucent curved
+        ribbons overlap in an elegant optical sculpture. Luminous edges refract the
+        background into soft chromatic highlights; broad arcs sweep upward from the
+        lower right. Style: original abstract digital sculpture with tangible glass
+        depth and impeccable smooth shading. Palette: #EF86AD, #EAC0D8, #F8DACA. Composition:
+        the overlapping curves sit about 50-75% across and 35-65% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes. Technical:
+        highest available resolution; smooth blended color transitions; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures,
+        UI elements, people or devices.'
+      ultrawide: 'Extend this exact image into an ultra-wide 3:1 panorama by continuing
+        the glass scene naturally to the left and right. New area on the left: a luminous
+        quiet color field with faint reflected caustic light. New area on the right:
+        elegant glass arcs dissolve into the soft background glow. Same palette and
+        material. No seams, repeated or mirrored objects, text or logos.'
+      portrait: Using the attached image as the style and content reference, recompose
+        the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from
+        the lower right, leaving a calm upper third. Same palette, refraction and
+        material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks
+        or devices.
+    approved: true
+    reviewNotes: Generated with built-in imagegen; all landscape, ultrawide and portrait
+      masters visually reviewed on 2026-10-01.
+    rawSha256:
+      L: 9dd0650a8d937d5efb50fa7b1dd08952145ab1b29ce6ac85800f7669020297c1
+      U: dc88cfbf97742d31acc9191b6ca4bbb64fa8a0bb89b518468f5e1efe5ce67846
+      P: 4a653fbddb8792474b62abf8e253ff135ce22e122565c7250194e594d8c609c1
+  - id: ios.dusk
+    title: Dusk
+    role: default
+    tone: dark
+    setupMatch:
+      - white
+      - pastel
+      - rgb
+      - black
+    tags:
+      - ios-inspired
+      - glass
+      - abstract
+      - bundled
+    starter: false
+    accent: '#8B70ED'
+    focal:
+      x: 0.65
+      y: 0.5
+    upscaler: x4plus-anime
+    grain: 0
+    portrait: true
+    prompts:
+      landscape: 'A 16:9 landscape desktop wallpaper. Three large translucent curved
+        ribbons overlap in an elegant optical sculpture. Luminous edges refract the
+        background into soft chromatic highlights; broad arcs sweep upward from the
+        lower right. Style: original abstract digital sculpture with tangible glass
+        depth and impeccable smooth shading. Palette: #8B70ED, #172248, #C4C1F7. Composition:
+        the overlapping curves sit about 50-75% across and 35-65% down. The left 15%
+        and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there).
+        Keep every important element inside the central 80% of the width and the middle
+        70% of the height so the image can be cropped to other screen shapes. Technical:
+        highest available resolution; smooth blended color transitions; perfectly
+        smooth, banding-free gradients; no noise, no vignette, no border or frame.
+        Strictly no text, letters, numbers, logos, symbols, watermarks, signatures,
+        UI elements, people or devices.'
+      ultrawide: 'Extend this exact image into an ultra-wide 3:1 panorama by continuing
+        the glass scene naturally to the left and right. New area on the left: a luminous
+        quiet color field with faint reflected caustic light. New area on the right:
+        elegant glass arcs dissolve into the soft background glow. Same palette and
+        material. No seams, repeated or mirrored objects, text or logos.'
+      portrait: Using the attached image as the style and content reference, recompose
+        the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from
+        the lower right, leaving a calm upper third. Same palette, refraction and
+        material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks
+        or devices.
+    approved: true
+    reviewNotes: Generated with built-in imagegen; all landscape, ultrawide and portrait
+      masters visually reviewed on 2026-10-01.
+    rawSha256:
+      L: ced25d104796c6cd171c47b55920c0f7111267880584abdc1760f4eb8243d1cb
+      U: c812baa7ef547125b2d4316d2391c62bc776233385627cea62f90aa590215131
+      P: 0b56edcbd1c1486ef43a83488904a5ac83bd40f43de6b9b7281a08589b8387c4

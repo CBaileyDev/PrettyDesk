@@ -197,6 +197,10 @@ public sealed class PackStore
         }
     }
 
-    private static string Sanitize(string id) =>
-        string.Concat(id.Select(c => char.IsAsciiLetterOrDigit(c) || c is '-' or '.' or '_' ? c : '_'));
+    /// <summary>One safe directory name per pack id. An id made only of dots (".", "..") would resolve to the store root or its parent.</summary>
+    private static string Sanitize(string id)
+    {
+        var safe = string.Concat(id.Select(c => char.IsAsciiLetterOrDigit(c) || c is '-' or '.' or '_' ? c : '_'));
+        return safe.Length == 0 || safe.All(c => c == '.') ? new string('_', Math.Max(1, safe.Length)) : safe;
+    }
 }

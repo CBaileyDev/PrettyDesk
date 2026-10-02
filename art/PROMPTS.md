@@ -26,7 +26,7 @@
 
 If a check fails, regenerate and note it under `reviewNotes`. If it passes, set `approved: true` and adjust `focal` if the subject landed elsewhere.
 
-**58 packs · 286 wallpapers** (13 default collections, 45 game packs)
+**59 packs · 289 wallpapers** (14 default collections, 45 game packs)
 
 ## Contents
 
@@ -36,6 +36,7 @@ If a check fails, regenerate and note it under `reviewNotes`. If it passes, set 
 - `default.clean-white`: Clean White (8)
 - `default.cozy-lofi`: Cozy Lo-fi (8)
 - `default.deep-space`: Deep Space (8)
+- `default.ios-glass`: Liquid Glass · iOS Inspired (3)
 - `default.matte-black`: Matte Black (8)
 - `default.misty-nature`: Misty Nature (8)
 - `default.neon-minimal`: Neon Minimal (8)
@@ -1505,6 +1506,80 @@ Using the attached image as the style and content reference, recompose the same 
 wallpaper. The crescent hangs at about 42% of the height, slightly right of center, in black space. Same
 lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text, letters,
 logos, watermarks or UI.
+```
+
+### Liquid Glass · iOS Inspired (`default.ios-glass`)
+
+**Style bible** (paste first):
+
+```text
+A cohesive three-piece capsule of original optical sculptures. Large translucent glass ribbons form flowing arcs with luminous edges, subtle chromatic dispersion and smooth refraction. Quiet fields of color at the left edge leave room for desktop icons. Each colorway uses the same material vocabulary with distinctive cool, warm or midnight lighting. No logos, text, devices or copied stock artwork.
+```
+
+#### Tide (`ios.tide`)
+
+default · light · setup: white, pastel, rgb, black · focal 0.55, 0.50 · upscaler: x4plus-anime · grain 0 · **starter**
+
+**Landscape (L)**: save as `art/raw/default.ios-glass/ios.tide_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Three large translucent curved ribbons overlap in an elegant optical sculpture. Luminous edges refract the background into soft chromatic highlights; broad arcs sweep upward from the lower right. Style: original abstract digital sculpture with tangible glass depth and impeccable smooth shading. Palette: #44BFEF, #174BA8, #E7F5FC. Composition: the overlapping curves sit about 50-75% across and 35-65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; smooth blended color transitions; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people or devices.
+```
+
+**Ultrawide (U)**: save as `art/raw/default.ios-glass/ios.tide_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the glass scene naturally to the left and right. New area on the left: a luminous quiet color field with faint reflected caustic light. New area on the right: elegant glass arcs dissolve into the soft background glow. Same palette and material. No seams, repeated or mirrored objects, text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/default.ios-glass/ios.tide_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from the lower right, leaving a calm upper third. Same palette, refraction and material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks or devices.
+```
+
+#### Bloom (`ios.bloom`)
+
+default · light · setup: white, pastel, rgb, black · focal 0.55, 0.50 · upscaler: x4plus-anime · grain 0
+
+**Landscape (L)**: save as `art/raw/default.ios-glass/ios.bloom_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Three large translucent curved ribbons overlap in an elegant optical sculpture. Luminous edges refract the background into soft chromatic highlights; broad arcs sweep upward from the lower right. Style: original abstract digital sculpture with tangible glass depth and impeccable smooth shading. Palette: #EF86AD, #EAC0D8, #F8DACA. Composition: the overlapping curves sit about 50-75% across and 35-65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; smooth blended color transitions; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people or devices.
+```
+
+**Ultrawide (U)**: save as `art/raw/default.ios-glass/ios.bloom_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the glass scene naturally to the left and right. New area on the left: a luminous quiet color field with faint reflected caustic light. New area on the right: elegant glass arcs dissolve into the soft background glow. Same palette and material. No seams, repeated or mirrored objects, text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/default.ios-glass/ios.bloom_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from the lower right, leaving a calm upper third. Same palette, refraction and material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks or devices.
+```
+
+#### Dusk (`ios.dusk`)
+
+default · dark · setup: white, pastel, rgb, black · focal 0.65, 0.50 · upscaler: x4plus-anime · grain 0
+
+**Landscape (L)**: save as `art/raw/default.ios-glass/ios.dusk_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. Three large translucent curved ribbons overlap in an elegant optical sculpture. Luminous edges refract the background into soft chromatic highlights; broad arcs sweep upward from the lower right. Style: original abstract digital sculpture with tangible glass depth and impeccable smooth shading. Palette: #8B70ED, #172248, #C4C1F7. Composition: the overlapping curves sit about 50-75% across and 35-65% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; smooth blended color transitions; perfectly smooth, banding-free gradients; no noise, no vignette, no border or frame. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI elements, people or devices.
+```
+
+**Ultrawide (U)**: save as `art/raw/default.ios-glass/ios.dusk_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the glass scene naturally to the left and right. New area on the left: a luminous quiet color field with faint reflected caustic light. New area on the right: elegant glass arcs dissolve into the soft background glow. Same palette and material. No seams, repeated or mirrored objects, text or logos.
+```
+
+**Portrait (P)**: save as `art/raw/default.ios-glass/ios.dusk_P.png`
+
+```text
+Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait wallpaper. Glass curves sweep upward from the lower right, leaving a calm upper third. Same palette, refraction and material. Keep the bottom 10% calm. Strictly no text, logos, UI, watermarks or devices.
 ```
 
 ### Matte Black (`default.matte-black`)
@@ -10975,103 +11050,14 @@ text, letters, logos, watermarks or UI.
 - **Setting:** stadium floodlights, a hex-pattern field, boost-trail light streaks
 - **Palette:** #0070F3, #FF7A00, #0A0E1A, #C0C8D8
 - **Motifs:** an empty glowing arena, a giant ball on the center line, light trails in the air
-- **Avoid:** game title, cars, team crests, branding, logos, text, characters, UI or HUD elements
+- **Avoid:** team crests, branding, logos, text, characters, UI or HUD elements
+
+**Named fan art:** Rocket League, Octane, Fennec, 2016 Batmobile, Champions Field, Neo Tokyo. Original compositions; verify car geometry, no HUD/text/logos, safe crops and distribution rights before release.
 
 **Style bible** (paste first):
 
 ```text
-We are creating a cohesive series of premium desktop wallpapers inspired by a neon night sports arena. Think
-an empty, glowing stadium with a hex-patterned field, tall floodlights, a giant plain ball on the center line
-and soft streaks of blue and orange light hanging in the air. The palette is electric blue (#0070F3), orange
-(#FF7A00), midnight (#0A0E1A) and cool silver (#C0C8D8). The look is a polished 3D render with atmospheric
-haze, strong bloom and clean geometry. No vehicles, no people, no crests, no text. Keep the left edge and the
-bottom edge calm for desktop icons and the taskbar.
-```
-
-#### Empty Arena Glow (`rocket-league.hero-01`)
-
-hero · dark · setup: black, rgb · focal 0.64, 0.46 · upscaler: x4plus · grain 0.2
-
-**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_L.png`
-
-```text
-A 16:9 landscape desktop wallpaper. An empty, enormous night arena seen from one end. A hex-patterned
-pitch glows with soft blue lines, and a giant plain ball rests on the center line. Tall floodlights beam
-through haze from both sides, and curved orange and blue light trails arc through the air above the
-pitch like frozen motion. The stands are dark, tiered shapes.
-Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
-lighting.
-Palette: #0070F3, #FF7A00, #0A0E1A with an accent #C0C8D8. Mood: dramatic, electric, anticipatory.
-Composition: the center ball and the light trails above it sits about 54–74% across and 36–56% down. The
-left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
-important element inside the central 80% of the width and the middle 70% of the height so the image can
-be cropped to other screen shapes.
-Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
-banding-free gradients; no noise, no vignette, no border or frame.
-Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
-title, logos, characters, emblems, text, UI or HUD elements.
-```
-
-**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_U.png`
-
-```text
-Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
-and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
-dark empty tiered stands and drifting haze, low in detail. New area on the right: the stadium stretches
-into haze with distant glowing floodlights. Same lighting direction, palette, materials and level of
-detail. No seams, no repeated or mirrored objects, no text or logos.
-```
-
-**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.hero-01_P.png`
-
-```text
-Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
-wallpaper. The ball sits at the lower center at about 62% of the height, with light trails arcing above
-it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
-letters, logos, watermarks or UI.
-```
-
-#### Ball on the Line (`rocket-league.minimal-01`)
-
-minimal · dark · setup: black, rgb · focal 0.66, 0.52 · upscaler: x4plus · grain 0.2
-
-**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_L.png`
-
-```text
-A 16:9 landscape desktop wallpaper. A single smooth, plain pale ball rests on a thin glowing blue line
-across a vast, dark, glossy pitch. A faint orange rim light edges the ball from the upper right and a
-soft reflection falls beneath it. The surroundings dissolve into a deep midnight blue gradient with the
-faintest hex pattern.
-Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
-lighting.
-Palette: #0A0E1A, #14233C, #C0C8D8 with a rim #FF7A00. Mood: quiet, focused, electric.
-Composition: the ball and its reflection sits about 60–72% across and 34–70% down; more than 70% of the
-image is empty dark floor and haze. The left 15% and the bottom 8% stay calm and low-detail (desktop
-icons and taskbar go there). Keep every important element inside the central 80% of the width and the
-middle 70% of the height so the image can be cropped to other screen shapes.
-Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
-banding-free gradients; no noise, no vignette, no border or frame.
-Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
-title, cars, team crests, logos, text, UI or HUD elements.
-```
-
-**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_U.png`
-
-```text
-Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
-and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
-a smooth dark glossy floor with a faint blue line. New area on the right: a faint far goal frame glowing
-softly in deep haze. Same lighting direction, palette, materials and level of detail. No seams, no
-repeated or mirrored objects, no text or logos.
-```
-
-**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.minimal-01_P.png`
-
-```text
-Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
-wallpaper. The ball rests at about 55% of the height in the lower center, with dark empty gradient
-above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
-text, letters, logos, watermarks or UI.
+We are creating original Rocket League fan art with recognizable Octane, Fennec and 2016 Batmobile geometry, newly composed arena scenes and restrained in-game materials. Keep the left edge and bottom calm for desktop use. Use coherent cool blue and warm orange light, smooth shadows, precise wheels and quiet backgrounds. No HUD, readable text, logos, team decals or watermarks. Review car fidelity and all crops before approval. Existing generic wallpapers remain available until replacements pass review.
 ```
 
 #### Floodlight Haze (`rocket-league.mood-01`)
@@ -11116,47 +11102,52 @@ below. Same lighting, palette, materials and rendering style. Keep the bottom 10
 text, letters, logos, watermarks or UI.
 ```
 
-#### Arena at Midday (`rocket-league.alt-01`)
+#### Octane Aerial (`rocket-league.octane-aerial`)
 
-alt · light · setup: white, wood · focal 0.64, 0.48 · upscaler: x4plus · grain 0.2
+hero · dark · setup: black, rgb · focal 0.64, 0.52 · upscaler: x4plus · grain 0.15
 
-**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_L.png`
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.octane-aerial_L.png`
 
 ```text
-A 16:9 landscape desktop wallpaper. The same arena seen empty in bright midday light, with a pale
-hex-patterned pitch gleaming in soft blues and whites. A giant plain ball sits on the center line, and
-the open roof lets in a clear sky. The tiered stands glow pale grey, and a few faint orange stripes mark
-the pitch.
-Style: polished 3D render, atmospheric stadium haze, soft bloom, clean geometry, cinematic night
-lighting.
-Palette: #F2F6FB, #BFD3EC, #0070F3 with an orange #FF7A00. Mood: bright, clean, spacious.
-Composition: the center ball and the pale hex pitch sits about 54–74% across and 38–58% down. The left
-15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
-important element inside the central 80% of the width and the middle 70% of the height so the image can
-be cropped to other screen shapes.
-Technical: highest available resolution; crisp detail on the focal subject; perfectly smooth,
-banding-free gradients; no noise, no vignette, no border or frame.
-Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, game
-title, logos, characters, emblems, text, UI or HUD elements.
+A 16:9 landscape desktop wallpaper. An unmistakable Rocket League Octane lifts toward the ball at Champions Field during blue hour. Low sideline camera, compact blue body, exposed wheels, short boost trail and warm stadium lights. Style: premium stylized in-game materials, precise geometry and restrained highlights. Palette: #0070F3, #FF7A00, #0A0E1A, #C0C8D8. Mood: dramatic evening. Composition: main subject about 54–74% across and 36–66% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; crisp focal detail; smooth banding-free shadows and sky, no noise, no vignette or borders. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, sponsor decals or duplicated wheels. Original fan art, never copied key art.
 ```
 
-**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_U.png`
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.octane-aerial_U.png`
 
 ```text
-Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally to the left
-and right. Do not change, move, re-light or re-style anything that already exists. New area on the left:
-empty pale stands in soft light, low detail. New area on the right: the pitch extends to a distant goal
-in pale haze. Same lighting direction, palette, materials and level of detail. No seams, no repeated or
-mirrored objects, no text or logos.
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally. Preserve cars, ball, geometry, scale and lighting. New area on the left: quiet empty arena floor, sky and distant softly lit walls. New area on the right: coherent field, curved arena enclosure and distant atmospheric sky. No seams, repeated cars, extra wheels, text, HUD or logos.
 ```
 
-**Portrait (P)**: save as `art/raw/game.rocket-league/rocket-league.alt-01_P.png`
+#### Quiet Fennec (`rocket-league.fennec-freeplay`)
+
+minimal · dark · setup: black, rgb · focal 0.64, 0.52 · upscaler: x4plus · grain 0.15
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.fennec-freeplay_L.png`
 
 ```text
-Using the attached image as the style and content reference, recompose the same scene as a 9:16 portrait
-wallpaper. The ball sits at about 58% of the height at the center, with the pitch below and pale stands
-above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
-text, letters, logos, watermarks or UI.
+A 16:9 landscape desktop wallpaper. One recognizable Rocket League Fennec sits small in a quiet freeplay arena. Elevated rear three-quarter camera, correct boxy compact body, flat roof and pearl finish. At least 70% negative space. Style: premium stylized in-game materials, precise geometry and restrained highlights. Palette: #0070F3, #FF7A00, #0A0E1A, #C0C8D8. Mood: quiet training. Composition: main subject about 54–74% across and 36–66% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; crisp focal detail; smooth banding-free shadows and sky, no noise, no vignette or borders. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, sponsor decals or duplicated wheels. Original fan art, never copied key art.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.fennec-freeplay_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally. Preserve cars, ball, geometry, scale and lighting. New area on the left: quiet empty arena floor, sky and distant softly lit walls. New area on the right: coherent field, curved arena enclosure and distant atmospheric sky. No seams, repeated cars, extra wheels, text, HUD or logos.
+```
+
+#### Neo Tokyo Rain (`rocket-league.batmobile-rain`)
+
+mood · dark · setup: black, rgb · focal 0.64, 0.52 · upscaler: x4plus · grain 0.15
+
+**Landscape (L)**: save as `art/raw/game.rocket-league/rocket-league.batmobile-rain_L.png`
+
+```text
+A 16:9 landscape desktop wallpaper. The recognizable 2016 Batmobile from Rocket League sits on a damp Neo Tokyo pitch after rain. Low rear-quarter camera, long armored body and correct wheels. Restrained reflections and distant mist. Style: premium stylized in-game materials, precise geometry and restrained highlights. Palette: #0070F3, #FF7A00, #0A0E1A, #C0C8D8. Mood: calm rainy night. Composition: main subject about 54–74% across and 36–66% down. The left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width and the middle 70% of the height so the image can be cropped to other screen shapes. Technical: highest available resolution; crisp focal detail; smooth banding-free shadows and sky, no noise, no vignette or borders. Strictly no text, letters, numbers, logos, symbols, watermarks, signatures, UI or HUD elements, sponsor decals or duplicated wheels. Original fan art, never copied key art.
+```
+
+**Ultrawide (U)**: save as `art/raw/game.rocket-league/rocket-league.batmobile-rain_U.png`
+
+```text
+Extend this exact image into an ultra-wide 3:1 panorama by continuing the scene naturally. Preserve cars, ball, geometry, scale and lighting. New area on the left: quiet empty arena floor, sky and distant softly lit walls. New area on the right: coherent field, curved arena enclosure and distant atmospheric sky. No seams, repeated cars, extra wheels, text, HUD or logos.
 ```
 
 ### Rust (`game.rust`)

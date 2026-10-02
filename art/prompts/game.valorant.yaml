@@ -56,7 +56,7 @@ wallpapers:
         10% calm. Strictly no text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "c90d519d86cb128126cb7e00d9b1190b350c68688b8db1d6662d35fcae0c3fa4"}
 
   - id: valorant.minimal-01
     title: "Single Red Line"
@@ -99,7 +99,7 @@ wallpapers:
         Strictly no text, letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "e86d4ecbdf35d8ab817251a2ba7015c3aca045998c3ee06e2b9b6edcd655696c"}
 
   - id: valorant.mood-01
     title: "Rooftop over the Bay"
@@ -142,7 +142,7 @@ wallpapers:
         letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "3764d3e693b7f133510d94628ee7ed18b710d90ab385f0e73dd2247659e81bb9"}
 
   - id: valorant.alt-01
     title: "Sunlit Arcade"
@@ -185,4 +185,4 @@ wallpapers:
         letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "ba1db92709220022a0f566e09f9b1b8af2b38231397d16801f4d3ed71f3a16f2"}

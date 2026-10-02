@@ -5,7 +5,11 @@ Everything the owner has to set up once, and the steps for each release. The wor
 
 ## One-time setup
 
-### 1. Catalog signing key (OWNER-DECISION: required before remote catalogs are trusted)
+### 1. Catalog signing key
+The application now trusts the generated P-256 public key in `CatalogSecurity.cs`. Its private key is protected with
+CurrentUser DPAPI in `%LOCALAPPDATA%/PrettyDeskSigning/catalog.private.dpapi`, outside the checkout.
+`tools/sign_content.ps1` signs and verifies local staging without printing the private key. A valid, tampered, and unsigned
+HTTPS feed has been exercised with `tools/catalog_acceptance.ps1`. The following key-generation procedure is for replacement keys:
 ```bash
 dotnet run --project tools/catalog-sign -c Release -- keygen --out catalog-private.key   # keep this file offline or in a secret
 ```
@@ -27,9 +31,9 @@ Azure Trusted Signing (see SPEC 9). Secrets: `AZURE_TENANT_ID`, `AZURE_CLIENT_ID
 unsigned with a warning (SmartScreen will warn). If you use an OV certificate instead, replace the signing step's `--signTemplate`.
 
 ### 4. Starter wallpapers (the offline set inside the installer)
-After the first default collections are generated, approved and published (below), run `python -m assetpipe starter`, zip `content/starter/`
-(flat, at most 60 MB) and host the zip somewhere the workflow can fetch. Variables: `STARTER_SET_URL`, `STARTER_SET_SHA256` (optional but recommended).
-A stable release fails without it.
+`content/starter/` now contains the 13 reviewed default wallpapers and their thumbnails, within the 60 MB budget.
+The release workflow validates this checked-in bundle using `tools/verify_starter.py`. An external replacement zip can still be
+supplied with `STARTER_SET_URL` and `STARTER_SET_SHA256`; a stable release fails when no valid starter bundle is available.
 
 ## Producing the art
 1. `art/PROMPTS.md` has every prompt (regenerate with `python -m assetpipe prompts` from `tools/assetpipe` after any YAML change).
@@ -39,6 +43,19 @@ A stable release fails without it.
 5. Optional but recommended: install `realesrgan-ncnn-vulkan` (needs a GPU) for masters smaller than the target (ADR 0005).
 
 ## Every release
+
+For a local unsigned beta installer and portable ZIP, run:
+
+```powershell
+pwsh -NoProfile -ExecutionPolicy Bypass -File tools/package.ps1
+```
+
+The default is version `1.0.0-beta.1` for x64. Use `-Version 1.0.0-beta.2` for a subsequent beta or `-Runtime win-arm64` for ARM64.
+Outputs are in `dist/releases/<version>/<runtime>/`; the publish directory is separate. The build includes the .NET desktop
+runtime and bundled wallpapers, excludes acceptance-only code, and emits SHA-256 hashes. Double-click the Setup executable,
+or extract the Portable ZIP and open `PrettyDesk.exe`. Keep the portable folder together. These packages are unsigned and
+offline for remote content while `ContentBaseUrl` remains empty; they do not bypass the public stable-release signing gates.
+
 1. Tick `docs/QA_CHECKLIST.md` on the release candidate and record any performance numbers in `docs/PERF.md`.
 2. `git tag v1.2.3` (or `v1.3.0-beta.1` for the beta channel) and push the tag. `release.yml` builds win-x64 and win-arm64, signs, runs `vpk pack`,
    and creates a **draft** GitHub Release with generated notes. Rehearse first with the workflow's manual run (it keeps the packages as artifacts and uploads nothing).

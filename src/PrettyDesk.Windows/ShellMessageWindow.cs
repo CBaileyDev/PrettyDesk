@@ -94,7 +94,17 @@ public sealed class ShellMessageWindow : IDisposable
     {
         if (TaskbarCreatedMessage != 0 && message == TaskbarCreatedMessage)
         {
-            Instance?.TaskbarCreated?.Invoke();
+            try
+            {
+                Instance?.TaskbarCreated?.Invoke();
+            }
+#pragma warning disable CA1031 // NFR-13: an exception escaping an UnmanagedCallersOnly method fast-fails the process.
+            catch (Exception)
+#pragma warning restore CA1031
+            {
+                // the tray re-registers on the next TaskbarCreated; never let a subscriber take the process down
+            }
+
             return default;
         }
 

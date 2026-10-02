@@ -293,6 +293,7 @@ public sealed partial class LibraryViewModel : ViewModelBase
                 PackStateKind.Downloading => Strings.Format(Strings.Library_ChipDownloading, (int)(state.Fraction * 100)),
                 PackStateKind.Failed => Strings.Library_ChipFailed,
                 PackStateKind.Ready => Strings.Library_ChipReady,
+                PackStateKind.Unavailable => Strings.Library_ChipUnavailable,
                 _ => card.IsInstalled ? Strings.Library_ChipInstalled : Strings.Library_ChipNotDownloaded,
             };
         }

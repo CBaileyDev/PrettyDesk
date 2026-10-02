@@ -53,9 +53,9 @@ wallpapers:
         wallpaper. The waterfall drops through the center from 25% to 65% of the height, with the lake below and
         block clouds above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "076eca364943e7ea020a55566a14561155db3940008f08321686d0fe17c86b0c"}
 
   - id: minecraft.minimal-01
     title: "Single Block Tree"
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The tree stands in the lower center at about 55% of the height, with empty gradient sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "99c972d5a02b6706cc0b1d62621ac5d80bf17284935f75e791f0dfdeeeedbfa5"}
 
   - id: minecraft.mood-01
     title: "Lantern Cave Glow"
@@ -137,9 +137,9 @@ wallpapers:
         wallpaper. The lantern pool sits at about 62% of the height, with cave walls rising on both sides above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "1f4d278f47506a90f4d5ccb622e11a5bd7f6949d4e3109222c0240eb3915ec72"}
 
   - id: minecraft.alt-01
     title: "Village at Dusk"
@@ -179,6 +179,6 @@ wallpapers:
         wallpaper. The village sits on the slope at about 55% of the height, with the glowing dusk sky above.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "730102d23511ddea330f0089291fff8460f18e681470428acc8a07d30b46eb2d"}

@@ -73,7 +73,7 @@ public sealed class PrefetchCoordinator : IDisposable
         {
             foreach (var game in InstalledGameScanner.MatchCatalog(catalog, Scan()))
             {
-                if (settings.IsGameEnabled(game.Id) && !string.IsNullOrEmpty(game.PackId))
+                if (settings.IsGameEnabled(game.Id) && (!settings.Games.TryGetValue(game.Id, out var preference) || preference.PrefetchWallpapers) && !string.IsNullOrEmpty(game.PackId))
                 {
                     packs.Add(game.PackId);
                 }

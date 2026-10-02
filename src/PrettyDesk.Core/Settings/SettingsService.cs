@@ -41,11 +41,23 @@ public sealed class SettingsService : ISettingsProvider
             var clone = Clone(_current);
             mutate(clone);
             _current = clone;
-            _store.Save(clone);
+            try
+            {
+                _store.Save(clone);
+                SaveFailed = false;
+            }
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+            {
+                // Keep the app working with the new value in memory and tell listeners; the next successful Update persists it.
+                SaveFailed = true;
+            }
         }
 
         Changed?.Invoke();
     }
+
+    /// <summary>True when the latest change could not be written to disk (it still applies for this session).</summary>
+    public bool SaveFailed { get; private set; }
 
     public static AppSettings Clone(AppSettings settings) =>
         JsonSerializer.Deserialize(JsonSerializer.Serialize(settings, SettingsJsonContext.Default.AppSettings), SettingsJsonContext.Default.AppSettings)!;

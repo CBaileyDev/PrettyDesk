@@ -155,6 +155,9 @@ public static class Strings
         "Game_Order",
         "Game_OrderSequential",
         "Game_OrderShuffle",
+        "Game_PackUnavailable",
+        "Game_Prefetch",
+        "Game_PrefetchHelp",
         "Game_Preview",
         "Game_PreviewHelp",
         "Game_RemoveGame",
@@ -167,6 +170,9 @@ public static class Strings
         "Game_Unfavorite",
         "Game_WallpapersTitle",
         "Home_DisplayLabel",
+        "Home_GlassAction",
+        "Home_GlassDetail",
+        "Home_GlassTitle",
         "Home_NextWallpaper",
         "Home_NoMonitors",
         "Home_NoMonitorsDetail",
@@ -194,6 +200,7 @@ public static class Strings
         "Library_ChipInstalled",
         "Library_ChipNotDownloaded",
         "Library_ChipReady",
+        "Library_ChipUnavailable",
         "Library_DisclaimerNote",
         "Library_EmptyCatalogBody",
         "Library_EmptyCatalogTitle",
@@ -223,20 +230,43 @@ public static class Strings
         "Notify_UnknownGameTitle",
         "Notify_UpdateBody",
         "Notify_UpdateTitle",
+        "Onboard_AlreadyIncluded",
+        "Onboard_BackgroundHelp",
+        "Onboard_DisplayFitHelp",
+        "Onboard_DisplayGroup",
+        "Onboard_DisplaysMissing",
         "Onboard_DoneBody",
         "Onboard_DoneTip",
         "Onboard_DoneTitle",
+        "Onboard_DownloadBackground",
+        "Onboard_DownloadProgress",
+        "Onboard_DownloadRetry",
+        "Onboard_DownloadSelected",
+        "Onboard_DownloadTotal",
+        "Onboard_DownloadUnavailable",
         "Onboard_Failed",
+        "Onboard_FormatFallback",
+        "Onboard_FormatLandscape",
+        "Onboard_FormatPortrait",
+        "Onboard_FormatSuperwide",
+        "Onboard_FormatUltrawide",
         "Onboard_GamesBody",
         "Onboard_GamesEmptyBody",
         "Onboard_GamesEmptyTitle",
         "Onboard_GamesLoading",
         "Onboard_GamesTitle",
+        "Onboard_Megabytes",
         "Onboard_ModeBody",
         "Onboard_ModeFixed",
         "Onboard_ModeInterval",
         "Onboard_ModeRotate",
         "Onboard_ModeTitle",
+        "Onboard_NoDownloadsNeeded",
+        "Onboard_NoGamePacks",
+        "Onboard_NoMatchingArt",
+        "Onboard_PackDownloadSize",
+        "Onboard_ScanFailed",
+        "Onboard_ScanRetry",
         "Onboard_SpotlightNote",
         "Onboard_Start",
         "Onboard_StartupBody",
@@ -257,6 +287,8 @@ public static class Strings
         "Onboard_StyleTitle",
         "Onboard_StyleWarmWood",
         "Onboard_StyleWarmWoodHelp",
+        "Onboard_WallpapersBody",
+        "Onboard_WallpapersTitle",
         "Onboard_WelcomeBody",
         "Onboard_WelcomePoint1",
         "Onboard_WelcomePoint2",
@@ -269,6 +301,8 @@ public static class Strings
         "Picker_Selected",
         "Picker_Title",
         "Settings_Advanced",
+        "Settings_AppTheme",
+        "Settings_AppThemeHelp",
         "Settings_BetaUpdates",
         "Settings_BetaUpdatesHelp",
         "Settings_ClearDownloads",
@@ -276,6 +310,9 @@ public static class Strings
         "Settings_ClearDownloadsFailed",
         "Settings_ClearDownloadsMessage",
         "Settings_ClearDownloadsTitle",
+        "Settings_ClockMonitor",
+        "Settings_DesktopClock",
+        "Settings_DesktopClockHelp",
         "Settings_DetectDelay",
         "Settings_DetectDelayHelp",
         "Settings_DetectGames",
@@ -300,16 +337,21 @@ public static class Strings
         "Settings_GameOnSecondaryOnly",
         "Settings_GameOnSecondaryOnlyHelp",
         "Settings_General",
+        "Settings_MediaUnavailable",
         "Settings_MonitorDifferent",
         "Settings_MonitorMode",
         "Settings_MonitorSame",
         "Settings_Monitors",
+        "Settings_NextTrack",
         "Settings_Notifications",
         "Settings_NotifyDownloadErrors",
         "Settings_NotifyHelp",
         "Settings_NotifyUnknownGames",
         "Settings_NotifyUpdates",
+        "Settings_NowPlaying",
+        "Settings_OpenColors",
         "Settings_OpenLogs",
+        "Settings_PlayPause",
         "Settings_PollSeconds",
         "Settings_PollSecondsValue",
         "Settings_PrefetchGames",
@@ -342,6 +384,10 @@ public static class Strings
         "Settings_Title",
         "Settings_UnknownGameHints",
         "Settings_UnknownGameHintsHelp",
+        "Settings_Visualizer",
+        "Settings_VisualizerHelp",
+        "Settings_WindowsColors",
+        "Settings_WindowsColorsHelp",
         "Settings_Working",
         "Shell_NavLabel",
         "Status_ApplyFailed",
@@ -381,6 +427,11 @@ public static class Strings
         "Tray_Tooltip",
         "Uninstall_KeepDataBody",
         "Uninstall_KeepDataTitle",
+        "Widget_DefaultOutput",
+        "Widget_MediaUnavailable",
+        "Widget_NothingPlaying",
+        "Widget_PlaybackUnavailable",
+        "Widget_VisualizerPaused",
     ];
 
     /// <summary>Check for updates</summary>
@@ -524,7 +575,7 @@ public static class Strings
     /// <summary>Your organization manages your wallpaper</summary>
     public static string Banner_PolicyTitle => Get("Banner_PolicyTitle");
 
-    /// <summary>When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper later brings back your last picture.</summary>
+    /// <summary>Slideshow sources and timing are backed up and restored. Windows Spotlight cannot be resumed automatically, so PrettyDesk leaves it unchanged. Switch Windows Background to Picture or Slideshow to use PrettyDesk.</summary>
     public static string Banner_SpotlightBody => Get("Banner_SpotlightBody");
 
     /// <summary>Windows Spotlight or a slideshow is your background</summary>
@@ -695,7 +746,7 @@ public static class Strings
     /// <summary>Answer "What does your setup look like?" again.</summary>
     public static string Defaults_SetupStyleHelp => Get("Defaults_SetupStyleHelp");
 
-    /// <summary>Defaults</summary>
+    /// <summary>Wallpapers</summary>
     public static string Defaults_Title => Get("Defaults_Title");
 
     /// <summary>Include my images</summary>
@@ -785,6 +836,15 @@ public static class Strings
     /// <summary>Shuffle</summary>
     public static string Game_OrderShuffle => Get("Game_OrderShuffle");
 
+    /// <summary>This pack is not bundled and the content host is not configured. Use a ready default collection or add your own wallpaper.</summary>
+    public static string Game_PackUnavailable => Get("Game_PackUnavailable");
+
+    /// <summary>Prepare wallpapers before I play</summary>
+    public static string Game_Prefetch => Get("Game_Prefetch");
+
+    /// <summary>Download only the formats your displays need. Requires installed-game downloads to be enabled in Settings.</summary>
+    public static string Game_PrefetchHelp => Get("Game_PrefetchHelp");
+
     /// <summary>Preview on desktop</summary>
     public static string Game_Preview => Get("Game_Preview");
 
@@ -820,6 +880,15 @@ public static class Strings
 
     /// <summary>Display {0} · {1}×{2}</summary>
     public static string Home_DisplayLabel => Get("Home_DisplayLabel");
+
+    /// <summary>Explore wallpapers</summary>
+    public static string Home_GlassAction => Get("Home_GlassAction");
+
+    /// <summary>Explore Liquid Glass: three original iOS-inspired wallpapers, ready offline.</summary>
+    public static string Home_GlassDetail => Get("Home_GlassDetail");
+
+    /// <summary>A little clarity. A whole new desktop.</summary>
+    public static string Home_GlassTitle => Get("Home_GlassTitle");
 
     /// <summary>Next wallpaper</summary>
     public static string Home_NextWallpaper => Get("Home_NextWallpaper");
@@ -902,6 +971,9 @@ public static class Strings
     /// <summary>Ready</summary>
     public static string Library_ChipReady => Get("Library_ChipReady");
 
+    /// <summary>Unavailable offline</summary>
+    public static string Library_ChipUnavailable => Get("Library_ChipUnavailable");
+
     /// <summary>Wallpapers are original art inspired by each game. PrettyDesk is not affiliated with any game publisher.</summary>
     public static string Library_DisclaimerNote => Get("Library_DisclaimerNote");
 
@@ -950,7 +1022,7 @@ public static class Strings
     /// <summary>About</summary>
     public static string Nav_About => Get("Nav_About");
 
-    /// <summary>Defaults</summary>
+    /// <summary>Wallpapers</summary>
     public static string Nav_Defaults => Get("Nav_Defaults");
 
     /// <summary>Home</summary>
@@ -989,6 +1061,21 @@ public static class Strings
     /// <summary>PrettyDesk update available</summary>
     public static string Notify_UpdateTitle => Get("Notify_UpdateTitle");
 
+    /// <summary>Ready for your displays · no download needed</summary>
+    public static string Onboard_AlreadyIncluded => Get("Onboard_AlreadyIncluded");
+
+    /// <summary>Continue while downloads run. Unchecking stops future downloads; active downloads continue.</summary>
+    public static string Onboard_BackgroundHelp => Get("Onboard_BackgroundHelp");
+
+    /// <summary>Only the formats your displays need. Same-shaped displays share one download; resolution is adjusted automatically.</summary>
+    public static string Onboard_DisplayFitHelp => Get("Onboard_DisplayFitHelp");
+
+    /// <summary>{0} × {1}×{2} · {3}</summary>
+    public static string Onboard_DisplayGroup => Get("Onboard_DisplayGroup");
+
+    /// <summary>No displays detected. You can continue and download later in Library.</summary>
+    public static string Onboard_DisplaysMissing => Get("Onboard_DisplaysMissing");
+
     /// <summary>PrettyDesk is now in your system tray. Close this window any time. It keeps working quietly in the background.</summary>
     public static string Onboard_DoneBody => Get("Onboard_DoneBody");
 
@@ -998,8 +1085,41 @@ public static class Strings
     /// <summary>You're all set</summary>
     public static string Onboard_DoneTitle => Get("Onboard_DoneTitle");
 
+    /// <summary>Prepare selected game wallpapers automatically</summary>
+    public static string Onboard_DownloadBackground => Get("Onboard_DownloadBackground");
+
+    /// <summary>Downloading · {0}%</summary>
+    public static string Onboard_DownloadProgress => Get("Onboard_DownloadProgress");
+
+    /// <summary>Download failed. Select Download selected to retry, or continue and try later.</summary>
+    public static string Onboard_DownloadRetry => Get("Onboard_DownloadRetry");
+
+    /// <summary>Download selected</summary>
+    public static string Onboard_DownloadSelected => Get("Onboard_DownloadSelected");
+
+    /// <summary>Selected: {0} · up to {1} to download</summary>
+    public static string Onboard_DownloadTotal => Get("Onboard_DownloadTotal");
+
+    /// <summary>Downloads are unavailable right now. Included wallpapers still work offline.</summary>
+    public static string Onboard_DownloadUnavailable => Get("Onboard_DownloadUnavailable");
+
     /// <summary>Couldn't save your choices. Check that there's free disk space and try again.</summary>
     public static string Onboard_Failed => Get("Onboard_Failed");
+
+    /// <summary>Some wallpapers use the closest available format and are cropped to fit.</summary>
+    public static string Onboard_FormatFallback => Get("Onboard_FormatFallback");
+
+    /// <summary>Landscape 16:9</summary>
+    public static string Onboard_FormatLandscape => Get("Onboard_FormatLandscape");
+
+    /// <summary>Portrait 9:16</summary>
+    public static string Onboard_FormatPortrait => Get("Onboard_FormatPortrait");
+
+    /// <summary>Super ultrawide 32:9</summary>
+    public static string Onboard_FormatSuperwide => Get("Onboard_FormatSuperwide");
+
+    /// <summary>Ultrawide 21:9</summary>
+    public static string Onboard_FormatUltrawide => Get("Onboard_FormatUltrawide");
 
     /// <summary>Turn on the games you want PrettyDesk to recognise. Everything stays on your PC.</summary>
     public static string Onboard_GamesBody => Get("Onboard_GamesBody");
@@ -1016,6 +1136,9 @@ public static class Strings
     /// <summary>Games we found on this PC</summary>
     public static string Onboard_GamesTitle => Get("Onboard_GamesTitle");
 
+    /// <summary>{0} MB</summary>
+    public static string Onboard_Megabytes => Get("Onboard_Megabytes");
+
     /// <summary>This is what you see when you're not in a game.</summary>
     public static string Onboard_ModeBody => Get("Onboard_ModeBody");
 
@@ -1031,7 +1154,25 @@ public static class Strings
     /// <summary>How should your desktop behave?</summary>
     public static string Onboard_ModeTitle => Get("Onboard_ModeTitle");
 
-    /// <summary>Your desktop currently uses Windows Spotlight or a slideshow. When PrettyDesk changes your wallpaper, Windows switches the background to a single picture. Restoring your original wallpaper brings back your last picture.</summary>
+    /// <summary>Nothing selected needs downloading.</summary>
+    public static string Onboard_NoDownloadsNeeded => Get("Onboard_NoDownloadsNeeded");
+
+    /// <summary>Your included default wallpapers are ready. You can add games and download more from Library later.</summary>
+    public static string Onboard_NoGamePacks => Get("Onboard_NoGamePacks");
+
+    /// <summary>No matching artwork is available yet. You can add your own images later.</summary>
+    public static string Onboard_NoMatchingArt => Get("Onboard_NoMatchingArt");
+
+    /// <summary>{0} to download · {1}</summary>
+    public static string Onboard_PackDownloadSize => Get("Onboard_PackDownloadSize");
+
+    /// <summary>We could not check your installed games. Try again, or continue and add games in Library later.</summary>
+    public static string Onboard_ScanFailed => Get("Onboard_ScanFailed");
+
+    /// <summary>Check again</summary>
+    public static string Onboard_ScanRetry => Get("Onboard_ScanRetry");
+
+    /// <summary>PrettyDesk restores your slideshow source, shuffle setting, and interval. Windows Spotlight remains unchanged until you switch Windows Background to Picture or Slideshow.</summary>
     public static string Onboard_SpotlightNote => Get("Onboard_SpotlightNote");
 
     /// <summary>Get started</summary>
@@ -1091,6 +1232,12 @@ public static class Strings
     /// <summary>Natural, cosy, sunlit</summary>
     public static string Onboard_StyleWarmWoodHelp => Get("Onboard_StyleWarmWoodHelp");
 
+    /// <summary>Choose the games to prepare now. We select the wallpaper formats your displays need.</summary>
+    public static string Onboard_WallpapersBody => Get("Onboard_WallpapersBody");
+
+    /// <summary>Wallpapers for your setup</summary>
+    public static string Onboard_WallpapersTitle => Get("Onboard_WallpapersTitle");
+
     /// <summary>Your desktop looks great even while you play. PrettyDesk switches to wallpapers inspired by your game, then goes back to your clean setup when you stop.</summary>
     public static string Onboard_WelcomeBody => Get("Onboard_WelcomeBody");
 
@@ -1127,6 +1274,12 @@ public static class Strings
     /// <summary>Advanced</summary>
     public static string Settings_Advanced => Get("Settings_Advanced");
 
+    /// <summary>App theme</summary>
+    public static string Settings_AppTheme => Get("Settings_AppTheme");
+
+    /// <summary>Follow Windows, or choose Light or Dark. High contrast always takes precedence.</summary>
+    public static string Settings_AppThemeHelp => Get("Settings_AppThemeHelp");
+
     /// <summary>Get beta versions</summary>
     public static string Settings_BetaUpdates => Get("Settings_BetaUpdates");
 
@@ -1147,6 +1300,15 @@ public static class Strings
 
     /// <summary>Clear downloaded wallpapers?</summary>
     public static string Settings_ClearDownloadsTitle => Get("Settings_ClearDownloadsTitle");
+
+    /// <summary>Clock display</summary>
+    public static string Settings_ClockMonitor => Get("Settings_ClockMonitor");
+
+    /// <summary>Desktop clock</summary>
+    public static string Settings_DesktopClock => Get("Settings_DesktopClock");
+
+    /// <summary>Show a quiet clock on the desktop. It hides while a game is active, the session is locked or battery saver is on.</summary>
+    public static string Settings_DesktopClockHelp => Get("Settings_DesktopClockHelp");
 
     /// <summary>Switch wallpaper after a game has run for</summary>
     public static string Settings_DetectDelay => Get("Settings_DetectDelay");
@@ -1220,6 +1382,9 @@ public static class Strings
     /// <summary>General</summary>
     public static string Settings_General => Get("Settings_General");
 
+    /// <summary>No active media session supports this control.</summary>
+    public static string Settings_MediaUnavailable => Get("Settings_MediaUnavailable");
+
     /// <summary>A different wallpaper on each display</summary>
     public static string Settings_MonitorDifferent => Get("Settings_MonitorDifferent");
 
@@ -1231,6 +1396,9 @@ public static class Strings
 
     /// <summary>Monitors</summary>
     public static string Settings_Monitors => Get("Settings_Monitors");
+
+    /// <summary>Next track</summary>
+    public static string Settings_NextTrack => Get("Settings_NextTrack");
 
     /// <summary>Notifications</summary>
     public static string Settings_Notifications => Get("Settings_Notifications");
@@ -1247,8 +1415,17 @@ public static class Strings
     /// <summary>Tell me when an update is available</summary>
     public static string Settings_NotifyUpdates => Get("Settings_NotifyUpdates");
 
+    /// <summary>Show now playing</summary>
+    public static string Settings_NowPlaying => Get("Settings_NowPlaying");
+
+    /// <summary>Open Windows Colors</summary>
+    public static string Settings_OpenColors => Get("Settings_OpenColors");
+
     /// <summary>Open logs folder</summary>
     public static string Settings_OpenLogs => Get("Settings_OpenLogs");
+
+    /// <summary>Play / pause</summary>
+    public static string Settings_PlayPause => Get("Settings_PlayPause");
 
     /// <summary>Check for games every</summary>
     public static string Settings_PollSeconds => Get("Settings_PollSeconds");
@@ -1345,6 +1522,18 @@ public static class Strings
 
     /// <summary>After a full-screen app has run for a minute, PrettyDesk can ask once whether to add it. Nothing is sent anywhere.</summary>
     public static string Settings_UnknownGameHintsHelp => Get("Settings_UnknownGameHintsHelp");
+
+    /// <summary>Playback visualizer</summary>
+    public static string Settings_Visualizer => Get("Settings_Visualizer");
+
+    /// <summary>Analyze the default output device locally, at up to 15 frames per second. No microphone, recordings or uploads. Stops during games, lock and battery saver; respects reduced motion.</summary>
+    public static string Settings_VisualizerHelp => Get("Settings_VisualizerHelp");
+
+    /// <summary>Windows taskbar and colors</summary>
+    public static string Settings_WindowsColors => Get("Settings_WindowsColors");
+
+    /// <summary>Windows controls taskbar transparency and automatic wallpaper accent. Open Colors to choose your preferences.</summary>
+    public static string Settings_WindowsColorsHelp => Get("Settings_WindowsColorsHelp");
 
     /// <summary>Working…</summary>
     public static string Settings_Working => Get("Settings_Working");
@@ -1457,9 +1646,24 @@ public static class Strings
     /// <summary>PrettyDesk</summary>
     public static string Tray_Tooltip => Get("Tray_Tooltip");
 
-    /// <summary>Your original wallpaper has been put back.\n\nDo you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?\n\nChoose No to keep them in case you reinstall.</summary>
+    /// <summary>Do you also want to delete your PrettyDesk settings, downloaded wallpapers and your own images?  Choose No to keep them in case you reinstall.</summary>
     public static string Uninstall_KeepDataBody => Get("Uninstall_KeepDataBody");
 
     /// <summary>Uninstalling PrettyDesk</summary>
     public static string Uninstall_KeepDataTitle => Get("Uninstall_KeepDataTitle");
+
+    /// <summary>Default playback output</summary>
+    public static string Widget_DefaultOutput => Get("Widget_DefaultOutput");
+
+    /// <summary>Now playing unavailable</summary>
+    public static string Widget_MediaUnavailable => Get("Widget_MediaUnavailable");
+
+    /// <summary>Nothing playing</summary>
+    public static string Widget_NothingPlaying => Get("Widget_NothingPlaying");
+
+    /// <summary>Playback device unavailable. Retrying…</summary>
+    public static string Widget_PlaybackUnavailable => Get("Widget_PlaybackUnavailable");
+
+    /// <summary>Visualizer paused by Windows accessibility preferences</summary>
+    public static string Widget_VisualizerPaused => Get("Widget_VisualizerPaused");
 }

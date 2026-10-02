@@ -50,6 +50,18 @@ def test_validate_flags_orphans_and_bad_masters(layout):
     assert any("below" in p for p in problems)
 
 
+def test_invalid_source_is_rejected_before_ai_upscale(layout, monkeypatch):
+    pack = setup_pack(layout)
+    folder = layout.raw / pack.id
+    folder.mkdir(parents=True)
+    Image.new("RGB", (640, 360)).save(folder / "mb-01_L.png")
+    monkeypatch.setattr(imaging, "realesrgan_path", lambda: "/fake/upscaler")
+    monkeypatch.setattr(imaging, "upscale_4x", lambda *_: pytest.fail("Invalid masters must not enter the GPU model"))
+    built = commands.build_wallpaper(layout, pack, pack.wallpapers[0])
+    assert any("below" in problem for problem in built.errors)
+    assert not built.variants
+
+
 def test_build_writes_every_variant_at_canonical_size(layout, monkeypatch):
     monkeypatch.setattr(imaging, "realesrgan_path", lambda: None)
     pack = setup_pack(layout)
@@ -76,6 +88,14 @@ def test_build_requires_an_l_master(layout):
     pack = setup_pack(layout)
     built = commands.build_wallpaper(layout, pack, pack.wallpapers[0])
     assert built.errors and not built.variants
+
+
+def test_update_raw_hashes_replaces_block_map_without_corrupting_yaml():
+    import yaml
+    text = 'wallpapers:\n- id: a\n  rawSha256:\n    L: old\n    U: old-wide\n  approved: false\n- id: b\n  rawSha256: {L: keep}\n'
+    result = yaml.safe_load(commands.update_raw_hashes(text, 'a', {'L': 'new'}))
+    assert result['wallpapers'][0] == {'id': 'a', 'rawSha256': {'L': 'new'}, 'approved': False}
+    assert result['wallpapers'][1]['rawSha256'] == {'L': 'keep'}
 
 
 def test_update_raw_hashes_rewrites_only_the_target_wallpaper():

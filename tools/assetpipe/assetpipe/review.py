@@ -73,6 +73,8 @@ def write_review(layout: Layout, pack: Pack, manifest: dict) -> Path:
     out_dir = layout.review / pack.id
     out_dir.mkdir(parents=True, exist_ok=True)
     body = render_pack(layout, pack, manifest)
+    if pack.art_mode == "named-fan-art":
+        body = '<p class="sub">Approved named fan-art direction. Review recognizable car geometry, no text/HUD/logos, original composition and every crop. Public distribution needs a separate rights check.</p>' + body
     page = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         f"<title>Review: {html.escape(pack.title)}</title><style>{CSS}</style></head><body><main>"

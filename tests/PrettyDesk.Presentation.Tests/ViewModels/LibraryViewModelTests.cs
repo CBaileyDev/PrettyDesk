@@ -447,6 +447,17 @@ public class GameDetailViewModelTests
         _f.Settings.Current.Games["cs2"].Enabled.ShouldBeFalse();
     }
 
+    [Fact]
+    public void Background_download_choice_can_be_changed_after_onboarding()
+    {
+        using var vm = Detail();
+        vm.PrefetchWallpapers = false;
+        _f.Settings.Current.Games["cs2"].PrefetchWallpapers.ShouldBeFalse();
+        _f.Settings.Current.IsGameEnabled("cs2").ShouldBeTrue();
+        _f.Settings.ChangeExternally(s => s.GetGame("cs2").PrefetchWallpapers = true);
+        vm.PrefetchWallpapers.ShouldBeTrue();
+    }
+
     private GameDetailViewModel CustomDetail(out string id)
     {
         _f.Settings.Update(s => s.CustomGames.Add(new CustomGame { Id = "custom-1", DisplayName = "My Indie", ExeNames = ["indie.exe"], Wallpapers = ["cs2-hero", "user:a.png"] }));

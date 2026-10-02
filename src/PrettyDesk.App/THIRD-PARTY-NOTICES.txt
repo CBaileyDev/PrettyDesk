@@ -188,11 +188,17 @@ Microsoft.Extensions.Primitives 10.0.12
   License:   MIT
   Project:   https://dot.net/
 
-Microsoft.Win32.SystemEvents 10.0.12
-  Authors:   Microsoft
-  Copyright: © Microsoft Corporation. All rights reserved.
+NAudio.Core 2.2.1
+  Authors:   Mark Heath
+  Copyright: © Mark Heath 2023
   License:   MIT
-  Project:   https://dot.net/
+  Project:   https://github.com/naudio/NAudio
+
+NAudio.Wasapi 2.2.1
+  Authors:   Mark Heath
+  Copyright: © Mark Heath 2023
+  License:   MIT
+  Project:   https://github.com/naudio/NAudio
 
 Serilog.Extensions.Hosting 10.0.0
   Authors:   Microsoft,Serilog Contributors
@@ -232,18 +238,6 @@ SkiaSharp 4.153.1
   Copyright: © Microsoft Corporation. All rights reserved.
   License:   MIT
   Project:   https://go.microsoft.com/fwlink/?linkid=868515
-
-System.Diagnostics.EventLog 10.0.12
-  Authors:   Microsoft
-  Copyright: © Microsoft Corporation. All rights reserved.
-  License:   MIT
-  Project:   https://dot.net/
-
-System.Drawing.Common 10.0.0
-  Authors:   Microsoft
-  Copyright: © Microsoft Corporation. All rights reserved.
-  License:   MIT
-  Project:   https://github.com/dotnet/winforms
 
 Velopack 1.2.161
   Authors:   Velopack Ltd,Caelan Sayler,Kevin Bost

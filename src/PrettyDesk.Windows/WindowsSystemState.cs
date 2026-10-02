@@ -30,7 +30,7 @@ public sealed class WindowsSystemState : ISystemState, IDisposable
         SystemEvents.PowerModeChanged += OnPowerModeChanged;
 
         // Battery Saver has no cheap change notification through SystemEvents; one tiny call a minute is invisible.
-        _poll = time.CreateTimer(_ => Refresh(), null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1));
+        _poll = time.CreateTimer(_ => SafeRefresh(), null, TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1));
     }
 
     public bool IsLightTheme => _light;
@@ -75,9 +75,24 @@ public sealed class WindowsSystemState : ISystemState, IDisposable
         _poll.Dispose();
     }
 
-    private void OnSystemEvent(object? sender, UserPreferenceChangedEventArgs e) => Refresh();
+    private void OnSystemEvent(object? sender, UserPreferenceChangedEventArgs e) => SafeRefresh();
 
-    private void OnPowerModeChanged(object? sender, PowerModeChangedEventArgs e) => Refresh();
+    private void OnPowerModeChanged(object? sender, PowerModeChangedEventArgs e) => SafeRefresh();
+
+    /// <summary>Timer and system-event callbacks run on threadpool or event threads: a registry or subscriber exception must never reach the unhandled-exception path.</summary>
+    private void SafeRefresh()
+    {
+        try
+        {
+            Refresh();
+        }
+#pragma warning disable CA1031 // NFR-13: keep the last known theme / battery / policy values.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            // the next event or the one-minute poll retries
+        }
+    }
 
     private static bool ReadLightTheme()
     {

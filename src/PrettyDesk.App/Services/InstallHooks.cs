@@ -17,31 +17,47 @@ public static class InstallHooks
     public static void BeforeUninstall()
     {
         var paths = new AppPaths();
+        Attempt("start logging", () => Log.Logger = Logging.Create(paths)); // the hook runs in a bare process: without this every Log call below is silently dropped
 
         Attempt("remove the Run key", () => new StartupRegistration().Disable());
-        Attempt("restore the original wallpaper", () => RestoreWallpaper(paths));
+        var restoredFromBackupFolder = true; // unknown until the restore runs; keep the backup folder if it fails
+        Attempt("restore the original wallpaper", () => restoredFromBackupFolder = RestoreWallpaper(paths));
+#if PRETTYDESK_ACCEPTANCE
+        // Acceptance packages keep data for unattended checks unless the real prompt is explicitly requested.
+        File.WriteAllText(Path.Combine(paths.Root, "uninstall-hook.txt"), "restore and Run-key removal executed");
+        if (Environment.GetEnvironmentVariable("PRETTYDESK_ACCEPTANCE_UNINSTALL") != "interactive")
+        {
+            return;
+        }
+#endif
         Attempt("ask about user data", () =>
         {
             if (UninstallPrompt.AskYesNoDefaultNo(Strings.Uninstall_KeepDataBody, Strings.Uninstall_KeepDataTitle))
             {
-                DeleteData(paths);
+                DeleteData(paths, keepBackup: restoredFromBackupFolder);
             }
         });
     }
 
-    private static void RestoreWallpaper(AppPaths paths)
+    /// <summary>Returns true when a restored wallpaper points into the backup folder (so that folder must survive a data wipe).</summary>
+    private static bool RestoreWallpaper(AppPaths paths)
     {
         using var provider = new ServiceCollection().AddPrettyDesk(paths).BuildServiceProvider();
         var backup = provider.GetRequiredService<WallpaperBackupService>();
         var result = backup.RestoreAsync().GetAwaiter().GetResult();
         Log.Information("Uninstall restore: {Monitors} monitor(s) restored, nothing to restore: {Nothing}", result.MonitorsRestored, result.NothingToRestore);
         provider.GetRequiredService<DesktopWallpaperService>().Dispose();
+        return result.UsedBackupCopies;
     }
 
-    private static void DeleteData(AppPaths paths)
+    private static void DeleteData(AppPaths paths, bool keepBackup)
     {
         // Our own log file is still open in this process, so the logs folder may survive; everything else goes.
-        foreach (var directory in new[] { paths.Packs, paths.RenderCache, paths.UserImages, paths.Backup, paths.CatalogDirectory })
+        // The backup folder is kept when the restored wallpaper points into it, otherwise the desktop would go blank at next logon.
+        var directories = keepBackup
+            ? new[] { paths.Packs, paths.RenderCache, paths.UserImages, paths.CatalogDirectory }
+            : new[] { paths.Packs, paths.RenderCache, paths.UserImages, paths.Backup, paths.CatalogDirectory };
+        foreach (var directory in directories)
         {
             TryDelete(() => Directory.Delete(directory, recursive: true));
         }

@@ -68,6 +68,8 @@ jobs:
             Expand-Archive starter.zip -DestinationPath content/starter -Force
             $mb = (Get-ChildItem content/starter -Recurse | Measure-Object Length -Sum).Sum / 1MB
             if ($mb -gt 60) { throw "starter set is $mb MB; the installer budget is 60 MB" }
+          } elseif (Test-Path content/starter) {
+            python tools/verify_starter.py
           } elseif ($env:IS_STABLE -eq 'True') {
             throw "A stable release must ship the starter wallpapers. Set the STARTER_SET_URL repository variable (see docs/RELEASING.md)."
           } else {
@@ -81,12 +83,12 @@ jobs:
 
       - name: Restore and regenerate third-party notices
         run: |
-          dotnet restore src/PrettyDesk.App -r ${{ matrix.rid }}
+          dotnet restore src/PrettyDesk.App -r ${{ matrix.rid }} -p:PublishReadyToRun=true -p:SelfContained=true --locked-mode
           python tools/gen_notices.py
 
       - name: Publish (self-contained, ReadyToRun, no trimming)
         run: >
-          dotnet publish src/PrettyDesk.App -c Release -r ${{ matrix.rid }} --self-contained true
+          dotnet publish src/PrettyDesk.App -c Release -r ${{ matrix.rid }} --self-contained true --no-restore
           -p:PublishReadyToRun=true -p:PublishTrimmed=false -p:PublishSingleFile=false
           -p:MinVerVersionOverride=${{ env.VERSION }} -p:ContentBaseUrl=${{ vars.CONTENT_BASE_URL }}
           -o publish/${{ matrix.rid }}
@@ -112,7 +114,7 @@ jobs:
           $dlib = Join-Path $env:RUNNER_TEMP 'dlib'
           New-Item -ItemType Directory -Force $dlib | Out-Null
           Push-Location $dlib
-          Set-Content proj.csproj '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="Microsoft.Trusted.Signing.Client" Version="1.0.*" /></ItemGroup></Project>'
+          Set-Content proj.csproj '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="Microsoft.Trusted.Signing.Client" Version="1.0.95" /></ItemGroup></Project>'
           dotnet restore proj.csproj --packages pkgs
           Pop-Location
           $dll = (Get-ChildItem "$dlib/pkgs/microsoft.trusted.signing.client" -Recurse -Filter Azure.CodeSigning.Dlib.dll | Where-Object { $_.FullName -match '[\\/]x64[\\/]' } | Select-Object -First 1).FullName

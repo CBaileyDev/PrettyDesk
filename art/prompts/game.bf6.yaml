@@ -54,9 +54,9 @@ wallpapers:
         wallpaper. The broken towers rise through the center from 20% to 60% of the height, with the golden
         break behind them. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "6f11998a4e097caa2b466faef194d8a5d6e704a9fbad41231901839937e61a60", P: "21ca2c12e9883ea7adb5b3c85f21ba8a4b4bd1c060cda348807292b31cb32290", U: "1bc5b46cda48ceac0ebc1fdc45293763f43192f45b5b741a6a1f7e8e9c1126dd"}
 
   - id: bf6.minimal-01
     title: "Dust Wall on the Horizon"
@@ -97,9 +97,9 @@ wallpapers:
         wallpaper. The dust wall rises at about 52% of the height in the lower center, with empty pale sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "0ed00fdeeab42f94cb53acd8029748d34b6838f8288c8012121cbf66acefee5e"}
 
   - id: bf6.mood-01
     title: "Smoke-Lit Sunset"
@@ -140,9 +140,9 @@ wallpapers:
         wallpaper. The sun disc glows at about 48% of the height in the center, with silhouettes in the lower
         half. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "fd91dddfa0d90d60b7f5a06c1f10d0edd97cf979fe5ef00cf4f29bab1494d869"}
 
   - id: bf6.alt-01
     title: "Quiet Ruins at Morning"
@@ -183,6 +183,6 @@ wallpapers:
         wallpaper. The street runs up the center to a vanishing point at about 48% of the height, with pale sky
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."
+    approved: true
+    rawSha256: {L: "c45f4424adb996725d03be07ad142bc9de465f93382783d9add8ba6e416b91aa", P: "f6fd7a548077df96f7d6945167c3ced5096dd602e9eec9b04a3db8feb56fd48f", U: "0f06785ab37e23ca31fec4777469185f8742c0305f20e31a1b13996b2e7dc590"}

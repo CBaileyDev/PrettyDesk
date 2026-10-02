@@ -25,6 +25,8 @@ PostThreadMessage
 GetCurrentThreadId
 WM_QUIT
 IDesktopWallpaper
+SHParseDisplayName
+SHCreateShellItemArrayFromIDLists
 DesktopWallpaper
 DESKTOP_WALLPAPER_POSITION
 CoCreateInstance
