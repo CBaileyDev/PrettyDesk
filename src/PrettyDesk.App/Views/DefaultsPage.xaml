@@ -23,7 +23,7 @@
         </ItemsControl.ItemsPanel>
         <ItemsControl.ItemTemplate>
           <DataTemplate DataType="{x:Type vm:CollectionCardViewModel}">
-            <Border Width="236" Margin="0,0,16,20" Style="{StaticResource CardStyle}" Padding="0">
+            <Border Width="236" Margin="0,0,8,20" Style="{StaticResource CardStyle}" Padding="0">
               <StackPanel>
                 <Grid Height="172">
                   <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="24,24,0,0" />
@@ -52,6 +52,8 @@
       <Border Style="{StaticResource CardStyle}">
         <StackPanel>
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_MyImagesHelp}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{x:Static res:Strings.Defaults_DetectingDisplays}" Visibility="{Binding IsLoadingMonitors, Converter={StaticResource BoolToVisibility}}" AutomationProperties.LiveSetting="Polite" />
+          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding DisplayGuidanceStatus}" Visibility="{Binding DisplayGuidanceStatus, Converter={StaticResource NullToCollapsed}}" AutomationProperties.LiveSetting="Polite" />
           <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
             <Button Content="{x:Static res:Strings.Defaults_AddImages}" Command="{Binding AddImagesCommand}" AutomationProperties.Name="{x:Static res:Strings.Defaults_AddImages}" />
             <ui:ToggleSwitch Margin="16,0,0,0" IsChecked="{Binding UseMyImages, Mode=TwoWay}" Content="{x:Static res:Strings.Defaults_UseMyImages}" AutomationProperties.Name="{x:Static res:Strings.Defaults_UseMyImages}" />

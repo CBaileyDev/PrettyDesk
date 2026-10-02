@@ -40,7 +40,48 @@ public class DefaultsViewModelTests
         }
     }
 
-    private DefaultsViewModel Vm() => new(_f.Settings, _f.Catalog, _f.Content, _f.Library, _f.Monitors, _f.Files, _app, _f.Ui);
+    private DefaultsViewModel Vm(IMonitorProvider? monitors = null, IUiDispatcher? ui = null) => new(_f.Settings, _f.Catalog, _f.Content, _f.Library, monitors ?? _f.Monitors, _f.Files, _app, ui ?? _f.Ui);
+
+    [Fact]
+    public async Task Missing_display_sizes_have_a_neutral_guidance_state()
+    {
+        _f.Monitors.Monitors = [];
+        using var vm = Vm();
+
+        await AsyncTestWait.UntilAsync(() => !vm.IsLoadingMonitors);
+
+        vm.DisplayGuidanceStatus.ShouldBe(PrettyDesk.Presentation.Resources.Strings.Defaults_DisplaySizesUnavailable);
+    }
+
+    [Fact]
+    public async Task Waiting_for_monitors_retries_when_a_newer_topology_refresh_replaces_the_snapshot()
+    {
+        var displays = new SequencedMonitorProvider();
+        var dispatcher = new CountingInlineDispatcher();
+        _f.Content.Images.Add(new UserImage("user:test.png", "/p/test.png", 2000, 1200));
+        using var vm = Vm(displays, dispatcher);
+        await displays.WaitForReadAsync(0);
+
+        var snapshotTask = vm.GetCurrentMonitorSnapshotAsync();
+        displays.Raise();
+        await displays.WaitForReadAsync(1);
+        displays.Complete(1, [new MonitorInfo("new", 0, 0, 3840, 2160, true)]);
+        await AsyncTestWait.UntilAsync(() => !vm.IsLoadingMonitors);
+
+        var snapshot = await snapshotTask.WaitAsync(TimeSpan.FromSeconds(5));
+
+        snapshot.Select(m => m.Id).ShouldBe(["new"]);
+        await AsyncTestWait.UntilAsync(() => vm.MyImages.Single().Warning is not null);
+        vm.MyImages.Single(i => i.Id == "user:test.png").Warning.ShouldNotBeNull().ShouldContain("3840×2160");
+        await vm.ImportAsync(["/p/imported.png"]);
+        vm.ImportMessage.ShouldNotBeNull().ShouldContain("3840×2160");
+
+        var previousPostCount = dispatcher.PostCount;
+        displays.Complete(0, [new MonitorInfo("old", 0, 0, 1920, 1080, true)]);
+        await AsyncTestWait.UntilAsync(() => dispatcher.PostCount > previousPostCount);
+
+        vm.MyImages.Single(i => i.Id == "user:test.png").Warning.ShouldNotBeNull().ShouldContain("3840×2160");
+    }
 
     [Fact]
     public void Collections_are_listed_in_catalog_order_with_selection_counts_and_previews()
@@ -333,5 +374,48 @@ public class DefaultsViewModelTests
         _f.Catalog.Raise();
 
         vm.Collections.ShouldHaveSingleItem().Title.ShouldBe("New One");
+    }
+
+    private sealed class SequencedMonitorProvider : IMonitorProvider
+    {
+        private readonly TaskCompletionSource<IReadOnlyList<MonitorInfo>>[] _completions =
+        [
+            new(TaskCreationOptions.RunContinuationsAsynchronously),
+            new(TaskCreationOptions.RunContinuationsAsynchronously),
+        ];
+        private readonly TaskCompletionSource[] _started =
+        [
+            new(TaskCreationOptions.RunContinuationsAsynchronously),
+            new(TaskCreationOptions.RunContinuationsAsynchronously),
+        ];
+        private int _readCount;
+
+        public event Action? Changed;
+
+        public IReadOnlyList<MonitorInfo> GetMonitors()
+        {
+            var index = Interlocked.Increment(ref _readCount) - 1;
+            _started[index].TrySetResult();
+            return _completions[index].Task.GetAwaiter().GetResult();
+        }
+
+        public Task WaitForReadAsync(int index) => _started[index].Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+        public void Complete(int index, IReadOnlyList<MonitorInfo> monitors) => _completions[index].TrySetResult(monitors);
+
+        public void Raise() => Changed?.Invoke();
+    }
+
+    private sealed class CountingInlineDispatcher : IUiDispatcher
+    {
+        private int _postCount;
+
+        public int PostCount => Volatile.Read(ref _postCount);
+
+        public void Post(Action action)
+        {
+            action();
+            Interlocked.Increment(ref _postCount);
+        }
     }
 }

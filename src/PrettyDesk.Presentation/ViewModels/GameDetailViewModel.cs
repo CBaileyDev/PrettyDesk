@@ -207,19 +207,52 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
     }
 
     [RelayCommand(CanExecute = nameof(CanDownload))]
-    private void Download()
+    private async Task DownloadAsync()
     {
-        if (_game.PackId is { } packId)
+        if (_game.PackId is not { } packId)
         {
+            return;
+        }
+
+        CanDownload = false;
+        var displaysUnavailable = false;
+        await RunAsync(async () =>
+        {
+            var monitors = await Task.Run(_monitors.GetMonitors);
+            if (IsDisposed)
+            {
+                return;
+            }
+
+            if (monitors.Count == 0)
+            {
+                displaysUnavailable = true;
+                return;
+            }
+
             if (_content.GetPackState(packId).State == PackStateKind.Failed)
             {
-                _content.RetryPack(packId, _monitors.GetMonitors());
+                _content.RetryPack(packId, monitors);
             }
             else
             {
-                _content.RequestPack(packId, _monitors.GetMonitors());
+                _content.RequestPack(packId, monitors);
             }
-            RefreshPackStatus();
+        }, Strings.Game_DownloadFailed);
+
+        if (IsDisposed)
+        {
+            return;
+        }
+
+        RefreshPackStatus();
+        if (displaysUnavailable)
+        {
+            PackStatusHelp = Strings.Game_DisplaysUnavailable;
+        }
+        else if (HasError)
+        {
+            PackStatusHelp = ErrorMessage;
         }
     }
 

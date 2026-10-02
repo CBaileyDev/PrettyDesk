@@ -113,11 +113,12 @@ public sealed partial class OnboardingViewModel : ViewModelBase
         _content = content;
         _monitors = monitors;
         _ui = ui;
+        _displayPlanToken = _displayPlanCancellation.Token;
         DownloadInBackground = settings.Current.Content.PrefetchInstalledGames;
         _content.ProgressChanged += OnDownloadProgress;
         _content.PackChanged += OnPackChanged;
-        _catalog.Changed += OnDisplayPlanChanged;
-        _monitors.Changed += OnDisplayPlanChanged;
+        _catalog.Changed += OnCatalogChanged;
+        _monitors.Changed += OnMonitorsChanged;
 
         IntervalChoices = IntervalLabels.Presets(includeSession: false);
         SelectedInterval = IntervalChoices.First(c => c.Value == RotationInterval.Every(TimeSpan.FromMinutes(30)));

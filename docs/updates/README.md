@@ -4,11 +4,16 @@ These documents record the owner's requests and proposed implementation. They do
 not mean the features are in the current EXE. Repository navigation/documentation
 and dated implementation records should be consulted together for current status.
 
+- [2026-10-02 navigation and default artwork](2026-10-02-top-navigation-and-default-art.md):
+  current implementation plan and verification record.
+- [2026-10-02 scoped Rocket League prompt mode](2026-10-02-rocket-league-prompt-mode.md):
+  named-subject linting, generated prompt review text and remaining art/release limits.
+
 - [Aesthetics and personalization](2026-10-01-aesthetics-and-personalization.md):
   downloads, detection cadence, discovery, layout/themes, taskbar and widgets,
   implementation order and acceptance conditions.
 - [Rocket League fan art](rocket-league-fan-art.md): approved recognizable-game
-  direction, named car prompts, varied viewpoints and the pending pipeline migration.
+  direction, named car prompts, varied viewpoints and distribution-rights review.
 
 Use [BACKLOG](../BACKLOG.md) for release gaps and [SPEC](../SPEC.md) for baseline
 requirements. Once a technical choice is accepted, add its ADR and link the actual

@@ -73,6 +73,8 @@ public sealed partial class HomeViewModel : ViewModelBase
     private readonly IEnvironmentConflictSource _conflicts;
     private readonly IUiDispatcher _ui;
     private readonly TimeProvider _time;
+    private int _monitorRefreshVersion;
+    private int _disposed;
 
     [ObservableProperty]
     private string _headline = Strings.Status_Starting;
@@ -88,6 +90,10 @@ public sealed partial class HomeViewModel : ViewModelBase
 
     [ObservableProperty]
     private double _canvasHeight = 300;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ShowNoMonitors))]
+    private bool _isLoadingMonitors = true;
 
     public HomeViewModel(
         IWallpaperController controller,
@@ -107,7 +113,9 @@ public sealed partial class HomeViewModel : ViewModelBase
         _controller.StatusChanged += OnStatusChanged;
         _monitors.Changed += OnMonitorsChanged;
         _content.PackChanged += OnContentChanged;
-        Refresh();
+        ApplyStatus(_controller.Status);
+        BuildBanners();
+        RequestMonitorRefresh();
     }
 
     public ObservableCollection<MonitorPreviewViewModel> Monitors { get; } = [];
@@ -116,6 +124,8 @@ public sealed partial class HomeViewModel : ViewModelBase
 
     public bool HasMonitors => Monitors.Count > 0;
 
+    public bool ShowNoMonitors => !HasMonitors && !IsLoadingMonitors && string.IsNullOrEmpty(ErrorMessage);
+
     public bool CanPause => Mode is not (OrchestratorMode.Paused or OrchestratorMode.Blocked);
 
     public bool CanResume => Mode == OrchestratorMode.Paused;
@@ -123,12 +133,19 @@ public sealed partial class HomeViewModel : ViewModelBase
     public bool CanSkip => Mode is OrchestratorMode.Default or OrchestratorMode.Game or OrchestratorMode.GameGrace;
 
     /// <summary>Re-reads status, displays and environment conflicts. Safe to call from any thread.</summary>
-    public void Refresh()
+    public void Refresh() => _ui.Post(() =>
     {
-        ApplyStatus(_controller.Status);
-        BuildMonitors();
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            return;
+        }
+
+        var status = _controller.Status;
+        ApplyStatus(status);
+        UpdateThumbnails(status);
         BuildBanners();
-    }
+        RequestMonitorRefresh();
+    });
 
     [RelayCommand(CanExecute = nameof(CanSkip))]
     private void Next() => _controller.NextWallpaper();
@@ -155,6 +172,8 @@ public sealed partial class HomeViewModel : ViewModelBase
     {
         if (disposing)
         {
+            Interlocked.Exchange(ref _disposed, 1);
+            Interlocked.Increment(ref _monitorRefreshVersion);
             _controller.StatusChanged -= OnStatusChanged;
             _monitors.Changed -= OnMonitorsChanged;
             _content.PackChanged -= OnContentChanged;
@@ -173,18 +192,84 @@ public sealed partial class HomeViewModel : ViewModelBase
 
     private void OnStatusChanged(OrchestratorStatus status) => _ui.Post(() =>
     {
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            return;
+        }
+
         ApplyStatus(status);
         UpdateThumbnails(status);
         BuildBanners();
     });
 
-    private void OnMonitorsChanged() => _ui.Post(() =>
-    {
-        BuildMonitors();
-        BuildBanners();
-    });
+    private void OnMonitorsChanged()
+        => RequestMonitorRefresh();
 
-    private void OnContentChanged(string packId) => _ui.Post(() => UpdateThumbnails(_controller.Status));
+    private void RequestMonitorRefresh()
+    {
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            return;
+        }
+
+        var version = Interlocked.Increment(ref _monitorRefreshVersion);
+        _ui.Post(() =>
+        {
+            if (Volatile.Read(ref _disposed) == 0 && version == Volatile.Read(ref _monitorRefreshVersion))
+            {
+                IsLoadingMonitors = true;
+                ErrorMessage = null;
+                OnPropertyChanged(nameof(ShowNoMonitors));
+            }
+        });
+        _ = RefreshMonitorsAsync(version);
+    }
+
+    private async Task RefreshMonitorsAsync(int version)
+    {
+        IReadOnlyList<MonitorInfo> monitors;
+        try
+        {
+            // Display notifications can arrive on any thread, and the provider may wait for COM.
+            monitors = await Task.Run(_monitors.GetMonitors).ConfigureAwait(false);
+        }
+#pragma warning disable CA1031 // A display-provider failure must not become an unobserved task from a system event.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            _ui.Post(() =>
+            {
+                if (Volatile.Read(ref _disposed) == 0 && version == Volatile.Read(ref _monitorRefreshVersion))
+                {
+                    ErrorMessage = Strings.Home_DisplaysUnavailable;
+                    IsLoadingMonitors = false;
+                    OnPropertyChanged(nameof(ShowNoMonitors));
+                }
+            });
+            return;
+        }
+
+        _ui.Post(() =>
+        {
+            if (Volatile.Read(ref _disposed) != 0 || version != Volatile.Read(ref _monitorRefreshVersion))
+            {
+                return;
+            }
+
+            ErrorMessage = null;
+            BuildMonitors(monitors);
+            BuildBanners();
+            IsLoadingMonitors = false;
+        });
+    }
+
+    private void OnContentChanged(string packId) => _ui.Post(() =>
+    {
+        if (Volatile.Read(ref _disposed) == 0)
+        {
+            UpdateThumbnails(_controller.Status);
+        }
+    });
 
     private void ApplyStatus(OrchestratorStatus status)
     {
@@ -194,14 +279,14 @@ public sealed partial class HomeViewModel : ViewModelBase
         Mode = status.Mode;
     }
 
-    private void BuildMonitors()
+    private void BuildMonitors(IReadOnlyList<MonitorInfo> list)
     {
-        var list = _monitors.GetMonitors();
         Monitors.Clear();
         if (list.Count == 0)
         {
             CanvasHeight = 300;
             OnPropertyChanged(nameof(HasMonitors));
+            OnPropertyChanged(nameof(ShowNoMonitors));
             return;
         }
 
@@ -230,6 +315,7 @@ public sealed partial class HomeViewModel : ViewModelBase
         }
 
         OnPropertyChanged(nameof(HasMonitors));
+        OnPropertyChanged(nameof(ShowNoMonitors));
     }
 
     private void UpdateThumbnails(OrchestratorStatus status)

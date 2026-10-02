@@ -76,6 +76,20 @@ public sealed record MyImageViewModel(string Id, string Name, string Path, strin
 /// <summary>Defaults page (SPEC §7.3): collections, "My images", mode, interval, order and theme options.</summary>
 public sealed partial class DefaultsViewModel : SettingsSectionViewModel
 {
+    private sealed class MonitorRefreshQuery
+    {
+        private readonly TaskCompletionSource<List<MonitorInfo>> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        private readonly TaskCompletionSource _superseded = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        public Task<List<MonitorInfo>> Task => _completion.Task;
+
+        public Task Superseded => _superseded.Task;
+
+        public void Complete(List<MonitorInfo> monitors) => _completion.TrySetResult(monitors);
+
+        public void MarkSuperseded() => _superseded.TrySetResult();
+    }
+
     public const int MinCustomMinutes = 1;
     public const int MaxCustomMinutes = 7 * 24 * 60;
 
@@ -86,7 +100,11 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
     private readonly IFilePicker _files;
     private readonly IAppController _app;
     private readonly IUiDispatcher _ui;
+    private readonly CancellationTokenSource _monitorRefreshCancellation = new();
+    private readonly CancellationToken _monitorRefreshToken;
     private readonly IntervalChoice _customChoice;
+    private List<MonitorInfo> _availableMonitors = [];
+    private MonitorRefreshQuery? _monitorRefreshQuery;
 
     [ObservableProperty]
     private bool _isRotate = true;
@@ -115,6 +133,12 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
     [ObservableProperty]
     private string? _importMessage;
 
+    [ObservableProperty]
+    private bool _isLoadingMonitors = true;
+
+    [ObservableProperty]
+    private string? _displayGuidanceStatus;
+
     public DefaultsViewModel(
         ISettingsProvider settings,
         ICatalogProvider catalog,
@@ -133,13 +157,16 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         _files = files;
         _app = app;
         _ui = ui;
+        _monitorRefreshToken = _monitorRefreshCancellation.Token;
 
         _customChoice = new IntervalChoice(RotationInterval.Every(TimeSpan.FromMinutes(30)), Strings.Interval_Custom);
         IntervalChoices = [.. IntervalLabels.Presets(includeSession: false), _customChoice];
 
         _catalog.Changed += OnModelChanged;
         _content.PackChanged += OnPackChanged;
+        _monitors.Changed += OnMonitorsChanged;
         InitialLoad();
+        RequestMonitorRefresh();
     }
 
     public IReadOnlyList<IntervalChoice> IntervalChoices { get; }
@@ -285,10 +312,16 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         await RunAsync(async () =>
         {
             var results = await Task.Run(() => paths.Select(_content.ImportUserImage).ToList());
+            var monitors = await GetCurrentMonitorSnapshotAsync();
+            if (IsDisposed)
+            {
+                return;
+            }
+
             var added = results.Where(r => r.Ok).Select(r => r.Image!).ToList();
             var skipped = results.Where(r => !r.Ok).Select(r => r.Message).Where(m => m is not null).ToList();
             var warnings = added
-                .Select(i => UserImageStore.ResolutionWarning(i, _monitors.GetMonitors()))
+                .Select(i => UserImageStore.ResolutionWarning(i, monitors))
                 .Where(w => w is not null)
                 .ToList();
 
@@ -334,10 +367,14 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
 
     protected override void Dispose(bool disposing)
     {
-        if (disposing)
+        if (disposing && !IsDisposed)
         {
             _catalog.Changed -= OnModelChanged;
             _content.PackChanged -= OnPackChanged;
+            _monitors.Changed -= OnMonitorsChanged;
+            Volatile.Read(ref _monitorRefreshQuery)?.MarkSuperseded();
+            _monitorRefreshCancellation.Cancel();
+            _monitorRefreshCancellation.Dispose();
         }
 
         base.Dispose(disposing);
@@ -346,6 +383,101 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
     private void OnModelChanged() => _ui.Post(() => Load(Settings.Current));
 
     private void OnPackChanged(string packId) => _ui.Post(() => Load(Settings.Current));
+
+    private void OnMonitorsChanged()
+    {
+        _ui.Post(() =>
+        {
+            if (!IsDisposed)
+            {
+                RequestMonitorRefresh();
+            }
+        });
+    }
+
+    private void RequestMonitorRefresh()
+    {
+        if (IsDisposed)
+        {
+            return;
+        }
+
+        IsLoadingMonitors = true;
+        DisplayGuidanceStatus = null;
+        var query = new MonitorRefreshQuery();
+        Interlocked.Exchange(ref _monitorRefreshQuery, query)?.MarkSuperseded();
+        _ = RefreshMonitorsAsync(query, _monitorRefreshToken);
+    }
+
+    internal async Task<List<MonitorInfo>> GetCurrentMonitorSnapshotAsync()
+    {
+        while (!IsDisposed)
+        {
+            var query = Volatile.Read(ref _monitorRefreshQuery);
+            if (query is null)
+            {
+                return _availableMonitors;
+            }
+
+            await Task.WhenAny(query.Task, query.Superseded).ConfigureAwait(false);
+            if (!query.Task.IsCompleted)
+            {
+                continue;
+            }
+
+            var monitors = await query.Task.ConfigureAwait(false);
+            if (!IsDisposed && ReferenceEquals(query, Volatile.Read(ref _monitorRefreshQuery)))
+            {
+                return monitors;
+            }
+        }
+
+        return _availableMonitors;
+    }
+
+    private async Task RefreshMonitorsAsync(MonitorRefreshQuery query, CancellationToken cancellationToken)
+    {
+        IReadOnlyList<MonitorInfo> monitors;
+        try
+        {
+            monitors = await Task.Run(_monitors.GetMonitors, cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            query.Complete([]);
+            return;
+        }
+#pragma warning disable CA1031 // An unavailable monitor list only suppresses optional resolution guidance.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            _ui.Post(() =>
+            {
+                if (!IsDisposed && ReferenceEquals(query, Volatile.Read(ref _monitorRefreshQuery)))
+                {
+                    DisplayGuidanceStatus = Strings.Defaults_DisplaySizesUnavailable;
+                    IsLoadingMonitors = false;
+                }
+            });
+            query.Complete([]);
+            return;
+        }
+
+        var filtered = monitors.Where(m => m.PixelWidth > 0 && m.PixelHeight > 0).ToList();
+        _ui.Post(() =>
+        {
+            if (IsDisposed || !ReferenceEquals(query, Volatile.Read(ref _monitorRefreshQuery)))
+            {
+                return;
+            }
+
+            _availableMonitors = filtered;
+            DisplayGuidanceStatus = filtered.Count == 0 ? Strings.Defaults_DisplaySizesUnavailable : null;
+            BuildImages();
+            IsLoadingMonitors = false;
+        });
+        query.Complete(filtered);
+    }
 
     private void Reload(string? keepNotice)
     {
@@ -410,7 +542,7 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
 
     private void BuildImages()
     {
-        var monitors = _monitors.GetMonitors();
+        var monitors = _availableMonitors;
         MyImages.Clear();
         foreach (var image in _content.ListUserImages())
         {

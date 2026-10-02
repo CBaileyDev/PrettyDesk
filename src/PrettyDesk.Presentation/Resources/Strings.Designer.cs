@@ -101,6 +101,8 @@ public static class Strings
         "Defaults_Collections",
         "Defaults_CollectionsEmptyBody",
         "Defaults_CollectionsEmptyTitle",
+        "Defaults_DetectingDisplays",
+        "Defaults_DisplaySizesUnavailable",
         "Defaults_FixedHelp",
         "Defaults_FixedPick",
         "Defaults_FollowTheme",
@@ -137,6 +139,7 @@ public static class Strings
         "Game_DetectionNone",
         "Game_DetectionSteam",
         "Game_DetectionTitle",
+        "Game_DisplaysUnavailable",
         "Game_Download",
         "Game_DownloadFailed",
         "Game_Downloading",
@@ -169,7 +172,9 @@ public static class Strings
         "Game_SuggestHelp",
         "Game_Unfavorite",
         "Game_WallpapersTitle",
+        "Home_DetectingDisplays",
         "Home_DisplayLabel",
+        "Home_DisplaysUnavailable",
         "Home_GlassAction",
         "Home_GlassDetail",
         "Home_GlassTitle",
@@ -232,9 +237,11 @@ public static class Strings
         "Notify_UpdateTitle",
         "Onboard_AlreadyIncluded",
         "Onboard_BackgroundHelp",
+        "Onboard_DetectingDisplays",
         "Onboard_DisplayFitHelp",
         "Onboard_DisplayGroup",
         "Onboard_DisplaysMissing",
+        "Onboard_DisplaysUnavailable",
         "Onboard_DoneBody",
         "Onboard_DoneTip",
         "Onboard_DoneTitle",
@@ -287,6 +294,7 @@ public static class Strings
         "Onboard_StyleTitle",
         "Onboard_StyleWarmWood",
         "Onboard_StyleWarmWoodHelp",
+        "Onboard_UpdatingDisplays",
         "Onboard_WallpapersBody",
         "Onboard_WallpapersTitle",
         "Onboard_WelcomeBody",
@@ -317,6 +325,7 @@ public static class Strings
         "Settings_DetectDelayHelp",
         "Settings_DetectGames",
         "Settings_DetectGamesHelp",
+        "Settings_DetectingDisplays",
         "Settings_Detection",
         "Settings_DetectionLog",
         "Settings_DetectionLogClear",
@@ -328,6 +337,8 @@ public static class Strings
         "Settings_DetectionLogNoMatch",
         "Settings_DetectionLogPause",
         "Settings_DetectionLogResume",
+        "Settings_DisplayUnavailable",
+        "Settings_DisplaysUnavailable",
         "Settings_ExitGrace",
         "Settings_ExitGraceHelp",
         "Settings_ExportDiagnostics",
@@ -343,6 +354,7 @@ public static class Strings
         "Settings_MonitorSame",
         "Settings_Monitors",
         "Settings_NextTrack",
+        "Settings_NoDisplays",
         "Settings_Notifications",
         "Settings_NotifyDownloadErrors",
         "Settings_NotifyHelp",
@@ -384,6 +396,7 @@ public static class Strings
         "Settings_Title",
         "Settings_UnknownGameHints",
         "Settings_UnknownGameHintsHelp",
+        "Settings_UpdatingDisplays",
         "Settings_Visualizer",
         "Settings_VisualizerHelp",
         "Settings_WindowsColors",
@@ -674,6 +687,12 @@ public static class Strings
     /// <summary>No collections yet</summary>
     public static string Defaults_CollectionsEmptyTitle => Get("Defaults_CollectionsEmptyTitle");
 
+    /// <summary>Checking display sizes for image guidance…</summary>
+    public static string Defaults_DetectingDisplays => Get("Defaults_DetectingDisplays");
+
+    /// <summary>Display sizes are unavailable. Resolution guidance will appear when Windows reports a connected screen.</summary>
+    public static string Defaults_DisplaySizesUnavailable => Get("Defaults_DisplaySizesUnavailable");
+
     /// <summary>Choose from the wallpapers in your selection.</summary>
     public static string Defaults_FixedHelp => Get("Defaults_FixedHelp");
 
@@ -782,6 +801,9 @@ public static class Strings
     /// <summary>How PrettyDesk recognises this game</summary>
     public static string Game_DetectionTitle => Get("Game_DetectionTitle");
 
+    /// <summary>No usable display size is available right now. Connect a screen or wait for Windows to finish updating, then try again.</summary>
+    public static string Game_DisplaysUnavailable => Get("Game_DisplaysUnavailable");
+
     /// <summary>Download wallpapers</summary>
     public static string Game_Download => Get("Game_Download");
 
@@ -878,8 +900,14 @@ public static class Strings
     /// <summary>Wallpapers</summary>
     public static string Game_WallpapersTitle => Get("Game_WallpapersTitle");
 
+    /// <summary>Detecting connected displays…</summary>
+    public static string Home_DetectingDisplays => Get("Home_DetectingDisplays");
+
     /// <summary>Display {0} · {1}×{2}</summary>
     public static string Home_DisplayLabel => Get("Home_DisplayLabel");
+
+    /// <summary>Could not refresh connected displays. The preview will update when Windows reports them again.</summary>
+    public static string Home_DisplaysUnavailable => Get("Home_DisplaysUnavailable");
 
     /// <summary>Explore wallpapers</summary>
     public static string Home_GlassAction => Get("Home_GlassAction");
@@ -893,10 +921,10 @@ public static class Strings
     /// <summary>Next wallpaper</summary>
     public static string Home_NextWallpaper => Get("Home_NextWallpaper");
 
-    /// <summary>No display detected</summary>
+    /// <summary>Display information unavailable</summary>
     public static string Home_NoMonitors => Get("Home_NoMonitors");
 
-    /// <summary>PrettyDesk will pick up your screens as soon as Windows reports them.</summary>
+    /// <summary>The preview will appear when Windows reports a connected screen.</summary>
     public static string Home_NoMonitorsDetail => Get("Home_NoMonitorsDetail");
 
     /// <summary>No wallpaper yet</summary>
@@ -1067,14 +1095,20 @@ public static class Strings
     /// <summary>Continue while downloads run. Unchecking stops future downloads; active downloads continue.</summary>
     public static string Onboard_BackgroundHelp => Get("Onboard_BackgroundHelp");
 
+    /// <summary>Detecting connected displays…</summary>
+    public static string Onboard_DetectingDisplays => Get("Onboard_DetectingDisplays");
+
     /// <summary>Only the formats your displays need. Same-shaped displays share one download; resolution is adjusted automatically.</summary>
     public static string Onboard_DisplayFitHelp => Get("Onboard_DisplayFitHelp");
 
     /// <summary>{0} × {1}×{2} · {3}</summary>
     public static string Onboard_DisplayGroup => Get("Onboard_DisplayGroup");
 
-    /// <summary>No displays detected. You can continue and download later in Library.</summary>
+    /// <summary>Display size information is unavailable. You can continue and download later in Library.</summary>
     public static string Onboard_DisplaysMissing => Get("Onboard_DisplaysMissing");
+
+    /// <summary>Could not read display information. Return to Games and continue again to retry.</summary>
+    public static string Onboard_DisplaysUnavailable => Get("Onboard_DisplaysUnavailable");
 
     /// <summary>PrettyDesk is now in your system tray. Close this window any time. It keeps working quietly in the background.</summary>
     public static string Onboard_DoneBody => Get("Onboard_DoneBody");
@@ -1232,6 +1266,9 @@ public static class Strings
     /// <summary>Natural, cosy, sunlit</summary>
     public static string Onboard_StyleWarmWoodHelp => Get("Onboard_StyleWarmWoodHelp");
 
+    /// <summary>Updating display information…</summary>
+    public static string Onboard_UpdatingDisplays => Get("Onboard_UpdatingDisplays");
+
     /// <summary>Choose the games to prepare now. We select the wallpaper formats your displays need.</summary>
     public static string Onboard_WallpapersBody => Get("Onboard_WallpapersBody");
 
@@ -1322,6 +1359,9 @@ public static class Strings
     /// <summary>Turn this off to keep your wallpaper fixed no matter what you play.</summary>
     public static string Settings_DetectGamesHelp => Get("Settings_DetectGamesHelp");
 
+    /// <summary>Detecting connected displays…</summary>
+    public static string Settings_DetectingDisplays => Get("Settings_DetectingDisplays");
+
     /// <summary>Detection</summary>
     public static string Settings_Detection => Get("Settings_Detection");
 
@@ -1354,6 +1394,12 @@ public static class Strings
 
     /// <summary>Resume log</summary>
     public static string Settings_DetectionLogResume => Get("Settings_DetectionLogResume");
+
+    /// <summary>The saved display is not in the current list. The selector shows the primary display when available; your saved choice stays unchanged.</summary>
+    public static string Settings_DisplayUnavailable => Get("Settings_DisplayUnavailable");
+
+    /// <summary>Could not refresh the display list. Reopen Settings to try again.</summary>
+    public static string Settings_DisplaysUnavailable => Get("Settings_DisplaysUnavailable");
 
     /// <summary>Keep the game wallpaper after it closes for</summary>
     public static string Settings_ExitGrace => Get("Settings_ExitGrace");
@@ -1399,6 +1445,9 @@ public static class Strings
 
     /// <summary>Next track</summary>
     public static string Settings_NextTrack => Get("Settings_NextTrack");
+
+    /// <summary>No display information is available. This list will update when Windows reports a screen.</summary>
+    public static string Settings_NoDisplays => Get("Settings_NoDisplays");
 
     /// <summary>Notifications</summary>
     public static string Settings_Notifications => Get("Settings_Notifications");
@@ -1522,6 +1571,9 @@ public static class Strings
 
     /// <summary>After a full-screen app has run for a minute, PrettyDesk can ask once whether to add it. Nothing is sent anywhere.</summary>
     public static string Settings_UnknownGameHintsHelp => Get("Settings_UnknownGameHintsHelp");
+
+    /// <summary>Updating the display list…</summary>
+    public static string Settings_UpdatingDisplays => Get("Settings_UpdatingDisplays");
 
     /// <summary>Playback visualizer</summary>
     public static string Settings_Visualizer => Get("Settings_Visualizer");

@@ -140,6 +140,9 @@ internal static class AppAppearance
             Brush("DeskSoftBrush", "#DFECF2FA", "#E0374050");
             Brush("DeskStrokeBrush", "#D5DEE9", "#4A5467");
             Brush("DeskBlueBrush", "#007AFF", "#64ABFF");
+            Brush("DeskNavSelectedBrush", "#DDEAFF", "#293E54");
+            Brush("DeskNavSelectedTextBrush", "#174A7E", "#F2F6FF");
+            Brush("DeskNavFocusBrush", "#005FB8", "#8FC5FF");
             resources["DeskAmbientBrush"] = resources["DeskCanvasBrush"];
             resources["DeskShellBrush"] = resources["DeskGlassBrush"];
             resources["DeskRimBrush"] = resources["DeskStrokeBrush"];
@@ -179,6 +182,7 @@ internal static class AppAppearance
                 resources["DeskInkBrush"] = SystemColors.WindowTextBrush;
                 resources["DeskMutedBrush"] = SystemColors.WindowTextBrush;
                 resources["DeskBlueBrush"] = SystemColors.HotTrackBrush;
+                ApplyHighContrastNavigationPalette(resources);
                 resources["DeskStrokeBrush"] = SystemColors.WindowTextBrush;
                 resources["DeskRimBrush"] = SystemColors.WindowTextBrush;
             }
@@ -189,5 +193,13 @@ internal static class AppAppearance
         {
             Updating = false;
         }
+    }
+
+    internal static void ApplyHighContrastNavigationPalette(ResourceDictionary resources)
+    {
+        resources["DeskNavSelectedBrush"] = SystemColors.HighlightBrush;
+        resources["DeskNavSelectedTextBrush"] = SystemColors.HighlightTextBrush;
+        // Keep the keyboard focus outline visible against the selected HighlightBrush fill.
+        resources["DeskNavFocusBrush"] = SystemColors.HighlightTextBrush;
     }
 }

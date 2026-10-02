@@ -73,6 +73,8 @@
       <Border Style="{StaticResource CardStyle}" Margin="0,8,0,0">
         <StackPanel>
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Home_PreviewLabel}" Margin="0,0,0,8" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Text="{Binding ErrorMessage}" Margin="0,0,0,8" Visibility="{Binding HasError, Converter={StaticResource BoolToVisibility}}" AutomationProperties.LiveSetting="Polite" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Home_DetectingDisplays}" Margin="0,8" Visibility="{Binding IsLoadingMonitors, Converter={StaticResource BoolToVisibility}}" AutomationProperties.LiveSetting="Polite" />
           <Viewbox Stretch="Uniform" MaxHeight="300" Visibility="{Binding HasMonitors, Converter={StaticResource BoolToVisibility}}">
             <ItemsControl ItemsSource="{Binding Monitors}" Width="{x:Static vm:HomeViewModel.CanvasWidth}" Height="{Binding CanvasHeight}" Focusable="False">
               <ItemsControl.ItemsPanel>
@@ -107,7 +109,7 @@
               <TextBlock Text="{Binding Label}" Style="{StaticResource BodyStyle}" Margin="0,3" />
             </DataTemplate></ItemsControl.ItemTemplate>
           </ItemsControl>
-          <StackPanel Visibility="{Binding HasMonitors, Converter={StaticResource InverseBoolToVisibility}}" Margin="0,24" HorizontalAlignment="Center">
+          <StackPanel Visibility="{Binding ShowNoMonitors, Converter={StaticResource BoolToVisibility}}" Margin="0,24" HorizontalAlignment="Center">
             <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" HorizontalAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitors}" />
             <TextBlock Style="{StaticResource MutedStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="{x:Static res:Strings.Home_NoMonitorsDetail}" />
           </StackPanel>

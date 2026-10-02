@@ -39,7 +39,7 @@ public partial class MainWindow : FluentWindow
         _syncing = true;
         try
         {
-            NavList.SelectedItem = Shell.NavItems.FirstOrDefault(n => n.Kind == Shell.SelectedKind);
+            MainNavigation.SelectedItem = Shell.NavItems.FirstOrDefault(n => n.Kind == Shell.SelectedKind);
         }
         finally
         {
@@ -49,7 +49,7 @@ public partial class MainWindow : FluentWindow
 
     private void OnNavSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (!_syncing && NavList.SelectedItem is NavItem item)
+        if (!_syncing && MainNavigation.SelectedItem is NavItem item)
         {
             Shell.NavigateToCommand.Execute(item.Kind);
         }

@@ -1,6 +1,6 @@
 # Liquid Glass refresh
 
-PrettyDesk now uses a floating navigation rail, translucent optical layers, 24–28 px rounded surfaces, clear typography,
+PrettyDesk now uses a floating top tab bar, translucent optical layers, 24–28 px rounded surfaces, clear typography,
 blue capsule actions, and an image-forward wallpaper gallery. Library filters remain radio controls with a segmented presentation;
 keyboard focus and the existing commands remain available. The Defaults destination is labeled Wallpapers.
 

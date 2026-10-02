@@ -23,7 +23,46 @@ public sealed class HomeViewModelTests : IDisposable
 
     public void Dispose() => _vm?.Dispose();
 
-    private HomeViewModel Create() => _vm = new HomeViewModel(_controller, _monitors, _content, _conflicts, new InlineDispatcher(), _time);
+    private HomeViewModel Create()
+    {
+        _vm = new HomeViewModel(_controller, _monitors, _content, _conflicts, new InlineDispatcher(), _time);
+        AsyncTestWait.UntilAsync(() => !_vm.IsLoadingMonitors).GetAwaiter().GetResult();
+        return _vm;
+    }
+
+    [Fact]
+    public async Task Initial_monitor_enumeration_does_not_block_view_model_construction()
+    {
+        var monitors = new BlockingMonitorProvider();
+        using var vm = new HomeViewModel(_controller, monitors, _content, _conflicts, new InlineDispatcher(), _time);
+
+        vm.IsLoadingMonitors.ShouldBeTrue();
+        await monitors.ReadStarted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+        vm.IsLoadingMonitors.ShouldBeTrue();
+
+        monitors.Complete([new MonitorInfo("main", 0, 0, 1920, 1080, true)]);
+        await AsyncTestWait.UntilAsync(() => !vm.IsLoadingMonitors);
+
+        vm.Monitors.ShouldHaveSingleItem().Id.ShouldBe("main");
+    }
+
+    [Fact]
+    public async Task Late_monitor_snapshot_is_ignored_after_home_is_disposed()
+    {
+        var monitors = new BlockingMonitorProvider();
+        using var dispatcher = new QueuedDispatcher();
+        var vm = new HomeViewModel(_controller, monitors, _content, _conflicts, dispatcher, _time);
+        dispatcher.Drain();
+        await monitors.ReadStarted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+        vm.Dispose();
+        monitors.Complete([new MonitorInfo("main", 0, 0, 1920, 1080, true)]);
+        await dispatcher.WaitForPostAsync().WaitAsync(TimeSpan.FromSeconds(5));
+        dispatcher.Drain();
+
+        vm.Monitors.ShouldBeEmpty();
+        vm.IsLoadingMonitors.ShouldBeTrue();
+    }
 
     [Fact]
     public void Stacked_displays_share_their_real_horizontal_origin()
@@ -149,13 +188,14 @@ public sealed class HomeViewModelTests : IDisposable
     }
 
     [Fact]
-    public void Display_changes_rebuild_the_layout()
+    public async Task Display_changes_rebuild_the_layout()
     {
         var vm = Create();
         _monitors.Monitors.Add(new MonitorInfo("m2", 1920, 0, 1920, 1080, false));
 
         _monitors.Raise();
 
+        await AsyncTestWait.UntilAsync(() => vm.Monitors.Count == 2);
         vm.Monitors.Count.ShouldBe(2);
     }
 

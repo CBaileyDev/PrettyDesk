@@ -88,6 +88,11 @@ See [content ownership](../content/README.md) before changing catalog hashes or 
 
 [AppAppearance](../src/PrettyDesk.App/Services/AppAppearance.cs) provides system
 light/dark and high-contrast palettes; [Styles.xaml](../src/PrettyDesk.App/Resources/Styles.xaml)
-and [Views](../src/PrettyDesk.App/Views) render the shell. Current wallpaper application
-is static. Live clocks/visualizers need a separate desktop rendering lifecycle;
-taskbar styling is a separate shell capability. Neither is implemented by this architecture.
+and [Views](../src/PrettyDesk.App/Views) render the shell. Wallpaper application
+remains static. The optional clock, now-playing text and visualizer run in an
+App-owned non-activating WPF window with their own lifecycle in
+[DesktopClockService](../src/PrettyDesk.App/Services/DesktopClockService.cs); this
+prototype is not a guaranteed Explorer desktop layer. Taskbar styling remains a
+separate shell capability and is not implemented. See the
+[personalization proposal](updates/2026-10-01-aesthetics-and-personalization.md)
+for its native acceptance limits and boundaries.

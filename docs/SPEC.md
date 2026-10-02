@@ -350,7 +350,10 @@ Selection: pick the variant with the smallest `|ln(monitorRatio) − ln(variantR
 
 Design language: Windows 11 Fluent (Mica backdrop, rounded corners, Segoe UI Variable, system accent color), following light/dark mode. It should feel calm, premium and minimal, like the wallpapers. The window is 1000×680 default, with a 860×560 minimum, and remembers its size and position.
 
-**Navigation** (NavigationView, left rail): Home · Library · Defaults · Settings · About.
+**Navigation** (horizontal WPF tab strip below the native title bar; see
+[ADR 0015](adr/0015-top-tab-navigation.md)): Home · Library · Defaults · Settings · About.
+Keep localized accessible names, keyboard tab/arrow navigation, a visible focus
+indicator, and a selected-state marker that does not depend on color alone.
 
 1. **Home:** a large live preview of the current desktop composition: each monitor drawn to scale with its current wallpaper thumbnail. Below it is the status card ("Playing *Game* — wallpaper 2 of 4" / "Default · Matte Black · next change in 12 min" / "Paused"), with primary actions *Next wallpaper* and *Pause*. Conflict banners from FR-APPLY-7 appear here.
 2. **Library:** a grid of game cards (16:9 thumbnail from the pack's hero art, display name, status chip: *Installed*, *Ready*, *Downloading 42%*, *Not downloaded*). There's a search box, filters (All / Installed / Enabled), and an "Add a game" button. **Game detail page:** an enable toggle, mode (Fixed/Rotate), a wallpaper strip with ☆ favorite, include checkboxes and *Preview on desktop*, rotation options, a detection rules summary (read-only for catalog games, editable for custom games), and "Remove" for custom games.

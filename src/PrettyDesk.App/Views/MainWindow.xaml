@@ -18,22 +18,20 @@
   <Grid Background="{DynamicResource DeskAmbientBrush}">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
-
     <ui:TitleBar Grid.Row="0" Title="" Foreground="{DynamicResource DeskInkBrush}" ShowMaximize="True" AutomationProperties.Name="Window controls" />
 
-    <Grid Grid.Row="1">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="214" />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
-
-      <Border Margin="16,12,0,20" Background="{DynamicResource DeskShellBrush}" CornerRadius="28" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1">
+    <Border Grid.Row="1" Margin="20,10,20,0" Padding="12,6" Background="{DynamicResource DeskShellBrush}" CornerRadius="24" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1">
       <Grid>
-        <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
-        <Viewbox x:Name="BrandLogo" Margin="14,22,14,22" Height="34" MaxWidth="166" Stretch="Uniform" HorizontalAlignment="Center" AutomationProperties.Name="PrettyDesk">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Viewbox x:Name="BrandLogo" Margin="10,2,16,2" Height="32" MaxWidth="166" Stretch="Uniform" HorizontalAlignment="Left" AutomationProperties.Name="PrettyDesk">
           <StackPanel Orientation="Horizontal" Background="Transparent">
             <Canvas Width="32" Height="28" Margin="0,0,9,0" VerticalAlignment="Center">
               <Rectangle Canvas.Left="1" Canvas.Top="1" Width="28" Height="19" RadiusX="4" RadiusY="4" Stroke="{DynamicResource DeskInkBrush}" StrokeThickness="1.8" />
@@ -43,44 +41,84 @@
             <TextBlock Text="PrettyDesk" FontSize="22" FontWeight="SemiBold" Foreground="{DynamicResource DeskInkBrush}" VerticalAlignment="Center" />
           </StackPanel>
         </Viewbox>
-      <ListBox x:Name="NavList"
-               Grid.Row="1"
-               Margin="10,0,10,16"
-               Foreground="{DynamicResource DeskInkBrush}"
-               Background="Transparent"
-               BorderThickness="0"
-               ItemsSource="{Binding NavItems}"
-               SelectionChanged="OnNavSelectionChanged"
-               AutomationProperties.Name="Main navigation">
-        <ListBox.ItemContainerStyle>
-          <Style TargetType="ListBoxItem">
-            <Setter Property="Margin" Value="0,3" /><Setter Property="Padding" Value="12,4" />
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem">
-              <Border x:Name="Pill" Background="Transparent" CornerRadius="20" Padding="{TemplateBinding Padding}"><ContentPresenter /></Border>
-              <ControlTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Pill" Property="Background" Value="{DynamicResource DeskSoftBrush}" /></Trigger>
-                <Trigger Property="IsSelected" Value="True"><Setter TargetName="Pill" Property="Background" Value="#007AFF" /><Setter Property="Foreground" Value="White" /></Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Pill" Property="BorderBrush" Value="#007AFF" /><Setter TargetName="Pill" Property="BorderThickness" Value="2" /></Trigger>
-              </ControlTemplate.Triggers>
-            </ControlTemplate></Setter.Value></Setter>
-          </Style>
-        </ListBox.ItemContainerStyle>
-        <ListBox.ItemTemplate>
+        <Border Grid.Column="1" Width="1" Height="28" Margin="0,0,8,0" VerticalAlignment="Center" Background="{DynamicResource DeskRimBrush}" />
+        <TabControl x:Name="MainNavigation"
+                    Grid.Column="2"
+                    Margin="4,0,4,0"
+                    ItemsSource="{Binding NavItems}"
+                    SelectionChanged="OnNavSelectionChanged"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    AutomationProperties.Name="Main navigation">
+          <TabControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" />
+            </ItemsPanelTemplate>
+          </TabControl.ItemsPanel>
+          <TabControl.ItemContainerStyle>
+            <Style TargetType="TabItem" d:DataType="{x:Type vm:NavItem}">
+              <Setter Property="AutomationProperties.Name" Value="{Binding Label}" />
+              <Setter Property="Margin" Value="3,2" />
+              <Setter Property="Padding" Value="10,8" />
+              <Setter Property="MinHeight" Value="44" />
+              <Setter Property="MinWidth" Value="64" />
+              <Setter Property="Foreground" Value="{DynamicResource DeskMutedBrush}" />
+              <Setter Property="Background" Value="Transparent" />
+              <Setter Property="BorderBrush" Value="Transparent" />
+              <Setter Property="BorderThickness" Value="0,0,0,2" />
+              <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="TabSurface"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="16"
+                            Padding="{TemplateBinding Padding}">
+                      <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                      <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource DeskSoftBrush}" />
+                      </Trigger>
+                      <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource DeskNavSelectedBrush}" />
+                        <Setter Property="Foreground" Value="{DynamicResource DeskNavSelectedTextBrush}" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource DeskNavFocusBrush}" />
+                        <Setter Property="FontWeight" Value="SemiBold" />
+                      </Trigger>
+                      <Trigger Property="IsKeyboardFocused" Value="True">
+                        <Setter Property="BorderBrush" Value="{DynamicResource DeskNavFocusBrush}" />
+                        <Setter Property="BorderThickness" Value="2" />
+                      </Trigger>
+                    </ControlTemplate.Triggers>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </TabControl.ItemContainerStyle>
+          <TabControl.ItemTemplate>
           <DataTemplate DataType="{x:Type vm:NavItem}">
-            <StackPanel Orientation="Horizontal" Margin="4,8" AutomationProperties.Name="{Binding Label}">
-              <TextBlock FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="16" Text="{Binding Glyph}" VerticalAlignment="Center" Margin="0,0,12,0" />
+            <StackPanel Orientation="Horizontal" AutomationProperties.Name="{Binding Label}">
+              <TextBlock FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="16" Text="{Binding Glyph}" VerticalAlignment="Center" Margin="0,0,9,0" />
               <TextBlock Text="{Binding Label}" FontSize="14" VerticalAlignment="Center" />
             </StackPanel>
           </DataTemplate>
-        </ListBox.ItemTemplate>
-      </ListBox>
+          </TabControl.ItemTemplate>
+          <TabControl.Template>
+            <ControlTemplate TargetType="TabControl">
+              <ItemsPresenter KeyboardNavigation.TabNavigation="Continue" />
+            </ControlTemplate>
+          </TabControl.Template>
+        </TabControl>
       </Grid>
-      </Border>
+    </Border>
 
-      <Border Grid.Column="1" Margin="16,12,20,20" CornerRadius="28" Background="{DynamicResource DeskPanelBrush}" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1" ClipToBounds="True">
+      <Border Grid.Row="2" Margin="20,12,20,20" CornerRadius="28" Background="{DynamicResource DeskPanelBrush}" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1" ClipToBounds="True">
         <views:MotionContentControl x:Name="PageHost" Page="{Binding CurrentPage}" Margin="8,8,8,8" Focusable="False" />
       </Border>
-    </Grid>
   </Grid>
 </ui:FluentWindow>

@@ -18,6 +18,7 @@ public abstract class SettingsSectionViewModel : ViewModelBase
 {
     private readonly IUiDispatcher _ui;
     private bool _loading;
+    private int _disposed;
 
     protected SettingsSectionViewModel(ISettingsProvider settings, IUiDispatcher ui)
     {
@@ -28,8 +29,19 @@ public abstract class SettingsSectionViewModel : ViewModelBase
 
     protected ISettingsProvider Settings { get; }
 
+    protected bool IsDisposed => Volatile.Read(ref _disposed) != 0;
+
     /// <summary>Call once at the end of the derived constructor.</summary>
     protected void InitialLoad() => Reload();
+
+    /// <summary>Applies a non-persisting UI update on the UI dispatcher.</summary>
+    protected void UpdateOnUiWithoutSaving(Action update) => _ui.Post(() =>
+    {
+        if (!IsDisposed)
+        {
+            RunWithoutSaving(update);
+        }
+    });
 
     protected abstract void Load(AppSettings settings);
 
@@ -45,24 +57,37 @@ public abstract class SettingsSectionViewModel : ViewModelBase
     {
         if (disposing)
         {
+            Interlocked.Exchange(ref _disposed, 1);
             Settings.Changed -= OnSettingsChanged;
         }
 
         base.Dispose(disposing);
     }
 
-    private void OnSettingsChanged() => _ui.Post(Reload);
+    private void OnSettingsChanged() => _ui.Post(() =>
+    {
+        if (!IsDisposed)
+        {
+            Reload();
+        }
+    });
 
     private void Reload()
     {
+        RunWithoutSaving(() => Load(Settings.Current));
+    }
+
+    private void RunWithoutSaving(Action update)
+    {
+        var wasLoading = _loading;
         _loading = true;
         try
         {
-            Load(Settings.Current);
+            update();
         }
         finally
         {
-            _loading = false;
+            _loading = wasLoading;
         }
     }
 }
@@ -72,6 +97,11 @@ public sealed record DisplayChoice(string Id, string Label);
 public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
 {
     private readonly IStartupService _startup;
+    private readonly CancellationTokenSource _monitorRefreshCancellation = new();
+    private readonly CancellationToken _monitorRefreshToken;
+    private IReadOnlyList<MonitorInfo> _availableMonitors = [];
+    private bool _hasMonitorSnapshot;
+    private int _monitorRefreshVersion;
 
     [ObservableProperty]
     private AppThemePreference _theme;
@@ -91,6 +121,12 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
 
     [ObservableProperty]
     private DisplayChoice? _clockMonitor;
+
+    [ObservableProperty]
+    private string? _clockMonitorStatus;
+
+    [ObservableProperty]
+    private bool _clockMonitorUnavailable;
 
     public IReadOnlyList<DisplayChoice> ClockMonitors { get; private set; } = [];
 
@@ -117,7 +153,12 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
 
     partial void OnDesktopClockChanged(bool value) => Save(s => s.General.DesktopClock = value);
 
-    partial void OnClockMonitorChanged(DisplayChoice? value) => Save(s => s.General.ClockMonitorId = value?.Id);
+    partial void OnClockMonitorChanged(DisplayChoice? value)
+    {
+        ClockMonitorUnavailable = false;
+        ClockMonitorStatus = null;
+        Save(s => s.General.ClockMonitorId = value?.Id);
+    }
 
     public static IReadOnlyList<AppThemePreference> ThemeChoices { get; } = Enum.GetValues<AppThemePreference>();
 
@@ -138,7 +179,32 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
         _startup = startup;
         _monitors = monitors;
         _playback = playback;
+        _monitorRefreshToken = _monitorRefreshCancellation.Token;
+        if (_monitors is not null)
+        {
+            _monitors.Changed += OnMonitorsChanged;
+        }
         InitialLoad();
+        RequestClockMonitorRefresh();
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && !IsDisposed)
+        {
+            base.Dispose(disposing);
+            _monitorRefreshCancellation.Cancel();
+            Interlocked.Increment(ref _monitorRefreshVersion);
+            if (_monitors is not null)
+            {
+                _monitors.Changed -= OnMonitorsChanged;
+            }
+
+            _monitorRefreshCancellation.Dispose();
+            return;
+        }
+
+        base.Dispose(disposing);
     }
 
     protected override void Load(AppSettings settings)
@@ -150,12 +216,7 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
         DesktopClock = settings.General.DesktopClock;
         DesktopNowPlaying = settings.General.DesktopNowPlaying;
         DesktopVisualizer = settings.General.DesktopVisualizer;
-        var monitors = _monitors?.GetMonitors() ?? [];
-        ClockMonitors = monitors.Select((m, i) => new DisplayChoice(m.Id,
-            Strings.Format(m.IsPrimary ? Strings.Home_PrimaryDisplay : Strings.Home_DisplayLabel, i + 1, m.PixelWidth, m.PixelHeight))).ToList();
-        OnPropertyChanged(nameof(ClockMonitors));
-        var selectedId = settings.General.ClockMonitorId ?? monitors.FirstOrDefault(m => m.IsPrimary)?.Id;
-        ClockMonitor = ClockMonitors.FirstOrDefault(m => m.Id == selectedId);
+        RefreshClockMonitors(settings.General.ClockMonitorId, _availableMonitors);
     }
 
     partial void OnStartWithWindowsChanged(bool value)
@@ -179,6 +240,78 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     partial void OnRestoreOnExitChanged(bool value) => Save(s => s.General.RestoreOnExit = value);
 
     partial void OnBetaUpdatesChanged(bool value) => Save(s => s.General.BetaUpdates = value);
+
+    private void OnMonitorsChanged() => RequestClockMonitorRefresh();
+
+    private void RequestClockMonitorRefresh()
+    {
+        if (_monitors is null || IsDisposed)
+        {
+            return;
+        }
+
+        var version = Interlocked.Increment(ref _monitorRefreshVersion);
+        UpdateOnUiWithoutSaving(() => ClockMonitorStatus = _availableMonitors.Count == 0
+            ? Strings.Settings_DetectingDisplays
+            : Strings.Settings_UpdatingDisplays);
+        _ = RefreshClockMonitorsAsync(version, _monitorRefreshToken);
+    }
+
+    private async Task RefreshClockMonitorsAsync(int version, CancellationToken cancellationToken)
+    {
+        IReadOnlyList<MonitorInfo> monitors;
+        try
+        {
+            // The Windows provider waits on a COM worker; never enumerate on the settings dispatcher.
+            monitors = await Task.Run(_monitors!.GetMonitors, cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            return;
+        }
+#pragma warning disable CA1031 // Unexpected display-provider failures are presented in Settings instead of becoming unobserved tasks.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            UpdateOnUiWithoutSaving(() =>
+            {
+                if (version == Volatile.Read(ref _monitorRefreshVersion))
+                {
+                    ClockMonitorStatus = Strings.Settings_DisplaysUnavailable;
+                }
+            });
+            return;
+        }
+
+        UpdateOnUiWithoutSaving(() =>
+        {
+            if (version != Volatile.Read(ref _monitorRefreshVersion))
+            {
+                return;
+            }
+
+            _availableMonitors = monitors;
+            _hasMonitorSnapshot = true;
+            RefreshClockMonitors(Settings.Current.General.ClockMonitorId, monitors);
+        });
+    }
+
+    private void RefreshClockMonitors(string? selectedId, IReadOnlyList<MonitorInfo> monitors)
+    {
+        ClockMonitors = monitors.Select((m, i) => new DisplayChoice(m.Id,
+            Strings.Format(m.IsPrimary ? Strings.Home_PrimaryDisplay : Strings.Home_DisplayLabel, i + 1, m.PixelWidth, m.PixelHeight))).ToList();
+        OnPropertyChanged(nameof(ClockMonitors));
+        var selected = ClockMonitors.FirstOrDefault(m => m.Id == selectedId);
+        var unavailable = _hasMonitorSnapshot && selectedId is not null && selected is null;
+        var primary = monitors.FirstOrDefault(display => display.IsPrimary);
+        ClockMonitor = selected ?? (primary is null ? null : ClockMonitors.FirstOrDefault(m => m.Id == primary.Id));
+        ClockMonitorUnavailable = unavailable;
+        ClockMonitorStatus = !_hasMonitorSnapshot
+            ? _monitors is null ? Strings.Settings_NoDisplays : Strings.Settings_DetectingDisplays
+            : unavailable
+                ? Strings.Settings_DisplayUnavailable
+                : monitors.Count == 0 ? Strings.Settings_NoDisplays : null;
+    }
 }
 
 public sealed partial class DetectionSettingsViewModel : SettingsSectionViewModel

@@ -23,6 +23,8 @@ public sealed class DesktopClockService : IDisposable
     private readonly TimeProvider _time;
     private readonly PlaybackVisualizerSource _visualizer;
     private readonly NowPlayingSource _nowPlaying;
+    private readonly CancellationTokenSource _monitorRefreshCancellation = new();
+    private readonly CancellationToken _monitorRefreshToken;
     private TextBlock? _media;
     private StackPanel? _spectrum;
     private readonly List<Rectangle> _bars = [];
@@ -37,6 +39,9 @@ public sealed class DesktopClockService : IDisposable
     private bool _locked;
     private bool _disposed;
     private bool _started;
+    private int _monitorRefreshVersion;
+    private IReadOnlyList<MonitorInfo>? _monitorSnapshot;
+    private bool _monitorRefreshPending;
 
     public DesktopClockService(ISettingsProvider settings, IMonitorProvider monitors, ISystemState system, DetectionService detection, TimeProvider time, NowPlayingSource nowPlaying)
     {
@@ -47,6 +52,7 @@ public sealed class DesktopClockService : IDisposable
         _time = time;
         _nowPlaying = nowPlaying;
         _visualizer = new PlaybackVisualizerSource(time);
+        _monitorRefreshToken = _monitorRefreshCancellation.Token;
     }
 
     public void Start()
@@ -59,7 +65,7 @@ public sealed class DesktopClockService : IDisposable
 
         _started = true;
         _settings.Changed += Refresh;
-        _monitors.Changed += Refresh;
+        _monitors.Changed += OnMonitorsChanged;
         _system.Changed += Refresh;
         _detection.ActiveChanged += OnActiveChanged;
         SystemEvents.SessionSwitch += OnSessionSwitch;
@@ -75,14 +81,17 @@ public sealed class DesktopClockService : IDisposable
         }
 
         _disposed = true;
+        Interlocked.Increment(ref _monitorRefreshVersion);
+        _monitorRefreshCancellation.Cancel();
         _settings.Changed -= Refresh;
-        _monitors.Changed -= Refresh;
+        _monitors.Changed -= OnMonitorsChanged;
         _system.Changed -= Refresh;
         _detection.ActiveChanged -= OnActiveChanged;
         SystemEvents.SessionSwitch -= OnSessionSwitch;
         SystemParameters.StaticPropertyChanged -= OnAppearanceChanged;
         _timer?.Dispose();
         _visualizer.Dispose();
+        _monitorRefreshCancellation.Dispose();
         _timer = null;
         Application.Current?.Dispatcher.Invoke(() => _window?.Close());
     }
@@ -104,7 +113,11 @@ public sealed class DesktopClockService : IDisposable
         Refresh();
     }
 
-    private void Refresh() => Application.Current.Dispatcher.InvokeAsync(() =>
+    private void Refresh() => Application.Current?.Dispatcher.InvokeAsync(() => StartMonitorRefresh(forceMonitorQuery: false));
+
+    private void OnMonitorsChanged() => Application.Current?.Dispatcher.InvokeAsync(() => StartMonitorRefresh(forceMonitorQuery: true));
+
+    private void StartMonitorRefresh(bool forceMonitorQuery)
     {
         if (_disposed)
         {
@@ -114,44 +127,99 @@ public sealed class DesktopClockService : IDisposable
         var general = _settings.Current.General;
         if (!DesktopSurfacePolicy.ShouldShow(general.DesktopClock || general.DesktopNowPlaying || general.DesktopVisualizer, _detection.Active is not null, _locked, _system.IsBatterySaverOn))
         {
-            _window?.Hide();
-            _timer?.Dispose();
-            _timer = null;
-            _visualizer.Stop();
-            _visualizing = false;
+            Interlocked.Increment(ref _monitorRefreshVersion);
+            _monitorRefreshPending = false;
+            HideSurface();
             return;
         }
 
-        var monitors = _monitors.GetMonitors();
-        var monitor = monitors.FirstOrDefault(m => m.Id == general.ClockMonitorId) ?? monitors.FirstOrDefault(m => m.IsPrimary) ?? (monitors.Count > 0 ? monitors[0] : null);
+        if (!forceMonitorQuery && _monitorSnapshot is not null)
+        {
+            RefreshCore(_monitorSnapshot);
+            return;
+        }
+
+        if (!forceMonitorQuery && _monitorRefreshPending)
+        {
+            if (_monitorSnapshot is not null)
+            {
+                RefreshCore(_monitorSnapshot);
+            }
+
+            return;
+        }
+
+        var version = Interlocked.Increment(ref _monitorRefreshVersion);
+        _monitorRefreshPending = true;
+        _ = RefreshWithMonitorsAsync(version, _monitorRefreshToken);
+    }
+
+    private async Task RefreshWithMonitorsAsync(int version, CancellationToken cancellationToken)
+    {
+        IReadOnlyList<MonitorInfo> monitors;
+        var succeeded = true;
+        try
+        {
+            // A topology change must not make the optional WPF surface wait on the COM monitor worker.
+            monitors = await Task.Run(_monitors.GetMonitors, cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            return;
+        }
+#pragma warning disable CA1031 // Monitor enumeration failures hide the optional surface instead of faulting an event task.
+        catch (Exception)
+#pragma warning restore CA1031
+        {
+            monitors = [];
+            succeeded = false;
+        }
+
+        Application.Current?.Dispatcher.InvokeAsync(() =>
+        {
+            if (_disposed || version != Volatile.Read(ref _monitorRefreshVersion))
+            {
+                return;
+            }
+
+            _monitorRefreshPending = false;
+            if (succeeded)
+            {
+                _monitorSnapshot = monitors;
+            }
+            else
+            {
+                monitors = _monitorSnapshot ?? [];
+            }
+
+            RefreshCore(monitors);
+        });
+    }
+
+    private void RefreshCore(IReadOnlyList<MonitorInfo> monitorSnapshot)
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        var general = _settings.Current.General;
+        if (!DesktopSurfacePolicy.ShouldShow(general.DesktopClock || general.DesktopNowPlaying || general.DesktopVisualizer, _detection.Active is not null, _locked, _system.IsBatterySaverOn))
+        {
+            HideSurface();
+            return;
+        }
+
+        var monitor = monitorSnapshot.FirstOrDefault(m => m.Id == general.ClockMonitorId) ?? monitorSnapshot.FirstOrDefault(m => m.IsPrimary) ?? (monitorSnapshot.Count > 0 ? monitorSnapshot[0] : null);
         if (monitor is null)
         {
-            _window?.Hide();
-            _timer?.Dispose();
-            _timer = null;
-            _visualizer.Stop();
+            HideSurface();
             return;
         }
 
         if (_window is null)
         {
             _label = new TextBlock { FontSize = 30, Foreground = Brushes.White, TextAlignment = TextAlignment.Center, Margin = new Thickness(16), FontFamily = new FontFamily("Segoe UI Variable, Segoe UI") };
-            _window = new Window
-            {
-                Width = 300,
-                SizeToContent = SizeToContent.Height,
-                WindowStyle = WindowStyle.None,
-                ResizeMode = ResizeMode.NoResize,
-                AllowsTransparency = true,
-                Background = Brushes.Transparent,
-                ShowInTaskbar = false,
-                ShowActivated = false,
-                Focusable = false,
-                IsHitTestVisible = false,
-                Title = "PrettyDesk desktop clock",
-                Content = new Border { CornerRadius = new CornerRadius(16), Background = new SolidColorBrush(Color.FromArgb(220, 24, 24, 24)), Child = _label },
-            };
-            _window.SourceInitialized += (_, _) => DesktopSurfaceWindow.Configure(new WindowInteropHelper(_window).Handle);
             var stack = new StackPanel();
             stack.Children.Add(_label);
             _media = new TextBlock { Foreground = Brushes.White, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, MaxHeight = 64, Margin = new Thickness(12), Text = Strings.Widget_NothingPlaying };
@@ -166,7 +234,23 @@ public sealed class DesktopClockService : IDisposable
             }
 
             stack.Children.Add(spectrum);
-            ((Border)_window.Content).Child = stack;
+            var window = new Window
+            {
+                Width = 300,
+                SizeToContent = SizeToContent.Height,
+                WindowStyle = WindowStyle.None,
+                ResizeMode = ResizeMode.NoResize,
+                AllowsTransparency = true,
+                Background = Brushes.Transparent,
+                ShowInTaskbar = false,
+                ShowActivated = false,
+                Focusable = false,
+                IsHitTestVisible = false,
+                Title = "PrettyDesk desktop clock",
+                Content = new Border { CornerRadius = new CornerRadius(16), Background = new SolidColorBrush(Color.FromArgb(220, 24, 24, 24)), Child = stack },
+            };
+            window.SourceInitialized += (_, _) => DesktopSurfaceWindow.Configure(new WindowInteropHelper(window).Handle);
+            _window = window;
         }
 
         if (!_window.IsVisible)
@@ -185,7 +269,16 @@ public sealed class DesktopClockService : IDisposable
             _interval = interval;
             _timer = _time.CreateTimer(_ => QueueFrame(), null, interval, interval);
         }
-    });
+    }
+
+    private void HideSurface()
+    {
+        _window?.Hide();
+        _timer?.Dispose();
+        _timer = null;
+        _visualizer.Stop();
+        _visualizing = false;
+    }
 
     private int _framePending;
 

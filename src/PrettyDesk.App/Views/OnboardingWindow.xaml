@@ -121,7 +121,7 @@
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_WallpapersBody}" Margin="0,0,0,12" />
           <Border Style="{StaticResource CardStyle}" Padding="12" Margin="0,0,0,12">
             <StackPanel>
-              <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding DisplaySummary}" />
+              <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding DisplaySummary}" AutomationProperties.LiveSetting="Polite" />
               <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_DisplayFitHelp}" Margin="0,4,0,0" />
             </StackPanel>
           </Border>

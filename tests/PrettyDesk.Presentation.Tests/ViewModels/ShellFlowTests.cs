@@ -63,6 +63,10 @@ public class OnboardingViewModelTests
         }
     }
 
+    private static Task WaitForDisplayPlansAsync(OnboardingViewModel vm) => AsyncTestWait.UntilAsync(() => !vm.IsLoadingDisplayPlans);
+    private static Task WaitForDisplaySummaryAsync(OnboardingViewModel vm, string summary) =>
+        AsyncTestWait.UntilAsync(() => vm.DisplaySummary.Contains(summary, StringComparison.OrdinalIgnoreCase));
+
     [Fact]
     public void Starts_on_the_welcome_step_with_sensible_defaults()
     {
@@ -276,6 +280,7 @@ public class OnboardingViewModelTests
         _monitors.Monitors = [new("one", 0, 0, 2560, 1440, true), new("two", 2560, 0, 2560, 1440, false)];
         using var vm = Vm();
         await Advance(vm, 4);
+        await WaitForDisplayPlansAsync(vm);
         vm.Step.ShouldBe(OnboardingStep.Wallpapers);
         vm.DisplaySummary.ShouldContain("2 × 2560×1440");
         vm.DisplaySummary.ShouldContain("Landscape 16:9");
@@ -296,6 +301,7 @@ public class OnboardingViewModelTests
         _content.Plans["game.apex"] = new(true, false, 1000, ["16x9"], false);
         using var vm = Vm();
         await Advance(vm, 4);
+        await WaitForDisplayPlansAsync(vm);
         vm.WallpaperChoices.Single(p => p.GameId == "cs2").Status.ShouldContain("no download needed");
         var unavailable = vm.WallpaperChoices.Single(p => p.GameId == "apex");
         unavailable.CanSelect.ShouldBeFalse();
@@ -312,6 +318,7 @@ public class OnboardingViewModelTests
         _installed.Ids = ["cs2"];
         using var vm = Vm();
         await Advance(vm, 4);
+        await WaitForDisplayPlansAsync(vm);
         vm.DownloadSelectedCommand.Execute(null);
         var row = vm.WallpaperChoices.Single();
         row.IsDownloading.ShouldBeTrue();
@@ -356,16 +363,115 @@ public class OnboardingViewModelTests
         _monitors.Monitors = [new("portrait", 0, 0, 1440, 2560, true)];
         _content.Plans["game.cs2"] = new(true, true, 2048, ["9x16"], false);
         _monitors.Raise();
+        await WaitForDisplaySummaryAsync(vm, "Portrait 9:16");
         vm.DisplaySummary.ShouldContain("Portrait 9:16");
         vm.WallpaperChoices.Single().Status.ShouldContain("Portrait 9:16");
         _monitors.Monitors = [];
         _content.Plans["game.cs2"] = new(false, false, 0, [], false);
         _monitors.Raise();
-        vm.DisplaySummary.ShouldContain("No displays");
+        await WaitForDisplaySummaryAsync(vm, "display size information is unavailable");
+        vm.DisplaySummary.ShouldContain("display size information is unavailable");
+        vm.DownloadSummary.ShouldContain("display size information is unavailable");
+        vm.WallpaperChoices.Single().Status.ShouldContain("display size information is unavailable");
         vm.DownloadSelectedCommand.CanExecute(null).ShouldBeFalse();
         await Advance(vm, 2);
         vm.Step.ShouldBe(OnboardingStep.Done);
         _content.Requested.ShouldBeEmpty();
+    }
+
+    [Fact]
+    public async Task A_failed_display_refresh_hides_stale_download_plans_but_preserves_the_preference()
+    {
+        _installed.Ids = ["cs2"];
+        var monitors = new InitiallyAvailableThenBlockedMonitorProvider();
+        using var vm = new OnboardingViewModel(_settings, _catalog, _installed, _startup, _conflicts, _content, monitors, new InlineDispatcher());
+
+        await Advance(vm, 4);
+        await WaitForDisplayPlansAsync(vm);
+        var row = vm.WallpaperChoices.Single();
+        row.CanSelect.ShouldBeTrue();
+        row.IsSelected.ShouldBeTrue();
+
+        monitors.Raise();
+        await monitors.RefreshStarted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+        row.CanSelect.ShouldBeFalse();
+        row.IsSelected.ShouldBeTrue();
+        row.Status.ShouldContain("Updating display information");
+        vm.DownloadSelectedCommand.CanExecute(null).ShouldBeFalse();
+
+        monitors.FailRefresh();
+        await WaitForDisplaySummaryAsync(vm, "could not read display information");
+
+        row.CanSelect.ShouldBeFalse();
+        row.IsSelected.ShouldBeTrue();
+        row.Status.ShouldContain("Could not read display information");
+        vm.DownloadSummary.ShouldContain("Could not read display information");
+        vm.DownloadSelectedCommand.CanExecute(null).ShouldBeFalse();
+    }
+
+    [Fact]
+    public async Task Display_enumeration_does_not_block_the_onboarding_transition()
+    {
+        _installed.Ids = ["cs2"];
+        var displays = new BlockingMonitorProvider();
+        using var vm = new OnboardingViewModel(_settings, _catalog, _installed, _startup, _conflicts, _content, displays, new InlineDispatcher());
+
+        await Advance(vm, 4);
+
+        vm.Step.ShouldBe(OnboardingStep.Wallpapers);
+        vm.IsLoadingDisplayPlans.ShouldBeTrue();
+        await displays.ReadStarted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+        vm.IsLoadingDisplayPlans.ShouldBeTrue();
+
+        displays.Complete([new("main", 0, 0, 1920, 1080, true)]);
+        await WaitForDisplayPlansAsync(vm);
+
+        vm.DisplaySummary.ShouldContain("Landscape 16:9");
+        vm.WallpaperChoices.ShouldHaveSingleItem().CanSelect.ShouldBeTrue();
+    }
+
+    private sealed class BlockingMonitorProvider : IMonitorProvider
+    {
+        private readonly TaskCompletionSource<IReadOnlyList<MonitorInfo>> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        public TaskCompletionSource ReadStarted { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        public event Action? Changed;
+
+        public IReadOnlyList<MonitorInfo> GetMonitors()
+        {
+            ReadStarted.TrySetResult();
+            return _completion.Task.GetAwaiter().GetResult();
+        }
+
+        public void Complete(IReadOnlyList<MonitorInfo> monitors) => _completion.TrySetResult(monitors);
+
+        public void Raise() => Changed?.Invoke();
+    }
+
+    private sealed class InitiallyAvailableThenBlockedMonitorProvider : IMonitorProvider
+    {
+        private readonly TaskCompletionSource<IReadOnlyList<MonitorInfo>> _refresh = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        private int _readCount;
+
+        public TaskCompletionSource RefreshStarted { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        public event Action? Changed;
+
+        public IReadOnlyList<MonitorInfo> GetMonitors()
+        {
+            if (Interlocked.Increment(ref _readCount) == 1)
+            {
+                return [new("main", 0, 0, 1920, 1080, true)];
+            }
+
+            RefreshStarted.TrySetResult();
+            return _refresh.Task.GetAwaiter().GetResult();
+        }
+
+        public void FailRefresh() => _refresh.TrySetException(new InvalidOperationException("display provider unavailable"));
+
+        public void Raise() => Changed?.Invoke();
     }
 }
 

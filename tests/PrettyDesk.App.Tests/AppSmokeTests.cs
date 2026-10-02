@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
@@ -54,6 +55,28 @@ public sealed class AppSmokeTests : IDisposable
             variant.Height.ShouldBe(2160);
             File.Exists(variant.Path).ShouldBeTrue();
             File.Exists(content.GetThumbnailPath(starter.Id)).ShouldBeTrue();
+        }
+    }
+
+    [Fact]
+    public async Task Reviewed_default_alternates_are_available_from_the_offline_bundle()
+    {
+        await using var provider = BuildProvider();
+        var catalog = provider.GetRequiredService<PrettyDesk.Core.Catalog.CatalogService>();
+        catalog.LoadInitial();
+        var content = provider.GetRequiredService<PrettyDesk.Core.Content.ContentLibrary>();
+        foreach (var wallpaperId in new[] { "mn-05", "wm-06", "pa-06", "sg-04" })
+        {
+            var wallpaper = catalog.Current.Packs.SelectMany(pack => pack.Wallpapers).Single(item => item.Id == wallpaperId);
+            wallpaper.Starter.ShouldBeFalse();
+            wallpaper.Tags.ShouldContain("bundled");
+
+            var asset = content.TryGetAsset(wallpaperId).ShouldNotBeNull();
+            var variant = asset.Variants["16x9"];
+            variant.Width.ShouldBe(3840);
+            variant.Height.ShouldBe(2160);
+            File.Exists(variant.Path).ShouldBeTrue();
+            File.Exists(content.GetThumbnailPath(wallpaperId)).ShouldBeTrue();
         }
     }
 
@@ -157,6 +180,7 @@ public sealed class AppSmokeTests : IDisposable
         app.Resources.MergedDictionaries.Add(new Wpf.Ui.Markup.ControlsDictionary());
         app.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/PrettyDesk;component/Resources/Styles.xaml") });
         Wpf.Ui.Appearance.ApplicationAccentColorManager.Apply(System.Windows.Media.Color.FromRgb(0, 122, 255), Wpf.Ui.Appearance.ApplicationTheme.Light);
+        VerifyHighContrastNavigationPalette();
         PrettyDesk.App.Services.AppAppearance.ApplyPalette(Wpf.Ui.Appearance.ApplicationTheme.Light);
         app.Resources.Add(new DataTemplateKey(typeof(HomeViewModel)), new DataTemplate { VisualTree = new FrameworkElementFactory(typeof(PrettyDesk.App.Views.HomePage)) });
         app.Resources.Add(new DataTemplateKey(typeof(DefaultsViewModel)), new DataTemplate { VisualTree = new FrameworkElementFactory(typeof(PrettyDesk.App.Views.DefaultsPage)) });
@@ -221,6 +245,17 @@ public sealed class AppSmokeTests : IDisposable
         WriteFocusEvidence(true, true, reactivated);
     }
 
+    private static void VerifyHighContrastNavigationPalette()
+    {
+        var resources = new ResourceDictionary();
+        PrettyDesk.App.Services.AppAppearance.ApplyHighContrastNavigationPalette(resources);
+
+        resources["DeskNavSelectedBrush"].ShouldBeSameAs(SystemColors.HighlightBrush);
+        resources["DeskNavSelectedTextBrush"].ShouldBeSameAs(SystemColors.HighlightTextBrush);
+        resources["DeskNavFocusBrush"].ShouldBeSameAs(SystemColors.HighlightTextBrush);
+        resources["DeskNavFocusBrush"].ShouldNotBeSameAs(resources["DeskNavSelectedBrush"]);
+    }
+
     private static void WriteFocusEvidence(bool activated, bool deactivated, bool reactivated)
     {
         var directory = Environment.GetEnvironmentVariable("PRETTYDESK_UI_CAPTURE_DIR");
@@ -244,27 +279,85 @@ public sealed class AppSmokeTests : IDisposable
         Pump();
         VerifyAcrylicMaterialAndFocus(main);
         MeasureNavigationIfRequested(shell, main);
+        VerifyTabNavigation(shell, main);
         VerifyLibraryNavigation(shell, main);
         CaptureIfRequested(main, "Main-Home");
-        CaptureLogoIfRequested((FrameworkElement)main.FindName("BrandLogo"), "Brand-Logo-Light");
-        var clock = provider.GetRequiredService<PrettyDesk.App.Services.DesktopClockService>();
-        clock.Start();
-        var settings = provider.GetRequiredService<ISettingsProvider>();
-        settings.Update(s => s.General.DesktopClock = true);
+        var pageHost = (PrettyDesk.App.Views.MotionContentControl)main.FindName("PageHost");
+        var homePage = ((Grid)pageHost.Content).Children.OfType<PrettyDesk.App.Views.HomePage>().Single();
+        var homeScroll = (ScrollViewer)homePage.Content;
+        homeScroll.ScrollToEnd();
+        main.UpdateLayout();
         Pump();
-        var surface = Application.Current.Windows.OfType<Window>().Single(w => w.Title == "PrettyDesk desktop clock");
-        surface.IsVisible.ShouldBeTrue();
-        surface.IsActive.ShouldBeFalse();
-        surface.ShowInTaskbar.ShouldBeFalse();
-        surface.IsHitTestVisible.ShouldBeFalse();
-        CaptureIfRequested(surface, "Desktop-Clock");
+        CaptureIfRequested(main, "Main-Home-MonitorPreview");
+        homeScroll.ScrollToTop();
+        main.UpdateLayout();
+        Pump();
+        CaptureLogoIfRequested((FrameworkElement)main.FindName("BrandLogo"), "Brand-Logo-Light");
+        var settings = provider.GetRequiredService<ISettingsProvider>();
+        var responsiveDisplays = new UiResponsiveMonitorProvider();
+        var responsiveSystem = Substitute.For<ISystemState>();
+        var responsiveDetection = provider.GetRequiredService<PrettyDesk.Core.Detection.DetectionService>();
+        using var responsiveClock = new PrettyDesk.App.Services.DesktopClockService(
+            settings,
+            responsiveDisplays,
+            responsiveSystem,
+            responsiveDetection,
+            provider.GetRequiredService<TimeProvider>(),
+            provider.GetRequiredService<PrettyDesk.Windows.NowPlayingSource>());
+        responsiveClock.Start();
+        settings.Update(s => s.General.DesktopClock = true);
+        Window responsiveSurface;
+        try
+        {
+            responsiveSurface = WaitForWindow("PrettyDesk desktop clock");
+        }
+        catch (TimeoutException exception)
+        {
+            throw new InvalidOperationException($"Clock state at timeout: reads={responsiveDisplays.ReadCount}, uiReads={responsiveDisplays.UiThreadReadCount}, gameActive={responsiveDetection.Active is not null}, batterySaver={responsiveSystem.IsBatterySaverOn}.", exception);
+        }
+        responsiveSurface.IsVisible.ShouldBeTrue();
+        responsiveSurface.IsActive.ShouldBeFalse();
+        responsiveSurface.ShowInTaskbar.ShouldBeFalse();
+        responsiveSurface.IsHitTestVisible.ShouldBeFalse();
+        CaptureIfRequested(responsiveSurface, "Desktop-Clock");
+        var readsBeforeChange = responsiveDisplays.ReadCount;
+        responsiveDisplays.SetMonitorLeft(500);
+        responsiveDisplays.DelayUiReads = true;
+        var monitorChangeTimer = Stopwatch.StartNew();
+        responsiveDisplays.Raise();
+        Pump();
+        monitorChangeTimer.Stop();
+        monitorChangeTimer.Elapsed.ShouldBeLessThan(TimeSpan.FromMilliseconds(300), "display-change handling must not wait for monitor COM enumeration on the UI thread");
+        responsiveDisplays.DelayUiReads = false;
+        var placementTimer = Stopwatch.StartNew();
+        Point placement = default;
+        while (placementTimer.Elapsed < TimeSpan.FromSeconds(5))
+        {
+            Pump();
+            placement = responsiveSurface.PointToScreen(new Point(0, 0));
+            if (responsiveDisplays.ReadCount > readsBeforeChange && Math.Abs(placement.X - 532) < 1)
+            {
+                break;
+            }
+
+            Thread.Sleep(10);
+        }
+
+        responsiveDisplays.ReadCount.ShouldBeGreaterThan(readsBeforeChange, "the display-change callback must query the provider");
+        responsiveDisplays.UiThreadReadCount.ShouldBe(0, "all monitor queries for the desktop clock must run off the WPF dispatcher");
+        Math.Abs(placement.X - 532).ShouldBeLessThan(1, "the clock must apply the monitor snapshot returned by the refresh");
         settings.Update(s => s.General.DesktopClock = false);
         Pump();
-        surface.IsVisible.ShouldBeFalse();
-        clock.Dispose();
+        responsiveSurface.IsVisible.ShouldBeFalse();
+        responsiveClock.Dispose();
+
         shell.NavigateToCommand.Execute(PageKind.Defaults);
         Pump();
         CaptureIfRequested(main, "Main-Wallpapers");
+        main.Width = 1000;
+        main.Height = 680;
+        Pump();
+        CaptureIfRequested(main, "Main-1000");
         main.Width = main.MinWidth;
         main.Height = main.MinHeight;
         Pump();
@@ -281,6 +374,17 @@ public sealed class AppSmokeTests : IDisposable
         PrettyDesk.App.Services.AppAppearance.ApplyPalette(Wpf.Ui.Appearance.ApplicationTheme.Dark);
         main.Width = 1160;
         main.Height = 780;
+        Pump();
+        shell.NavigateToCommand.Execute(PageKind.Home);
+        Pump();
+        CaptureIfRequested(main, "Main-Home-Dark");
+        homeScroll.ScrollToEnd();
+        main.UpdateLayout();
+        Pump();
+        CaptureIfRequested(main, "Main-Home-MonitorPreview-Dark");
+        homeScroll.ScrollToTop();
+        main.UpdateLayout();
+        shell.NavigateToCommand.Execute(PageKind.Defaults);
         Pump();
         CaptureIfRequested(main, "Main-Dark");
         CaptureLogoIfRequested((FrameworkElement)main.FindName("BrandLogo"), "Brand-Logo-Dark");
@@ -437,6 +541,32 @@ public sealed class AppSmokeTests : IDisposable
         Pump();
     }
 
+    private static void VerifyTabNavigation(ShellViewModel shell, PrettyDesk.App.Views.MainWindow window)
+    {
+        var navigation = (TabControl)window.FindName("MainNavigation");
+        var settingsTab = shell.NavItems.Single(item => item.Kind == PageKind.Settings);
+        navigation.SelectedItem = settingsTab;
+        Pump();
+
+        shell.SelectedKind.ShouldBe(PageKind.Settings);
+        shell.CurrentPage.ShouldBeOfType<SettingsViewModel>();
+        var settingsItem = navigation.ItemContainerGenerator.ContainerFromItem(settingsTab) as TabItem;
+        settingsItem.ShouldNotBeNull();
+        settingsItem!.ActualHeight.ShouldBeGreaterThanOrEqualTo(44);
+        settingsItem.IsTabStop.ShouldBeTrue();
+        AutomationProperties.GetName(settingsItem).ShouldBe(settingsTab.Label);
+        var aboutTab = shell.NavItems.Single(item => item.Kind == PageKind.About);
+        var aboutItem = navigation.ItemContainerGenerator.ContainerFromItem(aboutTab) as TabItem;
+        aboutItem.ShouldNotBeNull();
+        aboutItem!.Focus().ShouldBeTrue();
+        Pump();
+        shell.SelectedKind.ShouldBe(PageKind.About);
+
+        shell.NavigateToCommand.Execute(PageKind.Home);
+        Pump();
+        navigation.SelectedItem.ShouldBe(shell.NavItems.Single(item => item.Kind == PageKind.Home));
+    }
+
     private static void CaptureIfRequested(Window window, string name)
     {
         var directory = Environment.GetEnvironmentVariable("PRETTYDESK_UI_CAPTURE_DIR");
@@ -466,6 +596,61 @@ public sealed class AppSmokeTests : IDisposable
 
     private static void Pump() =>
         System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke(() => { }, System.Windows.Threading.DispatcherPriority.ContextIdle);
+
+    private static Window WaitForWindow(string title)
+    {
+        var timer = Stopwatch.StartNew();
+        Window? window = null;
+        while (timer.Elapsed < TimeSpan.FromSeconds(5))
+        {
+            Pump();
+            window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.Title == title);
+            if (window?.IsVisible == true)
+            {
+                return window;
+            }
+
+            Thread.Sleep(10);
+        }
+
+        throw new TimeoutException($"The {title} window was not shown within five seconds.");
+    }
+
+    private sealed class UiResponsiveMonitorProvider : IMonitorProvider
+    {
+        private MonitorInfo _monitor = new("smoke-display", 0, 0, 2560, 1440, true);
+        private int _readCount;
+        private int _uiThreadReadCount;
+
+        public bool DelayUiReads { get; set; }
+
+        public int ReadCount => Volatile.Read(ref _readCount);
+
+        public int UiThreadReadCount => Volatile.Read(ref _uiThreadReadCount);
+
+        public event Action? Changed;
+
+        public IReadOnlyList<MonitorInfo> GetMonitors()
+        {
+            var onUiThread = Application.Current?.Dispatcher.CheckAccess() == true;
+            Interlocked.Increment(ref _readCount);
+            if (onUiThread)
+            {
+                Interlocked.Increment(ref _uiThreadReadCount);
+            }
+
+            if (DelayUiReads && onUiThread)
+            {
+                Thread.Sleep(750);
+            }
+
+            return [Volatile.Read(ref _monitor)];
+        }
+
+        public void SetMonitorLeft(int left) => Volatile.Write(ref _monitor, new MonitorInfo("smoke-display", left, 0, 2560, 1440, true));
+
+        public void Raise() => Changed?.Invoke();
+    }
 
     private sealed class BindingErrorListener(List<string> errors) : TraceListener
     {

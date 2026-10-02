@@ -44,7 +44,7 @@
                   AutomationProperties.Name="{x:Static res:Strings.Game_Download}" />
         </StackPanel>
 
-        <TextBlock Text="{Binding PackStatusHelp}" Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Visibility="{Binding PackStatusHelp, Converter={StaticResource NullToCollapsed}}" />
+        <TextBlock Text="{Binding PackStatusHelp}" Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Visibility="{Binding PackStatusHelp, Converter={StaticResource NullToCollapsed}}" AutomationProperties.LiveSetting="Polite" />
 
         <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Game_WallpapersTitle}" />
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_NoWallpapers}" Visibility="{Binding HasWallpapers, Converter={StaticResource InverseBoolToVisibility}}" />

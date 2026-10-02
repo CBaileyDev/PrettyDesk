@@ -1,7 +1,10 @@
+using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Globalization;
 using Microsoft.Extensions.Time.Testing;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
+using PrettyDesk.Core.Abstractions;
 using PrettyDesk.Core.Settings;
 using PrettyDesk.Presentation.Resources;
 using PrettyDesk.Presentation.Services;
@@ -37,6 +40,100 @@ public class SettingsSectionTests
         _settings.Current.General.DesktopNowPlaying.ShouldBeTrue();
         _settings.Current.General.DesktopVisualizer.ShouldBeTrue();
         _settings.UpdateCount.ShouldBe(4);
+    }
+
+    [Fact]
+    public async Task Clock_monitor_choices_refresh_when_displays_change_without_writing_settings()
+    {
+        _settings.Current.General.StartWithWindows = false;
+        var monitors = new FakeMonitorProvider();
+        var startup = Substitute.For<IStartupService>();
+        startup.IsEnabled.Returns(false);
+        var vm = new GeneralSettingsViewModel(_settings, startup, _ui, monitors);
+        await AsyncTestWait.UntilAsync(() => vm.ClockMonitor?.Id == "m1");
+        vm.ClockMonitors.Select(m => m.Id).ShouldBe(new[] { "m1" });
+
+        // A display event must not reload unrelated settings and reconcile the HKCU Run value.
+        _settings.Current.General.StartWithWindows = true;
+        monitors.Monitors = [new MonitorInfo("m2", 0, 0, 2560, 1440, true)];
+        monitors.Raise();
+
+        await AsyncTestWait.UntilAsync(() => vm.ClockMonitor?.Id == "m2");
+        vm.ClockMonitors.Select(m => m.Id).ShouldBe(new[] { "m2" });
+        vm.ClockMonitor.ShouldNotBeNull();
+        vm.ClockMonitor.Id.ShouldBe("m2");
+        vm.StartWithWindows.ShouldBeFalse();
+        startup.DidNotReceive().Apply(true);
+        _settings.UpdateCount.ShouldBe(0);
+
+        vm.Dispose();
+        monitors.Monitors = [new MonitorInfo("m3", 0, 0, 1920, 1080, true)];
+        monitors.Raise();
+        vm.ClockMonitors.Select(m => m.Id).ShouldBe(new[] { "m2" });
+    }
+
+    [Fact]
+    public async Task A_stale_monitor_failure_does_not_replace_a_newer_success()
+    {
+        _settings.Current.General.ClockMonitorId = "new-display";
+        var monitors = new SequencedMonitorProvider();
+        using var dispatcher = new QueuedDispatcher();
+        using var vm = new GeneralSettingsViewModel(_settings, Substitute.For<IStartupService>(), dispatcher, monitors);
+        dispatcher.Drain();
+        await monitors.WaitForReadAsync(0);
+
+        monitors.Raise();
+        dispatcher.Drain();
+        await monitors.WaitForReadAsync(1);
+        monitors.Complete(1, [new MonitorInfo("new-display", 0, 0, 2560, 1440, true)]);
+        await monitors.WaitForReadCompletionAsync(1);
+        await dispatcher.WaitForPostAsync().WaitAsync(TimeSpan.FromSeconds(5));
+        dispatcher.Drain();
+
+        vm.ClockMonitor?.Id.ShouldBe("new-display");
+        vm.ClockMonitorStatus.ShouldBeNull();
+        monitors.Fail(0);
+        await monitors.WaitForReadCompletionAsync(0);
+        await dispatcher.WaitForPostAsync().WaitAsync(TimeSpan.FromSeconds(5));
+        dispatcher.Drain();
+
+        vm.ClockMonitor?.Id.ShouldBe("new-display");
+        vm.ClockMonitorStatus.ShouldBeNull();
+    }
+
+    [Fact]
+    public async Task Disconnected_clock_monitor_shows_primary_fallback_without_changing_the_saved_choice()
+    {
+        _settings.Current.General.StartWithWindows = false;
+        _settings.Current.General.ClockMonitorId = "old-display";
+        var monitors = new FakeMonitorProvider { Monitors = [new MonitorInfo("main", 0, 0, 2560, 1440, true)] };
+        using var vm = new GeneralSettingsViewModel(_settings, Substitute.For<IStartupService>(), _ui, monitors);
+
+        await AsyncTestWait.UntilAsync(() => vm.ClockMonitorStatus == Strings.Settings_DisplayUnavailable);
+
+        vm.ClockMonitor?.Id.ShouldBe("main");
+        vm.ClockMonitorStatus.ShouldBe(Strings.Settings_DisplayUnavailable);
+        _settings.Current.General.ClockMonitorId.ShouldBe("old-display");
+        _settings.UpdateCount.ShouldBe(0);
+    }
+
+    [Fact]
+    public async Task Queued_monitor_refresh_is_ignored_after_the_view_model_is_disposed()
+    {
+        _settings.Current.General.StartWithWindows = false;
+        var monitors = new BlockingMonitorProvider();
+        using var dispatcher = new QueuedDispatcher();
+        var vm = new GeneralSettingsViewModel(_settings, Substitute.For<IStartupService>(), dispatcher, monitors);
+        dispatcher.Drain();
+        await monitors.ReadStarted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+        vm.Dispose();
+        monitors.Complete([new MonitorInfo("main", 0, 0, 2560, 1440, true)]);
+        await dispatcher.WaitForPostAsync().WaitAsync(TimeSpan.FromSeconds(5));
+        dispatcher.Drain();
+
+        vm.ClockMonitors.ShouldBeEmpty();
+        vm.ClockMonitor.ShouldBeNull();
     }
 
     [Fact]
@@ -413,5 +510,110 @@ public class AdvancedAndRestoreTests
         _feed.Raise("after.exe");
 
         vm.Log.ShouldBeEmpty();
+    }
+
+}
+
+internal sealed class QueuedDispatcher : IUiDispatcher, IDisposable
+{
+    private readonly ConcurrentQueue<Action> _actions = new();
+    private readonly SemaphoreSlim _posted = new(0);
+
+    public void Post(Action action)
+    {
+        _actions.Enqueue(action);
+        _posted.Release();
+    }
+
+    public Task WaitForPostAsync() => _posted.WaitAsync();
+
+    public void Drain()
+    {
+        while (_actions.TryDequeue(out var action))
+        {
+            _posted.Wait(0);
+            action();
+        }
+    }
+
+    public void Dispose() => _posted.Dispose();
+}
+
+internal sealed class BlockingMonitorProvider : IMonitorProvider
+{
+    private readonly TaskCompletionSource<IReadOnlyList<MonitorInfo>> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+    public TaskCompletionSource ReadStarted { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+    public event Action? Changed;
+
+    public IReadOnlyList<MonitorInfo> GetMonitors()
+    {
+        ReadStarted.TrySetResult();
+        return _completion.Task.GetAwaiter().GetResult();
+    }
+
+    public void Complete(IReadOnlyList<MonitorInfo> monitors) => _completion.TrySetResult(monitors);
+
+    public void Raise() => Changed?.Invoke();
+}
+
+internal sealed class SequencedMonitorProvider : IMonitorProvider
+{
+    private readonly TaskCompletionSource<IReadOnlyList<MonitorInfo>>[] _completions =
+    [
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+    ];
+    private readonly TaskCompletionSource[] _started =
+    [
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+    ];
+    private readonly TaskCompletionSource[] _finished =
+    [
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+        new(TaskCreationOptions.RunContinuationsAsynchronously),
+    ];
+    private int _readCount;
+
+    public event Action? Changed;
+
+    public IReadOnlyList<MonitorInfo> GetMonitors()
+    {
+        var index = Interlocked.Increment(ref _readCount) - 1;
+        _started[index].TrySetResult();
+        try
+        {
+            return _completions[index].Task.GetAwaiter().GetResult();
+        }
+        finally
+        {
+            _finished[index].TrySetResult();
+        }
+    }
+
+    public Task WaitForReadAsync(int index) => _started[index].Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+    public Task WaitForReadCompletionAsync(int index) => _finished[index].Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+    public void Complete(int index, IReadOnlyList<MonitorInfo> monitors) => _completions[index].TrySetResult(monitors);
+
+    public void Fail(int index) => _completions[index].TrySetException(new InvalidOperationException("display query failed"));
+
+    public void Raise() => Changed?.Invoke();
+}
+
+internal static class AsyncTestWait
+{
+    public static async Task UntilAsync(Func<bool> condition)
+    {
+        var timer = Stopwatch.StartNew();
+        while (!condition() && timer.Elapsed < TimeSpan.FromSeconds(5))
+        {
+            await Task.Delay(10);
+        }
+
+        condition().ShouldBeTrue("the background display refresh did not complete within five seconds");
     }
 }

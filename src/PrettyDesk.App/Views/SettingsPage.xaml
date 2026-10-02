@@ -28,6 +28,7 @@
           <ui:ToggleSwitch IsChecked="{Binding General.DesktopClock, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_DesktopClock}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_DesktopClock}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DesktopClockHelp}" />
           <ComboBox ItemsSource="{Binding General.ClockMonitors}" SelectedItem="{Binding General.ClockMonitor, Mode=TwoWay}" DisplayMemberPath="Label" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_ClockMonitor}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{Binding General.ClockMonitorStatus}" Margin="0,4,0,0" AutomationProperties.LiveSetting="Polite" />
           <ui:ToggleSwitch IsChecked="{Binding General.DesktopNowPlaying, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NowPlaying}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_NowPlaying}" />
           <ui:ToggleSwitch IsChecked="{Binding General.DesktopVisualizer, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_Visualizer}" Margin="0,12,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_Visualizer}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_VisualizerHelp}" />

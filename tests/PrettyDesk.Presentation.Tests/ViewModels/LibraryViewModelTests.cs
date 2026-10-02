@@ -64,8 +64,8 @@ internal sealed class LibraryFixture
 
     public WallpaperPickerViewModel NewPicker(IEnumerable<string> existing) => new(Catalog.Current, Library, Content, Files, existing);
 
-    public GameDetailViewModel NewDetail(GameListing listing, Action? onRemoved = null) => new(
-        listing, Settings, Catalog, Content, Library, Controller, Monitors, Dialogs, Files, Launcher, Ui, NewPicker, () =>
+    public GameDetailViewModel NewDetail(GameListing listing, Action? onRemoved = null, IMonitorProvider? monitors = null) => new(
+        listing, Settings, Catalog, Content, Library, Controller, monitors ?? Monitors, Dialogs, Files, Launcher, Ui, NewPicker, () =>
         {
             RemovedCallbacks++;
             onRemoved?.Invoke();
@@ -410,13 +410,13 @@ public class GameDetailViewModelTests
     }
 
     [Fact]
-    public void Download_requests_the_pack_and_status_follows_progress()
+    public async Task Download_requests_the_pack_and_status_follows_progress()
     {
         var vm = Detail();
         vm.PackStatusText.ShouldBe("Not downloaded");
         vm.CanDownload.ShouldBeTrue();
 
-        vm.DownloadCommand.Execute(null);
+        await vm.DownloadCommand.ExecuteAsync(null);
         _f.Content.Requested.ShouldBe(["game.cs2"]);
 
         _f.Content.RaiseProgress(new PackProgress("game.cs2", PackStateKind.Downloading, 0.5));
@@ -426,6 +426,19 @@ public class GameDetailViewModelTests
         _f.Content.RaiseProgress(new PackProgress("game.cs2", PackStateKind.Failed, 0));
         vm.PackStatusText.ShouldContain("didn't finish");
         vm.CanDownload.ShouldBeTrue();
+    }
+
+    [Fact]
+    public async Task Game_download_enumerates_displays_off_the_calling_thread()
+    {
+        var monitors = new ThreadRecordingMonitorProvider();
+        using var vm = _f.NewDetail(_f.Listing("cs2"), monitors: monitors);
+        var callingThread = Environment.CurrentManagedThreadId;
+
+        await vm.DownloadCommand.ExecuteAsync(null);
+
+        monitors.ReadThreadId.ShouldNotBe(callingThread);
+        _f.Content.Requested.ShouldBe(["game.cs2"]);
     }
 
     [Fact]
@@ -588,6 +601,22 @@ public class GameDetailViewModelTests
         _f.Content.RaisePackChanged("game.cs2");
 
         vm.Wallpapers[2].IsAvailable.ShouldBeTrue();
+    }
+
+    private sealed class ThreadRecordingMonitorProvider : IMonitorProvider
+    {
+        public int ReadThreadId { get; private set; }
+
+        public event Action? Changed;
+
+        public IReadOnlyList<MonitorInfo> GetMonitors()
+        {
+            ReadThreadId = Environment.CurrentManagedThreadId;
+            Thread.Sleep(25);
+            return [new MonitorInfo("m1", 0, 0, 1920, 1080, true)];
+        }
+
+        public void Raise() => Changed?.Invoke();
     }
 }
 

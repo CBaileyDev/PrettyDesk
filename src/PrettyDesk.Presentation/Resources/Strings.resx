@@ -302,6 +302,14 @@
   <data name="Defaults_MyImagesHelp" xml:space="preserve">
     <value>Drag images here or choose them. They need at least 1280 px on the long edge. PrettyDesk keeps its own copy.</value>
   </data>
+  <data name="Defaults_DetectingDisplays" xml:space="preserve">
+    <value>Checking display sizes for image guidance…</value>
+    <comment>Defaults page monitor enumeration loading state</comment>
+  </data>
+  <data name="Defaults_DisplaySizesUnavailable" xml:space="preserve">
+    <value>Display sizes are unavailable. Resolution guidance will appear when Windows reports a connected screen.</value>
+    <comment>Defaults page monitor enumeration empty or failure state</comment>
+  </data>
   <data name="Defaults_NoFixedYet" xml:space="preserve">
     <value>Pick a collection first, then choose your wallpaper.</value>
   </data>
@@ -358,6 +366,10 @@
   </data>
   <data name="Game_DownloadFailed" xml:space="preserve">
     <value>The download didn't finish. Check your connection and try again.</value>
+  </data>
+  <data name="Game_DisplaysUnavailable" xml:space="preserve">
+    <value>No usable display size is available right now. Connect a screen or wait for Windows to finish updating, then try again.</value>
+    <comment>Game wallpaper download cannot select formats without display information</comment>
   </data>
   <data name="Game_Downloading" xml:space="preserve">
     <value>Downloading… {0}%</value>
@@ -456,10 +468,17 @@
     <value>Next wallpaper</value>
   </data>
   <data name="Home_NoMonitors" xml:space="preserve">
-    <value>No display detected</value>
+    <value>Display information unavailable</value>
   </data>
   <data name="Home_NoMonitorsDetail" xml:space="preserve">
-    <value>PrettyDesk will pick up your screens as soon as Windows reports them.</value>
+    <value>The preview will appear when Windows reports a connected screen.</value>
+  </data>
+  <data name="Home_DisplaysUnavailable" xml:space="preserve">
+    <value>Could not refresh connected displays. The preview will update when Windows reports them again.</value>
+  </data>
+  <data name="Home_DetectingDisplays" xml:space="preserve">
+    <value>Detecting connected displays…</value>
+    <comment>Home display preview loading state</comment>
   </data>
   <data name="Home_NoWallpaperYet" xml:space="preserve">
     <value>No wallpaper yet</value>
@@ -1110,6 +1129,11 @@ Choose No to keep them in case you reinstall.</value>
   <data name="Settings_DesktopClock" xml:space="preserve"><value>Desktop clock</value><comment>Personalization update</comment></data>
   <data name="Settings_DesktopClockHelp" xml:space="preserve"><value>Show a quiet clock on the desktop. It hides while a game is active, the session is locked or battery saver is on.</value><comment>Personalization update</comment></data>
   <data name="Settings_ClockMonitor" xml:space="preserve"><value>Clock display</value><comment>Personalization update</comment></data>
+  <data name="Settings_DetectingDisplays" xml:space="preserve"><value>Detecting connected displays…</value><comment>Settings status while the monitor list loads</comment></data>
+  <data name="Settings_UpdatingDisplays" xml:space="preserve"><value>Updating the display list…</value><comment>Settings status while the monitor list refreshes</comment></data>
+  <data name="Settings_NoDisplays" xml:space="preserve"><value>No display information is available. This list will update when Windows reports a screen.</value><comment>Settings empty state when no display snapshot is available</comment></data>
+  <data name="Settings_DisplayUnavailable" xml:space="preserve"><value>The saved display is not in the current list. The selector shows the primary display when available; your saved choice stays unchanged.</value><comment>Settings explanation when the saved clock monitor is missing</comment></data>
+  <data name="Settings_DisplaysUnavailable" xml:space="preserve"><value>Could not refresh the display list. Reopen Settings to try again.</value><comment>Settings error state for clock monitor selection</comment></data>
   <data name="Settings_NowPlaying" xml:space="preserve"><value>Show now playing</value><comment>Desktop personalization</comment></data>
   <data name="Settings_Visualizer" xml:space="preserve"><value>Playback visualizer</value><comment>Desktop personalization</comment></data>
   <data name="Settings_VisualizerHelp" xml:space="preserve"><value>Analyze the default output device locally, at up to 15 frames per second. No microphone, recordings or uploads. Stops during games, lock and battery saver; respects reduced motion.</value><comment>Desktop personalization</comment></data>
@@ -1125,7 +1149,10 @@ Choose No to keep them in case you reinstall.</value>
   <data name="Onboard_WallpapersBody" xml:space="preserve"><value>Choose the games to prepare now. We select the wallpaper formats your displays need.</value></data>
   <data name="Onboard_DisplayFitHelp" xml:space="preserve"><value>Only the formats your displays need. Same-shaped displays share one download; resolution is adjusted automatically.</value></data>
   <data name="Onboard_DisplayGroup" xml:space="preserve"><value>{0} × {1}×{2} · {3}</value></data>
-  <data name="Onboard_DisplaysMissing" xml:space="preserve"><value>No displays detected. You can continue and download later in Library.</value></data>
+  <data name="Onboard_DisplaysMissing" xml:space="preserve"><value>Display size information is unavailable. You can continue and download later in Library.</value></data>
+  <data name="Onboard_DetectingDisplays" xml:space="preserve"><value>Detecting connected displays…</value><comment>Onboarding download plans loading state</comment></data>
+  <data name="Onboard_UpdatingDisplays" xml:space="preserve"><value>Updating display information…</value><comment>Onboarding download plans refresh state</comment></data>
+  <data name="Onboard_DisplaysUnavailable" xml:space="preserve"><value>Could not read display information. Return to Games and continue again to retry.</value><comment>Onboarding display query error and retry instruction</comment></data>
   <data name="Onboard_FormatLandscape" xml:space="preserve"><value>Landscape 16:9</value></data>
   <data name="Onboard_FormatUltrawide" xml:space="preserve"><value>Ultrawide 21:9</value></data>
   <data name="Onboard_FormatPortrait" xml:space="preserve"><value>Portrait 9:16</value></data>

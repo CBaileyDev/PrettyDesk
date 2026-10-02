@@ -9,6 +9,9 @@
   <SolidColorBrush x:Key="DeskInkBrush" Color="#182035" />
   <SolidColorBrush x:Key="DeskMutedBrush" Color="#596477" />
   <SolidColorBrush x:Key="DeskBlueBrush" Color="#007AFF" />
+  <SolidColorBrush x:Key="DeskNavSelectedBrush" Color="#DDEAFF" />
+  <SolidColorBrush x:Key="DeskNavSelectedTextBrush" Color="#174A7E" />
+  <SolidColorBrush x:Key="DeskNavFocusBrush" Color="#005FB8" />
   <SolidColorBrush x:Key="DeskPanelBrush" Color="#FAFAF9" />
   <SolidColorBrush x:Key="DeskSoftBrush" Color="#EBEFF4" />
   <SolidColorBrush x:Key="DeskStrokeBrush" Color="#DADDDD" />
