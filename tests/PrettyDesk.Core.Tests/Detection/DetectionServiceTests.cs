@@ -59,12 +59,19 @@ public class DetectionServiceTests
     public async Task Disabled_detection_clears_everything_and_does_not_snapshot()
     {
         await using var service = Create(enabled: false);
-        _processes.Running = [Proc(1, "g.exe")];
-
         service.EvaluateOnce();
 
         service.Active.ShouldBeNull();
         _processes.Snapshots.ShouldBe(0);
+
+        // A game can start while detection is disabled, so enabling it must take a fresh snapshot and match.
+        _processes.Running = [Proc(1, "g.exe")];
+        var registry = Registry([Game("g", configure: b => b.Exe.Add("g.exe"))]);
+        service.Reconfigure(new DetectionConfiguration(true, TimeSpan.FromSeconds(2), DetectionOptions.Default, new RuleMatcher(registry, null)));
+        service.EvaluateOnce();
+
+        _processes.Snapshots.ShouldBe(1);
+        service.BroadEvaluationCount.ShouldBe(1);
     }
 
     [Fact]
@@ -211,6 +218,136 @@ public class DetectionServiceTests
     }
 
     [Fact]
+    public async Task Unchanged_name_only_matches_are_reused_while_debounce_advances()
+    {
+        await using var service = Create();
+        _processes.Running = [Proc(42, "g.exe")];
+
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(1);
+        service.Active.ShouldBeNull();
+
+        _time.Advance(TimeSpan.FromSeconds(2));
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(1);
+        service.Active.ShouldBeNull("the game still has one second of its configured debounce");
+
+        _time.Advance(TimeSpan.FromSeconds(1));
+        service.EvaluateOnce();
+
+        service.BroadEvaluationCount.ShouldBe(1);
+        service.Active!.GameId.ShouldBe("g");
+        _processes.Snapshots.ShouldBe(3, "process enumeration and tracker observation must continue on every poll");
+    }
+
+    [Fact]
+    public async Task Stable_idle_snapshot_rematches_at_the_thirty_second_fallback()
+    {
+        await using var service = Create();
+        _processes.Running = [Proc(88, "unrelated.exe")];
+
+        // Simulate ten minutes of two-second polls without sleeping or depending on wall-clock scheduling.
+        for (var poll = 0; poll <= 300; poll++)
+        {
+            service.EvaluateOnce();
+            _time.Advance(TimeSpan.FromSeconds(2));
+        }
+
+        service.BroadEvaluationCount.ShouldBe(21, "the initial scan plus the 30-second safety refreshes");
+        _processes.Snapshots.ShouldBe(301, "the regular process-enumeration cadence must remain unchanged");
+    }
+
+    [Fact]
+    public async Task Inactive_match_fallback_uses_monotonic_time_across_a_forward_wall_clock_change()
+    {
+        var time = new AdjustableTimeProvider(new DateTimeOffset(2026, 10, 1, 12, 0, 0, TimeSpan.Zero));
+        var registry = Registry([Game("g", configure: b => b.Exe.Add("g.exe"))]);
+        var config = new DetectionConfiguration(true, TimeSpan.FromSeconds(2), DetectionOptions.Default, new RuleMatcher(registry, null));
+        await using var service = new DetectionService(_processes, _foreground, null, config, time, NullLogger<DetectionService>.Instance);
+        _processes.Running = [Proc(88, "unrelated.exe")];
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(1);
+
+        time.Advance(TimeSpan.FromSeconds(15));
+        time.SetUtcNow(time.GetUtcNow().AddHours(1));
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(1, "a wall-clock jump must not expire the interval early");
+
+        time.Advance(TimeSpan.FromSeconds(15));
+        service.EvaluateOnce();
+
+        service.BroadEvaluationCount.ShouldBe(2, "the safety refresh follows elapsed time, even if the wall clock jumps forward");
+    }
+
+    [Fact]
+    public async Task Inactive_match_cache_is_invalidated_by_snapshot_foreground_steam_and_matcher_changes()
+    {
+        var steam = new FakeSteam();
+        await using var service = Create(steam: steam);
+        _processes.Running = [Proc(42, "g.exe")];
+
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(1);
+
+        _foreground.Current = new ForegroundInfo(42, "g.exe");
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(2);
+
+        steam.CurrentAppId = 5;
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(3);
+
+        _processes.Running = [new ProcessInfo(42, "g.exe", 1, _time.GetUtcNow())];
+        service.EvaluateOnce();
+        service.BroadEvaluationCount.ShouldBe(4);
+
+        var registry = Registry([Game("g", configure: b => { b.Exe.Add("g.exe"); b.Steam.Add(5); })]);
+        service.Reconfigure(new DetectionConfiguration(true, TimeSpan.FromSeconds(2), DetectionOptions.Default, new RuleMatcher(registry, null)));
+        service.EvaluateOnce();
+
+        service.BroadEvaluationCount.ShouldBe(5);
+        service.Active.ShouldBeNull("the invalidations happen before the detect-delay deadline");
+    }
+
+    [Fact]
+    public async Task Live_detail_rules_are_rematched_on_each_poll()
+    {
+        var details = new FakeDetails();
+        details.Paths[42] = @"C:\Games\PrettyDeskGame\game.exe";
+        var registry = Registry([Game("g", configure: b => { b.Exe.Add("g.exe"); b.Path.Add("PrettyDeskGame"); })]);
+        var config = new DetectionConfiguration(true, TimeSpan.FromSeconds(2), DetectionOptions.Default, new RuleMatcher(registry, details));
+        await using var service = new DetectionService(_processes, _foreground, null, config, _time, NullLogger<DetectionService>.Instance);
+        _processes.Running = [Proc(42, "g.exe")];
+
+        service.EvaluateOnce();
+        _time.Advance(TimeSpan.FromSeconds(1));
+        service.EvaluateOnce();
+
+        service.BroadEvaluationCount.ShouldBe(2);
+        details.PathCalls.ShouldBe(2);
+        service.Active.ShouldBeNull();
+    }
+
+    [Fact]
+    public async Task Reordering_an_unchanged_process_snapshot_does_not_repeat_broad_matching()
+    {
+        await using var service = Create();
+        var game = Proc(42, "g.exe");
+        var background = Proc(7, "background.exe");
+        _processes.Running = [game, background];
+        service.EvaluateOnce();
+        _time.Advance(TimeSpan.FromSeconds(3));
+        service.EvaluateOnce();
+        var broad = service.BroadEvaluationCount;
+
+        _processes.Running = [background, game];
+        service.EvaluateOnce();
+
+        service.BroadEvaluationCount.ShouldBe(broad);
+        service.Active!.GameId.ShouldBe("g");
+    }
+
+    [Fact]
     public async Task Changed_process_identity_and_fallback_expiry_force_matching()
     {
         await using var service = Create();
@@ -256,5 +393,25 @@ public class DetectionServiceTests
         public event Action? Changed;
 
         public void RaiseChanged() => Changed?.Invoke();
+    }
+
+    private sealed class AdjustableTimeProvider(DateTimeOffset initialUtcNow) : TimeProvider
+    {
+        private DateTimeOffset _utcNow = initialUtcNow;
+        private long _timestamp;
+
+        public override long TimestampFrequency => TimeSpan.TicksPerSecond;
+
+        public override DateTimeOffset GetUtcNow() => _utcNow;
+
+        public override long GetTimestamp() => _timestamp;
+
+        public void Advance(TimeSpan amount)
+        {
+            _utcNow += amount;
+            _timestamp += amount.Ticks;
+        }
+
+        public void SetUtcNow(DateTimeOffset value) => _utcNow = value;
     }
 }

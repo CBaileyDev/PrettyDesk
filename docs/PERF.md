@@ -71,3 +71,46 @@ This is the same 32-logical-core desktop, not the required four-core laptop. The
 Native image memory is outside the managed heap limit. Ten minutes and page smoke tests do not establish 24-hour stability,
 maximum-image stress, or sleep/display/hardware reliability. The first review sample (`review-active-idle.csv`) was interrupted
 by its scheduled Quit before the sampler endpoint and must not be counted as a completed ten-minute gate.
+
+### 2026-10-02 — process snapshot sort allocation check
+
+A Release microbenchmark compared the current `OrderBy(Pid).ToArray()` with copying the same reversed `List<ProcessInfo>`
+into arrays and sorting PID keys alongside their process references. It ran 20,000 iterations per cell over five alternating
+trials on this Windows x64 workstation. The table reports median elapsed time across trials and measured managed allocation
+per evaluation; the 16- and 128-row timings had visible run-to-run noise, so treat them as directional. It isolates only the
+copy/sort work and does not include Toolhelp enumeration or rule matching.
+
+| Snapshot rows | Allocation per evaluation | Median for 20,000 evaluations |
+|---:|---:|---:|
+| 16 | 688 → 240 B (-65%) | 19.91 → 5.95 ms |
+| 128 | 3,376 → 1,584 B (-53%) | 22.38 → 20.59 ms |
+| 512 | 12,592 → 6,192 B (-51%) | 92.59 → 92.06 ms |
+
+The service now copies once and sorts integer PID keys with the process-reference array. A deterministic test confirms that a
+shuffled but unchanged snapshot does not repeat broad matching. Detection-service tests pass. This targeted result does not
+replace the app idle soak or measure real Toolhelp snapshot latency. Reproducible harness and raw trials: `TestResults/perf-2026-10-02/SnapshotBench.cs`
+and `snapshot-sort-list.csv`.
+
+A follow-up audit checked whether closed-window polling could avoid constructing the optional `DetectionObservation` when no
+diagnostics listener is attached. C# conditional invocation already short-circuits its argument expression, so
+`Observed?.Invoke(new DetectionObservation(...))` does not allocate that observation or its projected game-ID list without
+subscribers. An explicit null guard would duplicate existing behavior and was not added. The idle soak remains the authority
+for app impact; no additional measured bottleneck was found in this path.
+
+### 2026-10-02 — stable name-only matching reuse
+
+For unchanged name-only process snapshots, the service reuses prior matches both while idle and during an established
+active session. Reuse requires the sorted process snapshot, matcher instance, Steam app ID and foreground PID to remain
+unchanged. Process enumeration, tracker observation and deadline scheduling still run every configured 1–10 second
+poll (2 seconds by default). Process/config/signal changes, exit grace and live path/title rules force matching, as does
+the 30-second fallback refresh.
+
+A deterministic fake-clock idle test simulated 301 polls across ten minutes. Full name-only matcher evaluations fell
+from 301 to 21 (one initial scan plus twenty 30-second refreshes, 93.0% fewer) while all 301 process snapshots still ran;
+lightweight live-detail eligibility checks continue each poll. A separate established-session test verifies that reuse
+does not interrupt three-second game-start debounce, foreground switching or exit-grace behavior. Other tests verify
+invalidation for changed snapshots (including process start time), foreground, Steam, matcher replacement and live path
+rules. The fallback deadline uses monotonic
+`TimeProvider` timestamps, and a test confirms a forward wall-clock jump does not expire it early. This is a measured
+reduction in rule-scan work, not a CPU-time or idle-soak result; the ten-minute hardware measurement and 24-hour soak were
+not repeated.

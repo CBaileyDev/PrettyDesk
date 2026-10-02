@@ -1,9 +1,9 @@
 Wrote art/out/publish/catalog.json.sig
 Signature OK.
-Wrote <workspace>\TestResults\catalog-feed\valid\catalog.json.sig
+Wrote <local-path>
 Signature OK.
-Running tests from <workspace>\tests\PrettyDesk.Core.Tests\bin\Release\net10.0\PrettyDesk.Core.Tests.dll (net10.0|x64)
-<workspace>\tests\PrettyDesk.Core.Tests\bin\Release\net10.0\PrettyDesk.Core.Tests.dll (net10.0|x64) passed (25s 712ms)
+Running tests from <local-path> (net10.0|x64)
+<local-path> (net10.0|x64) passed (25s 712ms)
 
 Test run summary: Passed!
   total: 477

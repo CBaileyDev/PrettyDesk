@@ -3,8 +3,16 @@
   "VerifiedCatalogGames": 0,
   "SteamManifests": 3,
   "EpicManifests": 3,
+  "MatchedInstalledIds": [
+    "cyberpunk",
+    "fortnite",
+    "rocket-league"
+  ],
+  "RunningGameIds": [
+    "rocket-league"
+  ],
   "SnapshotContainsSelf": true,
   "ExistingInstallDirectories": 6,
   "MissingInstallDirectories": 0,
-  "Scope": "Read-only discovery counts. Local installed and running game identifiers omitted for publication."
+  "Scope": "Read-only discovery and current running snapshot; no game was launched by this probe."
 }

@@ -40,7 +40,7 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
     private RuleMatcher? _lastMatcher;
     private uint _lastSteam;
     private int _lastForeground;
-    private DateTimeOffset _lastBroadEvaluation;
+    private long _lastBroadEvaluationTimestamp;
 
     /// <summary>In-memory work counter for tests and diagnostics; never stores process lists.</summary>
     public long BroadEvaluationCount { get; private set; }
@@ -125,19 +125,30 @@ public sealed partial class DetectionService : IDetectionFeed, IAsyncDisposable
         var now = _time.GetUtcNow();
         var steam = _steam?.CurrentAppId ?? 0;
         var foregroundPid = foreground?.Pid ?? 0;
-        // Keep the existing snapshot cadence so missed starts still meet FR-DET-2. Only reuse name-only
-        // matching for an unchanged active session. Live path/title rules always re-query their candidates.
-        var ordered = processes.OrderBy(p => p.Pid).ToArray();
-        if (_lastMatches is null || Active is null || Active.InGrace || config.Matcher.RequiresLiveDetails(processes) ||
+        // Keep the existing snapshot cadence so missed starts still meet FR-DET-2. Reuse name-only
+        // matching while the snapshot and rule inputs stay unchanged; the tracker still observes every poll
+        // so debounce, foreground priority and exit-grace deadlines continue to advance.
+        var ordered = new ProcessInfo[processes.Count];
+        var pids = new int[processes.Count];
+        for (var index = 0; index < ordered.Length; index++)
+        {
+            var process = processes[index];
+            ordered[index] = process;
+            pids[index] = process.Pid;
+        }
+
+        // Sort PID keys with the process references to avoid LINQ's larger temporary sort buffers per poll.
+        Array.Sort(pids, ordered);
+        if (_lastMatches is null || Active?.InGrace == true || config.Matcher.RequiresLiveDetails(processes) ||
             !ReferenceEquals(config.Matcher, _lastMatcher) || steam != _lastSteam || foregroundPid != _lastForeground ||
-            now - _lastBroadEvaluation >= TimeSpan.FromSeconds(30) || !_lastProcesses!.SequenceEqual(ordered))
+            _time.GetElapsedTime(_lastBroadEvaluationTimestamp) >= TimeSpan.FromSeconds(30) || !_lastProcesses!.SequenceEqual(ordered))
         {
             _lastMatches = config.Matcher.Match(processes, steam);
             _lastProcesses = ordered;
             _lastMatcher = config.Matcher;
             _lastSteam = steam;
             _lastForeground = foregroundPid;
-            _lastBroadEvaluation = now;
+            _lastBroadEvaluationTimestamp = _time.GetTimestamp();
             BroadEvaluationCount++;
         }
 
