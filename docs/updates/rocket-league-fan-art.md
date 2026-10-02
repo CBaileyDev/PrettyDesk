@@ -1,7 +1,9 @@
 # Rocket League fan-art pilot
 
-Date: 2026-10-01. Status: recognizable-game direction approved by the owner;
-prompts below are production drafts, not generated or integrated assets.
+Date: 2026-10-01. Status: recognizable-game direction approved by the owner. Four
+selected entries are generated, reviewed and present in the current catalog; the
+drafts below record the creative brief. Canonical prompts live in
+[`art/prompts/game.rocket-league.yaml`](../../art/prompts/game.rocket-league.yaml).
 
 The owner wants art that visibly looks like Rocket League, including Octane,
 Fennec and Batmobile. Use those names directly. Match the recognizable in-game car
@@ -17,6 +19,11 @@ generation review; a prompt alone cannot guarantee exact visual fidelity.
 | Minimal, dark | Fennec, elevated rear three-quarter view | Quiet freeplay arena, small car in a broad field | Clean daily desktop, at least 70% negative space |
 | Mood, dark | 2016 Batmobile, low rear-quarter camera | Rainy Neo Tokyo arena, restrained reflections | Strong different car silhouette and atmosphere |
 | Alt, light | Octane and Fennec, high oblique aerial view | Sunny beach arena, patterned field and ocean | Brighter palette and a genuinely different viewpoint |
+
+This is the original shot plan. The current four catalog entries are Floodlight
+Haze, Octane Aerial, Quiet Fennec and Neo Tokyo Rain; the light beach scene is not
+integrated. See the [Oct 2 implementation record](2026-10-02-rocket-league-prompt-mode.md)
+for current mode, asset and validation status.
 
 Use coherent materials and restrained highlights across the set. Leave the left
 15% and bottom 8% calm. Keep subjects safe for focal crops; review 16:9, 16:10,
@@ -139,24 +146,20 @@ perspective, smooth gradients and readable shadows. No extra cars or wheels,
 duplicated ball, HUD, text, logos, sponsor decals, watermark or visible seams.
 ```
 
-## Pending pipeline migration
+## Scoped pipeline support
 
-The current [linter](../../tools/assetpipe/assetpipe/lint.py),
-[pack loader](../../tools/assetpipe/assetpipe/packs.py),
-[prompt renderer](../../tools/assetpipe/assetpipe/render_prompts.py) and
-[lint tests](../../tools/assetpipe/tests/test_lint.py) still enforce generic art and
-reject the game name in its own prompts. Do not paste these drafts into the canonical
-YAML and claim the current checks pass.
+The [pack loader](../../tools/assetpipe/assetpipe/packs.py) defaults to generic
+mode. The canonical Rocket League YAML opts into `named-fan-art` and names its
+approved subjects. The [linter](../../tools/assetpipe/assetpipe/lint.py) allows
+only those declared names from the pack's reviewed allowlist; known Rocket League
+terms stay forbidden in generic packs. Safe-zone, banned-phrase, composition,
+role/tone and other review checks remain active. The prompt renderer and review
+sheet identify the named fan-art mode and its separate distribution review.
 
-Propose an explicit per-pack mode, defaulting to existing generic inspiration,
-with an approved named-subject list for the Rocket League pack. Update parsing,
-validation, review text and tests together. Keep full prompts, no-HUD/no-text review,
-safe zones, role/tone coverage, approval and master hashes. Scoped named-subject
-allowance must not disable unrelated lint checks or grant every pack the same exception.
-
-After migration: revise [game.rocket-league.yaml](../../art/prompts/game.rocket-league.yaml),
-regenerate `art/PROMPTS.md`, generate/review a small pilot, then approve assets and
-rebuild variants/catalog. Preserve current assets until replacements pass review.
+See the [implementation record](2026-10-02-rocket-league-prompt-mode.md) for
+current checks. The pack still needs a light-tone wallpaper, dedicated ultrawide
+and portrait masters, and public distribution-rights review. Preserve existing
+assets until any replacement passes the same review.
 
 ## Review and distribution
 

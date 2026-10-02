@@ -12,8 +12,18 @@ from .packs import PROMPT_KINDS, ROLES, SETUP_MATCHES, TONES, UPSCALERS, Pack, W
 
 LANDSCAPE_WORDS = (120, 220)
 APPROVED_NAMED_SUBJECTS = {
-    "game.rocket-league": {"rocket league", "rocket", "octane", "fennec", "2016 batmobile", "batmobile", "champions field", "neo tokyo"},
+    "game.rocket-league": {
+        "rocket league": frozenset({"rocket league"}),
+        "octane": frozenset({"octane"}),
+        "fennec": frozenset({"fennec"}),
+        "2016 batmobile": frozenset({"2016 batmobile", "batmobile"}),
+        "champions field": frozenset({"champions field"}),
+        "neo tokyo": frozenset({"neo tokyo"}),
+    },
 }
+KNOWN_NAMED_SUBJECT_TERMS = tuple(sorted({
+    term for subjects in APPROVED_NAMED_SUBJECTS.values() for aliases in subjects.values() for term in aliases
+}))
 
 OPENING = "A 16:9 landscape desktop wallpaper."
 SAFE_ZONE = (
@@ -97,15 +107,23 @@ def word_count(text: str) -> int:
 
 def forbidden_terms(pack: Pack) -> list[str]:
     """Everything that identifies the game in this pack: its title, its distinctive title words, studios, proper nouns."""
-    terms = [t.lower() for t in STUDIO_NAMES + PROPER_NOUNS]
+    terms = [t.lower() for t in STUDIO_NAMES + PROPER_NOUNS + KNOWN_NAMED_SUBJECT_TERMS]
+    declared_subjects = {subject.strip().casefold() for subject in pack.named_subjects}
+    reviewed_subjects = APPROVED_NAMED_SUBJECTS.get(pack.id, {}) if pack.art_mode == "named-fan-art" else {}
+    allowed = {
+        term
+        for subject, aliases in reviewed_subjects.items()
+        if subject.casefold() in declared_subjects
+        for term in aliases
+    }
     if pack.kind == "game":
         title = pack.title.lower()
         terms.append(title)
-        for token in re.split(r"[^a-z0-9!]+", title):
-            if len(token) >= 5 and token not in TITLE_STOPWORDS:
-                terms.append(token)
-    allowed = APPROVED_NAMED_SUBJECTS.get(pack.id, set()) if pack.art_mode == "named-fan-art" else set()
-    return [term for term in terms if term not in allowed]
+        if title not in allowed:
+            for token in re.split(r"[^a-z0-9!]+", title):
+                if len(token) >= 5 and token not in TITLE_STOPWORDS:
+                    terms.append(token)
+    return [term for term in dict.fromkeys(terms) if term not in allowed]
 
 
 def _mentions(text_lower: str, term: str) -> bool:
@@ -245,7 +263,8 @@ def lint_pack(pack: Pack) -> list[Finding]:
         err("artMode must be generic or named-fan-art")
     if pack.art_mode == "named-fan-art":
         allowed = APPROVED_NAMED_SUBJECTS.get(pack.id)
-        if allowed is None or not pack.named_subjects or any(s.lower() not in allowed for s in pack.named_subjects):
+        declared = [subject.strip().casefold() for subject in pack.named_subjects]
+        if allowed is None or not declared or any(subject not in allowed for subject in declared) or len(declared) != len(set(declared)):
             err("named-fan-art requires a reviewed pack and its approved namedSubjects list")
     elif pack.named_subjects:
         err("namedSubjects requires named-fan-art mode")

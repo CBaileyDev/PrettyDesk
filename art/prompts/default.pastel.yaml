@@ -100,7 +100,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [pastel, white]
-    tags: [3d, clay, shapes]
+    tags: [3d, clay, shapes, bundled]
     starter: false
     accent: "#BFA8E8"
     focal: { x: 0.64, y: 0.52 }
@@ -134,9 +134,9 @@ wallpapers:
         wallpaper. The shapes cluster in the lower center, the arch rising to about 45% of the height over a
         plain cream backdrop. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "5b0edf884df48d8b6457ef276e3ea43eadad8b84b941018d3ea397cbce0b1f7e"}
 
   - id: pd-04
     title: "Cotton Candy Sunset Sea"
@@ -187,7 +187,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [pastel, white]
-    tags: [hills, mint, landscape]
+    tags: [hills, mint, landscape, bundled]
     starter: false
     accent: "#A9DBC4"
     focal: { x: 0.66, y: 0.50 }
@@ -221,9 +221,9 @@ wallpapers:
         wallpaper. The hills stack up the frame with the middle ridge at about 52% of the height and a pale
         gradient sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size, including the left icon and bottom taskbar safe zones, on 2026-10-02."
+    approved: true
+    rawSha256: {L: "618d7de620a61fcd23bc503fd0b1b70e171b4f737c00b2ad8a17b42d29a086a9"}
 
   - id: pd-06
     title: "Lavender Moon Dune"

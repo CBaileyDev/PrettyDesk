@@ -1,24 +1,24 @@
 {
-  "updatedUtc": "2026-10-01T07:09:16.444917+00:00",
+  "updatedUtc": "2026-10-02T13:39:04.955000+00:00",
   "status": "IN_PROGRESS",
-  "wallpapersRequired": 289,
+  "wallpapersRequired": 286,
   "mastersRequired": {
-    "L": 289,
-    "U": 289,
-    "P": 289
+    "L": 286,
+    "U": 286,
+    "P": 286
   },
   "mastersGenerated": {
-    "L": 197,
+    "L": 215,
     "U": 32,
     "P": 32
   },
-  "wallpapersBuilt": 184,
-  "wallpapersInCatalog": 169,
+  "wallpapersBuilt": 209,
+  "wallpapersInCatalog": 189,
   "starterCollectionsBundled": 14,
   "remaining": {
-    "L": 92,
-    "U": 257,
-    "P": 257
+    "L": 71,
+    "U": 254,
+    "P": 254
   },
   "note": "Generation is not complete until every required master is generated, visually reviewed, built and cataloged."
 }

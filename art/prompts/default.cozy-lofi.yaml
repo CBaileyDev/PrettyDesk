@@ -57,7 +57,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [wood, pastel]
-    tags: [nook, books, window-seat]
+    tags: [nook, books, window-seat, bundled]
     starter: false
     accent: "#EFA85A"
     focal: { x: 0.68, y: 0.54 }
@@ -91,9 +91,9 @@ wallpapers:
         wallpaper. The window seat sits at the lower center at about 60% of the height, with the round window
         above it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "f13b13b9685dbba499811cb38dce33caf3c8b608800dd89a70bd4f4b3972f977"}
 
   - id: cl-03
     title: "Rooftop at Dusk"
@@ -316,10 +316,10 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black, wood]
-    tags: [attic, moon, stars]
+    tags: [attic, moon, stars, bundled]
     starter: false
     accent: "#EBA05C"
-    focal: { x: 0.50, y: 0.46 }
+    focal: { x: 0.50, y: 0.30 }
     upscaler: x4plus-anime
     grain: 0.15
     portrait: true
@@ -332,7 +332,7 @@ wallpapers:
         Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
         Palette: #EBA05C, #26355E, #6D4C6E with a pale moon #E9E7F2. Mood: dreamy, quiet, snug.
         Composition: the round window and the moon, a centered and symmetrical composition, sits about 40–60%
-        across and 34–58% down; the room is balanced on both sides so the image holds with hidden icons. The
+        across and 28–58% down; the room is balanced on both sides so the image holds with hidden icons. The
         left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
         important element inside the central 80% of the width and the middle 70% of the height so the image can
         be cropped to other screen shapes.
@@ -351,6 +351,6 @@ wallpapers:
         wallpaper. The round window sits centered at about 42% of the height, with the lamp and chest glowing
         below it. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size; the icon column and taskbar strips remain quiet on 2026-10-02."
+    approved: true
+    rawSha256: {L: "83759877f53db9c6afe9a3fd292ef58f258586e4bc72955bcf087759fc3fc582"}

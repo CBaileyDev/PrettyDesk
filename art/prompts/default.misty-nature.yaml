@@ -188,7 +188,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [white, wood]
-    tags: [lake, morning, reflection]
+    tags: [lake, morning, reflection, bundled]
     starter: false
     accent: "#9BB2B8"
     focal: { x: 0.50, y: 0.52 }
@@ -223,9 +223,9 @@ wallpapers:
         wallpaper. The shoreline sits at about 52% of the height, with pale sky above and mirrored water below.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in the contact sheet by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "e76b6d15475675d25c9e9433f0d077247c46e3ebfda8512997fe5f66b9593413"}
 
   - id: mn-06
     title: "Cliffs in Sea Mist"

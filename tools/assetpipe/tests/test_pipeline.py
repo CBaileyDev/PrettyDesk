@@ -192,6 +192,19 @@ def test_prompts_markdown_contains_copy_blocks_and_file_names(layout):
     assert "art/raw/default.matte-black/mb-01_L.png" in md and "_U.png" in md and "_P.png" in md
     assert md.count("```text") == 1 + 3  # style bible + three prompts
     assert "1 packs · 1 wallpapers" in md
+    assert "follows the pack's art mode" in md
+    assert "known character" not in md
+
+
+def test_prompt_markdown_identifies_scoped_named_fan_art(layout):
+    pack = setup_pack(layout)
+    pack.art_mode = "named-fan-art"
+    pack.named_subjects = ["Octane"]
+
+    md = render_prompts.render([pack])
+
+    assert "**Named fan art:** Octane." in md
+    assert "no implied official endorsement" in md
 
 
 def test_starter_set_copies_the_starter_variant_and_every_thumbnail_and_refuses_unapproved(layout, monkeypatch):

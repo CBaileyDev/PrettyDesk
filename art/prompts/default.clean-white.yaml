@@ -57,7 +57,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [white]
-    tags: [paper, geometric, minimal]
+    tags: [paper, geometric, minimal, bundled]
     starter: false
     accent: "#BDB7AB"
     focal: { x: 0.50, y: 0.50 }
@@ -92,9 +92,9 @@ wallpapers:
         wallpaper. The folded planes stack vertically around the center, with the sharpest fold at about 48% of
         the height. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "db182ffeb79085709f6540d120cea0faf2887b69c687df26635a0edc97ae194e"}
 
   - id: cw-03
     title: "Curved White Wall"
@@ -144,10 +144,10 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [white]
-    tags: [snow, winter, minimal]
+    tags: [snow, winter, minimal, bundled]
     starter: false
     accent: "#C9CED3"
-    focal: { x: 0.64, y: 0.55 }
+    focal: { x: 0.70, y: 0.46 }
     upscaler: x4plus
     grain: 0.3
     portrait: true
@@ -159,7 +159,7 @@ wallpapers:
         shade. Everything is hushed and nearly white.
         Style: high-key landscape photography, fine tonal range, minimalist winter calm.
         Palette: #F7F7F5, #E9EBEC, #D5D9DD with a faint blue-grey ridge #C9CED3. Mood: hushed, spacious, cool.
-        Composition: the faint ridge and the nearest snow ripples sits about 54–74% across and 46–64% down; the
+        Composition: the faint ridge and the nearest snow ripples sit about 54–74% across and 46–64% down; the
         horizon sits about one third from the bottom. The left 15% and the bottom 8% stay calm and low-detail
         (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
         and the middle 70% of the height so the image can be cropped to other screen shapes.
@@ -178,9 +178,9 @@ wallpapers:
         wallpaper. The snowfield fills the lower 60% with the faint ridge at about 58% of the height and a pale,
         empty sky above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "83b3d68c80932c41dc870761bd5eb288fb2558a5383d2ce03414a97a7230d890"}
 
   - id: cw-05
     title: "Ceramic Forms"

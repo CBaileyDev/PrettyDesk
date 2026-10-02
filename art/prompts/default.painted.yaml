@@ -234,7 +234,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [white, wood, pastel]
-    tags: [harbor, haze, boats]
+    tags: [harbor, haze, boats, bundled]
     starter: false
     accent: "#A8B8C4"
     focal: { x: 0.65, y: 0.50 }
@@ -269,9 +269,9 @@ wallpapers:
         wallpaper. The boats float in the lower center at about 58% of the height, over still water with pale
         haze rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in the contact sheet by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "8f629ff95bfd93ad39787c4572da2b2f0817503a9367f961b175ef182f6319e1"}
 
   - id: pa-07
     title: "Birch Grove in Autumn"

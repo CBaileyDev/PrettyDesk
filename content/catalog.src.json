@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026.10.01.7",
+  "catalogVersion": "2026.10.02.8",
   "minAppVersion": "1.0.0",
   "contentBaseUrl": "",
   "excludeExeNames": [
@@ -882,6 +882,44 @@
               "sha256": "af47489f54a04c1f1b8a70f69522407c28993e1f9bd2b7fda88b54841b3e55be"
             }
           }
+        },
+        {
+          "id": "ar-03",
+          "title": "Arches in Afternoon Sun",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "arches",
+            "sun",
+            "stone",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white",
+            "wood"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.5
+          },
+          "accent": "#D8CDB8",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.architectural/v0/ar-03_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 40590,
+            "sha256": "120d8de44c790733b49e1b5d52d025b2b763f91799f486068660a18161de06c1"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.architectural/v0/ar-03_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 2105170,
+              "sha256": "cf4499c92a0d7ad2c4e00bf66398206d5ece0393fbea02312a8c8e237a18abeb"
+            }
+          }
         }
       ]
     },
@@ -960,6 +998,80 @@
               "h": 3840,
               "bytes": 1476802,
               "sha256": "a1791ac44dcd36fe52590f4f26db35082f636eea5a1d91a61ea18a603afda06b"
+            }
+          }
+        },
+        {
+          "id": "cw-02",
+          "title": "Folded Paper",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "paper",
+            "geometric",
+            "minimal",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white"
+          ],
+          "focal": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "accent": "#BDB7AB",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.clean-white/v0/cw-02_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 14578,
+            "sha256": "2583b86fba9de632a7579ec3f727daf2c24d95666dabfc4c43cb2ac1cbcb4c6d"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.clean-white/v0/cw-02_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1050860,
+              "sha256": "484481a6d0405f6b4a2a61d3c98407880b3fd7e211f57855ede70143e2d2a019"
+            }
+          }
+        },
+        {
+          "id": "cw-04",
+          "title": "Snowfield Haze",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "snow",
+            "winter",
+            "minimal",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white"
+          ],
+          "focal": {
+            "x": 0.7,
+            "y": 0.46
+          },
+          "accent": "#C9CED3",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.clean-white/v0/cw-04_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 20268,
+            "sha256": "fa36051518aa0255823777e2aeef660299025b789f1d571b65d95150b6c3fc78"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.clean-white/v0/cw-04_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1158901,
+              "sha256": "70cff9aab1157636c0dccbba98667124c7990a5bcb6bbc4ed13a3af40c699c10"
             }
           }
         }
@@ -1043,6 +1155,82 @@
               "sha256": "de00459cafb12f073ff032b27f8d59d89f1b9a5c712f572d928f7cdb97f8e7de"
             }
           }
+        },
+        {
+          "id": "cl-02",
+          "title": "Reading Nook at Night",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "nook",
+            "books",
+            "window-seat",
+            "bundled"
+          ],
+          "setupMatch": [
+            "wood",
+            "pastel"
+          ],
+          "focal": {
+            "x": 0.68,
+            "y": 0.54
+          },
+          "accent": "#EFA85A",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.cozy-lofi/v0/cl-02_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 42822,
+            "sha256": "ba2c2f682638ba19b6a57c194cb4bfefcda4ad0abb270d8b909799c8f3987d8b"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.cozy-lofi/v0/cl-02_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1731407,
+              "sha256": "75ff367e495f65dd89b480ce756e4522aadf8f91bdc79eaffb67926213fb9b31"
+            }
+          }
+        },
+        {
+          "id": "cl-08",
+          "title": "Attic Window Moon",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "attic",
+            "moon",
+            "stars",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "wood"
+          ],
+          "focal": {
+            "x": 0.5,
+            "y": 0.3
+          },
+          "accent": "#EBA05C",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.cozy-lofi/v0/cl-08_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 44155,
+            "sha256": "9689283e47e21df5c5d83b5341839223932cd56a0ba00440e752e1c81d9f5d08"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.cozy-lofi/v0/cl-08_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1794299,
+              "sha256": "309e440b8141fe3e92f5db8eac2fb175ea7a6b95dbabfad582f0b0e05e9e5f67"
+            }
+          }
         }
       ]
     },
@@ -1123,6 +1311,44 @@
               "sha256": "18e87540fbaa942ded8ffe8d480df675f5625550af3fa3ec07a6eaba22e06458"
             }
           }
+        },
+        {
+          "id": "ds-02",
+          "title": "Eclipse Corona",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "eclipse",
+            "corona",
+            "symmetrical",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "rgb"
+          ],
+          "focal": {
+            "x": 0.5,
+            "y": 0.46
+          },
+          "accent": "#E8DCC8",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.deep-space/v0/ds-02_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 17326,
+            "sha256": "74d8f8c5c31524f31875c4134e3b21812da1a5a80a426b20ac062b40ade08395"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.deep-space/v0/ds-02_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1032122,
+              "sha256": "f01166c14c572ce4622b40dacf950efb59a21e7d8ce2a80c436d25945912deae"
+            }
+          }
         }
       ]
     },
@@ -1201,6 +1427,80 @@
               "h": 3840,
               "bytes": 1129519,
               "sha256": "a76bdefb9f82da300835bb21a8f3435018c3dccc4ebbcdc6f525ac05d7e3ed71"
+            }
+          }
+        },
+        {
+          "id": "mb-06",
+          "title": "Monolith in the Fog",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "monolith",
+            "fog",
+            "moody",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black"
+          ],
+          "focal": {
+            "x": 0.62,
+            "y": 0.5
+          },
+          "accent": "#9AA3AE",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.matte-black/v0/mb-06_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 14868,
+            "sha256": "a962c5a7c7b794bf6586ef92b8dce5774ba91fe6b8396dce3572d06d1b17b11b"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.matte-black/v0/mb-06_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 859141,
+              "sha256": "0ca3af18aa8f6200490fca938f13392b2fc1e0ba59bd13cf7916e5d85cddf626"
+            }
+          }
+        },
+        {
+          "id": "mb-03",
+          "title": "Basalt Columns at Dusk",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "stone",
+            "water",
+            "geometric",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.52
+          },
+          "accent": "#7F8FA3",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.matte-black/v0/mb-03_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 25467,
+            "sha256": "fd8fa19b67933e1d4664ec6886a8a87e09958028fc63f66b79c3a076e1b5b7cb"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.matte-black/v0/mb-03_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1333474,
+              "sha256": "7fda94256540d086933f50d93a280ffa573970c5c9496c23136456f6ec61fa31"
             }
           }
         }
@@ -1284,6 +1584,44 @@
               "sha256": "299eb3a6469e269bc62f343ae57ba2ce13fc1c436b707317bcbd28475189bb53"
             }
           }
+        },
+        {
+          "id": "mn-05",
+          "title": "Still Lake Morning",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "lake",
+            "morning",
+            "reflection",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white",
+            "wood"
+          ],
+          "focal": {
+            "x": 0.5,
+            "y": 0.52
+          },
+          "accent": "#9BB2B8",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.misty-nature/v0/mn-05_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 34290,
+            "sha256": "8e690b31d23fc1109b3dc748103adfd619cf8ac331cb3bab386934061ce41364"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.misty-nature/v0/mn-05_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1373273,
+              "sha256": "cf964e9bd624a188bf0532f74aa685e68a1671b43c4f698a6fcbce0e41e17a22"
+            }
+          }
         }
       ]
     },
@@ -1362,6 +1700,82 @@
               "h": 3840,
               "bytes": 1490926,
               "sha256": "4062dcb6f75e96286d9b9d7e732446d113e8d2141458ecee17b79b5d13c90a3b"
+            }
+          }
+        },
+        {
+          "id": "nm-03",
+          "title": "Minimal Synth Sunset",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "orange",
+            "sunset",
+            "synthwave",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "rgb"
+          ],
+          "focal": {
+            "x": 0.5,
+            "y": 0.52
+          },
+          "accent": "#FF7A1A",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.neon-minimal/v0/nm-03_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 13321,
+            "sha256": "138d9cb4c14f0b5cafe13da83d377bca5aaced5c25bb21c5757060114f0e56ac"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.neon-minimal/v0/nm-03_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 794470,
+              "sha256": "35b054969534073755befcf3d1174123566bb184a1869fecd20e30dd3d92161e"
+            }
+          }
+        },
+        {
+          "id": "nm-04",
+          "title": "Violet Ring in Fog",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "violet",
+            "ring",
+            "fog",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "rgb"
+          ],
+          "focal": {
+            "x": 0.66,
+            "y": 0.42
+          },
+          "accent": "#8A5CFF",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.neon-minimal/v0/nm-04_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 18155,
+            "sha256": "1ae9ae1ade312debc32a1762a0ec9596724bd707daf4bc2a85eadaa30a4e6b54"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.neon-minimal/v0/nm-04_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1025509,
+              "sha256": "cf7c0916d094eeddbf7f3bffb4e2df6ea993b65bd2d694e84c36d5e6ae42837b"
             }
           }
         }
@@ -1444,6 +1858,45 @@
               "sha256": "5ebec7d83a1bb7e52d26a7659d22d6d71618e1fcf672f4e12bed3ec80aad5004"
             }
           }
+        },
+        {
+          "id": "pa-06",
+          "title": "Harbor in Morning Haze",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "harbor",
+            "haze",
+            "boats",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white",
+            "wood",
+            "pastel"
+          ],
+          "focal": {
+            "x": 0.65,
+            "y": 0.5
+          },
+          "accent": "#A8B8C4",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.painted/v0/pa-06_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 58900,
+            "sha256": "ecc093d59198ecd2ac58956cb0fe9ff20142bd48f5741e02149d259eb06344a7"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.painted/v0/pa-06_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 2556558,
+              "sha256": "cd1170c27ff1e8b38682256b997fcd5ec9712106eb5eb33bab29ff5d135d64f1"
+            }
+          }
         }
       ]
     },
@@ -1522,6 +1975,82 @@
               "h": 3840,
               "bytes": 1026264,
               "sha256": "34cb1a5774451595ed85805edfebf99f096ffe5133b0414edc795afe5bad4bab"
+            }
+          }
+        },
+        {
+          "id": "pd-03",
+          "title": "Clay Shapes",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "3d",
+            "clay",
+            "shapes",
+            "bundled"
+          ],
+          "setupMatch": [
+            "pastel",
+            "white"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.52
+          },
+          "accent": "#BFA8E8",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.pastel/v0/pd-03_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 12117,
+            "sha256": "9567b4b548825a071c8aeb3b5b5b2659e098828aa18e8fe36238158b348beb39"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.pastel/v0/pd-03_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 735489,
+              "sha256": "5edd2cf6d50f816015a429ad7efa0fc96907b46079f8b818bd5ee34096d5c4c7"
+            }
+          }
+        },
+        {
+          "id": "pd-05",
+          "title": "Mint Hills",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "hills",
+            "mint",
+            "landscape",
+            "bundled"
+          ],
+          "setupMatch": [
+            "pastel",
+            "white"
+          ],
+          "focal": {
+            "x": 0.66,
+            "y": 0.5
+          },
+          "accent": "#A9DBC4",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.pastel/v0/pd-05_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 19157,
+            "sha256": "f7cb46483fa932b16935842444947cf9660f7ee770ec2559987c0c653456e0ff"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.pastel/v0/pd-05_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 865707,
+              "sha256": "af41ab59a46a27359baa0b6aa2a2ca5e63146cd25d0c4ce031e7f8f75fa6810c"
             }
           }
         }
@@ -1604,6 +2133,81 @@
               "sha256": "f5f845ebe562f5d40bb46eb7f096b565239a2f85728c9ac4eaefac91c6d13edf"
             }
           }
+        },
+        {
+          "id": "sb-02",
+          "title": "Misty Fern Forest",
+          "role": "default",
+          "tone": "mid",
+          "tags": [
+            "ferns",
+            "forest",
+            "mist",
+            "bundled"
+          ],
+          "setupMatch": [
+            "wood"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.52
+          },
+          "accent": "#7A8F5F",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.sage-botanical/v0/sb-02_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 61359,
+            "sha256": "78155316744d0b404da633352953a2e4f4adb9e04960bd249c286287d7bf1431"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.sage-botanical/v0/sb-02_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 2074420,
+              "sha256": "ec749c3a6e54d1ad25e081010e28e7c458f11b87ff1cc4fececbb3f75b645f7c"
+            }
+          }
+        },
+        {
+          "id": "sb-04",
+          "title": "Eucalyptus on Linen",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "eucalyptus",
+            "linen",
+            "still-life",
+            "bundled"
+          ],
+          "setupMatch": [
+            "wood",
+            "white"
+          ],
+          "focal": {
+            "x": 0.68,
+            "y": 0.48
+          },
+          "accent": "#A7B79A",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.sage-botanical/v0/sb-04_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 39914,
+            "sha256": "4c77f8f38d03c6f7c6bbbcaea6c96015e9ed3074b14ee35ad4261d3bb873afa6"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.sage-botanical/v0/sb-04_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 2008912,
+              "sha256": "9c73092bb4c1a19e4d5ca895207ca5622c90046a974767b57af9ed2e7ec877a7"
+            }
+          }
         }
       ]
     },
@@ -1682,6 +2286,82 @@
               "h": 3840,
               "bytes": 846910,
               "sha256": "e98f5be6f4b6bcf328bb909c0ee0bb334ca81439df8ae0a853fdacfa27718af3"
+            }
+          }
+        },
+        {
+          "id": "sg-04",
+          "title": "Graphite Aura",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "graphite",
+            "aura",
+            "minimal",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "rgb"
+          ],
+          "focal": {
+            "x": 0.68,
+            "y": 0.5
+          },
+          "accent": "#7B8594",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.soft-gradients/v0/sg-04_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 10574,
+            "sha256": "6cc2ffdbe19d8f92b344dec04154ee2c1fa3906007b13e3bff9ecee0e288383f"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.soft-gradients/v0/sg-04_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 800019,
+              "sha256": "f08ecfdc07d040db0bf4d15e4299dace4ca24e4175bfb66047b56999c4bd53ac"
+            }
+          }
+        },
+        {
+          "id": "sg-05",
+          "title": "Mint Frost Orbs",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "mint",
+            "orbs",
+            "glass",
+            "bundled"
+          ],
+          "setupMatch": [
+            "white",
+            "pastel"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.56
+          },
+          "accent": "#9FDCC4",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.soft-gradients/v0/sg-05_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 16061,
+            "sha256": "f120865c0d7916d9a3afa641daf390032aad973aa4e2a0b21e9a6a34006a1d4a"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.soft-gradients/v0/sg-05_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 871664,
+              "sha256": "2c2561319f50a2735a2e2a56fd51b02c895f9b0e29cc537965a7f8ad65f7bc9f"
             }
           }
         }
@@ -1764,6 +2444,44 @@
               "sha256": "3c83f43c771a90df2575892f516eb42df74be73c2545d21b088da22bb36eb830"
             }
           }
+        },
+        {
+          "id": "sn-02",
+          "title": "Night Coastline",
+          "role": "default",
+          "tone": "dark",
+          "tags": [
+            "coast",
+            "night",
+            "sea",
+            "bundled"
+          ],
+          "setupMatch": [
+            "black",
+            "rgb"
+          ],
+          "focal": {
+            "x": 0.64,
+            "y": 0.52
+          },
+          "accent": "#58789A",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.steel-blue-night/v0/sn-02_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 23421,
+            "sha256": "b221ae73bdc89b5393334741e90f2937e30059bb185c3e6732c1cc8ec0cc2df8"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.steel-blue-night/v0/sn-02_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1429833,
+              "sha256": "ebf88eec58cd12265b605922627a40ff3deb44312c18639a7172553fda20ccdb"
+            }
+          }
         }
       ]
     },
@@ -1842,6 +2560,44 @@
               "h": 3840,
               "bytes": 1988474,
               "sha256": "04604d2b94214c19f26bd6daceed1344480f03d0807aea097c6ec951275f2a09"
+            }
+          }
+        },
+        {
+          "id": "wm-06",
+          "title": "Oak and Linen Morning",
+          "role": "default",
+          "tone": "light",
+          "tags": [
+            "oak",
+            "interior",
+            "morning",
+            "bundled"
+          ],
+          "setupMatch": [
+            "wood",
+            "white"
+          ],
+          "focal": {
+            "x": 0.68,
+            "y": 0.54
+          },
+          "accent": "#CDAE84",
+          "starter": false,
+          "thumb": {
+            "path": "packs/default.warm-minimal/v0/wm-06_thumb.jpg",
+            "w": 640,
+            "h": 360,
+            "bytes": 33024,
+            "sha256": "2ea92bb5785c63d971875400fcf6ea945980656cd1307d65f74b1adeeb9f9ae5"
+          },
+          "variants": {
+            "16x9": {
+              "path": "packs/default.warm-minimal/v0/wm-06_16x9.jpg",
+              "w": 3840,
+              "h": 2160,
+              "bytes": 1744817,
+              "sha256": "60d3a64a458646d5c1447ec96a9adf82e61243da4b42f9e6e9ea781ad70f31cd"
             }
           }
         }

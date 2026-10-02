@@ -103,7 +103,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black, rgb]
-    tags: [orange, sunset, synthwave]
+    tags: [orange, sunset, synthwave, bundled]
     starter: false
     accent: "#FF7A1A"
     focal: { x: 0.50, y: 0.52 }
@@ -139,19 +139,19 @@ wallpapers:
         wallpaper. The half-sun sits centered at about 56% of the height, with the dark plain and faint grid
         below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "8d6f3b2337b183a210f871518b7b90ced3efb3948d455ee4fa722c7e63563b32"}
 
   - id: nm-04
     title: "Violet Ring in Fog"
     role: default
     tone: dark
     setupMatch: [black, rgb]
-    tags: [violet, ring, fog]
+    tags: [violet, ring, fog, bundled]
     starter: false
     accent: "#8A5CFF"
-    focal: { x: 0.66, y: 0.48 }
+    focal: { x: 0.66, y: 0.42 }
     upscaler: x4plus
     grain: 0.25
     portrait: true
@@ -183,9 +183,9 @@ wallpapers:
         wallpaper. The ring stands in the center at about 45% of the height, with fog filling the lower half.
         Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no text,
         letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size; the left icon area and lower taskbar band stay calm on 2026-10-02."
+    approved: true
+    rawSha256: {L: "63611a27b8f50b6521466b5cb39b938c8f58955a6b860428be96e803722cb2a7"}
 
   - id: nm-05
     title: "Magenta Horizon Grid"

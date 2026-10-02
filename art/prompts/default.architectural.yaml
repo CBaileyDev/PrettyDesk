@@ -102,7 +102,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [white, wood]
-    tags: [arches, sun, stone]
+    tags: [arches, sun, stone, bundled]
     starter: false
     accent: "#D8CDB8"
     focal: { x: 0.64, y: 0.50 }
@@ -136,9 +136,9 @@ wallpapers:
         wallpaper. The arches recede in perspective with the nearest arch at about 50% of the height and its
         shadow below. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "8c722b4453ae03fd0bf820ca6f0dfcd9cda10df9e09998ec518fee2191da3df3"}
 
   - id: ar-04
     title: "Minimal Pool"

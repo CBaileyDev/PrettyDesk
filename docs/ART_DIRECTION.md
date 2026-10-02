@@ -135,12 +135,13 @@ Each game pack MUST contain at least one `tone: dark` wallpaper and SHOULD conta
 The owner has approved recognizable Rocket League fan art, including the game
 name, Octane, Fennec and Batmobile in generation prompts. This supersedes the old
 blanket prohibition for that art direction. The [pilot document](updates/rocket-league-fan-art.md)
-contains full named-subject drafts and the pending pipeline migration.
+records the creative direction; the [scoped-mode implementation](updates/2026-10-02-rocket-league-prompt-mode.md)
+records current prompt and lint behavior.
 
 | Mode | Prompt direction | Current implementation |
 |---|---|---|
-| Generic inspiration (default) | Translate genre, setting, palette, motifs, weather and materials without named game subjects | Existing YAML and lint behavior |
-| Approved recognizable fan art | Use explicitly approved game, location and car names; recognizable forms in newly authored compositions | Rocket League direction approved; per-pack pipeline mode still pending |
+| Generic inspiration (default) | Translate genre, setting, palette, motifs, weather and materials without named game subjects | Default mode; known Rocket League subjects remain forbidden in generic packs |
+| Approved recognizable fan art | Use explicitly approved game, location and car names; recognizable forms in newly authored compositions | Rocket League opts in with `artMode: named-fan-art`; `namedSubjects` selects names from its reviewed allowlist |
 
 Both modes retain desktop safe zones, full written prompts, technical review,
 provenance and deliberate shot variety. No readable text, HUD, watermark or copied
@@ -148,11 +149,11 @@ official key-art composition. Do not extract official assets or imply endorsemen
 Recognizable approved car geometry is a review goal for the Rocket League pilot,
 not an automatic rejection reason.
 
-The existing `inspiration:` YAML block and linter still implement generic mode;
-do not weaken validation globally or claim the new drafts already pass it. Keep
-named drafts in update docs until parsing, scoped lint and generated review text
-are migrated together. Public release applicability and attribution are tracked
-separately in the [pilot release checklist](updates/rocket-league-fan-art.md#review-and-distribution).
+Both modes keep the full prompt, safe zones, technical and composition checks,
+approval and source hashes. The named exception applies only to a reviewed pack
+and only to its declared subjects; it does not relax banned phrases or art review.
+Public release applicability and attribution remain separate in the
+[pilot release checklist](updates/rocket-league-fan-art.md#review-and-distribution).
 
 ---
 

@@ -57,7 +57,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black, rgb]
-    tags: [coast, night, sea]
+    tags: [coast, night, sea, bundled]
     starter: false
     accent: "#58789A"
     focal: { x: 0.64, y: 0.52 }
@@ -91,9 +91,9 @@ wallpapers:
         wallpaper. The coastline curves through the lower center, with the headland lights at about 55% of the
         height under a dark sky. Same lighting, palette, materials and rendering style. Keep the bottom 10%
         calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "568592775e41cee27f3852b03e43e45821520e1379a7a0f47a881998dbb65e6b"}
 
   - id: sn-03
     title: "Cold Concrete Stair"

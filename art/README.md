@@ -2,8 +2,14 @@
 
 [ART_DIRECTION](../docs/ART_DIRECTION.md) defines composition, quality and the YAML
 format. [Rocket League fan-art drafts](../docs/updates/rocket-league-fan-art.md) record
-the owner's new direction. Four replacement car landscapes are now reviewed, built
-and included in the offline bundle; see [the repair decision](../docs/adr/0011-glass-and-responsive-navigation.md).
+the owner's new direction. Four selected Rocket League pack landscapes are reviewed,
+built and included in the offline bundle, including three named-car scenes; see the
+[scoped prompt-mode record](../docs/updates/2026-10-02-rocket-league-prompt-mode.md).
+Twenty new default alternates now fill sparse shelves across the fourteen existing
+collections. Every collection has at least two wallpapers and exactly one starter;
+eight now offer three choices, including Clean White's Snowfield Haze. No category
+was added. The selection and offline-size tradeoff are recorded in the
+[Oct 2 implementation note](../docs/updates/2026-10-02-top-navigation-and-default-art.md).
 
 | Location | Ownership |
 |---|---|
@@ -34,4 +40,8 @@ and hashes, then assemble reviewed content. See [tool ownership](../tools/README
 and [content ownership](../content/README.md). A landscape master alone is not proof
 that dedicated ultrawide/portrait art is finished or that the pack is available online.
 
-Generic inspiration remains the default. Rocket League opts into named-fan-art with a reviewed allowlist; all other lint checks remain active. Dedicated ultrawide/portrait masters and public distribution rights review remain separate from the local landscape bundle.
+Generic inspiration remains the default. Rocket League opts into named-fan-art
+with a reviewed allowlist and an explicit `namedSubjects` selection; generic packs
+continue to reject those subjects. All other lint checks remain active. Dedicated
+ultrawide/portrait masters and public distribution-rights review remain separate
+from the local landscape bundle.

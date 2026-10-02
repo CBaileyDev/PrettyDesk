@@ -145,7 +145,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black, rgb]
-    tags: [graphite, aura, minimal]
+    tags: [graphite, aura, minimal, bundled]
     starter: false
     accent: "#7B8594"
     focal: { x: 0.68, y: 0.50 }
@@ -179,19 +179,19 @@ wallpapers:
         wallpaper. The aura rises from the lower right toward the center at about 55% of the height, with
         charcoal above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in the contact sheet by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "1f72b2a97a1c4eeaf68c02d6b77bbbc2df0d3983ec47f34f566e3cdfada6ad25"}
 
   - id: sg-05
     title: "Mint Frost Orbs"
     role: default
     tone: light
     setupMatch: [white, pastel]
-    tags: [mint, orbs, glass]
+    tags: [mint, orbs, glass, bundled]
     starter: false
     accent: "#9FDCC4"
-    focal: { x: 0.64, y: 0.50 }
+    focal: { x: 0.64, y: 0.56 }
     upscaler: x4plus-anime
     grain: 0.3
     portrait: true
@@ -221,9 +221,9 @@ wallpapers:
         wallpaper. The orb cluster sits in the lower center, the largest orb rising to about 45% of the height,
         over a pale mint field. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size; the left icon field and bottom taskbar band stay low-detail on 2026-10-02."
+    approved: true
+    rawSha256: {L: "fe242aacbbf03ab3d7b3431ee4e6220b143b2447c9dd0fa00f28e90b8ca993fb"}
 
   - id: sg-06
     title: "Sunset Mesh"

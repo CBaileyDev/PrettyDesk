@@ -1,8 +1,10 @@
 """Assemble reviewed, built art into the offline catalog and host staging directory."""
 import argparse
 import json
+import re
 import shutil
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +17,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--reviewed", type=Path, required=True, help="JSON list of reviewed wallpaper IDs")
 args = parser.parse_args()
 reviewed = set(json.loads(args.reviewed.read_text(encoding="utf-8")))
+review_date = date.today().isoformat()
+today_version = date.today().strftime("%Y.%m.%d")
 layout = Layout(ROOT)
 catalog = json.loads(layout.catalog_src.read_text(encoding="utf-8"))
 staged = layout.publish_dir
@@ -32,10 +36,9 @@ for pack in load_all(layout.prompts):
         existing[wp.id] = publish.wallpaper_entry(wp, built, relative)
         text = pack.path.read_text(encoding="utf-8")
         # Keep author formatting and prompts intact, only update the reviewed entry.
-        import re
         pattern = r"(  - id: " + re.escape(wp.id) + r"\n)(.*?)(?=\n  - id: |\Z)"
         text = re.sub(pattern, lambda m: m[1] + m[2].replace("approved: false", "approved: true")
-                      .replace('reviewNotes: ""', 'reviewNotes: "Generated with built-in imagegen; visually reviewed in contact sheet by Codex on 2026-10-01."'), text, flags=re.S)
+                      .replace('reviewNotes: ""', f'reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on {review_date}."'), text, flags=re.S)
         pack.path.write_text(text, encoding="utf-8")
         total += 1
     entry["wallpapers"] = list(existing.values())
@@ -45,7 +48,9 @@ for pack in load_all(layout.prompts):
             destination = staged / ref["path"]
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
-catalog["catalogVersion"] = "2026.10.01." + str(int(catalog["catalogVersion"].split(".")[-1]) + 1)
+parts = catalog["catalogVersion"].split(".")
+revision = int(parts[-1]) + 1 if ".".join(parts[:3]) == today_version else 1
+catalog["catalogVersion"] = f"{today_version}.{revision}"
 layout.catalog_src.write_text(json.dumps(catalog, indent=2) + "\n", encoding="utf-8")
 (staged / "catalog.json").write_bytes(layout.catalog_src.read_bytes())
 report = starter.build_starter(layout, load_all(layout.prompts))

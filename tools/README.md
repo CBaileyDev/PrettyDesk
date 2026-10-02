@@ -30,7 +30,8 @@ and the relevant workflow before running them.
 The main assetpipe code is under [assetpipe/assetpipe](assetpipe/assetpipe), with
 [tests](assetpipe/tests) and [pyproject.toml](assetpipe/pyproject.toml). Canonical layout
 is defined in [paths.py](assetpipe/assetpipe/paths.py). Prompt lint is in
-[lint.py](assetpipe/assetpipe/lint.py); it currently rejects game names in prompt text.
+[lint.py](assetpipe/assetpipe/lint.py); generic prompts reject known game/subject names,
+while the approved Rocket League pack can declare a limited set of named fan-art subjects.
 
 `tools/bin`, `.venv`, `.pytest_cache`, `__pycache__`, `*.egg-info`, `bin` and `obj` are
 generated tooling outputs. Do not treat them as source or delete them without checking

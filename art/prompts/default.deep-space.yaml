@@ -59,7 +59,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black, rgb]
-    tags: [eclipse, corona, symmetrical]
+    tags: [eclipse, corona, symmetrical, bundled]
     starter: false
     accent: "#E8DCC8"
     focal: { x: 0.50, y: 0.46 }
@@ -95,9 +95,9 @@ wallpapers:
         wallpaper. The eclipse disc sits centered at about 40% of the height, with the corona fanning out evenly
         into black space. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "ac400a9abcdb53aaae41a315d37015afeef9d957b67393d2903094559cd821ba"}
 
   - id: ds-03
     title: "Lunar Horizon"

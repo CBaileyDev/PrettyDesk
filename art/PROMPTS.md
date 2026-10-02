@@ -21,7 +21,8 @@
 - [ ] The left 15% and bottom 8% are calm; the focal point sits where the YAML says
 - [ ] Gradients and darks are smooth at 100% zoom (raise the screen brightness to check for banding)
 - [ ] It still reads well at thumbnail size
-- [ ] It does not look like official art, a screenshot or a known character
+- [ ] It follows the pack's art mode: generic inspiration, or recognizable approved fan-art
+  subjects in a new composition; no implied official endorsement
 - [ ] It feels like the rest of its pack
 
 If a check fails, regenerate and note it under `reviewNotes`. If it passes, set `approved: true` and adjust `focal` if the subject landed elsewhere.
@@ -591,7 +592,7 @@ the height, with pale sky above. Same lighting, palette, materials and rendering
 
 #### Snowfield Haze (`cw-04`)
 
-default · light · setup: white · focal 0.64, 0.55 · upscaler: x4plus · grain 0.3
+default · light · setup: white · focal 0.70, 0.46 · upscaler: x4plus · grain 0.3
 
 **Landscape (L)**: save as `art/raw/default.clean-white/cw-04_L.png`
 
@@ -602,7 +603,7 @@ across the distance on the lower third. Subtle ripples of wind on the snow surfa
 shade. Everything is hushed and nearly white.
 Style: high-key landscape photography, fine tonal range, minimalist winter calm.
 Palette: #F7F7F5, #E9EBEC, #D5D9DD with a faint blue-grey ridge #C9CED3. Mood: hushed, spacious, cool.
-Composition: the faint ridge and the nearest snow ripples sits about 54–74% across and 46–64% down; the
+Composition: the faint ridge and the nearest snow ripples sit about 54–74% across and 46–64% down; the
 horizon sits about one third from the bottom. The left 15% and the bottom 8% stay calm and low-detail
 (desktop icons and taskbar go there). Keep every important element inside the central 80% of the width
 and the middle 70% of the height so the image can be cropped to other screen shapes.
@@ -1111,7 +1112,7 @@ text, letters, logos, watermarks or UI.
 
 #### Attic Window Moon (`cl-08`)
 
-default · dark · setup: black, wood · focal 0.50, 0.46 · upscaler: x4plus-anime · grain 0.15
+default · dark · setup: black, wood · focal 0.50, 0.30 · upscaler: x4plus-anime · grain 0.15
 
 **Landscape (L)**: save as `art/raw/default.cozy-lofi/cl-08_L.png`
 
@@ -1123,7 +1124,7 @@ the warm light.
 Style: hand-painted animated-film background, soft gouache brushwork, warm and nostalgic, no characters.
 Palette: #EBA05C, #26355E, #6D4C6E with a pale moon #E9E7F2. Mood: dreamy, quiet, snug.
 Composition: the round window and the moon, a centered and symmetrical composition, sits about 40–60%
-across and 34–58% down; the room is balanced on both sides so the image holds with hidden icons. The
+across and 28–58% down; the room is balanced on both sides so the image holds with hidden icons. The
 left 15% and the bottom 8% stay calm and low-detail (desktop icons and taskbar go there). Keep every
 important element inside the central 80% of the width and the middle 70% of the height so the image can
 be cropped to other screen shapes.
@@ -2438,7 +2439,7 @@ text, letters, logos, watermarks or UI.
 
 #### Violet Ring in Fog (`nm-04`)
 
-default · dark · setup: black, rgb · focal 0.66, 0.48 · upscaler: x4plus · grain 0.25
+default · dark · setup: black, rgb · focal 0.66, 0.42 · upscaler: x4plus · grain 0.25
 
 **Landscape (L)**: save as `art/raw/default.neon-minimal/nm-04_L.png`
 
@@ -3900,7 +3901,7 @@ Strictly no text, letters, logos, watermarks or UI.
 
 #### Mint Frost Orbs (`sg-05`)
 
-default · light · setup: white, pastel · focal 0.64, 0.50 · upscaler: x4plus-anime · grain 0.3
+default · light · setup: white, pastel · focal 0.64, 0.56 · upscaler: x4plus-anime · grain 0.3
 
 **Landscape (L)**: save as `art/raw/default.soft-gradients/sg-05_L.png`
 

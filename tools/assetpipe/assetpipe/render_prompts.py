@@ -27,7 +27,8 @@ HEADER = """# PrettyDesk art prompts
 - [ ] The left 15% and bottom 8% are calm; the focal point sits where the YAML says
 - [ ] Gradients and darks are smooth at 100% zoom (raise the screen brightness to check for banding)
 - [ ] It still reads well at thumbnail size
-- [ ] It does not look like official art, a screenshot or a known character
+- [ ] It follows the pack's art mode: generic inspiration, or recognizable approved fan-art
+  subjects in a new composition; no implied official endorsement
 - [ ] It feels like the rest of its pack
 
 If a check fails, regenerate and note it under `reviewNotes`. If it passes, set `approved: true` and adjust `focal` if the subject landed elsewhere.

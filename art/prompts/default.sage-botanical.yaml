@@ -57,7 +57,7 @@ wallpapers:
     role: default
     tone: mid
     setupMatch: [wood]
-    tags: [ferns, forest, mist]
+    tags: [ferns, forest, mist, bundled]
     starter: false
     accent: "#7A8F5F"
     focal: { x: 0.64, y: 0.52 }
@@ -91,9 +91,9 @@ wallpapers:
         wallpaper. The fern fronds arch in the lower center at about 60% of the height, with trunks and mist
         rising above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "72528d195b67ecee7d33d7605979ff0d623047dbadd5b757799cca482767301e"}
 
   - id: sb-03
     title: "Moss Macro"
@@ -136,14 +136,14 @@ wallpapers:
         letters, logos, watermarks or UI.
     reviewNotes: ""
     approved: false
-    rawSha256: {}
+    rawSha256: {L: "be9e43e0751e02fef45a91e08eee96bf1defee35fdae9e221ad6052e1b1663ed"}
 
   - id: sb-04
     title: "Eucalyptus on Linen"
     role: default
     tone: light
     setupMatch: [wood, white]
-    tags: [eucalyptus, linen, still-life]
+    tags: [eucalyptus, linen, still-life, bundled]
     starter: false
     accent: "#A7B79A"
     focal: { x: 0.68, y: 0.48 }
@@ -177,9 +177,9 @@ wallpapers:
         wallpaper. The eucalyptus stems cross diagonally through the center at about 45% of the height, over
         cream linen. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly
         no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size; the left icon and lower taskbar areas remain quiet on 2026-10-02."
+    approved: true
+    rawSha256: {L: "4949a45f182cebaa18fcb359c0f4ac7caf9d3f9f8ba02e7f3e1608e2db99b0ca"}
 
   - id: sb-05
     title: "Greenhouse Glass"

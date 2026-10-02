@@ -105,7 +105,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black]
-    tags: [stone, water, geometric]
+    tags: [stone, water, geometric, bundled]
     starter: false
     accent: "#7F8FA3"
     focal: { x: 0.64, y: 0.52 }
@@ -139,9 +139,9 @@ wallpapers:
         wallpaper. The columns step down diagonally from the upper right to the lower center, with their
         reflection filling the lower half. Same lighting, palette, materials and rendering style. Keep the
         bottom 10% calm. Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; reviewed at 3840x2160 and thumbnail size, including the left icon and bottom taskbar safe zones, on 2026-10-02."
+    approved: true
+    rawSha256: {L: "7e05aaa004f9c4796764317c4a169ffed273cbd929c2feeedba61d0a37cf7de9"}
 
   - id: mb-04
     title: "Liquid Metal Droplet"
@@ -236,7 +236,7 @@ wallpapers:
     role: default
     tone: dark
     setupMatch: [black]
-    tags: [monolith, fog, moody]
+    tags: [monolith, fog, moody, bundled]
     starter: false
     accent: "#9AA3AE"
     focal: { x: 0.62, y: 0.50 }
@@ -271,9 +271,9 @@ wallpapers:
         wallpaper. The monolith stands tall at the center of the frame from 30% to 70% of the height, fog
         pooling at its base. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm.
         Strictly no text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed at full size and as a thumbnail by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "5a1cadbc0e197ba8947a37c7884f6a1691c68a908668473933c6fefdc84df905"}
 
   - id: mb-07
     title: "Carbon Light Streak"

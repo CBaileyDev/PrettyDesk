@@ -1,9 +1,25 @@
 # Aesthetics and personalization update proposal
 
-Date: 2026-10-01. Status: planning; application features below are not implemented.
+Date: 2026-10-01. Status: planning snapshot; remaining choices below are not
+automatically approved implementation work.
 The owner asked to discuss the changes first, then requested repository organization
 and update documentation. This document records that scope, the observed problems
 and the choices needed before feature implementation.
+
+Status update (2026-10-02): the top-tab navigation, responsive Library cards,
+twenty new default alternates, and four Rocket League landscape entries are
+implemented. The existing fourteen default collections remain the category
+structure; no new category was added. The navigation decision is recorded in
+[ADR 0015](../adr/0015-top-tab-navigation.md), with validation and artwork counts
+in the [implementation record](2026-10-02-top-navigation-and-default-art.md). The
+four fan-art entries include three named-car scenes and are covered by the
+[scoped prompt-mode record](2026-10-02-rocket-league-prompt-mode.md). Catalog
+`2026.10.02.8` validates with 264 offline assets; the 127.52 MiB bundle has 0.48
+MiB of remaining capacity. Dedicated ultrawide and portrait versions for the
+twenty new default alternates remain unbuilt. Delivery, expanded game research
+and optional-surface choices below remain open. Monitor-preview geometry is
+covered by coordinate-based tests and light/dark captures on the current stacked
+display setup; broader DPI and hot-plug validation remains pending.
 
 ## Direction and priorities
 
@@ -12,20 +28,21 @@ quieter during gaming, and visually coherent in Windows light and dark modes.
 Personalization should follow that reliable foundation.
 
 The owner specifically requested recognizable Rocket League fan art, allowing
-the game name and Octane, Fennec and Batmobile in prompts. That direction is approved;
-generation and pipeline integration are still pending. See the [art draft](rocket-league-fan-art.md).
+the game name and Octane, Fennec and Batmobile in prompts. That direction is
+approved and the four-entry local pilot is implemented; wider variety and public
+distribution-rights review remain separate. See the [art draft](rocket-league-fan-art.md).
 
 | Priority | Proposed change | State |
 |---|---|---|
 | 0 | Clear agent guide, source/tool maps, build/test instructions and update docs | Documentation implementation |
 | 1 | Make wallpaper delivery work in the EXE and explain unavailable packs | Delivery choice open; missing host confirmed |
-| 2 | Reduce broad detection work while a known session is active | Design proposed; benchmark and logic work pending |
+| 2 | Reduce repeated detection work | Snapshot-sort allocation reduction and stable name-only matching reuse during idle and established sessions are implemented; a deterministic idle case reduces full matches 301→21, while CPU/frame-time measurements and native liveness remain open |
 | 2 | Discover and verify the owner's installed games first | Local inventory snapshot available; broader providers pending |
-| 3 | Fix alignment, monitor geometry and content availability states | Problems identified; UI changes pending |
-| 3 | System/light/dark theme, calmer materials and generated sidebar banner | Visual direction proposed; mockups/banner pending |
-| 4 | Rocket League art pilot, then game-specific scenic variety | Named fan-art direction approved; pilot pending |
+| 3 | Fix alignment, monitor geometry and content availability states | Current Library capture shows consistent availability-chip baselines; monitor coordinates and display changes have test coverage; broader DPI and hot-plug validation remains |
+| 3 | System/light/dark theme and calmer materials | Light/dark captures and selected-state contrast checked; top navigation supersedes the sidebar/banner concept (ADR 0015); keyboard, live high-contrast and DPI acceptance remains |
+| 4 | Rocket League art pilot, then game-specific scenic variety | Four-entry offline pilot is implemented; public distribution-rights review and broader scenic variety remain |
 | 5 | Research and verify a broader top-100 candidate catalog | Method proposed; full dataset not compiled |
-| 6 | Optional taskbar appearance and desktop clocks/music widgets | Feasibility and lifecycle prototypes pending |
+| 6 | Optional taskbar appearance and desktop clocks/music widgets | Clock, now-playing metadata and playback visualizer prototype implemented under ADR 0008; native acceptance remains. Taskbar appearance remains open. |
 
 ## 1. Wallpaper delivery in the EXE
 
@@ -54,34 +71,38 @@ Presentation Library/GameDetail view models, using the [source map](../../src/RE
 
 ## 2. Detection cadence and performance
 
-Observed: `DetectionService` continues evaluation on its two-second polling cadence
-while a game runs, alongside foreground/Steam/deadline triggers. The earlier local
-process measurements were small, but they do not prove an FPS or frame-time impact.
+Observed: `DetectionService` polls at the configured 1–10 second interval (2 seconds
+by default), alongside foreground/Steam/deadline triggers. It snapshots processes and
+updates the tracker on each poll. Stable name-only match results are reused during
+idle and established active sessions while their inputs remain unchanged. The earlier
+local process measurements were small, but they do not prove an FPS or frame-time impact.
 
-Proposed operating modes:
+Current behavior and remaining work:
 
-| Mode | Work |
+| State | Work |
 |---|---|
-| No active game | Existing normal discovery cadence, configurable within sensible bounds |
-| Known active session | Lightweight liveness checks of tracked game processes; skip repeated full catalog matching when nothing relevant changes |
-| Foreground or launcher signal | Evaluate the relevant candidate to support deliberate game switching |
-| Exit / missed signal | Preserve exit grace and return to broad discovery; a slower fallback scan catches missed starts |
+| Stable name-only results, idle or in an established session | Reuse results while sorted process snapshots and matcher inputs remain unchanged; still snapshot and update the tracker on every poll; rematch at the 30-second safety interval (implemented) |
+| Invalidation | Changed process snapshot, foreground PID, Steam App ID or matcher; live-detail rules; exit grace; or 30-second timeout forces a fresh match (implemented) |
+| Native liveness | Avoid process snapshots by checking tracked PIDs and target relevant foreground/launcher candidates; proposed and unimplemented |
+| Missed start | Retain configured broad polling; a slower fallback remains a proposal pending latency and real-game measurements |
 
-A fallback interval around 30 seconds is a starting experiment, not a shipped value.
-Do not use monitor count as a cap on sessions: two running games do not necessarily
-occupy two displays. Preserve foreground priority and all tracked sessions without
-assuming the active game is the only possible game.
+The 10-minute deterministic idle fixture reduces full `Match` evaluations from 301
+to 21 while retaining all 301 process snapshots. A separate test verifies stable
+matching reuse during an established active session while preserving foreground
+switching and exit-grace behavior. These tests measure rule-scan work, not elapsed
+CPU time or frame-time impact. Do not use monitor count as a cap on sessions: two
+running games do not necessarily occupy two displays. Preserve foreground priority
+and all tracked sessions without assuming the active game is the only possible game.
 
 Liveness must cope with PID reuse, launchers handing off, denied queries, game restart,
 foreground switching, sleep/resume and shutdown cancellation using permitted query
 access. Do not add process-memory reads or anti-cheat-sensitive hooks. Installed-game
 scans belong outside this repeated running-process loop.
 
-Acceptance: deterministic session/race tests pass; broad evaluation counts fall during
-a long unchanged session; start/exit timing remains within the baseline requirement;
-two-game switching still works; compare idle/active CPU and memory plus actual game's
-frame-time percentiles on the same hardware. Record the measured tradeoff before
-choosing default intervals. Run the long soak separately.
+Acceptance for native liveness and targeted foreground work remains: deterministic
+session/race tests; baseline start/exit timing; two-game switching; and idle/active
+CPU, memory and real-game frame-time percentiles on the same hardware. Run the long
+soak separately and record the measured tradeoff before changing that mode.
 
 ## 3. Installed games before catalog breadth
 
@@ -111,42 +132,34 @@ denied fallback stays safe; installed Forza Horizon 6 is not mapped to the exist
 Forza Horizon 5 seed merely because the names are similar. Add missing local titles
 before increasing remote catalog breadth.
 
-## 4. Layout, theme and banner
+## 4. Layout and theme
 
-The owner's screenshots show a misaligned availability pill, oversized sidebar
-branding and a desktop preview whose vertically stacked monitors drift sideways.
-Windows reports both screens at X=0; `HomeViewModel.BuildMonitors` adds a per-monitor
-horizontal gap, creating the offset. Fix preview geometry without changing Windows
-display arrangement.
+The owner's Oct 1 screenshots showed a misaligned availability pill, oversized
+sidebar branding and a desktop preview whose vertically stacked monitors drifted
+sideways. The top-tab navigation supersedes the earlier sidebar and generated-banner
+concept; the decision is recorded in [ADR 0015](../adr/0015-top-tab-navigation.md).
+The compact app mark and name remain available in the window, tray and About screen.
+Library availability labels now share baselines, and responsive cards use row space
+more consistently.
 
-Proposed visual changes:
+`HomeViewModel.BuildMonitors` maps reported monitor bounds at a shared pixel scale.
+Tests cover side-by-side edges, negative coordinates and display-list changes. Light
+and dark WPF captures show this machine's two vertically stacked 2560×1440 displays
+with aligned left edges ([light](../../TestResults/top-tabs/final/Main-Home-MonitorPreview.png),
+[dark](../../TestResults/top-tabs/final/Main-Home-MonitorPreview-Dark.png)). Mixed-DPI,
+high-DPI and physical hot-plug validation remain open.
 
-- Center availability labels within their controls and use consistent padding/baselines.
-- Map preview position from monitor bounds; put readable display name, resolution
-  and primary indicator outside tiny image text. Support negative coordinates,
-  unequal resolutions, mixed DPI and more than two monitors.
-- Replace the sidebar's large PrettyDesk wordmark block with a restrained generated
-  banner. Keep app identity accessible in the window, tray and About screen.
-- Use neutral charcoal surfaces in dark mode and soft neutral light surfaces in light
-  mode; reserve color for actions/selection. Keep glass depth subtle and readable.
-- Default to System; offer explicit Light/Dark overrides. The application already
-  follows Windows, so this is a palette/control refinement, not a missing OS watcher.
-- Optionally derive an app accent from the selected wallpaper, with contrast correction,
-  a fixed-accent fallback and stable behavior during rotations. App accent must not
-  silently change the global Windows accent.
-- Respect high contrast, Windows transparency preferences and reduced motion.
-  Avoid continuous decorative animation while the window is hidden.
+The app defaults to the Windows System theme and offers explicit Light and Dark
+overrides. Neutral light/dark surfaces are in place, and the high-contrast navigation
+focus ring uses Windows system colors distinct from its selected fill. Deriving a
+corrected app accent from the selected wallpaper remains optional; it must retain a
+fixed-accent fallback and never change the global Windows accent.
 
-Banner draft: a panoramic abstract glass sculpture with soft silver and muted cool
-reflections against a charcoal-to-neutral background, generous breathing room,
-clean silhouette, no embedded text or logos. Prepare matched light/dark crops and
-preview at the actual sidebar size before integration. Generation is pending.
-
-Acceptance: inspect actual WPF renders in both themes at supported window sizes and
-100/125/150/200% scaling; verify alignment, contrast, focus and keyboard workflows;
-theme changes apply live without flicker. Preserve native dialogs and tray lifecycle.
-Use [AppAppearance](../../src/PrettyDesk.App/Services/AppAppearance.cs),
-[Styles](../../src/PrettyDesk.App/Resources/Styles.xaml) and the page/view-model pair.
+Remaining acceptance: inspect both themes across supported window sizes and
+100/125/150/200% scaling; verify live theme changes, high-contrast keyboard focus,
+Narrator, alignment and reduced-motion behavior on Windows. Preserve native dialogs
+and tray lifecycle. See [AppAppearance](../../src/PrettyDesk.App/Services/AppAppearance.cs),
+[Styles](../../src/PrettyDesk.App/Resources/Styles.xaml) and [ADR 0015](../adr/0015-top-tab-navigation.md).
 
 ## 5. Taskbar translucency, glass and wallpaper matching
 
@@ -187,21 +200,37 @@ shell behavior. Do not advertise an exact macOS effect before an inspected proto
 
 ## 6. Clocks, widgets and music visualizer
 
-Static wallpaper COM cannot draw a live clock. Prototype a separate optional desktop
-surface, beginning with clock/date and then now-playing controls. Define z-order,
-click-through/edit mode, per-monitor placement, DPI, Explorer lifecycle and persistence.
-Do not inject into games or repeatedly render/reapply the full wallpaper each second.
+Static wallpaper COM cannot draw a live clock. The first optional desktop surface is
+implemented under [ADR 0008](../adr/0008-personalization-update.md): one non-topmost,
+non-activating, click-through PrettyDesk window can show clock/date, Windows
+now-playing metadata and a local playback visualizer. Settings provide separate
+toggles, monitor selection and keyboard-accessible playback controls. The surface
+pauses for active games, session lock and Battery Saver; high contrast or reduced
+motion stops spectrum animation. It does not redraw the wallpaper or store or upload
+audio.
 
-A visualizer can analyze transient local playback samples using documented WASAPI
-loopback. Decide output-device selection, silence/device changes and capture scope;
-no microphone or recording file is needed for the proposed playback-only effect.
-[Microsoft loopback recording](https://learn.microsoft.com/en-us/windows/win32/coreaudio/loopback-recording).
+This remains an ordinary-window prototype, not a guaranteed Explorer desktop layer.
+Native acceptance for z-order/focus, DPI and mixed-DPI placement, Explorer restart,
+audio-device changes, and CPU/GPU/frame-time impact remains open. Do not inject into
+games or repeatedly render/reapply the full wallpaper each second. Any broader widget
+surface or customization needs a scoped ADR before implementation.
 
-Start with a capped 15–30 FPS experiment. Pause surfaces hidden by full-screen games
-on the relevant monitor, when locked and where power policy requires it. Reduced
-motion/static fallback and a kill switch are required. Acceptance includes real CPU/GPU/
-frame-time measurements, no focus theft, no audio storage/network upload and restoration
-of normal desktop behavior when disabled. Widget implementation requires its own ADR.
+The visualizer uses transient samples from the default multimedia output through
+documented WASAPI loopback; it does not capture the microphone or store or upload
+audio. Default-device changes are checked periodically and failures are surfaced.
+A broader output-device selector remains deferred. See
+[Microsoft's loopback recording documentation](https://learn.microsoft.com/en-us/windows/win32/coreaudio/loopback-recording)
+and the accepted implementation scope in [ADR 0008](../adr/0008-personalization-update.md).
+
+The animated spectrum is capped at about 15 FPS and stops when any game is detected,
+the session is locked, Battery Saver is on, or Windows accessibility preferences
+disable client-area animation. The clock, now-playing and visualizer toggles
+independently control their content; when all are off, the window hides and its timer
+and capture stop. There is no separate master switch in this prototype. Exit closes
+the window and releases capture.
+Native acceptance still needs focus/z-order, DPI, Explorer restart, device-change and
+real CPU/GPU/frame-time
+checks. Broader widget surfaces or customization need a separate scoped ADR.
 
 ## 7. Game catalog and image variety
 
@@ -215,15 +244,17 @@ counts. Inclusion is a product decision; popularity is not executable-rule valid
 
 Give each game its own recognizable scene vocabulary and deliberate shot plan:
 subject, point of view, environment, scale, time/weather, palette and desktop safe
-zones. A different color on the same vista is not sufficient variety. Start with the
-[Rocket League pilot](rocket-league-fan-art.md), inspect actual generated crops, then
-expand. Keep originals/provenance and avoid batch-approving unseen images.
+zones. A different color on the same vista is not sufficient variety. The four-entry
+[Rocket League pilot](rocket-league-fan-art.md) is implemented and its generated crops
+were reviewed; use that as a process reference when broader variety is selected. Keep
+originals/provenance and avoid batch-approving unseen images.
 
 ## Decisions for discussion and implementation gates
 
-Open choices: offline/online/hybrid delivery and package size; final theme mockups
-and banner; taskbar native guidance versus experimental companion; first widget scope;
-top-100 ranking methodology. The named Rocket League art direction is already approved.
+Open choices: offline/online/hybrid delivery and package size; remaining theme details;
+taskbar native guidance versus experimental companion; top-100 ranking methodology.
+The first desktop-surface scope is recorded in ADR 0008, and the named Rocket League
+art direction is already approved.
 
 Implement in the priority order above. Each feature needs relevant deterministic
 tests, actual Windows verification where applicable, inspected UI/art output, a fresh

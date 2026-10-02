@@ -232,7 +232,7 @@ wallpapers:
     role: default
     tone: light
     setupMatch: [wood, white]
-    tags: [oak, interior, morning]
+    tags: [oak, interior, morning, bundled]
     starter: false
     accent: "#CDAE84"
     focal: { x: 0.68, y: 0.54 }
@@ -267,9 +267,9 @@ wallpapers:
         wallpaper. The dish and linen sit in the lower center, at about 60% of the height, with cream wall
         above. Same lighting, palette, materials and rendering style. Keep the bottom 10% calm. Strictly no
         text, letters, logos, watermarks or UI.
-    reviewNotes: ""
-    approved: false
-    rawSha256: {}
+    reviewNotes: "Generated with built-in imagegen; visually reviewed in the contact sheet by Codex on 2026-10-02."
+    approved: true
+    rawSha256: {L: "0cad84f2d5761b772f8db8d99585fef2a5667356bbf7cb9c6e186028730ed895"}
 
   - id: wm-07
     title: "Sandstone Canyon Glow"

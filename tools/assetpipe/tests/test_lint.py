@@ -181,11 +181,39 @@ def test_named_subject_exception_is_scoped_and_other_guards_remain(tmp_path):
     doc["kind"] = "game"
     doc["title"] = "Rocket League"
     pack = _pack(tmp_path, doc)
-    assert "rocket league" not in lint.forbidden_terms(pack)
-    assert "elden ring" in lint.forbidden_terms(pack)
+    terms = lint.forbidden_terms(pack)
+    assert "rocket league" not in terms
+    assert "elden ring" in terms
+    assert "octane" in terms
+    assert "fennec" in terms
+    assert "batmobile" in terms
+
+    pack.named_subjects = ["Rocket League", "Octane"]
+    terms = lint.forbidden_terms(pack)
+    assert "rocket league" not in terms
+    assert "octane" not in terms
+    assert "fennec" in terms
+    pack.wallpapers[0].prompts["landscape"] = LANDSCAPE.replace("sand dune", "Fennec sand dune")
+    assert any("proper noun 'fennec'" in message for message in errors(lint.lint_wallpaper(pack, pack.wallpapers[0], terms)))
+
     pack.wallpapers[0].prompts["landscape"] = "Rocket League screenshot from 8K"
     findings = errors(lint.lint_pack(pack))
     assert any("banned phrase" in m for m in findings)
     assert any("safe-zone" in m for m in findings)
     pack.named_subjects = ["Elden Ring"]
     assert any("reviewed pack" in m for m in errors(lint.lint_pack(pack)))
+    pack.named_subjects = ["Rocket League", "rocket league"]
+    assert any("approved namedSubjects list" in m for m in errors(lint.lint_pack(pack)))
+
+
+def test_named_fan_art_terms_remain_forbidden_in_generic_packs(tmp_path):
+    pack = _pack(tmp_path, _default_pack_doc())
+
+    terms = lint.forbidden_terms(pack)
+
+    assert "rocket league" in terms
+    assert "octane" in terms
+    assert "fennec" in terms
+    assert "batmobile" in terms
+    assert "champions field" in terms
+    assert "neo tokyo" in terms
