@@ -155,7 +155,7 @@ jobs:
           vpk @packArgs
 
       - name: Keep the packages as a workflow artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: PrettyDesk-${{ env.VERSION }}-${{ matrix.rid }}
           path: releases/${{ matrix.rid }}
