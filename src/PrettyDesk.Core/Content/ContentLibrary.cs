@@ -108,7 +108,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
                     image.Id,
                     Orchestration.ContentIds.UserPackId,
                     image.Id,
-                    Tones.Mid,
+                    image.Tone,
                     FocalPoint.Center,
                     new Dictionary<string, LocalVariant> { [Variants.User] = new LocalVariant(Variants.User, image.Path, image.Width, image.Height) },
                     System.IO.Path.GetFileNameWithoutExtension(image.Path),
