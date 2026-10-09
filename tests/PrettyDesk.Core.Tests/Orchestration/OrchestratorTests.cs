@@ -73,6 +73,51 @@ public sealed class OrchestratorTests : IAsyncDisposable
         _orchestrator.Status.IsRotating.ShouldBeTrue();
     }
 
+    // ---- Only dark wallpapers ---------------------------------------------------------------------------------
+
+    [Fact]
+    public async Task Dark_only_with_only_light_collections_selected_shows_nothing_and_says_so()
+    {
+        _settings.Update(s =>
+        {
+            s.General.DarkWallpapersOnly = true;
+            s.Default.Selection.Collections = ["default.clean-white"];
+        });
+
+        await Reconcile();
+
+        _setter.Calls.ShouldBeEmpty("a light-only selection must not be shown while dark-only is on");
+        _orchestrator.Status.Mode.ShouldBe(OrchestratorMode.Default);
+        _orchestrator.Status.NoContent.ShouldBeTrue();
+    }
+
+    [Fact]
+    public async Task Dark_only_rotates_through_dark_default_wallpapers()
+    {
+        _settings.Update(s => s.General.DarkWallpapersOnly = true);
+
+        await Reconcile();
+
+        _setter.Calls.ShouldHaveSingleItem().Path.ShouldStartWith("/cache/mb-0");
+        _orchestrator.Status.NoContent.ShouldBeFalse();
+    }
+
+    [Fact]
+    public async Task Dark_only_keeps_light_game_wallpapers_out_of_the_game_rotation()
+    {
+        _content.Packs["game.cs2"].Add("cs2-light");
+        _content.MakeAvailable("game.cs2", "cs2-light", Tones.Light);
+        _settings.Update(s => s.General.DarkWallpapersOnly = true);
+
+        _orchestrator.SetActiveGame(new ActiveGame("cs2", false));
+        _time.Advance(TimeSpan.FromSeconds(5));
+        await Reconcile();
+
+        _orchestrator.Status.GameId.ShouldBe("cs2");
+        _setter.Calls.ShouldNotBeEmpty();
+        _setter.Calls.Where(c => c.Path.Contains("cs2-light", StringComparison.Ordinal)).ShouldBeEmpty();
+    }
+
     [Fact]
     public async Task Each_monitor_gets_a_render_at_its_own_pixel_size()
     {

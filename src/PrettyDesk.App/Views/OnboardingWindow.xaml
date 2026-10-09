@@ -10,7 +10,7 @@
                  d:DataContext="{d:DesignInstance Type=vm:OnboardingViewModel}"
                  Title="PrettyDesk" Width="760" Height="600" MinWidth="640" MinHeight="520"
                  WindowStartupLocation="CenterScreen"
-                 Background="{DynamicResource DeskAmbientBrush}" FontFamily="Segoe UI Variable, Segoe UI" WindowBackdropType="Mica"
+                 Background="{DynamicResource DeskCanvasBrush}" FontFamily="Segoe UI Variable, Segoe UI" WindowBackdropType="None"
                  ExtendsContentIntoTitleBar="True"
                  AutomationProperties.Name="PrettyDesk">
   <Grid>
@@ -25,7 +25,7 @@
     <Grid Grid.Row="1" Margin="40,8,40,16">
       <!-- Welcome -->
       <StackPanel VerticalAlignment="Center" Visibility="{Binding Step, Converter={StaticResource EnumEqualsToVisibility}, ConverterParameter=Welcome}">
-        <TextBlock Style="{StaticResource PageTitleStyle}" FontSize="34" Text="{x:Static res:Strings.Onboard_WelcomeTitle}" />
+        <TextBlock Style="{StaticResource PageTitleStyle}" FontSize="32" Text="{x:Static res:Strings.Onboard_WelcomeTitle}" />
         <TextBlock Style="{StaticResource BodyStyle}" FontSize="16" Margin="0,8,0,24" Text="{x:Static res:Strings.Onboard_WelcomeBody}" />
         <TextBlock Style="{StaticResource MutedStyle}" FontSize="14" Margin="0,0,0,6" Text="{x:Static res:Strings.Onboard_WelcomePoint1}" />
         <TextBlock Style="{StaticResource MutedStyle}" FontSize="14" Margin="0,0,0,6" Text="{x:Static res:Strings.Onboard_WelcomePoint2}" />
@@ -45,7 +45,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
               <DataTemplate DataType="{x:Type vm:StyleOption}">
-                <RadioButton GroupName="SetupStyle" Width="200" Margin="0,0,12,12" Padding="12" HorizontalContentAlignment="Stretch"
+                <RadioButton Style="{StaticResource ChoiceCardStyle}" GroupName="SetupStyle" Width="200" Margin="0,0,12,12" HorizontalContentAlignment="Stretch"
                              IsChecked="{Binding IsSelected, Mode=OneWay}"
                              Command="{Binding DataContext.ChooseStyleCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"
                              AutomationProperties.Name="{Binding Title}">
@@ -167,7 +167,7 @@
 
       <!-- Done -->
       <StackPanel VerticalAlignment="Center" Visibility="{Binding Step, Converter={StaticResource EnumEqualsToVisibility}, ConverterParameter=Done}">
-        <TextBlock Style="{StaticResource PageTitleStyle}" FontSize="34" Text="{x:Static res:Strings.Onboard_DoneTitle}" />
+        <TextBlock Style="{StaticResource PageTitleStyle}" FontSize="32" Text="{x:Static res:Strings.Onboard_DoneTitle}" />
         <TextBlock Style="{StaticResource BodyStyle}" FontSize="16" Margin="0,8,0,16" Text="{x:Static res:Strings.Onboard_DoneBody}" />
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Onboard_DoneTip}" />
       </StackPanel>

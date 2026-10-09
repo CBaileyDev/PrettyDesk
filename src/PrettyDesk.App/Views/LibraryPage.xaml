@@ -17,7 +17,7 @@
 
   <Grid>
     <!-- The grid of games -->
-    <Grid Visibility="{Binding IsListVisible, Converter={StaticResource BoolToVisibility}}" Margin="28,20,28,0">
+    <Grid Visibility="{Binding IsListVisible, Converter={StaticResource BoolToVisibility}}" Margin="32,24,32,0">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
@@ -31,22 +31,26 @@
           <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Library_Title}" />
-        <Button Grid.Column="1" Content="{x:Static res:Strings.Library_AddGame}" Command="{Binding OpenAddGameCommand}" VerticalAlignment="Center"
+        <Button Grid.Column="1" Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.Library_AddGame}" Command="{Binding OpenAddGameCommand}" VerticalAlignment="Center"
                 AutomationProperties.Name="{x:Static res:Strings.Library_AddGame}" />
       </Grid>
 
-      <WrapPanel Grid.Row="1" Margin="0,12,0,12">
-        <ui:TextBox Width="280" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static res:Strings.Library_Search}"
+      <WrapPanel Grid.Row="1" Margin="0,16,0,16">
+        <ui:TextBox Width="280" Margin="0,0,16,0" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static res:Strings.Library_Search}"
                  AutomationProperties.Name="{x:Static res:Strings.Library_Search}" />
-        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterAll}" Margin="12,0,0,0"
-                     IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=All}"
-                     AutomationProperties.Name="{x:Static res:Strings.Library_FilterAll}" />
-        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterInstalled}" Margin="6,0,0,0"
-                     IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Installed}"
-                     AutomationProperties.Name="{x:Static res:Strings.Library_FilterInstalled}" />
-        <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterEnabled}" Margin="6,0,0,0"
-                     IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Enabled}"
-                     AutomationProperties.Name="{x:Static res:Strings.Library_FilterEnabled}" />
+        <Border Style="{StaticResource SegmentedBarStyle}">
+          <StackPanel Orientation="Horizontal">
+            <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterAll}"
+                         IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=All}"
+                         AutomationProperties.Name="{x:Static res:Strings.Library_FilterAll}" />
+            <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterInstalled}"
+                         IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Installed}"
+                         AutomationProperties.Name="{x:Static res:Strings.Library_FilterInstalled}" />
+            <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="LibraryFilter" Content="{x:Static res:Strings.Library_FilterEnabled}"
+                         IsChecked="{Binding Filter, Mode=TwoWay, Converter={StaticResource EnumEquals}, ConverterParameter=Enabled}"
+                         AutomationProperties.Name="{x:Static res:Strings.Library_FilterEnabled}" />
+          </StackPanel>
+        </Border>
       </WrapPanel>
 
       <TextBlock Grid.Row="2" Style="{StaticResource MutedStyle}" Margin="0,0,0,8" Text="{Binding Toast}" Visibility="{Binding Toast, Converter={StaticResource NullToCollapsed}}" />
@@ -72,18 +76,18 @@
             </ui:VirtualizingGridView.ItemContainerStyle>
             <ui:VirtualizingGridView.ItemTemplate>
               <DataTemplate DataType="{x:Type vm:GameCardViewModel}">
-                <Border Width="236" Margin="0,0,16,20" Style="{StaticResource CardStyle}" Padding="0">
+                <Border Width="236" Margin="0,0,16,16" Style="{StaticResource CardStyle}" Padding="0" ClipToBounds="True">
                   <StackPanel>
-                    <Button Padding="0" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Stretch"
+                    <Button Style="{StaticResource FlatButtonStyle}"
                             Command="{Binding DataContext.OpenGameCommand, Source={x:Reference GameTiles}}"
                             CommandParameter="{Binding}"
                             AutomationProperties.Name="{Binding Name}">
                       <StackPanel>
                         <Grid Height="172">
-                          <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="24,24,0,0">
+                          <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="9,9,0,0">
                             <TextBlock Text="{Binding Initial}" FontSize="44" FontWeight="SemiBold" Foreground="#CCFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" />
                           </Border>
-                          <Border CornerRadius="24,24,0,0" Visibility="{Binding ThumbnailPath, Converter={StaticResource NullToCollapsed}}">
+                          <Border CornerRadius="9,9,0,0" Visibility="{Binding ThumbnailPath, Converter={StaticResource NullToCollapsed}}">
                             <Border.Background>
                               <ImageBrush ImageSource="{Binding ThumbnailPath, Converter={StaticResource PathToImage}, ConverterParameter=448}" Stretch="UniformToFill" />
                             </Border.Background>
@@ -112,7 +116,7 @@
           <StackPanel Visibility="{Binding HasGames, Converter={StaticResource InverseBoolToVisibility}}" HorizontalAlignment="Center" Margin="0,48,0,0" MaxWidth="420">
             <TextBlock Style="{StaticResource BodyStyle}" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Text="{Binding EmptyTitle}" />
             <TextBlock Style="{StaticResource MutedStyle}" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,8,0,16" Text="{Binding EmptyBody}" />
-            <Button Content="{x:Static res:Strings.Library_AddGame}" Command="{Binding OpenAddGameCommand}" HorizontalAlignment="Center" AutomationProperties.Name="{x:Static res:Strings.Library_AddGame}" />
+            <Button Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.Library_AddGame}" Command="{Binding OpenAddGameCommand}" HorizontalAlignment="Center" AutomationProperties.Name="{x:Static res:Strings.Library_AddGame}" />
           </StackPanel>
 
           <TextBlock Grid.Row="1" Style="{StaticResource MutedStyle}" FontSize="12" Margin="0,8,0,0" Text="{x:Static res:Strings.Library_DisclaimerNote}" />

@@ -1,9 +1,11 @@
 using System.Security.Cryptography;
+using PrettyDesk.Core.Catalog;
 using SkiaSharp;
 
 namespace PrettyDesk.Core.Content;
 
-public sealed record UserImage(string Id, string Path, int Width, int Height);
+/// <summary>A user's own image. <see cref="Tone"/> is measured from its brightness (<see cref="ToneClassifier"/>).</summary>
+public sealed record UserImage(string Id, string Path, int Width, int Height, string Tone = Tones.Mid);
 
 public enum ImportFailure
 {
@@ -29,6 +31,8 @@ public sealed class UserImageStore
     public const int MinLongEdge = 1280;
 
     private static readonly HashSet<string> Extensions = new(StringComparer.OrdinalIgnoreCase) { ".jpg", ".jpeg", ".png", ".webp", ".bmp" };
+
+    private const string ToneFolder = ".tones";
 
     private readonly string _directory;
 
@@ -86,7 +90,8 @@ public sealed class UserImageStore
             File.Move(temp, destination, overwrite: true);
         }
 
-        return new ImportResult(new UserImage(IdPrefix + fileName, destination, info.Width, info.Height), ImportFailure.None, null);
+        var tone = ReadOrMeasureTone(destination);
+        return new ImportResult(new UserImage(IdPrefix + fileName, destination, info.Width, info.Height, tone), ImportFailure.None, null);
     }
 
     public UserImage? TryGet(string id)
@@ -111,7 +116,48 @@ public sealed class UserImageStore
         }
 
         using var codec = SKCodec.Create(path);
-        return codec is null ? null : new UserImage(id, path, codec.Info.Width, codec.Info.Height);
+        return codec is null ? null : new UserImage(id, path, codec.Info.Width, codec.Info.Height, ReadOrMeasureTone(path));
+    }
+
+    /// <summary>
+    /// The tone is measured once and remembered in a sidecar file, because listing images happens on every rotation pass. The
+    /// file name is a content hash, so a sidecar never goes stale.
+    /// </summary>
+    /// <summary>Where an image's measured tone is remembered: a hidden sibling folder, so the image folder holds only images.</summary>
+    public static string ToneSidecarPath(string imagePath) =>
+        System.IO.Path.Combine(System.IO.Path.GetDirectoryName(imagePath) ?? string.Empty, ToneFolder, System.IO.Path.GetFileName(imagePath) + ".tone");
+
+    private static string ReadOrMeasureTone(string imagePath)
+    {
+        var sidecar = ToneSidecarPath(imagePath);
+        try
+        {
+            if (File.Exists(sidecar))
+            {
+                var stored = File.ReadAllText(sidecar).Trim();
+                if (stored is Tones.Dark or Tones.Mid or Tones.Light)
+                {
+                    return stored;
+                }
+            }
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            // Unreadable sidecar: measure again below.
+        }
+
+        var measured = ToneClassifier.Measure(imagePath);
+        try
+        {
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(sidecar)!);
+            File.WriteAllText(sidecar, measured);
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            // A read-only folder only means the measurement repeats next time.
+        }
+
+        return measured;
     }
 
     public IReadOnlyList<UserImage> List() =>
@@ -134,7 +180,20 @@ public sealed class UserImageStore
         }
 
         File.Delete(image.Path);
+        TryDeleteSidecar(image.Path);
         return true;
+    }
+
+    private static void TryDeleteSidecar(string imagePath)
+    {
+        try
+        {
+            File.Delete(ToneSidecarPath(imagePath));
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            // An orphaned sidecar is harmless: it is ignored because no image of that name is listed.
+        }
     }
 
     /// <summary>Warns when an image has fewer pixels than a monitor, so it would be upscaled (FR-CON-7).</summary>

@@ -35,9 +35,10 @@ public static class ContextPlanner
     public static ContextPlan PlanDefault(AppSettings settings, CatalogDocument catalog, IContentLibrary content, ISystemState system)
     {
         var d = settings.Default;
+        var darkOnly = settings.General.DarkWallpapersOnly;
         var title = DescribeSelection(d.Selection, catalog);
 
-        if (d.Mode == WallpaperMode.Fixed && d.FixedWallpaperId is { } fixedId && content.TryGetAsset(fixedId) is not null)
+        if (d.Mode == WallpaperMode.Fixed && d.FixedWallpaperId is { } fixedId && Eligible(content, fixedId, darkOnly) is not null)
         {
             return new ContextPlan(DefaultKey, [fixedId], new RotationPolicy(d.Order, RotationInterval.Never), IsFixed: true, title);
         }
@@ -55,7 +56,7 @@ public static class ContextPlanner
         var available = ids
             .Distinct(StringComparer.Ordinal)
             .Where(id => !excluded.Contains(id))
-            .Select(id => content.TryGetAsset(id))
+            .Select(id => Eligible(content, id, darkOnly))
             .Where(a => a is not null)
             .Select(a => a!)
             .ToList();
@@ -79,6 +80,7 @@ public static class ContextPlanner
     public static ContextPlan PlanGame(GameDefinition game, AppSettings settings, CatalogDocument catalog, IContentLibrary content)
     {
         var g = settings.GetGame(game.Id);
+        var darkOnly = settings.General.DarkWallpapersOnly;
         var excluded = g.Excluded.ToHashSet(StringComparer.Ordinal);
         var custom = settings.CustomGames.FirstOrDefault(c => c.Id == game.Id);
 
@@ -87,19 +89,31 @@ public static class ContextPlanner
             : game.PackId is { } packId ? content.GetWallpaperIds(packId) : [];
 
         var candidates = ids.Distinct(StringComparer.Ordinal).Where(id => !excluded.Contains(id)).ToList();
-        var pool = candidates.Where(id => content.TryGetAsset(id) is not null).ToList();
+        var pool = candidates.Where(id => Eligible(content, id, darkOnly) is not null).ToList();
 
         // Only catalog packs can still arrive; a custom game's images are local files, so a missing one never loads later.
-        var pending = custom is null ? candidates.Count - pool.Count : 0;
+        // A catalog wallpaper that is hidden by the tone filter is not waiting for anything, so it is not counted.
+        var pending = custom is null
+            ? candidates.Count(id => content.TryGetAsset(id) is null && ToneFilter.Allows(ToneOfCatalogEntry(catalog, id), darkOnly))
+            : 0;
 
         var key = GameKey(game.Id);
-        if (g.Mode == WallpaperMode.Fixed && g.FixedWallpaperId is { } fixedId && content.TryGetAsset(fixedId) is not null)
+        if (g.Mode == WallpaperMode.Fixed && g.FixedWallpaperId is { } fixedId && Eligible(content, fixedId, darkOnly) is not null)
         {
             return new ContextPlan(key, [fixedId], new RotationPolicy(g.Order, RotationInterval.Never), IsFixed: true, game.DisplayName);
         }
 
         return new ContextPlan(key, pool, new RotationPolicy(g.Order, g.Interval), IsFixed: false, game.DisplayName, pending);
     }
+
+    /// <summary>A wallpaper's local asset when it exists and the tone filter allows it; otherwise null.</summary>
+    private static WallpaperAsset? Eligible(IContentLibrary content, string wallpaperId, bool darkOnly)
+    {
+        var asset = content.TryGetAsset(wallpaperId);
+        return asset is not null && ToneFilter.Allows(asset.Tone, darkOnly) ? asset : null;
+    }
+
+    private static string? ToneOfCatalogEntry(CatalogDocument catalog, string wallpaperId) => catalog.FindWallpaper(wallpaperId)?.Tone;
 
     private static string DescribeSelection(SelectionSettings selection, CatalogDocument catalog)
     {

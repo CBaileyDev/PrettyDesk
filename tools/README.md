@@ -16,6 +16,7 @@ and the relevant workflow before running them.
 | [sign_content.ps1](sign_content.ps1), [catalog-sign](catalog-sign) | Catalog signing/verification CLI; private key stays outside checkout |
 | [serve_catalog.py](serve_catalog.py) | Local content fixture server, not production hosting |
 | [perf](perf) | Startup, switching and soak scripts; read [PERF](../docs/PERF.md) |
+| [readme-assets/build.py](readme-assets/build.py) | Rebuilds the README images in `docs/images` from the bundled starter wallpapers; the UI images are design renders, not captures |
 | [strings.py](strings.py) | `add`, `gen`, `check` for .resx and generated string accessors |
 | [strings_bulk.py](strings_bulk.py) | Bulk string maintenance helper; review generated resource changes |
 | [gen_notices.py](gen_notices.py) | Generate/check shipped third-party notices |

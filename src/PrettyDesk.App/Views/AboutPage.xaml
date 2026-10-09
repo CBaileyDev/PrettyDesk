@@ -7,7 +7,7 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:AboutViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
     <StackPanel MaxWidth="720" HorizontalAlignment="Left">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.About_Title}" />
       <TextBlock Style="{StaticResource MutedStyle}" Text="{Binding VersionText}" />
@@ -17,7 +17,7 @@
           <TextBlock Style="{StaticResource BodyStyle}" Text="{Binding UpdateText}" AutomationProperties.Name="{Binding UpdateText}" />
           <ProgressBar Margin="0,8,0,0" Minimum="0" Maximum="100" Value="{Binding UpdatePercent, Mode=OneWay}" Visibility="{Binding ShowProgress, Converter={StaticResource BoolToVisibility}}" />
           <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-            <Button Content="{x:Static res:Strings.About_CheckUpdates}" Command="{Binding CheckCommand}" AutomationProperties.Name="{x:Static res:Strings.About_CheckUpdates}" />
+            <Button Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.About_CheckUpdates}" Command="{Binding CheckCommand}" AutomationProperties.Name="{x:Static res:Strings.About_CheckUpdates}" />
             <Button Margin="8,0,0,0" Content="{x:Static res:Strings.About_UpdateRestart}" Command="{Binding RestartToUpdateCommand}" Visibility="{Binding CanRestart, Converter={StaticResource BoolToVisibility}}"
                     AutomationProperties.Name="{x:Static res:Strings.About_UpdateRestart}" />
           </StackPanel>

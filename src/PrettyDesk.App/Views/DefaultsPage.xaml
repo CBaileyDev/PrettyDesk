@@ -6,9 +6,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             xmlns:views="clr-namespace:PrettyDesk.App.Views"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:DefaultsViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
     <StackPanel AllowDrop="True" Drop="OnDrop" DragOver="OnDragOver">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Defaults_Title}" />
       <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_Intro}" />
@@ -23,11 +24,11 @@
         </ItemsControl.ItemsPanel>
         <ItemsControl.ItemTemplate>
           <DataTemplate DataType="{x:Type vm:CollectionCardViewModel}">
-            <Border Width="236" Margin="0,0,16,20" Style="{StaticResource CardStyle}" Padding="0">
+            <Border Width="236" Margin="0,0,16,16" Style="{StaticResource CardStyle}" Padding="0" ClipToBounds="True">
               <StackPanel>
                 <Grid Height="172">
-                  <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="24,24,0,0" />
-                  <Border CornerRadius="24,24,0,0" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
+                  <Border Style="{StaticResource PlaceholderTileStyle}" CornerRadius="9,9,0,0" />
+                  <Border CornerRadius="9,9,0,0" Visibility="{Binding PreviewPath, Converter={StaticResource NullToCollapsed}}">
                     <Border.Background>
                       <ImageBrush ImageSource="{Binding PreviewPath, Converter={StaticResource PathToImage}, ConverterParameter=400}" Stretch="UniformToFill" />
                     </Border.Background>
@@ -47,13 +48,23 @@
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_CollectionsEmptyBody}" />
       </StackPanel>
 
+      <!-- Dark-only filters every wallpaper list on this page, in rotation, game pages and the picker -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" Padding="20,4">
+        <StackPanel>
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Defaults_DarkOnly}" views:SettingRow.Description="{x:Static res:Strings.Defaults_DarkOnlyHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding DarkOnly, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Defaults_DarkOnly}" />
+          </HeaderedContentControl>
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,0,0,12" Text="{Binding DarkOnlyWarning}" Visibility="{Binding DarkOnlyWarning, Converter={StaticResource NullToCollapsed}}" />
+        </StackPanel>
+      </Border>
+
       <!-- My images (drag and drop works anywhere on this page) -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Defaults_MyImages}" />
       <Border Style="{StaticResource CardStyle}">
         <StackPanel>
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_MyImagesHelp}" />
           <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-            <Button Content="{x:Static res:Strings.Defaults_AddImages}" Command="{Binding AddImagesCommand}" AutomationProperties.Name="{x:Static res:Strings.Defaults_AddImages}" />
+            <Button Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.Defaults_AddImages}" Command="{Binding AddImagesCommand}" AutomationProperties.Name="{x:Static res:Strings.Defaults_AddImages}" />
             <ui:ToggleSwitch Margin="16,0,0,0" IsChecked="{Binding UseMyImages, Mode=TwoWay}" Content="{x:Static res:Strings.Defaults_UseMyImages}" AutomationProperties.Name="{x:Static res:Strings.Defaults_UseMyImages}" />
           </StackPanel>
           <ProgressBar IsIndeterminate="True" Margin="0,12,0,0" Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Common_Loading}" />
@@ -91,11 +102,13 @@
 
       <!-- Mode -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Defaults_Mode}" />
-      <StackPanel Orientation="Horizontal">
-        <RadioButton GroupName="DefaultMode" Content="{x:Static res:Strings.Defaults_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Defaults_ModeRotate}" />
-        <RadioButton GroupName="DefaultMode" Margin="16,0,0,0" Content="{x:Static res:Strings.Defaults_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
-                     AutomationProperties.Name="{x:Static res:Strings.Defaults_ModeFixed}" />
-      </StackPanel>
+      <Border Style="{StaticResource SegmentedBarStyle}">
+        <StackPanel Orientation="Horizontal">
+          <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="DefaultMode" Content="{x:Static res:Strings.Defaults_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Defaults_ModeRotate}" />
+          <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="DefaultMode" Content="{x:Static res:Strings.Defaults_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                       AutomationProperties.Name="{x:Static res:Strings.Defaults_ModeFixed}" />
+        </StackPanel>
+      </Border>
 
       <StackPanel Visibility="{Binding ShowFixedPicker, Converter={StaticResource BoolToVisibility}}" Margin="0,12,0,0">
         <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Defaults_FixedPick}" />
@@ -143,23 +156,35 @@
           <TextBox Width="120" HorizontalAlignment="Left" Margin="0,4,0,0" Text="{Binding CustomMinutes, UpdateSourceTrigger=LostFocus}" AutomationProperties.Name="{x:Static res:Strings.Defaults_IntervalCustomMinutes}" />
         </StackPanel>
         <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Margin="0,16,0,4" Text="{x:Static res:Strings.Defaults_Order}" />
-        <StackPanel Orientation="Horizontal">
-          <RadioButton GroupName="DefaultOrder" Content="{x:Static res:Strings.Game_OrderShuffle}" IsChecked="{Binding IsShuffle, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_OrderShuffle}" />
-          <RadioButton GroupName="DefaultOrder" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_OrderSequential}" IsChecked="{Binding IsShuffle, Mode=TwoWay, Converter={StaticResource InverseBool}}"
-                       AutomationProperties.Name="{x:Static res:Strings.Game_OrderSequential}" />
-        </StackPanel>
+        <Border Style="{StaticResource SegmentedBarStyle}">
+          <StackPanel Orientation="Horizontal">
+            <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="DefaultOrder" Content="{x:Static res:Strings.Game_OrderShuffle}" IsChecked="{Binding IsShuffle, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_OrderShuffle}" />
+            <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="DefaultOrder" Content="{x:Static res:Strings.Game_OrderSequential}" IsChecked="{Binding IsShuffle, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                         AutomationProperties.Name="{x:Static res:Strings.Game_OrderSequential}" />
+          </StackPanel>
+        </Border>
       </StackPanel>
 
       <!-- Theme and battery -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Defaults_FollowTheme}" />
-      <ui:ToggleSwitch IsChecked="{Binding FollowTheme, Mode=TwoWay}" Content="{x:Static res:Strings.Defaults_FollowTheme}" AutomationProperties.Name="{x:Static res:Strings.Defaults_FollowTheme}" />
-      <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_FollowThemeHelp}" />
-      <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding PauseOnBatterySaver, Mode=TwoWay}" Content="{x:Static res:Strings.Defaults_Battery}" AutomationProperties.Name="{x:Static res:Strings.Defaults_Battery}" />
-      <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_BatteryHelp}" />
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
+        <StackPanel>
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Defaults_FollowTheme}" views:SettingRow.Description="{x:Static res:Strings.Defaults_FollowThemeHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding FollowTheme, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Defaults_FollowTheme}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Defaults_Battery}" views:SettingRow.Description="{x:Static res:Strings.Defaults_BatteryHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding PauseOnBatterySaver, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Defaults_Battery}" />
+          </HeaderedContentControl>
+        </StackPanel>
+      </Border>
 
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Defaults_SetupStyle}" />
-      <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_SetupStyleHelp}" />
-      <Button Margin="0,8,0,0" Content="{x:Static res:Strings.Defaults_SetupStyle}" Command="{Binding RerunSetupCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Defaults_SetupStyle}" />
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
+        <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Defaults_SetupStyle}" views:SettingRow.Description="{x:Static res:Strings.Defaults_SetupStyleHelp}">
+          <Button Content="{x:Static res:Strings.Defaults_SetupStyle}" Command="{Binding RerunSetupCommand}" AutomationProperties.Name="{x:Static res:Strings.Defaults_SetupStyle}" />
+        </HeaderedContentControl>
+      </Border>
     </StackPanel>
   </ScrollViewer>
 </UserControl>

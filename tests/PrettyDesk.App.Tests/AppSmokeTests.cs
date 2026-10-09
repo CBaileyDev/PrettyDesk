@@ -178,62 +178,26 @@ public sealed class AppSmokeTests : IDisposable
         _ = errors;
     }
 
-    private static void VerifyAcrylicMaterialAndFocus(PrettyDesk.App.Views.MainWindow main)
+    /// <summary>Each palette must load and define every colour the styles refer to; the dark one must differ from the light one.</summary>
+    private static void VerifyPalettes()
     {
-        using var effects = new PrettyDesk.Windows.DesktopEffectsPreferences();
-        if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22621) && effects.TransparencyEnabled && !SystemParameters.HighContrast)
+        string[] keys = ["DeskCanvasBrush", "DeskSidebarBrush", "DeskSurfaceBrush", "DeskSoftBrush", "DeskVeilBrush", "DeskStrokeBrush", "DeskInkBrush",
+            "DeskMutedBrush", "DeskAccentBrush", "DeskAccentTextBrush", "DeskAccentSoftBrush", "DeskOnAccentBrush"];
+        foreach (var name in new[] { "Light", "Dark", "HighContrast" })
         {
-            main.NativeAcrylicEnabled.ShouldBeTrue("native acrylic must enable on a supported desktop");
-        }
-        if (!main.NativeAcrylicEnabled) { return; }
-        main.WindowBackdropType.ShouldBe(Wpf.Ui.Controls.WindowBackdropType.Acrylic);
-        // Windows may deny foreground activation while the user is interacting
-        // with another app. Record that native-test limit rather than fake focus.
-        if (!main.Activate())
-        {
-            WriteFocusEvidence(false, false, false);
-            return;
-        }
-        Pump();
-        var panel = Application.Current.Resources["DeskPanelBrush"];
-        var foreground = Application.Current.Resources["DeskInkBrush"];
-        var focusTarget = new Window { Title = "PrettyDesk focus verification", Width = 240, Height = 120, ShowInTaskbar = false };
-        try
-        {
-            focusTarget.Show();
-            if (!focusTarget.Activate())
+            var palette = new ResourceDictionary { Source = new Uri($"pack://application:,,,/PrettyDesk;component/Resources/Palette.{name}.xaml") };
+            foreach (var key in keys)
             {
-                WriteFocusEvidence(true, false, false);
-                return;
+                palette.Contains(key).ShouldBeTrue($"{name} palette must define {key}");
             }
-            Pump();
-            main.IsActive.ShouldBeFalse("the other window must receive real input focus");
-            main.NativeAcrylicEnabled.ShouldBeTrue();
-            main.WindowBackdropType.ShouldBe(Wpf.Ui.Controls.WindowBackdropType.Acrylic);
-            Application.Current.Resources["DeskPanelBrush"].ShouldBeSameAs(panel);
-            Application.Current.Resources["DeskInkBrush"].ShouldBeSameAs(foreground);
-            CaptureIfRequested(main, "Main-Inactive-Acrylic");
         }
-        finally { focusTarget.Close(); }
-        var reactivated = main.Activate();
-        Pump();
-        main.WindowBackdropType.ShouldBe(Wpf.Ui.Controls.WindowBackdropType.Acrylic);
-        WriteFocusEvidence(true, true, reactivated);
-    }
 
-    private static void WriteFocusEvidence(bool activated, bool deactivated, bool reactivated)
-    {
-        var directory = Environment.GetEnvironmentVariable("PRETTYDESK_UI_CAPTURE_DIR");
-        if (string.IsNullOrEmpty(directory)) { return; }
-        Directory.CreateDirectory(directory);
-        File.WriteAllText(Path.Combine(directory, "focus-transition.json"), System.Text.Json.JsonSerializer.Serialize(new
-        {
-            NativeAcrylicEnabled = true,
-            Activated = activated,
-            Deactivated = deactivated,
-            Reactivated = reactivated,
-            VisualPixelsVerified = false,
-        }));
+        var light = ((System.Windows.Media.SolidColorBrush)Application.Current.Resources["DeskCanvasBrush"]).Color;
+        PrettyDesk.App.Services.AppAppearance.ApplyPalette(Wpf.Ui.Appearance.ApplicationTheme.Dark);
+        var dark = ((System.Windows.Media.SolidColorBrush)Application.Current.Resources["DeskCanvasBrush"]).Color;
+        PrettyDesk.App.Services.AppAppearance.ApplyPalette(Wpf.Ui.Appearance.ApplicationTheme.Light);
+        dark.ShouldNotBe(light);
+        ((System.Windows.Media.SolidColorBrush)Application.Current.Resources["DeskCanvasBrush"]).Color.ShouldBe(light);
     }
 
     private static void ShowEveryPage(ServiceProvider provider)
@@ -242,7 +206,7 @@ public sealed class AppSmokeTests : IDisposable
         var main = new PrettyDesk.App.Views.MainWindow(shell);
         main.Show();
         Pump();
-        VerifyAcrylicMaterialAndFocus(main);
+        VerifyPalettes();
         MeasureNavigationIfRequested(shell, main);
         VerifyLibraryNavigation(shell, main);
         CaptureIfRequested(main, "Main-Home");

@@ -11,10 +11,8 @@ using PrettyDesk.Presentation.Services;
 
 namespace PrettyDesk.Presentation.ViewModels;
 
-public sealed partial class CollectionCardViewModel : ObservableObject
+public sealed partial class CollectionCardViewModel : QuietObservableObject
 {
-    private bool _quiet;
-
     [ObservableProperty]
     private bool _isSelected;
 
@@ -46,22 +44,11 @@ public sealed partial class CollectionCardViewModel : ObservableObject
 
     public Action<CollectionCardViewModel>? SelectedChanged { get; set; }
 
-    public void SetSelectedQuietly(bool value)
-    {
-        _quiet = true;
-        try
-        {
-            IsSelected = value;
-        }
-        finally
-        {
-            _quiet = false;
-        }
-    }
+    public void SetSelectedQuietly(bool value) => Quietly(() => IsSelected = value);
 
     partial void OnIsSelectedChanged(bool value)
     {
-        if (!_quiet)
+        if (!IsQuiet)
         {
             SelectedChanged?.Invoke(this);
         }
@@ -102,6 +89,12 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
 
     [ObservableProperty]
     private bool _pauseOnBatterySaver = true;
+
+    [ObservableProperty]
+    private bool _darkOnly;
+
+    [ObservableProperty]
+    private string? _darkOnlyWarning;
 
     [ObservableProperty]
     private IntervalChoice? _selectedInterval;
@@ -169,6 +162,7 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         IsShuffle = d.Order == RotationOrder.Shuffle;
         FollowTheme = d.FollowWindowsTheme;
         PauseOnBatterySaver = d.PauseRotationOnBatterySaver;
+        DarkOnly = settings.General.DarkWallpapersOnly;
         UseMyImages = d.Selection.Collections.Contains(ContentIds.UserPackId);
 
         var preset = IntervalChoices.FirstOrDefault(c => !ReferenceEquals(c, _customChoice) && c.Value == d.Interval);
@@ -216,6 +210,19 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
 
     partial void OnPauseOnBatterySaverChanged(bool value) => Save(s => s.Default.PauseRotationOnBatterySaver = value);
 
+    partial void OnDarkOnlyChanged(bool value)
+    {
+        if (value == Settings.Current.General.DarkWallpapersOnly)
+        {
+            return;
+        }
+
+        Save(s => s.General.DarkWallpapersOnly = value);
+
+        // Collection counts, previews and the fixed-wallpaper list all depend on the filter, so rebuild them.
+        Load(Settings.Current);
+    }
+
     partial void OnSelectedIntervalChanged(IntervalChoice? value)
     {
         OnPropertyChanged(nameof(IsCustomInterval));
@@ -257,18 +264,20 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         Notice = null;
-        Save(s =>
+        Save(s => SetCollectionSelected(s, ContentIds.UserPackId, value));
+    }
+
+    private static void SetCollectionSelected(AppSettings settings, string collectionId, bool selected)
+    {
+        var collections = settings.Default.Selection.Collections;
+        if (!selected)
         {
-            var collections = s.Default.Selection.Collections;
-            if (value && !collections.Contains(ContentIds.UserPackId))
-            {
-                collections.Add(ContentIds.UserPackId);
-            }
-            else if (!value)
-            {
-                collections.Remove(ContentIds.UserPackId);
-            }
-        });
+            collections.Remove(collectionId);
+        }
+        else if (!collections.Contains(collectionId))
+        {
+            collections.Add(collectionId);
+        }
     }
 
     [RelayCommand]
@@ -366,13 +375,14 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
     {
         var selected = settings.Default.Selection.Collections.ToHashSet(StringComparer.Ordinal);
         var catalog = _catalog.Current;
+        var darkOnly = settings.General.DarkWallpapersOnly;
         Collections.Clear();
         foreach (var collection in catalog.Collections.OrderBy(c => c.Order).ThenBy(c => c.Title, StringComparer.CurrentCultureIgnoreCase))
         {
-            var ids = _library.GetWallpaperIds(collection.PackId);
+            var ids = VisibleIds(collection.PackId, darkOnly);
             var card = new CollectionCardViewModel(collection, ids.Count);
             card.SetSelectedQuietly(selected.Contains(collection.Id));
-            var starter = catalog.FindPack(collection.PackId)?.Wallpapers.FirstOrDefault(w => w.Starter)?.Id ?? (ids.Count > 0 ? ids[0] : null);
+            var starter = catalog.FindPack(collection.PackId)?.Wallpapers.FirstOrDefault(w => w.Starter && ids.Contains(w.Id))?.Id ?? ids.FirstOrDefault();
             card.PreviewPath = starter is null ? null : _content.GetPreviewImagePath(starter);
             card.StatusText = _content.GetPackState(collection.PackId).State == PackStateKind.Ready ? Strings.Library_ChipReady : Strings.Defaults_CollectionNotDownloaded;
             card.SelectedChanged = OnCollectionToggled;
@@ -380,6 +390,13 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         OnPropertyChanged(nameof(HasCollections));
+    }
+
+    /// <summary>The wallpaper ids of a pack the dark-only setting allows (every id when the setting is off). Counts and previews use it.</summary>
+    private List<string> VisibleIds(string packId, bool darkOnly)
+    {
+        var catalog = _catalog.Current;
+        return _library.GetWallpaperIds(packId).Where(id => ToneFilter.Allows(catalog, _library, id, darkOnly)).ToList();
     }
 
     private void OnCollectionToggled(CollectionCardViewModel card)
@@ -393,18 +410,7 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         Notice = null;
-        Save(s =>
-        {
-            var collections = s.Default.Selection.Collections;
-            if (card.IsSelected && !collections.Contains(card.Id))
-            {
-                collections.Add(card.Id);
-            }
-            else if (!card.IsSelected)
-            {
-                collections.Remove(card.Id);
-            }
-        });
+        Save(s => SetCollectionSelected(s, card.Id, card.IsSelected));
         BuildFixedCandidates(Settings.Current);
     }
 
@@ -422,7 +428,8 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         OnPropertyChanged(nameof(HasImages));
     }
 
-    private void BuildFixedCandidates(AppSettings settings)
+    /// <summary>Every wallpaper id in the selected collections and single picks, minus exclusions, without duplicates.</summary>
+    private IEnumerable<string> SelectedIds(AppSettings settings)
     {
         var catalog = _catalog.Current;
         var selection = settings.Default.Selection;
@@ -434,16 +441,33 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         ids.AddRange(selection.Wallpapers);
+        return ids.Distinct(StringComparer.Ordinal).Where(id => !selection.Excluded.Contains(id));
+    }
+
+    private void BuildFixedCandidates(AppSettings settings)
+    {
+        var darkOnly = settings.General.DarkWallpapersOnly;
         FixedCandidates.Clear();
-        foreach (var id in ids.Distinct(StringComparer.Ordinal).Where(id => !selection.Excluded.Contains(id) && _library.TryGetAsset(id) is not null))
+        foreach (var id in SelectedIds(settings))
         {
-            var item = new WallpaperItemViewModel(id, WallpaperTitles.Resolve(catalog, id)) { PreviewPath = _content.GetPreviewImagePath(id), IsAvailable = true };
+            var asset = _library.TryGetAsset(id);
+            if (asset is null || !ToneFilter.Allows(asset.Tone, darkOnly))
+            {
+                continue;
+            }
+
+            var item = new WallpaperItemViewModel(id, WallpaperTitles.Resolve(_catalog.Current, id)) { PreviewPath = _content.GetPreviewImagePath(id), IsAvailable = true };
             item.SetQuietly(true, settings.Default.Mode == WallpaperMode.Fixed && settings.Default.FixedWallpaperId == id);
             item.FavoriteChanged = OnFixedChosen;
             FixedCandidates.Add(item);
         }
 
         OnPropertyChanged(nameof(HasFixedCandidates));
+
+        // Judged on the catalog, not on downloads: a dark pack that is still downloading is not a reason to warn.
+        var catalog = _catalog.Current;
+        var anyDark = SelectedIds(settings).Any(id => ToneFilter.ToneOf(catalog, _library, id) == Tones.Dark);
+        DarkOnlyWarning = darkOnly && !anyDark ? Strings.Defaults_DarkOnlyNone : null;
     }
 
     private void OnFixedChosen(WallpaperItemViewModel item)

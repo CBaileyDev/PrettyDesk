@@ -155,13 +155,16 @@ internal sealed class FakeLibrary : IContentLibrary
     public Dictionary<string, List<string>> Packs { get; } = [];
     public HashSet<string> Available { get; } = [];
 
+    /// <summary>Tone per available wallpaper; anything not listed is dark, the common case in these tests.</summary>
+    public Dictionary<string, string> ToneById { get; } = [];
+
     public event Action<string>? PackChanged;
 
     public IReadOnlyList<string> GetWallpaperIds(string packId) => Packs.GetValueOrDefault(packId) ?? [];
 
     public PrettyDesk.Core.Catalog.WallpaperAsset? TryGetAsset(string wallpaperId) =>
         Available.Contains(wallpaperId)
-            ? new PrettyDesk.Core.Catalog.WallpaperAsset(wallpaperId, "p", wallpaperId, "dark", PrettyDesk.Core.Catalog.FocalPoint.Center, new Dictionary<string, PrettyDesk.Core.Catalog.LocalVariant>(), "h")
+            ? new PrettyDesk.Core.Catalog.WallpaperAsset(wallpaperId, "p", wallpaperId, ToneById.GetValueOrDefault(wallpaperId, "dark"), PrettyDesk.Core.Catalog.FocalPoint.Center, new Dictionary<string, PrettyDesk.Core.Catalog.LocalVariant>(), "h")
             : null;
 
     public void RequestPack(string packId, IReadOnlyList<MonitorInfo> monitors)

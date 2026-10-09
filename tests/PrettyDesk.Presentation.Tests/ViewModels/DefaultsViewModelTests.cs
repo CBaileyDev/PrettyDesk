@@ -325,6 +325,47 @@ public class DefaultsViewModelTests
     }
 
     [Fact]
+    public void Dark_only_counts_and_offers_only_dark_wallpapers()
+    {
+        _f.Library.ToneById["mb-02"] = Tones.Light;
+        var vm = Vm();
+
+        vm.DarkOnly = true;
+
+        _f.Settings.Current.General.DarkWallpapersOnly.ShouldBeTrue();
+        vm.Collections[0].Count.ShouldBe(1, "the light Basalt wallpaper is hidden from the collection");
+        vm.Collections[0].PreviewPath.ShouldBe("/t/mb-01.jpg");
+        vm.FixedCandidates.Select(c => c.Id).ShouldBe(["mb-01"]);
+        vm.DarkOnlyWarning.ShouldBeNull();
+    }
+
+    [Fact]
+    public void Dark_only_with_only_light_collections_warns_instead_of_silently_showing_nothing()
+    {
+        _f.Library.ToneById["cw-01"] = Tones.Light;
+        _f.Settings.Update(s => s.Default.Selection.Collections = ["default.clean-white"]);
+        var vm = Vm();
+
+        vm.DarkOnly = true;
+
+        vm.DarkOnlyWarning.ShouldBe("None of your selected wallpapers is dark. Choose a dark collection, such as Matte Black, or turn this option off.");
+        vm.FixedCandidates.ShouldBeEmpty();
+
+        vm.DarkOnly = false;
+
+        vm.DarkOnlyWarning.ShouldBeNull();
+        vm.FixedCandidates.Select(c => c.Id).ShouldBe(["cw-01"]);
+    }
+
+    [Fact]
+    public void The_dark_only_choice_is_remembered_between_visits()
+    {
+        _f.Settings.Update(s => s.General.DarkWallpapersOnly = true);
+
+        Vm().DarkOnly.ShouldBeTrue();
+    }
+
+    [Fact]
     public void Catalog_updates_refresh_the_collection_list()
     {
         var vm = Vm();

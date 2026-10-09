@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PrettyDesk.Core.Abstractions;
+using PrettyDesk.Core.Catalog;
 using PrettyDesk.Core.Content;
 using PrettyDesk.Core.Settings;
 using PrettyDesk.Presentation.Resources;
@@ -313,9 +314,16 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
             : _library.GetWallpaperIds(_game.PackId ?? string.Empty);
 
         var excluded = game.Excluded.ToHashSet(StringComparer.Ordinal);
+        var darkOnly = settings.General.DarkWallpapersOnly;
         Wallpapers.Clear();
         foreach (var id in ids)
         {
+            // Dark-only hides light wallpapers from this strip too, so the page matches what rotation can show.
+            if (!ToneFilter.Allows(catalog, _library, id, darkOnly))
+            {
+                continue;
+            }
+
             var item = new WallpaperItemViewModel(id, WallpaperTitles.Resolve(catalog, id))
             {
                 PreviewPath = _content.GetPreviewImagePath(id),

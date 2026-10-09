@@ -6,110 +6,163 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:PrettyDesk.Presentation.ViewModels;assembly=PrettyDesk.Presentation"
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
+             xmlns:views="clr-namespace:PrettyDesk.App.Views"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
-    <StackPanel MaxWidth="720" HorizontalAlignment="Left">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
+    <StackPanel MaxWidth="760" HorizontalAlignment="Left">
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Settings_Title}" />
 
       <!-- General -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_General}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
         <StackPanel>
-          <TextBlock Style="{StaticResource BodyStyle}" Text="{x:Static res:Strings.Settings_AppTheme}" />
-          <ComboBox ItemsSource="{x:Static vm:GeneralSettingsViewModel.ThemeChoices}" SelectedItem="{Binding General.Theme, Mode=TwoWay}" HorizontalAlignment="Left" MinWidth="160" Margin="0,8,0,4" AutomationProperties.Name="{x:Static res:Strings.Settings_AppTheme}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_AppThemeHelp}" Margin="0,0,0,16" />
-          <ui:ToggleSwitch IsChecked="{Binding General.StartWithWindows, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_StartWithWindows}" AutomationProperties.Name="{x:Static res:Strings.Settings_StartWithWindows}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_StartWithWindowsHelp}" />
-          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.RestoreOnExit, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_RestoreOnExit}" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOnExit}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOnExitHelp}" />
-          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding General.BetaUpdates, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_BetaUpdates}" AutomationProperties.Name="{x:Static res:Strings.Settings_BetaUpdates}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_BetaUpdatesHelp}" />
-          <ui:ToggleSwitch IsChecked="{Binding General.DesktopClock, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_DesktopClock}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_DesktopClock}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DesktopClockHelp}" />
-          <ComboBox ItemsSource="{Binding General.ClockMonitors}" SelectedItem="{Binding General.ClockMonitor, Mode=TwoWay}" DisplayMemberPath="Label" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_ClockMonitor}" />
-          <ui:ToggleSwitch IsChecked="{Binding General.DesktopNowPlaying, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NowPlaying}" Margin="0,16,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_NowPlaying}" />
-          <ui:ToggleSwitch IsChecked="{Binding General.DesktopVisualizer, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_Visualizer}" Margin="0,12,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_Visualizer}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_VisualizerHelp}" />
-          <WrapPanel Margin="0,8,0,0">
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_AppTheme}" views:SettingRow.Description="{x:Static res:Strings.Settings_AppThemeHelp}">
+            <ComboBox ItemsSource="{x:Static vm:GeneralSettingsViewModel.ThemeChoices}" SelectedItem="{Binding General.Theme, Mode=TwoWay}" MinWidth="160" AutomationProperties.Name="{x:Static res:Strings.Settings_AppTheme}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_StartWithWindows}" views:SettingRow.Description="{x:Static res:Strings.Settings_StartWithWindowsHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding General.StartWithWindows, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_StartWithWindows}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_RestoreOnExit}" views:SettingRow.Description="{x:Static res:Strings.Settings_RestoreOnExitHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding General.RestoreOnExit, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOnExit}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_BetaUpdates}" views:SettingRow.Description="{x:Static res:Strings.Settings_BetaUpdatesHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding General.BetaUpdates, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_BetaUpdates}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_DesktopClock}" views:SettingRow.Description="{x:Static res:Strings.Settings_DesktopClockHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding General.DesktopClock, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DesktopClock}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_ClockMonitor}">
+            <ComboBox ItemsSource="{Binding General.ClockMonitors}" SelectedItem="{Binding General.ClockMonitor, Mode=TwoWay}" DisplayMemberPath="Label" MinWidth="160" AutomationProperties.Name="{x:Static res:Strings.Settings_ClockMonitor}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_NowPlaying}">
+            <ui:ToggleSwitch IsChecked="{Binding General.DesktopNowPlaying, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_NowPlaying}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_Visualizer}" views:SettingRow.Description="{x:Static res:Strings.Settings_VisualizerHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding General.DesktopVisualizer, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_Visualizer}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <WrapPanel Margin="0,12">
             <Button Content="{x:Static res:Strings.Settings_PlayPause}" Command="{Binding General.PlayPauseCommand}" Margin="0,0,8,0" AutomationProperties.Name="{x:Static res:Strings.Settings_PlayPause}" />
             <Button Content="{x:Static res:Strings.Settings_NextTrack}" Command="{Binding General.NextTrackCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_NextTrack}" />
           </WrapPanel>
-          <TextBlock Style="{StaticResource BodyStyle}" Text="{x:Static res:Strings.Settings_WindowsColors}" Margin="0,16,0,0" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_WindowsColorsHelp}" />
-          <Button Content="{x:Static res:Strings.Settings_OpenColors}" Click="OnOpenColors" HorizontalAlignment="Left" Margin="0,8,0,0" AutomationProperties.Name="{x:Static res:Strings.Settings_OpenColors}" />
-          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding General.ErrorMessage}" Visibility="{Binding General.HasError, Converter={StaticResource BoolToVisibility}}" />
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_WindowsColors}" views:SettingRow.Description="{x:Static res:Strings.Settings_WindowsColorsHelp}">
+            <Button Content="{x:Static res:Strings.Settings_OpenColors}" Click="OnOpenColors" AutomationProperties.Name="{x:Static res:Strings.Settings_OpenColors}" />
+          </HeaderedContentControl>
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,0,0,12" Text="{Binding General.ErrorMessage}" Visibility="{Binding General.HasError, Converter={StaticResource BoolToVisibility}}" />
         </StackPanel>
       </Border>
 
       <!-- Detection -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Detection}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
         <StackPanel>
-          <ui:ToggleSwitch IsChecked="{Binding Detection.Enabled, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_DetectGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectGames}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectGamesHelp}" />
-
-          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,16,0,0"><Run Text="{x:Static res:Strings.Settings_PollSeconds}" /> <Run Text="{Binding Detection.PollSecondsText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
-          <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.PollSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_PollSeconds}" />
-
-          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,0"><Run Text="{x:Static res:Strings.Settings_DetectDelay}" /> <Run Text="{Binding Detection.DetectDelayText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
-          <Slider Minimum="1" Maximum="30" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.DetectDelaySeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectDelay}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectDelayHelp}" />
-
-          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,0"><Run Text="{x:Static res:Strings.Settings_ExitGrace}" /> <Run Text="{Binding Detection.ExitGraceText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
-          <Slider Minimum="0" Maximum="120" TickFrequency="5" IsSnapToTickEnabled="True" Value="{Binding Detection.ExitGraceSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_ExitGrace}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_ExitGraceHelp}" />
-
-          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Detection.UnknownGameHints, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_UnknownGameHints}" AutomationProperties.Name="{x:Static res:Strings.Settings_UnknownGameHints}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_UnknownGameHintsHelp}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_DetectGames}" views:SettingRow.Description="{x:Static res:Strings.Settings_DetectGamesHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding Detection.Enabled, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectGames}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <StackPanel Margin="0,12">
+            <TextBlock Style="{StaticResource BodyStyle}"><Run Text="{x:Static res:Strings.Settings_PollSeconds}" FontWeight="SemiBold" /> <Run Text="{Binding Detection.PollSecondsText, Mode=OneWay}" Foreground="{DynamicResource DeskAccentTextBrush}" FontWeight="SemiBold" /></TextBlock>
+            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.PollSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_PollSeconds}" />
+          </StackPanel>
+          <Border Style="{StaticResource DividerStyle}" />
+          <StackPanel Margin="0,12">
+            <TextBlock Style="{StaticResource BodyStyle}"><Run Text="{x:Static res:Strings.Settings_DetectDelay}" FontWeight="SemiBold" /> <Run Text="{Binding Detection.DetectDelayText, Mode=OneWay}" Foreground="{DynamicResource DeskAccentTextBrush}" FontWeight="SemiBold" /></TextBlock>
+            <Slider Minimum="1" Maximum="30" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Detection.DetectDelaySeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectDelay}" />
+            <TextBlock Style="{StaticResource MutedStyle}" FontSize="13" Text="{x:Static res:Strings.Settings_DetectDelayHelp}" />
+          </StackPanel>
+          <Border Style="{StaticResource DividerStyle}" />
+          <StackPanel Margin="0,12">
+            <TextBlock Style="{StaticResource BodyStyle}"><Run Text="{x:Static res:Strings.Settings_ExitGrace}" FontWeight="SemiBold" /> <Run Text="{Binding Detection.ExitGraceText, Mode=OneWay}" Foreground="{DynamicResource DeskAccentTextBrush}" FontWeight="SemiBold" /></TextBlock>
+            <Slider Minimum="0" Maximum="120" TickFrequency="5" IsSnapToTickEnabled="True" Value="{Binding Detection.ExitGraceSeconds, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_ExitGrace}" />
+            <TextBlock Style="{StaticResource MutedStyle}" FontSize="13" Text="{x:Static res:Strings.Settings_ExitGraceHelp}" />
+          </StackPanel>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_UnknownGameHints}" views:SettingRow.Description="{x:Static res:Strings.Settings_UnknownGameHintsHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding Detection.UnknownGameHints, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_UnknownGameHints}" />
+          </HeaderedContentControl>
         </StackPanel>
       </Border>
 
       <!-- Monitors -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Monitors}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
         <StackPanel>
-          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Settings_MonitorMode}" />
-          <RadioButton GroupName="MonitorMode" Margin="0,8,0,0" Content="{x:Static res:Strings.Settings_MonitorSame}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay, Converter={StaticResource InverseBool}}"
-                       AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorSame}" />
-          <RadioButton GroupName="MonitorMode" Content="{x:Static res:Strings.Settings_MonitorDifferent}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay}"
-                       AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorDifferent}" />
-          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Monitors.GameOnSecondaryOnly, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" AutomationProperties.Name="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_GameOnSecondaryOnlyHelp}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_MonitorMode}">
+            <Border Style="{StaticResource SegmentedBarStyle}">
+              <StackPanel Orientation="Horizontal">
+                <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="MonitorMode" Content="{x:Static res:Strings.Settings_MonitorSame}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                             AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorSame}" />
+                <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="MonitorMode" Content="{x:Static res:Strings.Settings_MonitorDifferent}" IsChecked="{Binding Monitors.DifferentPerMonitor, Mode=TwoWay}"
+                             AutomationProperties.Name="{x:Static res:Strings.Settings_MonitorDifferent}" />
+              </StackPanel>
+            </Border>
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" views:SettingRow.Description="{x:Static res:Strings.Settings_GameOnSecondaryOnlyHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding Monitors.GameOnSecondaryOnly, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_GameOnSecondaryOnly}" />
+          </HeaderedContentControl>
         </StackPanel>
       </Border>
 
       <!-- Storage -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Storage}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
         <StackPanel>
-          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding Storage.UsageText}" />
-          <TextBlock Style="{StaticResource BodyStyle}" Margin="0,12,0,4"><Run Text="{x:Static res:Strings.Settings_StorageCap}" /> <Run Text="{Binding Storage.CapText, Mode=OneWay}" FontWeight="SemiBold" /></TextBlock>
-          <ComboBox ItemsSource="{x:Static vm:StorageSettingsViewModel.CapChoicesGb}" SelectedItem="{Binding Storage.MaxCacheGb, Mode=TwoWay}" MinWidth="120" HorizontalAlignment="Left"
-                    AutomationProperties.Name="{x:Static res:Strings.Settings_StorageCap}" />
-          <ui:ToggleSwitch Margin="0,16,0,0" IsChecked="{Binding Storage.PrefetchInstalledGames, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_PrefetchGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_PrefetchGames}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_PrefetchGamesHelp}" />
-          <Button Margin="0,16,0,0" Content="{x:Static res:Strings.Settings_ClearDownloads}" Command="{Binding Storage.ClearCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_ClearDownloads}" />
-          <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="{Binding Storage.IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Settings_Working}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Storage.ResultMessage}" Visibility="{Binding Storage.ResultMessage, Converter={StaticResource NullToCollapsed}}" />
-          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding Storage.ErrorMessage}" Visibility="{Binding Storage.HasError, Converter={StaticResource BoolToVisibility}}" />
+          <StackPanel Margin="0,14,0,0">
+            <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{Binding Storage.UsageText}" />
+          </StackPanel>
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_StorageCap}">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource MutedStyle}" VerticalAlignment="Center" Margin="0,0,12,0" Text="{Binding Storage.CapText}" />
+              <ComboBox ItemsSource="{x:Static vm:StorageSettingsViewModel.CapChoicesGb}" SelectedItem="{Binding Storage.MaxCacheGb, Mode=TwoWay}" MinWidth="100" AutomationProperties.Name="{x:Static res:Strings.Settings_StorageCap}" />
+            </StackPanel>
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_PrefetchGames}" views:SettingRow.Description="{x:Static res:Strings.Settings_PrefetchGamesHelp}">
+            <ui:ToggleSwitch IsChecked="{Binding Storage.PrefetchInstalledGames, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_PrefetchGames}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <StackPanel Margin="0,12,0,14">
+            <Button Content="{x:Static res:Strings.Settings_ClearDownloads}" Command="{Binding Storage.ClearCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_ClearDownloads}" />
+            <ProgressBar IsIndeterminate="True" Margin="0,8,0,0" Visibility="{Binding Storage.IsBusy, Converter={StaticResource BoolToVisibility}}" AutomationProperties.Name="{x:Static res:Strings.Settings_Working}" />
+            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Storage.ResultMessage}" Visibility="{Binding Storage.ResultMessage, Converter={StaticResource NullToCollapsed}}" />
+            <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding Storage.ErrorMessage}" Visibility="{Binding Storage.HasError, Converter={StaticResource BoolToVisibility}}" />
+          </StackPanel>
         </StackPanel>
       </Border>
 
       <!-- Notifications -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Notifications}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,4">
         <StackPanel>
-          <ui:ToggleSwitch IsChecked="{Binding Notifications.DownloadErrors, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyDownloadErrors}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyDownloadErrors}" />
-          <ui:ToggleSwitch Margin="0,12,0,0" IsChecked="{Binding Notifications.Updates, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyUpdates}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUpdates}" />
-          <ui:ToggleSwitch Margin="0,12,0,0" IsChecked="{Binding Notifications.UnknownGames, Mode=TwoWay}" Content="{x:Static res:Strings.Settings_NotifyUnknownGames}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUnknownGames}" />
-          <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{x:Static res:Strings.Settings_NotifyHelp}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_NotifyDownloadErrors}">
+            <ui:ToggleSwitch IsChecked="{Binding Notifications.DownloadErrors, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyDownloadErrors}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_NotifyUpdates}">
+            <ui:ToggleSwitch IsChecked="{Binding Notifications.Updates, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUpdates}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Settings_NotifyUnknownGames}">
+            <ui:ToggleSwitch IsChecked="{Binding Notifications.UnknownGames, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_NotifyUnknownGames}" />
+          </HeaderedContentControl>
+          <Border Style="{StaticResource DividerStyle}" />
+          <TextBlock Style="{StaticResource MutedStyle}" FontSize="13" Margin="0,0,0,14" Text="{x:Static res:Strings.Settings_NotifyHelp}" />
         </StackPanel>
       </Border>
 
       <!-- Advanced -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Advanced}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,16">
         <StackPanel>
           <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Settings_DetectionLog}" />
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectionLogHelp}" />
@@ -117,7 +170,7 @@
             <ToggleButton Content="{x:Static res:Strings.Settings_DetectionLogPause}" IsChecked="{Binding Advanced.LogPaused, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLogPause}" />
             <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Settings_DetectionLogClear}" Command="{Binding Advanced.ClearLogCommand}" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLogClear}" />
           </StackPanel>
-          <Border Background="{DynamicResource ControlFillColorDefaultBrush}" CornerRadius="6" Padding="8" MinHeight="96">
+          <Border Background="{DynamicResource DeskSoftBrush}" CornerRadius="6" Padding="8" MinHeight="96">
             <Grid>
               <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_DetectionLogEmpty}" Visibility="{Binding Advanced.HasLog, Converter={StaticResource InverseBoolToVisibility}}" />
               <ListBox ItemsSource="{Binding Advanced.Log}" MaxHeight="180" Background="Transparent" BorderThickness="0" AutomationProperties.Name="{x:Static res:Strings.Settings_DetectionLog}"
@@ -150,7 +203,7 @@
 
       <!-- Restore original wallpaper -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Settings_Restore}" />
-      <Border Style="{StaticResource CardStyle}">
+      <Border Style="{StaticResource CardStyle}" Padding="20,16">
         <StackPanel>
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Settings_RestoreOriginalHelp}" />
           <Button Margin="0,12,0,0" Content="{x:Static res:Strings.Settings_RestoreOriginal}" Command="{Binding Restore.RestoreCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Settings_RestoreOriginal}" />

@@ -66,6 +66,12 @@ public sealed class GeneralSettings : SettingsSection
     public bool OnboardingCompleted { get; set; }
     public bool TrayHintShown { get; set; }
 
+    /// <summary>
+    /// Show only dark wallpapers everywhere: Default rotation, game wallpapers, fixed choices and the picker. Light and mid-tone
+    /// wallpapers are hidden, not disabled (<see cref="Catalog.ToneFilter"/>).
+    /// </summary>
+    public bool DarkWallpapersOnly { get; set; }
+
     /// <summary>Follow the "beta" update channel (SPEC §9) instead of "stable".</summary>
     public bool BetaUpdates { get; set; }
 }

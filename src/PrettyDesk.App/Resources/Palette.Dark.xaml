@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <SolidColorBrush x:Key="DeskCanvasBrush" Color="#0E1016" />
+  <SolidColorBrush x:Key="DeskSidebarBrush" Color="#12141B" />
+  <SolidColorBrush x:Key="DeskSurfaceBrush" Color="#171A23" />
+  <SolidColorBrush x:Key="DeskSoftBrush" Color="#222634" />
+  <SolidColorBrush x:Key="DeskVeilBrush" Color="#14FFFFFF" />
+  <SolidColorBrush x:Key="DeskStrokeBrush" Color="#2A2F3D" />
+  <SolidColorBrush x:Key="DeskInkBrush" Color="#EEF1F8" />
+  <SolidColorBrush x:Key="DeskMutedBrush" Color="#9CA6B9" />
+  <SolidColorBrush x:Key="DeskAccentBrush" Color="#5B5BD6" />
+  <SolidColorBrush x:Key="DeskAccentTextBrush" Color="#A9ABFF" />
+  <SolidColorBrush x:Key="DeskAccentSoftBrush" Color="#23264A" />
+  <SolidColorBrush x:Key="DeskOnAccentBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver" Color="#7172E6" />
+  <SolidColorBrush x:Key="ToggleSwitchFillOnPressed" Color="#4F4FC4" />
+</ResourceDictionary>

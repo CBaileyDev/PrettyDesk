@@ -45,7 +45,6 @@ public static class Strings
         "Add_BrowseExe",
         "Add_DisplayName",
         "Add_Exe",
-        "Add_ImportMine",
         "Add_ImportSkipped",
         "Add_Intro",
         "Add_LauncherBlocked",
@@ -76,22 +75,15 @@ public static class Strings
         "Bytes_GB",
         "Bytes_KB",
         "Bytes_MB",
-        "Common_Add",
-        "Common_AppName",
         "Common_Back",
-        "Common_Browse",
         "Common_Cancel",
-        "Common_Close",
         "Common_Done",
         "Common_Finish",
         "Common_Loading",
         "Common_Next",
         "Common_OK",
-        "Common_Off",
         "Common_On",
         "Common_Remove",
-        "Common_Retry",
-        "Common_Save",
         "Defaults_AddImages",
         "Defaults_Battery",
         "Defaults_BatteryHelp",
@@ -101,6 +93,9 @@ public static class Strings
         "Defaults_Collections",
         "Defaults_CollectionsEmptyBody",
         "Defaults_CollectionsEmptyTitle",
+        "Defaults_DarkOnly",
+        "Defaults_DarkOnlyHelp",
+        "Defaults_DarkOnlyNone",
         "Defaults_FixedHelp",
         "Defaults_FixedPick",
         "Defaults_FollowTheme",
@@ -129,7 +124,6 @@ public static class Strings
         "Defaults_UseMyImages",
         "Error_StartupBody",
         "Error_StartupTitle",
-        "Game_AddMyImages",
         "Game_AddWallpapers",
         "Game_Back",
         "Game_DetectionExe",
@@ -147,19 +141,16 @@ public static class Strings
         "Game_Favorite",
         "Game_Include",
         "Game_KeepOne",
-        "Game_Mode",
         "Game_ModeFixed",
         "Game_ModeRotate",
         "Game_NoWallpapers",
         "Game_NotDownloaded",
-        "Game_Order",
         "Game_OrderSequential",
         "Game_OrderShuffle",
         "Game_PackUnavailable",
         "Game_Prefetch",
         "Game_PrefetchHelp",
         "Game_Preview",
-        "Game_PreviewHelp",
         "Game_RemoveGame",
         "Game_RemoveMessage",
         "Game_RemoveTitle",
@@ -170,14 +161,9 @@ public static class Strings
         "Game_Unfavorite",
         "Game_WallpapersTitle",
         "Home_DisplayLabel",
-        "Home_GlassAction",
-        "Home_GlassDetail",
-        "Home_GlassTitle",
         "Home_NextWallpaper",
         "Home_NoMonitors",
         "Home_NoMonitorsDetail",
-        "Home_NoWallpaperYet",
-        "Home_Pause",
         "Home_PauseOneHour",
         "Home_PauseUntilResumed",
         "Home_PreviewLabel",
@@ -225,7 +211,6 @@ public static class Strings
         "Notify_DownloadFailedTitle",
         "Notify_SettingsRecoveredBody",
         "Notify_SettingsRecoveredTitle",
-        "Notify_UnknownGameAction",
         "Notify_UnknownGameBody",
         "Notify_UnknownGameTitle",
         "Notify_UpdateBody",
@@ -265,8 +250,6 @@ public static class Strings
         "Onboard_NoGamePacks",
         "Onboard_NoMatchingArt",
         "Onboard_PackDownloadSize",
-        "Onboard_ScanFailed",
-        "Onboard_ScanRetry",
         "Onboard_SpotlightNote",
         "Onboard_Start",
         "Onboard_StartupBody",
@@ -327,7 +310,6 @@ public static class Strings
         "Settings_DetectionLogNoForeground",
         "Settings_DetectionLogNoMatch",
         "Settings_DetectionLogPause",
-        "Settings_DetectionLogResume",
         "Settings_ExitGrace",
         "Settings_ExitGraceHelp",
         "Settings_ExportDiagnostics",
@@ -389,7 +371,6 @@ public static class Strings
         "Settings_WindowsColors",
         "Settings_WindowsColorsHelp",
         "Settings_Working",
-        "Shell_NavLabel",
         "Status_ApplyFailed",
         "Status_Blocked",
         "Status_BlockedDetail",
@@ -506,9 +487,6 @@ public static class Strings
     /// <summary>Program</summary>
     public static string Add_Exe => Get("Add_Exe");
 
-    /// <summary>Add my images…</summary>
-    public static string Add_ImportMine => Get("Add_ImportMine");
-
     /// <summary>{0} image(s) couldn't be added: {1}</summary>
     public static string Add_ImportSkipped => Get("Add_ImportSkipped");
 
@@ -599,23 +577,11 @@ public static class Strings
     /// <summary>{0} MB</summary>
     public static string Bytes_MB => Get("Bytes_MB");
 
-    /// <summary>Add</summary>
-    public static string Common_Add => Get("Common_Add");
-
-    /// <summary>PrettyDesk</summary>
-    public static string Common_AppName => Get("Common_AppName");
-
     /// <summary>Back</summary>
     public static string Common_Back => Get("Common_Back");
 
-    /// <summary>Browse…</summary>
-    public static string Common_Browse => Get("Common_Browse");
-
     /// <summary>Cancel</summary>
     public static string Common_Cancel => Get("Common_Cancel");
-
-    /// <summary>Close</summary>
-    public static string Common_Close => Get("Common_Close");
 
     /// <summary>Done</summary>
     public static string Common_Done => Get("Common_Done");
@@ -632,20 +598,11 @@ public static class Strings
     /// <summary>OK</summary>
     public static string Common_OK => Get("Common_OK");
 
-    /// <summary>Off</summary>
-    public static string Common_Off => Get("Common_Off");
-
     /// <summary>On</summary>
     public static string Common_On => Get("Common_On");
 
     /// <summary>Remove</summary>
     public static string Common_Remove => Get("Common_Remove");
-
-    /// <summary>Try again</summary>
-    public static string Common_Retry => Get("Common_Retry");
-
-    /// <summary>Save</summary>
-    public static string Common_Save => Get("Common_Save");
 
     /// <summary>Add images…</summary>
     public static string Defaults_AddImages => Get("Defaults_AddImages");
@@ -673,6 +630,15 @@ public static class Strings
 
     /// <summary>No collections yet</summary>
     public static string Defaults_CollectionsEmptyTitle => Get("Defaults_CollectionsEmptyTitle");
+
+    /// <summary>Only dark wallpapers</summary>
+    public static string Defaults_DarkOnly => Get("Defaults_DarkOnly");
+
+    /// <summary>Light and mid-tone wallpapers are hidden from rotation, game wallpapers and pickers. Images you add are judged by their brightness.</summary>
+    public static string Defaults_DarkOnlyHelp => Get("Defaults_DarkOnlyHelp");
+
+    /// <summary>None of your selected wallpapers is dark. Choose a dark collection, such as Matte Black, or turn this option off.</summary>
+    public static string Defaults_DarkOnlyNone => Get("Defaults_DarkOnlyNone");
 
     /// <summary>Choose from the wallpapers in your selection.</summary>
     public static string Defaults_FixedHelp => Get("Defaults_FixedHelp");
@@ -758,9 +724,6 @@ public static class Strings
     /// <summary>PrettyDesk couldn't start properly</summary>
     public static string Error_StartupTitle => Get("Error_StartupTitle");
 
-    /// <summary>Add my images…</summary>
-    public static string Game_AddMyImages => Get("Game_AddMyImages");
-
     /// <summary>Add wallpapers…</summary>
     public static string Game_AddWallpapers => Get("Game_AddWallpapers");
 
@@ -812,9 +775,6 @@ public static class Strings
     /// <summary>Keep at least one wallpaper turned on.</summary>
     public static string Game_KeepOne => Get("Game_KeepOne");
 
-    /// <summary>Wallpaper</summary>
-    public static string Game_Mode => Get("Game_Mode");
-
     /// <summary>Always use my favourite</summary>
     public static string Game_ModeFixed => Get("Game_ModeFixed");
 
@@ -826,9 +786,6 @@ public static class Strings
 
     /// <summary>Not downloaded yet</summary>
     public static string Game_NotDownloaded => Get("Game_NotDownloaded");
-
-    /// <summary>Order</summary>
-    public static string Game_Order => Get("Game_Order");
 
     /// <summary>In order</summary>
     public static string Game_OrderSequential => Get("Game_OrderSequential");
@@ -847,9 +804,6 @@ public static class Strings
 
     /// <summary>Preview on desktop</summary>
     public static string Game_Preview => Get("Game_Preview");
-
-    /// <summary>Shows it for 15 seconds, then goes back.</summary>
-    public static string Game_PreviewHelp => Get("Game_PreviewHelp");
 
     /// <summary>Remove this game</summary>
     public static string Game_RemoveGame => Get("Game_RemoveGame");
@@ -881,15 +835,6 @@ public static class Strings
     /// <summary>Display {0} · {1}×{2}</summary>
     public static string Home_DisplayLabel => Get("Home_DisplayLabel");
 
-    /// <summary>Explore wallpapers</summary>
-    public static string Home_GlassAction => Get("Home_GlassAction");
-
-    /// <summary>Explore Liquid Glass: three original iOS-inspired wallpapers, ready offline.</summary>
-    public static string Home_GlassDetail => Get("Home_GlassDetail");
-
-    /// <summary>A little clarity. A whole new desktop.</summary>
-    public static string Home_GlassTitle => Get("Home_GlassTitle");
-
     /// <summary>Next wallpaper</summary>
     public static string Home_NextWallpaper => Get("Home_NextWallpaper");
 
@@ -898,12 +843,6 @@ public static class Strings
 
     /// <summary>PrettyDesk will pick up your screens as soon as Windows reports them.</summary>
     public static string Home_NoMonitorsDetail => Get("Home_NoMonitorsDetail");
-
-    /// <summary>No wallpaper yet</summary>
-    public static string Home_NoWallpaperYet => Get("Home_NoWallpaperYet");
-
-    /// <summary>Pause</summary>
-    public static string Home_Pause => Get("Home_Pause");
 
     /// <summary>Pause for 1 hour</summary>
     public static string Home_PauseOneHour => Get("Home_PauseOneHour");
@@ -1046,9 +985,6 @@ public static class Strings
     /// <summary>Your settings were reset</summary>
     public static string Notify_SettingsRecoveredTitle => Get("Notify_SettingsRecoveredTitle");
 
-    /// <summary>Add game</summary>
-    public static string Notify_UnknownGameAction => Get("Notify_UnknownGameAction");
-
     /// <summary>Add {0} to PrettyDesk to give it its own wallpapers.</summary>
     public static string Notify_UnknownGameBody => Get("Notify_UnknownGameBody");
 
@@ -1165,12 +1101,6 @@ public static class Strings
 
     /// <summary>{0} to download · {1}</summary>
     public static string Onboard_PackDownloadSize => Get("Onboard_PackDownloadSize");
-
-    /// <summary>We could not check your installed games. Try again, or continue and add games in Library later.</summary>
-    public static string Onboard_ScanFailed => Get("Onboard_ScanFailed");
-
-    /// <summary>Check again</summary>
-    public static string Onboard_ScanRetry => Get("Onboard_ScanRetry");
 
     /// <summary>PrettyDesk restores your slideshow source, shuffle setting, and interval. Windows Spotlight remains unchanged until you switch Windows Background to Picture or Slideshow.</summary>
     public static string Onboard_SpotlightNote => Get("Onboard_SpotlightNote");
@@ -1351,9 +1281,6 @@ public static class Strings
 
     /// <summary>Pause log</summary>
     public static string Settings_DetectionLogPause => Get("Settings_DetectionLogPause");
-
-    /// <summary>Resume log</summary>
-    public static string Settings_DetectionLogResume => Get("Settings_DetectionLogResume");
 
     /// <summary>Keep the game wallpaper after it closes for</summary>
     public static string Settings_ExitGrace => Get("Settings_ExitGrace");
@@ -1537,9 +1464,6 @@ public static class Strings
 
     /// <summary>Working…</summary>
     public static string Settings_Working => Get("Settings_Working");
-
-    /// <summary>Main navigation</summary>
-    public static string Shell_NavLabel => Get("Shell_NavLabel");
 
     /// <summary>Couldn't change the wallpaper. Trying again…</summary>
     public static string Status_ApplyFailed => Get("Status_ApplyFailed");

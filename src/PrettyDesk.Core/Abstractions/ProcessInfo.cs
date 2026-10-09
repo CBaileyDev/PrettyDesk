@@ -13,8 +13,4 @@ public sealed record MonitorInfo(
     int Top,
     int PixelWidth,
     int PixelHeight,
-    bool IsPrimary)
-{
-    /// <summary>Aspect ratio as presented to the user (already reflects rotation).</summary>
-    public double AspectRatio => PixelHeight == 0 ? 1.0 : (double)PixelWidth / PixelHeight;
-}
+    bool IsPrimary);

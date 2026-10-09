@@ -108,7 +108,7 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
                     image.Id,
                     Orchestration.ContentIds.UserPackId,
                     image.Id,
-                    Tones.Mid,
+                    image.Tone,
                     FocalPoint.Center,
                     new Dictionary<string, LocalVariant> { [Variants.User] = new LocalVariant(Variants.User, image.Path, image.Width, image.Height) },
                     System.IO.Path.GetFileNameWithoutExtension(image.Path),
@@ -268,15 +268,6 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
         if (!ct.IsCancellationRequested && GetPackState(packId).State == PackStateKind.Ready && GetDownloadPlan(packId, monitors).MissingBytes > 0)
         {
             await EnsurePackAsync(packId, monitors, ct).ConfigureAwait(false);
-        }
-    }
-
-    /// <summary>Background prefetch for installed + enabled games (FR-CON-4).</summary>
-    public void Prefetch(IEnumerable<string> packIds, IReadOnlyList<MonitorInfo> monitors)
-    {
-        foreach (var packId in packIds.Distinct(StringComparer.Ordinal))
-        {
-            RequestPack(packId, monitors);
         }
     }
 

@@ -79,6 +79,8 @@ For each game below, launch it, confirm the Detection log shows the exe name fro
 - [ ] Every action that takes time shows a loading state; every error has a plain-language message; every list has an empty state (try offline, no games installed, empty library search).
 - [ ] No layout shift when thumbnails load; window remembers size and position; minimum size respected.
 - [ ] About shows version, licenses (third-party notices), the disclaimer, and working links. Privacy statement matches reality (no telemetry).
+- [ ] Dashboard look (ADR 0016), light, dark and high contrast: sidebar and title bar read as one frame; cards, segmented controls, setting rows and primary buttons have enough contrast; the selected nav item, selected segment and focus rings are visible; nothing is blurred or transparent. Check Home, Library (cards and filters), a game page, Defaults, Settings, About, onboarding and a message dialog at 860x560 and maximised.
+- [ ] Home hides "Pause" buttons while paused or blocked and shows "Resume" only while paused; Tab order stays sensible when buttons appear and disappear.
 
 ## 7. Content and art
 - [ ] Every shipped wallpaper passed the ART_DIRECTION 6 review checklist (no text, no seams, calm left 15 % and bottom 8 %, not an official asset).

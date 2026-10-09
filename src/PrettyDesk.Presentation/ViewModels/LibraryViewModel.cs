@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PrettyDesk.Core.Abstractions;
+using PrettyDesk.Core.Catalog;
 using PrettyDesk.Core.Content;
 using PrettyDesk.Core.Settings;
 using PrettyDesk.Presentation.Resources;
@@ -17,10 +18,8 @@ public enum LibraryFilter
 }
 
 /// <summary>A game tile: our own art (never publisher logos, SPEC §10), status chip and enable toggle.</summary>
-public sealed partial class GameCardViewModel : ObservableObject
+public sealed partial class GameCardViewModel : QuietObservableObject
 {
-    private bool _quiet;
-
     [ObservableProperty]
     private bool _isEnabled;
 
@@ -53,22 +52,11 @@ public sealed partial class GameCardViewModel : ObservableObject
 
     public Action<GameCardViewModel>? EnabledChanged { get; set; }
 
-    public void SetEnabledQuietly(bool value)
-    {
-        _quiet = true;
-        try
-        {
-            IsEnabled = value;
-        }
-        finally
-        {
-            _quiet = false;
-        }
-    }
+    public void SetEnabledQuietly(bool value) => Quietly(() => IsEnabled = value);
 
     partial void OnIsEnabledChanged(bool value)
     {
-        if (!_quiet)
+        if (!IsQuiet)
         {
             EnabledChanged?.Invoke(this);
         }
@@ -268,6 +256,7 @@ public sealed partial class LibraryViewModel : ViewModelBase
     private void ApplyChips()
     {
         var catalog = _catalog.Current;
+        var darkOnly = _settings.Current.General.DarkWallpapersOnly;
         foreach (var card in _cards)
         {
             card.IsInstalled = _installedIds.Contains(card.Id);
@@ -275,9 +264,11 @@ public sealed partial class LibraryViewModel : ViewModelBase
                 ? _settings.Current.CustomGames.FirstOrDefault(c => c.Id == card.Id)?.Wallpapers ?? []
                 : _library.GetWallpaperIds(card.Listing.PackId ?? string.Empty);
 
-            var hero = catalog.FindPack(card.Listing.PackId ?? string.Empty)?.Wallpapers.FirstOrDefault(w => w.Role == "hero")?.Id;
+            var visibleIds = wallpaperIds.Where(id => ToneFilter.Allows(catalog, _library, id, darkOnly)).ToList();
+            var hero = catalog.FindPack(card.Listing.PackId ?? string.Empty)?.Wallpapers
+                .FirstOrDefault(w => w.Role == "hero" && ToneFilter.Allows(w.Tone, darkOnly))?.Id;
             card.ThumbnailPath = (hero is null ? null : _content.GetPreviewImagePath(hero))
-                ?? wallpaperIds.Select(id => _content.GetPreviewImagePath(id)).FirstOrDefault(p => p is not null);
+                ?? visibleIds.Select(id => _content.GetPreviewImagePath(id)).FirstOrDefault(p => p is not null);
 
             if (card.IsCustom)
             {

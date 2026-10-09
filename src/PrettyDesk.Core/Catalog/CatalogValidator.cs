@@ -3,8 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace PrettyDesk.Core.Catalog;
 
-public sealed class CatalogException(string message, Exception? inner = null) : Exception(message, inner);
-
 /// <summary>Why a catalog was not used (for the debug log; never user-facing noise, NFR-7).</summary>
 public enum CatalogRejection
 {

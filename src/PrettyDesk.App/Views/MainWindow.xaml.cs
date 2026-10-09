@@ -7,7 +7,6 @@ namespace PrettyDesk.App.Views;
 public partial class MainWindow : FluentWindow
 {
     private bool _syncing;
-    internal bool NativeAcrylicEnabled { get; set; }
 
     public MainWindow(ShellViewModel viewModel)
     {
@@ -18,11 +17,7 @@ public partial class MainWindow : FluentWindow
             PageHost.ReleasePages();
             if (TryFindResource("PathToImage") is Converters.PathToImageConverter images) { images.ClearCache(); }
         };
-        Loaded += (_, _) =>
-        {
-            SyncSelection();
-            Services.AppAppearance.ApplyMainWindowMaterial(this);
-        };
+        Loaded += (_, _) => SyncSelection();
         viewModel.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName == nameof(ShellViewModel.SelectedKind))
