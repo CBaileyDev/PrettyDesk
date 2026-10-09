@@ -47,6 +47,15 @@
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_CollectionsEmptyBody}" />
       </StackPanel>
 
+      <!-- Dark-only filters every wallpaper list on this page, in rotation, game pages and the picker -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+        <StackPanel>
+          <ui:ToggleSwitch IsChecked="{Binding DarkOnly, Mode=TwoWay}" Content="{x:Static res:Strings.Defaults_DarkOnly}" AutomationProperties.Name="{x:Static res:Strings.Defaults_DarkOnly}" />
+          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Defaults_DarkOnlyHelp}" />
+          <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,8,0,0" Text="{Binding DarkOnlyWarning}" Visibility="{Binding DarkOnlyWarning, Converter={StaticResource NullToCollapsed}}" />
+        </StackPanel>
+      </Border>
+
       <!-- My images (drag and drop works anywhere on this page) -->
       <TextBlock Style="{StaticResource SectionTitleStyle}" Text="{x:Static res:Strings.Defaults_MyImages}" />
       <Border Style="{StaticResource CardStyle}">

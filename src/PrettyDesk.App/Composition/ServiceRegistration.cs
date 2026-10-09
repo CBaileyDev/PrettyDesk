@@ -239,7 +239,8 @@ public static class ServiceRegistration
         sp.GetRequiredService<IContentLibrary>(),
         sp.GetRequiredService<IContentBrowser>(),
         sp.GetRequiredService<IFilePicker>(),
-        existing);
+        existing,
+        sp.GetRequiredService<ISettingsProvider>().Current.General.DarkWallpapersOnly);
 
     private sealed class ProtectedPacks(Func<IReadOnlySet<string>> source) : IDetectionProtectedPacks
     {

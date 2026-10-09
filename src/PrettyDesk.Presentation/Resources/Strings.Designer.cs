@@ -101,6 +101,9 @@ public static class Strings
         "Defaults_Collections",
         "Defaults_CollectionsEmptyBody",
         "Defaults_CollectionsEmptyTitle",
+        "Defaults_DarkOnly",
+        "Defaults_DarkOnlyHelp",
+        "Defaults_DarkOnlyNone",
         "Defaults_FixedHelp",
         "Defaults_FixedPick",
         "Defaults_FollowTheme",
@@ -673,6 +676,15 @@ public static class Strings
 
     /// <summary>No collections yet</summary>
     public static string Defaults_CollectionsEmptyTitle => Get("Defaults_CollectionsEmptyTitle");
+
+    /// <summary>Only dark wallpapers</summary>
+    public static string Defaults_DarkOnly => Get("Defaults_DarkOnly");
+
+    /// <summary>Light and mid-tone wallpapers are hidden from rotation, game wallpapers and pickers. Images you add are judged by their brightness.</summary>
+    public static string Defaults_DarkOnlyHelp => Get("Defaults_DarkOnlyHelp");
+
+    /// <summary>None of your selected wallpapers is dark. Choose a dark collection, such as Matte Black, or turn this option off.</summary>
+    public static string Defaults_DarkOnlyNone => Get("Defaults_DarkOnlyNone");
 
     /// <summary>Choose from the wallpapers in your selection.</summary>
     public static string Defaults_FixedHelp => Get("Defaults_FixedHelp");

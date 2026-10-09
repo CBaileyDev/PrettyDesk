@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PrettyDesk.Core.Abstractions;
+using PrettyDesk.Core.Catalog;
 using PrettyDesk.Core.Content;
 using PrettyDesk.Core.Settings;
 using PrettyDesk.Presentation.Resources;
@@ -275,9 +276,12 @@ public sealed partial class LibraryViewModel : ViewModelBase
                 ? _settings.Current.CustomGames.FirstOrDefault(c => c.Id == card.Id)?.Wallpapers ?? []
                 : _library.GetWallpaperIds(card.Listing.PackId ?? string.Empty);
 
-            var hero = catalog.FindPack(card.Listing.PackId ?? string.Empty)?.Wallpapers.FirstOrDefault(w => w.Role == "hero")?.Id;
+            var darkOnly = _settings.Current.General.DarkWallpapersOnly;
+            var visibleIds = wallpaperIds.Where(id => ToneFilter.Allows(ToneFilter.ToneOf(catalog, _library, id), darkOnly)).ToList();
+            var hero = catalog.FindPack(card.Listing.PackId ?? string.Empty)?.Wallpapers
+                .FirstOrDefault(w => w.Role == "hero" && ToneFilter.Allows(w.Tone, darkOnly))?.Id;
             card.ThumbnailPath = (hero is null ? null : _content.GetPreviewImagePath(hero))
-                ?? wallpaperIds.Select(id => _content.GetPreviewImagePath(id)).FirstOrDefault(p => p is not null);
+                ?? visibleIds.Select(id => _content.GetPreviewImagePath(id)).FirstOrDefault(p => p is not null);
 
             if (card.IsCustom)
             {

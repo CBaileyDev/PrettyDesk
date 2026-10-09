@@ -47,12 +47,13 @@ public sealed partial class WallpaperPickerViewModel : ViewModelBase
     [ObservableProperty]
     private string? _notice;
 
-    public WallpaperPickerViewModel(CatalogDocument catalog, IContentLibrary library, IContentBrowser content, IFilePicker files, IEnumerable<string>? alreadySelected = null)
+    /// <param name="darkOnly">Offer only dark wallpapers (general setting <c>DarkWallpapersOnly</c>).</param>
+    public WallpaperPickerViewModel(CatalogDocument catalog, IContentLibrary library, IContentBrowser content, IFilePicker files, IEnumerable<string>? alreadySelected = null, bool darkOnly = false)
     {
         _content = content;
         _files = files;
         var selected = alreadySelected?.ToHashSet(StringComparer.Ordinal) ?? [];
-        LoadItems(catalog, library, selected);
+        LoadItems(catalog, library, selected, darkOnly);
         ApplyFilter();
     }
 
@@ -97,10 +98,15 @@ public sealed partial class WallpaperPickerViewModel : ViewModelBase
         ApplyFilter();
     }
 
-    private void LoadItems(CatalogDocument catalog, IContentLibrary library, HashSet<string> selected)
+    private void LoadItems(CatalogDocument catalog, IContentLibrary library, HashSet<string> selected, bool darkOnly)
     {
         foreach (var image in _content.ListUserImages())
         {
+            if (!ToneFilter.Allows(image.Tone, darkOnly))
+            {
+                continue;
+            }
+
             _all.Add(new PickerItemViewModel(image.Id, image.Id["user:".Length..], Strings.Picker_GroupMine, image.Path) { IsSelected = selected.Contains(image.Id) });
         }
 
@@ -108,7 +114,8 @@ public sealed partial class WallpaperPickerViewModel : ViewModelBase
         {
             foreach (var wallpaper in pack.Wallpapers)
             {
-                if (library.TryGetAsset(wallpaper.Id) is null)
+                var asset = library.TryGetAsset(wallpaper.Id);
+                if (asset is null || !ToneFilter.Allows(asset.Tone, darkOnly))
                 {
                     continue;
                 }
