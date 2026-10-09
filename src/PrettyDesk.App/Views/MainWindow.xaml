@@ -15,72 +15,82 @@
                  WindowBackdropType="None"
                  ExtendsContentIntoTitleBar="True"
                  AutomationProperties.Name="PrettyDesk">
-  <Grid Background="{DynamicResource DeskAmbientBrush}">
+  <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
-
-    <ui:TitleBar Grid.Row="0" Title="" Foreground="{DynamicResource DeskInkBrush}" ShowMaximize="True" AutomationProperties.Name="Window controls" />
+    <ui:TitleBar Grid.Row="0" Title="" Background="{DynamicResource DeskSidebarBrush}" Foreground="{DynamicResource DeskInkBrush}" ShowMaximize="True" AutomationProperties.Name="Window controls" />
 
     <Grid Grid.Row="1">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="214" />
+        <ColumnDefinition Width="220" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
 
-      <Border Margin="16,12,0,20" Background="{DynamicResource DeskShellBrush}" CornerRadius="28" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1">
-      <Grid>
-        <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
-        <Viewbox x:Name="BrandLogo" Margin="14,22,14,22" Height="34" MaxWidth="166" Stretch="Uniform" HorizontalAlignment="Center" AutomationProperties.Name="PrettyDesk">
-          <StackPanel Orientation="Horizontal" Background="Transparent">
-            <Canvas Width="32" Height="28" Margin="0,0,9,0" VerticalAlignment="Center">
-              <Rectangle Canvas.Left="1" Canvas.Top="1" Width="28" Height="19" RadiusX="4" RadiusY="4" Stroke="{DynamicResource DeskInkBrush}" StrokeThickness="1.8" />
-              <Path Data="M5,15 L11,8 L16,13 L20,9 L25,15 Z" Fill="{DynamicResource DeskBlueBrush}" />
-              <Path Data="M15,21 L15,25 M9,25 L21,25" Stroke="{DynamicResource DeskInkBrush}" StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
-            </Canvas>
-            <TextBlock Text="PrettyDesk" FontSize="22" FontWeight="SemiBold" Foreground="{DynamicResource DeskInkBrush}" VerticalAlignment="Center" />
-          </StackPanel>
-        </Viewbox>
-      <ListBox x:Name="NavList"
-               Grid.Row="1"
-               Margin="10,0,10,16"
-               Foreground="{DynamicResource DeskInkBrush}"
-               Background="Transparent"
-               BorderThickness="0"
-               ItemsSource="{Binding NavItems}"
-               SelectionChanged="OnNavSelectionChanged"
-               AutomationProperties.Name="Main navigation">
-        <ListBox.ItemContainerStyle>
-          <Style TargetType="ListBoxItem">
-            <Setter Property="Margin" Value="0,3" /><Setter Property="Padding" Value="12,4" />
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem">
-              <Border x:Name="Pill" Background="Transparent" CornerRadius="20" Padding="{TemplateBinding Padding}"><ContentPresenter /></Border>
-              <ControlTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Pill" Property="Background" Value="{DynamicResource DeskSoftBrush}" /></Trigger>
-                <Trigger Property="IsSelected" Value="True"><Setter TargetName="Pill" Property="Background" Value="#007AFF" /><Setter Property="Foreground" Value="White" /></Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Pill" Property="BorderBrush" Value="#007AFF" /><Setter TargetName="Pill" Property="BorderThickness" Value="2" /></Trigger>
-              </ControlTemplate.Triggers>
-            </ControlTemplate></Setter.Value></Setter>
-          </Style>
-        </ListBox.ItemContainerStyle>
-        <ListBox.ItemTemplate>
-          <DataTemplate DataType="{x:Type vm:NavItem}">
-            <StackPanel Orientation="Horizontal" Margin="4,8" AutomationProperties.Name="{Binding Label}">
-              <TextBlock FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="16" Text="{Binding Glyph}" VerticalAlignment="Center" Margin="0,0,12,0" />
-              <TextBlock Text="{Binding Label}" FontSize="14" VerticalAlignment="Center" />
+      <!-- Sidebar: flush with the window edge, separated from the content by one hairline. -->
+      <Border Background="{DynamicResource DeskSidebarBrush}" BorderBrush="{DynamicResource DeskStrokeBrush}" BorderThickness="0,1,1,0">
+        <Grid>
+          <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+          <Viewbox x:Name="BrandLogo" Margin="20,18,20,22" Height="30" MaxWidth="170" Stretch="Uniform" HorizontalAlignment="Left" AutomationProperties.Name="PrettyDesk">
+            <StackPanel Orientation="Horizontal" Background="Transparent">
+              <Canvas Width="32" Height="28" Margin="0,0,9,0" VerticalAlignment="Center">
+                <Rectangle Canvas.Left="1" Canvas.Top="1" Width="28" Height="19" RadiusX="4" RadiusY="4" Stroke="{DynamicResource DeskInkBrush}" StrokeThickness="1.8" />
+                <Path Data="M5,15 L11,8 L16,13 L20,9 L25,15 Z" Fill="{DynamicResource DeskAccentTextBrush}" />
+                <Path Data="M15,21 L15,25 M9,25 L21,25" Stroke="{DynamicResource DeskInkBrush}" StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+              </Canvas>
+              <TextBlock Text="PrettyDesk" FontSize="22" FontWeight="SemiBold" Foreground="{DynamicResource DeskInkBrush}" VerticalAlignment="Center" />
             </StackPanel>
-          </DataTemplate>
-        </ListBox.ItemTemplate>
-      </ListBox>
-      </Grid>
+          </Viewbox>
+          <ListBox x:Name="NavList"
+                   Grid.Row="1"
+                   Margin="12,0,12,16"
+                   Foreground="{DynamicResource DeskMutedBrush}"
+                   Background="Transparent"
+                   BorderThickness="0"
+                   ItemsSource="{Binding NavItems}"
+                   SelectionChanged="OnNavSelectionChanged"
+                   AutomationProperties.Name="Main navigation">
+            <ListBox.ItemContainerStyle>
+              <Style TargetType="ListBoxItem">
+                <Setter Property="Margin" Value="0,2" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem">
+                  <Grid>
+                    <Border x:Name="Row" Background="Transparent" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                      <ContentPresenter />
+                    </Border>
+                    <Border x:Name="Marker" Width="3" Height="18" CornerRadius="2" HorizontalAlignment="Left" Margin="0" Background="{DynamicResource DeskAccentTextBrush}" Visibility="Collapsed" />
+                    <Border x:Name="Ring" CornerRadius="8" BorderThickness="2" BorderBrush="{DynamicResource DeskAccentTextBrush}" Visibility="Collapsed" IsHitTestVisible="False" />
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Row" Property="Background" Value="{DynamicResource DeskSoftBrush}" /></Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                      <Setter TargetName="Row" Property="Background" Value="{DynamicResource DeskAccentSoftBrush}" />
+                      <Setter TargetName="Marker" Property="Visibility" Value="Visible" />
+                      <Setter Property="Foreground" Value="{DynamicResource DeskAccentTextBrush}" />
+                    </Trigger>
+                    <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Ring" Property="Visibility" Value="Visible" /></Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate></Setter.Value></Setter>
+              </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+              <DataTemplate DataType="{x:Type vm:NavItem}">
+                <StackPanel Orientation="Horizontal" Margin="14,10" AutomationProperties.Name="{Binding Label}">
+                  <TextBlock FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="16" Text="{Binding Glyph}" VerticalAlignment="Center" Margin="0,0,12,0" />
+                  <TextBlock Text="{Binding Label}" FontSize="14" FontWeight="Medium" VerticalAlignment="Center" />
+                </StackPanel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </Grid>
       </Border>
 
-      <Border Grid.Column="1" Margin="16,12,20,20" CornerRadius="28" Background="{DynamicResource DeskPanelBrush}" BorderBrush="{DynamicResource DeskRimBrush}" BorderThickness="1" ClipToBounds="True">
-        <views:MotionContentControl x:Name="PageHost" Page="{Binding CurrentPage}" Margin="8,8,8,8" Focusable="False" />
-      </Border>
+      <views:MotionContentControl x:Name="PageHost" Grid.Column="1" Page="{Binding CurrentPage}" Focusable="False" />
     </Grid>
   </Grid>
 </ui:FluentWindow>

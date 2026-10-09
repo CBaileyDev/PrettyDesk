@@ -16,31 +16,38 @@
   </UserControl.Resources>
 
   <Grid>
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
       <StackPanel>
         <Button Content="{x:Static res:Strings.Game_Back}" Command="{Binding BackCommand}" HorizontalAlignment="Left" AutomationProperties.Name="{x:Static res:Strings.Game_Back}" />
         <TextBlock Style="{StaticResource PageTitleStyle}" Margin="0,16,0,0" Text="{Binding Name}" />
 
-        <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0">
+        <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0" Padding="20,4">
           <StackPanel>
-            <ui:ToggleSwitch IsChecked="{Binding Enabled, Mode=TwoWay}" Content="{x:Static res:Strings.Game_Enabled}" AutomationProperties.Name="{x:Static res:Strings.Game_Enabled}" />
-            <StackPanel Margin="0,12,0,0" Visibility="{Binding IsCustom, Converter={StaticResource InverseBoolToVisibility}}">
-              <ui:ToggleSwitch IsChecked="{Binding PrefetchWallpapers, Mode=TwoWay}" Content="{x:Static res:Strings.Game_Prefetch}" AutomationProperties.Name="{x:Static res:Strings.Game_Prefetch}" />
-              <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{x:Static res:Strings.Game_PrefetchHelp}" />
+            <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Game_Enabled}">
+              <ui:ToggleSwitch IsChecked="{Binding Enabled, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_Enabled}" />
+            </HeaderedContentControl>
+            <StackPanel Visibility="{Binding IsCustom, Converter={StaticResource InverseBoolToVisibility}}">
+              <Border Style="{StaticResource DividerStyle}" />
+              <HeaderedContentControl Style="{StaticResource SettingRowStyle}" Header="{x:Static res:Strings.Game_Prefetch}" views:SettingRow.Description="{x:Static res:Strings.Game_PrefetchHelp}">
+                <ui:ToggleSwitch IsChecked="{Binding PrefetchWallpapers, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_Prefetch}" />
+              </HeaderedContentControl>
             </StackPanel>
-            <StackPanel Margin="0,16,0,0" Orientation="Horizontal">
-              <RadioButton GroupName="GameMode" Content="{x:Static res:Strings.Game_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_ModeRotate}" />
-              <RadioButton GroupName="GameMode" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
-                           AutomationProperties.Name="{x:Static res:Strings.Game_ModeFixed}" />
-            </StackPanel>
-            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,8,0,0" Text="{Binding Notice}" Visibility="{Binding Notice, Converter={StaticResource NullToCollapsed}}" />
+            <Border Style="{StaticResource DividerStyle}" />
+            <Border Style="{StaticResource SegmentedBarStyle}" Margin="0,12">
+              <StackPanel Orientation="Horizontal">
+                <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="GameMode" Content="{x:Static res:Strings.Game_ModeRotate}" IsChecked="{Binding IsRotate, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_ModeRotate}" />
+                <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="GameMode" Content="{x:Static res:Strings.Game_ModeFixed}" IsChecked="{Binding IsRotate, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                             AutomationProperties.Name="{x:Static res:Strings.Game_ModeFixed}" />
+              </StackPanel>
+            </Border>
+            <TextBlock Style="{StaticResource MutedStyle}" Margin="0,0,0,12" Text="{Binding Notice}" Visibility="{Binding Notice, Converter={StaticResource NullToCollapsed}}" />
           </StackPanel>
         </Border>
 
         <!-- Pack download state (catalog games) -->
         <StackPanel Orientation="Horizontal" Margin="0,12,0,0" Visibility="{Binding PackStatusText, Converter={StaticResource NullToCollapsed}}">
           <Border Style="{StaticResource ChipStyle}" VerticalAlignment="Center"><TextBlock Text="{Binding PackStatusText}" FontSize="12" Style="{StaticResource BodyStyle}" VerticalAlignment="Center" TextAlignment="Center" /></Border>
-          <Button Margin="12,0,0,0" Content="{x:Static res:Strings.Game_Download}" Command="{Binding DownloadCommand}" Visibility="{Binding CanDownload, Converter={StaticResource BoolToVisibility}}"
+          <Button Style="{StaticResource PrimaryButtonStyle}" Margin="12,0,0,0" Content="{x:Static res:Strings.Game_Download}" Command="{Binding DownloadCommand}" Visibility="{Binding CanDownload, Converter={StaticResource BoolToVisibility}}"
                   AutomationProperties.Name="{x:Static res:Strings.Game_Download}" />
         </StackPanel>
 
@@ -97,11 +104,13 @@
           <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Game_RotationHelp}" Margin="0,0,0,8" />
           <ComboBox ItemsSource="{Binding IntervalChoices}" SelectedItem="{Binding SelectedInterval, Mode=TwoWay}" DisplayMemberPath="Label" MinWidth="220" HorizontalAlignment="Left"
                     AutomationProperties.Name="{x:Static res:Strings.Game_Rotation}" />
-          <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-            <RadioButton GroupName="GameOrder" Content="{x:Static res:Strings.Game_OrderShuffle}" IsChecked="{Binding IsShuffle, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_OrderShuffle}" />
-            <RadioButton GroupName="GameOrder" Margin="16,0,0,0" Content="{x:Static res:Strings.Game_OrderSequential}" IsChecked="{Binding IsShuffle, Mode=TwoWay, Converter={StaticResource InverseBool}}"
-                         AutomationProperties.Name="{x:Static res:Strings.Game_OrderSequential}" />
-          </StackPanel>
+          <Border Style="{StaticResource SegmentedBarStyle}" Margin="0,12,0,0">
+            <StackPanel Orientation="Horizontal">
+              <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="GameOrder" Content="{x:Static res:Strings.Game_OrderShuffle}" IsChecked="{Binding IsShuffle, Mode=TwoWay}" AutomationProperties.Name="{x:Static res:Strings.Game_OrderShuffle}" />
+              <RadioButton Style="{StaticResource SegmentedOptionStyle}" GroupName="GameOrder" Content="{x:Static res:Strings.Game_OrderSequential}" IsChecked="{Binding IsShuffle, Mode=TwoWay, Converter={StaticResource InverseBool}}"
+                           AutomationProperties.Name="{x:Static res:Strings.Game_OrderSequential}" />
+            </StackPanel>
+          </Border>
         </StackPanel>
 
         <!-- Detection (read-only for catalog games, editable for custom ones) -->
@@ -130,7 +139,7 @@
     </ScrollViewer>
 
     <!-- Wallpaper picker overlay for custom games -->
-    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource ApplicationBackgroundBrush}">
+    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource DeskCanvasBrush}">
       <Grid Margin="24">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />
@@ -141,7 +150,7 @@
         <ContentControl Grid.Row="1" Content="{Binding Picker}" Focusable="False" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
           <Button Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
-          <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
+          <Button Style="{StaticResource PrimaryButtonStyle}" Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
         </StackPanel>
       </Grid>
     </Grid>

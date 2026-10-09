@@ -6,7 +6,8 @@
                  ResizeMode="NoResize"
                  ShowInTaskbar="False"
                  WindowStartupLocation="CenterOwner"
-                 WindowBackdropType="Mica"
+                 WindowBackdropType="None"
+                 Background="{DynamicResource DeskCanvasBrush}"
                  ExtendsContentIntoTitleBar="True">
   <Grid Margin="0">
     <Grid.RowDefinitions>

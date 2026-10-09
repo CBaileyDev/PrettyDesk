@@ -14,8 +14,10 @@ and [architecture](docs/ARCHITECTURE.md). The [next-update plan](docs/updates/RE
 covers delivery, detection, themes, recognizable Rocket League fan art, taskbar options and widgets.
 
 ## What it does
-- **Liquid Glass.** An Apple-inspired interface with floating surfaces, capsule controls, and light/dark palettes. Three original
-  iOS-inspired wallpapers (Tide, Bloom, Dusk) ship in all six supported screen ratios, ready offline. See [`docs/IOS_DESIGN.md`](docs/IOS_DESIGN.md).
+- **Dashboard interface.** A flush sidebar, solid cards and one indigo accent in light, dark and high-contrast palettes, with no
+  blur or transparency ([ADR 0016](docs/adr/0016-dashboard-visual-language.md)). An "Only dark wallpapers" switch keeps rotation, game
+  pages and the picker to dark art. Three original glass-sculpture wallpapers (Tide, Bloom, Dusk) ship in all six supported screen
+  ratios, ready offline. See [`docs/IOS_DESIGN.md`](docs/IOS_DESIGN.md).
 - **Game-aware.** The catalog contains rules for 46 games; their exe names and AppIDs still need broader real-install verification (see [`docs/BACKLOG.md`](docs/BACKLOG.md)). Matching a running game selects its available wallpaper; when it exits, your default returns. Add your own games in a few clicks. A configured signed feed can update rules without an app update.
 - **Made for "clean setup" people.** Default collections match your desk: Matte Black, Clean White, Warm Minimal, Sage and Botanical,
   Aura Gradients, Misty Nature, Painted Landscapes, Steel Blue Night, Cozy Lo-fi, Deep Space, Pastel Dream, Neon Minimal, Architecture

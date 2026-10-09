@@ -93,12 +93,6 @@ public partial class App : Application, IAsyncDisposable
         GC.SuppressFinalize(this);
     }
 
-    protected override void OnExit(ExitEventArgs e)
-    {
-        AppAppearance.Shutdown();
-        base.OnExit(e);
-    }
-
     private async void OnQuitRequested()
     {
         try

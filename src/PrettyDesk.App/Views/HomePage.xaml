@@ -8,25 +8,14 @@
              xmlns:res="clr-namespace:PrettyDesk.Presentation.Resources;assembly=PrettyDesk.Presentation"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}">
-  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
     <StackPanel>
       <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Home_Title}" />
-      <Border CornerRadius="24" Margin="0,8,0,12" BorderBrush="{DynamicResource DeskStrokeBrush}" BorderThickness="1" Visibility="{DynamicResource DeskArtVisibility}">
-        <Border.Background><ImageBrush ImageSource="/PrettyDesk;component/Assets/Glass-Bloom.jpg" Stretch="UniformToFill" /></Border.Background>
-        <StackPanel Margin="28,36" MaxWidth="420" HorizontalAlignment="Left">
-          <TextBlock Text="{x:Static res:Strings.Home_GlassTitle}" FontSize="26" FontWeight="SemiBold" Foreground="#25182C" TextWrapping="Wrap" />
-          <TextBlock Text="{x:Static res:Strings.Home_GlassDetail}" Foreground="#493448" TextWrapping="Wrap" Margin="0,8,0,16" />
-          <Button Content="{x:Static res:Strings.Home_GlassAction}" HorizontalAlignment="Left" Background="#EFFFFFFF" Foreground="#182035"
-                  Command="{Binding DataContext.NavigateToCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{x:Static vm:PageKind.Defaults}"
-                  AutomationProperties.Name="{x:Static res:Strings.Home_GlassAction}" />
-        </StackPanel>
-      </Border>
-
       <!-- Environment conflicts (FR-APPLY-7): detected and explained, never silently fixed. -->
-      <ItemsControl ItemsSource="{Binding Banners}" Margin="0,8,0,0" Focusable="False">
+      <ItemsControl ItemsSource="{Binding Banners}" Margin="0,16,0,0" Focusable="False">
         <ItemsControl.ItemTemplate>
           <DataTemplate DataType="{x:Type vm:BannerViewModel}">
-            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" BorderBrush="{Binding Severity, Converter={StaticResource SeverityToBrush}}" BorderThickness="3,1,1,1"
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" BorderBrush="{Binding Severity, Converter={StaticResource SeverityToBrush}}" BorderThickness="4,1,1,1"
                     AutomationProperties.Name="{Binding Title}">
               <Grid>
                 <Grid.ColumnDefinitions>
@@ -47,32 +36,29 @@
         </ItemsControl.ItemTemplate>
       </ItemsControl>
 
-      <!-- Status card with the primary actions. -->
-      <Border Style="{StaticResource CardStyle}" Margin="0,12,0,0" Padding="26,30">
+      <!-- Status card with the primary actions. Only the pause controls that apply to the current state are shown. -->
+      <Border Style="{StaticResource CardStyle}" Margin="0,16,0,0" Padding="24,22">
         <StackPanel>
-          <StackPanel VerticalAlignment="Center" AutomationProperties.Name="{Binding Headline}">
-            <TextBlock FontSize="20" FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Headline}" />
+          <StackPanel AutomationProperties.Name="{Binding Headline}">
+            <TextBlock FontSize="20" FontWeight="SemiBold" Style="{StaticResource BodyStyle}" Text="{Binding Headline}" AutomationProperties.LiveSetting="Polite" />
             <TextBlock Style="{StaticResource MutedStyle}" Margin="0,4,0,0" Text="{Binding Detail}" Visibility="{Binding Detail, Converter={StaticResource NullToCollapsed}}" />
-
-
-    </StackPanel>
-          <WrapPanel Margin="0,20,0,0" VerticalAlignment="Center">
-            <Button Content="{x:Static res:Strings.Home_NextWallpaper}" Command="{Binding NextCommand}" Margin="0,0,8,0" MinWidth="140"
-                    Background="#007AFF" Foreground="White" BorderBrush="#007AFF"
+          </StackPanel>
+          <WrapPanel Margin="0,20,0,0">
+            <Button Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.Home_NextWallpaper}" Command="{Binding NextCommand}" Margin="0,0,8,0" MinWidth="140"
                     AutomationProperties.Name="{x:Static res:Strings.Home_NextWallpaper}" />
-            <Button Content="{x:Static res:Strings.Home_PauseOneHour}" Command="{Binding PauseForOneHourCommand}" Margin="0,0,8,0"
+            <Button Content="{x:Static res:Strings.Home_PauseOneHour}" Command="{Binding PauseForOneHourCommand}" Margin="0,0,8,0" Visibility="{Binding CanPause, Converter={StaticResource BoolToVisibility}}"
                     AutomationProperties.Name="{x:Static res:Strings.Home_PauseOneHour}" />
-            <Button Content="{x:Static res:Strings.Home_PauseUntilResumed}" Command="{Binding PauseUntilResumedCommand}" Margin="0,0,8,0"
+            <Button Content="{x:Static res:Strings.Home_PauseUntilResumed}" Command="{Binding PauseUntilResumedCommand}" Margin="0,0,8,0" Visibility="{Binding CanPause, Converter={StaticResource BoolToVisibility}}"
                     AutomationProperties.Name="{x:Static res:Strings.Home_PauseUntilResumed}" />
-            <Button Content="{x:Static res:Strings.Home_Resume}" Command="{Binding ResumeCommand}"
+            <Button Content="{x:Static res:Strings.Home_Resume}" Command="{Binding ResumeCommand}" Visibility="{Binding CanResume, Converter={StaticResource BoolToVisibility}}"
                     AutomationProperties.Name="{x:Static res:Strings.Home_Resume}" />
           </WrapPanel>
         </StackPanel>
       </Border>
       <!-- To-scale preview of every display with its current wallpaper. -->
-      <Border Style="{StaticResource CardStyle}" Margin="0,8,0,0">
+      <Border Style="{StaticResource CardStyle}" Margin="0,12,0,0" Padding="24,20">
         <StackPanel>
-          <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Home_PreviewLabel}" Margin="0,0,0,8" />
+          <TextBlock Style="{StaticResource BodyStyle}" FontWeight="SemiBold" Text="{x:Static res:Strings.Home_PreviewLabel}" Margin="0,0,0,12" />
           <Viewbox Stretch="Uniform" MaxHeight="300" Visibility="{Binding HasMonitors, Converter={StaticResource BoolToVisibility}}">
             <ItemsControl ItemsSource="{Binding Monitors}" Width="{x:Static vm:HomeViewModel.CanvasWidth}" Height="{Binding CanvasHeight}" Focusable="False">
               <ItemsControl.ItemsPanel>
@@ -89,8 +75,8 @@
               <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type vm:MonitorPreviewViewModel}">
                   <Grid Width="{Binding Width}" Height="{Binding Height}" AutomationProperties.Name="{Binding Label}">
-                    <Border Style="{StaticResource PlaceholderTileStyle}" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="3" CornerRadius="6" />
-                    <Border CornerRadius="6" BorderThickness="3" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" Visibility="{Binding HasThumbnail, Converter={StaticResource BoolToVisibility}}">
+                    <Border Style="{StaticResource PlaceholderTileStyle}" BorderBrush="{DynamicResource DeskStrokeBrush}" BorderThickness="3" CornerRadius="6" />
+                    <Border CornerRadius="6" BorderThickness="3" BorderBrush="{DynamicResource DeskStrokeBrush}" Visibility="{Binding HasThumbnail, Converter={StaticResource BoolToVisibility}}">
                       <Border.Background>
                         <ImageBrush ImageSource="{Binding ThumbnailPath, Converter={StaticResource PathToImage}, ConverterParameter=960}" Stretch="UniformToFill" />
                       </Border.Background>
@@ -104,7 +90,7 @@
 
           <ItemsControl ItemsSource="{Binding Monitors}" Margin="0,12,0,0">
             <ItemsControl.ItemTemplate><DataTemplate DataType="{x:Type vm:MonitorPreviewViewModel}">
-              <TextBlock Text="{Binding Label}" Style="{StaticResource BodyStyle}" Margin="0,3" />
+              <TextBlock Text="{Binding Label}" Style="{StaticResource MutedStyle}" FontSize="13" Margin="0,2" />
             </DataTemplate></ItemsControl.ItemTemplate>
           </ItemsControl>
           <StackPanel Visibility="{Binding HasMonitors, Converter={StaticResource InverseBoolToVisibility}}" Margin="0,24" HorizontalAlignment="Center">

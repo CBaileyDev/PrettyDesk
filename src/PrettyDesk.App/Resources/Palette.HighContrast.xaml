@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Windows high contrast: every surface and text colour comes from the user's chosen system colours. -->
+  <SolidColorBrush x:Key="DeskCanvasBrush" Color="{x:Static SystemColors.WindowColor}" />
+  <SolidColorBrush x:Key="DeskSidebarBrush" Color="{x:Static SystemColors.WindowColor}" />
+  <SolidColorBrush x:Key="DeskSurfaceBrush" Color="{x:Static SystemColors.WindowColor}" />
+  <SolidColorBrush x:Key="DeskSoftBrush" Color="{x:Static SystemColors.WindowColor}" />
+  <SolidColorBrush x:Key="DeskVeilBrush" Color="{x:Static SystemColors.HighlightColor}" Opacity="0.35" />
+  <SolidColorBrush x:Key="DeskStrokeBrush" Color="{x:Static SystemColors.WindowTextColor}" />
+  <SolidColorBrush x:Key="DeskInkBrush" Color="{x:Static SystemColors.WindowTextColor}" />
+  <SolidColorBrush x:Key="DeskMutedBrush" Color="{x:Static SystemColors.WindowTextColor}" />
+  <SolidColorBrush x:Key="DeskAccentBrush" Color="{x:Static SystemColors.HighlightColor}" />
+  <SolidColorBrush x:Key="DeskAccentTextBrush" Color="{x:Static SystemColors.HotTrackColor}" />
+  <SolidColorBrush x:Key="DeskAccentSoftBrush" Color="{x:Static SystemColors.WindowColor}" />
+  <SolidColorBrush x:Key="DeskOnAccentBrush" Color="{x:Static SystemColors.HighlightTextColor}" />
+  <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver" Color="{x:Static SystemColors.HotTrackColor}" />
+  <SolidColorBrush x:Key="ToggleSwitchFillOnPressed" Color="{x:Static SystemColors.HotTrackColor}" />
+</ResourceDictionary>

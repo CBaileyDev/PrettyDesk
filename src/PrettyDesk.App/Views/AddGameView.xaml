@@ -18,7 +18,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="28,20,28,28">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32,24,32,32">
       <StackPanel MaxWidth="640" HorizontalAlignment="Left">
         <TextBlock Style="{StaticResource PageTitleStyle}" Text="{x:Static res:Strings.Add_Title}" />
         <TextBlock Style="{StaticResource MutedStyle}" Text="{x:Static res:Strings.Add_Intro}" />
@@ -61,13 +61,13 @@
         <TextBlock Style="{StaticResource ErrorTextStyle}" Margin="0,16,0,0" Text="{Binding ValidationMessage}" Visibility="{Binding ValidationMessage, Converter={StaticResource NullToCollapsed}}" />
 
         <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
-          <Button Content="{x:Static res:Strings.Add_Save}" Command="{Binding SaveCommand}" AutomationProperties.Name="{x:Static res:Strings.Add_Save}" />
+          <Button Style="{StaticResource PrimaryButtonStyle}" Content="{x:Static res:Strings.Add_Save}" Command="{Binding SaveCommand}" AutomationProperties.Name="{x:Static res:Strings.Add_Save}" />
           <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
         </StackPanel>
       </StackPanel>
     </ScrollViewer>
 
-    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource ApplicationBackgroundBrush}">
+    <Grid Visibility="{Binding Picker, Converter={StaticResource NullToCollapsed}}" Background="{DynamicResource DeskCanvasBrush}">
       <Grid Margin="24">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />
@@ -78,7 +78,7 @@
         <ContentControl Grid.Row="1" Content="{Binding Picker}" Focusable="False" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
           <Button Content="{x:Static res:Strings.Common_Cancel}" Command="{Binding CancelPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Common_Cancel}" />
-          <Button Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
+          <Button Style="{StaticResource PrimaryButtonStyle}" Margin="8,0,0,0" Content="{x:Static res:Strings.Picker_Confirm}" Command="{Binding ConfirmPickerCommand}" AutomationProperties.Name="{x:Static res:Strings.Picker_Confirm}" />
         </StackPanel>
       </Grid>
     </Grid>
