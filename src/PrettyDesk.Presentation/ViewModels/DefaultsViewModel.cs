@@ -11,10 +11,8 @@ using PrettyDesk.Presentation.Services;
 
 namespace PrettyDesk.Presentation.ViewModels;
 
-public sealed partial class CollectionCardViewModel : ObservableObject
+public sealed partial class CollectionCardViewModel : QuietObservableObject
 {
-    private bool _quiet;
-
     [ObservableProperty]
     private bool _isSelected;
 
@@ -46,22 +44,11 @@ public sealed partial class CollectionCardViewModel : ObservableObject
 
     public Action<CollectionCardViewModel>? SelectedChanged { get; set; }
 
-    public void SetSelectedQuietly(bool value)
-    {
-        _quiet = true;
-        try
-        {
-            IsSelected = value;
-        }
-        finally
-        {
-            _quiet = false;
-        }
-    }
+    public void SetSelectedQuietly(bool value) => Quietly(() => IsSelected = value);
 
     partial void OnIsSelectedChanged(bool value)
     {
-        if (!_quiet)
+        if (!IsQuiet)
         {
             SelectedChanged?.Invoke(this);
         }
@@ -277,18 +264,20 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         Notice = null;
-        Save(s =>
+        Save(s => SetCollectionSelected(s, ContentIds.UserPackId, value));
+    }
+
+    private static void SetCollectionSelected(AppSettings settings, string collectionId, bool selected)
+    {
+        var collections = settings.Default.Selection.Collections;
+        if (!selected)
         {
-            var collections = s.Default.Selection.Collections;
-            if (value && !collections.Contains(ContentIds.UserPackId))
-            {
-                collections.Add(ContentIds.UserPackId);
-            }
-            else if (!value)
-            {
-                collections.Remove(ContentIds.UserPackId);
-            }
-        });
+            collections.Remove(collectionId);
+        }
+        else if (!collections.Contains(collectionId))
+        {
+            collections.Add(collectionId);
+        }
     }
 
     [RelayCommand]
@@ -406,14 +395,8 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
     /// <summary>The wallpaper ids of a pack the dark-only setting allows (every id when the setting is off). Counts and previews use it.</summary>
     private List<string> VisibleIds(string packId, bool darkOnly)
     {
-        var ids = _library.GetWallpaperIds(packId);
-        if (!darkOnly)
-        {
-            return ids.ToList();
-        }
-
         var catalog = _catalog.Current;
-        return ids.Where(id => ToneFilter.Allows(ToneFilter.ToneOf(catalog, _library, id), darkOnly)).ToList();
+        return _library.GetWallpaperIds(packId).Where(id => ToneFilter.Allows(catalog, _library, id, darkOnly)).ToList();
     }
 
     private void OnCollectionToggled(CollectionCardViewModel card)
@@ -427,18 +410,7 @@ public sealed partial class DefaultsViewModel : SettingsSectionViewModel
         }
 
         Notice = null;
-        Save(s =>
-        {
-            var collections = s.Default.Selection.Collections;
-            if (card.IsSelected && !collections.Contains(card.Id))
-            {
-                collections.Add(card.Id);
-            }
-            else if (!card.IsSelected)
-            {
-                collections.Remove(card.Id);
-            }
-        });
+        Save(s => SetCollectionSelected(s, card.Id, card.IsSelected));
         BuildFixedCandidates(Settings.Current);
     }
 

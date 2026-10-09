@@ -190,11 +190,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
 
         if (settings.General.Paused && settings.General.PauseUntil is { } resumeAt && now >= resumeAt)
         {
-            _settings.Update(s =>
-            {
-                s.General.Paused = false;
-                s.General.PauseUntil = null;
-            });
+            Resume();
             settings = _settings.Current;
         }
 
@@ -279,7 +275,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
                 GameName = game.DisplayName,
                 IsRotating = !gamePlan.IsFixed && gamePlan.Pool.Count > 1,
                 PoolSize = gamePlan.Pool.Count,
-                PoolIndex = Math.Max(0, gamePlan.Pool.ToList().IndexOf(assignments.FirstOrDefault().WallpaperId ?? string.Empty)),
+                PoolIndex = PoolIndexOf(gamePlan, assignments),
             };
         }
         else
@@ -303,7 +299,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
                     DefaultTitle = defaultPlan.Title,
                     IsRotating = !defaultPlan.IsFixed && defaultPlan.Pool.Count > 1,
                     PoolSize = defaultPlan.Pool.Count,
-                    PoolIndex = Math.Max(0, defaultPlan.Pool.ToList().IndexOf(assignments.FirstOrDefault().WallpaperId ?? string.Empty)),
+                    PoolIndex = PoolIndexOf(defaultPlan, assignments),
                 };
             }
         }
@@ -374,7 +370,21 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
         {
             assignments.Add((group[i], result.Ids[Math.Min(i, result.Ids.Count - 1)]));
         }
+    }
 
+    /// <summary>Where the first monitor's wallpaper sits in the plan's pool (0 when it is not in it).</summary>
+    private static int PoolIndexOf(ContextPlan plan, List<(MonitorInfo Monitor, string WallpaperId)> assignments)
+    {
+        var shown = assignments.FirstOrDefault().WallpaperId;
+        for (var i = 0; i < plan.Pool.Count; i++)
+        {
+            if (string.Equals(plan.Pool[i], shown, StringComparison.Ordinal))
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
 
     private async Task<ApplyOutcome> ApplyToMonitorAsync(MonitorInfo monitor, string wallpaperId, DateTimeOffset now, CancellationToken ct)
@@ -539,13 +549,19 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
 
     private void OnMonitorsChanged()
     {
-        if (_monitorTimer is null)
+        ArmTimer(ref _monitorTimer, DisplayChangeDebounce);
+    }
+
+    /// <summary>Starts a one-shot timer that triggers an immediate reconcile, or re-arms the existing one.</summary>
+    private void ArmTimer(ref ITimer? timer, TimeSpan due)
+    {
+        if (timer is null)
         {
-            _monitorTimer = _time.CreateTimer(_ => Invalidate(immediate: true), null, DisplayChangeDebounce, Timeout.InfiniteTimeSpan);
+            timer = _time.CreateTimer(_ => Invalidate(immediate: true), null, due, Timeout.InfiniteTimeSpan);
         }
         else
         {
-            _monitorTimer.Change(DisplayChangeDebounce, Timeout.InfiniteTimeSpan);
+            timer.Change(due, Timeout.InfiniteTimeSpan);
         }
     }
 
@@ -563,14 +579,7 @@ public sealed partial class WallpaperOrchestrator : IWallpaperController, IAsync
             due = TimeSpan.Zero;
         }
 
-        if (_wakeTimer is null)
-        {
-            _wakeTimer = _time.CreateTimer(_ => Invalidate(immediate: true), null, due, Timeout.InfiniteTimeSpan);
-        }
-        else
-        {
-            _wakeTimer.Change(due, Timeout.InfiniteTimeSpan);
-        }
+        ArmTimer(ref _wakeTimer, due);
     }
 
     private async Task RunAsync()

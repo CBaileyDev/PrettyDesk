@@ -17,4 +17,8 @@ public static class ToneFilter
     /// </summary>
     public static string? ToneOf(CatalogDocument catalog, IContentLibrary library, string wallpaperId) =>
         library.TryGetAsset(wallpaperId)?.Tone ?? catalog.FindWallpaper(wallpaperId)?.Tone;
+
+    /// <summary><see cref="Allows(string?, bool)"/> for a wallpaper id; nothing is looked up when dark-only is off.</summary>
+    public static bool Allows(CatalogDocument catalog, IContentLibrary library, string wallpaperId, bool darkOnly) =>
+        !darkOnly || ToneOf(catalog, library, wallpaperId) == Tones.Dark;
 }

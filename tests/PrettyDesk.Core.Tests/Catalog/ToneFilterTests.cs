@@ -45,6 +45,22 @@ public sealed class ToneFilterTests
         ToneFilter.ToneOf(CatalogDocument.Empty, new FakeContent(), "missing").ShouldBeNull();
     }
 
+    [Theory]
+    [InlineData(Tones.Dark, true, true)]
+    [InlineData(Tones.Light, true, false)]
+    [InlineData(Tones.Light, false, true)]
+    public void A_wallpaper_id_is_judged_by_its_catalog_tone_when_not_downloaded(string tone, bool darkOnly, bool expected)
+    {
+        ToneFilter.Allows(Catalog("p", "x", tone), new FakeContent(), "x", darkOnly).ShouldBe(expected);
+    }
+
+    [Fact]
+    public void An_unknown_wallpaper_id_is_hidden_by_dark_only_but_shown_otherwise()
+    {
+        ToneFilter.Allows(CatalogDocument.Empty, new FakeContent(), "missing", darkOnly: true).ShouldBeFalse();
+        ToneFilter.Allows(CatalogDocument.Empty, new FakeContent(), "missing", darkOnly: false).ShouldBeTrue();
+    }
+
     private static CatalogDocument Catalog(string packId, string wallpaperId, string tone) => new()
     {
         Packs = [new PackEntry { Id = packId, Kind = "default", Wallpapers = [new WallpaperEntry { Id = wallpaperId, Tone = tone }] }],

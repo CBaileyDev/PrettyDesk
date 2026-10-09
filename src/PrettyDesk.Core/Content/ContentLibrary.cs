@@ -271,15 +271,6 @@ public sealed partial class ContentLibrary : IContentLibrary, IContentBrowser, I
         }
     }
 
-    /// <summary>Background prefetch for installed + enabled games (FR-CON-4).</summary>
-    public void Prefetch(IEnumerable<string> packIds, IReadOnlyList<MonitorInfo> monitors)
-    {
-        foreach (var packId in packIds.Distinct(StringComparer.Ordinal))
-        {
-            RequestPack(packId, monitors);
-        }
-    }
-
     public void Dispose()
     {
         if (Interlocked.Exchange(ref _disposed, 1) != 0)

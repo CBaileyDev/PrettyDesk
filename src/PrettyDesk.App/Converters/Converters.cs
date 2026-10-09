@@ -139,12 +139,3 @@ public sealed class SeverityToBrushConverter : IValueConverter
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotSupportedException();
 }
-
-/// <summary>Double → GridLength-free helper used to size monitor rectangles inside the preview canvas.</summary>
-public sealed class DoubleToRoundedConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        value is double d ? Math.Round(d, 1) : 0d;
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotSupportedException();
-}

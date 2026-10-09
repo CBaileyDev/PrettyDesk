@@ -98,18 +98,14 @@ public sealed partial class GeneralSettingsViewModel : SettingsSectionViewModel
     private readonly IPlaybackControls? _playback;
 
     [RelayCommand]
-    private Task PlayPauseAsync() => RunAsync(async () =>
-    {
-        if (_playback is null || !await _playback.TogglePlayPauseAsync())
-        {
-            throw new InvalidOperationException("No controllable media session.");
-        }
-    }, Strings.Settings_MediaUnavailable);
+    private Task PlayPauseAsync() => ControlPlaybackAsync(playback => playback.TogglePlayPauseAsync());
 
     [RelayCommand]
-    private Task NextTrackAsync() => RunAsync(async () =>
+    private Task NextTrackAsync() => ControlPlaybackAsync(playback => playback.NextAsync());
+
+    private Task ControlPlaybackAsync(Func<IPlaybackControls, Task<bool>> command) => RunAsync(async () =>
     {
-        if (_playback is null || !await _playback.NextAsync())
+        if (_playback is null || !await command(_playback))
         {
             throw new InvalidOperationException("No controllable media session.");
         }
@@ -225,41 +221,42 @@ public sealed partial class DetectionSettingsViewModel : SettingsSectionViewMode
 
     partial void OnPollSecondsChanged(int value)
     {
-        var clamped = Math.Clamp(value, MinPollSeconds, MaxPollSeconds);
-        if (clamped != value)
+        if (IsInRange(value, MinPollSeconds, MaxPollSeconds, v => PollSeconds = v))
         {
-            PollSeconds = clamped;
-            return;
+            OnPropertyChanged(nameof(PollSecondsText));
+            Save(s => s.Detection.PollSeconds = value);
         }
-
-        OnPropertyChanged(nameof(PollSecondsText));
-        Save(s => s.Detection.PollSeconds = clamped);
     }
 
     partial void OnDetectDelaySecondsChanged(int value)
     {
-        var clamped = Math.Clamp(value, 1, MaxDetectDelaySeconds);
-        if (clamped != value)
+        if (IsInRange(value, 1, MaxDetectDelaySeconds, v => DetectDelaySeconds = v))
         {
-            DetectDelaySeconds = clamped;
-            return;
+            OnPropertyChanged(nameof(DetectDelayText));
+            Save(s => s.Detection.DetectDelaySeconds = value);
         }
-
-        OnPropertyChanged(nameof(DetectDelayText));
-        Save(s => s.Detection.DetectDelaySeconds = clamped);
     }
 
     partial void OnExitGraceSecondsChanged(int value)
     {
-        var clamped = Math.Clamp(value, 0, MaxExitGraceSeconds);
-        if (clamped != value)
+        if (IsInRange(value, 0, MaxExitGraceSeconds, v => ExitGraceSeconds = v))
         {
-            ExitGraceSeconds = clamped;
-            return;
+            OnPropertyChanged(nameof(ExitGraceText));
+            Save(s => s.Detection.ExitGraceSeconds = value);
+        }
+    }
+
+    /// <summary>True when the value is allowed; otherwise assigns the nearest allowed value (which raises the change again) and returns false.</summary>
+    private static bool IsInRange(int value, int min, int max, Action<int> assignClamped)
+    {
+        var clamped = Math.Clamp(value, min, max);
+        if (clamped == value)
+        {
+            return true;
         }
 
-        OnPropertyChanged(nameof(ExitGraceText));
-        Save(s => s.Detection.ExitGraceSeconds = clamped);
+        assignClamped(clamped);
+        return false;
     }
 
     partial void OnUnknownGameHintsChanged(bool value) => Save(s => s.Detection.UnknownGameHints = value);

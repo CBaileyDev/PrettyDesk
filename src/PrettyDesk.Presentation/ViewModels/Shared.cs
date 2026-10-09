@@ -100,11 +100,31 @@ public static class IntervalLabels
             .ToList();
 }
 
-/// <summary>One wallpaper in a strip: include checkbox, favourite star and preview button (SPEC §7.2).</summary>
-public sealed partial class WallpaperItemViewModel : ObservableObject
+/// <summary>
+/// A list item whose owner is told about user edits but not about the item being filled from the model: wrap model-driven
+/// changes in <see cref="Quietly"/> and have the change handlers check <see cref="IsQuiet"/>.
+/// </summary>
+public abstract class QuietObservableObject : ObservableObject
 {
-    private bool _quiet;
+    protected bool IsQuiet { get; private set; }
 
+    protected void Quietly(Action change)
+    {
+        IsQuiet = true;
+        try
+        {
+            change();
+        }
+        finally
+        {
+            IsQuiet = false;
+        }
+    }
+}
+
+/// <summary>One wallpaper in a strip: include checkbox, favourite star and preview button (SPEC §7.2).</summary>
+public sealed partial class WallpaperItemViewModel : QuietObservableObject
+{
     [ObservableProperty]
     private string? _previewPath;
 
@@ -136,23 +156,15 @@ public sealed partial class WallpaperItemViewModel : ObservableObject
     public Action<WallpaperItemViewModel>? FavoriteChanged { get; set; }
 
     /// <summary>Sets state from the model without notifying the owner (used when reloading).</summary>
-    public void SetQuietly(bool included, bool favorite)
+    public void SetQuietly(bool included, bool favorite) => Quietly(() =>
     {
-        _quiet = true;
-        try
-        {
-            IsIncluded = included;
-            IsFavorite = favorite;
-        }
-        finally
-        {
-            _quiet = false;
-        }
-    }
+        IsIncluded = included;
+        IsFavorite = favorite;
+    });
 
     partial void OnIsIncludedChanged(bool value)
     {
-        if (!_quiet)
+        if (!IsQuiet)
         {
             IncludedChanged?.Invoke(this);
         }
@@ -161,7 +173,7 @@ public sealed partial class WallpaperItemViewModel : ObservableObject
     partial void OnIsFavoriteChanged(bool value)
     {
         OnPropertyChanged(nameof(FavoriteLabel));
-        if (!_quiet)
+        if (!IsQuiet)
         {
             FavoriteChanged?.Invoke(this);
         }

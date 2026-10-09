@@ -319,7 +319,7 @@ public sealed partial class GameDetailViewModel : SettingsSectionViewModel
         foreach (var id in ids)
         {
             // Dark-only hides light wallpapers from this strip too, so the page matches what rotation can show.
-            if (darkOnly && !ToneFilter.Allows(ToneFilter.ToneOf(catalog, _library, id), darkOnly))
+            if (!ToneFilter.Allows(catalog, _library, id, darkOnly))
             {
                 continue;
             }
