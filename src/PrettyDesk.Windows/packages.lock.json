@@ -13,9 +13,9 @@
       },
       "Microsoft.Win32.SystemEvents": {
         "type": "Direct",
-        "requested": "[10.0.12, )",
-        "resolved": "10.0.12",
-        "contentHash": "kdj5cqOwgZCMltEhQ4+WVUoFkMHG08EJfy1MDyS9H+FBg66vTTFyX8YcNl8IQh5wRQv79P+iduQgDGY8ucBR+w=="
+        "requested": "[11.0.0, )",
+        "resolved": "11.0.0",
+        "contentHash": "cI7p6SRuPcNTsgoryUpb367r1DhE+69l5XZeAS1UmyU293gwkguh2LPMiCg0YlZUZxBx0CPfXqI59Q/20Dlnvg=="
       },
       "Microsoft.Windows.CsWin32": {
         "type": "Direct",
@@ -95,9 +95,9 @@
     "net10.0-windows10.0.19041/win-arm64": {
       "Microsoft.Win32.SystemEvents": {
         "type": "Direct",
-        "requested": "[10.0.12, )",
-        "resolved": "10.0.12",
-        "contentHash": "kdj5cqOwgZCMltEhQ4+WVUoFkMHG08EJfy1MDyS9H+FBg66vTTFyX8YcNl8IQh5wRQv79P+iduQgDGY8ucBR+w=="
+        "requested": "[11.0.0, )",
+        "resolved": "11.0.0",
+        "contentHash": "cI7p6SRuPcNTsgoryUpb367r1DhE+69l5XZeAS1UmyU293gwkguh2LPMiCg0YlZUZxBx0CPfXqI59Q/20Dlnvg=="
       },
       "SkiaSharp.NativeAssets.Linux.NoDependencies": {
         "type": "Transitive",
@@ -113,9 +113,9 @@
     "net10.0-windows10.0.19041/win-x64": {
       "Microsoft.Win32.SystemEvents": {
         "type": "Direct",
-        "requested": "[10.0.12, )",
-        "resolved": "10.0.12",
-        "contentHash": "kdj5cqOwgZCMltEhQ4+WVUoFkMHG08EJfy1MDyS9H+FBg66vTTFyX8YcNl8IQh5wRQv79P+iduQgDGY8ucBR+w=="
+        "requested": "[11.0.0, )",
+        "resolved": "11.0.0",
+        "contentHash": "cI7p6SRuPcNTsgoryUpb367r1DhE+69l5XZeAS1UmyU293gwkguh2LPMiCg0YlZUZxBx0CPfXqI59Q/20Dlnvg=="
       },
       "SkiaSharp.NativeAssets.Linux.NoDependencies": {
         "type": "Transitive",
